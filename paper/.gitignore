@@ -1,3 +1,4 @@
-conjectures.aux
-conjectures.log
-conjectures.out
+conjectures*.aux
+conjectures*.log
+conjectures*.out
+conjectures*.toc
