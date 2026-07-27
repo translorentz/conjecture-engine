@@ -152,7 +152,11 @@ text.
   journal).  Remediation: unverifiable pages dropped, leaving only
   fields positively confirmed by prior verifiers.
 * **Round 3** (fresh verifiers E, F): **27/27 PASS from both, zero FAIL,
-  zero UNVERIFIED — gate passed unanimously on the final text.**
+  zero UNVERIFIED — gate passed unanimously.**
+* **Round 4** (fresh verifiers G, H; triggered by adding S.-K. Leung,
+  arXiv:2402.07941 during the third-review revisions): **28/28 PASS from
+  both, zero FAIL, zero UNVERIFIED — gate passed unanimously on the
+  final (v5) bibliography.**
 
 The gated bibliography (27 entries, 20 with DOIs verified to resolve to
 the exact works, 5 verified to legitimately lack DOIs, plus 2 arXiv
@@ -169,10 +173,22 @@ in git history:
 
 | Slot | Retired | Replacement | Verification |
 |---|---|---|---|
-| C04 | quintuplet (0,2,6,12,14) | power-obstruction ladder for n = p + j^k (even-k theorem + odd-k BH lanes) | k=4 theorem to 1e8; k=2/3/5 ratios 0.9998/1.0015/0.9983 |
+| C04 | quintuplet (0,2,6,12,14) | power-obstruction ladder (CORRECTED by 3rd review: prime-vs-composite, not even/odd — odd composite k also obstructed) | k=4 sweep to 1e8; k=9/15/25 direct; k=2/3/5 ratios 0.9998/1.0015/0.9983 |
 | C05 | arbitrary pair n²+n+{1,7} | twin cyclotomic bases Φ₃(n), Φ₃(n+1) | C=2.964239; 1e7 ratio 1.0090 (z +1.64) |
 | C10 | Caldwell–Gallot p#+1 count | primorial twins finite, list = {3,5,11} | exhaustive p ≤ 4000; model tail 7.3e-3 |
 | C25 | LOS mod-3 restatement | Goldbach lane race: D = R₃−R₁ ~ D_sys (square contamination, all in lane (1,1)) | 500 samples ≤ 1e8: ratio 1.19±0.2, lead at 5.2σ, sign frac 0.592 |
 
 Each replacement was novelty-searched before implementation (no prior
 trace found for any of the four) and verified before entering the paper.
+
+
+## Third external review (paper v4 -> v5)
+
+The third review refuted C4 as stated (odd composite k: D_k never
+prime — verified k=9,15,21,25,27,33), caught a stale attribution table
+(retired C10/C25 occupants' citations), and flagged the C8 prior-art
+overstatement and the missing Leung comparison at C22.  All accepted
+and fixed in v5; C21 gained the mod-8 companion clause (entire bias on
+class 7), verified at 1e9 (D7=+212 vs T=+254, noise ~1068, controls
+symmetric).  Full review: paper/EXTERNAL_REVIEW_3.md; response:
+paper/EXTERNAL_REVIEW_3_RESPONSE.md.

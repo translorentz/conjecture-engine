@@ -56,7 +56,7 @@ verifier.
 | 100000000 | 50193 | 5.01e+04 | 1.002 | 0.43 |
 | 300000000 | 125379 | 1.254e+05 | 0.9996 | -0.14 |
 
-## C04 — power-obstruction ladder: even k>=4 impossible (thm); odd k / k=2 lanes follow Bateman-Horn for D_k
+## C04 — power-obstruction ladder (corrected): composite k impossible (thm); prime-k lanes follow Bateman-Horn for D_k
 
 
 ## C05 — Phi_3(n), Phi_3(n+1) both prime (twin repunit bases)
@@ -275,6 +275,19 @@ verifier.
 | 4.027e+08 | -77.5 | 87 | 269 | 870.8 |
 | 1e+09 | -426.5 | 127.2 | 969 | 1308 |
 * **final_counts** = {"1": 1141217, "2": 1142128, "4": 1141159}
+
+## C21B — mod-8 twin race: entire square-contamination on class 7; 1,3,5 symmetric
+
+
+**table**
+
+| x | D7 | T_predicted | noise_scale |
+|---|---|---|---|
+| 1.258e+07 | 27 | 41.9 | 155 |
+| 1.007e+08 | 549 | 95.8 | 384 |
+| 4.027e+08 | 693 | 174 | 711 |
+| 1e+09 | 212 | 254.3 | 1068 |
+* **final_counts** = {"1": 856684, "3": 855807, "5": 856046, "7": 855967}
 
 ## C22 — tail of Li(p(a,q))/phi is Exp(1); max ~ H_phi + Gumbel
 
