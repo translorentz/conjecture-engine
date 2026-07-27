@@ -131,3 +131,30 @@ already on the record — which the criteria document counts as a feature
   treated as ĉ(∞) ∈ [0.30, 0.40] until the LOS secondary terms are put in.
 * C22's θ is measured (≈1.9 and slowly rising at q ~ 6000), not derived —
   the deepest unexplained number produced by the suite.
+
+## Twin-citation gate (bibliography certification)
+
+Protocol: two independent Opus verifiers must unanimously agree every
+reference (1) exists, (2) has correct authors, titles, venue data and
+DOI; any flag fails the gate, references are remediated, and the gate is
+re-run with a FRESH pair until a unanimous pass is obtained on the final
+text.
+
+* **Round 1** (verifiers A, B — 27 entries): both independently found the
+  same three failures — HLS author initials (corrected to T. Haddad,
+  S.-K. Leung, C. Sabuncu), PairBias missing author (W. Puszkarz), Fiori
+  paraphrased title (replaced by arXiv's literal metadata, typo marked
+  [sic]).  A additionally could not verify Dubner2000's page range; B
+  confirmed it via the OEIS-hosted article.  Remediation: 3 fixes, 2
+  cosmetic title normalizations, DOIs added to every entry possessing one.
+* **Round 2** (fresh verifiers C, D): zero FAILs; both independently
+  flagged only Dubner2000's page range as unverifiable (non-indexed
+  journal).  Remediation: unverifiable pages dropped, leaving only
+  fields positively confirmed by prior verifiers.
+* **Round 3** (fresh verifiers E, F): **27/27 PASS from both, zero FAIL,
+  zero UNVERIFIED — gate passed unanimously on the final text.**
+
+The gated bibliography (27 entries, 20 with DOIs verified to resolve to
+the exact works, 5 verified to legitimately lack DOIs, plus 2 arXiv
+companion pointers) is identical in `paper/conjectures.tex` and the
+provenance-stripped `paper/conjectures_blind.tex`.
