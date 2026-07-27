@@ -1,0 +1,42 @@
+{
+  "conjecture": "class 1 leads twin race mod 5 via q^2-2 mechanism; classes 2,4 symmetric; bias/noise ~ 1/log x",
+  "X": 1000000000,
+  "final_counts": {
+    "1": 1141217,
+    "2": 1142128,
+    "4": 1141159
+  },
+  "lead_density_D1_positive": 0.8473080877345334,
+  "lead_density_D24_positive": 0.9981022031832399,
+  "table": [
+    {
+      "x": 12582912.0,
+      "D1": 163.0,
+      "D1_predicted": 20.9,
+      "D24_control": 252.0,
+      "noise_scale": 189.8
+    },
+    {
+      "x": 100663296.0,
+      "D1": 97.5,
+      "D1_predicted": 47.9,
+      "D24_control": 443.0,
+      "noise_scale": 470.6
+    },
+    {
+      "x": 402653184.0,
+      "D1": -77.5,
+      "D1_predicted": 87.0,
+      "D24_control": 269.0,
+      "noise_scale": 870.8
+    },
+    {
+      "x": 1000000003.0,
+      "D1": -426.5,
+      "D1_predicted": 127.2,
+      "D24_control": 969.0,
+      "noise_scale": 1308.4
+    }
+  ],
+  "_generated_unix": 1785130819
+}

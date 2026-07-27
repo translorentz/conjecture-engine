@@ -1,0 +1,32 @@
+{
+  "conjecture": "infinitely many primes n^2+2^n; count ~ E(N)",
+  "kappa": 4.273448608150262,
+  "hits": [
+    3,
+    9,
+    15,
+    21,
+    33
+  ],
+  "table": [
+    {
+      "N": 100,
+      "obs": 5,
+      "pred": 4.37,
+      "z": 0.3
+    },
+    {
+      "N": 1000,
+      "obs": 5,
+      "pred": 6.71,
+      "z": -0.66
+    },
+    {
+      "N": 600,
+      "obs": 5,
+      "pred": 6.19,
+      "z": -0.48
+    }
+  ],
+  "_generated_unix": 1785129740
+}
