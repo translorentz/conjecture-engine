@@ -1,8 +1,0 @@
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
-\contentsline {section}{\numberline {2}Notation}{3}{section.2}%
-\contentsline {section}{\numberline {3}Bateman--Horn instances}{3}{section.3}%
-\contentsline {section}{\numberline {4}Sparse sequences: barely-divergent Borel--Cantelli}{5}{section.4}%
-\contentsline {section}{\numberline {5}Representation problems}{6}{section.5}%
-\contentsline {section}{\numberline {6}Statistical laws}{8}{section.6}%
-\contentsline {section}{\numberline {7}The adversarial audit}{10}{section.7}%
-\contentsline {section}{\numberline {8}Attribution and novelty}{11}{section.8}%
