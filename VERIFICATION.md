@@ -277,3 +277,49 @@ admission).**
 * For n≡1 (mod 3), 3 | n−q² for every prime q>3: the Goldbach lane
   race carries its own null control on n≡10 (mod 12) — promoted into
   C25's statement and verified.
+
+## Fifth external review (paper v6 -> v7)
+
+A constructive novelty assessment ("what does each statement add
+beyond its background heuristic?").  Response: `paper/EXTERNAL_REVIEW_5_RESPONSE.md`.
+Implemented, with three new derive-first-test-second runs:
+
+* **Canonical random fields (C16(ii), C24(ii), C8).** The review
+  correctly noted Cov of deterministic cumulative counts is undefined.
+  Both kernels restated on an explicit moving-window probability
+  space; C8's "arcsine" clause replaced by a defined occupation-time
+  law plus a missing-drift-sources caveat.  Verified:
+  `verify/c16c_window_field.py` (x=1e8, H=1e5, 2000 windows, 190
+  pairs): empirical vs predicted correlation matrix matches entrywise
+  at 0.86; mean off-diag 0.33 vs 0.37; Var/mean 0.94 (diagonal
+  deficit visible).
+* **Contamination calculus (new C21(v)).** General drift-vector rule
+  for any (n, n+d) race mod m; applied blind to cousins d=4:
+  (q²−4,q²) dead algebraically; drift predicted in class 4 (mod 5)
+  and class 1 (mod 8).  Verified at 1e9
+  (`verify/c21c_cousin_races.py`): leadership log-densities 0.99 /
+  0.92 on the predicted sides, controls null, endpoint drift inside
+  noise as the 1/log x law requires — directional support, so
+  labeled.
+* **C19(iii) singular-series waiting times.** New clause
+  log p(g) = √g + ½log g − ½log S*(g) + O(1); tested on the full
+  first-occurrence table to 1e9 (`verify/c19b_waiting_refinement.py`):
+  regression coefficient −0.466 vs predicted −0.5 (100 gaps).
+* **C22 canonical invariant.** Θ(q) = (1 − E_a U) log q, model-free;
+  conjectured → Θ > θ_disc^∞ along prime moduli (measured
+  1.671 ± 0.009); θ decomposition demoted to explicit diagnostic.
+* **Targeted strengthenings.** C1 explicit uniform error clause +
+  open range/constant-distribution questions; C20 interpolation
+  clause across H = λ(log x)^α; C23 sharpened to the exact
+  Chung–Smirnov LIL constant 2^{−1/2} (upper AND lower); C6
+  uniqueness claim made over a specified construction space with the
+  pure-Φ₆ sibling acknowledged; C10 novelty label softened to
+  "explicit prior statement not found" + new window-rigidity and
+  joint-independence clauses; C15 cross-pointer to C25.
+* **Declined for scope** (recorded in the paper's open-programme
+  note): C2/C3/C14/C17 classification programmes, C18 Gumbel
+  centering (Kourbatov's ground), C9 exact entanglement constant,
+  C11 full net-convergence theory.
+
+No bibliography changes: twin-citation gate round 5 (30/30 unanimous)
+remains in force.

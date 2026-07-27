@@ -187,6 +187,9 @@ verifier.
 ## C16B — covariance kernel of z_d profile from HL triple constants
 
 
+## C16C — moving-window pair-count field: empirical correlation matrix matches HL triple-constant kernel
+
+
 ## C17 — every even n>=4210 is a sum of two twin-pair members
 
 * **largest_exception** = 4208
@@ -229,6 +232,9 @@ verifier.
 | 240 | 391995431 | 1.277 |
 | 282 | 436273009 | 1.185 |
 
+## C19B — second-order S*(g) dependence of first occurrences: log p(g) = sqrt g + (1/2)log g - (1/2)log S*(g) + O(1)
+
+
 ## C20 — Var/mean = 1 - (log h + gamma + log 2pi - 1)/log x
 
 * **second_order_constant** = 1.415
@@ -269,6 +275,17 @@ verifier.
 | 4.027e+08 | 693 | 174 | 711 |
 | 1e+09 | 212 | 254.3 | 1068 |
 * **final_counts** = {"1": 856684, "3": 855807, "5": 856046, "7": 855967}
+
+## C21C — contamination calculus, fresh instance: cousin races (n,n+4) mod 5 (class-4 deficit) and mod 8 (class-1 deficit)
+
+
+**table**
+
+| x | D5 | D8 | T_pred | noise | ctrl23 | ctrl35 |
+|---|---|---|---|---|---|---|
+| 9.647e+07 | 251 | 140 | 66.7 | 653 | 214 | 387 |
+| 3.985e+08 | 803 | 2 | 118.4 | 1226 | 172 | 799 |
+| 1e+09 | -20.5 | -319.3 | 163.6 | 1851 | 17 | 198 |
 
 ## C22 — tail of Li(p(a,q))/phi is Exp(1); max ~ H_phi + Gumbel
 

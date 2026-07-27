@@ -47,13 +47,13 @@ against exact counts.
 | C13 | restated: non-cube exceptions of n = p + k³ finite; cubes obey a theorem | Borel–Cantelli + local | 10⁹ |
 | C14 | exactly ten odd n are not p + 2k² (k ≥ 1); largest 5993 | Borel–Cantelli | 10⁹ |
 | C15 | every n ≡ 2 (4), n ≥ 6, is p+q with p ≡ q ≡ 3 (4); R₃ ~ ½S(n)I(n) | HL Goldbach | 10⁹ |
-| C16 | π_d(x) ~ S(d)Li₂(x) uniformly + residual field with derived covariance kernel | HL + triple-constant kernel | 10⁸, d ≤ 6000; kernel 870 pairs |
+| C16 | π_d(x) ~ S(d)Li₂(x) uniformly + moving-window residual field with derived covariance kernel | HL + triple-constant kernel | 10⁸, d ≤ 6000; kernel 870 pairs + 2000-window test |
 | C17 | every even n ≥ 4210 is a sum of two twin-pair members (35 exceptions) | Borel–Cantelli on twins | 10⁹ |
 | C18 | twin-gap records ≍ log³x, working constant 1/(2C₂) | Cramér for thinned process | 4·10⁹ |
-| C19 | liminf over realized gaps of log p(g)/√g = √(e^γ/2) = 0.9437 | Cramér–Granville | 4·10⁹ |
+| C19 | liminf over realized gaps of log p(g)/√g = √(e^γ/2) = 0.9437; 𝔖\*(g) waiting-time clause (slope −½, measured −0.47) | Cramér–Granville + HL factor | 4·10⁹ |
 | C20 | prime counts in λ log x windows: Var/mean = 1 − (log h + γ + log 2π − 1)/log x | Gallagher + Montgomery–Soundararajan | 4·10⁹ |
-| C21 | twin race mod 5/8: lemma + drift law via the (q²−2, q²) mechanism; no persistent leader | explicit-formula analog | 4·10⁹ / 10⁹ |
-| C22 | Li(p(a,q))/φ(q): Exp(1)/Gumbel; deficit = θ_disc (defined control) + θ_corr > 0 on prime moduli | order statistics + stratified experiment | q ≤ 6000; 80 strat. moduli |
+| C21 | twin races mod 5/8 + contamination calculus; fresh cousin-race predictions verified directionally | explicit-formula analog | 4·10⁹ / 10⁹; cousins 10⁹ |
+| C22 | Li(p(a,q))/φ(q): Exp(1)/Gumbel; canonical deficit Θ(q) → Θ > θ_disc^∞ on prime moduli (Θ = 1.67) | order statistics + stratified experiment | q ≤ 6000; 80 strat. moduli |
 | C23 | Fermat quotients: LIL-scale equidistribution; Wieferich count ~ log log x | uniformity + BC | 10⁷ / 10⁸ |
 | C24 | HL Conjecture-F family: uniform + pair-series covariance kernel (computed null cross-kernel) | Bateman–Horn family | 10⁶ × 100 A; 1225 pairs |
 | C25 | Goldbach lane race: D = R₃−R₁ ~ D_sys, HL-weighted model, internal null lane n ≡ 1 (3) | explicit-formula analog | 10⁸, 500+400 samples, 5.2σ |
