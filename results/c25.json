@@ -1,37 +1,16 @@
 {
-  "conjecture": "1/2 - s(x) ~ c log log x/log x, c>0; deficit symmetric in (1,1) vs (2,2)",
-  "X": 1000000000,
-  "counts": {
-    "11": 11315464,
-    "12": 14107248,
-    "21": 14107249,
-    "22": 11317570
-  },
-  "table": [
-    {
-      "x": 16777216,
-      "same_fraction": 0.43243,
-      "c_hat": 0.3998,
-      "n11_over_n22": 0.9985
-    },
-    {
-      "x": 117440512,
-      "same_fraction": 0.43946,
-      "c_hat": 0.385,
-      "n11_over_n22": 0.9995
-    },
-    {
-      "x": 318767104,
-      "same_fraction": 0.44223,
-      "c_hat": 0.3803,
-      "n11_over_n22": 0.9998
-    },
-    {
-      "x": 1000000000,
-      "same_fraction": 0.44512,
-      "c_hat": 0.3752,
-      "n11_over_n22": 0.9998
-    }
+  "conjecture": "Goldbach lane race: R3-R1 ~ square contamination D_sys on average; (3,3) lane leads",
+  "X": 100000000,
+  "n_samples": 500,
+  "mean_D": 76.532,
+  "mean_Dsys": 64.52227160094986,
+  "ratio_D_over_Dsys": 1.1861330684903117,
+  "mean_noise": 14.75833276329003,
+  "signal_over_noise": 5.185680606847826,
+  "frac_D_positive": 0.592,
+  "ratio_halves": [
+    0.881808273139758,
+    1.305609696459577
   ],
-  "_generated_unix": 1785130827
+  "_generated_unix": 1785152540
 }

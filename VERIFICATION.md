@@ -158,3 +158,21 @@ The gated bibliography (27 entries, 20 with DOIs verified to resolve to
 the exact works, 5 verified to legitimately lack DOIs, plus 2 arXiv
 companion pointers) is identical in `paper/conjectures.tex` and the
 provenance-stripped `paper/conjectures_blind.tex`.
+
+## Wholesale replacements (post-second-review)
+
+On the operator's instruction, four conjectures judged "novelty:
+none/very low" by the external review were replaced wholesale with
+novelty-checked, mechanism-backed statements (paper v4); the retired
+originals' scripts are retained as verify/legacy_*.py and their results
+in git history:
+
+| Slot | Retired | Replacement | Verification |
+|---|---|---|---|
+| C04 | quintuplet (0,2,6,12,14) | power-obstruction ladder for n = p + j^k (even-k theorem + odd-k BH lanes) | k=4 theorem to 1e8; k=2/3/5 ratios 0.9998/1.0015/0.9983 |
+| C05 | arbitrary pair n²+n+{1,7} | twin cyclotomic bases Φ₃(n), Φ₃(n+1) | C=2.964239; 1e7 ratio 1.0090 (z +1.64) |
+| C10 | Caldwell–Gallot p#+1 count | primorial twins finite, list = {3,5,11} | exhaustive p ≤ 4000; model tail 7.3e-3 |
+| C25 | LOS mod-3 restatement | Goldbach lane race: D = R₃−R₁ ~ D_sys (square contamination, all in lane (1,1)) | 500 samples ≤ 1e8: ratio 1.19±0.2, lead at 5.2σ, sign frac 0.592 |
+
+Each replacement was novelty-searched before implementation (no prior
+trace found for any of the four) and verified before entering the paper.

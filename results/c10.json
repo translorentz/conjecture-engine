@@ -1,7 +1,12 @@
 {
-  "conjecture": "#{p<=x: p#+1 prime} ~ e^gamma log x",
-  "slope_predicted": 1.781072417990198,
-  "hits": [
+  "conjecture": "finitely many primorial twins (p#-1, p#+1 both prime); list complete",
+  "X": 4000,
+  "twins": [
+    3,
+    5,
+    11
+  ],
+  "plus": [
     2,
     3,
     5,
@@ -14,28 +19,20 @@
     2657,
     3229
   ],
-  "table": [
-    {
-      "x": 100,
-      "obs": 6,
-      "pred": 8.2,
-      "ratio": 0.732,
-      "z": -0.77
-    },
-    {
-      "x": 1000,
-      "obs": 7,
-      "pred": 12.3,
-      "ratio": 0.569,
-      "z": -1.51
-    },
-    {
-      "x": 4000,
-      "obs": 11,
-      "pred": 14.8,
-      "ratio": 0.745,
-      "z": -0.98
-    }
+  "minus": [
+    3,
+    5,
+    11,
+    13,
+    41,
+    89,
+    317,
+    337,
+    991,
+    1873,
+    2053,
+    2377
   ],
-  "_generated_unix": 1785131440
+  "expected_further": 0.007341748383746518,
+  "_generated_unix": 1785152534
 }

@@ -11,13 +11,13 @@ JOBS = [
     ("c01_quadratic_twin_pair.py", ["1e7"]),
     ("c02_cubic_shift.py", ["1e7"]),
     ("c03_prime_ap_chain.py", ["3e8"]),
-    ("c04_quintuplet.py", ["1e9"]),
-    ("c05_shifted_quadratic_pair.py", ["1e7"]),
+    ("c04_power_ladder.py", ["1e8", "1e6", "8e5"]),
+    ("c05_twin_cyclotomic.py", ["1e7"]),
     ("c06_cyclotomic_germain.py", ["1e7"]),
     ("c07_psquared_minus2.py", ["1e7"]),
     ("c08_quadratic_triple.py", ["1e7"]),
     ("c09_fibonacci_primes.py", ["1e4"]),
-    ("c10_primorial_primes.py", ["4000"]),
+    ("c10_primorial_twins.py", ["4000"]),
     ("c11_n2_plus_2n.py", ["4200"]),
     ("c12_factorial_primes.py", ["700"]),
     ("c13_prime_plus_cube.py", ["1e8"]),
@@ -32,7 +32,7 @@ JOBS = [
     ("c22_least_prime_ap.py", ["3000", "5e6"]),
     ("c23_fermat_quotients.py", ["1e7", "1e8"]),
     ("c24_hl_family_F.py", ["1e6", "199"]),
-    ("c25_consecutive_mod3.py", ["1e9"]),
+    ("c25_goldbach_lane_race.py", ["1e8", "500"]),
 ]
 
 
