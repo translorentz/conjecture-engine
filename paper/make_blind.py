@@ -72,8 +72,11 @@ for a, b in REPL:
         s = s.replace(a, b)
 
 # catch-all: any residual 'the engine' phrasing and repository name
-s = s.replace("the engine's", "our").replace("The engine's", "Our")
-s = s.replace("the engine", "our procedure").replace("The engine", "Our procedure")
+# (\s+ so that phrases split across line breaks are caught too)
+s = re.sub(r"The\s+engine's", "Our", s)
+s = re.sub(r"the\s+engine's", "our", s)
+s = re.sub(r"The\s+engine\b", "Our procedure", s)
+s = re.sub(r"the\s+engine\b", "our procedure", s)
 s = s.replace("(\\texttt{conjecture-engine})", "")
 s = s.replace("\\texttt{conjecture-engine}", "the accompanying repository")
 

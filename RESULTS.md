@@ -5,21 +5,13 @@ runs).  Regenerate with `python3 compile_results.py` after re-running any
 verifier.
 
 
-## C01 — n^2+1 & n^2+3 both prime
+## C01 — uniform quadratic de Polignac: (n^2+1, n^2+1+d) ~ C(d) I(N) uniformly over admissible even d
 
-* **constant_C** = 2.954
-* **constant_wobble** = 0.001377
-* **first_solutions**: 2, 4, 10, 14, 74, 94, 130, 134, 146, 160
-
-**table**
-
-| N | obs | pred | ratio | z |
-|---|---|---|---|---|
-| 1000 | 28 | 25.3 | 1.108 | 0.54 |
-| 10000 | 120 | 119.5 | 1.004 | 0.05 |
-| 100000 | 689 | 698.1 | 0.987 | -0.34 |
-| 1000000 | 4663 | 4613 | 1.011 | 0.74 |
-| 10000000 | 32898 | 3.286e+04 | 1.001 | 0.19 |
+* **correlation** = 0.9998
+* **slope** = 1.002
+* **z_mean** = 0.2415
+* **z_sd** = 0.8421
+* **z_max_abs** = 2.28
 
 ## C02 — n^3+2 prime
 
@@ -59,37 +51,24 @@ verifier.
 ## C04 — power-obstruction ladder (corrected): composite k impossible (thm); prime-k lanes follow Bateman-Horn for D_k
 
 
-## C05 — Phi_3(n), Phi_3(n+1) both prime (twin repunit bases)
+## C05 — cyclotomic twin bases: Phi_k(n), Phi_k(n+1) both prime for k in {3,6}; k=4 branch dead by parity (only (2,5))
 
-* **constant_C** = 2.964
-* **constant_wobble** = 0.00172
-* **first_solutions**: 1, 2, 5, 14, 20, 77, 89, 110, 161, 167
 
-**table**
+## C06 — alternating cyclotomic chain p, Phi3(p), Phi6(Phi3(p)) all prime
 
-| N | obs | pred | ratio | z |
-|---|---|---|---|---|
-| 1000 | 23 | 25.6 | 0.8971 | -0.52 |
-| 10000 | 125 | 120.2 | 1.04 | 0.44 |
-| 100000 | 729 | 700.8 | 1.04 | 1.07 |
-| 1000000 | 4706 | 4629 | 1.017 | 1.13 |
-| 10000000 | 33274 | 3.298e+04 | 1.009 | 1.64 |
-
-## C06 — p and p^2+p+1 both prime
-
-* **constant_C** = 1.522
-* **constant_wobble** = 0.0004415
-* **first_solutions**: 2, 3, 5, 17, 41, 59, 71, 89, 101, 131
+* **constant_C** = 3.614
+* **constant_wobble** = 0.01081
+* **first_solutions**: 2, 3, 59, 101, 1847, 1973, 3041, 3671, 3989, 4721
 
 **table**
 
 | N | obs | pred | ratio | z |
 |---|---|---|---|---|
-| 1000 | 23 | 25.3 | 0.9102 | -0.45 |
-| 10000 | 117 | 122.3 | 0.9565 | -0.48 |
-| 100000 | 706 | 718.4 | 0.9827 | -0.46 |
-| 1000000 | 4684 | 4752 | 0.9857 | -0.98 |
-| 10000000 | 33661 | 3.386e+04 | 0.9943 | -1.06 |
+| 1000 | 4 | 3.3 | 1.223 | 0.4 |
+| 10000 | 11 | 10.2 | 1.079 | 0.25 |
+| 100000 | 41 | 43.4 | 0.945 | -0.36 |
+| 1000000 | 224 | 227.8 | 0.9833 | -0.25 |
+| 10000000 | 1362 | 1357 | 1.004 | 0.13 |
 
 ## C07 — p and p^2-2 both prime
 
@@ -107,21 +86,8 @@ verifier.
 | 1000000 | 10548 | 1.057e+04 | 0.9983 | -0.17 |
 | 10000000 | 74914 | 7.527e+04 | 0.9952 | -1.31 |
 
-## C08 — n^2+1, n^2+3, n^2+7 all prime
+## C08 — null-mechanism race: quadratic twin pairs have no square contamination; class race n=1 vs n=4 (mod 5) is driftless
 
-* **constant_C** = 10.65
-* **constant_wobble** = 0.006046
-* **first_solutions**: 2, 4, 10, 74, 146, 256, 440, 470, 584, 920
-
-**table**
-
-| N | obs | pred | ratio | z |
-|---|---|---|---|---|
-| 1000 | 10 | 10.6 | 0.9426 | -0.19 |
-| 10000 | 29 | 31 | 0.9358 | -0.36 |
-| 100000 | 124 | 128.8 | 0.963 | -0.42 |
-| 1000000 | 626 | 672 | 0.9315 | -1.77 |
-| 10000000 | 3963 | 3999 | 0.9911 | -0.56 |
 
 ## C09 — #{p<=x: F_p prime} ~ (e^gamma/log phi) log x
 
@@ -136,7 +102,7 @@ verifier.
 | 1000 | 20 | 25.6 | 0.782 | -1.1 |
 | 10000 | 25 | 34.1 | 0.733 | -1.56 |
 
-## C10 — finitely many primorial twins (p#-1, p#+1 both prime); list complete
+## C10 — n=3 is the only factorial twin (n!-1, n!+1 both prime)
 
 
 ## C11 — infinitely many primes n^2+2^n; count ~ E(N)
@@ -151,6 +117,18 @@ verifier.
 | 100 | 5 | 4.37 | 0.3 |
 | 1000 | 5 | 6.71 | -0.66 |
 | 4200 | 8 | 8.19 | -0.07 |
+
+## C11B — n^2+2^n: CRT-exact kappa_S net converges; count ~ E(N)
+
+* **hits**: 3, 9, 15, 21, 33, 2007, 2127, 3759
+
+**table**
+
+| N | obs | pred | z |
+|---|---|---|---|
+| 1000 | 5 | 6.71 | -0.66 |
+| 4200 | 8 | 8.19 | -0.07 |
+| 6000 | 8 | 8.55 | -0.19 |
 
 ## C12 — #{n<=N: n!+1 prime} ~ e^gamma log N
 
@@ -205,6 +183,9 @@ verifier.
 | 804 | 892753 | 8.943e+05 | -1.62 |
 | 960 | 1172603 | 1.174e+06 | -1.58 |
 * **drift** = [-0.2864915835029418, -0.24827897183404862]
+
+## C16B — covariance kernel of z_d profile from HL triple constants
+
 
 ## C17 — every even n>=4210 is a sum of two twin-pair members
 
@@ -312,6 +293,16 @@ verifier.
 | 1000 | 0.7537 | 1.796 |
 | 2154 | 0.7621 | 1.917 |
 
+## C22B — theta decomposition with defined Bernoulli control; theta_corr persistence on prime moduli differentiates from smooth-q effects
+
+
+**rows**
+
+| stratum | n_q | theta_disc_mean | theta_disc_se | theta_corr_mean | theta_corr_se |
+|---|---|---|---|---|---|
+| prime | 40 | 0.8469 | 8.801e-06 | 0.8243 | 0.009135 |
+| smooth | 40 | 4.322 | 0.2218 | -2.321 | 0.2204 |
+
 ## C23 — Fermat quotients equidistribute; Wieferich count ~ loglog x
 
 * **KS** = 0.0006425
@@ -355,5 +346,11 @@ verifier.
 | 181 | 3.024 | 118762 | 1.189e+05 | 0.999 | -0.36 |
 | 191 | 3.417 | 134314 | 1.343e+05 | 0.9998 | -0.07 |
 
+## C24B — Conjecture-F family covariance kernel from pair singular series
+
+
 ## C25 — Goldbach lane race: R3-R1 ~ square contamination D_sys on average; (3,3) lane leads
+
+
+## C25B — HL-weighted drift, sign-density constant, and internal null lane n=1(3) for the Goldbach lane race
 

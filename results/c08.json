@@ -1,55 +1,10 @@
 {
-  "conjecture": "n^2+1, n^2+3, n^2+7 all prime",
-  "constant_C": 10.64598514803752,
-  "constant_wobble": 0.0060459188780992434,
-  "first_solutions": [
-    2,
-    4,
-    10,
-    74,
-    146,
-    256,
-    440,
-    470,
-    584,
-    920
-  ],
-  "table": [
-    {
-      "N": 1000,
-      "obs": 10,
-      "pred": 10.6,
-      "ratio": 0.9426,
-      "z": -0.19
-    },
-    {
-      "N": 10000,
-      "obs": 29,
-      "pred": 31.0,
-      "ratio": 0.9358,
-      "z": -0.36
-    },
-    {
-      "N": 100000,
-      "obs": 124,
-      "pred": 128.8,
-      "ratio": 0.963,
-      "z": -0.42
-    },
-    {
-      "N": 1000000,
-      "obs": 626,
-      "pred": 672.0,
-      "ratio": 0.9315,
-      "z": -1.77
-    },
-    {
-      "N": 10000000,
-      "obs": 3963,
-      "pred": 3998.6,
-      "ratio": 0.9911,
-      "z": -0.56
-    }
-  ],
-  "_generated_unix": 1785130868
+  "conjecture": "null-mechanism race: quadratic twin pairs have no square contamination; class race n=1 vs n=4 (mod 5) is driftless",
+  "N": 10000000,
+  "n_pairs": 32898,
+  "final_c1": 10917,
+  "final_c4": 10981,
+  "normalized_drift_logmean": -0.46126598946398695,
+  "lead_fraction": 0.20593132237728895,
+  "_generated_unix": 1785168045
 }

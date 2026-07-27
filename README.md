@@ -32,38 +32,38 @@ against exact counts.
 
 | # | Statement (short form) | Model / constant | Verified to |
 |---|---|---|---|
-| C01 | n²+1, n²+3 both prime infinitely often, count ~ C·I(N) | Bateman–Horn | 10⁷ |
+| C01 | uniform quadratic de Polignac: (n²+1, n²+1+d) ~ C(d)·I(N) uniformly over even d | Bateman–Horn family | 150 shifts at 10⁶; d=2 at 10⁷ |
 | C02 | n³+2 prime infinitely often, count ~ C·I(N) | Bateman–Horn (cubic) | 10⁷ |
 | C03 | p, 2p−1, 3p−2 all prime (AP chain), ~ C·I(x) | Bateman–Horn (3 linear) | 3·10⁸ |
-| C04 | power-obstruction ladder for n = p + jᵏ: even k ≥ 4 impossible (thm); odd-k lanes follow BH for Dₖ | factorization + BH | k=4: 10⁸; k=2,3,5 counted |
-| C05 | twin cyclotomic bases: Φ₃(n), Φ₃(n+1) both prime, ~ C·I(N) | Bateman–Horn | 10⁷ |
-| C06 | p and p²+p+1 both prime (length-3 repunit base p), ~ C·I(x) | Bateman–Horn | 10⁷ |
+| C04 | power-obstruction ladder for mᵏ = p + jᵏ: composite k impossible (thm); prime-k lanes follow BH for Dₖ | factorization + BH | k=4: 10⁸; k=2,3,5 counted |
+| C05 | twin cyclotomic bases, complete φ(k)=2 family: k=4 parity-dead, k=6 ≡ k=3; Φ₃(n), Φ₃(n+1) both prime ~ C·I(N) | parity/identity + Bateman–Horn | 10⁷ |
+| C06 | alternating cyclotomic chain p, Φ₃(p), Φ₆(Φ₃(p)) all prime ~ C·I(x) | Bateman–Horn (deg 1,2,4) | 10⁷ |
 | C07 | p and p²−2 both prime, ~ C·I(x) | Bateman–Horn | 10⁷ |
-| C08 | n²+1, n²+3, n²+7 all prime (refines C01), ~ C·I(N) | Bateman–Horn | 10⁷ |
-| C09 | #{p ≤ x: F_p prime} ~ (e^γ/log φ) log x | LPW screening | p ≤ 10⁴ |
-| C10 | primorial twins (p#−1, p#+1 both prime) are finite: exactly {3, 5, 11} | convergent Borel–Cantelli | p ≤ 4000 |
-| C11 | n²+2ⁿ prime infinitely often (n ≡ 3 mod 6), ~ κ-model | exact local densities | n ≤ 4200 |
+| C08 | null-mechanism race: (n²+1, n²+3) class race mod 5 is driftless (no square contamination possible) | contrast control for C21/C25 | 10⁷ |
+| C09 | #{p ≤ x: F_p prime} ~ c_F log x, c_F < e^γ/log φ (deficit flagged) | LPW screening | p ≤ 10⁴ |
+| C10 | factorial twins (n!−1, n!+1 both prime): only n = 3 | convergent Borel–Cantelli | n ≤ 700 |
+| C11 | n²+2ⁿ prime infinitely often (n ≡ 3 mod 6); κ via CRT-exact joint densities | exact local densities | n ≤ 6000; CRT exact to p ≤ 19 |
 | C12 | #{n ≤ N: n!+1 prime} ~ e^γ log N | Mertens boost | n ≤ 700 |
 | C13 | restated: non-cube exceptions of n = p + k³ finite; cubes obey a theorem | Borel–Cantelli + local | 10⁹ |
-| C14 | exactly ten odd n are not p + 2k² (k ≥ 1); largest 5993 | Borel–Cantelli | 10⁸ |
-| C15 | every n ≡ 2 (4), n ≥ 6, is p+q with p ≡ q ≡ 3 (4); R₃ ~ ½S(n)I(n) | HL Goldbach | 10⁸ |
-| C16 | π_d(x) ~ S(d)Li₂(x) uniformly, all even d ≤ 2000 | HL / de Polignac | 10⁸ |
-| C17 | every even n ≥ 4210 is a sum of two twin-pair members (35 exceptions) | Borel–Cantelli on twins | 10⁸ |
-| C18 | twin-gap records ~ log³x/(2C₂) | Cramér for thinned process | 10⁹ |
-| C19 | log p(g)/√g → √(e^γ/2) = 0.9436 (first gap occurrence) | Cramér–Granville | 10⁹ |
-| C20 | prime counts in λ log x windows: Var/mean = 1 − (log h + γ + log 2π − 1)/log x | Gallagher + Montgomery | 1.2·10⁹ |
-| C21 | twin race mod 5: class 1 leads via the q²−2 mechanism; bias/noise ~ 1/log x | explicit-formula analog | 10⁹ |
-| C22 | Li(p(a,q))/φ(q): Exp(1) tail, Gumbel max at H_φ; mean anomaly ≈ 0.75 | order statistics | q ≤ 3000 |
-| C23 | Fermat quotients equidistribute; Wieferich count ~ log log x | uniformity + BC | 10⁷ / 10⁸ |
-| C24 | HL Conjecture-F family: C(A) predicts the full ranking of n²+n+A | Bateman–Horn family | 10⁶ × 100 A |
-| C25 | Goldbach lane race: R₃ − R₁ ~ square-contamination D_sys; (3,3) lane leads | explicit-formula analog | 10⁸, 500 samples, 5.2σ |
+| C14 | exactly ten odd n are not p + 2k² (k ≥ 1); largest 5993 | Borel–Cantelli | 10⁹ |
+| C15 | every n ≡ 2 (4), n ≥ 6, is p+q with p ≡ q ≡ 3 (4); R₃ ~ ½S(n)I(n) | HL Goldbach | 10⁹ |
+| C16 | π_d(x) ~ S(d)Li₂(x) uniformly + residual field with derived covariance kernel | HL + triple-constant kernel | 10⁸, d ≤ 6000; kernel 870 pairs |
+| C17 | every even n ≥ 4210 is a sum of two twin-pair members (35 exceptions) | Borel–Cantelli on twins | 10⁹ |
+| C18 | twin-gap records ≍ log³x, working constant 1/(2C₂) | Cramér for thinned process | 4·10⁹ |
+| C19 | liminf over realized gaps of log p(g)/√g = √(e^γ/2) = 0.9437 | Cramér–Granville | 4·10⁹ |
+| C20 | prime counts in λ log x windows: Var/mean = 1 − (log h + γ + log 2π − 1)/log x | Gallagher + Montgomery–Soundararajan | 4·10⁹ |
+| C21 | twin race mod 5/8: lemma + drift law via the (q²−2, q²) mechanism; no persistent leader | explicit-formula analog | 4·10⁹ / 10⁹ |
+| C22 | Li(p(a,q))/φ(q): Exp(1)/Gumbel; deficit = θ_disc (defined control) + θ_corr > 0 on prime moduli | order statistics + stratified experiment | q ≤ 6000; 80 strat. moduli |
+| C23 | Fermat quotients: LIL-scale equidistribution; Wieferich count ~ log log x | uniformity + BC | 10⁷ / 10⁸ |
+| C24 | HL Conjecture-F family: uniform + pair-series covariance kernel (computed null cross-kernel) | Bateman–Horn family | 10⁶ × 100 A; 1225 pairs |
+| C25 | Goldbach lane race: D = R₃−R₁ ~ D_sys, HL-weighted model, internal null lane n ≡ 1 (3) | explicit-formula analog | 10⁸, 500+400 samples, 5.2σ |
 
 ## Reproduction
 
 ```bash
 pip install numpy
 python3 run_all.py            # full suite, ~15-30 min on 4 cores
-python3 verify/c04_quintuplet.py 1e8    # any single conjecture, custom bound
+python3 verify/c04_power_ladder.py 1e8  # any single conjecture, custom bound
 python3 compile_results.py    # rebuild RESULTS.md from results/*.json
 ```
 

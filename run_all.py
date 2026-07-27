@@ -8,31 +8,44 @@ import time
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 JOBS = [
-    ("c01_quadratic_twin_pair.py", ["1e7"]),
+    # main statements (v6 roster)
+    ("c01_quadratic_depolignac_family.py", ["1e6", "300"]),
+    ("c01_quadratic_twin_pair.py", ["1e7"]),          # d = 2 instance
     ("c02_cubic_shift.py", ["1e7"]),
     ("c03_prime_ap_chain.py", ["3e8"]),
     ("c04_power_ladder.py", ["1e8", "1e6", "8e5"]),
-    ("c05_twin_cyclotomic.py", ["1e7"]),
-    ("c06_cyclotomic_germain.py", ["1e7"]),
+    ("c05_cyclotomic_twin_family.py", ["1e7"]),
+    ("c06_repunit_chain.py", ["1e7"]),
     ("c07_psquared_minus2.py", ["1e7"]),
-    ("c08_quadratic_triple.py", ["1e7"]),
+    ("c08_null_race.py", ["1e7"]),
     ("c09_fibonacci_primes.py", ["1e4"]),
-    ("c10_primorial_twins.py", ["4000"]),
+    ("c10_factorial_twins.py", ["700"]),
     ("c11_n2_plus_2n.py", ["4200"]),
+    ("c11b_crt_kappa.py", ["6000"]),
     ("c12_factorial_primes.py", ["700"]),
     ("c13_prime_plus_cube.py", ["1e8"]),
     ("c14_stern_2k2.py", ["1e8"]),
     ("c15_goldbach_mod4.py", ["1e8"]),
     ("c16_uniform_depolignac.py", ["1e8", "2000"]),
+    ("c16b_covariance_kernel.py", ["1e8", "60"]),
     ("c17_twin_goldbach.py", ["1e8"]),
     ("c18_twin_gap_records.py", ["1e9"]),
     ("c19_gap_first_occurrence.py", ["1e9"]),
     ("c20_poisson_intervals.py", ["1e9", "2e8"]),
     ("c21_twin_race_mod5.py", ["1e9"]),
+    ("c21b_twin_race_mod8.py", ["1e9"]),
     ("c22_least_prime_ap.py", ["3000", "5e6"]),
+    ("c22b_stratified.py", ["2e7"]),
     ("c23_fermat_quotients.py", ["1e7", "1e8"]),
     ("c24_hl_family_F.py", ["1e6", "199"]),
+    ("c24b_family_kernel.py", ["1e6", "99"]),
     ("c25_goldbach_lane_race.py", ["1e8", "500"]),
+    ("c25b_weighted_drift.py", ["1e8", "400"]),
+    # retained calibration benchmarks (retired slot occupants)
+    ("c05_twin_cyclotomic.py", ["1e7"]),
+    ("c06_cyclotomic_germain.py", ["1e7"]),
+    ("c08_quadratic_triple.py", ["1e7"]),
+    ("c10_primorial_twins.py", ["4000"]),
 ]
 
 

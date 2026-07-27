@@ -1,38 +1,43 @@
 {
-  "conjecture": "finitely many primorial twins (p#-1, p#+1 both prime); list complete",
-  "X": 4000,
+  "conjecture": "n=3 is the only factorial twin (n!-1, n!+1 both prime)",
+  "N": 700,
   "twins": [
-    3,
-    5,
-    11
+    3
   ],
   "plus": [
     2,
     3,
-    5,
-    7,
     11,
-    31,
-    379,
-    1019,
-    1021,
-    2657,
-    3229
+    27,
+    37,
+    41,
+    73,
+    77,
+    116,
+    154,
+    320,
+    340,
+    399,
+    427
   ],
   "minus": [
     3,
-    5,
-    11,
-    13,
-    41,
-    89,
-    317,
-    337,
-    991,
-    1873,
-    2053,
-    2377
+    4,
+    6,
+    7,
+    12,
+    14,
+    30,
+    32,
+    33,
+    38,
+    94,
+    166,
+    324,
+    379,
+    469,
+    546
   ],
-  "expected_further": 0.007341748383746518,
-  "_generated_unix": 1785152534
+  "expected_further": 0.0045317413687506435,
+  "_generated_unix": 1785168039
 }

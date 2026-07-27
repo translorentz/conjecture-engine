@@ -42,37 +42,39 @@ quantified instance apparently unstated; no (c)/(d) verdicts occurred.
 
 | # | Verdict | Prior art found |
 |---|---|---|
-| C01 | (a) | OEIS A080149 (with Cloitre's c≈2.9 asymptotic); Carella arXiv:1710.07827 (unrefereed) has the BH form |
+| C01 | (a) for d=2; family law unstated | OEIS A080149 (with Cloitre's c≈2.9 asymptotic); Carella arXiv:1710.07827 (unrefereed) has the BH form for d=2; no statement of the uniform-over-d quadratic family found (v6 lift) |
 | C02 | (b) | A067200/A144953 bare sequences; constant unpublished |
 | C03 | (a) | A174734; for p ≥ 5 this is Chernick's Carmichael triple (6m+1)(12m+1)(18m+1): Dubner, J. Integer Seq. 5 (2002) quantifies it |
 | C04 | (b) | A078946 (consecutive-primes variant) bare; constant unpublished |
-| C05 | (b) | no OEIS entry, no literature trace found — the cleanest instance-novelty in the suite |
-| C06 | (a) | A053182 + **A188596 is literally our constant** (1.5217315...); our 1.52166 ± 4e-4 matches |
+| C05 | (b), family analysis new | no OEIS entry, no literature trace found for the pair; the complete φ(k)=2 family analysis (k=4 parity-dead, Φ₆(x)=Φ₃(x−1) collapse) added in v6, no prior trace |
+| C06 | replaced in v6 | alternating chain p, Φ₃(p), Φ₆(Φ₃(p)): no OEIS entry, no literature trace (searched Cunningham-chain and repunit-prime literature at abstract depth); retained sub-chain: A053182 + **A188596 is literally the sub-chain constant** (1.5217315...) |
 | C07 | (b) | A062326 bare sequence; constant 3.3832 unpublished |
-| C08 | (b) | no OEIS entry, no constant found |
+| C08 | replaced in v6 | null-mechanism race over (n²+1, n²+3) mod 5: no prior statement found; retired triple n²+{1,3,7}: family in OEIS since 2000 (3rd review), singular series plausibly new |
 | C09 | (a) | Grantham–Granville arXiv:2307.07894 (Lucas-sequence e^γ log-count heuristics); Wagstaff's Mersenne analogue |
-| C10 | (a) | Caldwell–Gallot, Math. Comp. 71 (2002): e^γ log N for p#±1 |
-| C11 | (b) | A064539 has the sequence and the n ≡ 3 (mod 6) note; the κ-quantified count is unstated |
+| C10 | replaced in v6 | **primorial twins: PRIORITY FAILURE — Lillie arXiv:2110.04302 (2021) states both the O(n⁻²) joint law and the three-instance prediction; our snippet-depth search missed it (4th review caught it)**. Factorial twins (n!±1, unique n=3): searched at abstract depth incl. Lillie and the factorial-prime literature, no prior statement found |
+| C11 | (b), upgraded v6 | A064539 has the sequence and the n ≡ 3 (mod 6) note; the κ-quantified count unstated; v6 restates κ via CRT-exact joint densities (entanglement-aware) — factorization verified exact through p ≤ 19 |
 | C12 | (a) | Caldwell–Gallot 2002, verbatim for n!±1 |
 | C13 | (a)-core | finiteness for non-cubes is Hardy–Littlewood (Partitio Numerorum III, E_3(X) = O(1)); our census + decay quantification unstated; **as first stated, false — see above** |
 | C14 | (a) | OEIS A060003 verbatim (k ≥ 1, ten terms); Stern primes A042978 |
 | C15 | (a) | Kimball Martin, Exp. Math. 31 (2022), arXiv:1806.00946: the (3,3) mod-4 lane, incl. exceptionless threshold |
-| C16 | (a)-core | uniform HL-B is standard (Goldston–Ledoan); Brent 1975, Korevaar–te Riele 2010 did profile verifications; our fixed-x Gaussian z-profile packaging is new |
+| C16 | (a)-core, kernel new | uniform HL-B is standard (Goldston–Ledoan); Brent 1975, Korevaar–te Riele 2010 did profile verifications; the derived triple-constant covariance kernel of (ii) (v6) appears unstated |
 | C17 | (a) | **Dubner's conjecture (2000)**; A007534, verified by Dubner to ~2·10^10 |
 | C18 | (a) | Kourbatov arXiv:1309.4053 etc.: same constant 1/(2C2) ≈ 0.76, richer corrections, larger tables |
 | C19 | (b) | Shanks/Wolf/Nicely endorse limit slope 1; our Granville-corrected 0.9436 appears unstated — a genuinely different constant on the books |
 | C20 | (b) | constant γ+log 2π−1 is Montgomery–Soundararajan (mesoscopic); the microscopic finite-x Var/mean law + test appears unstated |
 | C21 | (b) | no prior twin-race-mod-5 statement or q²−2 mechanism found (closest: arXiv:2111.09053; Brent's "twins more random") |
-| C22 | (b) | Exp(1) limit is Haddad–Leung–Sabuncu arXiv:2408.11781; Wagstaff 1979/Fiori 2404.02329 for the max; the 1/log q deficit law and ordering anomaly appear unstated |
+| C22 | (b), stratified v6 | Exp(1) limit is Haddad–Leung–Sabuncu arXiv:2408.11781; Wagstaff 1979/Fiori 2404.02329 for the max; the 1/log q deficit law and ordering anomaly appear unstated; v6 defines θ_disc by a named control and differentiates θ_corr from Leung's smooth-q effects by the prime/smooth stratified experiment |
 | C23 | (a) | Crandall–Dilcher–Pomerance 1997; Dorais–Klyve 2011 (incl. tail-uniformity census) |
-| C24 | (a) | Hardy–Littlewood Conjecture F (1923); Fung–Williams 1990, Jacobson–Williams 2003 run the same constants-predict-density program |
-| C25 | (a) | Lemke Oliver–Soundararajan arXiv:1603.03720 (as credited in the memo from the start) |
+| C24 | (a)-core, kernel new | Hardy–Littlewood Conjecture F (1923); Fung–Williams 1990, Jacobson–Williams 2003 run the same constants-predict-density program; the pair-singular-series covariance kernel with computed null cross-correlation (v6) appears unstated |
+| C25 | replaced v4, matured v6 | slot originally held an LOS restatement (arXiv:1603.03720); the Goldbach lane race has no prior trace; v6 adds the HL-weighted drift, the n≡1(3) internal null lane, and the sign-density clause |
 
-Net: 10 of 25 carry instance-level novelty (C02, C04, C05, C07, C08, C11,
-C19, C20, C21, C22), with C05, C08, C19, C20, C21, C22 the strongest
-claims to new content; 15 are re-derivations/verifications of statements
-already on the record — which the criteria document counts as a feature
-(family membership) but which we now attribute explicitly.
+Net (v6 roster): the research group is C01 (family law), C04, C06, C08,
+C09–C11, C16(ii), C19–C22, C24(ii), C25, with the square-contamination
+mechanism family (C21, C25, null control C08), C22(ii)'s stratified
+ordering anomaly, and the derived kernels (C16(ii)/C24(ii)) the strongest
+claims to new content; the remainder are re-derivations/verifications of
+statements already on the record — which the criteria document counts as
+a feature (family membership) but which we attribute explicitly.
 
 ## Adversarial battery outcomes (results/adversarial.json)
 
@@ -192,3 +194,79 @@ and fixed in v5; C21 gained the mod-8 companion clause (entire bias on
 class 7), verified at 1e9 (D7=+212 vs T=+254, noise ~1068, controls
 symmetric).  Full review: paper/EXTERNAL_REVIEW_3.md; response:
 paper/EXTERNAL_REVIEW_3_RESPONSE.md.
+
+## Fourth external review (paper v5 -> v6)
+
+The fourth review was assessed in `paper/REVISION_PLAN.md` (verdict:
+substantially fair; both priority claims verified against primary
+sources before conceding).  Executed changes:
+
+**Priority/correctness fixes.** C10's primorial twins found already
+stated by Lillie arXiv:2110.04302 (our own earlier search had surfaced
+the preprint but read it only at snippet depth — recorded in the paper
+as Finding f:c10, with the audit protocol hardened to abstract-depth
+reads).  C19 restricted to realized gaps; C23(i) recalibrated to the
+Chung–Smirnov LIL scale and (ii)'s quantifier fixed; C13's
+"Chebyshev bounds" corrected to an upper-bound sieve; C20 demoted to a
+microscopic extrapolation/test of Montgomery–Soundararajan with the
+quantitative-uniform hypothesis spelled out.
+
+**Replacements (novelty-searched at abstract depth, verified before
+admission).**
+| Slot | New occupant | Verification |
+|---|---|---|
+| C06 | alternating cyclotomic chain p, Φ₃(p), Φ₆(Φ₃(p)) (naive iterate is inadmissible at 3 — part of the statement) | C=3.6143±0.011; five decades to 1e7, final z=+0.13 (`verify/c06_repunit_chain.py`) |
+| C08 | null-mechanism race: (n²+1,n²+3) has no square contamination; class race 1 vs 4 (mod 5) driftless | 1e7: D=−64 (−0.43 noise units), log-mean drift −0.46, lead fraction 0.21 (`verify/c08_null_race.py`) |
+| C10 | factorial twins: n=3 unique | exhaustive n≤700; tail 4.5e-3 (`verify/c10_factorial_twins.py`) |
+
+**Family lifts.**
+| Slot | Lift | Verification |
+|---|---|---|
+| C01 | uniform quadratic de Polignac over all even d | 150 shifts d≤300 at 1e6: corr 0.99976, slope 1.0022, max\|z\|=2.28 (`verify/c01_quadratic_depolignac_family.py`) |
+| C05 | complete φ(k)=2 twin-base family: k=4 parity-dead (only (2,5)); k=6 ≡ k=3 via Φ₆(x)=Φ₃(x−1); one live instance | both-odd check to 1e6; k=6 counts identical to k=3 as the identity requires (`verify/c05_cyclotomic_twin_family.py`) |
+
+**Derivational upgrades.**
+* C16(ii): covariance kernel derived from HL triple constants
+  (4 overlap configurations); evaluated over 870 pairs d,d'≤60 at 1e8:
+  mean ρ=0.43, predicted spread ≤0.59 before the diagonal deficit;
+  observed 0.27 ⇒ diagonal factor ≈0.5, MS-mechanism sign and order
+  (`verify/c16b_covariance_kernel.py`).
+* C24(ii): family kernel from pair singular series; 1,225 pairs
+  (289 locally exclusive): positive and negative correlations cancel,
+  mean ρ=−0.003 — cross-member kernel is NULL; observed profile
+  variance 0.37 must be diagonal (`verify/c24b_family_kernel.py`).
+* C22(ii): θ_disc now defined by the parity-aware Cramér–Bernoulli
+  control; stratified experiment q∈[1500,6000]: prime moduli
+  θ_disc=0.847, θ_corr=+0.824±0.009 (persists where Leung's smooth-q
+  effects are absent); 7-smooth moduli θ_disc=4.32±0.22,
+  θ_corr=−2.32±0.22 (`verify/c22b_stratified.py`).
+* C11(ii): κ restated via CRT-exact joint densities; factorization
+  exact to 1e-15 through p≤19 (joint period 1.16e8); scan extended to
+  n=6000, no new hits, z=−0.19 (`verify/c11b_crt_kappa.py`).
+* C21: split into provable Lemma (orientation elimination, class
+  assignment) + conjecture clauses with a defined logarithmic-mean
+  functional; O*-notation replaced by M_x-clauses; zero-oscillation
+  caveat (Rubinstein–Sarnak) added.
+* C25: explicit log-sampling measure; HL-weighted drift computed in
+  presieve-exact form — model mean 66.3 vs empirical 67.8 (ratio
+  0.98); internal null lane n≡1(3) predicted and verified (null
+  stratum D=31±23 ≈ 0 vs live stratum 88±21 against predicted 96);
+  sign-density clause E[Φ(κ)]=0.572 vs observed 0.588
+  (`verify/c25b_weighted_drift.py`).
+* C04 reframed as "an elementary structural proposition with a
+  Bateman–Horn corollary" (reviewer's words); content unchanged.
+* C09 kept with the deficit flag: the Grantham–Granville
+  rank-of-apparition computation for the corrected c_F is beyond this
+  framework's scope and remains the flagged open component.
+
+**Serendipitous findings during v6 verification.**
+* The k=4 twin-base branch is inadmissible at p=2 (caught by the
+  admissibility engine at singular-series time) — promoted into C05's
+  statement.
+* The k=6 branch collapses to k=3 (Φ₆(x)=Φ₃(x−1)) — first seen as
+  identical counts, then proved; promoted into C05's statement.
+* The naive iterated chain p, Φ₃(p), Φ₃(Φ₃(p)) is inadmissible at 3 —
+  promoted into C06's statement.
+* For n≡1 (mod 3), 3 | n−q² for every prime q>3: the Goldbach lane
+  race carries its own null control on n≡10 (mod 12) — promoted into
+  C25's statement and verified.

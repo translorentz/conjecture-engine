@@ -1,55 +1,55 @@
 {
-  "conjecture": "p and p^2+p+1 both prime",
-  "constant_C": 1.5216607653492624,
-  "constant_wobble": 0.0004415407523472581,
+  "conjecture": "alternating cyclotomic chain p, Phi3(p), Phi6(Phi3(p)) all prime",
+  "constant_C": 3.614264823845556,
+  "constant_wobble": 0.010814017436768353,
   "first_solutions": [
     2,
     3,
-    5,
-    17,
-    41,
     59,
-    71,
-    89,
     101,
-    131
+    1847,
+    1973,
+    3041,
+    3671,
+    3989,
+    4721
   ],
   "table": [
     {
       "N": 1000,
-      "obs": 23,
-      "pred": 25.3,
-      "ratio": 0.9102,
-      "z": -0.45
+      "obs": 4,
+      "pred": 3.3,
+      "ratio": 1.2227,
+      "z": 0.4
     },
     {
       "N": 10000,
-      "obs": 117,
-      "pred": 122.3,
-      "ratio": 0.9565,
-      "z": -0.48
+      "obs": 11,
+      "pred": 10.2,
+      "ratio": 1.0795,
+      "z": 0.25
     },
     {
       "N": 100000,
-      "obs": 706,
-      "pred": 718.4,
-      "ratio": 0.9827,
-      "z": -0.46
+      "obs": 41,
+      "pred": 43.4,
+      "ratio": 0.945,
+      "z": -0.36
     },
     {
       "N": 1000000,
-      "obs": 4684,
-      "pred": 4751.8,
-      "ratio": 0.9857,
-      "z": -0.98
+      "obs": 224,
+      "pred": 227.8,
+      "ratio": 0.9833,
+      "z": -0.25
     },
     {
       "N": 10000000,
-      "obs": 33661,
-      "pred": 33855.5,
-      "ratio": 0.9943,
-      "z": -1.06
+      "obs": 1362,
+      "pred": 1357.2,
+      "ratio": 1.0035,
+      "z": 0.13
     }
   ],
-  "_generated_unix": 1785130858
+  "_generated_unix": 1785168079
 }

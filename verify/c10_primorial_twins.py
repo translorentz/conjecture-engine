@@ -47,7 +47,7 @@ t = 10**7
 tail += (EG ** 2) * (math.log(t) + 1) / t
 print("model-expected further twins beyond p=%d: %.2e" % (X, tail))
 
-save_result("c10", {"conjecture": "finitely many primorial twins (p#-1, p#+1 both prime); "
+save_result("c10_primorial", {"conjecture": "finitely many primorial twins (p#-1, p#+1 both prime); "
                                   "list complete",
                     "X": X, "twins": twins, "plus": plus, "minus": minus,
                     "expected_further": tail})

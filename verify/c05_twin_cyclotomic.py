@@ -30,6 +30,6 @@ for x in cps:
     print("N=%.0e  obs=%d  pred=%.1f  ratio=%.4f  z=%+.2f" %
           (x, obs, pred, obs / pred, zscore(obs, pred)))
 
-save_result("c05", {"conjecture": "Phi_3(n), Phi_3(n+1) both prime (twin repunit bases)",
+save_result("c05_pair", {"conjecture": "Phi_3(n), Phi_3(n+1) both prime (twin repunit bases)",
                     "constant_C": C, "constant_wobble": abs(C - C_early),
                     "first_solutions": res["first"], "table": rows})

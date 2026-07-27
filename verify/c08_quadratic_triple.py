@@ -26,6 +26,6 @@ for x in cps:
     print("N=%.0e  obs=%d  pred=%.1f  ratio=%.4f  z=%+.2f" %
           (x, obs, pred, obs / pred, zscore(obs, pred)))
 
-save_result("c08", {"conjecture": "n^2+1, n^2+3, n^2+7 all prime",
+save_result("c08_triple", {"conjecture": "n^2+1, n^2+3, n^2+7 all prime",
                     "constant_C": C, "constant_wobble": abs(C - C_early),
                     "first_solutions": res["first"], "table": rows})

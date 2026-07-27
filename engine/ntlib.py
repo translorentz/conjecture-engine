@@ -348,7 +348,9 @@ def poly_roots_mod(coeffs, p):
             return []
         n = np.arange(p, dtype=np.int64)
         return [int(r) for r in n[poly_eval_mod(coeffs, n, p) == 0]]
-    raise NotImplementedError
+    # generic fallback: brute force (vectorized); fine for p up to ~10^5
+    n = np.arange(p, dtype=np.int64)
+    return [int(r) for r in n[poly_eval_mod(coeffs, n, p) == 0]]
 
 
 def count_poly_primes(polys, N, presieve_to=100_000, checkpoints=()):
