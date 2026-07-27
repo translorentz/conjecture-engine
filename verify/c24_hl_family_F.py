@@ -19,7 +19,7 @@ rows = []
 with Timer("family scan"):
     for A in range(1, AMAX + 1, 2):
         polys = [[A, 1, 1]]
-        C, _ = bateman_horn_constant(polys, pmax=200_000)
+        C, _ = bateman_horn_constant(polys, pmax=1_000_000)  # truncation drifts ~1e-3; cf. Cohen high-precision values
         res = count_poly_primes(polys, N, presieve_to=50_000, checkpoints=(N,))
         obs = res["at"][N]
         pred = C * bh_integral(polys, N)

@@ -297,7 +297,7 @@ it.
 
 **Conjecture (restated).**
 (i) [theorem, machine-checked] For k ≥ 2, k^3 is unrepresentable iff
-    3k^2−3k+1 is composite; hence #{exceptions ≤ x} ~ x^{1/3}.
+    3k^2−3k+1 is composite; hence the exceptional cubes alone number ~ x^{1/3}.
 (ii) [conjecture] The set of NON-CUBE integers n ≥ 2 not representable as
     p + k^3 is finite; its per-decade counts decay super-geometrically
     (the largest non-cube exception below 10^8 is 78,526,384).
