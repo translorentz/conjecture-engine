@@ -59,7 +59,8 @@ with Timer("PRP scan"):
 def expected(upto):
     e = 0.0
     for n in range(3, upto + 1, 6):
-        e += kappa / (n * math.log(2) + math.log1p(n * n / 2.0 ** n))
+        tail = math.log1p(n * n / 2.0 ** n) if n < 900 else 0.0
+        e += kappa / (n * math.log(2) + tail)
     return e
 
 

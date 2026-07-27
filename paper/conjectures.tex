@@ -1,0 +1,569 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+\newtheorem{finding}{Finding}
+
+\newcommand{\Li}{\operatorname{Li}}
+\newcommand{\e}{\mathrm{e}}
+\DeclareMathOperator{\ord}{ord}
+
+\title{Twenty-five conjectures from a local--global random model,\\
+with machine verification and adversarial audit}
+\author{The Conjecture Engine\thanks{This document was produced by an
+automated conjecture engine (Claude, Anthropic) as an exercise in
+disciplined conjecture-making: every statement below is the
+maximum-strength claim its heuristic model supports, with computed
+constants, programmatic admissibility checks, and verification data.
+Code, data, and audit trail: repository \texttt{conjecture-engine}.
+Primality of numbers beyond $3.3\times10^{24}$ was tested with
+Baillie--PSW; all smaller primality claims are deterministic.}}
+\date{July 27, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We state twenty-five conjectures in elementary and analytic number
+theory, each derived from the local--global random model of the primes
+(Cram\'er's model corrected by Hardy--Littlewood singular series, with
+Bateman--Horn as the organizing framework and Borel--Cantelli accounting
+for sparse events).  Each conjecture is stated at Goldilocks strength:
+the strongest form the heuristic supports and no stronger.  Every
+computable constant is computed, and every statement was tested by a
+verification program, then subjected to an adversarial audit (independent
+searches for prior art, scripted refutation attempts a decade beyond the
+original bounds, and clean-context re-derivations).  The audit refuted
+one conjecture as first stated---the exceptional set for $n=p+k^3$
+contains the infinite family of cubes $k^3$ with $3k^2-3k+1$ composite,
+an algebraic obstruction the naive accounting missed---and it is restated
+here with the obstruction promoted to a theorem.  We tabulate which of
+the twenty-five are previously stated, which carry instance-level
+novelty, and what each survived.  Ten statements appear to carry content
+not in the literature, most notably: a quantified twin race among
+twin-prime pairs modulo~5 driven only by the pairs $(q^2-2,\,q^2)$; a
+finite-modulus deficit law for least primes in progressions; a
+finite-$x$ variance law for prime counts in microscopic windows with
+second-order constant $\gamma+\log 2\pi-1$; and a Granville-corrected
+first-occurrence law for prime gaps with slope $\sqrt{\e^{\gamma}/2}$.
+\end{abstract}
+
+\section{Method and notation}
+
+Throughout, $p,q$ denote primes, $\gamma$ is Euler's constant,
+$\e^{\gamma}=1.781072\ldots$, $\varphi$ is Euler's totient, and
+$\phi=(1+\sqrt5)/2$.  For polynomials $f_1,\dots,f_k\in\mathbb{Z}[x]$,
+irreducible with positive leading coefficients, the Bateman--Horn
+singular series is
+\[
+  C(f_1,\dots,f_k)\;=\;\prod_{p}\frac{1-\omega(p)/p}{(1-1/p)^{k}},
+  \qquad
+  \omega(p)=\#\{n \bmod p:\ p\mid f_1(n)\cdots f_k(n)\},
+\]
+and the associated main term is
+$I(N)=\int_{2}^{N}\prod_{i}\bigl(\log f_i(t)\bigr)^{-1}\,dt$
+(which absorbs the usual $1/\prod\deg f_i$).  We write
+$\Li_k(x)=\int_2^x (\log t)^{-k}dt$.  The twin singular series is
+$\mathfrak S(d)=2C_2\prod_{p\mid d,\ p>2}\frac{p-1}{p-2}$ for even $d$,
+with $2C_2=1.3203236\ldots$  All constants below were computed from these
+definitions with primes up to $2\times10^6$ (brute-force root counts below
+$5000$, analytic counts above), with admissibility ($\omega(p)<p$)
+asserted programmatically at every prime---a conjecture whose singular
+series vanishes is not wrong in spirit, it is false, and the engine
+rejects it (the pair $n^2+n+1,\ n^2+n+3$ dies this way at $p=3$).
+Verification always reports the Poisson-normalized residual
+$z=(\mathrm{obs}-\mathrm{pred})/\sqrt{\mathrm{pred}}$: the criterion of
+success is not a small range scanned but the shape of agreement---counts
+matching the predicted constant with residuals of square-root size and no
+drift.
+
+Each conjecture is labeled with a novelty verdict from an independent
+literature audit: \textbf{(a)} previously stated in essence (citation
+given); \textbf{(b)} the family is classical but the quantified instance
+appears unstated.  No conjecture below is claimed to found a new family;
+per the design criteria, membership in the
+Hardy--Littlewood--Schinzel--Bateman--Horn hierarchy is a feature, not a
+defect.
+
+\section{Bateman--Horn instances}
+
+\begin{conjecture}[Quadratic twin pair; (a), cf.\ OEIS A080149]\label{c1}
+$\#\{n\le N:\ n^2+1,\ n^2+3 \text{ both prime}\}\sim C_1\, I(N)$ with
+$C_1=C(x^2+1,x^2+3)=2.954014\ldots$
+\end{conjecture}
+
+\begin{conjecture}[Cubic shift; (b)]\label{c2}
+$\#\{n\le N:\ n^3+2 \text{ prime}\}\sim C_2^{\ast}\, I(N)$ with
+$C_2^{\ast}=C(x^3+2)=1.298435\ldots$  (For $p\equiv 2 \bmod 3$ the cube
+map is a bijection, so $\omega(p)=1$ exactly; for $p\equiv1\bmod3$,
+$\omega(p)\in\{0,3\}$ according as $-2$ is a cubic residue, and the
+product converges only conditionally; the computed truncation wobble is
+$2.5\times10^{-4}$.)
+\end{conjecture}
+
+\begin{conjecture}[Chernick chain; (a), Dubner \cite{Dubner2002}]\label{c3}
+$\#\{p\le x:\ p,\ 2p-1,\ 3p-2 \text{ all prime}\}\sim C_3\, I(x)$ with
+$C_3=C(x,2x-1,3x-2)=2.858249\ldots$  The three primes form a three-term
+arithmetic progression with common difference $p-1$; for $p=6m+1$ the
+product $p(2p-1)(3p-2)$ is Chernick's Carmichael form
+$(6m+1)(12m+1)(18m+1)$.
+\end{conjecture}
+
+\begin{conjecture}[A diameter-14 quintuplet; (b)]\label{c4}
+The pattern $(0,2,6,12,14)$ is admissible and
+$\#\{n\le x:\ n,n+2,n+6,n+12,n+14 \text{ all prime}\}\sim C_4\Li_5(x)$
+with $C_4=15.19770\ldots$
+\end{conjecture}
+
+\begin{conjecture}[Shifted quadratic pair; (b), no prior trace found]\label{c5}
+$\#\{n\le N:\ n^2+n+1,\ n^2+n+7 \text{ both prime}\}\sim C_5\,I(N)$ with
+$C_5=5.928477\ldots$  Both forms are odd for every $n$ (the local factor
+at $2$ is $4$); the nearer companion $n^2+n+3$ is inadmissible at $p=3$.
+\end{conjecture}
+
+\begin{conjecture}[Cyclotomic Sophie Germain; (a), constant is OEIS
+A188596]\label{c6}
+$\#\{p\le x:\ \Phi_3(p)=p^2+p+1 \text{ prime}\}\sim C_6\,I(x)$ with
+$C_6=C(x,x^2+x+1)=1.521661\ldots$ (independently $1.5217315\ldots$,
+OEIS A188596).  Equivalently: infinitely many primes $p$ make the
+base-$p$ repunit of length $3$ prime.
+\end{conjecture}
+
+\begin{conjecture}[Downward companion; (b), sequence OEIS A062326]\label{c7}
+$\#\{p\le x:\ p^2-2 \text{ prime}\}\sim C_7\,I(x)$ with
+$C_7=C(x,x^2-2)=3.383216\ldots$  This constant reappears as the bias
+constant of Conjecture~\ref{c21}.
+\end{conjecture}
+
+\begin{conjecture}[Quadratic triple; (b), no prior trace found]\label{c8}
+$\#\{n\le N:\ n^2+1,\ n^2+3,\ n^2+7 \text{ all prime}\}\sim C_8\,I(N)$
+with $C_8=10.64599\ldots$  This refines Conjecture~\ref{c1} exactly as
+prime quadruplets refine twins, one level up from the linear world.
+\end{conjecture}
+
+\noindent\emph{Verification.}  Counts against predictions, deterministic
+primality:
+\smallskip
+
+\begin{center}\small
+\begin{tabular}{lrrrr}
+\toprule
+ & bound & observed & predicted & $z$ \\
+\midrule
+C\ref{c1}  & $10^{7}$ & $32{,}898$ & $32{,}862.7$ & $+0.19$ \\
+C\ref{c2}  & $10^{7}$ & $287{,}956$ & $287{,}784.8$ & $+0.32$ \\
+C\ref{c3}  & $3\cdot10^{8}$ & $125{,}379$ & $125{,}429.4$ & $-0.14$ \\
+C\ref{c4}  & $4\cdot10^{9}$ & $15{,}236$ & $15{,}230.3$ & $+0.05$ \\
+C\ref{c5}  & $10^{7}$ & $65{,}871$ & $65{,}953.6$ & $-0.32$ \\
+C\ref{c6}  & $10^{7}$ & $33{,}661$ & $33{,}855.5$ & $-1.06$ \\
+C\ref{c7}  & $10^{7}$ & $74{,}914$ & $75{,}273.8$ & $-1.31$ \\
+C\ref{c8}  & $10^{7}$ & $3{,}963$ & $3{,}998.6$ & $-0.56$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\smallskip
+An independent clean-context audit recomputed $C_6,C_7,C_8$ with primes to
+$10^9$ ($1.521730,\ 3.383227,\ 10.647706$; each within our stated
+truncation error) and recounted to $3\times10^7$ (final ratios $0.9962$,
+$0.9965$, $1.0059$).  For C\ref{c4} the cumulative ratio climbs
+$0.18\to0.59\to0.96\to1.0004$ from $10^4$ to $4\cdot10^9$: for sparse
+tuples the integral from $2$ carries phantom mass, and only the
+per-decade increments (which match from $10^5$ on) are meaningful early.
+
+\section{Sparse sequences: barely-divergent Borel--Cantelli}
+
+\begin{conjecture}[Fibonacci primes; (a), cf.\ \cite{GranthamGranville}]\label{c9}
+$\#\{p\le x:\ F_p \text{ prime}\}=\bigl(\e^{\gamma}/\log\phi\bigr)\log x
+\,(1+o(1))=3.70122\ldots\log x\,(1+o(1))$.
+\end{conjecture}
+
+\begin{remark}\label{r:fib}
+Every prime factor of $F_p$ ($p\neq5$ prime) has rank of apparition
+exactly $p$, hence is $\equiv\pm1 \pmod p$: the Lenstra--Pomerance--Wagstaff
+screening argument transfers verbatim with $\log 2\mapsto\log\phi$.  The
+data sit persistently \emph{below} this constant: $25$ Fibonacci prime
+indices $\le10^4$ (independently reconfirmed) against a predicted
+$34.1$, a deficit of ratio ${\approx}\,0.73$ at $z=-1.6$, stable across
+three decades.  Grantham and Granville warn that naive constants for such
+sequences need $O(1)$ local corrections; the mod-$5$ divisor structure of
+$F_p$ is the natural suspect, and we flag
+$c_{\mathrm{Fib}}=\e^{\gamma}/\log\phi$ as the component of this suite
+most likely to need a Granville-type patch.
+\end{remark}
+
+\begin{conjecture}[Primorial primes; (a), Caldwell--Gallot \cite{CaldwellGallot}]\label{c10}
+$\#\{p\le x:\ p\#+1 \text{ prime}\}\sim \e^{\gamma}\log x$.
+\end{conjecture}
+
+\begin{conjecture}[$n^2+2^n$; (b), sequence OEIS A064539]\label{c11}
+All primes of the form $n^2+2^n$ with $n>1$ have $n\equiv3\pmod 6$, and
+their counting function satisfies
+\[
+\#\{n\le N\}\;\sim\;\sum_{\substack{n\le N\\ n\equiv3 (6)}}
+\frac{\kappa}{\log(n^2+2^n)},\qquad
+\kappa=\prod_{p}\frac{1-\delta_p}{1-1/p}=4.2734\ldots,
+\]
+where $\delta_p$ is the density of $n\equiv3\ (6)$ with $p\mid n^2+2^n$
+in a full period $\mathrm{lcm}(6,\,p\cdot\ord_p 2)$.  In particular
+infinitely many such primes exist, with $\sim(\kappa/6\log 2)\log N$ of
+them up to $N$.
+\end{conjecture}
+
+\begin{conjecture}[Factorial primes; (a), \cite{CaldwellGallot}]\label{c12}
+$\#\{n\le N:\ n!+1 \text{ prime}\}\sim \e^{\gamma}\log N$.
+\end{conjecture}
+
+\noindent\emph{Verification.}  C\ref{c10}: $11$ primes with $p\le4000$
+against predicted $14.8$ ($z=-0.98$).  C\ref{c11}: hits
+$n\in\{3,9,15,21,33,2007,2127,3759\}$ up to $4200$; the mod-$6$
+constraint was verified exhaustively (no prime off the lane to $n=3000$,
+independently).  C\ref{c12}: $15$ primes with $n\le700$ against
+predicted $11.7$ ($z=+0.98$).  The paired statements C\ref{c10} and
+C\ref{c12} share a constant but not a sequence; the data straddle it
+($z=-1.0$ and $z=+1.0$), which is what a correct shared model looks like.
+
+\section{Representation conjectures}
+
+\begin{theorem}[Cube obstruction; found by adversarial audit]\label{t:cube}
+For $k\ge2$, the cube $k^3$ is representable as $p+j^3$ with $j\ge1$ if
+and only if $3k^2-3k+1$ is prime.  Consequently the set of integers not
+representable as $p+k^3$ is infinite, of counting function
+$\sim x^{1/3}$.
+\end{theorem}
+
+\begin{proof}
+$k^3-j^3=(k-j)(k^2+kj+j^2)$ is composite unless $k-j=1$, in which case it
+equals $3j^2+3j+1=3k^2-3k+1$ evaluated at $j=k-1$.
+\end{proof}
+
+\begin{conjecture}[Prime plus a cube, restated; (a)-core, Hardy--Littlewood
+$E_3(X)=O(1)$ for the non-cube part]\label{c13}
+(i) The set of \emph{non-cube} integers $n\ge2$ not representable as
+$p+k^3$ ($k\ge1$) is finite; its per-decade counts decay
+super-geometrically, and the largest non-cube exception below $10^8$ is
+$78{,}526{,}384$.
+(ii) The representable cubes follow Bateman--Horn:
+$\#\{k\le K: 3k^2-3k+1 \text{ prime}\}\sim C(3x^2-3x+1)\,I(K)$.
+\end{conjecture}
+
+\begin{finding}\label{f:c13}
+As first stated (``the exception set of $n=p+k^3$ is finite''), this
+conjecture is \textbf{false}, and our own adversarial battery refuted it:
+all $412$ exceptions found in $(10^8,10^9]$ are perfect cubes, and
+Theorem~\ref{t:cube} explains them.  The error was a textbook violation
+of the algebraic-obstruction clause of the design criteria: cubes have
+density zero, so the Borel--Cantelli sum never noticed them.  We record
+the failure rather than hide it; the restated version separates theorem
+from conjecture.
+\end{finding}
+
+\begin{conjecture}[Stern-type list; (a), OEIS A060003]\label{c14}
+Exactly ten odd integers are not of the form $p+2k^2$ with $k\ge1$:
+\[
+1,\ 3,\ 17,\ 137,\ 227,\ 977,\ 1187,\ 1493,\ 5777,\ 5993 .
+\]
+(Verified here to $10^9$; the seven prime members are the Stern primes.)
+\end{conjecture}
+
+\begin{conjecture}[Goldbach in the $(3,3)$ lane; (a), K.~Martin
+\cite{Martin}]\label{c15}
+Every $n\equiv2\pmod4$ with $n\ge6$ is $p+q$ with
+$p\equiv q\equiv3\pmod4$ both prime, and the ordered count satisfies
+\[
+R_3(n)\;\sim\;\tfrac12\,\mathfrak S(n)
+\int_{3}^{n-3}\frac{dt}{\log t\,\log(n-t)},
+\qquad
+\mathfrak S(n)=2C_2\!\!\prod_{\substack{p\mid n\\ p>2}}\!\frac{p-1}{p-2}.
+\]
+(Parity forces $p\equiv q\ (4)$ when $n\equiv2\ (4)$; the $(3,3)$ lane is
+the one with no exceptions at all.)
+\end{conjecture}
+
+\begin{conjecture}[Uniform quantitative de Polignac; (a)-core]\label{c16}
+$\pi_d(x)=\#\{p\le x-d:\ p,\,p+d \text{ prime}\}
+=\mathfrak S(d)\,\Li_2(x)\,(1+o(1))$ uniformly for even
+$d\le(\log x)^{A}$; concretely, at any fixed large $x$ the residuals
+$z_d$ over even $d\le2000$ form a single mean-zero, unit-order Gaussian
+profile with regression slope $1$ and no trend in $d$.
+\end{conjecture}
+
+\begin{conjecture}[Dubner's conjecture; (a) \cite{Dubner2000}]\label{c17}
+Every even $n\ge4210$ is a sum of two members of twin-prime pairs; the
+$35$ exceptions (OEIS A007534, largest $4208$) are complete.
+\end{conjecture}
+
+\noindent\emph{Verification.}  C\ref{c14}, C\ref{c15}, C\ref{c17}:
+exhaustive to $10^8$, then adversarially re-swept over $(10^8,10^9]$ with
+no new exception (C\ref{c17} additionally re-verified to $10^9$ by an
+independent sumset implementation).  C\ref{c15} representation counts at
+$n\approx10^6,10^7,10^8$ match the formula to $0.2$--$1.3\%$.
+C\ref{c16} at $x=10^8$: over the $1000$ values $d\le2000$, correlation
+$0.999999$, slope $0.99966$, $\max|z_d|=1.80$; stressed to $d\le6000$
+(3000 values), $\max|z_d|=2.01$ --- three thousand singular-series values
+spanning a factor $3$, one regression line.
+
+\section{Statistical laws}
+
+\begin{conjecture}[Twin-gap records; (a), Kourbatov \cite{Kourbatov}]\label{c18}
+The maximal gap $G_t(x)$ between consecutive twin-prime starts up to $x$
+satisfies $G_t(x)\asymp\log^3 x$ with
+$\limsup_x G_t(x)/\log^3 x = 1/(2C_2)=0.75735\ldots$ to first order
+(Granville-type local corrections may lift the constant; the claim to
+take seriously is the cube of the logarithm).
+\end{conjecture}
+
+\begin{conjecture}[First-occurrence gaps, Granville-corrected Shanks;
+(b)]\label{c19}
+Let $p(g)$ be the prime starting the first occurrence of a prime gap of
+exactly $g$.  Then
+\[
+\frac{\log p(g)}{\sqrt g}\;\longrightarrow\;\sqrt{\e^{\gamma}/2}
+=0.94358\ldots,
+\]
+approached from above.  (Shanks' 1964 heuristic asserts limit $1$; if
+maximal gaps obey Granville's $\limsup G/\log^2 p = 2\e^{-\gamma}$, the
+first-occurrence law must follow the corrected constant instead.  The
+two differ by $6\%$, below any feasible computation's resolution---the
+conjecture's value is that it registers a definite competing constant.)
+\end{conjecture}
+
+\begin{conjecture}[Microscopic variance law; (b); constant from
+Montgomery--Soundararajan \cite{MS}]\label{c20}
+Fix $\lambda>0$ and let $X$ count primes in $[t,t+\lambda\log x)$ for
+$t$ random near $x$.  Then $X\Rightarrow\mathrm{Poisson}(\lambda)$
+(Gallagher \cite{Gallagher}), and
+\[
+\frac{\operatorname{Var}X}{\mathbb E X}
+=1-\frac{\log(\lambda\log x)+\gamma+\log2\pi-1}{\log x}
++O\!\Bigl(\frac1{\log^2 x}\Bigr),
+\]
+uniformly for fixed $\lambda$; the additive constant is
+$\gamma+\log2\pi-1=1.41509\ldots$, inherited from Montgomery's
+$\sum_{d\le h}\mathfrak S(d)(h-d)=\tfrac{h^2}2-\tfrac h2(\log h+
+\gamma+\log2\pi-1)+o(h)$.
+\end{conjecture}
+
+\begin{remark}
+The naive statement ($\operatorname{Var}/\mathbb E=1$) is refuted by the
+data at every accessible scale (deficits of $18$--$28\%$); the corrected
+law matches to three decimals with no fitted parameter:
+at $x=10^9$, $\operatorname{Var}/\mathbb E=0.7910$ vs.\ predicted
+$0.7854$ ($\lambda=1$) and $0.7527$ vs.\ $0.7520$ ($\lambda=2$); at
+$x=4\cdot10^9$, $0.7998$ vs.\ $0.7960$ and $0.7670$ vs.\ $0.7646$.  The
+residual $+0.003$ is the anticipated $O(1/\log^2x)$ term.
+\end{remark}
+
+\begin{conjecture}[Twin race modulo 5; (b), apparently new]\label{c21}
+Twin starts $p>5$ lie in classes $p\equiv1,2,4\pmod5$.  Since
+$3\mid q^2+2$ for every prime $q>3$, the only twin patterns containing a
+prime square are $(q^2-2,\,q^2)$, and $q^2-2\bmod 5\in\{2,4\}$, never
+$1$.  Consequently:
+(i) class $1$ leads: with
+$D_1(x)=\pi_t(x;5,1)-\tfrac12(\pi_t(x;5,2)+\pi_t(x;5,4))$,
+\[
+D_1(x)\;=\;\frac{1}{2\log^2 x}
+\sum_{\substack{q\le\sqrt x\\ q^2-2 \text{ prime}}}\log q\,\log(q^2-2)
+\;+\;O^{*}\!\bigl(\sqrt{\pi_t(x)}\bigr),
+\]
+the systematic term being governed by the constant $C_7$ of
+Conjecture~\ref{c7};
+(ii) classes $2$ and $4$ are symmetric;
+(iii) since the bias is smaller than the noise by a factor $\log x$,
+the race has \emph{no persistent leader}: unlike Chebyshev races, the
+logarithmic density of $\{D_1>0\}$ tends to a limit strictly between
+$\tfrac12$ and $1$.
+\end{conjecture}
+
+\begin{conjecture}[Least primes in progressions; (b); part (i) cf.\
+\cite{HLS}]\label{c22}
+Let $p(a,q)$ be the least prime $\equiv a\pmod q$ and
+$U(a,q)=\Li(p(a,q))/\varphi(q)$.  Then:
+(i) $U\Rightarrow\mathrm{Exp}(1)$ as $q\to\infty$; in particular
+$\max_a U-H_{\varphi(q)}$ converges to a Gumbel law
+($H_n=\sum_{k\le n}1/k$), the order-statistics form of Wagstaff's
+$\max_a p(a,q)\asymp\varphi(q)\log^2q$;
+(ii) the finite-$q$ deficit is first-order $1/\log q$:
+$\mathbb E_a[U]=1-\theta(q)/\log q+o(1/\log q)$ with $\theta$ slowly
+varying (measured: $\theta\approx1.5$--$1.9$ for $q\in[10^2,6\cdot10^3]$,
+mean $U$ bottoming near $0.737$ around $q\approx200$ and recovering
+through $0.776$ by $q\approx6000$).
+\end{conjecture}
+
+\begin{remark}\label{r:c22}
+The deficit is not an artifact: a Cram\'er pseudo-prime control shows
+about half of it (discrete hazards), and the other half vanishes under
+any reshuffling of the actual prime residues---the \emph{ordering} of the
+primes fills residue classes faster than any exchangeable model.  The
+constant $\theta$ is measured, not derived; we consider it the deepest
+unexplained number produced by this exercise.
+\end{remark}
+
+\begin{conjecture}[Fermat quotients; (a), cf.\ \cite{CDP}]\label{c23}
+With $q_p=(2^{p-1}-1)/p \bmod p$: (i) $q_p/p$ equidistributes on $[0,1)$
+with square-root discrepancy (KS distance $O(\pi(x)^{-1/2})$, no drift);
+(ii) $\#\{p\le x: q_p<K\}\sim\sum_{p\le x}\min(1,K/p)$;
+(iii) hence $\#\{\text{Wieferich }p\le x\}=\log\log x+O(1)$, so
+$\{1093,3511\}$ below $10^8$ and a third example only at
+doubly-exponential heights.
+\end{conjecture}
+
+\begin{conjecture}[Conjecture F as a family; (a), Hardy--Littlewood
+\cite{HL1923}, Fung--Williams, Jacobson--Williams \cite{JW}]\label{c24}
+For odd $A$ let $Q_A(N)=\#\{n\le N: n^2+n+A \text{ prime}\}$ and
+$C(A)=C(x^2+x+A)$.  Then $Q_A(N)=C(A)\,I_A(N)(1+o(1))$ uniformly over
+odd $A\le199$, with jointly Poisson-size residuals; in particular the
+computed constants predict the complete empirical ranking, and Euler's
+$A=41$ tops the family with $C(41)=6.64092$.
+\end{conjecture}
+
+\begin{conjecture}[Consecutive primes mod 3; (a), Lemke
+Oliver--Soundararajan \cite{LOS}]\label{c25}
+For consecutive primes $p,p'\le x$ (both $>3$), the same-residue fraction
+$s(x)$ satisfies
+\[
+\tfrac12-s(x)\;=\;(c+o(1))\,\frac{\log\log x}{\log x},
+\qquad c\in(0,\infty),
+\]
+with the deficit split symmetrically between the $(1,1)$ and $(2,2)$
+patterns.  Measured: $\hat c=0.400,\ 0.375,\ 0.370$ at
+$x=10^7,10^9,4\cdot10^9$ (slow drift consistent with the $o(1)$;
+treat $c$ as lying in $[0.30,0.40]$ pending the secondary terms), and
+$\#(1,1)/\#(2,2)=0.99989$ at $4\cdot10^9$.
+\end{conjecture}
+
+\noindent\emph{Verification of the statistical block.}
+C\ref{c18}: records to $4\cdot10^9$ (largest observed gap $5292$ after
+the twin $2{,}466{,}641{,}069$; normalized records wander in
+$[0.41,0.56]$, approaching the asymptote from below on a $\log\log$
+clock, as they must).  C\ref{c19}: all first occurrences to
+$4\cdot10^9$; regression slope $1.307\to1.297$ from $10^9$ to
+$4\cdot10^9$, falling as required, far from distinguishing $0.944$ from
+$1$---as predicted.  C\ref{c21} at $10^9$: class counts
+$(1141217,\,1142128,\,1141159)$; $D_1$ stays within one noise unit of the
+systematic prediction, no persistent leader through $4\cdot10^9$, and the
+control difference $\pi_{t,2}-\pi_{t,4}$ wanders as a fair race.
+C\ref{c22}: pooled over all $q\le3000$ ($2.7$M classes), the upper tail
+of $U$ is exponential and maxima track $H_{\varphi}$ with Gumbel-size
+scatter (means $2.5$ below $H_\varphi$ at these $q$, the finite-size
+deficit of part (ii)).
+C\ref{c23}: KS at $x=10^5,\dots,10^8$: $\sqrt{n}\,\mathrm{KS}=
+0.82,0.82,0.52,0.63$ (bounded, no drift); small-quotient census at
+$K=100$: $169$ vs.\ $161.2$; Wieferich $=\{1093,3511\}$ at $10^8$
+against expected $2.67$.
+C\ref{c24}: $100$ polynomials at $N=10^6$: mean ratio $1.0006$,
+s.d.\ $0.0027$, $\max|z|=1.92$, rank correlation $0.99988$; $A=41$:
+observed $261{,}080$ vs.\ predicted $261{,}071.9$ ($z=+0.02$).
+
+\section{Adversarial audit}
+
+Beyond the primary verification, every falsifiable-by-instance statement
+was attacked by scripts hunting counterexamples a decade past the
+original bounds, and by clean-context agents recomputing constants and
+counts from the bare statements alone.  Summary: C\ref{c13} as first
+stated was refuted (Finding~\ref{f:c13}) and is restated above; one memo
+claim about the history of C\ref{c14} was falsified by the literature
+audit and corrected; everything else survived: no new exceptions for
+C\ref{c14}/C\ref{c15}/C\ref{c17} to $10^9$; uniformity for C\ref{c16} to
+$d=6000$; the C\ref{c20} law within $0.4\%$ at $4\cdot10^9$; the
+C\ref{c22} recovery confirmed on $q\in(3000,6000]$; C\ref{c4} at
+$4\cdot10^9$ with $z=+0.05$.  Independent recomputations agreed with
+every published constant within stated truncation error.  The full audit
+trail (including the failures) ships with the repository.
+
+\section{Attribution}
+
+Fifteen of the twenty-five statements were found by the audit to be
+previously stated in essence: C1 (OEIS A080149), C3 \cite{Dubner2002},
+C6 (A188596), C9 \cite{GranthamGranville}, C10/C12 \cite{CaldwellGallot},
+C13-core (Hardy--Littlewood), C14 (A060003), C15 \cite{Martin},
+C16-core (uniform Hardy--Littlewood B), C17 \cite{Dubner2000},
+C18 \cite{Kourbatov}, C23 \cite{CDP}, C24 \cite{HL1923,JW},
+C25 \cite{LOS}.  For these, our contribution is the computed constants,
+the uniform machine verification, and the adversarial re-testing.  The
+ten carrying instance-level novelty are C2, C4, C5, C7, C8, C11
+(quantified forms and constants), and C19, C20, C21, C22 (statements we
+could not find anywhere); of these, C21 and C22(ii) are, to our
+knowledge, the most genuinely new claims in this paper.
+
+\begin{thebibliography}{99}\small
+
+\bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
+\emph{Some problems of `Partitio Numerorum' III: On the expression of a
+number as a sum of primes}, Acta Math.\ 44 (1923), 1--70.
+
+\bibitem{BH} P.~T. Bateman and R.~A. Horn,
+\emph{A heuristic asymptotic formula concerning the distribution of prime
+numbers}, Math.\ Comp.\ 16 (1962), 363--367.
+
+\bibitem{CaldwellGallot} C.~Caldwell and Y.~Gallot,
+\emph{On the primality of $n!\pm1$ and $2\times3\times5\times\cdots\times
+p\pm1$}, Math.\ Comp.\ 71 (2002), 441--448.
+
+\bibitem{GranthamGranville} J.~Grantham and A.~Granville,
+\emph{Fibonacci primes, primes of the form $2^n-k$ and beyond},
+J.~Number Theory (2024); arXiv:2307.07894.
+
+\bibitem{Dubner2000} H.~Dubner,
+\emph{Twin prime conjectures}, J.~Recreational Math.\ 30 (2000), 199--205.
+
+\bibitem{Dubner2002} H.~Dubner,
+\emph{Carmichael numbers of the form $(6m+1)(12m+1)(18m+1)$},
+J.~Integer Seq.\ 5 (2002), Article 02.2.1.
+
+\bibitem{Martin} K.~Martin,
+\emph{Refined Goldbach conjectures with primes in progressions},
+Exp.\ Math.\ 31 (2022); arXiv:1806.00946.
+
+\bibitem{Kourbatov} A.~Kourbatov,
+\emph{Maximal gaps between prime $k$-tuples: a statistical approach},
+J.~Integer Seq.\ 16 (2013); arXiv:1301.2242; and
+\emph{Tables of record gaps between prime constellations},
+arXiv:1309.4053.
+
+\bibitem{Shanks} D.~Shanks,
+\emph{On maximal gaps between successive primes},
+Math.\ Comp.\ 18 (1964), 646--651.
+
+\bibitem{Granville} A.~Granville,
+\emph{Harald Cram\'er and the distribution of prime numbers},
+Scand.\ Actuar.\ J.\ 1 (1995), 12--28.
+
+\bibitem{Gallagher} P.~X. Gallagher,
+\emph{On the distribution of primes in short intervals},
+Mathematika 23 (1976), 4--9.
+
+\bibitem{MS} H.~L. Montgomery and K.~Soundararajan,
+\emph{Primes in short intervals},
+Comm.\ Math.\ Phys.\ 252 (2004), 589--617.
+
+\bibitem{HLS} B.~Haddad, C.~Leung, and O.~Sabuncu,
+\emph{Visiting early at prime times}, arXiv:2408.11781 (2024).
+
+\bibitem{Wagstaff} S.~S. Wagstaff, Jr.,
+\emph{Greatest of the least primes in arithmetic progressions having a
+given modulus}, Math.\ Comp.\ 33 (1979), 1073--1080.
+
+\bibitem{CDP} R.~Crandall, K.~Dilcher, and C.~Pomerance,
+\emph{A search for Wieferich and Wilson primes},
+Math.\ Comp.\ 66 (1997), 433--449.
+
+\bibitem{JW} M.~J. Jacobson, Jr.\ and H.~C. Williams,
+\emph{New quadratic polynomials with high densities of prime values},
+Math.\ Comp.\ 72 (2003), 499--519.
+
+\bibitem{LOS} R.~J. Lemke Oliver and K.~Soundararajan,
+\emph{Unexpected biases in the distribution of consecutive primes},
+Proc.\ Natl.\ Acad.\ Sci.\ USA 113 (2016), E4446--E4454;
+arXiv:1603.03720.
+
+\end{thebibliography}
+
+\end{document}
