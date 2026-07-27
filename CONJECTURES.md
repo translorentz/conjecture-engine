@@ -281,15 +281,29 @@ persuades).
 
 ---
 
-## C13 — Every large integer is a prime plus a positive cube
+## C13 — Prime plus a positive cube (restated after self-refutation)
 
-**Conjecture.** The set of integers n ≥ 2 not representable as p + k^3
-(p prime, k ≥ 1) is finite.  Quantitatively: the per-decade exception
-counts decay super-geometrically (observed factor ~4–5 per decade past
-10^6), so the total beyond 10^8 is O(10^2) and the largest exception lies
-below ~10^10.  We deliberately do NOT claim the list found below 10^8 is
-complete — the accounting says it almost surely is not, and saying
-otherwise would be exactly the overreach criterion II.6 warns about.
+**History, on the record.** The first version claimed the whole exception
+set of n = p + k^3 (k ≥ 1) is finite.  Our own adversarial battery
+refuted it: every exception it found in (10^8, 10^9] is a perfect cube.
+Cause: for n = k^3, n − j^3 = (k−j)(k^2+kj+j^2) factors algebraically, so
+a cube is representable only through j = k−1, i.e. iff 3k^2−3k+1 is
+prime.  That is an elementary theorem manufacturing an *infinite*,
+density-one-in-cubes exceptional family — an algebraic obstruction
+(criterion I.2/I.3) the Borel–Cantelli accounting missed because cubes
+have density zero.  The failure mode is exactly the one the criteria
+document warns about, and we keep it visible rather than papering over
+it.
+
+**Conjecture (restated).**
+(i) [theorem, machine-checked] For k ≥ 2, k^3 is unrepresentable iff
+    3k^2−3k+1 is composite; hence #{exceptions ≤ x} ~ x^{1/3}.
+(ii) [conjecture] The set of NON-CUBE integers n ≥ 2 not representable as
+    p + k^3 is finite; its per-decade counts decay super-geometrically
+    (the largest non-cube exception below 10^8 is 78,526,384).
+(iii) [Bateman–Horn corollary] The representable cubes follow
+    #{k ≤ K : 3k^2−3k+1 prime} ~ C * int dt/log(3t^2−3t+1) — a fresh BH
+    instance born from the refutation.
 
 **Accounting.** Representation chances: ~ n^{1/3} cubes, each hit prime
 with the locally-corrected probability m(v)/log v where the local weight

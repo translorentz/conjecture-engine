@@ -1,8 +1,19 @@
-"""C13 -- Prime plus a positive cube.
+"""C13 -- Prime plus a positive cube (RESTATED after adversarial refutation).
 
-Expected representations of n as p + k^3 (k >= 1) number ~ n^(1/3)/log n,
-divergent, so exceptions should be finite (Borel-Cantelli).
-Conjecture: the exception set found below is complete.
+The first version of this conjecture claimed the exception set of
+n = p + k^3 (k >= 1) is finite.  The adversarial battery refuted it:
+for n = k^3 the difference n - j^3 = (k-j)(k^2+kj+j^2) factors, so a cube
+is representable iff 3k^2-3k+1 (the j = k-1 term) is prime -- an
+elementary THEOREM producing an infinite, density-one-in-cubes family of
+exceptions that the naive Borel-Cantelli accounting missed.
+
+Restated conjecture:
+  (i)  [theorem, checked here] for k >= 2: k^3 unrepresentable
+       iff 3k^2-3k+1 composite;
+  (ii) [conjecture] the set of NON-CUBE integers n >= 2 not of the form
+       p + k^3 is finite; per-decade counts decay super-geometrically;
+  (iii)[Bateman-Horn corollary for the cube lane]
+       #{k <= K : 3k^2-3k+1 prime} ~ C * int dt/log(3t^2-3t+1).
 """
 import os, sys, math
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "engine"))
@@ -21,50 +32,48 @@ with Timer("shift union"):
         rep[c:] |= P[: N + 1 - c]
         k += 1
 
-exc = np.nonzero(~rep[2:])[0] + 2
-exc = [int(e) for e in exc]
-print("exceptions (%d):" % len(exc), exc[:60], "..." if len(exc) > 60 else "")
+exc = [int(e) for e in (np.nonzero(~rep[2:])[0] + 2)]
+kc = np.arange(2, int(round(N ** (1 / 3))) + 2)
+cube_set = set(int(v) for v in kc ** 3 if v <= N)
+cube_exc = [n for n in exc if n in cube_set]
+noncube_exc = [n for n in exc if n not in cube_set]
+
+# (i) theorem check: cube k^3 unrepresentable iff 3k^2-3k+1 composite
+bad = []
+for k in kc:
+    k = int(k)
+    n = k ** 3
+    if n > N:
+        break
+    if (n in set(cube_exc)) != (not is_prime(3 * k * k - 3 * k + 1)):
+        bad.append(k)
+print("(i) cube criterion mismatches:", bad or "none (theorem verified in range)")
+
 per_decade = {}
-for e in exc:
+for e in noncube_exc:
     per_decade[len(str(e))] = per_decade.get(len(str(e)), 0) + 1
-print("exceptions by number of digits:", per_decade)
+print("(ii) non-cube exceptions: %d, largest %s" %
+      (len(noncube_exc), noncube_exc[-1] if noncube_exc else None))
+print("    per decade:", per_decade)
+print("    cube exceptions: %d of %d cubes in range" % (len(cube_exc), len(cube_set)))
 
-# Borel-Cantelli with local (mod 2, 3, 7, 9) corrections:
-# P(n unrepresented) = exp(-s(n)),  s(n) = sum_k m(n-k^3)/log(n-k^3),
-# m(v) = prod_{p in {2,3,7}} [p/(p-1) if p !| v else 0] * (small-p singular factor)
-def log_p_unrep(n):
-    """log P(n unrepresentable) = sum_k log(1 - m(v)/log v), v = n-k^3."""
-    s = 0.0
-    k = 1
-    while k ** 3 < n - 2:
-        v = n - k ** 3
-        if v % 2 and v % 3 and v % 7:
-            q = min((2.0 * 1.5 * 7.0 / 6.0) / math.log(v), 0.95)
-            s += math.log1p(-q)
-        k += 1
-    return s
+with Timer("(iii) cube-lane BH"):
+    C, _ = bateman_horn_constant([[1, -3, 3]], pmax=1_000_000)
+    K = int(round(N ** (1 / 3)))
+    obs = sum(1 for k in range(2, K + 1) if is_prime(3 * k * k - 3 * k + 1))
+    pred = C * bh_integral([[1, -3, 3]], K)
+print("    #{k<=%d: 3k^2-3k+1 prime} = %d  pred %.1f  ratio %.4f  z %+.2f"
+      % (K, obs, pred, obs / pred, zscore(obs, pred)))
 
-
-def expected_exceptions(lo, hi, nsamp=4000):
-    """Model-expected number of unrepresentable n in [lo, hi] by sampling."""
-    rng = np.random.default_rng(20260727)
-    xs = rng.integers(lo, hi, nsamp)
-    return float(np.mean([math.exp(log_p_unrep(int(x))) for x in xs])) * (hi - lo)
-
-
-with Timer("model"):
-    decade_model = {}
-    lo = 10
-    while lo < N:
-        hi = min(10 * lo, N)
-        decade_model["%.0e..%.0e" % (lo, hi)] = round(expected_exceptions(lo, hi), 1)
-        lo = hi
-    te = expected_exceptions(N, 10 * N)
-print("model-expected exceptions per decade:", decade_model)
-print("model-expected further exceptions in [N, 10N]: %.3g" % te)
-
-save_result("c13", {"conjecture": "finite exception set for n = p + k^3, k>=1",
-                    "N": N, "exceptions": exc, "n_exceptions": len(exc),
-                    "largest_exception": exc[-1] if exc else None,
-                    "by_digits": per_decade,
-                    "expected_more_in_next_decade": te})
+save_result("c13", {"conjecture": "RESTATED: non-cube exceptions of n=p+k^3 finite; "
+                                  "cube k^3 exceptional iff 3k^2-3k+1 composite (thm); "
+                                  "cube lane follows BH",
+                    "N": N,
+                    "noncube_exceptions": len(noncube_exc),
+                    "noncube_largest": noncube_exc[-1] if noncube_exc else None,
+                    "noncube_by_digits": per_decade,
+                    "noncube_tail_sample": noncube_exc[-20:],
+                    "cube_exceptions": len(cube_exc),
+                    "cube_criterion_mismatches": bad,
+                    "cube_lane_C": C, "cube_lane_obs": obs,
+                    "cube_lane_pred": pred})
