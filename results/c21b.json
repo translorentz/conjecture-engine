@@ -1,0 +1,43 @@
+{
+  "conjecture": "mod-8 twin race: entire square-contamination on class 7; 1,3,5 symmetric",
+  "X": 1000000000,
+  "final_counts": {
+    "1": 856684,
+    "3": 855807,
+    "5": 856046,
+    "7": 855967
+  },
+  "lead_density_D7_positive": 0.7752140404175325,
+  "controls": {
+    "13": 877.0,
+    "15": 638.0,
+    "35": -239.0
+  },
+  "table": [
+    {
+      "x": 12582912.0,
+      "D7": 27.0,
+      "T_predicted": 41.9,
+      "noise_scale": 155.0
+    },
+    {
+      "x": 100663296.0,
+      "D7": 549.0,
+      "T_predicted": 95.8,
+      "noise_scale": 384.0
+    },
+    {
+      "x": 402653184.0,
+      "D7": 693.0,
+      "T_predicted": 174.0,
+      "noise_scale": 711.0
+    },
+    {
+      "x": 1000000003.0,
+      "D7": 212.0,
+      "T_predicted": 254.3,
+      "noise_scale": 1068.0
+    }
+  ],
+  "_generated_unix": 1785155293
+}

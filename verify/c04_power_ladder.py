@@ -1,17 +1,19 @@
-"""C04 (replacement) -- The power-obstruction ladder for n = p + j^k.
+"""C04 (replacement, CORRECTED) -- power-obstruction ladder for n = p + j^k.
 
-Grown from the C13 refutation.  For m >= 2, m^k - j^k factors, so the
-only candidate representation of the k-th power m^k as p + j^k is
-j = m-1, value D_k(m) = m^k - (m-1)^k.  Hence:
+The first version claimed an even/odd dichotomy; the third external
+review refuted it (D_9(m) is never prime: for composite k = rs,
+m^k - j^k is divisible by m^r - j^r > 1 with cofactor > 1).  Corrected
+dichotomy, prime versus composite:
 
-THEOREM (even k >= 4): D_k(m) factors further (via m^{k/2} +- j^{k/2}),
-so NO k-th power m^k (m >= 2) is p + j^k.
-ELEMENTARY (k = 2): m^2 representable iff 2m-1 prime.
-ELEMENTARY (odd k >= 3): m^k representable iff D_k(m) prime.
+THEOREM (composite k >= 4): for EVERY j, m^k - j^k has the proper
+factor m^r - j^r (r a proper divisor), so NO k-th power is p + j^k.
+ELEMENTARY (prime k, incl. k = 2): m^k representable iff
+D_k(m) = m^k - (m-1)^k is prime; D_k is irreducible for prime k.
 
-CONJECTURE: for each odd k >= 3 (and k = 2), Bateman-Horn for D_k:
+CONJECTURE: for each prime k, Bateman-Horn for D_k:
     #{m <= M : m^k = p + j^k solvable} ~ C_k * int_2^M dt/log D_k(t).
-Verified here for k = 2, 3, 5; theorem checked numerically for k = 4.
+Verified for k = 2, 3, 5; composite obstruction checked for k = 4 (sweep)
+and k = 9, 15, 25 (direct).
 """
 import os, sys, math
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "engine"))
@@ -37,6 +39,18 @@ with Timer("k=4 theorem check"):
     del P, rep
 print("k=4: fourth powers representable as p+j^4 up to %.0e: %s" % (N4, bad4 or "none (theorem holds)"))
 out["k4_counterexamples"] = bad4
+
+# ---- composite odd k: direct check of the corrected theorem
+with Timer("composite-k check"):
+    comp = {}
+    for k, r in ((9, 3), (15, 3), (25, 5)):
+        hits = [m for m in range(2, 2001) if is_prime(m ** k - (m - 1) ** k)]
+        divok = all((m ** k - (m - 1) ** k) % (m ** r - (m - 1) ** r) == 0
+                    for m in range(2, 100))
+        comp[k] = {"prime_hits": hits, "divisibility_ok": divok}
+        print("k=%d (composite): prime D_k values m<=2000: %s; factor D_%d divides: %s"
+              % (k, hits or "NONE", r, divok))
+    out["composite_k"] = comp
 
 # ---- k = 2: m^2 representable iff 2m-1 prime; count vs BH (C = 2 exactly)
 with Timer("k=2 count"):
@@ -85,6 +99,6 @@ print("k=5: C=%.5f (wobble %.1e) obs=%d pred=%.1f ratio=%.4f z=%+.2f"
       % (C5, abs(C5 - C5e), obs5, pred5, obs5 / pred5, zscore(obs5, pred5)))
 out["k5"] = {"M": M5, "C": C5, "C_wobble": abs(C5 - C5e), "obs": obs5, "pred": pred5}
 
-save_result("c04", {"conjecture": "power-obstruction ladder: even k>=4 impossible (thm); "
-                                  "odd k / k=2 lanes follow Bateman-Horn for D_k",
+save_result("c04", {"conjecture": "power-obstruction ladder (corrected): composite k impossible (thm); "
+                                  "prime-k lanes follow Bateman-Horn for D_k",
                     **out})

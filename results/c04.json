@@ -1,6 +1,20 @@
 {
-  "conjecture": "power-obstruction ladder: even k>=4 impossible (thm); odd k / k=2 lanes follow Bateman-Horn for D_k",
+  "conjecture": "power-obstruction ladder (corrected): composite k impossible (thm); prime-k lanes follow Bateman-Horn for D_k",
   "k4_counterexamples": [],
+  "composite_k": {
+    "9": {
+      "prime_hits": [],
+      "divisibility_ok": true
+    },
+    "15": {
+      "prime_hits": [],
+      "divisibility_ok": true
+    },
+    "25": {
+      "prime_hits": [],
+      "divisibility_ok": true
+    }
+  },
   "k2": {
     "M": 10000000,
     "obs": 1270606,
@@ -20,5 +34,5 @@
     "obs": 56925,
     "pred": 57021.324766565405
   },
-  "_generated_unix": 1785152423
+  "_generated_unix": 1785155287
 }

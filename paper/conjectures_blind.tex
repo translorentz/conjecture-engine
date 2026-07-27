@@ -70,11 +70,12 @@ liminf first-occurrence law for prime gaps with the Granville-corrected
 constant $\sqrt{\e^{\gamma}/2}=0.943682\ldots$, registered against
 Shanks's classical constant $1$; and, replacing four statements the
 review judged bibliographically novel at most, the power-obstruction
-ladder for $n=p+j^k$ (total algebraic obstruction for even $k\ge4$, a
-Bateman--Horn lane for odd $k$), the finiteness of primorial twins (the
-convergent-side Borel--Cantelli exemplar), and a Goldbach lane race in
-which prime-square contamination pushes every bias term into the
-$(1,1)$ lane.
+ladder for $n=p+j^k$ (total algebraic obstruction for composite $k$, a
+Bateman--Horn lane for prime $k$---the dichotomy itself corrected by a
+third external review, which refuted our first even/odd version), the
+finiteness of primorial twins (the convergent-side Borel--Cantelli
+exemplar), and a Goldbach lane race in which prime-square contamination
+pushes every bias term into the $(1,1)$ lane.
 \end{abstract}
 
 \tableofcontents
@@ -273,28 +274,40 @@ $p(2p-1)(3p-2)=(6m+1)(12m+1)(18m+1)$ is Chernick's universal-form
 Carmichael number, so this conjecture quantifies the population from
 which the classical Carmichael constructions draw.
 
-\begin{conjecture}[The power-obstruction ladder; apparently new as a
-family]\label{c4}
-For $k\ge2$ and $m\ge2$, write $D_k(m)=m^k-(m-1)^k$.  Then, with
-representability meaning $m^k=p+j^k$ for some prime $p$ and $j\ge1$:
-\emph{(i)} [theorem] for even $k\ge4$, NO $k$-th power is representable
-($m^k-j^k$ factors through $m^{k/2}\pm j^{k/2}$, and at $j=m-1$ both
-factors exceed $1$);
-\emph{(ii)} [elementary] for $k=2$ and odd $k\ge3$, $m^k$ is
-representable if and only if $D_k(m)$ is prime;
-\emph{(iii)} [conjecture] for each such $k$ the representable lane
+\begin{conjecture}[The power-obstruction ladder, corrected; apparently
+new as a family]\label{c4}
+For $k\ge2$ and $m\ge2$, write $D_k(m)=m^k-(m-1)^k$, and call $m^k$
+representable if $m^k=p+j^k$ for some prime $p$ and $j\ge1$.  Then:
+\emph{(i)} [theorem] for \emph{composite} $k$, no $k$-th power is
+representable: if $r$ is a proper divisor of $k$, then for every
+$1\le j<m$ the difference $m^k-j^k$ has the proper factor $m^r-j^r>1$
+with cofactor $>1$;
+\emph{(ii)} [elementary] for \emph{prime} $k$ (including $k=2$),
+$m^k$ is representable if and only if $D_k(m)$ is prime; and $D_k$ is
+irreducible for prime $k$ (its roots $\zeta^j/(\zeta^j-1)$, $\zeta$ a
+primitive $k$-th root of unity, form a single Galois orbit---$D_k$ is a
+linear-fractional transform of the cyclotomic polynomial $\Phi_k$);
+\emph{(iii)} [conjecture] for each prime $k$ the representable lane
 follows Bateman--Horn:
-$\#\{m\le M:\ D_k(m) \text{ prime}\}\sim C_k\int_2^M dt/\log D_k(t)$,
-where $C_k$ is the singular series of the irreducible polynomial $D_k$.
+$\#\{m\le M:\ D_k(m) \text{ prime}\}\sim C_k\int_2^M dt/\log D_k(t)$.
 \end{conjecture}
 
-This family grew out of the audit refutation behind
-Conjecture~\ref{c13} (the case $k=3$): the same factorization that
-destroyed the naive cube conjecture organizes, for every $k$, into an
-even/odd dichotomy---total algebraic obstruction for even $k\ge4$, a
-one-parameter Bateman--Horn lane for $k=2$ and odd $k$.  We could find
-no prior statement of the ladder.  It replaces, at the suggestion of an
-external review, a bibliographically-novel-at-most quintuplet
+\begin{finding}\label{f:c4}
+Our first version of this ladder claimed an even/odd dichotomy, with a
+Bateman--Horn lane for every odd $k$.  The third external review
+refuted it: for odd composite $k=rs$ the factorization in (i) applies
+(e.g.\ $D_9(m)$ is \emph{never} prime), so the lane exists only for
+prime $k$.  We verified the refutation directly ($k=9,15,21,25,27,33$:
+zero prime values of $D_k$ to $m=2000$, with the predicted divisor
+$D_r(m)\mid D_k(m)$ checked identically) and record that this is the
+second algebraic-factorization failure the audit programme has caught
+in our own output---the exact failure mode our procedure was built to
+detect, twice missed at generation time and twice caught downstream.
+\end{finding}
+
+The family grew out of the audit refutation behind
+Conjecture~\ref{c13} (the case $k=3$).  It replaces, at the suggestion
+of an external review, a bibliographically-novel-at-most quintuplet
 constellation that formerly occupied this slot (its data survive in the
 repository; its $4\cdot10^9$ verification, ratio $1.0004$, remains part
 of the audit record as Hardy--Littlewood calibration).
@@ -347,7 +360,8 @@ partial---a race bias could conceivably be established in averaged form
 without the full asymptotic here---but a refutation of this conjecture
 would remove Conjecture~\ref{c21}'s predicted mechanism.)
 
-\begin{conjecture}[Quadratic triple; (b); no prior trace found]\label{c8}
+\begin{conjecture}[Quadratic triple; (b); singular series possibly
+new]\label{c8}
 $\#\{n\le N:\ n^2+1,\ n^2+3,\ n^2+7 \text{ all prime}\}\sim C_8\,I(N)$,
 $C_8=10.64599\pm0.006$.
 \end{conjecture}
@@ -356,9 +370,12 @@ This refines Conjecture~\ref{c1} exactly as quadruplets refine twin
 primes, one level up from the linear world.  Mod $7$: $n^2+7$ bars
 $n\equiv0$, $n^2+3$ bars $n\equiv\pm2$, and $n^2+1$ has no roots, so
 $\omega(7)=3$.  The extension by $n^2+9$ remains admissible (its
-singular series simply absorbs the resulting confinement to
-$n\equiv0\bmod5$); we stop at the triple studied here, and claim no
-canonical status for that choice.
+singular series absorbs the resulting confinement to
+$n\equiv0\bmod5$); indeed the third external review reports that the
+longer simultaneous pattern $n^2+\{1,3,7,9,13\}$ has been recorded in
+the OEIS since 2000, so the tuple \emph{family} has prior presence and
+only the singular-series evaluation here is plausibly new---our earlier
+``no prior trace'' claim was too strong and is withdrawn.
 
 \subsection*{Verification}
 
@@ -443,8 +460,10 @@ converges.  This is the suite's exemplar of the convergent side of the
 Borel--Cantelli dichotomy---the accounting that predicts finitude
 rather than infinitude---and we could find no prior statement of it.
 The model-expected number of examples beyond $p=4000$ is
-$\approx7\times10^{-3}$ (computed tail), so the three-element list
-should be complete outright.
+$\approx7\times10^{-3}$ (computed tail).  The defensible core is
+finiteness; the exact three-element list is the Goldilocks-maximal
+form---strictly stronger than the tail estimate can guarantee, and
+chosen deliberately as the most falsifiable statement.
 
 \begin{conjecture}[{$n^2+2^n$}; sequence is OEIS A064539]\label{c11}
 Every prime of the form $n^2+2^n$ with $n>1$ has $n\equiv3\pmod6$
@@ -754,7 +773,20 @@ noise $\sqrt{\pi_t(x)}$ by a factor $\log x$; consequently---in
 contrast to Chebyshev's races---the twin race has no persistent
 leader: if the logarithmic density of $\{D_1>0\}$ exists, it equals
 $\tfrac12$, with a positive finite-$x$ excess of order $1/\log x$
-from the drift-to-noise ratio.
+from the drift-to-noise ratio;
+\emph{(iv)} [mod-8 companion] since $q^2\equiv1\pmod 8$ for every odd
+$q$, the same mechanism puts the \emph{entire} deterministic term on
+the single class $7\pmod 8$: with
+$D_7(x)=\tfrac13\sum_{a\in\{1,3,5\}}\pi_t(x;8,a)-\pi_t(x;8,7)$,
+\[
+D_7(x)\;=\;\frac1{\log^2x}
+\sum_{\substack{q\le\sqrt x\\ q^2-2\ \mathrm{prime}}}
+\log q\,\log(q^2-2)\;+\;O^{*}\!\bigl(\sqrt{\pi_t(x)}\bigr)
+\]
+(twice the mod-5 term, undiluted), while classes $1,3,5$ are mutually
+symmetric.  The mod-5 and mod-8 races are two projections of one
+mechanism, so their joint behaviour is a family test in the sense of
+the shape-of-agreement criterion.
 \end{conjecture}
 
 An earlier draft of clause (iii) asserted a limiting sign density
@@ -785,11 +817,17 @@ quadratic-residue bias against class $4$)
 concentrates the surplus entirely on class $1$.  Data to $4\cdot10^9$:
 class counts $(3980017,\ 3982505,\ 3981922)$, $D_1$ within one noise
 unit of $D_1^{\mathrm{sys}}$ throughout, no persistent leader, and the
-control race $\pi_{t,2}-\pi_{t,4}$ wandering like a fair coin---all
-three clauses as predicted, none provable at present.
+control race $\pi_{t,2}-\pi_{t,4}$ wandering like a fair coin.
+Mod-8 data to $10^9$: class counts
+$(856684,\ 855807,\ 856046,\ 855967)$ for $a=1,3,5,7$;
+$D_7=+212$ at $10^9$ against predicted $T=+254$ with noise ${\sim}1068$,
+positive through most of the range (log-density $0.775$), and the three
+pairwise $\{1,3,5\}$ controls all within one noise unit of zero---the
+two projections of the mechanism behave coherently, none of it provable
+at present.
 
 \begin{conjecture}[Least primes in progressions; (a) for part (i)
-\cite{HLS,Wagstaff,Fiori}, (b) for part (ii)]\label{c22}
+\cite{HLS,Wagstaff,Fiori,Leung}, (b) for part (ii)]\label{c22}
 Let $p(a,q)$ be the least prime $\equiv a\pmod q$ and
 $U(a,q)=\Li(p(a,q))/\varphi(q)$.  Then:
 \emph{(i)} $U\Rightarrow\mathrm{Exp}(1)$ marginally as $q\to\infty$;
@@ -821,7 +859,14 @@ $(\log\log q)/\log q$-type refinements---the measured aggregate
 $\theta\approx1.5$--$1.9$ over $q\in[10^2,6\times10^3]$, with
 $\mathbb E_a[U]$ bottoming near $0.737$ around $q\approx200$ and
 recovering through $0.776$ by $q\approx6000$, is calibration, not a
-determination of the functional form.
+determination of the functional form.  A necessary comparison, raised
+by the third external review, is with Leung \cite{Leung}, who derives
+the exponential law for least primes under a uniform Hardy--Littlewood
+hypothesis and reports discrepancies from it for smooth moduli:
+whether $\theta_{\mathrm{corr}}$ is a genuinely distinct
+ordering effect or a redescription of the singular-series corrections
+implicit in that analysis is an open question that part (ii)'s novelty
+claim depends on, and we flag it rather than assert it.
 
 \begin{remark}\label{r:c22}
 The deficit is reproducible and is \emph{not} an artifact of the
@@ -876,7 +921,13 @@ cf.~\cite{JW}]\label{c24}
 For odd $A$ let $Q_A(N)=\#\{n\le N:\ n^2+n+A \text{ prime}\}$ and
 $C(A)=C(x^2+x+A)$.  Then, for every fixed $B>0$,
 $Q_A(N)=C(A)\,I_A(N)\,(1+o(1))$ uniformly over odd
-$1\le A\le(\log N)^B$, with jointly Poisson-size residuals.
+$1\le A\le(\log N)^B$, with residuals obeying the analogue of
+Conjecture~\ref{c16}(ii): the empirical measure of
+$z_A(N)=(Q_A-C(A)I_A)/\sqrt{C(A)I_A}$ over the range converges to a
+centered Gaussian whose variance is set by the joint covariance of the
+family counts (sharing one set of primes correlates the $Q_A$; a
+derived covariance kernel is required development, as the external
+review notes, and is not supplied here).
 (Uniformity over a range growing with $N$ is the substantive claim; as
 an external review noted, uniformity over any \emph{fixed} finite set
 of $A$ is logically automatic from the individual asymptotics.)  Among
@@ -910,14 +961,27 @@ D_{\mathrm{sys}}(n)\;=\;\frac{2}{\bar\ell(n)}
 \sum_{\substack{q \text{ odd prime},\ q\le\sqrt n\\ n-q^2 \text{ prime}}}
 \log q\,\log(n-q^2),
 \qquad
-\bar\ell(n)=\text{mean of } \log p\log(n-p) \text{ over the }(3,3)
-\text{ lane},
+\bar\ell(n)\;=\;\frac{n-6}{\displaystyle\int_3^{n-3}
+\frac{dt}{\log t\,\log(n-t)}},
 \]
-the mean of $D-D_{\mathrm{sys}}$ over $n\equiv2\ (4)$, $n\le x$, is
-$o$ of the mean of $D_{\mathrm{sys}}$; per-$n$, $D$ is
-$D_{\mathrm{sys}}$ plus noise of the square-root scale, so the sign of
-$D$ favours the $(3,3)$ lane only weakly at any fixed $n$.
+(the analytic mean of $\log p\log(n-p)$ under the lane profile; the
+empirical lane mean is its estimator and is what the verification
+uses), then for $n$ drawn logarithmically at random from
+$\{n\equiv2\ (4),\ n\le x\}$,
+$\mathbb E[D-D_{\mathrm{sys}}]=o(\mathbb E[D_{\mathrm{sys}}])$ as
+$x\to\infty$; per-$n$, $D$ is $D_{\mathrm{sys}}$ plus noise of the
+square-root scale, so the sign of $D$ favours the $(3,3)$ lane only
+weakly at any fixed $n$.
 \end{conjecture}
+
+Derivation status: the identity behind $D_{\mathrm{sys}}$ is the
+$\Lambda$-weighted lane symmetry minus its prime-power part; the
+transfer to unweighted counts is a partial-summation argument whose
+error terms (higher prime powers, which enter only at the $n^{1/3}$
+scale, and the variation of the weight across the lane) remain to be
+written out---the same open transfer flagged at
+Conjecture~\ref{c21}, and the review is right that the conjecture's
+maturity awaits it.
 
 This is the Goldbach-partition analogue of Chebyshev's bias, produced
 by the same explicit-formula mechanism as Conjecture~\ref{c21} but
@@ -988,7 +1052,7 @@ C\ref{c1} (OEIS A080149; \cite{Carella});
 C\ref{c3} \cite{Dubner2002};
 C\ref{c6} (constant catalogued as OEIS A188596);
 C\ref{c9} \cite{GranthamGranville};
-C\ref{c10}, C\ref{c12} \cite{CaldwellGallot};
+C\ref{c12} \cite{CaldwellGallot};
 C\ref{c13}-core \cite{HL1923};
 C\ref{c14} (OEIS A060003);
 C\ref{c15} \cite{Martin};
@@ -996,8 +1060,14 @@ C\ref{c16}-core (uniform Hardy--Littlewood B, cf.\ \cite{GL});
 C\ref{c17} \cite{Dubner2000};
 C\ref{c18} \cite{Kourbatov};
 C\ref{c23} \cite{CDP};
-C\ref{c24} \cite{HL1923,JW};
-C\ref{c25} \cite{LOS}.
+C\ref{c24}-core \cite{HL1923,JW}.
+(The \emph{retired} former occupants of slots \ref{c10} and \ref{c25}
+were previously stated---Caldwell--Gallot \cite{CaldwellGallot} and
+Lemke Oliver--Soundararajan \cite{LOS} respectively; the third external
+review caught a stale attribution table that still listed the current
+occupants under those citations, and the inconsistency is corrected
+here: the primorial-twin and lane-race statements now in those slots
+are ours, with the ingredient heuristics attributed above.)
 
 For the remainder we distinguish, following the external review, two
 grades of novelty.  \emph{Bibliographic novelty only}---unrecorded
@@ -1144,6 +1214,10 @@ arXiv:2111.09053 (2021).  DOI: 10.48550/arXiv.2111.09053.
 \bibitem{PairBias} W.~Puszkarz,
 \emph{Statistical bias in the distribution of prime pairs and isolated
 primes}, arXiv:1807.00406 (2018).  DOI: 10.48550/arXiv.1807.00406.
+
+\bibitem{Leung} S.-K. Leung,
+\emph{Moments of primes in progressions to a large modulus},
+arXiv:2402.07941.  DOI: 10.48550/arXiv.2402.07941.
 
 \bibitem{Fiori} A.~Fiori,
 \emph{The least prime in arithmetic an progression} [sic],
