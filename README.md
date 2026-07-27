@@ -10,6 +10,11 @@ against exact counts.
 
 * **`CONJECTURES.md`** — the 25 statements with derivations, admissibility
   analyses, hierarchy placement, and Goldilocks notes.
+* **`VERIFICATION.md`** — independent audit: novelty verdicts with citations,
+  adversarial battery outcomes (one refutation: C13 as first stated), and
+  salvaged clean-context re-verifications.
+* **`paper/conjectures.tex`** (+ compiled PDF) — the formal write-up of all
+  25 statements with constants, data, and attribution.
 * **`RESULTS.md`** — the outcome of the actual verification runs (auto-built
   from `results/*.json` by `compile_results.py`).
 * **`engine/ntlib.py`** — shared machinery: numpy sieves (dense and
@@ -39,7 +44,7 @@ against exact counts.
 | C10 | #{p ≤ x: p#+1 prime} ~ e^γ log x | Mertens boost | p ≤ 4000 |
 | C11 | n²+2ⁿ prime infinitely often (n ≡ 3 mod 6), ~ κ-model | exact local densities | n ≤ 4200 |
 | C12 | #{n ≤ N: n!+1 prime} ~ e^γ log N | Mertens boost | n ≤ 700 |
-| C13 | n = p + k³ (k ≥ 1) has finitely many exceptions | Borel–Cantelli + local | 10⁸ |
+| C13 | restated: non-cube exceptions of n = p + k³ finite; cubes obey a theorem | Borel–Cantelli + local | 10⁹ |
 | C14 | exactly ten odd n are not p + 2k² (k ≥ 1); largest 5993 | Borel–Cantelli | 10⁸ |
 | C15 | every n ≡ 2 (4), n ≥ 6, is p+q with p ≡ q ≡ 3 (4); R₃ ~ ½S(n)I(n) | HL Goldbach | 10⁸ |
 | C16 | π_d(x) ~ S(d)Li₂(x) uniformly, all even d ≤ 2000 | HL / de Polignac | 10⁸ |
