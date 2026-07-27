@@ -159,10 +159,17 @@ text.
   arXiv:2402.07941 during the third-review revisions): **28/28 PASS from
   both, zero FAIL, zero UNVERIFIED — gate passed unanimously on the
   final (v5) bibliography.**
+* **Round 5** (fresh verifiers I, J; triggered by adding Lillie
+  arXiv:2110.04302 and Rubinstein–Sarnak, Exp. Math. 3 (1994), during
+  the fourth-review revisions): **30/30 PASS from both, zero FAIL,
+  zero UNVERIFIED — gate passed unanimously on the v6 bibliography.**
+  Both independently confirmed the Lillie entry against the arXiv
+  record, the Rubinstein–Sarnak DOI against the publisher, and that
+  the Fiori title's [sic] typo is genuinely present in the source.
 
-The gated bibliography (27 entries, 20 with DOIs verified to resolve to
-the exact works, 5 verified to legitimately lack DOIs, plus 2 arXiv
-companion pointers) is identical in `paper/conjectures.tex` and the
+The gated bibliography (30 entries; every DOI verified to resolve to
+the exact work, every DOI-less entry verified to legitimately lack
+one) is identical in `paper/conjectures.tex` and the
 provenance-stripped `paper/conjectures_blind.tex`.
 
 ## Wholesale replacements (post-second-review)
