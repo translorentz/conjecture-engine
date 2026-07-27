@@ -319,12 +319,15 @@ p prime and k ≥ 1:
 and 5993 is the largest (verified to 10^8; expected further exceptions
 beyond, by the C13-style accounting with ~ sqrt(n/2) chances: < 10^-40).
 
-**Novelty note.** The classical Stern list allows k = 0 (so a prime is
-trivially representable): that version's famous exceptions are 5777 and
-5993.  Requiring k ≥ 1 adds 17, 137, 227, 977, 1187 — and 1493, which is
-prime and appears in no classical list precisely because k = 0 hides it.
-The k ≥ 1 form is the naturalness-maximal statement (no special-casing of
-k = 0), and its exception set is provably richer.
+**Attribution (corrected by the novelty audit).** This conjecture is
+previously stated, essentially verbatim: OEIS A060003 ("odd numbers not of
+the form p + 2x^2, x > 0") lists exactly these ten terms and conjectures
+completeness; the prime members 3, 17, 137, 227, 977, 1187, 1493 are the
+Stern primes (A042978), with 1493 famously the largest known.  An earlier
+draft of this memo wrongly claimed 1493 was absent from the classical
+lists — the adversarial audit caught that, and the correction is left on
+record deliberately.  Our contribution here is verification machinery and
+the Borel–Cantelli tail accounting, not the statement.
 
 **Verification.** `verify/c14_stern_2k2.py`, exhaustive to 10^8.
 
