@@ -2429,8 +2429,7 @@ asymptotically standard normal.  The probability space is declared:
 the clause is about a random model in which the events
 $E_n^{\pm}=\{n!\pm1\ \text{prime}\}$ carry the Caldwell--Gallot
 marginal hazards $\e^{\gamma}/n$ with an \emph{unspecified}
-dependence structure, and the Gaussian limit is asserted under two
-explicit hypotheses on that structure: the covariance bound
+dependence structure, and the Gaussian limit is asserted under three explicit hypotheses on that structure: the same-index bound $\sum_{n\le N}\bigl|\operatorname{Cov}(\mathbf 1_{E_n^+},\mathbf 1_{E_n^-})\bigr|=o(\log N)$, which pins the variance at $2\e^{\gamma}\log N\,(1+o(1))$ and which the joint law $\sim(\e^{\gamma}/n)^2$ derived below supplies with a convergent sum---without it the remaining hypotheses leave the second cumulant free, and a model with $\Pr(E_n^+\cap E_n^-)=\e^{\gamma}/2n$ halves the limiting variance; the cross-index covariance bound
 $\sum_{m<n\le N}\bigl|\operatorname{Cov}(\mathbf 1_{E_m},
 \mathbf 1_{E_n})\bigr|=o(\log N)$ over the four sign pairs (the
 variance itself is $\asymp\log N$), \emph{and}---since pairwise
