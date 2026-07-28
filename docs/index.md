@@ -2,7 +2,7 @@
 title: Twenty-five conjectures from a local–global random model
 ---
 
-# Twenty-five conjectures from a local–global random model, with computational verification
+# Twenty-five conjectures from a local–global random model
 
 *July 27, 2026*
 
