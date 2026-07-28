@@ -43,28 +43,28 @@ quantified instance apparently unstated; no (c)/(d) verdicts occurred.
 | # | Verdict | Prior art found |
 |---|---|---|
 | C01 | (a) for d=2; family law unstated | OEIS A080149 (with Cloitre's c≈2.9 asymptotic); Carella arXiv:1710.07827 (unrefereed) has the BH form for d=2; no statement of the uniform-over-d quadratic family found (v6 lift) |
-| C02 | (b) | A067200/A144953 bare sequences; constant unpublished |
-| C03 | (a) | A174734; for p ≥ 5 this is Chernick's Carmichael triple (6m+1)(12m+1)(18m+1): Dubner, J. Integer Seq. 5 (2002) quantifies it |
+| C02 | replaced v9: family law ADJACENT (Kowalski framework, attributed) | Kowalski Acta Arith. 148 (2011) owns the random-Euler-product limit mechanism (k-tuples); Browning–Sofos–Teräväinen own height-averaged BH; the one-parameter cubic-shift law, exact mean-one lemma, and short-range uniformity appear unstated |
+| C03 | replaced v9: triplet race ADJACENT-CLEAR | mechanism classical (RS 1994); tuple-level biases exist (LOS, Meng, Wu); the binary mod-5 triplet race with unique surviving orientation unstated; algebra independently verified; Chernick chain retained [bench] (Dubner 2002) |
 | C04 | (b) | A078946 (consecutive-primes variant) bare; constant unpublished |
 | C05 | (b), family analysis new | no OEIS entry, no literature trace found for the pair; the complete φ(k)=2 family analysis (k=4 parity-dead, Φ₆(x)=Φ₃(x−1) collapse) added in v6, no prior trace |
 | C06 | replaced in v6 | alternating chain p, Φ₃(p), Φ₆(Φ₃(p)): no OEIS entry, no literature trace (searched Cunningham-chain and repunit-prime literature at abstract depth); retained sub-chain: A053182 + **A188596 is literally the sub-chain constant** (1.5217315...) |
-| C07 | (b) | A062326 bare sequence; constant 3.3832 unpublished |
+| C07 | replaced v9: contamination matrix ADJACENT-CLEAR | no sexy-pair residue race found; two-orientation complementary structure + certified null class 'genuinely unstated' per audit; algebra independently verified; {p,p²−2} retained [bench] |
 | C08 | replaced in v6 | null-mechanism race over (n²+1, n²+3) mod 5: no prior statement found; retired triple n²+{1,3,7}: family in OEIS since 2000 (3rd review), singular series plausibly new |
-| C09 | (a) | Grantham–Granville arXiv:2307.07894 (Lucas-sequence e^γ log-count heuristics); Wagstaff's Mersenne analogue |
+| C09 | replaced v9: PRIOR ART on object + draft REFUTED by audit | OEIS A080327 catalogues F/L joint primality incl. 148091, destroying the draft completeness list; slot now: rank-disjointness lemma + finiteness without completeness + quantified naive-constant refutation; single-sided laws retained [bench] (GG arXiv:2307.07894) |
 | C10 | replaced in v6 | **primorial twins: PRIORITY FAILURE — Lillie arXiv:2110.04302 (2021) states both the O(n⁻²) joint law and the three-instance prediction; our snippet-depth search missed it (4th review caught it)**. Factorial twins: **second priority correction (6th review)** — the uniqueness conjecture is on record as OEIS A088054's intersection comment; clause (ii) attributed there, claimed content = window-rigidity (i) and joint-fluctuation (iii) clauses |
 | C11 | (b), upgraded v6 | A064539 has the sequence and the n ≡ 3 (mod 6) note; the κ-quantified count unstated; v6 restates κ via CRT-exact joint densities (entanglement-aware) — factorization verified exact through p ≤ 19 |
-| C12 | (a) | Caldwell–Gallot 2002, verbatim for n!±1 |
-| C13 | (a)-core | finiteness for non-cubes is Hardy–Littlewood (Partitio Numerorum III, E_3(X) = O(1)); our census + decay quantification unstated; **as first stated, false — see above** |
-| C14 | (a) | OEIS A060003 verbatim (k ≥ 1, ten terms); Stern primes A042978 |
-| C15 | (a) | Kimball Martin, Exp. Math. 31 (2022), arXiv:1806.00946: the (3,3) mod-4 lane, incl. exceptionless threshold |
+| C12 | replaced v9: pair-level MS reduction — 'best novelty, prosecute' per audit | MS own the single-prime reduction; Kowalski has first-order Poisson for twins in intervals; Kuperberg's singular-series sums never pin a sub-tuple; the pinned average G(H) and its super-log growth appear unevaluated anywhere; factorial-prime law retained [bench] (Caldwell–Gallot) |
+| C13 | upgraded v9: boundary trichotomy | divisibility principle textbook; cubic case is Cunningham 1923 (cuban primes A002407) — attributed; the dead-parity/dead-3-adic/BH-lane family classification and reducible-boundary link to C04 appear unstated; HL core retained (a) \[HL1923\]; **as first stated in v1, false — see above** |
+| C14 | replaced v9: Stern lane race CLEAR | no k-parity lane race found; null classes = classical genus theory of disc −8 (attributed); ψ-weighting mechanism stated per audit flag; Stern list retained [bench] (A060003) |
+| C15 | replaced v9: least-summand law ADJACENT | extremal theory worked (Granville–van de Lune–te Riele; Oliveira e Silva–Herzog–Pardi Math. Comp. 83 (2014), cited); the time-changed Exp(1) law and deficit Θ_G appear unstated (OeSHP §5 could not be fully accessed — stated in paper); (3,3) lane retained [bench] (Martin) |
 | C16 | (a)-core, kernel new | uniform HL-B is standard (Goldston–Ledoan); Brent 1975, Korevaar–te Riele 2010 did profile verifications; the derived triple-constant covariance kernel of (ii) (v6) appears unstated |
-| C17 | (a) | **Dubner's conjecture (2000)**; A007534, verified by Dubner to ~2·10^10 |
-| C18 | (a) | Kourbatov arXiv:1309.4053 etc.: same constant 1/(2C2) ≈ 0.76, richer corrections, larger tables |
+| C17 | replaced v9: orientation decomposition ADJACENT near prior art | Dubner's own text has the log⁻⁴ integral kernel (μ₄) — attributed; claim narrowed to the four orientation-resolved singular series and n-profile; level deficit flagged open; basis conjecture retained [bench] (Dubner 2000, A007534) |
+| C18 | replaced v9: race sub-diffusivity CLEAR (as measurement) | audit warned the naive Darling–Erdős claim contradicts RS almost-periodicity (Montgomery/Ng (logloglog)^α class) — heeded: slot states the measured finite-x law (universal ρ₁ ≈ −0.037, suppressed maxima) with the rigid-vs-diffusive dichotomy registered open; records retained [bench] (Kourbatov) |
 | C19 | (b) | Shanks/Wolf/Nicely endorse limit slope 1; our Granville-corrected 0.9436 appears unstated — a genuinely different constant on the books |
 | C20 | (b) | constant γ+log 2π−1 is Montgomery–Soundararajan (mesoscopic); the microscopic finite-x Var/mean law + test appears unstated |
 | C21 | (b) | no prior twin-race-mod-5 statement or q²−2 mechanism found (closest: arXiv:2111.09053; Brent's "twins more random") |
 | C22 | (b), stratified v6 | Exp(1) limit is Haddad–Leung–Sabuncu arXiv:2408.11781; Wagstaff 1979/Fiori 2404.02329 for the max; the 1/log q deficit law and ordering anomaly appear unstated; v6 defines θ_disc by a named control and differentiates θ_corr from Leung's smooth-q effects by the prime/smooth stratified experiment |
-| C23 | (a) | Crandall–Dilcher–Pomerance 1997; Dorais–Klyve 2011 (incl. tail-uniformity census) |
+| C23 | upgraded v9: multibase subtorus law | homomorphism = Eisenstein–Lerch (attributed); simultaneous-Wieferich folklore (Conrad) attributed; horizontal joint studies (Ostafe–Shparlinski; Cobeli–Zaharescu FQM statistics) attributed — the VERTICAL multibase torus law appears unstated; conflict with Gras's model cited and a side taken; single-base heuristic retained [bench] (CDP 1997, Dorais–Klyve) |
 | C24 | (a)-core, kernel new | Hardy–Littlewood Conjecture F (1923); Fung–Williams 1990, Jacobson–Williams 2003 run the same constants-predict-density program; the pair-singular-series covariance kernel with computed null cross-correlation (v6) appears unstated |
 | C25 | replaced v4, matured v6 | slot originally held an LOS restatement (arXiv:1603.03720); the Goldbach lane race has no prior trace; v6 adds the HL-weighted drift, the n≡1(3) internal null lane, and the sign-density clause |
 
@@ -378,3 +378,60 @@ held up under our verification and is implemented.  Response:
 
 No bibliography changes; gate round 5 (30/30 unanimous) remains in
 force.
+
+## Replacement round (paper v8 -> v9): no standalone benchmarks remain
+
+On the operator's instruction ("remove any that are not at least
+structurally novel and replace them with genuinely novel conjectures"),
+the eleven remaining benchmark slots (C02, C03, C07, C09, C12, C13,
+C14, C15, C17, C18, C23) were replaced or upgraded.  Design rule: grow
+each replacement from mechanisms this paper already owns (contamination
+calculus, derived kernels, entanglement densities, occupancy anomaly,
+convergent-BC rigidity, family moment laws) so each new slot makes
+fresh predictions.  Every retired benchmark is retained inside its
+successor slot as an attributed calibration remark.
+
+**Protocol:** two independent Opus search agents audited all eleven
+candidates at neighbourhood depth BEFORE admission; ten new verifiers
+ran at production scale.  Verdicts and consequences:
+
+* **One candidate refuted pre-publication** (the audit working as
+  designed): the Fibonacci–Lucas twin completeness list dies on OEIS
+  A080327's catalogued index 148091 — rebuilt as the convergent-BC
+  stress test C09 with no completeness clause and the refutation
+  quantified in-statement.
+* **One candidate redesigned on theoretical warning**: the naive
+  Darling–Erdős race-maximum law contradicts the RS almost-periodicity
+  picture (Montgomery/Ng (logloglog)^alpha class) — rebuilt as the
+  measured sub-diffusivity law C18 (universal step correlations
+  rho1 = -0.037 +- 0.001 across four races; maxima at 2–17% quantiles
+  of the simulated iid null; dichotomy registered open).
+* **One candidate found classical at its core**: the boundary
+  divisibility principle's cubic case is Cunningham 1923 (cuban
+  primes) — C13 rebuilt around the (attributed) principle's family
+  trichotomy, with two new BH lanes verified (c=4: z=+0.27; c=6:
+  z=-0.92 at 1e6).
+* **Framework attributions added where audits demanded**: Kowalski
+  (C02's limit-law mechanism, new bibitem), Oliveira e Silva–Herzog–
+  Pardi (C15's extremal antecedent, new bibitem), Dubner's own mu_4
+  kernel (C17), Eisenstein–Lerch + Conrad folklore + the Gras conflict
+  (C23), Korevaar–te Riele mean-value-one (C01(iii)/C02(i)).
+
+**Run outcomes (all derive-first, test-second):**
+| Slot | Result |
+|---|---|
+| C02 | derived mean C(a) = 1 EXACTLY (one-line lemma) + sd 0.2762 vs empirical 1.0215 / 0.2481 over 294 shifts; uniformity mean z +0.09, max 2.31 over 57 profiles (`c02b_cubic_family.py`) |
+| C03 | 1e9: D=+167 predicted side (T3=+25, noise 616); leadership 0.65 (+0.4 null sd) (`c03b_triplet_race.py`) |
+| C07 | 1e9: all four matrix components and 5-7 control within one noise unit; leaderships (0.48,0.56,0.53,0.73) vs null 1/2 +- 0.37 — registered, sharp only at ~1e14 (`c07b_sexy_matrix.py`) |
+| C09 | joint {5,7,11,13,17,47} to 1e4, naive tail 1.6e-3 — vs A080327's 148091 (`c09b_fib_lucas_twins.py`) |
+| C12 | G(H) exact to H=3000: G(3000)=-20.9, local slope 3.4→3.7 (single-prime slope: 1/2); window Var/E observed 0.815 bracketed by log-form (0.97) and log²-form (0.72) extrapolations (`c12b_pair_ms.py`) |
+| C13 | collapse algebraically empty for x³+cx; trichotomy verified c<=12; lanes c=4,6 at 1e6 (`c13b_boundary.py`) |
+| C14 | 2500 samples <= 1e8: contaminated strata pooled D=+0.27+-0.33 vs pred +0.30; null strata -0.22+-0.33 (`c14b_stern_lane_race.py`) |
+| C15 | E[U]=0.796; Theta_G = 3.12+-0.35 and 3.42+-0.45 in dyadic blocks (`c15b_least_goldbach.py`) |
+| C17 | shape log-log corr 0.9993 over two decades; level 0.87→0.81 deficit flagged open (`c17b_twin_member_goldbach.py`) |
+| C18 | rho1 in [-0.040,-0.036] on all four races (~50 s.e.); maxima quantiles 0.02–0.17 vs simulated null (`c18b_race_max.py`) |
+| C23 | homomorphism exact on all spot-checks; corr +0.0023+-0.0012; chi2 441/399; joint census z=+0.75; simultaneous Wieferich: NONE to 1e7 (`c23b_multibase.py`) |
+
+Bibliography gained Kowalski and OSHP (32 entries) -> twin-citation
+gate round 6 triggered (two fresh verifiers; result recorded below
+when complete).

@@ -32,6 +32,11 @@ verifier.
 | 1000000 | 33795 | 3.403e+04 | 0.9931 | -1.28 |
 | 10000000 | 287956 | 2.878e+05 | 1.001 | 0.32 |
 
+## C02B — cubic family: C(a) has a limiting distribution with derived Euler-product moments; count uniform over a
+
+* **z_mean** = 0.09285
+* **z_sd** = 0.7199
+
 ## C03 — p, 2p-1, 3p-2 all prime (AP chain)
 
 * **constant_C** = 2.858
@@ -50,6 +55,9 @@ verifier.
 | 10000000 | 7597 | 7626 | 0.9962 | -0.33 |
 | 100000000 | 50193 | 5.01e+04 | 1.002 | 0.43 |
 | 300000000 | 125379 | 1.254e+05 | 0.9996 | -0.14 |
+
+## C03B — triplet (0,2,6) race mod 5: class 1 leads via the (q^2-2, q^2, q^2+4) doubly-thinned configuration
+
 
 ## C04 — power-obstruction ladder (corrected): composite k impossible (thm); prime-k lanes follow Bateman-Horn for D_k
 
@@ -89,6 +97,9 @@ verifier.
 | 1000000 | 10548 | 1.057e+04 | 0.9983 | -0.17 |
 | 10000000 | 74914 | 7.527e+04 | 0.9952 | -1.31 |
 
+## C07B — sexy-pair contamination matrix: two surviving orientations, drift components T_A (class 3 mod 5 / 3 mod 8) and T_B (class 1 mod 5 / 1 mod 8), class 2 mod 5 and 5,7 mod 8 clean
+
+
 ## C08 — null-mechanism race: quadratic twin pairs have no square contamination; class race n=1 vs n=4 (mod 5) is driftless
 
 
@@ -104,6 +115,9 @@ verifier.
 | 100 | 11 | 17 | 0.645 | -1.46 |
 | 1000 | 20 | 25.6 | 0.782 | -1.1 |
 | 10000 | 25 | 34.1 | 0.733 | -1.56 |
+
+## C09B — finitely many p with F_p and L_p both prime; disjoint rank pools (p vs 2p) justify joint independence
+
 
 ## C10 — n=3 is the only factorial twin (n!-1, n!+1 both prime)
 
@@ -145,13 +159,22 @@ verifier.
 | 100 | 9 | 8.2 | 1.097 | 0.28 |
 | 700 | 15 | 11.7 | 1.286 | 0.98 |
 
+## C12B — pair-level MS law: pinned 4-tuple average G(H) = -(beta2/2) log^2 H + O(log H); Var/E = 1 + 2 S(2) G(H)/log^2 x
+
+
 ## C13 — RESTATED: non-cube exceptions of n=p+k^3 finite; cube k^3 exceptional iff 3k^2-3k+1 composite (thm); cube lane follows BH
+
+
+## C13B — boundary-factorization principle: collapse to the boundary lane + dead-parity/dead-3adic/BH trichotomy for x^3+cx
 
 
 ## C14 — 5993 is the largest odd n not of form p+2k^2 (k>=1)
 
 * **largest_exception** = 5993
 * **exceptions**: 1, 3, 17, 137, 227, 977, 1187, 1493, 5777, 5993
+
+## C14B — Stern lane race: k-parity drift = norm-form contamination, classes 1,3 (mod 8) contaminated (opposite lanes), 5,7 null
+
 
 ## C15 — every n=2(4)>=6 is a sum of two primes =3(4); R3(n) ~ (1/2)S(n)*I(n)
 
@@ -167,6 +190,10 @@ verifier.
 | 10000006 | 29740 | 2.98e+04 | 0.9979 |
 | 99999994 | 219360 | 2.19e+05 | 1.002 |
 | 99999998 | 275046 | 2.751e+05 | 0.9998 |
+
+## C15B — least Goldbach summand: U => Exp(1); canonical ordering deficit Theta_G > 0 (sibling of C22(ii))
+
+* **KS** = 0.0877
 
 ## C16 — pi_d(x) ~ S(d) Li2(x) uniformly in d
 
@@ -198,6 +225,11 @@ verifier.
 * **largest_exception** = 4208
 * **exceptions**: 4, 94, 96, 98, 400, 402, 404, 514, 516, 518, 784, 786, 788, 904, 906, 908, 1114, 1116, 1118, 1144, 1146, 1148, 1264, 1266, 1268, 1354, 1356, 1358, 3244, 3246, 3248, 4204, 4206, 4208
 
+## C17B — quantitative twin-member Goldbach: R_T(n) ~ [sum of 4 orientation S4(n)] J(n)
+
+* **z_mean** = -11.09
+* **z_sd** = 8.746
+
 ## C18 — limsup G_twin(x)/log^3 x = 1/(2C2)
 
 * **model_constant** = 0.7574
@@ -213,6 +245,9 @@ verifier.
 | 1000000000 | 4770 | 0.536 |
 
 **records** (gap, after): (2190 @ 17382479), (2256 @ 30752231), (2832 @ 32822369), (2868 @ 96894041), (3012 @ 136283429), (3102 @ 234966929), (3180 @ 248641037), (3480 @ 255949949), (3804 @ 390817727), (4770 @ 698542487)
+
+## C18B — Darling-Erdos running-max law for balanced races: max |D|/sqrt(count) ~ sqrt(2 loglog x); finite-x null from OU simulation
+
 
 ## C19 — log p(g)/sqrt(g) -> sqrt(e^gamma/2) = 0.9436
 
@@ -332,6 +367,10 @@ verifier.
 * **small_quotient_pred** = 147.9
 * **wieferich_expected** = 2.675
 * **wieferich**: 1093, 3511
+
+## C23B — multibase Fermat quotients: exact homomorphism; joint equidistribution for independent bases; simultaneous Wieferich finiteness (empirical list empty)
+
+* **correlation** = 0.002333
 
 ## C24 — Q_A(N) ~ C(A) I_A(N) uniformly over odd A
 

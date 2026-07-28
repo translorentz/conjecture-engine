@@ -1,0 +1,15 @@
+{
+  "conjecture": "multibase Fermat quotients: exact homomorphism; joint equidistribution for independent bases; simultaneous Wieferich finiteness (empirical list empty)",
+  "PMAX": 10000000,
+  "n_primes": 664577,
+  "homo_failures": 0,
+  "correlation": 0.0023330688879576226,
+  "chi2_20x20": 440.53446177041934,
+  "joint_census": {
+    "K": 100,
+    "obs": 46,
+    "model": 41.186259172563844
+  },
+  "simultaneous_wieferich": [],
+  "_generated_unix": 1785206205
+}

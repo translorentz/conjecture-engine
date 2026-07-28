@@ -33,28 +33,28 @@ against exact counts.
 | # | Statement (short form) | Model / constant | Verified to |
 |---|---|---|---|
 | C01 | uniform quadratic de Polignac: (n²+1, n²+1+d) ~ C(d)·I(N) uniformly over even d | Bateman–Horn family | 150 shifts at 10⁶; d=2 at 10⁷ |
-| C02 | n³+2 prime infinitely often, count ~ C·I(N) | Bateman–Horn (cubic) | 10⁷ |
-| C03 | p, 2p−1, 3p−2 all prime (AP chain), ~ C·I(x) | Bateman–Horn (3 linear) | 3·10⁸ |
+| C02 | cubic family: mean C(a)=1 exactly, limit law for C(a), uniform over a | derived Euler-product moments | 294 constants; 57 profiles |
+| C03 | triplet race (0,2,6) mod 5: doubly-thinned contamination, class 1 leads | contamination calculus | 10⁹ |
 | C04 | power-obstruction ladder for mᵏ = p + jᵏ: composite k impossible (thm); prime-k lanes follow BH for Dₖ | factorization + BH | k=4: 10⁸; k=2,3,5 counted |
 | C05 | twin cyclotomic bases, complete φ(k)=2 family: k=4 parity-dead, k=6 ≡ k=3; Φ₃(n), Φ₃(n+1) both prime ~ C·I(N) | parity/identity + Bateman–Horn | 10⁷ |
 | C06 | alternating cyclotomic chain p, Φ₃(p), Φ₆(Φ₃(p)) all prime ~ C·I(x) | Bateman–Horn (deg 1,2,4) | 10⁷ |
-| C07 | p and p²−2 both prime, ~ C·I(x) | Bateman–Horn | 10⁷ |
+| C07 | sexy-pair contamination matrix: two orientations, drift classes 3 & 1 (mod 5), class 2 clean | contamination calculus | 10⁹ |
 | C08 | null-mechanism race: (n²+1, n²+3) class race mod 5 is driftless (no square contamination possible) | contrast control for C21/C25 | 10⁷ |
-| C09 | #{p ≤ x: F_p prime} ~ c_F log x, c_F < e^γ/log φ (deficit flagged) | LPW screening | p ≤ 10⁴ |
+| C09 | Fibonacci–Lucas twins: rank-disjoint finiteness, no completeness (148091 refutes naive tail) | convergent BC stress test | p ≤ 10⁴ |
 | C10 | factorial twins (n!−1, n!+1 both prime): only n = 3 | convergent Borel–Cantelli | n ≤ 700 |
 | C11 | n²+2ⁿ prime infinitely often (n ≡ 3 mod 6); κ via CRT-exact joint densities | exact local densities | n ≤ 6000; CRT exact to p ≤ 19 |
-| C12 | #{n ≤ N: n!+1 prime} ~ e^γ log N | Mertens boost | n ≤ 700 |
-| C13 | restated: non-cube exceptions of n = p + k³ finite; cubes obey a theorem | Borel–Cantelli + local | 10⁹ |
-| C14 | exactly ten odd n are not p + 2k² (k ≥ 1); largest 5993 | Borel–Cantelli | 10⁹ |
-| C15 | every n ≡ 2 (4), n ≥ 6, is p+q with p ≡ q ≡ 3 (4); R₃ ~ ½S(n)I(n) | HL Goldbach | 10⁹ |
+| C12 | pair-level MS reduction: window twin-count variance = pinned 4-tuple average G(H) | derived reduction + computation | G exact to H=3000 |
+| C13 | boundary trichotomy for polynomial ladders (dead-parity / dead-3-adic / BH lanes) | divisibility + classification | lanes c=4,6 at 10⁶ |
+| C14 | Stern lane race: norm-form contamination, provable null classes 5,7 (mod 8) | contamination calculus + genus theory | 2500 samples ≤ 10⁸ |
+| C15 | least Goldbach summand: U ⇒ Exp(1), ordering deficit Θ_G ≈ 3.1–3.4 | occupancy anomaly | 2000 samples ≤ 10⁸ |
 | C16 | π_d(x) ~ S(d)Li₂(x) uniformly + moving-window residual field with derived covariance kernel | HL + triple-constant kernel | 10⁸, d ≤ 6000; kernel 870 pairs + 2000-window test |
-| C17 | every even n ≥ 4210 is a sum of two twin-pair members (35 exceptions) | Borel–Cantelli on twins | 10⁹ |
-| C18 | twin-gap records ≍ log³x, working constant 1/(2C₂) | Cramér for thinned process | 4·10⁹ |
+| C17 | orientation-resolved twin-member Goldbach law | 4-tuple singular series per n | 150 samples; shape 0.9993 |
+| C18 | race sub-diffusivity: ρ₁ ≈ −0.037 universal; maxima below iid null | LOS repulsion | 4 races at 10⁹ |
 | C19 | liminf over realized gaps of log p(g)/√g = √(e^γ/2) = 0.9437; 𝔖\*(g) waiting-time clause (slope −½, measured −0.47) | Cramér–Granville + HL factor | 4·10⁹ |
 | C20 | prime counts in λ log x windows: Var/mean = 1 − (log h + γ + log 2π − 1)/log x | Gallagher + Montgomery–Soundararajan | 4·10⁹ |
 | C21 | twin races mod 5/8 + contamination calculus; fresh cousin-race predictions verified directionally | explicit-formula analog | 4·10⁹ / 10⁹; cousins 10⁹ |
 | C22 | Li(p(a,q))/φ(q): Exp(1)/Gumbel; canonical deficit Θ(q) → Θ > θ_disc^∞ on prime moduli (Θ = 1.67) | order statistics + stratified experiment | q ≤ 6000; 80 strat. moduli |
-| C23 | Fermat quotients: LIL-scale equidistribution; Wieferich count ~ log log x | uniformity + BC | 10⁷ / 10⁸ |
+| C23 | multibase Fermat quotients: subtorus law, joint equidistribution, simultaneous Wieferich | Eisenstein–Lerch + vertical law | 664577 primes |
 | C24 | HL Conjecture-F family: uniform + pair-series covariance kernel (computed null cross-kernel) | Bateman–Horn family | 10⁶ × 100 A; 1225 pairs |
 | C25 | Goldbach lane race: D = R₃−R₁ ~ D_sys, HL-weighted model, internal null lane n ≡ 1 (3) | explicit-formula analog | 10⁸, 500+400 samples, 5.2σ |
 
