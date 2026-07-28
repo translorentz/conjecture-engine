@@ -51,7 +51,7 @@ quantified instance apparently unstated; no (c)/(d) verdicts occurred.
 | C07 | (b) | A062326 bare sequence; constant 3.3832 unpublished |
 | C08 | replaced in v6 | null-mechanism race over (n²+1, n²+3) mod 5: no prior statement found; retired triple n²+{1,3,7}: family in OEIS since 2000 (3rd review), singular series plausibly new |
 | C09 | (a) | Grantham–Granville arXiv:2307.07894 (Lucas-sequence e^γ log-count heuristics); Wagstaff's Mersenne analogue |
-| C10 | replaced in v6 | **primorial twins: PRIORITY FAILURE — Lillie arXiv:2110.04302 (2021) states both the O(n⁻²) joint law and the three-instance prediction; our snippet-depth search missed it (4th review caught it)**. Factorial twins (n!±1, unique n=3): searched at abstract depth incl. Lillie and the factorial-prime literature, no prior statement found |
+| C10 | replaced in v6 | **primorial twins: PRIORITY FAILURE — Lillie arXiv:2110.04302 (2021) states both the O(n⁻²) joint law and the three-instance prediction; our snippet-depth search missed it (4th review caught it)**. Factorial twins: **second priority correction (6th review)** — the uniqueness conjecture is on record as OEIS A088054's intersection comment; clause (ii) attributed there, claimed content = window-rigidity (i) and joint-fluctuation (iii) clauses |
 | C11 | (b), upgraded v6 | A064539 has the sequence and the n ≡ 3 (mod 6) note; the κ-quantified count unstated; v6 restates κ via CRT-exact joint densities (entanglement-aware) — factorization verified exact through p ≤ 19 |
 | C12 | (a) | Caldwell–Gallot 2002, verbatim for n!±1 |
 | C13 | (a)-core | finiteness for non-cubes is Hardy–Littlewood (Partitio Numerorum III, E_3(X) = O(1)); our census + decay quantification unstated; **as first stated, false — see above** |
@@ -323,3 +323,58 @@ Implemented, with three new derive-first-test-second runs:
 
 No bibliography changes: twin-citation gate round 5 (30/30 unanimous)
 remains in force.
+
+## Sixth external review (paper v7 -> v8)
+
+The most technically exacting round; every checkable correction claim
+held up under our verification and is implemented.  Response:
+`paper/EXTERNAL_REVIEW_6_RESPONSE.md`.
+
+* **C8 clock error (real).** Arcsine occupation is a natural-clock
+  law; under dt/t averaging the Lamperti/OU reduction is ergodic and
+  the log-occupation -> 1/2 a.s., fluctuation scale
+  2 sqrt(log2/log x).  Clause rewritten; cousin-race leaderships
+  requantified against the corrected null (+1.3σ / +1.1σ).
+* **C21(iii)** sign-excess scale corrected to loglog x/log x;
+  **C21(v)** restricted to balanced races with explicit hypotheses.
+* **C16(ii)/C24(ii)** Gaussian regime requires mean count per window
+  -> infinity (H/log²x resp. H/log N); Poisson laws in the critical
+  regime; kernel reframed as first-order correction to independence.
+* **C10:** window rigidity restricted to n>=4 (2!-2=0, 3!-3=3 are
+  real counterexamples); **second priority correction** — the exact
+  uniqueness conjecture is OEIS A088054 ("3 is the intersection of
+  A002981 and A002982"); clause (ii) attributed, claimed content now
+  clauses (i)/(iii); joint at-common-index factor derived
+  (twin-coupling x sieve-reciprocal cancellation); cross-index
+  dependence flagged open.  Finding f:c10 extended: search the
+  NEIGHBOURHOOD (derived sequences, comments), not just defining
+  sequences.
+* **C25** null lane corrected: exceptional family n-q^2=3 recorded
+  alongside the q=3 term (numerics were already exact; prose was
+  not).
+* **C23(iii)** sharpened to CLT + LIL envelope
+  sqrt(2 loglog x * loglogloglog x) — the O_ε(V^{1/2+ε}) bound was
+  weaker than the model's own prediction.
+* **C11:** kappa_S defined over p>=5; factorization is now an EXACT
+  RATIONAL IDENTITY (verified in exact arithmetic at every level,
+  `verify/c11b_crt_kappa.py`); review-reported OEIS candidates
+  29355/34653/57285/99069/1933695 (not independently re-verified,
+  so labeled) extend the kappa-model consistency by two decades
+  (predicted 2.9 vs 4 in (6e3,1e5]; 5.9 vs 5 to 1.94e6).
+* **C19(ii)** labeled explicitly as the dual of the maximal-gap
+  limsup; **(iii)** measure specified (uniform over realized gaps in
+  dyadic blocks), O(1) -> O_P(1) with conjectured first-passage law.
+* **C22(ii)** weakened to dyadic-average form with spread clause;
+  the review's occupancy-expansion derivation route (V_q
+  inclusion-exclusion, first correction from prime pairs with gap
+  divisible by q, weighted by sum_k S(kq)) adopted as the stated
+  programme.
+* **New: C1(iii) moment law for C(d)** — derived Euler-product mean
+  2.7447 / sd 1.6835 vs empirical 2.7434 / 1.6726 over 150 shifts
+  (`verify/c01b_family_moments.py`); registered rate clause
+  separated from the (1+o(1)) core.
+* Declined: restructuring to a 5-6 conjecture paper (brief is 25;
+  layering already explicit).
+
+No bibliography changes; gate round 5 (30/30 unanimous) remains in
+force.

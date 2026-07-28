@@ -21,6 +21,7 @@ P in {5,...,19}, against the naive per-prime product on the same S;
 (2) extends the PRP scan from 4200 to NMAX (default 6000).
 """
 import os, sys, math
+from fractions import Fraction
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "engine"))
 import numpy as np
 from ntlib import *
@@ -88,10 +89,29 @@ with Timer("CRT-exact joint densities"):
         knaive = 1.0
         for p in S:
             knaive *= (1 - per_prime_delta(p)) / (1 - 1.0 / p)
+        # EXACT rational check of the CRT factorization: does the joint
+        # survivor fraction equal the product of per-prime fractions?
+        Dfrac = Fraction(surv, lane)
+        prodfrac = Fraction(1)
+        for p in S:
+            d = ord2(p)
+            period = int(np.lcm(6, p * d))
+            n = np.arange(period, dtype=np.int64)
+            sel = n % 6 == 3
+            cyc = np.empty(d, dtype=np.int64)
+            t = 1
+            for i in range(d):
+                cyc[i] = t
+                t = t * 2 % p
+            hit = sel & ((n * n + cyc[n % d]) % p == 0)
+            prodfrac *= Fraction(int(sel.sum() - hit.sum()), int(sel.sum()))
+        exact = (Dfrac == prodfrac)
         rows.append({"P": S[-1], "L": L, "kappa_crt": kcrt,
-                     "kappa_naive": knaive, "rel_gap": kcrt / knaive - 1})
-        print("S = p<=%2d  L=%11d  kappa_crt=%.6f  naive=%.6f  gap=%+.2e"
-              % (S[-1], L, kcrt, knaive, kcrt / knaive - 1))
+                     "kappa_naive": knaive, "rel_gap": kcrt / knaive - 1,
+                     "exact_factorization": bool(exact)})
+        print("S = p<=%2d  L=%11d  kappa_crt=%.6f  naive=%.6f  gap=%+.2e  "
+              "EXACT rational identity: %s"
+              % (S[-1], L, kcrt, knaive, kcrt / knaive - 1, exact))
 
 with Timer("tail factors 23..%d" % PMAX_TAIL):
     tail = 1.0

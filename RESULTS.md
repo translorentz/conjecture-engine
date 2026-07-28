@@ -13,6 +13,9 @@ verifier.
 * **z_sd** = 0.8421
 * **z_max_abs** = 2.28
 
+## C01B — distribution of C(d): derived Euler-product moments match the empirical family
+
+
 ## C02 — n^3+2 prime
 
 * **constant_C** = 1.298

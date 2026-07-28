@@ -25,7 +25,7 @@ see VERIFICATION.md).
 | C07 | p and p²−2 both prime, ~ C·I(x) (feeds C21's deterministic term) | [bench] | `c07_psquared_minus2.py` |
 | C08 | **Null-mechanism race**: (n²+1, n²+3) admits no square contamination (algebraic); class race n ≡ 1 vs 4 (mod 5) is driftless — the negative control for C21/C25 | [research] | `c08_null_race.py` |
 | C09 | #{p ≤ x: F_p prime} ~ c_F log x, c_F < e^γ/log φ (deficit flagged; Grantham–Granville correction open) | [bench]+flag | `c09_fibonacci_primes.py` |
-| C10 | **Factorial twins**: window rigidity (±1 the only bounded offsets at n!); n=3 the only factorial twin; joint independence of F₊, F₋ | [research], priority label softened per 5th review | `c10_factorial_twins.py` |
+| C10 | **Factorial twins**: window rigidity n≥4 (±1 the only bounded offsets at n!); uniqueness of n=3 **attributed to OEIS A088054** (6th review); joint fluctuation model for F₊, F₋ | uniqueness [bench] (a); clauses (i)/(iii) [research] | `c10_factorial_twins.py` |
 | C11 | n²+2ⁿ (n ≡ 3 mod 6): infinitely many primes; κ defined via CRT-exact joint densities (entanglement-aware net, factorization exact through p ≤ 19), κ = 4.2734 | [research] | `c11_n2_plus_2n.py`, `c11b_crt_kappa.py` |
 | C12 | #{n ≤ N: n!+1 prime} ~ e^γ log N | [bench] | `c12_factorial_primes.py` |
 | C13 | Non-cube n = p + k³ exceptions finite; cube lane obeys BH for 3k²−3k+1 (restated after self-refutation, Finding f:c13) | [bench] core | `c13_prime_plus_cube.py` |

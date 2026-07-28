@@ -1,0 +1,11 @@
+{
+  "conjecture": "distribution of C(d): derived Euler-product moments match the empirical family",
+  "PMAX": 100000,
+  "DMAX": 300,
+  "derived_mean": 2.744700964445071,
+  "derived_sd": 1.6834814484709906,
+  "empirical_mean": 2.7434355991196497,
+  "empirical_sd": 1.6726168985322634,
+  "n_shifts": 150,
+  "_generated_unix": 1785179280
+}

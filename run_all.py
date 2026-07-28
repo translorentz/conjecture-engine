@@ -10,6 +10,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 JOBS = [
     # main statements (v6 roster)
     ("c01_quadratic_depolignac_family.py", ["1e6", "300"]),
+    ("c01b_family_moments.py", ["1e5", "300"]),
     ("c01_quadratic_twin_pair.py", ["1e7"]),          # d = 2 instance
     ("c02_cubic_shift.py", ["1e7"]),
     ("c03_prime_ap_chain.py", ["3e8"]),
