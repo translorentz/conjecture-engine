@@ -33,79 +33,9 @@ smaller primality claims are deterministic (fixed-base Miller--Rabin).}}
 \begin{document}
 \maketitle
 
-\begin{abstract}
-We state twenty-five conjectures in elementary and analytic number
-theory, each derived from the local--global random model of the primes:
-Cram\'er's model corrected by Hardy--Littlewood singular series, with
-Bateman--Horn as the organizing framework and Borel--Cantelli accounting
-for sparse events.  Each statement is calibrated to the strongest form
-the heuristic supports and no stronger.  Every computable constant is
-computed from its definition, with local admissibility asserted
-programmatically; every statement was tested against exact counts, with
-success measured by the \emph{shape} of agreement (predicted constant,
-square-root residuals, no drift) rather than by the size of the range
-searched.  The statements were then subjected to a three-layer
-adversarial audit: an independent literature search for prior art,
-scripted refutation attempts a decade beyond the original bounds, and
-clean-context re-derivations of constants and counts.  The audit refuted
-one conjecture as first stated---the exceptional set for $n=p+k^3$
-contains the infinite family of cubes $k^3$ with $3k^2-3k+1$ composite,
-an algebraic obstruction the probabilistic accounting missed---and it
-appears here restated, with the obstruction promoted to a theorem and
-the original error documented; a later round of review caught a
-priority failure (a statement we carried as new had been published),
-which is likewise documented rather than erased.  We are deliberately
-conservative about novelty, and structure the paper accordingly:
-after successive review rounds every attributed benchmark was either
-lifted to a family or mechanism law or replaced outright, so that
-each of the twenty-five slots now claims content of its own---while
-every retired classical statement is retained \emph{inside} its
-successor slot as an attributed calibration remark, since the
-benchmarks are what make the novel layer's constants credible.  The
-claimed content includes: a prime-power contamination calculus for
-pattern races---twin races modulo $5$ and $8$ driven by the pairs
-$(q^2-2,q^2)$, fresh cousin, sexy-pair, and triplet predictions
-derived from the calculus before testing, a Goldbach lane race with a
-verified internal null lane, a Stern-representation lane race whose
-null classes are provable by direct congruence, and an algebraic null
-control; the measured sub-diffusivity of balanced races (universal
-negative step correlations tied to the Lemke Oliver--Soundararajan
-repulsion); canonical ordering deficits for least primes in
-progressions and for least Goldbach summands; derived covariance
-kernels for moving-window residual fields, with the diagonal deficit
-reduced to a pinned singular-series average whose growth already
-exceeds the single-prime Montgomery--Soundararajan term; distribution
-laws for the constants of the quadratic-pair and cubic-shift
-families, with exact mean-value lemmas; an entanglement-aware
-local-global law for $n^2+2^n$ with an exact-rational CRT
-factorization; a boundary trichotomy for polynomial ladders; a
-multibase subtorus law for Fermat quotients; and singular-series
-waiting-time refinements for first prime gaps.  Where an audit
-refuted our own drafts---a false exception census, a wrong occupation
-clock, a naive joint constant contradicted by a catalogued
-Fibonacci--Lucas twin at index $148091$---the refutations are
-documented in place.
-\end{abstract}
-
-\tableofcontents
-
-\section*{Summary sheet: the twenty-five conjectures, ordered by
-importance and novelty}
+\section*{Summary sheet: the twenty-five conjectures in
+importance--novelty order}
 \addcontentsline{toc}{section}{Summary sheet}
-
-The statements below are given in compressed form and in decreasing
-order of a composite editorial judgement of importance and novelty:
-mechanism-level novelty ranks above new derived laws inside known
-frameworks, which rank above instance-level content; importance
-weighs leverage on neighbouring problems, falsifiability with
-derived (unfitted) constants, and derivation status.  The ordering
-is editorial, not mathematical.  \emph{The numbered statements in
-the body are normative}: they carry the ensembles, conditionality
-clauses, exceptional cases, and error conventions that are part of
-each conjecture and are only abbreviated here.  Notation:
-$\M_x(F)=\frac1{\log x}\int_2^xF(t)\,\frac{dt}t$; $\SG$, $C(\cdot)$
-singular series and Bateman--Horn constants; $\Li_k(x)=\int_2^x
-(\log t)^{-k}dt$.
 
 \begin{enumerate}
 
@@ -310,6 +240,63 @@ Bateman--Horn constant.
 
 \end{enumerate}
 
+
+\begin{abstract}
+We state twenty-five conjectures in elementary and analytic number
+theory, each derived from the local--global random model of the primes:
+Cram\'er's model corrected by Hardy--Littlewood singular series, with
+Bateman--Horn as the organizing framework and Borel--Cantelli accounting
+for sparse events.  Each statement is calibrated to the strongest form
+the heuristic supports and no stronger.  Every computable constant is
+computed from its definition, with local admissibility asserted
+programmatically; every statement was tested against exact counts, with
+success measured by the \emph{shape} of agreement (predicted constant,
+square-root residuals, no drift) rather than by the size of the range
+searched.  The statements were then subjected to a three-layer
+adversarial audit: an independent literature search for prior art,
+scripted refutation attempts a decade beyond the original bounds, and
+clean-context re-derivations of constants and counts.  The audit refuted
+one conjecture as first stated---the exceptional set for $n=p+k^3$
+contains the infinite family of cubes $k^3$ with $3k^2-3k+1$ composite,
+an algebraic obstruction the probabilistic accounting missed---and it
+appears here restated, with the obstruction promoted to a theorem and
+the original error documented; a later round of review caught a
+priority failure (a statement we carried as new had been published),
+which is likewise documented rather than erased.  We are deliberately
+conservative about novelty, and structure the paper accordingly:
+after successive review rounds every attributed benchmark was either
+lifted to a family or mechanism law or replaced outright, so that
+each of the twenty-five slots now claims content of its own---while
+every retired classical statement is retained \emph{inside} its
+successor slot as an attributed calibration remark, since the
+benchmarks are what make the novel layer's constants credible.  The
+claimed content includes: a prime-power contamination calculus for
+pattern races---twin races modulo $5$ and $8$ driven by the pairs
+$(q^2-2,q^2)$, fresh cousin, sexy-pair, and triplet predictions
+derived from the calculus before testing, a Goldbach lane race with a
+verified internal null lane, a Stern-representation lane race whose
+null classes are provable by direct congruence, and an algebraic null
+control; the measured sub-diffusivity of balanced races (universal
+negative step correlations tied to the Lemke Oliver--Soundararajan
+repulsion); canonical ordering deficits for least primes in
+progressions and for least Goldbach summands; derived covariance
+kernels for moving-window residual fields, with the diagonal deficit
+reduced to a pinned singular-series average whose growth already
+exceeds the single-prime Montgomery--Soundararajan term; distribution
+laws for the constants of the quadratic-pair and cubic-shift
+families, with exact mean-value lemmas; an entanglement-aware
+local-global law for $n^2+2^n$ with an exact-rational CRT
+factorization; a boundary trichotomy for polynomial ladders; a
+multibase subtorus law for Fermat quotients; and singular-series
+waiting-time refinements for first prime gaps.  Where an audit
+refuted our own drafts---a false exception census, a wrong occupation
+clock, a naive joint constant contradicted by a catalogued
+Fibonacci--Lucas twin at index $148091$---the refutations are
+documented in place.
+\end{abstract}
+
+\tableofcontents
+
 \section{Introduction}
 
 A good conjecture in the theory of numbers is not merely a statement
@@ -508,6 +495,7 @@ $(1-\omega(p)/p)/(1-1/p)^k$ at each prime $p$ to account for the joint
 local behaviour; multiplying the corrections and integrating gives
 $C\cdot I(N)$.
 
+\setcounter{conjecture}{9}%
 \begin{conjecture}[Uniform quadratic de Polignac; family law apparently
 unstated, the $d=2$ instance is (a), cf.\ OEIS A080149,
 \cite{Carella}]\label{c1}
@@ -579,6 +567,7 @@ uniform law can hold (the analogue of the Elliott--Halberstam
 question for this family---whether there is a sharp transition at
 some power scale $N^{\delta}$ rather than a logarithmic one).
 
+\setcounter{conjecture}{14}%
 \begin{conjecture}[The cubic shift family: the distribution of its
 constants; instance-level law apparently unstated]\label{c2}
 For non-cube $a\ge1$ let $C(a)=C(x^3+a)$.  Only $p\equiv1\pmod3$
@@ -633,6 +622,7 @@ of Bunyakovsky type is proven for any cubic, the nearest theorem
 being Heath-Brown's $x^3+2y^3$ \cite{HB}, which is what keeps the
 whole family conjectural.)
 
+\setcounter{conjecture}{17}%
 \begin{conjecture}[Contamination in prime triplets; apparently
 new]\label{c3}
 The contamination calculus of Conjecture~\ref{c21}(v) extends to
@@ -688,6 +678,7 @@ by Dubner \cite{Dubner2002}---is retained as attributed calibration:
 $C=2.858249$, observed $125{,}379$ against predicted $125{,}429.4$ at
 $3\times10^8$, $z=-0.14$.)
 
+\setcounter{conjecture}{22}%
 \begin{conjecture}[The power-obstruction ladder: an elementary
 structural proposition with a Bateman--Horn corollary; apparently new
 as a family]\label{c4}
@@ -730,6 +721,7 @@ constellation that formerly occupied this slot (its data survive in the
 repository; its $4\cdot10^9$ verification, ratio $1.0004$, remains part
 of the audit record as Hardy--Littlewood calibration).
 
+\setcounter{conjecture}{24}%
 \begin{conjecture}[Twin cyclotomic bases: the complete quadratic
 family; no prior trace found]\label{c5}
 For the three cyclotomic polynomials of degree $2$ (indices $k$ with
@@ -766,6 +758,7 @@ prime pairs: $n=1$ only), and the $k=6$ run returned counts
 \emph{identical} to $k=3$, which is the numerical shadow of the
 polynomial identity in (ii).
 
+\setcounter{conjecture}{23}%
 \begin{conjecture}[The alternating cyclotomic chain; apparently
 new]\label{c6}
 There are infinitely many primes $p$ such that, writing
@@ -809,6 +802,7 @@ whose base-2 shadow is the Mersenne sequence.  The length-3 chain
 stated here is, as far as we can find, unstated, and its quartic layer
 makes it the highest-degree system in the suite.
 
+\setcounter{conjecture}{18}%
 \begin{conjecture}[The contamination matrix: sexy pairs with two
 surviving orientations; apparently new]\label{c7}
 For the pattern $(n,n+6)$, \emph{both} prime-square orientations
@@ -863,6 +857,7 @@ drift scale, is retained as attributed calibration: verified at
 $10^7$, $z=-1.31$, independently recomputed to $10^9$; a refutation
 of its infinitude would remove the twin race's predicted mechanism.)
 
+\setcounter{conjecture}{13}%
 \begin{conjecture}[The null-mechanism race; apparently new]\label{c8}
 For the quadratic twin pairs of Conjecture~\ref{c1} at $d=2$, square
 contamination is \emph{algebraically impossible}: $n^2+1=q^2$ has no
@@ -1017,6 +1012,7 @@ sum is the entire question, and when it diverges it diverges
 logarithmically, so the right conjecture has counting function
 $\alpha\log x$ with a derived $\alpha$---never more.
 
+\setcounter{conjecture}{19}%
 \begin{conjecture}[Fibonacci--Lucas twins: the convergent side
 stress-tested; the object is OEIS A080327]\label{c9}
 \emph{(i)} [rank-disjointness, elementary, with its exception stated]
@@ -1076,6 +1072,7 @@ corrected $c_F$ remains the suite's most concrete ``needs a
 Granville-type patch'' constant, and clause (iii) now quantifies the
 same need at the joint level.
 
+\setcounter{conjecture}{20}%
 \begin{conjecture}[Factorial twins; the uniqueness core is (a), OEIS
 A088054; clauses (i) and (iii) are ours]\label{c10}
 \emph{(i)} [window rigidity, elementary] for $n\ge4$ and
@@ -1184,6 +1181,7 @@ only its defining objects; two misses on one slot is the strongest
 argument in this paper for that protocol.
 \end{finding}
 
+\setcounter{conjecture}{5}%
 \begin{conjecture}[{$n^2+2^n$}; sequence is OEIS A064539]\label{c11}
 Every prime of the form $n^2+2^n$ with $n>1$ has $n\equiv3\pmod6$
 (elementary), and:
@@ -1257,6 +1255,7 @@ bonus: $\delta_2=\delta_3=0$ contribute the factors $2\cdot\tfrac32=3$
 to $\kappa$.  Mixed polynomial--exponential sequences are exactly where
 hand-waving fails and the computed local product earns its keep.
 
+\setcounter{conjecture}{1}%
 \begin{conjecture}[The pair-level Montgomery--Soundararajan reduction;
 apparently new]\label{c12}
 For the window field of Conjecture~\ref{c16}(ii), the diagonal
@@ -1381,6 +1380,7 @@ record the failure rather than hide it; the restated version separates
 theorem from conjecture.
 \end{finding}
 
+\setcounter{conjecture}{21}%
 \begin{conjecture}[The boundary trichotomy for polynomial ladders; the
 divisibility principle is classical and its cubic case is
 Cunningham's cuban observation (OEIS A002407); the family
@@ -1429,6 +1429,7 @@ $4,\,27,\,168,\,763,\,2011,\,2808,\,1181,\,88$ up to $10^8$, peaking
 at the sixth decade and collapsing thereafter, largest found
 $78{,}526{,}384$; verification data, not statement.)
 
+\setcounter{conjecture}{11}%
 \begin{conjecture}[The Stern lane race; apparently new]\label{c14}
 In Stern's representation problem $n=p+2k^2$ ($n$ odd), race the
 $k$-even and $k$-odd lanes.  Prime-square contamination of the
@@ -1504,6 +1505,7 @@ OEIS A060003, with the seven prime members the Stern primes---is
 retained as the attributed benchmark that anchors this slot:
 verified here to $10^9$ with no eleventh exception.)
 
+\setcounter{conjecture}{4}%
 \begin{conjecture}[The least Goldbach summand: exponential law and
 ordering deficit; the time-changed law and deficit constant
 apparently unstated]\label{c15}
@@ -1568,6 +1570,7 @@ singular-series count law, previously formulated by K.~Martin
 verified to $10^9$, count formula matching to $0.2$--$1.3\%$; its
 comparative lane statement is Conjecture~\ref{c25}.)
 
+\setcounter{conjecture}{7}%
 \begin{conjecture}[Uniform quantitative de Polignac;
 (a)-core]\label{c16}
 \emph{(i)} $\pi_d(x)=\#\{p\le x-d:\ p,\ p+d \text{ prime}\}
@@ -1668,6 +1671,7 @@ number.  At $x=10^8$: correlation $0.999999$, slope $0.99966$,
 $\max_d|z_d|=1.80$; stressed to $d\le6000$, $\max|z_d|=2.01$ over three
 thousand values.
 
+\setcounter{conjecture}{16}%
 \begin{conjecture}[Twin-member Goldbach, orientation-resolved; the
 basis conjecture and the integral kernel are Dubner's
 \cite{Dubner2000}; the orientation decomposition apparently
@@ -1731,6 +1735,7 @@ $35$ exceptions each time.)
 
 \section{Statistical laws}\label{sec:stat}
 
+\setcounter{conjecture}{8}%
 \begin{conjecture}[The sub-diffusivity of balanced prime races;
 apparently new]\label{c18}
 Model a balanced race (Conjecture~\ref{c21}(ii)'s symmetric class
@@ -1815,6 +1820,7 @@ $2{,}466{,}641{,}069$; the Cram\'er--Granville fragility of such
 constants \cite{Granville} is why the constant was always flagged as
 first-order.)
 
+\setcounter{conjecture}{10}%
 \begin{conjecture}[First occurrences of prime gaps, liminf form;
 (b)]\label{c19}
 Let $\mathcal G$ be the set of even $g$ that occur as gaps between
@@ -1920,6 +1926,7 @@ our regression slope over $g\ge100$ falls from $1.307$ at $10^9$ to
 $1.297$ at $4\cdot10^9$, far above both and decreasing, as it must be
 for either.
 
+\setcounter{conjecture}{12}%
 \begin{conjecture}[Microscopic variance law; (b); the constant is
 Montgomery--Soundararajan's \cite{MS}]\label{c20}
 Fix $\lambda>0$ and $c\in(0,1]$, and let $X$ count primes in
@@ -2021,6 +2028,7 @@ count).  The lemma orients the race: prime-square contamination can
 enter only specific residue classes, and the model converts that into
 a drift prediction for the \emph{unweighted} twin counts.
 
+\setcounter{conjecture}{0}%
 \begin{conjecture}[Twin races modulo 5 and 8, and the prime-power
 contamination calculus; (b), apparently new]\label{c21}
 Twin starts $p>5$ lie in classes $p\equiv1,2,4\pmod5$.  Let
@@ -2224,6 +2232,7 @@ pairwise $\{1,3,5\}$ controls all within one noise unit of zero---the
 two projections of the mechanism behave coherently, none of it provable
 at present.
 
+\setcounter{conjecture}{2}%
 \begin{conjecture}[Least primes in progressions; (a) for part (i)
 \cite{HLS,Wagstaff,Fiori,Leung}, (b) for part (ii)]\label{c22}
 Let $p(a,q)$ be the least prime $\equiv a\pmod q$ and
@@ -2374,6 +2383,7 @@ We measure $\theta_{\mathrm{corr}}$; we cannot yet derive it.  It is
 the deepest unexplained number produced by this exercise.
 \end{remark}
 
+\setcounter{conjecture}{6}%
 \begin{conjecture}[Fermat quotients: the multibase subtorus law and
 the Wieferich ledger; single-base heuristic is (a) \cite{CDP}, the
 vertical multibase law apparently new]\label{c23}
@@ -2493,6 +2503,7 @@ distributions and the Fermat-quotient-matrix statistics of
 Cobeli--Zaharescu and coauthors) is the attributed neighbour whose
 vertical counterpart is what this slot claims.
 
+\setcounter{conjecture}{15}%
 \begin{conjecture}[Conjecture F as a family; (a), \cite{HL1923},
 cf.~\cite{JW}]\label{c24}
 For odd $A$ let $Q_A(N)=\#\{n\le N:\ n^2+n+A \text{ prime}\}$ and
@@ -2582,6 +2593,7 @@ printed digit.  The entire
 $10^8$-bit primality dataset compresses to one product formula per
 $A$---the description-length virtue in its purest form.
 
+\setcounter{conjecture}{3}%
 \begin{conjecture}[The Goldbach lane race; apparently new]\label{c25}
 For $n\equiv2\pmod4$ let $R_1(n)$, $R_3(n)$ be the ordered Goldbach
 representation counts in the lanes $p\equiv q\equiv1$ and
@@ -2778,6 +2790,19 @@ larger bound would have declared the false version of
 Conjecture~\ref{c13} sound.
 
 \section{Attribution and novelty}\label{sec:attrib}
+
+A numbering note: the conjectures are numbered in
+importance--novelty order (the summary sheet's order), while the
+repository artifacts---verifier scripts, results files, and audit
+documents---retain the original thematic slot numbering under which
+they were produced.  The map from conjecture number to repository
+slot is: $1\mapsto21$, $2\mapsto12$, $3\mapsto22$, $4\mapsto25$,
+$5\mapsto15$, $6\mapsto11$, $7\mapsto23$, $8\mapsto16$,
+$9\mapsto18$, $10\mapsto1$, $11\mapsto19$, $12\mapsto14$,
+$13\mapsto20$, $14\mapsto8$, $15\mapsto2$, $16\mapsto24$,
+$17\mapsto17$, $18\mapsto3$, $19\mapsto7$, $20\mapsto9$,
+$21\mapsto10$, $22\mapsto13$, $23\mapsto4$, $24\mapsto6$,
+$25\mapsto5$.
 
 The calibration layer, previously stated in essence and retained
 inside the slots as attributed remarks, with our contribution being
