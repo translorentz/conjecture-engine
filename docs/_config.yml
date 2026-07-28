@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 title: Twenty-five conjectures from a local–global random model
-description: with computational verification
+description:
 
 markdown: kramdown
 kramdown:
