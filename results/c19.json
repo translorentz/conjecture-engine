@@ -1,0 +1,68 @@
+{
+  "conjecture": "log p(g)/sqrt(g) -> sqrt(e^gamma/2) = 0.9436",
+  "slope_measured_g_ge_100": 1.3072623110033097,
+  "slope_cramer": 1.0,
+  "slope_granville": 0.9436822606127017,
+  "missing_even_gaps": [
+    254,
+    256,
+    258,
+    262,
+    264,
+    266,
+    268,
+    270,
+    272,
+    274,
+    278,
+    280
+  ],
+  "table": [
+    {
+      "g": 30,
+      "p": 4297,
+      "log_p_over_sqrt_g": 1.5274
+    },
+    {
+      "g": 60,
+      "p": 43331,
+      "log_p_over_sqrt_g": 1.3783
+    },
+    {
+      "g": 90,
+      "p": 404851,
+      "log_p_over_sqrt_g": 1.361
+    },
+    {
+      "g": 120,
+      "p": 1895359,
+      "log_p_over_sqrt_g": 1.3195
+    },
+    {
+      "g": 150,
+      "p": 13626257,
+      "log_p_over_sqrt_g": 1.3413
+    },
+    {
+      "g": 180,
+      "p": 17051707,
+      "log_p_over_sqrt_g": 1.2411
+    },
+    {
+      "g": 210,
+      "p": 20831323,
+      "log_p_over_sqrt_g": 1.1629
+    },
+    {
+      "g": 240,
+      "p": 391995431,
+      "log_p_over_sqrt_g": 1.2772
+    },
+    {
+      "g": 282,
+      "p": 436273009,
+      "log_p_over_sqrt_g": 1.1847
+    }
+  ],
+  "_generated_unix": 1785130814
+}

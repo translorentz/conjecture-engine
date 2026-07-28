@@ -1,0 +1,13 @@
+{
+  "conjecture": "triplet (0,2,6) race mod 5: class 1 leads via the (q^2-2, q^2, q^2+4) doubly-thinned configuration",
+  "X": 1000000000,
+  "c1": 189837,
+  "c2": 189670,
+  "D": 167,
+  "T3_pred": 24.749350967701506,
+  "noise": 616.0413947130501,
+  "lead_logdensity": 0.6532433899081449,
+  "null_sd": 0.18288733497975718,
+  "runmax_normalized": 1.6612841461516932,
+  "_generated_unix": 1785213150
+}

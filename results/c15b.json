@@ -1,0 +1,22 @@
+{
+  "conjecture": "least Goldbach summand: U => Exp(1); canonical ordering deficit Theta_G > 0 (sibling of C22(ii))",
+  "X": 100000000,
+  "n_samples": 2000,
+  "mean_U": 0.7963273937604443,
+  "KS": 0.08770000070978634,
+  "blocks": [
+    {
+      "range": "[1e+06,1e+07)",
+      "n": 1050,
+      "Theta_G": 3.119965696319006,
+      "se": 0.3476990534516192
+    },
+    {
+      "range": "[1e+07,1e+08)",
+      "n": 950,
+      "Theta_G": 3.4183494280874758,
+      "se": 0.4495550885358246
+    }
+  ],
+  "_generated_unix": 1785205723
+}

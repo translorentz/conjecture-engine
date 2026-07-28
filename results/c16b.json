@@ -1,0 +1,10 @@
+{
+  "conjecture": "covariance kernel of z_d profile from HL triple constants",
+  "X": 100000000,
+  "DS": 60,
+  "mean_offdiag_rho": 0.42808788607395315,
+  "var_common_mode": 0.41381828987148805,
+  "sigma2_pred_upper": 0.586181710128512,
+  "observed_sigma2": 0.268,
+  "_generated_unix": 1785168185
+}

@@ -1,0 +1,71 @@
+{
+  "conjecture": "Var/mean = 1 - (log h + gamma + log 2pi - 1)/log x",
+  "x0": 1000000000,
+  "width": 200000000,
+  "second_order_constant": 1.415092731310878,
+  "table": [
+    {
+      "lambda": 0.5,
+      "windows": 19301976,
+      "mean": 0.4977,
+      "var": 0.4102,
+      "var_over_mean": 0.8241,
+      "predicted": 0.8189,
+      "naive_poisson": 1.0,
+      "z_vs_pred": 16.04
+    },
+    {
+      "lambda": 1.0,
+      "windows": 9650988,
+      "mean": 0.9955,
+      "var": 0.7874,
+      "var_over_mean": 0.791,
+      "predicted": 0.7854,
+      "naive_poisson": 1.0,
+      "z_vs_pred": 12.27
+    },
+    {
+      "lambda": 2.0,
+      "windows": 4825494,
+      "mean": 1.9909,
+      "var": 1.4985,
+      "var_over_mean": 0.7527,
+      "predicted": 0.752,
+      "naive_poisson": 1.0,
+      "z_vs_pred": 1.02
+    },
+    {
+      "lambda": 4.0,
+      "windows": 2412747,
+      "mean": 3.9818,
+      "var": 2.8672,
+      "var_over_mean": 0.7201,
+      "predicted": 0.7185,
+      "naive_poisson": 1.0,
+      "z_vs_pred": 1.67
+    }
+  ],
+  "hist_lambda1": {
+    "obs": [
+      3150072,
+      3997309,
+      1966380,
+      475366,
+      58377,
+      3410,
+      73,
+      1
+    ],
+    "poisson_exp": [
+      3550400.1,
+      3550400.1,
+      1775200.0,
+      591733.3,
+      147933.3,
+      29586.7,
+      4931.1,
+      704.4
+    ]
+  },
+  "_generated_unix": 1785130950
+}

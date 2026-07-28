@@ -1,0 +1,23 @@
+{
+  "conjecture": "theta decomposition with defined Bernoulli control; theta_corr persistence on prime moduli differentiates from smooth-q effects",
+  "PLIM": 20000000,
+  "rows": [
+    {
+      "stratum": "prime",
+      "n_q": 40,
+      "theta_disc_mean": 0.8469261095380685,
+      "theta_disc_se": 8.800576006117481e-06,
+      "theta_corr_mean": 0.8242998877725232,
+      "theta_corr_se": 0.009134588396429626
+    },
+    {
+      "stratum": "smooth",
+      "n_q": 40,
+      "theta_disc_mean": 4.321961985611316,
+      "theta_disc_se": 0.22184719801535024,
+      "theta_corr_mean": -2.3208720234340325,
+      "theta_corr_se": 0.22039877924153162
+    }
+  ],
+  "_generated_unix": 1785168245
+}

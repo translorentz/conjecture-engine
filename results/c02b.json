@@ -1,0 +1,14 @@
+{
+  "conjecture": "cubic family: C(a) has a limiting distribution with derived Euler-product moments; count uniform over a",
+  "PMAX": 100000,
+  "AMAX": 300,
+  "derived_mean": 0.9999999999999521,
+  "derived_sd": 0.2761624278585442,
+  "empirical_mean": 1.021516479576848,
+  "empirical_sd": 0.2480696643870513,
+  "z_mean": 0.09284514293205194,
+  "z_sd": 0.7198998798659131,
+  "z_max": 2.3099428207226604,
+  "n_uniformity_shifts": 57,
+  "_generated_unix": 1785205769
+}

@@ -1,0 +1,16 @@
+{
+  "conjecture": "Fermat quotients equidistribute; Wieferich count ~ loglog x",
+  "XA": 10000000,
+  "XB": 100000000,
+  "KS": 0.0006425159145533876,
+  "sqrt_n_KS": 0.5237895979633123,
+  "mean_u": 0.4999483746663289,
+  "small_quotient_obs": 156,
+  "small_quotient_pred": 147.86321802308174,
+  "wieferich": [
+    1093,
+    3511
+  ],
+  "wieferich_expected": 2.6749711997754346,
+  "_generated_unix": 1785130947
+}
