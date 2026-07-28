@@ -77,12 +77,13 @@ print("MS single-prime secondary is pure log (constant gamma+log 2pi - 1 = %.4f)
       "the pinned-pair average is LOG-SQUARED" % (EULER_GAMMA + math.log(2 * math.pi) - 1))
 
 # predicted window deficit vs the c16c measurement (x = 1e8..2e8, H = 1e5):
-# Var/E - 1 = 2 S2 G(H) / log^2 x, extrapolating the fitted G.
+# Var/E - 1 = S2 (2 G(H) - 1) / log^2 x, extrapolating the fitted G
+# (the -S2/log^2 x Bernoulli diagonal term is the ninth review's catch).
 xbar = 1.5e8
 Hwin = 1e5
 LH = math.log(Hwin)
 Gext = c_all[0] + c_all[1] * LH + c_all[2] * LH * LH
-pred = 1 + 2 * S2 * Gext / math.log(xbar) ** 2
+pred = 1 + S2 * (2 * Gext - 1) / math.log(xbar) ** 2
 obs = None
 try:
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
@@ -97,7 +98,7 @@ except Exception as e:
 
 save_result("c12b", {"conjecture": "pair-level MS law: pinned 4-tuple average "
                                    "G(H) = -(beta2/2) log^2 H + O(log H); "
-                                   "Var/E = 1 + 2 S(2) G(H)/log^2 x",
+                                   "Var/E = 1 + S(2)(2 G(H) - 1)/log^2 x",
                      "HMAX": HMAX, "fit_c0c1c2": [float(v) for v in c_all],
                      "beta2": float(beta2),
                      "c2_lower": float(c_lo[2]), "c2_upper": float(c_hi[2]),

@@ -159,7 +159,7 @@ verifier.
 | 100 | 9 | 8.2 | 1.097 | 0.28 |
 | 700 | 15 | 11.7 | 1.286 | 0.98 |
 
-## C12B — pair-level MS law: pinned 4-tuple average G(H) = -(beta2/2) log^2 H + O(log H); Var/E = 1 + 2 S(2) G(H)/log^2 x
+## C12B — pair-level MS law: pinned 4-tuple average G(H) = -(beta2/2) log^2 H + O(log H); Var/E = 1 + S(2)(2 G(H) - 1)/log^2 x
 
 
 ## C13 — RESTATED: non-cube exceptions of n=p+k^3 finite; cube k^3 exceptional iff 3k^2-3k+1 composite (thm); cube lane follows BH

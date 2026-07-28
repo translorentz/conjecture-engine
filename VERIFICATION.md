@@ -624,3 +624,110 @@ operator-instance framing.
 
 **Scripts:** `c22c_injective_baseline.py` added (with run_all.py
 entry); no existing script's numbers changed this round.
+
+## Ninth external review (paper v11 -> v12)
+
+A third referee-style assessment with a soundness/novelty/importance
+scorecard.  Its central claim — that the race conjectures' formal
+normalization was too weak to express their own prose — is CORRECT
+and drove this round's largest revision.  Every claim was verified
+before implementation; the review's C24 and C12 formula claims also
+both check out.  No bibliography changes — **gate round 6 (32/32
+unanimous) remains in force**.
+
+**The central defect, confirmed and repaired everywhere:**
+
+* The form M_x((D - T)/sqrt(pi)) -> 0 is VACUOUS for the drift
+  coefficient: since T/sqrt(pi) ~ 1/log t, its logarithmic mean is
+  ~ loglog x/log x -> 0, so the condition holds equally with T
+  replaced by 0, 2T, or any fixed multiple — it never expressed
+  "exactly the removed mass."  Repair (C21(i)/(ii)/(iv)/(v), C3,
+  C7, C8, cousin clause, Notation): normalize at the DRIFT scale,
+  M_x(D(t) log^2 t / sqrt t) -> c_T, where c_T is an explicit
+  Bateman-Horn constant (pair (q, q^2-2): c_T = C(x, x^2-2)/2; mod-8:
+  2 c_T; cousins: the (q, q^2+4) constant; triplet at log^3 t
+  normalization; C7's c_A, c_B; C8 and symmetric differences: 0).
+  Every coefficient in the drift vector is now identified, the mod-8
+  factor 2 became falsifiable, and C8 became a genuine negative
+  control AT the contamination scale.  We verified something the
+  review did not say: its own suggested replacements (ratio and
+  regression forms) also fail under a pure random-walk noise model
+  (the log-averaged noise at drift scale has variance ~ log x,
+  diverging), so ANY convergent form necessarily asserts
+  Rubinstein-Sarnak-type almost-periodic structure — the paper now
+  says explicitly that convergence of the drift-scale log-mean IS
+  the precise content of the zero-oscillation hypothesis, a second
+  conjectural layer stated as such.
+
+**Confirmed formula errors, fixed:**
+
+* **C12 missing Bernoulli diagonal.**  Var X = Hp(1-p) + 2p^2 H G(H)
+  with p = S(2)/log^2 x, so Var/E = 1 - p + 2pG: the display was
+  missing -S(2)/log^2 x, exactly the order of the claimed error.
+  Corrected to 1 + S(2)(2G(H)-1)/log^2 x (the same diagonal that
+  merges into gamma + log 2pi - 1 in the single-prime case, which we
+  re-derived as a consistency check).  `c12b` patched and rerun:
+  prediction 0.757 -> 0.753, all quoted brackets unchanged at two
+  decimals.
+* **C24 off-index covariance wrong by log^2 N.**  The joint event is
+  two SINGLE prime values (probability ~ 1/4log^2 N), not C16's
+  pair-of-pairs (1/log^4 x); an earlier draft copied C16's shape.
+  Corrected to /(4 log^2 N) — and the inference REVERSES: at the
+  right order the off-index sum generically dominates the same-index
+  term, so the same-index cancellation no longer supports
+  asymptotic independence or a diagonal-only deficit; both
+  downgraded to open questions in the prose.
+* **C23(iii) uniform-u sampling fails by Brownian scaling.**  With
+  W(e^{e^u}) - u ~ B(u) and u = Ls, self-similarity gives
+  B(Ls)/sqrt(Ls) =d B~(s)/sqrt(s): the uniform-u empirical
+  distribution converges to the RANDOM occupation functional, not
+  Phi — proportional times stay correlated.  Round 8's fix was
+  itself wrong.  Corrected to the classical ASCLT weighting du/u on
+  [e, loglog X] (log u = logloglog x uniform), under which the model
+  predicts a.s. convergence to Phi.  Both failed drafts are recorded
+  in-statement.  Also: p | a exclusion added to the q_p(a)
+  definition.
+
+**Other repairs:**
+
+* C10(iii): probability model declared (CG marginal hazards,
+  unspecified dependence); higher-cumulant hypothesis
+  kappa_r = o((log N)^{r/2}), r >= 3, added — pairwise covariance
+  control alone cannot give a CLT, as the review insisted.
+* C14(ii): rewritten to the C25 ensemble template — explicit E_X
+  (1/n-weighted, per residue class), explicit per-class signs,
+  lambda(n) defined analytically with the empirical estimator
+  labeled, law E_X[D - D_sys] = o(E_X[D_sys]) on contaminated
+  classes and E_X[D] = o(contaminated scale) on null classes.
+* C18: head-sum summability hypotheses added (sum c_k < inf,
+  sum |d_k| < inf) — the uniform decay controls each term but not
+  the growing head sum; the sigma^2 formula is now a consequence.
+  Event-index process defined precisely.
+* C3: q = 3 exceptional configuration (3,5,9) recorded (q^2-4 = 5 is
+  prime at q = 3).
+* C9(iii): the 148091 contradiction marked conditional on the PRP
+  being prime; the order-of-magnitude enrichment claim replaced by
+  the honest three-way ambiguity (constant / dependence /
+  tail-calibration).
+* C15: p | n exclusion explained in-statement (p | n forces
+  p | n-p; diagonal case n = 2p).
+* C16: dominance range restated as an explicit function class
+  (H = lambda (log x)^alpha, alpha >= 1) replacing "narrower than
+  x^{o(1)}".
+* C17: n-uniform 4-form HL hypothesis made explicit; the dual role
+  of 5 (upper and lower twin member) addressed.
+* C11: (ii-b) relabeled an open question, expressly not counted as a
+  conjectural assertion.
+* C19(iii): selection-effect caveat (conditioning on realized gaps)
+  added.
+
+**Declined:** consolidation to 8-12 principal conjectures and the
+reclassification of the remainder — same scope decision as rounds 7
+and 8; the tiering is carried by the attribution labels, and the
+formal defects that motivated the recommendation are now repaired
+in place.
+
+**Scripts:** `c12b_pair_ms.py` patched (identity) and rerun; no
+other script's numbers were affected (the race verifiers measure
+leadership and censuses, which the normalization change does not
+alter).
