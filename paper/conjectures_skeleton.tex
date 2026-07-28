@@ -1344,11 +1344,15 @@ $1\le j<m$ the difference $m^k-j^k$ has the proper factor $m^r-j^r>1$
 with cofactor $>1$;
 \emph{(ii)} [elementary] for \emph{prime} $k$ (including $k=2$),
 $m^k$ is representable if and only if $D_k(m)$ is prime; and $D_k$ is
-irreducible for prime $k$ (its roots $\zeta^j/(\zeta^j-1)$, $\zeta$ a
-primitive $k$-th root of unity, form a single Galois orbit---$D_k$ is a
-linear-fractional transform of the cyclotomic polynomial $\Phi_k$);
-\emph{(iii)} [conjecture] for each prime $k$ the representable lane
-follows Bateman--Horn:
+irreducible for prime $k$ (a root $\alpha$ has $(\alpha/(\alpha-1))^k=1$ with
+$\alpha/(\alpha-1)\neq1$, so $\zeta=\alpha/(\alpha-1)$ is a primitive
+$k$-th root of unity and $\mathbb Q(\alpha)=\mathbb Q(\zeta)$ has degree
+$k-1=\deg D_k$, forcing irreducibility; explicitly
+$D_k(x)=(x-1)^{k-1}\,\Phi_k(x/(x-1))$.  The forcing $j=m-1$ needs only
+$k\ge2$);
+\emph{(iii)} [conjecture] for each prime $k\ge3$ the representable lane follows
+Bateman--Horn ($k=2$ is a theorem, the prime number theorem on the
+lane $2m-1$):
 $\#\{m\le M:\ D_k(m) \text{ prime}\}\sim C_k\int_2^M dt/\log D_k(t)$.
 \end{conjecture}
 
