@@ -1,3 +1,14 @@
 theme: jekyll-theme-minimal
 title: Twenty-five conjectures from a local–global random model
+description: with computational verification
+
 markdown: kramdown
+kramdown:
+  # Mathematics is written as $$...$$ for both inline and display formulas.
+  # kramdown passes the contents through untouched (a single-dollar span would
+  # be markdown-processed, which eats \{, \#, \! and pairs of *) and emits
+  # \( \) / \[ \], which the MathJax loader in _includes/head-custom.html
+  # then typesets.
+  math_engine: mathjax
+  input: kramdown
+  hard_wrap: false

@@ -1,4 +1,44 @@
 <script>
-window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] } };
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    macros: {
+      SG: '\\mathfrak{S}',
+      M: '\\mathcal{M}',
+      Li: '\\mathrm{Li}',
+      CT: 'C_3',
+      ord: '\\operatorname{ord}',
+      e: '\\mathrm{e}'
+    }
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  startup: {
+    pageReady: function () {
+      // Older kramdown releases emit <script type="math/tex"> instead of
+      // \( \) / \[ \]; MathJax 3 does not read those, so unwrap them first.
+      var nodes = document.querySelectorAll('script[type^="math/tex"]');
+      for (var i = 0; i < nodes.length; i++) {
+        var s = nodes[i];
+        var display = s.getAttribute('type').indexOf('mode=display') > -1;
+        var box = document.createElement(display ? 'div' : 'span');
+        box.textContent = display ? '\\[' + s.textContent + '\\]'
+                                  : '\\(' + s.textContent + '\\)';
+        s.parentNode.replaceChild(box, s);
+      }
+      return window.MathJax.startup.defaultPageReady();
+    }
+  }
+};
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  /* Long formulas and the one wide table scroll instead of overflowing. */
+  mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
+  table { display: block; width: fit-content; max-width: 100%; overflow-x: auto; }
+</style>
