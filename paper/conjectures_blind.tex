@@ -89,6 +89,227 @@ documented in place.
 
 \tableofcontents
 
+\section*{Summary sheet: the twenty-five conjectures, ordered by
+importance and novelty}
+\addcontentsline{toc}{section}{Summary sheet}
+
+The statements below are given in compressed form and in decreasing
+order of a composite editorial judgement of importance and novelty:
+mechanism-level novelty ranks above new derived laws inside known
+frameworks, which rank above instance-level content; importance
+weighs leverage on neighbouring problems, falsifiability with
+derived (unfitted) constants, and derivation status.  The ordering
+is editorial, not mathematical.  \emph{The numbered statements in
+the body are normative}: they carry the ensembles, conditionality
+clauses, exceptional cases, and error conventions that are part of
+each conjecture and are only abbreviated here.  Notation:
+$\M_x(F)=\frac1{\log x}\int_2^xF(t)\,\frac{dt}t$; $\SG$, $C(\cdot)$
+singular series and Bateman--Horn constants; $\Li_k(x)=\int_2^x
+(\log t)^{-k}dt$.
+
+\begin{enumerate}
+
+\item \textbf{Prime-power contamination calculus
+(Conjecture~\ref{c21}).}  For a balanced pair race $(n,n+d)$ mod
+$m$, the surviving prime-square orientations
+$(q^2-d,q^2)$, $(q^2,q^2+d)$ occupy provably computable residue
+classes, and the operator
+$\mathcal C_{d,m}(a;x)=\sum_{o}\sum_{q}\Lambda(q^2)\Lambda(\text{prime
+member})$ determines the drift vector: for twins,
+$\M_x\bigl(D_1(t)\log^2t/\sqrt t\bigr)\to c_T=\tfrac12C(x,x^2-2)$
+(mod $5$) and $\to2c_T$ on class $7$ (mod $8$), symmetric
+differences $\to0$; in general each class deficit satisfies
+$\M_x(\mathrm{deficit}\cdot\log^2t/\sqrt t)\to\lim\mathcal
+C_{d,m}(a;x)/\sqrt x$.  Convergence of these logarithmic means at
+drift scale is part of the conjecture (Rubinstein--Sarnak-type
+structure for pattern races).
+
+\item \textbf{Pinned singular-series variance (Conjecture~\ref{c12}).}
+With $R(h)=C_4(0,2,h,h+2)/\SG(2)^2$ and
+$G(H)=\sum_{h\le H}(1-h/H)(R(h)-1)$: (i) [conditional proposition]
+the moving-window twin-pair count obeys
+$\operatorname{Var}/\mathbb E=1+\SG(2)(2G(H)-1)/\log^2x
++o(\log^{-2}x)$; (ii) $-G(H)/\log H\to\infty$: pair counts are more
+sub-Poisson than prime counts.
+
+\item \textbf{Least-prime ordering deficit (Conjecture~\ref{c22}).}
+With $U(a,q)=\Li(p(a,q))/\varphi(q)$: (i) $U\Rightarrow\mathrm{Exp}(1)$
+marginally (attributed), Gumbel maximum under joint independence;
+(ii) the dyadic averages of $\Theta(q)=(1-\mathbb E_a[U])\log q$
+over prime $q\in[Q,2Q]$ converge to a limit $\Theta>0$: the ordered
+primes fill residue classes faster than any exchangeable model, in
+excess of the derived discreteness and injectivity baselines.
+
+\item \textbf{Goldbach lane race (Conjecture~\ref{c25}).}  For
+$n\equiv2\pmod4$, prime squares enter ordered Goldbach
+representations only through the $(1,1)$ lane mod $4$, so with
+$D=R_3-R_1$ and the explicit weighted census $D_{\mathrm{sys}}$:
+$\mathbb E_x[D-D_{\mathrm{sys}}]=o(\mathbb E_x[D_{\mathrm{sys}}])$
+under logarithmic sampling; the drift vanishes on the internal null
+subprogression $n\equiv10\pmod{12}$; the sign density of $D$ tends
+to $\tfrac12$.
+
+\item \textbf{Least Goldbach summand (Conjecture~\ref{c15}).}  With
+$s(n)$ the least prime $p\nmid n$ with $n-p$ prime,
+$U(n)=\SG(n)\sum_{p\le s(n)}1/\log(n-p)$, and the dyadic-log
+ensemble $\mathbb E_X$: (i) $U\Rightarrow\mathrm{Exp}(1)$; (ii)
+$\Theta_G(X)=(1-\mathbb E_XU)\log X\to\Theta_G>0$, the Goldbach
+sibling of the ordering deficit.
+
+\item \textbf{Polynomial--exponential entanglement
+(Conjecture~\ref{c11}).}  Primes $n^2+2^n$ force $n\equiv3\pmod6$;
+with $\kappa_{S}$ the CRT-exact survivor density over the joint
+period of $S$: $\kappa_{S_z}$ converges along the canonical
+exhaustion $S_z=\{5\le p\le z\}$ to $\kappa$, the counting function
+is $\sim\sum_{n\equiv3(6),\,n\le N}\kappa/\log(n^2+2^n)\asymp\log
+N$; whether the limit factors exactly (as observed through $p\le19$)
+is an open question.
+
+\item \textbf{Multibase Fermat quotients (Conjecture~\ref{c23}).}
+For $p\nmid a$: the Eisenstein--Lerch homomorphism confines
+multiplicatively dependent bases to a rational subtorus, and
+(iv) for multiplicatively independent bases
+$(q_p(a_1),\dots,q_p(a_r))/p$ equidistributes on the full torus as
+$p$ varies; (v) at most finitely many simultaneous Wieferich primes;
+plus single-base clauses: KS-discrepancy LIL at constant
+$1/\sqrt2$, shrinking-target law
+$\#\{p\le x:q_p<K\}\sim\sum\min(1,K/p)$, Wieferich-count LIL and an
+almost-sure CLT at the $du/u$ weighting.
+
+\item \textbf{Uniform de Polignac covariance field
+(Conjecture~\ref{c16}).}  $\pi_d(x)=\SG(d)\Li_2(x)(1+o(1))$
+uniformly for even $d\le(\log x)^A$; the moving-window residual
+field has covariance
+$K_3(d,d')H/\log^3x+(1/\log^4x)\sum_{|h|\le H}(H-|h|)K_4(d,d';h)$,
+triple term dominant on the polylogarithmic window class, with
+Poisson/Gaussian regimes as finite-$x$ corrections to independence.
+
+\item \textbf{Race sub-diffusivity (Conjecture~\ref{c18}).}
+Balanced-race steps at event index have negative autocorrelations
+obeying $\rho_k(x)=-(c_k\log\log x+d_k)/\log x\,(1+o(1))$; under
+uniformity in $k$, tail summability, and $\sum c_k,\sum|d_k|<\infty$,
+the diffusivity is
+$\sigma^2(x)=1-2(\sum c_k\log\log x+\sum d_k)/\log x\,(1+o(1))$;
+the asymptotic diffusive-vs-rigid dichotomy is registered open.
+
+\item \textbf{Uniform quadratic de Polignac and its constants
+(Conjecture~\ref{c1}).}  $\#\{n\le N:n^2+1,\,n^2+1+d
+\text{ prime}\}=C(d)I_d(N)(1+o(1))$ uniformly for even
+$d\le(\log N)^B$; a separate power-saving rate clause; and the
+family law: moments of $C(d)$ converge to derived Euler products
+(mean $2.7447\ldots$, sd $1.6835\ldots$), the empirical law
+converging to the random product with CRT-independent local factors.
+
+\item \textbf{First occurrences of prime gaps
+(Conjecture~\ref{c19}).}  On realized gaps: $\log p(g)/\sqrt g$
+bounded between positive constants;
+$\liminf=\sqrt{\e^{\gamma}/2}$ conditional on the realization
+hypothesis; and
+$\log p(g)=\sqrt g+\tfrac12\log g-\tfrac12\log\SG^*(g)+E_g$ with
+$\Pr[E_g\le t]\to1-\exp(-\e^{2(t-\mu)})$, the min-type Gumbel at
+scale $\tfrac12$ forced by the slope-$2$ hazard expansion.
+
+\item \textbf{Stern lane race (Conjecture~\ref{c14}).}  In
+$n=p+2k^2$, square contamination $n=q^2+2k^2$ sits in the $k$-even
+lane iff $n\equiv1\pmod8$, $k$-odd iff $n\equiv3$, and is
+impossible for $n\equiv5,7$ (provable null classes); on contaminated
+classes the clean-minus-contaminated difference obeys
+$\mathbb E_X[D-D_{\mathrm{sys}}]=o(\mathbb E_X[D_{\mathrm{sys}}])$
+with the $\Lambda(q^2)$-weighted census $D_{\mathrm{sys}}$.
+
+\item \textbf{Microscopic variance law (Conjecture~\ref{c20}).}
+[Conditional on quantitative Hardy--Littlewood]  For windows of
+length $H=\lambda(\log x)^{\alpha}$,
+$\operatorname{Var}X/\mathbb EX=1-(\log H+\gamma+\log2\pi-1)/\log x
++o(1/\log x)$ uniformly in $1\le\alpha\le A$, with Gallagher's
+Poisson law at the boundary $\alpha=1$.
+
+\item \textbf{Null-mechanism race (Conjecture~\ref{c8}).}  For
+$(n^2+1,n^2+3)$, square contamination is algebraically impossible;
+the race mod $5$ is driftless at the contamination scale,
+$\M_x(D(t)\log^2t/\sqrt t)\to0$---the negative control for
+item 1---and, conditional on the event-index invariance principle,
+the logarithmic occupation of leadership tends to $\tfrac12$ with
+Gaussian fluctuations $\sqrt{\log2/\log x}$.
+
+\item \textbf{Cubic-shift constants (Conjecture~\ref{c2}).}  For
+non-cube $a$, the three-state local law gives
+$\mathbb E_a[\omega(p)]=1$ exactly, so the limit law of $C(a)$ has
+mean exactly $1$ (an $L^2$-martingale argument), derived sd
+$0.2762\ldots$; counts are uniform over non-cube
+$a\le(\log N)^B$.
+
+\item \textbf{Conjecture F as a family (Conjecture~\ref{c24}).}
+$Q_A(N)=C(A)I_A(N)(1+o(1))$ uniformly over odd $A\le(\log N)^B$;
+same-index window covariance
+$[C(A,A')-C(A)C(A')]H/4\log^2N$ (negative for locally exclusive
+pairs), with the off-index pinned sum at the same $1/4\log^2N$
+order left open.
+
+\item \textbf{Twin-member Goldbach, orientation-resolved
+(Conjecture~\ref{c17}).}  Under $n$-uniform Hardy--Littlewood for
+the four role systems,
+$R_T(n)=[\sum_o\SG_4^{(o)}(n)]\int_5^{n-5}dt/(\log^2t\log^2(n-t))
+\,(1+o(1))$, with the exact identities
+$\SG_4^{(\mathrm{lu})}=\SG_4^{(\mathrm{ul})}$ and
+$\SG_4^{(\mathrm{uu})}(n)=\SG_4^{(\mathrm{ll})}(n-4)$.
+
+\item \textbf{Triplet contamination (Conjecture~\ref{c3}).}  For
+$(n,n+2,n+6)$ mod $5$, the unique surviving square configuration is
+the doubly-thinned $(q^2-2,q^2,q^2+4)$ ($q>3$), contaminating class
+$2$: $\M_x\bigl((\pi_3(t;5,1)-\pi_3(t;5,2))\log^3t/\sqrt
+t\bigr)\to c_3$, the Bateman--Horn constant of
+$(q,q^2-2,q^2+4)$.
+
+\item \textbf{Sexy-pair contamination matrix
+(Conjecture~\ref{c7}).}  For $(n,n+6)$ both orientations survive on
+complementary $q$-classes, feeding start classes $3$ and $1$ (mod
+$5$ and mod $8$) with independent constants $c_A,c_B$ (the
+$(q,q^2\mp6)$ Bateman--Horn constants) in the drift-scale sense;
+class $2$ (mod $5$) and classes $5,7$ (mod $8$) are provably clean.
+
+\item \textbf{Fibonacci--Lucas twins (Conjecture~\ref{c9}).}  The
+odd prime-divisor pools of $F_p$ and $L_p$ are disjoint (ranks $p$
+vs $2p$; $\gcd=2$ iff $3\mid p$); only finitely many $p$ have both
+prime; the naive joint constant is contradicted at the
+$3\times10^{-3}$ level by the catalogued index $148091$
+(conditionally on its PRP status).
+
+\item \textbf{Factorial twins (Conjecture~\ref{c10}).}  Window
+rigidity: $n!+a$ is composite for $2\le|a|\le n$ (theorem), so
+$\pm1$ are the only bounded offsets; $n=3$ uniqueness is attributed;
+the joint-fluctuation clause is a declared-model CLT for
+$F_+-F_-$ under explicit covariance and higher-cumulant
+hypotheses.
+
+\item \textbf{Boundary trichotomy (Conjecture~\ref{c13}).}  For
+$\deg F\ge2$ with positive leading coefficient, $F(m)-F(j)$ prime
+forces $m-j=1$ outside a bounded region; for $x^3+cx$ the boundary
+lane $3m^2-3m+1+c$ is dead-parity for odd $c$, dead-$3$-adic for
+even $c\equiv2\pmod3$, admissible exactly for $c\equiv0,4\pmod6$,
+with uniform Bateman--Horn counts over admissible
+$c\le(\log M)^B$.
+
+\item \textbf{Power-obstruction ladder (Conjecture~\ref{c4}).}
+$m^k=p+j^k$ is impossible for composite $k$ (theorem); for prime
+$k$ it forces $j=m-1$ and reduces to primality of the irreducible
+$D_k(m)=m^k-(m-1)^k$, which follows Bateman--Horn uniformly over
+the prime-$k$ lanes.
+
+\item \textbf{Alternating cyclotomic chain (Conjecture~\ref{c6}).}
+Infinitely many primes $p$ with $\Phi_3(p)$ and
+$\Phi_6(\Phi_3(p))$ prime, at the derived Bateman--Horn rate;
+alternation is the unique admissible continuation in the anchored
+construction space.
+
+\item \textbf{Twin cyclotomic bases (Conjecture~\ref{c5}).}  Of the
+$\varphi(k)=2$ family, only $k=3$ survives ($k=4$ parity-dead,
+$k=6$ a translate), and $\Phi_3(n)$, $\Phi_3(n+1)$ are
+simultaneously prime infinitely often with the computed
+Bateman--Horn constant.
+
+\end{enumerate}
+
 \section{Introduction}
 
 A good conjecture in the theory of numbers is not merely a statement
