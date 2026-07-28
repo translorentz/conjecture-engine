@@ -104,6 +104,19 @@ remains in force for v10.
   gives the review's proposed partition as internal organization.
   This is a scope decision reserved to the operator, not a
   mathematical defect.
+* **The demote/merge recommendations** (C3/C7/C8 folded into C21,
+  C10 removed as a headline, C4/C5/C6/C13/C17/C20 moved to an
+  appendix catalogue) are the same scope decision: the 25-slot count
+  is the brief's hard floor.  What the recommendations correctly
+  demand in substance is honesty about the novelty *tiers*, and that
+  is already load-bearing in the paper: the attribution section
+  labels every slot's claimed layer, the contamination slots
+  explicitly present themselves as instances of C21's operator (now
+  a formal display), and the calibration/benchmark layers are
+  attributed in-statement.  Where a recommendation exposed a real
+  wording inflation (C14's "genus theory" for a two-line congruence),
+  the wording was fixed — including the echo of it in the
+  introduction.
 
 ## Net effect
 
