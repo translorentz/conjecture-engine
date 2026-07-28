@@ -159,6 +159,10 @@ text.
   arXiv:2402.07941 during the third-review revisions): **28/28 PASS from
   both, zero FAIL, zero UNVERIFIED — gate passed unanimously on the
   final (v5) bibliography.**
+* **Round 6** (fresh verifiers K, L; triggered by adding Kowalski,
+  Acta Arith. 148 (2011), and Oliveira e Silva-Herzog-Pardi, Math.
+  Comp. 83 (2014), during the v9 replacement round): **32/32 PASS
+  from both, zero FAIL, zero UNVERIFIED — gate passed unanimously.**
 * **Round 5** (fresh verifiers I, J; triggered by adding Lillie
   arXiv:2110.04302 and Rubinstein–Sarnak, Exp. Math. 3 (1994), during
   the fourth-review revisions): **30/30 PASS from both, zero FAIL,
@@ -433,5 +437,11 @@ ran at production scale.  Verdicts and consequences:
 | C23 | homomorphism exact on all spot-checks; corr +0.0023+-0.0012; chi2 441/399; joint census z=+0.75; simultaneous Wieferich: NONE to 1e7 (`c23b_multibase.py`) |
 
 Bibliography gained Kowalski and OSHP (32 entries) -> twin-citation
-gate round 6 triggered (two fresh verifiers; result recorded below
-when complete).
+gate round 6 triggered and **PASSED: 32/32 PASS from both fresh
+verifiers, zero FAIL, zero UNVERIFIED — unanimous on the v9
+bibliography.** Both independently confirmed the two new entries
+against publisher records (OSHP's page range 2033-2060 resolved
+against an erroneous aggregator listing in favour of the
+authoritative AMS record; Kowalski's DOI omission noted as a style
+choice, entry unambiguous), re-confirmed the Fiori [sic] typo in the
+original, and re-verified all 28 carried-over entries.
