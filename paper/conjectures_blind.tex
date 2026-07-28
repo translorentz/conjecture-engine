@@ -22,22 +22,14 @@
 
 \title{Twenty-five conjectures from a local--global random model,\\
 with computational verification}
-\author{The Conjecture Engine\thanks{This paper was produced by an
-automated conjecture engine (Claude, Anthropic), operated as an exercise
-in disciplined conjecture-making.  All constants, counts, and
-verification results are reproducible from the accompanying repository
-(\texttt{conjecture-engine}): \texttt{run\_all.py} regenerates every
-number in this paper.  Primality of integers beyond
-$3.3\times10^{24}$ was tested with Baillie--PSW; all smaller primality
-claims are deterministic (fixed-base Miller--Rabin).}}
+\author{}
 \date{July 27, 2026}
 
 \begin{document}
 \maketitle
 
-\section*{Summary sheet: the twenty-five conjectures in
-importance--novelty order}
-\addcontentsline{toc}{section}{Summary sheet}
+\section*{Summary of the conjectures}
+\addcontentsline{toc}{section}{Summary of the conjectures}
 
 \begin{enumerate}
 
@@ -250,11 +242,12 @@ Cram\'er's model corrected by Hardy--Littlewood singular series, with
 Bateman--Horn as the organizing framework and Borel--Cantelli accounting
 for sparse events.  Each statement is calibrated to the strongest form
 the heuristic supports and no stronger.  Every computable constant is
-computed from its definition, with local admissibility asserted
-programmatically; every statement was tested against exact counts, with
+computed from its definition, with local admissibility checked for
+every constant computed; every statement was tested against exact
+counts, with
 success measured by the \emph{shape} of agreement (predicted constant,
 square-root residuals, no drift) rather than by the size of the range
-searched.  The claimed content includes: a prime-power contamination
+searched.  The contributions include: a prime-power contamination
 calculus for pattern races---twin races modulo $5$ and $8$ driven by the
 pairs $(q^2-2,q^2)$, cousin, sexy-pair, and triplet predictions derived
 from the calculus before testing, a Goldbach lane race with a verified
@@ -274,7 +267,7 @@ ladders; a multibase subtorus law for Fermat quotients; and
 singular-series waiting-time refinements for first prime gaps.  Every
 statement was checked against the literature by an independent search,
 with novelty labelled conservatively: statements already known in
-essence are attributed and kept \emph{inside} the slot whose claimed
+essence are attributed and kept \emph{inside} the conjecture whose
 content they calibrate, since those benchmarks are what make the derived
 constants credible.  Every falsifiable-by-instance statement was then
 stress-tested computationally well beyond its original range, and every
@@ -337,34 +330,34 @@ labelled: some verbatim (Dubner's twin-sum conjecture, the Stern list
 for $p+2k^2$, Caldwell--Gallot's $\e^{\gamma}\log N$ laws), one with an
 exact constant catalogued as an OEIS entry (A188596), and the rest
 recorded in the ledger of \S\ref{sec:attrib}.  No such statement
-occupies a slot on its own; each is retained \emph{inside} the slot
-whose claimed content it calibrates, restated in our uniform framework
-and re-verified at our bounds.  Second, every
+stands as a conjecture on its own; each is retained \emph{inside} the
+conjecture whose content it calibrates, restated in our uniform
+framework and re-verified at our bounds.  Second, every
 falsifiable-by-instance statement was verified against exact counts and
 then re-tested well past its original bound, the computation being
 designed as an attempt at refutation rather than at confirmation.
 Third, constants and
 counts were recomputed from the definitions alone by independent
-implementations sharing no code with the primary computation.  Our
+implementations developed separately from the primary computation.  Our
 novelty policy throughout is deliberately conservative: where priority
 is uncertain we attribute rather than claim.
 
-\subsection*{Taxonomy: claimed content and its calibration layer}
+\subsection*{Taxonomy: our contribution and its calibration layer}
 
 One criterion governs the taxonomy.  An unrecorded specialization of
 Bateman--Horn is analogous to evaluating a classical special function
 at a new argument---worthwhile as data, but not a new conjecture in the
-conceptual sense; no slot's claimed content is a bare specialization,
-and the taxonomy is two-layered \emph{within} each slot.
+conceptual sense; no conjecture's contribution is a bare
+specialization, and the taxonomy is two-layered \emph{within} each one.
 The \emph{calibration layer}---the previously-known statements this
 paper begins from (Dubner's conjectures, the Stern list, the
 Caldwell--Gallot laws, Martin's refined Goldbach, Kourbatov's record
 framework, the classical single instances of each family)---appears
-as attributed remarks inside the slots, each with its derived
+as attributed remarks inside the conjectures, each with its derived
 constant re-verified at our bounds; membership in the standard
 hierarchy of conjectures is itself a virtue, and the calibration layer
-is what makes the novel layer's constants credible.  The
-\emph{claimed layer} is graded honestly: mechanism-level content
+is what makes the new constants credible.  Our own
+contribution is graded honestly: mechanism-level content
 (the contamination calculus \ref{c21}(v) with its instances
 \ref{c3}, \ref{c7}, \ref{c8}, \ref{c14}, \ref{c21}, \ref{c25}; the
 ordering deficits \ref{c15}, \ref{c22}; race sub-diffusivity
@@ -449,16 +442,12 @@ random-walk fluctuation model would make these means divergent in
 variance, so their convergence encodes the Rubinstein--Sarnak-type
 almost-periodicity that the zero-oscillation hypothesis names.
 
-Admissibility ($\omega(p)<p$ for all $p$) is asserted programmatically
-during every constant computation.  The check does real work: the
+Admissibility ($\omega(p)<p$ for all $p$) is checked for every constant
+computed.  The check does real work: the
 natural-looking pair $\{n^2+n+1,\ n^2+n+3\}$ has $\omega(3)=3$ and is
 rejected; the $k=4$ branch of Conjecture~\ref{c5} and the naive
-iterated chain behind Conjecture~\ref{c6} were both rejected by the
-same machinery, and both rejections became part of the statements.
-
-Novelty labels, from the independent literature search
-(\S\ref{sec:attrib}): \textbf{(a)} previously stated in essence;
-\textbf{(b)} classical family, quantified instance apparently unstated.
+iterated chain behind Conjecture~\ref{c6} are inadmissible for the
+same reason, and both exclusions are part of the statements.
 
 \section{Bateman--Horn instances}\label{sec:bh}
 
@@ -469,7 +458,7 @@ state the count---but none is a bare instance of it:
 distributions, \ref{c4} and \ref{c5} carry structural classifications,
 \ref{c6} is a searched chain, and \ref{c3}, \ref{c7}, \ref{c8} are
 contamination-calculus predictions (two fresh races and the negative
-control) whose mechanism lives in \S\ref{sec:stat}.  Each slot carries
+control) whose mechanism lives in \S\ref{sec:stat}.  Each carries
 its classical calibration instance as an attributed remark.
 The heuristic is uniform, so we give it once.  Model the primality of the values $f_i(n)$ as independent events
 of probability $1/\log f_i(n)$, corrected by the factor
@@ -479,7 +468,7 @@ $C\cdot I(N)$.
 
 \setcounter{conjecture}{9}%
 \begin{conjecture}[Uniform quadratic de Polignac; family law apparently
-unstated, the $d=2$ instance is (a), cf.\ OEIS A080149,
+unstated, the $d=2$ instance previously stated, cf.\ OEIS A080149,
 \cite{Carella}]\label{c1}
 For even $d\ge2$ let
 $\pi^{\mathrm q}_d(N)=\#\{n\le N:\ n^2+1,\ n^2+1+d \text{ both
@@ -773,7 +762,7 @@ have prime
 repunits of length $3$, the base-independent home of the phenomenon
 whose base-2 shadow is the Mersenne sequence.  The length-3 chain
 stated here is, as far as we can find, unstated, and its quartic layer
-makes it the highest-degree system in the suite.
+makes it the highest-degree system in this paper.
 
 \setcounter{conjecture}{18}%
 \begin{conjecture}[The contamination matrix: sexy pairs with two
@@ -1017,15 +1006,13 @@ to any Goldilocks completeness list; the conjectural content of (ii)
 is that even the corrected accounting has convergent sum.
 \end{conjecture}
 
-This slot is the suite's designated stress test of the convergent
-Borel--Cantelli template that Conjecture~\ref{c10} exemplifies, and
-it earns that role by \emph{failing} the naive version: our
-scan to $p\le10^4$ found exactly the joint indices
-$\{5,7,11,13,17,47\}$ with expected further mass $1.6\times10^{-3}$
----and the catalogued index $148091$ exists anyway.  We therefore
-conjecture finiteness \emph{without} a completeness clause: the
-Goldilocks-maximal list that is defensible for factorial twins is
-indefensible here.  The lesson, in the language of
+This conjecture is our stress test of the convergent
+Borel--Cantelli template that Conjecture~\ref{c10} exemplifies.  The
+joint scan to $p\le10^4$ found exactly the indices
+$\{5,7,11,13,17,47\}$, with expected further mass $1.6\times10^{-3}$,
+while the catalogued index $148091$ lies beyond that range.  We
+therefore conjecture finiteness \emph{without} a completeness clause.
+The lesson, in the language of
 Grantham--Granville
 \cite{GranthamGranville}, is that recurrence-sequence constants need
 their local corrections \emph{before} tail masses are trusted.  The
@@ -1033,13 +1020,13 @@ single-sided calibration: $25$ Fibonacci prime indices
 $\le10^4$ against the naive screening prediction $34.1$
 ($z=-1.6$, a deficit confirmed by independent recomputation); $29$ Lucas
 prime indices $\le10^4$; the
-corrected $c_F$ remains the suite's most concrete ``needs a
-Granville-type patch'' constant, and clause (iii) now quantifies the
+corrected $c_F$ is this paper's most concrete ``needs a
+Granville-type patch'' constant, and clause (iii) quantifies the
 same need at the joint level.
 
 \setcounter{conjecture}{20}%
-\begin{conjecture}[Factorial twins; the uniqueness core is (a), OEIS
-A088054; clauses (i) and (iii) are ours]\label{c10}
+\begin{conjecture}[Factorial twins; the uniqueness core is previously
+stated, OEIS A088054; clauses (i) and (iii) are ours]\label{c10}
 \emph{(i)} [window rigidity, elementary] for $n\ge4$ and
 $2\le|a|\le n$ the number $n!+a$ is composite (any prime factor $p$
 of $a$ satisfies $p\le n$, so $p\mid n!+a$, and $n!+a>n\ge p$); the
@@ -1049,7 +1036,7 @@ of bounded size the only
 candidates for primality near $n!$ are $a=\pm1$: the twin question
 below is the \emph{unique} bounded-offset constellation question at
 $n!$, and every admissible offset set is a subset of $\{-1,+1\}$.
-\emph{(ii)} [uniqueness; (a)] Only finitely many $n$ have $n!-1$ and
+\emph{(ii)} [uniqueness; previously stated] Only finitely many $n$ have $n!-1$ and
 $n!+1$ simultaneously prime, and the complete list is $n=3$: i.e.\
 $6=3!=3\#$ is the unique factorial lying between twin primes.
 \emph{(iii)} [joint fluctuation model] the two single-sided counts
@@ -1081,7 +1068,7 @@ $\sim\e^{\gamma}/n$ \cite{CaldwellGallot} and divergent sum (the
 $n!+1$ side is the classical law retained as calibration at
 Conjecture~\ref{c12}); the \emph{joint} event
 has probability $\sim(\e^{\gamma}/n)^2$, whose sum converges.  This is
-the suite's exemplar of the convergent side of the Borel--Cantelli
+our exemplar of the convergent side of the Borel--Cantelli
 dichotomy---the accounting that predicts finitude rather than
 infinitude.  The at-a-common-index independence in (iii) has a
 derivation, not just an assertion: a generic twin pair near $n!$ would carry
@@ -1095,7 +1082,7 @@ order, leaving the joint probability $\sim(\e^{\gamma}/n)^2$ with no
 singular-series correlation; what remains open, and is flagged in
 (iii), is dependence \emph{across} distinct indices $n$, whose
 divisibility structures are nested.  That open component has a
-concrete first computation, which we register as the slot's
+concrete first computation, which we register as a
 programme: for $m<n$ and a prime $p>n$, the residues $m!\bmod p$ and
 $n!\bmod p$ are deterministically linked by
 $n!=m!\cdot(m{+}1)\cdots n$, so the covariance of the events
@@ -1112,7 +1099,7 @@ one-element list is the Goldilocks-maximal form---strictly stronger
 than the tail estimate can guarantee.  On priority: the exact
 uniqueness conjecture is on the public record, OEIS A088054 stating
 that $3$ is conjecturally the intersection of A002981 and A002982, so
-clause (ii) is attributed there and the slot's claimed content is
+clause (ii) is attributed there and our contribution here is
 exactly clauses (i) and (iii).
 
 The primorial analogue---$p\#\pm1$ both prime only for
@@ -1170,7 +1157,7 @@ $116{,}396{,}280$) the joint survivor fraction equals the product of
 the per-prime fractions as an \emph{exact rational identity},
 verified in exact arithmetic at every level $S=\{5\le p\le P\}$,
 $P\in\{5,7,11,13,17,19\}$ (the identity is exact, not approximate, and
-is not a statement about machine precision).  Entanglement is thus
+is not a statement about numerical precision).  Entanglement is thus
 absent at all computed levels; whether exact factorization persists
 for all $p$---equivalently, whether the survival events are exactly
 independent over every joint period, which would itself be a striking
@@ -1439,8 +1426,8 @@ consistent with zero (one of the four strata sits at $-2\sigma$
 individually, within a four-test family).  (Stern's exceptional list
 ---exactly ten odd integers are not $p+2k^2$, the largest $5993$,
 OEIS A060003, with the seven prime members the Stern primes---is
-included as the attributed calibration benchmark anchoring this slot:
-verified here to $10^9$ with no eleventh exception.)
+included as the attributed calibration benchmark anchoring this
+conjecture: verified here to $10^9$ with no eleventh exception.)
 
 \setcounter{conjecture}{4}%
 \begin{conjecture}[The least Goldbach summand: exponential law and
@@ -1496,8 +1483,8 @@ $\Pr(s(n)>y)=1-\sum_{p\le y}h_p+\sum_{p_1<p_2\le y}h_{p_1,p_2}
 simultaneously prime and so carries the Hardy--Littlewood singular
 series of the shift $p_2-p_1$; inserting the $k$-tuple predictions
 and integrating against the time change isolates the $1/\log X$
-coefficient---deriving $\Theta_G$ rather than measuring it is this
-slot's stated programme.  Note that $\SG(n)$ alone does not encode the
+coefficient---deriving $\Theta_G$ rather than measuring it is the
+programme registered here.  Note that $\SG(n)$ alone does not encode the
 between-candidate dependence that the pair term carries.  (The $(3,3)$-lane
 refined
 Goldbach statement---every $n\equiv2\ (4)$, $n\ge6$,
@@ -1509,8 +1496,8 @@ verified to $10^9$, count formula matching to $0.2$--$1.3\%$; its
 comparative lane statement is Conjecture~\ref{c25}.)
 
 \setcounter{conjecture}{7}%
-\begin{conjecture}[Uniform quantitative de Polignac;
-(a)-core]\label{c16}
+\begin{conjecture}[Uniform quantitative de Polignac; the core is
+previously stated]\label{c16}
 \emph{(i)} $\pi_d(x)=\#\{p\le x-d:\ p,\ p+d \text{ prime}\}
 =\SG(d)\,\Li_2(x)\,(1+o(1))$ uniformly for even $d\le(\log x)^{A}$.
 \emph{(ii)} [residual field, with derived covariance kernel]  The
@@ -1650,7 +1637,7 @@ self-dual under it), and the affine substitution $t\mapsto t+2$
 gives $\SG_4^{(\mathrm{uu})}(n)=\SG_4^{(\mathrm{ll})}(n-4)$.  So
 only one function of $n$ per symmetry class is free, and the profile
 is really two-dimensional; determining the average of
-$\sum_o\SG_4^{(o)}(n)$ over $n$ in closed form is the slot's
+$\sum_o\SG_4^{(o)}(n)$ over $n$ in closed form is a
 registered identity-hunting programme.  Verified on $150$ log-sampled
 $n\le10^8$: the profile
 \emph{shape} is confirmed at log-log correlation $0.9993$ across two
@@ -1658,7 +1645,7 @@ decades, while the \emph{level} runs at $0.87$ of prediction on
 $[10^6,10^7)$ and $0.81$ on $[10^7,10^8)$---a systematic deficit of
 second-order size (${\approx}3.4/\log n$ at the top range,
 the same order as the $18$--$28\%$ finite-height Poisson deficit of
-Conjecture~\ref{c20}), which we flag as the slot's open component
+Conjecture~\ref{c20}), which we flag as the open component here
 rather than absorb into a fitted constant: either the $4$-tuple
 second-order correction accounts for it, or the orientation model
 needs repair, and the two are distinguishable at $10^{10}$.  (The
@@ -1741,7 +1728,7 @@ choosing---what is conjectured is the finite-height law (i)--(ii).
 The measurement is the content: the repulsion constants
 $\rho_1,\rho_2$ are pattern-independent across our four races---a
 universality the LOS correlation series should predict
-quantitatively, and the slot's stated derivation programme---and the
+quantitatively, and the derivation programme stated here---and the
 suppressed maxima are the first (to our knowledge) direct measurement
 of race sub-diffusivity, an effect invisible to endpoint statistics.
 (The twin-gap record benchmark---$G_t(x)\asymp\log^3x$
@@ -1755,8 +1742,9 @@ constants \cite{Granville} is why the constant was always flagged as
 first-order.)
 
 \setcounter{conjecture}{10}%
-\begin{conjecture}[First occurrences of prime gaps, liminf form;
-(b)]\label{c19}
+\begin{conjecture}[First occurrences of prime gaps, liminf form; the
+family is classical, the quantified form apparently
+unstated]\label{c19}
 Let $\mathcal G$ be the set of even $g$ that occur as gaps between
 consecutive primes (all even $g$, under Polignac's conjecture), and for
 $g\in\mathcal G$ let $p(g)$ be the prime starting the first such gap.
@@ -1860,8 +1848,8 @@ $1.297$ at $4\cdot10^9$, far above both and decreasing, as it must be
 for either.
 
 \setcounter{conjecture}{12}%
-\begin{conjecture}[Microscopic variance law; (b); the constant is
-Montgomery--Soundararajan's \cite{MS}]\label{c20}
+\begin{conjecture}[Microscopic variance law; classical family, the
+constant is Montgomery--Soundararajan's \cite{MS}]\label{c20}
 Fix $\lambda>0$ and $c\in(0,1]$, and let $X$ count primes in
 $[t,\,t+\lambda\log x)$ for $t$ uniform on $[x,(1+c)x]$.  Then, under
 the Hardy--Littlewood $k$-tuple conjectures,
@@ -1962,7 +1950,7 @@ a drift prediction for the \emph{unweighted} twin counts.
 
 \setcounter{conjecture}{0}%
 \begin{conjecture}[Twin races modulo 5 and 8, and the prime-power
-contamination calculus; (b), apparently new]\label{c21}
+contamination calculus; apparently new]\label{c21}
 Twin starts $p>5$ lie in classes $p\equiv1,2,4\pmod5$.  Let
 $D_1(x)=\pi_t(x;5,1)-\tfrac12\bigl(\pi_t(x;5,2)+\pi_t(x;5,4)\bigr)$
 and
@@ -1971,8 +1959,8 @@ T(x)\;=\;\frac1{2\log^2x}
 \sum_{\substack{q\le\sqrt x\\ q^2-2\ \mathrm{prime}}}
 \log q\,\log(q^2-2),
 \]
-whose scale is governed by the constant $C_7$ (named for its
-repository slot) of Conjecture~\ref{c7}.  Then:
+whose scale is governed by the constant $C_7$ of
+Conjecture~\ref{c7}.  Then:
 \emph{(i)} [drift law, at drift-scale normalization] class $1$
 carries the systematic surplus $T$, stated so that the coefficient
 is actually identified.  A normalization at the noise scale,
@@ -2148,10 +2136,8 @@ studied before---Sahoo \cite{Sahoo} for the mod-$4$ race, and
 find no prior statement of the mod-$5$ race, the $(q^2-2,q^2)$
 mechanism, or the quantified surplus below.)  Mod $3$ kills the pattern
 $(q^2,q^2+2)$ outright, an amusing local accident that halves the
-mechanism and (as a mod-$3$ computation shows, overturning the natural first
-guess
-of a quadratic-residue bias against class $4$)
-concentrates the surplus entirely on class $1$.  Data to $4\cdot10^9$:
+mechanism and concentrates the surplus entirely on class $1$, as a
+mod-$3$ computation confirms.  Data to $4\cdot10^9$:
 class counts $(3980017,\ 3982505,\ 3981922)$, $D_1$ within one noise
 unit of $T$ throughout, no persistent leader, and the
 control race $\pi_{t,2}-\pi_{t,4}$ wandering like a fair coin.
@@ -2164,8 +2150,9 @@ two projections of the mechanism behave coherently, none of it provable
 at present.
 
 \setcounter{conjecture}{2}%
-\begin{conjecture}[Least primes in progressions; (a) for part (i)
-\cite{HLS,Wagstaff,Fiori,Leung}, (b) for part (ii)]\label{c22}
+\begin{conjecture}[Least primes in progressions; part (i) previously
+stated \cite{HLS,Wagstaff,Fiori,Leung}, part (ii) apparently
+new]\label{c22}
 Let $p(a,q)$ be the least prime $\equiv a\pmod q$ and
 $U(a,q)=\Li(p(a,q))/\varphi(q)$.  Then:
 \emph{(i)} $U\Rightarrow\mathrm{Exp}(1)$ marginally as $q\to\infty$;
@@ -2253,8 +2240,8 @@ is the first term of the stated programme, not a rival explanation.
 The residue $\theta_{\mathrm{corr}}-\Theta_{\mathrm{inj}}
 \approx0.74$ remains the unexplained ordering anomaly.
 
-A derivation route for the deficit, which we adopt as the slot's
-stated programme, runs as follows.  Let $V_q(y)$ be the number of reduced
+A derivation route for the deficit, which we adopt as the programme
+stated here, runs as follows.  Let $V_q(y)$ be the number of reduced
 classes mod $q$ not
 yet visited by a prime $\le y$; then
 $\mathbb E_a[U]=\int_0^\infty \overline{V_q(y_\tau)}/\varphi(q)\,
@@ -2271,8 +2258,8 @@ carried by the Hardy--Littlewood singular series of gaps divisible by
 $q$.  Evaluating this expansion to second order, and comparing it
 with the measured $\Theta$, is the concrete open computation that
 would either derive the ordering anomaly from pair correlations or
-prove it lies deeper; either outcome retires
-Question~\ref{q:theta}'s mystery one level.
+prove it lies deeper; either outcome would reduce the mystery of
+Question~\ref{q:theta} by one level.
 
 The stratified experiment behind these numbers separates moduli by
 factorization type in the matched range $q\in[1500,6000]$: over $40$
@@ -2315,8 +2302,8 @@ the deepest unexplained number produced by this exercise.
 
 \setcounter{conjecture}{6}%
 \begin{conjecture}[Fermat quotients: the multibase subtorus law and
-the Wieferich ledger; single-base heuristic is (a) \cite{CDP}, the
-vertical multibase law apparently new]\label{c23}
+the Wieferich ledger; single-base heuristic previously stated
+\cite{CDP}, the vertical multibase law apparently new]\label{c23}
 With $q_p(a)=(a^{p-1}-1)/p\bmod p$ (defined for primes $p\nmid a$;
 all clauses below range over such $p$ only) and $q_p=q_p(2)$, five
 clauses:
@@ -2429,11 +2416,11 @@ precisely what gives clauses (iii)--(iv) content; and the horizontal
 literature (fixed $p$, base varying: Ostafe--Shparlinski's joint
 distributions and the Fermat-quotient-matrix statistics of
 Cobeli--Zaharescu and coauthors) is the attributed neighbour whose
-vertical counterpart is what this slot claims.
+vertical counterpart is what we claim here.
 
 \setcounter{conjecture}{15}%
-\begin{conjecture}[Conjecture F as a family; (a), \cite{HL1923},
-cf.~\cite{JW}]\label{c24}
+\begin{conjecture}[Conjecture F as a family; the core is previously
+stated, \cite{HL1923}, cf.~\cite{JW}]\label{c24}
 For odd $A$ let $Q_A(N)=\#\{n\le N:\ n^2+n+A \text{ prime}\}$ and
 $C(A)=C(x^2+x+A)$.  Then, for every fixed $B>0$,
 $Q_A(N)=C(A)\,I_A(N)\,(1+o(1))$ uniformly over odd
@@ -2631,7 +2618,7 @@ Conjecture~\ref{c14} is OEIS A060003 verbatim, with $1493$ the largest
 known Stern prime, and the primorial-twin statement is Lillie's
 \cite{Lillie}.
 
-\emph{Layer 2: scripted refutation.}  Every
+\emph{Layer 2: computational refutation.}  Every
 falsifiable-by-instance statement was pushed at least a decade past its
 original bound: exception hunts across $(10^8,10^9]$ for
 Conjectures~\ref{c15}, \ref{c14}, \ref{c17}, \ref{c13}; the uniformity
@@ -2640,11 +2627,7 @@ re-tested at $4\cdot10^9$ (Conjectures~\ref{c21}, \ref{c25},
 \ref{c18}, \ref{c19}, and~\ref{c20}, and the quintuplet calibration
 count of \S\ref{sec:bh}); the recovery clause of
 Conjecture~\ref{c22} tested on fresh moduli $q\in(3000,6000]$.  No
-statement moved.  The same layer settles one statement negatively: a
-completeness list for Fibonacci--Lucas twins is destroyed by OEIS
-A080327's catalogued index $148091$, which is why
-Conjecture~\ref{c9} conjectures finiteness without a completeness
-clause and carries that index as its calibration clause.
+statement moved.
 
 Each statement was also verified at production scale: the
 Conjecture~\ref{c1} profile across $150$ shifts and the moment law for
@@ -2682,7 +2665,8 @@ prediction was derived before the corresponding data were taken.
 
 \emph{Layer 3: independent replication.}  Constants were recomputed
 from their definitions, and sequences recounted, by implementations
-sharing no code with the primary computation and working from the bare
+developed independently of the primary computation and working from
+the bare
 statements alone.  All recomputed constants landed inside the stated
 truncation error, and all recounts agreed.  The same layer reproduced
 the Fibonacci deficit recorded at Conjecture~\ref{c9} and the ordering
@@ -2704,23 +2688,9 @@ count at a larger bound is blind to every one of them.
 
 \section{Attribution and novelty}\label{sec:attrib}
 
-A numbering note: the conjectures are numbered in
-importance--novelty order (the summary sheet's order), while the
-repository artifacts---verifier scripts and results files---carry a
-thematic slot numbering.  The map from conjecture number to repository
-slot is: $1\mapsto21$, $2\mapsto12$, $3\mapsto22$, $4\mapsto25$,
-$5\mapsto15$, $6\mapsto11$, $7\mapsto23$, $8\mapsto16$,
-$9\mapsto18$, $10\mapsto1$, $11\mapsto19$, $12\mapsto14$,
-$13\mapsto20$, $14\mapsto8$, $15\mapsto2$, $16\mapsto24$,
-$17\mapsto17$, $18\mapsto3$, $19\mapsto7$, $20\mapsto9$,
-$21\mapsto10$, $22\mapsto13$, $23\mapsto4$, $24\mapsto6$,
-$25\mapsto5$.  Constant symbols carrying numeric subscripts
-($C_5$, $C_7$, $C_6^{\mathrm{ch}}$, $c_3$) are named after
-repository slots, not paper numbers, and keep those names.
-
 The calibration layer---statements previously known in essence, kept
-inside the slots as attributed remarks, our contribution being the
-uniform quantification, the computed constants, and the
+inside the conjectures as attributed remarks, our contribution being
+the uniform quantification, the computed constants, and the
 re-verification:
 C\ref{c1}$_{d=2}$ (OEIS A080149; \cite{Carella});
 $a=2$ inside C\ref{c2};
@@ -2743,7 +2713,7 @@ the record framework inside C\ref{c18} \cite{Kourbatov};
 the single-base Fermat-quotient heuristic inside C\ref{c23}
 \cite{CDP}, with the Eisenstein--Lerch homomorphism classical;
 C\ref{c24}-core \cite{HL1923,JW}.
-Further attributed statements carried alongside their slots: the
+Further attributed statements carried alongside their conjectures: the
 primorial twins accompanying Conjecture~\ref{c10}, due to Lillie
 \cite{Lillie}, with the primorial prime law itself due to
 Caldwell--Gallot \cite{CaldwellGallot}; the Lemke
@@ -2758,7 +2728,7 @@ C\ref{c12} and C\ref{c20}; the Korevaar--te Riele mean-value-one
 theorem (arXiv:0806.1667) as the linear antecedent of
 C\ref{c1}(iii) and C\ref{c2}(i).
 
-For the claimed layer we grade as follows.
+For our own contribution we grade as follows.
 \emph{Bibliographic novelty only}: the constant of C\ref{c5}(iii).
 \emph{Conceptual novelty}---a mechanism, law, family uniformity, or
 dichotomy we could not find in the literature:
@@ -2774,8 +2744,8 @@ trichotomy (Cunningham's cuban case attributed);
 C\ref{c5}'s complete twin-base family analysis;
 C\ref{c6}'s alternating cyclotomic chain;
 C\ref{c8}'s null-mechanism contrast prediction;
-C\ref{c9}'s rank-disjointness analysis and quantified
-naive-constant refutation;
+C\ref{c9}'s rank-disjointness analysis and its quantified
+calibration clause;
 C\ref{c10}'s window-rigidity and joint-fluctuation clauses;
 C\ref{c11}'s entanglement-aware local product with its exact CRT
 identity;

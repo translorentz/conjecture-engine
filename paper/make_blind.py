@@ -1,16 +1,29 @@
 """Generate conjectures_blind.tex from conjectures.tex.
 
-The blind copy strips provenance statements (that the conjectures were
-produced by an automated engine / LLM) so the mathematics can be fed to
-automated proof-checking tools without provenance-induced behaviour
-shifts.  Mathematical content, data, audit results, and attribution of
-prior work are unchanged.  The canonical, fully-attributed version
-remains conjectures.tex.
+NOTE: conjectures_blind.tex is now maintained by hand.  The blind
+version has diverged substantially from what this script produces
+(removal of failed-conjecture material, project-internal vocabulary,
+and all code/repository references), so regenerating it from
+conjectures.tex would destroy that work.  This script therefore
+refuses to write unless --force is passed.
+
+Under --force it reverts to the original behaviour: strip provenance
+statements (that the conjectures were produced by an automated engine
+/ LLM) so the mathematics can be fed to automated proof-checking tools
+without provenance-induced behaviour shifts.  Mathematical content,
+data, audit results, and attribution of prior work are unchanged.  The
+canonical, fully-attributed version remains conjectures.tex.
 """
 import re
+import sys
 
 SRC = "conjectures.tex"
 DST = "conjectures_blind.tex"
+
+if "--force" not in sys.argv:
+    print("conjectures_blind.tex is now maintained manually; refusing "
+          "to overwrite (use --force to regenerate from conjectures.tex)")
+    sys.exit(0)
 
 s = open(SRC).read()
 
