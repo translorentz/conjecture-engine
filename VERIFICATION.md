@@ -731,3 +731,38 @@ in place.
 other script's numbers were affected (the race verifiers measure
 leadership and censuses, which the normalization change does not
 alter).
+
+## Tenth external review (final referee; papers v13)
+
+All eight substantive claims verified before implementation; all were
+correct, and all are fixed in BOTH the main and blind papers:
+
+1. **Exact vs PRP counts**: BPSW above 3.3e24 is a probable-prime
+   test; factorial scans, n^2+2^n, the chain quartic beyond
+   p ~ 2e6, and all large Fibonacci/Lucas values are now labelled
+   probable-prime counts, with a stratification paragraph in the
+   verification standards and a qualified abstract.
+2. **c8(ii)**: weak FCLT cannot yield the a.s. occupation limit;
+   reconditioned on an ASIP (S_N = B(N) + O(N^{1/2-delta}) a.s.).
+3. **c16(ii)**: overlap multiplicity (H-|h_o|)_+ and the
+   max(d,d') = o(H) restriction added to the triple-term kernel.
+4. **c18**: dichotomy restructured as mutually exclusive branches
+   (summable expansion => diffusive; rigidity only on its failure);
+   local-stationarity model hypothesis declared for Green-Kubo.
+5. **c14/c25 null lanes**: little-o now against explicit positive
+   scales A(X), A_G(x) from the contaminated strata.
+6. **148091**: web-verified — BOTH F and L are PRPs (Lucas proven
+   only to index 56003); "L proven" corrected everywhere.
+7. **q=5 escapes mod-5 forcing** in c3/c7-A/c21-cousins: q != 5
+   guards + harmless-start parentheticals; census sums exclude q=5.
+8. **A060003 / A007534 completeness is conjectural**: rephrased with
+   explicit verified bounds.
+
+Bibliography: Leung entry updated (Forum Mathematicum, online 26
+Aug 2024; arXiv kept; NO invented volume/pages/DOI) — identical in
+both files; twin fresh-agent citation gate launched on the changed
+entry (round 7 of the gate). Declined: body reordering by appearance
+and splitting the 25 (numbering is per operator instruction; a
+tagging-convention sentence and, in the blind copy, a numbering-order
+note address navigability). Data-availability paragraph added to the
+main paper only (the blind copy is code-free by instruction).
