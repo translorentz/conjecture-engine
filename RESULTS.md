@@ -358,6 +358,9 @@ verifier.
 | prime | 40 | 0.8469 | 8.801e-06 | 0.8243 | 0.009135 |
 | smooth | 40 | 4.322 | 0.2218 | -2.321 | 0.2204 |
 
+## C22C — injective no-collision baseline for C22: Theta_inj = (1+o(1))/(2 log q), an order of magnitude below measured theta_corr = 0.824
+
+
 ## C23 — Fermat quotients equidistribute; Wieferich count ~ loglog x
 
 * **KS** = 0.0006425

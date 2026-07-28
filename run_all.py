@@ -50,6 +50,7 @@ JOBS = [
     ("c21c_cousin_races.py", ["1e9"]),
     ("c22_least_prime_ap.py", ["3000", "5e6"]),
     ("c22b_stratified.py", ["2e7"]),
+    ("c22c_injective_baseline.py", ["400"]),
     ("c23_fermat_quotients.py", ["1e7", "1e8"]),
     ("c23b_multibase.py", ["1e7", "100"]),
     ("c24_hl_family_F.py", ["1e6", "199"]),

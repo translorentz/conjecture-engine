@@ -538,3 +538,89 @@ mechanism families.
 `c07b_sexy_matrix.py` (null sd constant), `c14b_stern_lane_race.py`
 (Lambda(q^2) weight) — all rerun at production scale; no other
 numerical results were affected.
+
+## Eighth external review (paper v10 -> v11)
+
+A second referee-style assessment (ranking + per-slot review + a
+"highest-priority mathematical revisions" list).  As always, every
+error claim was checked by direct computation/derivation before being
+conceded.  Two of its mathematical error claims are correct and are
+the round's substantive corrections; one of its quantitative claims
+(the C22 baseline scale) is itself wrong by a factor of log q, which
+we established by deriving the closed form.  No bibliography changes
+(inline names only) — **gate round 6 (32/32 unanimous) remains in
+force**.
+
+**Confirmed errors, fixed:**
+
+* **C19(iii) Gumbel scale (the review's best catch).**  The
+  cumulative gap-g intensity is log Lambda_g(y) = log S + y - g/y
+  - 2 log y, whose slope at the centering point y0 ~ sqrt(g) is
+  1 + g/y0^2 - 2/y0 = 2 + o(1) — BOTH the y-term and the g/y-term
+  contribute.  First passage Lambda = W therefore gives
+  E_g = (1/2) log W, i.e. the reversed Gumbel at scale 1/2:
+  P[E <= t] -> 1 - exp(-e^{2(t-mu)}).  Round 7's law at scale 1 was
+  wrong; the same slope-2 expansion is what produces the 1/2
+  coefficients of the centering (which is unchanged, as is the
+  regression test).  Derivation now printed in-statement.
+* **C23(iii) block-sampled CLT vacuous.**  Log-uniform sampling on
+  [X, X^A] adds only log A = O(1) expected new Wieferich events, so
+  the normalized statistic is frozen at the historical value and
+  cannot converge to a fresh N(0,1).  Verified; replaced by the
+  almost-sure-CLT weighting: u = loglog x uniform on [1, loglog X]
+  (window of DIVERGING length), (W(x) - u)/sqrt(u) => N(0,1).
+* **C13 sign hypothesis.**  For negative leading coefficient the
+  divided difference tends to -infinity on the cone; "positive
+  leading coefficient" added (deg >= 2 was round 7's fix).
+* **C4 divisor wording.**  "Proper divisor r of k" allowed r = 1,
+  where m^r - j^r = m - j can equal 1; now "proper divisor r > 1
+  (exists precisely because k is composite)".
+
+**The C22 no-collision baseline — review partially right, scale
+claim wrong:**  the review demanded subtraction of the deterministic
+injective phase (primes < q occupy distinct classes mod q) and
+suggested it could explain "substantially" the deficit since the
+affected-class fraction pi(q)/phi ~ 1/log q matches the deficit
+scale.  Deriving the closed form (index time, Li(p_i) ~ i):
+E[U] = 1 - pi(q)^2/(2 phi^2) + O(pi/phi^2), so
+**Theta_inj = (1+o(1))/(2 log q) ~ 0.07-0.09** on [1500,6000] — the
+review conflated the affected-class fraction (1/log q) with the
+deficit (fraction x collision probability = 1/(2 log^2 q)).  Monte
+Carlo confirms (`c22c_injective_baseline.py`, new; exchangeable
+control at 1.000).  The baseline is real, is now subtracted in the
+paper (theta_corr - Theta_inj ~ 0.74 remains unexplained), and is
+identified as the y < q head of the registered pair-correlation
+expansion.
+
+**Hardenings implemented:** C1(iii)/C2(i) uniform-integrability
+clause (convergent variance sum -> L^2-bounded mean-one martingale ->
+mean of the limit law is exactly 1 — a.s. convergence alone would
+not carry the mean); C8(ii) restated as conditional on an explicit
+invariance principle (the arithmetic content), occupation law its
+probabilistic consequence; C18(ii) Green–Kubo gap closed with the
+uniform-in-k + summable-tail hypothesis stated in-clause; C16
+degenerate-overlap clause (collapsed four-point sets at h = 0, d,
+-d', d'-d = +-h belong to the K-term; d' = 2d handled in the census,
+no double counting); C21(v) r >= 3 negligibility (O(x^{1/3+eps}) vs
+sqrt(x)) + explicit operating-scale sentence (drift is 1/log x in sd
+units: occupation biases under log aggregation, never a fixed
+standardized mean); C10(iii) explicit summability hypothesis
+(sum |Cov| = o(log N), dependency-graph form); C11(ii) split into
+(ii-a) convergence along S_z, (ii-b) factorization/entanglement,
+(ii-c) density -> count, asserted separately; C14 norm-form caveat
+(averaged contaminating count is a hard restricted-variable problem;
+D_sys computed exactly per sample instead); C17 two exact orientation
+identities derived and printed (t -> n-t forces S4^lu = S4^ul;
+t -> t+2 forces S4^uu(n) = S4^ll(n-4): the profile is
+two-dimensional); C19 Gumbel-framework attribution to
+Kourbatov–Wolf tightened.
+
+**Declined (same scope decision as round 7, documented in the
+response memo):** reduction to 6-8 principal conjectures, moving
+C1/C2/C4-C6/C9/C10/C13/C17 to an appendix, and the four-part
+restructuring — the 25-slot brief stands; the tiering the review
+demands is carried by the attribution labels and the
+operator-instance framing.
+
+**Scripts:** `c22c_injective_baseline.py` added (with run_all.py
+entry); no existing script's numbers changed this round.

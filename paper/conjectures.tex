@@ -306,7 +306,11 @@ exponent must not be presented as part of the base conjecture);
 each local factor of $C(d)$ depends only on $d\bmod p$, and the
 factors at any \emph{finite} set of primes are exactly independent
 as $d$ varies (CRT), with the passage to the infinite product
-controlled by the convergent tail-variance sum; so the moments of
+controlled by the convergent tail-variance sum---which supplies the
+uniform integrability (via $L^2$-boundedness of the normalized
+partial products) that the moment identities require, since
+almost-sure convergence alone would not carry means through the
+limit; so the moments of
 $C(d)$ over even $d\le D$ converge, as $D\to\infty$, to
 \emph{derived} Euler products; in particular
 \[
@@ -364,7 +368,14 @@ $\omega=1$ identically.  Then:
 $\mathbb E_a[\omega(p)]=3\cdot\frac{p-1}{3p}+\frac1p=1$ exactly at
 every $p$, so the derived mean of $C(a)$ is exactly $1$---the cubic
 analogue of the Korevaar--te Riele mean-value-one theorem for linear
-prime-pair constants (arXiv:0806.1667), here a one-line computation;
+prime-pair constants (arXiv:0806.1667), here a one-line computation
+at each finite level; passing the mean through the infinite product
+needs more than almost-sure convergence (the eighth review's
+caution), and the needed ingredient is on hand: the convergent
+variance sum makes the partial products an $L^2$-bounded martingale
+(each factor has mean $1$ and is independent of the earlier ones),
+so they are uniformly integrable and the limit law has mean exactly
+$1$, not merely limit-of-means $1$;
 \emph{(ii)} [limit law] as $a\to\infty$ over non-cubes, $C(a)$
 converges in distribution to the random Euler product
 $\prod_{p\equiv1(3)}f_p(\xi_p)$ with the three-state local variables
@@ -445,7 +456,10 @@ as a family]\label{c4}
 For $k\ge2$ and $m\ge2$, write $D_k(m)=m^k-(m-1)^k$, and call $m^k$
 representable if $m^k=p+j^k$ for some prime $p$ and $j\ge1$.  Then:
 \emph{(i)} [theorem] for \emph{composite} $k$, no $k$-th power is
-representable: if $r$ is a proper divisor of $k$, then for every
+representable: if $r$ is a proper divisor of $k$ with $r>1$ (such
+$r$ exists precisely because $k$ is composite; $r=1$ would allow the
+useless factor $m-j=1$ at $j=m-1$, a gap in an earlier phrasing
+noted by the eighth review), then for every
 $1\le j<m$ the difference $m^k-j^k$ has the proper factor $m^r-j^r>1$
 with cofactor $>1$;
 \emph{(ii)} [elementary] for \emph{prime} $k$ (including $k=2$),
@@ -617,9 +631,15 @@ Then, in contrast to the twin race of Conjecture~\ref{c21}, this race
 is \emph{driftless}:
 \emph{(i)} $\M_x(Y)\to0$ (no deterministic term at the contamination
 scale, the negation of Conjecture~\ref{c21}(i) for this pair);
-\emph{(ii)} [occupation law, corrected clock] model the race as
-Brownian motion in the event count, $D(t)\approx B(N(t))$ with
-$N(t)\asymp t/\log^2t$.  In \emph{logarithmic} time $u=\log t$ the
+\emph{(ii)} [occupation law, corrected clock, stated as a
+conditional consequence] the arithmetic content of this clause is an
+\emph{invariance principle}: the normalized race process
+$D(\lfloor Nt\rfloor)/\sqrt N$ (in event count $N$) converges weakly
+to Brownian motion.  Everything after that is probability, not
+number theory (the eighth review's demanded separation, which we
+adopt): granting the invariance principle, $D(t)\approx B(N(t))$
+with $N(t)\asymp t/\log^2t$, and in \emph{logarithmic} time
+$u=\log t$ the
 Lamperti reduction $Z(s)=\e^{-s/2}B(\e^s)$ is a stationary, ergodic
 Ornstein--Uhlenbeck process, so the logarithmic occupation measure of
 leadership converges almost surely to $\tfrac12$:
@@ -807,8 +827,15 @@ $F_{\pm}(N)=\#\{n\le N:\ n!\pm1 \text{ prime}\}$ are each
 $\sim\e^{\gamma}\log N$ and, \emph{under the independent-indices
 model stated below}, asymptotically independent, with
 $F_{+}-F_{-}$ normalized by $\sqrt{2\e^{\gamma}\log N}$
-asymptotically standard normal; the dependence structure across
-factorial indices is the open component of this clause.
+asymptotically standard normal---where the Gaussian limit is
+asserted \emph{under the explicit summability hypothesis}
+$\sum_{m<n\le N}\bigl|\operatorname{Cov}(\mathbf 1_{E_m},
+\mathbf 1_{E_n})\bigr|=o(\log N)$ over the four sign pairs (the
+variance itself is $\asymp\log N$, so this is exactly what a
+dependency-graph CLT needs), not merely imported from an
+independence model; the dependence structure across
+factorial indices, i.e.\ whether that hypothesis holds, is the open
+component of this clause.
 \end{conjecture}
 
 Each event separately has Caldwell--Gallot probability
@@ -895,11 +922,19 @@ $p\in S$, computed over the full joint period
 $\mathrm{lcm}_{p\in S}\,\mathrm{lcm}(6,\,p\cdot\ord_p2)$, and set
 $\kappa_S=D_S/\prod_{p\in S}(1-1/p)$.  The conjecture is stated
 along the \emph{canonical exhaustion} $S_z=\{p\ \text{prime}:5\le
-p\le z\}$: the sequence $\kappa_{S_z}$ converges as $z\to\infty$ (a
-general net over arbitrary finite $S$ carries an
-order-of-exhaustion ambiguity we do not need), with limit $\kappa$,
-and the count is
-$\sim\sum_{n\le N,\,n\equiv3\,(6)}\kappa/\log(n^2+2^n)$.  The working
+p\le z\}$, and its three layers are logically separate and are
+asserted separately (the eighth review's demanded separation):
+\emph{(ii-a)} the sequence $\kappa_{S_z}$ converges as
+$z\to\infty$ (a general net over arbitrary finite $S$ carries an
+order-of-exhaustion ambiguity we do not need), with limit $\kappa$;
+\emph{(ii-b)} whether the limit \emph{factors}---i.e.\ whether the
+exact finite-level factorization observed below persists, so that
+entanglement is asymptotically absent---is a separate question, on
+which (ii-a) takes no position; and
+\emph{(ii-c)} the count is
+$\sim\sum_{n\le N,\,n\equiv3\,(6)}\kappa/\log(n^2+2^n)$---a genuine
+further step, since a convergent local density does not
+automatically govern the global count.  The working
 value $\kappa^{*}=4.2734\ldots$ is explicitly a \emph{hybrid}, not a
 computation of any single $\kappa_{S_z}$: the CRT-exact core
 $S_{19}$ times independent per-prime factors for $19<p\le300$---so
@@ -1063,16 +1098,20 @@ theorem from conjecture.
 divisibility principle is classical and its cubic case is
 Cunningham's cuban observation (OEIS A002407); the family
 classification is apparently new]\label{c13}
-For $F\in\mathbb Z[x]$ with $\deg F\ge2$, and $m>j\ge1$,
+For $F\in\mathbb Z[x]$ with $\deg F\ge2$ and \emph{positive leading
+coefficient}, and $m>j\ge1$,
 $(m-j)\mid F(m)-F(j)$ (textbook), and the divided difference
-$(F(m)-F(j))/(m-j)$---whose leading form is positive on the cone
+$(F(m)-F(j))/(m-j)$---whose leading form is then positive on the cone
 $m>j\ge1$---exceeds $1$ outside an effectively bounded region; so
 $F(m)-F(j)$ prime forces $m-j=1$ apart from finitely many
 exceptional pairs (for the family below the exceptional set is
-provably \emph{empty}).  The degree hypothesis is necessary: for
+provably \emph{empty}).  Both hypotheses are necessary: for
 $\deg F=1$ the cofactor can be identically $1$ and the collapse
-fails---a hypothesis an earlier draft omitted, caught by the seventh
-review.  Every representation problem $F(m)=p+F(j)$ in this range
+fails (an omission caught by the seventh review), and for negative
+leading coefficient the divided difference tends to $-\infty$ on the
+cone, so the ``exceeds $1$'' clause is false as stated (caught by
+the eighth review; one may equivalently keep general sign and read
+the claim through $|F(m)-F(j)|$).  Every representation problem $F(m)=p+F(j)$ in this range
 thus collapses to the boundary polynomial $D_F(m)=F(m)-F(m-1)$.  The content is the classification
 of the boundary lanes.  For $F=x^3+cx$, $c\ge0$:
 \emph{(i)} [trichotomy, elementary] $D_F=3m^2-3m+1+c$ and the lane is
@@ -1136,7 +1175,15 @@ This is the calculus applied to a \emph{representation} problem with
 norm-form contamination---the drift weight is carried by the
 arithmetic of $\mathbb Q(\sqrt{-2})$ rather than by a polynomial
 lane---and it comes with two provable null classes, the strongest
-internal controls in the mechanism family.  Verified on $2{,}500$
+internal controls in the mechanism family.  One honest caveat on
+depth, prompted by the eighth review: an \emph{asymptotic} for the
+contaminating count $\#\{(q,k):q^2+2k^2=n,\ q\ \text{prime}\}$,
+averaged over $n$, is a norm-form-with-prime-argument problem of
+genuine analytic difficulty (the same species as primes represented
+with restricted variables), and nothing here pretends otherwise:
+$D_{\mathrm{sys}}(n)$ is \emph{computed exactly per sample}, so the
+verification tests the transfer conjecture against the true census,
+not against an unproved averaged asymptotic.  Verified on $2{,}500$
 log-sampled odd $n\le10^8$ (mean ${\sim}330$ representations each):
 contaminated strata pooled $D=+0.27\pm0.33$ against predicted
 $D_{\mathrm{sys}}=+0.15$ (at the corrected $\Lambda(q^2)$ weight);
@@ -1247,7 +1294,16 @@ seventh review, is
 \]
 with $K_4$ the centered singular series of the off-index four-point
 sets $\{0,d,h,h+d'\}$---the cross analogue of the pinned diagonal
-average of Conjecture~\ref{c12}.  The triple term dominates only
+average of Conjecture~\ref{c12}---where, per the eighth review's
+caution, degenerate offset relations are handled inside the kernels,
+not ignored: whenever the four-point set collapses (repeated
+entries, as at $h=0,\ h=d,\ h=-d'$, or $d'-d=\pm h$) the
+configuration is a triple or pair and its contribution belongs to
+the $K$-term (or to the mean), so $K_4$ is defined as the centered
+singular series of \emph{genuinely four-element} sets, with special
+pairs such as $d'=2d$ acquiring their extra overlap orientations in
+$K(d,d')$'s census rather than double-counted across kernels.  The
+triple term dominates only
 where the pinned sum satisfies $\sum(1-|h|/H)K_4=o(\log x)$, i.e.\
 in a range of $H$ \emph{narrower} than $x^{o(1)}$ once the
 Conjecture-\ref{c12} growth of such sums is taken seriously; the
@@ -1320,7 +1376,18 @@ the evidence.
 Dubner's paper already contains the integral kernel (his quotient
 $\mu_4$) and the qualitative basis conjecture; the content claimed
 here is exactly the orientation-resolved singular series and its
-$n$-profile.  Verified on $150$ log-sampled $n\le10^8$: the profile
+$n$-profile.  The four orientations are not unrelated, and two exact identities
+compress them: the substitution $t\mapsto n-t$ exchanges the two
+summand roles, forcing
+$\SG_4^{(\mathrm{lu})}(n)=\SG_4^{(\mathrm{ul})}(n)$ identically
+(each of the $(\mathrm{ll})$ and $(\mathrm{uu})$ systems being
+self-dual under it), and the affine substitution $t\mapsto t+2$
+gives $\SG_4^{(\mathrm{uu})}(n)=\SG_4^{(\mathrm{ll})}(n-4)$.  So
+only one function of $n$ per symmetry class is free, and the profile
+is really two-dimensional; determining the average of
+$\sum_o\SG_4^{(o)}(n)$ over $n$ in closed form is the slot's
+registered identity-hunting programme (the eighth review's
+suggestion, which we adopt).  Verified on $150$ log-sampled $n\le10^8$: the profile
 \emph{shape} is confirmed at log-log correlation $0.9993$ across two
 decades, while the \emph{level} runs at $0.87$ of prediction on
 $[10^6,10^7)$ and $0.81$ on $[10^7,10^8)$---a systematic deficit of
@@ -1367,7 +1434,17 @@ null (median $2.34$ at this span), and still only $0.03$--$0.23$
 after correcting for $\rho_{1,2}$: the negative correlation persists
 across lags, so the cumulative diffusivity
 $\sigma^2(x)=1+2\sum_k\rho_k(x)$ sits well below $1$ at this
-height---under the decay law of (i) it returns to $1$
+height.  The Green--Kubo sum requires more than the fixed-lag law
+of (i), and the eighth review is right to insist on the gap: the
+per-lag decay controls each $\rho_k(x)$ but not the sum unless the
+decay is \emph{uniform in $k$ with summable tail}, since the number
+of relevant lags may grow with $x$.  We therefore state the needed
+hypothesis as part of the clause: $\rho_k(x)$ obeys the law of (i)
+uniformly for $k\le K(x)$ with
+$\sum_{k>K(x)}|\rho_k(x)|=o(\log\log x/\log x)$ for some
+$K(x)\to\infty$---the measured correlation length at $10^9$ is
+consistent with $K$ of a few tens---under which
+$\sigma^2(x)$ returns to $1$
 asymptotically, making sub-diffusivity a finite-height phenomenon
 of $\log\log x/\log x$ size, like every other second-order law in
 this paper;
@@ -1438,15 +1515,28 @@ $G\to\infty$,
 where the error $E_g$ converges in distribution: for the sampled $g$,
 \[
 \Pr\bigl[E_g\le t\bigr]\;\longrightarrow\;
-1-\exp\bigl(-\e^{\,t-\mu}\bigr)
+1-\exp\bigl(-\e^{\,2(t-\mu)}\bigr)
 \qquad(G\to\infty)
 \]
 for some centering constant $\mu$---the min-type (reversed) Gumbel
-law, i.e.\ the law of $\log W$ for $W$ a unit exponential, as befits
-a first-passage time: the first occurrence position of an
-exponentially rare configuration is asymptotically an exponential
-waiting time, and passing to logarithms of an exponential gives
-exactly this distribution.  Smooth
+law \emph{at scale} $\tfrac12$, i.e.\ the law of $\tfrac12\log W$
+for $W$ a unit exponential.  The scale is forced by the hazard
+computation and is not a free parameter: the cumulative intensity of
+gap-$g$ events is $\Lambda_g(y)\asymp(\SG(g)/y^2)\exp(y-g/y)$ in
+$y=\log x$ (the factor $\e^{-g/y}$ \emph{is} the no-intervening-prime
+probability), so
+$\frac{d}{dy}\log\Lambda_g=1+g/y^2-2/y=2+o(1)$ at the centering
+point $y_0\approx\sqrt g$, and the first-passage identity
+$\Lambda_g(y)=W$ gives $E_g=y-y_0=\tfrac12\log W+o(1)$---an earlier
+draft wrote the law at scale $1$, overlooking that the slope of the
+log-intensity at $y_0$ is $2$, not $1$ (both the $y$-term and the
+$g/y$-term contribute); the eighth external review caught this, and
+the same slope-$2$ expansion is what produces the $\tfrac12$
+coefficients of the centering.  (Gumbel-type modeling of gap
+extremes and first occurrences is Kourbatov--Wolf territory
+\cite{Kourbatov,KW2020}; the claim of this clause is only the
+$\SG^{*}$-centering and the scale-$\tfrac12$ first-passage form,
+not the extreme-value framework.)  Smooth
 gaps, whose tuple constant is large, appear \emph{earlier} by exactly
 half a logarithm of that constant---the waiting-time first-passage
 computation makes the coefficient $-\tfrac12$, not a free parameter,
@@ -1656,10 +1746,20 @@ conjectural layer is the transfer: the unweighted class counts are
 depressed by $\mathcal C_{d,m}(a;x)/\log^2x$ relative to the clean
 classes, in the $\M_x$-sense of (i)---i.e.\ ``exactly the removed
 mass,'' which requires the weighted identity, partial summation
-uniform in classes, higher-power bounds, and the zero-oscillation
+uniform in classes, higher-power bounds (exponents $r\ge3$
+contribute $O(x^{1/3+\varepsilon})$ against the operator's
+$\asymp\sqrt x$ and are negligible---the one easy layer of the
+transfer), and the zero-oscillation
 hypothesis, and is the calculus's single analytic conjecture rather
 than a rule (the seventh review is right that this step, not the
-census, is the mathematical content).  (Races with unequal primary
+census, is the mathematical content).  The operating scale should be
+kept in view throughout: the drift is
+$\asymp\sqrt x/\log^2x$ against a count fluctuation
+$\asymp\sqrt x/\log x$, i.e.\ smaller by $1/\log x$ in
+standard-deviation units at every height---so the calculus predicts
+occupation biases under long logarithmic aggregation, never a fixed
+nonzero standardized mean, and every verification in this family is
+designed around that fact.  (Races with unequal primary
 constants, or with interfering orientations beyond those enumerated,
 are outside the calculus until those terms are separated.)  In
 particular,
@@ -1802,6 +1902,39 @@ primes (Remark~\ref{r:c22}).  Measured on prime moduli
 $q\in[1500,6000]$: $\Theta=1.671\pm0.009$, of which the control
 accounts for $0.847$.
 
+One further deterministic baseline must be subtracted before any of
+the residue is called an anomaly, and the eighth external review is
+right to demand it: for prime $q$, the primes $p<q$ occupy
+\emph{distinct} classes mod $q$---an injective initial phase that no
+exchangeable allocation reproduces.  Its size has a closed form in
+index time (where $\Li(p_i)\approx i$, so $U$ is the first-hit index
+over $\varphi$): forcing the first $\pi(q)$ arrivals to be
+collision-free and leaving the rest exchangeable gives
+$\mathbb E[U]=1-\pi(q)^2/2\varphi^2+O(\pi(q)/\varphi^2)$, hence
+\[
+\Theta_{\mathrm{inj}}(q)
+\;=\;\frac{\pi(q)^2}{2\varphi(q)^2}\,\log q\;(1+o(1))
+\;=\;\frac{1+o(1)}{2\log q},
+\]
+closed form $0.092,\ 0.082,\ 0.074$ at $q=1499,\ 3001,\ 5987$, with
+Monte Carlo agreeing within sampling error and the exchangeable
+control at $1.000$.
+The injective phase is therefore real but an order of magnitude too
+small to be the explanation: it accounts for ${\approx}0.08$ of the
+measured $\theta_{\mathrm{corr}}=0.824\pm0.009$, and carries a
+$1/\log q$ decay that the flat measured values do not show.  (The
+review suggested the effect sits at the full deficit scale because
+the \emph{affected-class fraction} is $\pi(q)/\varphi\asymp1/\log q$;
+but the deficit is the affected fraction times the collision
+probability an exchangeable model would have suffered in that phase,
+$\asymp\pi(q)/2\varphi$, giving $1/2\log^2q$ in $\mathbb E[U]$, not
+$1/\log q$.)  The injective phase is in any case the $y<q$ head of
+the pair-correlation expansion already registered below---collisions
+require $q\mid p_2-p_1$, impossible before $y=q$---so subtracting it
+is the first term of the stated programme, not a rival explanation.
+The residue $\theta_{\mathrm{corr}}-\Theta_{\mathrm{inj}}
+\approx0.74$ remains the unexplained ordering anomaly.
+
 The sixth external review supplies the derivation route this
 conjecture has lacked, and we adopt it as the slot's stated
 programme.  Let $V_q(y)$ be the number of reduced classes mod $q$ not
@@ -1921,9 +2054,21 @@ conjecture}
 (the iterated-logarithm scale at variance $V(x)\sim\log\log x$; an
 earlier draft's $O_\varepsilon(V^{1/2+\varepsilon})$ was weaker than
 the model's exact prediction), and the \emph{randomized central
-limit law}: for $x$ log-sampled from $[X,X^A]$ (any fixed $A>1$),
-$(W(x)-\log\log x)/\sqrt{\log\log x}$ converges in distribution to
-$N(0,1)$ as $X\to\infty$.  Both are conjectured on the
+limit law, with a sampling window wide enough to matter}: sample
+$u$ uniformly from $[1,\log\log X]$ and set $x=\exp(\exp(u))$
+(equivalently, weight $x$ by $d(\log\log x)$ on $[\e^{\e},X]$---the
+almost-sure-CLT weighting); then
+$(W(x)-u)/\sqrt{u}$ converges in distribution to $N(0,1)$ as
+$X\to\infty$.  An earlier draft sampled $x$ log-uniformly from a
+block $[X,X^A]$; the eighth external review correctly observed that
+this is vacuous as a CLT: across such a block the expected number of
+\emph{new} Wieferich events is $\log\log X^A-\log\log X=\log A+o(1)
+=O(1)$, so the block-sampled statistic is frozen at the historical
+value $(W(X)-\log\log X)/\sqrt{\log\log X}$ and cannot converge to a
+fresh normal.  The repaired form samples a window on which the
+variance itself, $\log\log x$, sweeps an interval of diverging
+length---the standard almost-sure-CLT resolution of exactly this
+degeneracy.  Both clauses are conjectured on the
 Crandall--Dilcher--Pomerance side of the model choice that clause
 (iv)'s discussion records.
 \end{conjecture}
