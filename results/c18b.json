@@ -1,0 +1,53 @@
+{
+  "conjecture": "Darling-Erdos running-max law for balanced races: max |D|/sqrt(count) ~ sqrt(2 loglog x); finite-x null from OU simulation",
+  "X": 1000000000,
+  "DE_scale": 2.4622173025889387,
+  "null_median": 2.341127974946633,
+  "races": {
+    "twin 2v4 mod5": {
+      "final_D": 970,
+      "count": 2283288,
+      "runmax": 1.686613178952282,
+      "ratio_to_DE": 0.6849976958487234,
+      "null_quantile": 0.06475,
+      "rho1": -0.0360846394448827,
+      "rho2": -0.008853073236711083,
+      "sigma_eff": 0.9540044940338659,
+      "corrected_quantile": 0.09675
+    },
+    "twin 3v5 mod8": {
+      "final_D": -241,
+      "count": 1711855,
+      "runmax": 1.7474081133220758,
+      "ratio_to_DE": 0.7096888286361789,
+      "null_quantile": 0.0935,
+      "rho1": -0.03725134609632067,
+      "rho2": -0.01037557489530362,
+      "sigma_eff": 0.9511814537809026,
+      "corrected_quantile": 0.1415
+    },
+    "cousin 2v3 mod5": {
+      "final_D": 17,
+      "count": 2283105,
+      "runmax": 1.483715154033014,
+      "ratio_to_DE": 0.6025930986972342,
+      "null_quantile": 0.019,
+      "rho1": -0.0398402709576471,
+      "rho2": -0.010043077429862287,
+      "sigma_eff": 0.9488062516789091,
+      "corrected_quantile": 0.03175
+    },
+    "cousin 3v5 mod8": {
+      "final_D": 198,
+      "count": 1711546,
+      "runmax": 1.884432685134059,
+      "ratio_to_DE": 0.7653397135795615,
+      "null_quantile": 0.16725,
+      "rho1": -0.037679387742818794,
+      "rho2": -0.008448513329285744,
+      "sigma_eff": 0.9527561061760721,
+      "corrected_quantile": 0.22875
+    }
+  },
+  "_generated_unix": 1785205949
+}

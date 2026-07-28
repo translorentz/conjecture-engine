@@ -1,0 +1,49 @@
+{
+  "conjecture": "injective no-collision baseline for C22: Theta_inj = (1+o(1))/(2 log q), an order of magnitude below measured theta_corr = 0.824",
+  "reps": 400,
+  "moduli": {
+    "1499": {
+      "pi_q": 238,
+      "EU_mc": 0.986354657790271,
+      "EU_closed": 0.9874318405849545,
+      "Theta_inj_mc": 0.09978229490856096,
+      "Theta_inj_closed": 0.09190533809520222
+    },
+    "2003": {
+      "pi_q": 303,
+      "EU_mc": 0.9896736605053288,
+      "EU_closed": 0.9885845922309459,
+      "Theta_inj_mc": 0.0785049771668271,
+      "Theta_inj_closed": 0.08678451127062717
+    },
+    "3001": {
+      "pi_q": 430,
+      "EU_mc": 0.9901645219444442,
+      "EU_closed": 0.9897516666666667,
+      "Theta_inj_mc": 0.07874973046272916,
+      "Theta_inj_closed": 0.08205533916435445
+    },
+    "4001": {
+      "pi_q": 550,
+      "EU_mc": 0.9896752198437501,
+      "EU_closed": 0.9905640625000001,
+      "Theta_inj_mc": 0.08563682001152079,
+      "Theta_inj_closed": 0.07826449271545079
+    },
+    "4999": {
+      "pi_q": 668,
+      "EU_mc": 0.9899178364823323,
+      "EU_closed": 0.99108174682438,
+      "Theta_inj_mc": 0.08586971783305052,
+      "Theta_inj_closed": 0.07595670139769298
+    },
+    "5987": {
+      "pi_q": 782,
+      "EU_mc": 0.9906275105215435,
+      "EU_closed": 0.9914777481123401,
+      "Theta_inj_mc": 0.08151578135359626,
+      "Theta_inj_closed": 0.0741209710730091
+    }
+  },
+  "_generated_unix": 1785222010
+}

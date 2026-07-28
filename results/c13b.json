@@ -1,0 +1,37 @@
+{
+  "conjecture": "boundary-factorization principle: collapse to the boundary lane + dead-parity/dead-3adic/BH trichotomy for x^3+cx",
+  "M": 1000000,
+  "exceptional_pairs": {
+    "0": [],
+    "4": [],
+    "6": []
+  },
+  "trichotomy": {
+    "0": "BH-lane",
+    "1": "dead-parity",
+    "2": "dead-3adic",
+    "3": "dead-parity",
+    "4": "BH-lane",
+    "5": "dead-parity",
+    "6": "BH-lane",
+    "7": "dead-parity",
+    "8": "dead-3adic",
+    "9": "dead-parity",
+    "10": "BH-lane",
+    "11": "dead-parity",
+    "12": "BH-lane"
+  },
+  "c4": {
+    "C": 2.129561515032301,
+    "obs": 80299,
+    "pred": 80222.80378906721,
+    "z": 0.2690199311002507
+  },
+  "c6": {
+    "C": 2.68953790804299,
+    "obs": 101026,
+    "pred": 101317.46354007018,
+    "z": -0.9156765263892098
+  },
+  "_generated_unix": 1785206217
+}

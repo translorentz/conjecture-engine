@@ -1,0 +1,16 @@
+{
+  "conjecture": "Goldbach lane race: R3-R1 ~ square contamination D_sys on average; (3,3) lane leads",
+  "X": 100000000,
+  "n_samples": 500,
+  "mean_D": 76.532,
+  "mean_Dsys": 64.52227160094986,
+  "ratio_D_over_Dsys": 1.1861330684903117,
+  "mean_noise": 14.75833276329003,
+  "signal_over_noise": 5.185680606847826,
+  "frac_D_positive": 0.592,
+  "ratio_halves": [
+    0.881808273139758,
+    1.305609696459577
+  ],
+  "_generated_unix": 1785152540
+}

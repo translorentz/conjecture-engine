@@ -1,0 +1,13 @@
+{
+  "conjecture": "second-order S*(g) dependence of first occurrences: log p(g) = sqrt g + (1/2)log g - (1/2)log S*(g) + O(1)",
+  "X": 1000000000,
+  "gmin": 60,
+  "gmax": 500,
+  "n_gaps": 100,
+  "slope_logSstar": -0.466123132296334,
+  "pred_slope": -0.5,
+  "intercept": 0.8745413889447167,
+  "sqrtg_coef": 0.06324088267822547,
+  "partial_corr": -0.23974965834799247,
+  "_generated_unix": 1785176825
+}

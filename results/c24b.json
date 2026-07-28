@@ -1,0 +1,11 @@
+{
+  "conjecture": "Conjecture-F family covariance kernel from pair singular series",
+  "N": 1000000,
+  "AMAX": 99,
+  "mean_offdiag_rho": -0.0025676681552692362,
+  "var_common_mode": -0.002516314792163851,
+  "sigma2_pred_upper": 1.0025163147921639,
+  "n_inadmissible_pairs": 289,
+  "observed_profile_sd": 0.6042828476797931,
+  "_generated_unix": 1785168624
+}

@@ -1,0 +1,23 @@
+{
+  "conjecture": "quantitative twin-member Goldbach: R_T(n) ~ [sum of 4 orientation S4(n)] J(n)",
+  "X": 100000000,
+  "n_samples": 150,
+  "agg_ratio": 0.8135571966699556,
+  "loglog_corr": 0.9992601841816036,
+  "z_mean": -11.093858396608834,
+  "z_sd": 8.745519692528454,
+  "z_max": 51.26392746636568,
+  "blocks": [
+    {
+      "range": "[1e+06,1e+07)",
+      "ratio": 0.8722419834645414,
+      "c_implied": 1.9164001870381357
+    },
+    {
+      "range": "[1e+07,1e+08)",
+      "ratio": 0.8056678839896899,
+      "c_implied": 3.3693438412221877
+    }
+  ],
+  "_generated_unix": 1785206169
+}

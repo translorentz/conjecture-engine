@@ -1,0 +1,3080 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\newcommand{\Li}{\operatorname{Li}}
+\newcommand{\e}{\mathrm{e}}
+\DeclareMathOperator{\ord}{ord}
+\newcommand{\SG}{\mathfrak S}
+\newcommand{\CT}{C_3}
+\newcommand{\M}{\mathcal M}
+
+\title{Twenty-five conjectures from a local--global random model,\\
+with computational verification}
+\author{}
+\date{July 27, 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Summary of the conjectures}
+\addcontentsline{toc}{section}{Summary of the conjectures}
+
+\begin{enumerate}
+
+\item \textbf{Prime-power contamination calculus
+(Conjecture~\ref{c21}).}  For a balanced pair race $(n,n+d)$ mod
+$m$, the surviving prime-square orientations
+$(q^2-d,q^2)$, $(q^2,q^2+d)$ occupy provably computable residue
+classes, and the operator
+$\mathcal C_{d,m}(a;x)=\sum_{o}\sum_{q}\Lambda(q^2)\Lambda(\text{prime
+member})$ determines the drift vector: for twins,
+$\M_x\bigl(D_1(t)\log^2t/\sqrt t\bigr)\to c_T=\tfrac12C(x,x^2-2)$
+(mod $5$) and $\to2c_T$ on class $7$ (mod $8$), symmetric
+differences $\to0$; in general each class deficit satisfies
+$\M_x(\mathrm{deficit}\cdot\log^2t/\sqrt t)\to\lim\mathcal
+C_{d,m}(a;x)/\sqrt x$.  Convergence of these logarithmic means at
+drift scale is part of the conjecture (Rubinstein--Sarnak-type
+structure for pattern races).
+
+\item \textbf{Pinned singular-series variance (Conjecture~\ref{c12}).}
+With $R(h)=C_4(0,2,h,h+2)/\SG(2)^2$ and
+$G(H)=\sum_{h\le H}(1-h/H)(R(h)-1)$: (i) [conditional proposition]
+the moving-window twin-pair count obeys
+$\operatorname{Var}/\mathbb E=1+\SG(2)(2G(H)-1)/\log^2x
++o(\log^{-2}x)$; (ii) $-G(H)/\log H\to\infty$: pair counts are more
+sub-Poisson than prime counts.
+
+\item \textbf{Least-prime ordering deficit (Conjecture~\ref{c22}).}
+With $U(a,q)=\Li(p(a,q))/\varphi(q)$: (i) $U\Rightarrow\mathrm{Exp}(1)$
+marginally (attributed), Gumbel maximum under joint independence;
+(ii) the dyadic averages of $\Theta(q)=(1-\mathbb E_a[U])\log q$
+over prime $q\in[Q,2Q]$ converge to a limit $\Theta>0$: the ordered
+primes fill residue classes faster than any exchangeable model, in
+excess of the derived discreteness and injectivity baselines.
+
+\item \textbf{Goldbach lane race (Conjecture~\ref{c25}).}  For
+$n\equiv2\pmod4$, prime squares enter ordered Goldbach
+representations only through the $(1,1)$ lane mod $4$, so with
+$D=R_3-R_1$ and the explicit weighted census $D_{\mathrm{sys}}$:
+$\mathbb E_x[D-D_{\mathrm{sys}}]=o(\mathbb E_x[D_{\mathrm{sys}}])$
+under logarithmic sampling; the drift vanishes on the internal null
+subprogression $n\equiv10\pmod{12}$; the sign density of $D$ tends
+to $\tfrac12$.
+
+\item \textbf{Least Goldbach summand (Conjecture~\ref{c15}).}  With
+$s(n)$ the least prime $p\nmid n$ with $n-p$ prime,
+$U(n)=\SG(n)\sum_{p\le s(n)}1/\log(n-p)$, and the dyadic-log
+ensemble $\mathbb E_X$: (i) $U\Rightarrow\mathrm{Exp}(1)$; (ii)
+$\Theta_G(X)=(1-\mathbb E_XU)\log X\to\Theta_G>0$, the Goldbach
+sibling of the ordering deficit.
+
+\item \textbf{Polynomial--exponential entanglement
+(Conjecture~\ref{c11}).}  Primes $n^2+2^n$ force $n\equiv3\pmod6$;
+with $\kappa_{S}$ the CRT-exact survivor density over the joint
+period of $S$: $\kappa_{S_z}$ converges along the canonical
+exhaustion $S_z=\{5\le p\le z\}$ to $\kappa$, the counting function
+is $\sim\sum_{n\equiv3(6),\,n\le N}\kappa/\log(n^2+2^n)\asymp\log
+N$; whether the limit factors exactly (as observed through $p\le19$)
+is an open question.
+
+\item \textbf{Multibase Fermat quotients (Conjecture~\ref{c23}).}
+For $p\nmid a$: the Eisenstein--Lerch homomorphism confines
+multiplicatively dependent bases to a rational subtorus, and
+(iv) for multiplicatively independent bases
+$(q_p(a_1),\dots,q_p(a_r))/p$ equidistributes on the full torus as
+$p$ varies; (v) at most finitely many simultaneous Wieferich primes;
+plus single-base clauses: KS-discrepancy LIL at constant
+$1/\sqrt2$, shrinking-target law
+$\#\{p\le x:q_p<K\}\sim\sum\min(1,K/p)$, Wieferich-count LIL and an
+almost-sure CLT at the $du/u$ weighting.
+
+\item \textbf{Uniform de Polignac covariance field
+(Conjecture~\ref{c16}).}  $\pi_d(x)=\SG(d)\Li_2(x)(1+o(1))$
+uniformly for even $d\le(\log x)^A$; the moving-window residual
+field has covariance
+$K_3(d,d')H/\log^3x+(1/\log^4x)\sum_{|h|\le H}(H-|h|)K_4(d,d';h)$,
+triple term dominant on the polylogarithmic window class, with
+Poisson/Gaussian regimes as finite-$x$ corrections to independence.
+
+\item \textbf{Race sub-diffusivity (Conjecture~\ref{c18}).}
+Balanced-race steps at event index have negative autocorrelations
+obeying $\rho_k(x)=-(c_k\log\log x+d_k)/\log x\,(1+o(1))$; under
+uniformity in $k$, tail summability, and $\sum c_k,\sum|d_k|<\infty$,
+the diffusivity is
+$\sigma^2(x)=1-2(\sum c_k\log\log x+\sum d_k)/\log x\,(1+o(1))$;
+the asymptotic diffusive-vs-rigid dichotomy is registered open.
+
+\item \textbf{Uniform quadratic de Polignac and its constants
+(Conjecture~\ref{c1}).}  $\#\{n\le N:n^2+1,\,n^2+1+d
+\text{ prime}\}=C(d)I_d(N)(1+o(1))$ uniformly for even
+$d\le(\log N)^B$; a separate power-saving rate clause; and the
+family law: moments of $C(d)$ converge to derived Euler products
+(mean $2.7447\ldots$, sd $1.6835\ldots$), the empirical law
+converging to the random product with CRT-independent local factors.
+
+\item \textbf{First occurrences of prime gaps
+(Conjecture~\ref{c19}).}  On realized gaps: $\log p(g)/\sqrt g$
+bounded between positive constants;
+$\liminf=\sqrt{\e^{\gamma}/2}$ conditional on the realization
+hypothesis; and
+$\log p(g)=\sqrt g+\tfrac12\log g-\tfrac12\log\SG^*(g)+E_g$ with
+$\Pr[E_g\le t]\to1-\exp(-\e^{2(t-\mu)})$, the min-type Gumbel at
+scale $\tfrac12$ forced by the slope-$2$ hazard expansion.
+
+\item \textbf{Stern lane race (Conjecture~\ref{c14}).}  In
+$n=p+2k^2$, square contamination $n=q^2+2k^2$ sits in the $k$-even
+lane iff $n\equiv1\pmod8$, $k$-odd iff $n\equiv3$, and is
+impossible for $n\equiv5,7$ (provable null classes); on contaminated
+classes the clean-minus-contaminated difference obeys
+$\mathbb E_X[D-D_{\mathrm{sys}}]=o(\mathbb E_X[D_{\mathrm{sys}}])$
+with the $\Lambda(q^2)$-weighted census $D_{\mathrm{sys}}$.
+
+\item \textbf{Microscopic variance law (Conjecture~\ref{c20}).}
+[Conditional on quantitative Hardy--Littlewood]  For windows of
+length $H=\lambda(\log x)^{\alpha}$,
+$\operatorname{Var}X/\mathbb EX=1-(\log H+\gamma+\log2\pi-1)/\log x
++o(1/\log x)$ uniformly in $1\le\alpha\le A$, with Gallagher's
+Poisson law at the boundary $\alpha=1$.
+
+\item \textbf{Null-mechanism race (Conjecture~\ref{c8}).}  For
+$(n^2+1,n^2+3)$, square contamination is algebraically impossible;
+the race mod $5$ is driftless at the contamination scale,
+$\M_x(D(t)\log^2t/\sqrt t)\to0$---the negative control for
+item 1---and, conditional on the event-index invariance principle,
+the logarithmic occupation of leadership tends to $\tfrac12$ with
+Gaussian fluctuations $\sqrt{\log2/\log x}$.
+
+\item \textbf{Cubic-shift constants (Conjecture~\ref{c2}).}  For
+non-cube $a$, the three-state local law gives
+$\mathbb E_a[\omega(p)]=1$ exactly, so the limit law of $C(a)$ has
+mean exactly $1$ (an $L^2$-martingale argument), derived sd
+$0.2762\ldots$; counts are uniform over non-cube
+$a\le(\log N)^B$.
+
+\item \textbf{Conjecture F as a family (Conjecture~\ref{c24}).}
+$Q_A(N)=C(A)I_A(N)(1+o(1))$ uniformly over odd $A\le(\log N)^B$;
+same-index window covariance
+$[C(A,A')-C(A)C(A')]H/4\log^2N$ (negative for locally exclusive
+pairs), with the off-index pinned sum at the same $1/4\log^2N$
+order left open.
+
+\item \textbf{Twin-member Goldbach, orientation-resolved
+(Conjecture~\ref{c17}).}  Under $n$-uniform Hardy--Littlewood for
+the four role systems,
+$R_T(n)=[\sum_o\SG_4^{(o)}(n)]\int_5^{n-5}dt/(\log^2t\log^2(n-t))
+\,(1+o(1))$, with the exact identities
+$\SG_4^{(\mathrm{lu})}=\SG_4^{(\mathrm{ul})}$ and
+$\SG_4^{(\mathrm{uu})}(n)=\SG_4^{(\mathrm{ll})}(n-4)$.
+
+\item \textbf{Triplet contamination (Conjecture~\ref{c3}).}  For
+$(n,n+2,n+6)$ mod $5$, the unique surviving square configuration is
+the doubly-thinned $(q^2-2,q^2,q^2+4)$ ($q>3$), contaminating class
+$2$: $\M_x\bigl((\pi_3(t;5,1)-\pi_3(t;5,2))\log^3t/\sqrt
+t\bigr)\to c_3$, the Bateman--Horn constant of
+$(q,q^2-2,q^2+4)$.
+
+\item \textbf{Sexy-pair contamination matrix
+(Conjecture~\ref{c7}).}  For $(n,n+6)$ both orientations survive on
+complementary $q$-classes, feeding start classes $3$ and $1$ (mod
+$5$ and mod $8$) with independent constants $c_A,c_B$ (the
+$(q,q^2\mp6)$ Bateman--Horn constants) in the drift-scale sense;
+class $2$ (mod $5$) and classes $5,7$ (mod $8$) are provably clean.
+
+\item \textbf{Fibonacci--Lucas twins (Conjecture~\ref{c9}).}  The
+odd prime-divisor pools of $F_p$ and $L_p$ are disjoint (ranks $p$
+vs $2p$; $\gcd=2$ iff $3\mid p$); only finitely many $p$ have both
+prime; the naive joint constant is contradicted at the
+$3\times10^{-3}$ level by the catalogued index $148091$
+(conditionally on the probable-prime status of both $F_{148091}$ and
+$L_{148091}$).
+
+\item \textbf{Factorial twins (Conjecture~\ref{c10}).}  Window
+rigidity: $n!+a$ is composite for $2\le|a|\le n$ (theorem), so
+$\pm1$ are the only bounded offsets; $n=3$ uniqueness is attributed;
+the joint-fluctuation clause is a declared-model CLT for
+$F_+-F_-$ under explicit covariance and higher-cumulant
+hypotheses.
+
+\item \textbf{Boundary trichotomy (Conjecture~\ref{c13}).}  For
+$\deg F\ge2$ with positive leading coefficient, $F(m)-F(j)$ prime
+forces $m-j=1$ outside a bounded region; for $x^3+cx$ the boundary
+lane $3m^2-3m+1+c$ is dead-parity for odd $c$, dead-$3$-adic for
+even $c\equiv2\pmod3$, admissible exactly for $c\equiv0,4\pmod6$,
+with uniform Bateman--Horn counts over admissible
+$c\le(\log M)^B$.
+
+\item \textbf{Power-obstruction ladder (Conjecture~\ref{c4}).}
+$m^k=p+j^k$ is impossible for composite $k$ (theorem); for prime
+$k$ it forces $j=m-1$ and reduces to primality of the irreducible
+$D_k(m)=m^k-(m-1)^k$, which follows Bateman--Horn uniformly over
+the prime-$k$ lanes.
+
+\item \textbf{Alternating cyclotomic chain (Conjecture~\ref{c6}).}
+Infinitely many primes $p$ with $\Phi_3(p)$ and
+$\Phi_6(\Phi_3(p))$ prime, at the derived Bateman--Horn rate;
+alternation is the unique admissible continuation in the anchored
+construction space.
+
+\item \textbf{Twin cyclotomic bases (Conjecture~\ref{c5}).}  Of the
+$\varphi(k)=2$ family, only $k=3$ survives ($k=4$ parity-dead,
+$k=6$ a translate), and $\Phi_3(n)$, $\Phi_3(n+1)$ are
+simultaneously prime infinitely often with the computed
+Bateman--Horn constant.
+
+\end{enumerate}
+
+
+\begin{abstract}
+We state twenty-five conjectures in elementary and analytic number
+theory, each derived from the local--global random model of the primes:
+Cram\'er's model corrected by Hardy--Littlewood singular series, with
+Bateman--Horn as the organizing framework and Borel--Cantelli accounting
+for sparse events.  Each statement is calibrated to the strongest form
+the heuristic supports and no stronger.  Every computable constant is
+computed from its definition, with local admissibility checked for
+every constant computed; every statement was tested against exact
+counts (probable-prime counts, so labelled, where the integers
+involved exceed the deterministic certification range), with
+success measured by the \emph{shape} of agreement (predicted constant,
+square-root residuals, no drift) rather than by the size of the range
+searched.  The contributions include: a prime-power contamination
+calculus for pattern races---twin races modulo $5$ and $8$ driven by the
+pairs $(q^2-2,q^2)$, cousin, sexy-pair, and triplet predictions derived
+from the calculus before testing, a Goldbach lane race with a verified
+internal null lane, a Stern-representation lane race whose null classes
+are provable by direct congruence, and an algebraic null control; the
+measured sub-diffusivity of balanced races (universal negative step
+correlations tied to the Lemke Oliver--Soundararajan repulsion);
+canonical ordering deficits for least primes in progressions and for
+least Goldbach summands; derived covariance kernels for moving-window
+residual fields, with the diagonal deficit reduced to a pinned
+singular-series average whose growth already exceeds the single-prime
+Montgomery--Soundararajan term; distribution laws for the constants of
+the quadratic-pair and cubic-shift families, with exact mean-value
+lemmas; an entanglement-aware local-global law for $n^2+2^n$ with an
+exact-rational CRT factorization; a boundary trichotomy for polynomial
+ladders; a multibase subtorus law for Fermat quotients; and
+singular-series waiting-time refinements for first prime gaps.  Every
+statement was checked against the literature by an independent search,
+with novelty labelled conservatively: statements already known in
+essence are attributed and kept \emph{inside} the conjecture whose
+content they calibrate, since those benchmarks are what make the derived
+constants credible.  Every falsifiable-by-instance statement was then
+stress-tested computationally well beyond its original range, and every
+constant was recomputed independently from its definition.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+A good conjecture in the theory of numbers is not merely a statement
+that has resisted counterexample.  It is the \emph{prediction of a
+model}: the assertion that the primes, beyond their local structure,
+behave like a random set of density $1/\log n$.  The discipline this
+imposes is exacting.  A conjecture worth stating should
+(i) survive every congruence and size obstruction, which is a
+computation, not a hope;
+(ii) come with a quantitative asymptotic whose constant is derived, not
+fitted;
+(iii) demand exactly the fluctuations the model earns---square-root
+noise with logarithmic corrections---and no fewer (the Mertens
+conjecture died of demanding fewer);
+(iv) sit inside the standard hierarchy of conjectures
+(Hardy--Littlewood $k$-tuples $\subset$ Schinzel's Hypothesis~H
+$\subset$ Bateman--Horn), so that its failure would propagate; and
+(v) be falsifiable instance-by-instance by computation.
+Numerical range is the least important column in the ledger: most deep
+phenomena drift at the rate $\log\log x$, and $\log\log 10^{18}\approx
+3.7$, so verification ``to $10^{18}$'' is weak evidence by itself.  What
+persuades is the \emph{shape} of the agreement---a count that tracks a
+derived constant through several decades with residuals that look like
+noise.
+
+The twenty-five statements below are built to those specifications and
+are presented in ascending numerical order, in three sections: the
+principal conjectures (numbers 1--9), family laws and second-order
+refinements (numbers 10--17), and instances and structural companions
+(numbers 18--25).  The material they draw on---Bateman--Horn systems,
+barely-divergent sparse sequences, representation problems with
+Borel--Cantelli accounting, and statistical laws of the prime
+sequence---runs through all three.  Section~\ref{sec:audit} reports
+the stress tests and the independent recomputation of every constant.
+
+One structural lesson organizes several of the statements below.  A
+probability model integrates over density, and is therefore blind to
+algebraic families of density zero; the admissibility clause, checked at
+every prime for every system, is what repairs that blindness.  The cubes
+inside the representation problem $n=p+k^3$ (Theorem~\ref{t:cube}) are
+the sharpest instance: they obstruct the problem outright while
+contributing nothing to any Borel--Cantelli sum taken over all $n$.
+This is the classical lesson of admissibility, and it is why the
+statements below separate what is provable by congruence or
+factorization from what the probabilistic accounting supplies.
+
+Three checks stand behind every statement, and \S\ref{sec:audit}
+reports their outcomes.  First, an independent literature search at
+neighbourhood depth---defining objects, derived sequences, OEIS
+comments, and the abstracts and bodies of near-neighbour papers, read
+rather than skimmed from search summaries---establishes what is already
+known.  Where a statement exists in essence it is attributed and
+labelled: some verbatim (Dubner's twin-sum conjecture, the Stern list
+for $p+2k^2$, Caldwell--Gallot's $\e^{\gamma}\log N$ laws), one with an
+exact constant catalogued as an OEIS entry (A188596), and the rest
+recorded in the ledger of \S\ref{sec:attrib}.  No such statement
+stands as a conjecture on its own; each is retained \emph{inside} the
+conjecture whose content it calibrates, restated in our uniform
+framework and re-verified at our bounds.  Second, every
+falsifiable-by-instance statement was verified against exact counts and
+then re-tested well past its original bound, the computation being
+designed as an attempt at refutation rather than at confirmation.
+Third, constants and
+counts were recomputed from the definitions alone by independent
+implementations developed separately from the primary computation.  Our
+novelty policy throughout is deliberately conservative: where priority
+is uncertain we attribute rather than claim.
+
+\subsection*{Taxonomy: our contribution and its calibration layer}
+
+One criterion governs the taxonomy.  An unrecorded specialization of
+Bateman--Horn is analogous to evaluating a classical special function
+at a new argument---worthwhile as data, but not a new conjecture in the
+conceptual sense; no conjecture's contribution is a bare
+specialization, and the taxonomy is two-layered \emph{within} each one.
+The \emph{calibration layer}---the previously-known statements this
+paper begins from (Dubner's conjectures, the Stern list, the
+Caldwell--Gallot laws, Martin's refined Goldbach, Kourbatov's record
+framework, the classical single instances of each family)---appears
+as attributed remarks inside the conjectures, each with its derived
+constant re-verified at our bounds; membership in the standard
+hierarchy of conjectures is itself a virtue, and the calibration layer
+is what makes the new constants credible.  Our own
+contribution is graded honestly: mechanism-level content
+(the contamination calculus \ref{c21}(v) with its instances
+\ref{c3}, \ref{c7}, \ref{c8}, \ref{c14}, \ref{c21}, \ref{c25}; the
+ordering deficits \ref{c15}, \ref{c22}; race sub-diffusivity
+\ref{c18}; the entanglement law \ref{c11}); derived second-order and
+distributional laws (\ref{c1}, \ref{c2}, \ref{c12}, \ref{c16}(ii),
+\ref{c19}(iii), \ref{c20}, \ref{c23}(iv), \ref{c24}(ii)); and
+structural classifications (\ref{c4}, \ref{c5}, \ref{c6},
+\ref{c9}(i), \ref{c10}(i), \ref{c13})---with framework attributions
+stated where an instance lives inside someone else's theory
+(Kowalski's for \ref{c2}(ii), Montgomery--Soundararajan's for
+\ref{c12} and \ref{c20}).  Every statement was novelty-searched at
+neighbourhood
+depth and verified at production scale before entering the paper.  We
+regard the
+prime-power contamination calculus (Conjecture~\ref{c21}(v)) and its
+mechanism family---\ref{c21} and \ref{c25}, the fresh cousin-race
+predictions it generated, and the negative control
+\ref{c8}---together with Conjecture~\ref{c22}(ii) and the derived
+covariance kernels of \ref{c16}(ii) and \ref{c24}(ii) as the paper's
+core, joined by \ref{c20} and \ref{c4}; Conjectures \ref{c9},
+\ref{c11} and \ref{c19} carry open modeling questions flagged in
+place.
+
+One tagging convention runs through every statement below: clauses
+marked [theorem] or ``elementary'' are proved; clauses marked
+``conditional proposition'' follow from the hypotheses stated with
+them; the remaining clauses are conjectures; and open questions are
+labelled as such and are not counted among the twenty-five
+conjectures.
+
+\subsection*{Verification standards}
+
+All counts below are exact (sieves; deterministic Miller--Rabin for
+$n<3.3\times10^{24}$; Baillie--PSW beyond, flagged as such).  Every
+comparison reports the Poisson-normalized residual
+$z=(\mathrm{obs}-\mathrm{pred})/\sqrt{\mathrm{pred}}$.  For sparse
+counts the cumulative comparison is contaminated at small $x$ by the
+phantom mass of the main-term integral near its lower limit; in those
+cases we also report per-decade increments, which are clean.  Constants
+are computed by truncated Euler products with the truncation wobble
+(difference between cutoffs) reported as an error bar; for conditionally
+convergent quadratic and cubic products this wobble, not the last digit,
+is the honest precision.
+
+Primality certification is stratified, and every count inherits the
+stratum of the integers it involves.  Primality of every integer below
+$3.3\times10^{24}$ is decided \emph{deterministically}, by fixed-base
+Miller--Rabin over a witness set verified for that range.  For larger
+integers the classification is made by the Baillie--PSW test, and is a
+\emph{probable-prime} classification, not a proof: no Baillie--PSW
+pseudoprime is known---and none exists below $2^{64}$, where the test
+is therefore deterministic---but their nonexistence is unproved.
+Consequently every count involving such integers is a probable-prime
+count, and is labelled as one wherever it appears.  The computations
+affected are the factorial scans of Conjectures~\ref{c10}
+and~\ref{c12} ($n!\pm1$ for $n$ beyond about $26$), the $n^2+2^n$ scan
+of Conjecture~\ref{c11} beyond $n\approx80$, the quartic values of the
+cyclotomic chain of Conjecture~\ref{c6} beyond $p\approx2\times10^6$,
+and the Fibonacci--Lucas values of Conjecture~\ref{c9} at all but the
+smallest indices.  Every other count below---sieve censuses, race
+counts, window fields, and the inputs to every constant---lies
+entirely inside the deterministic range.
+
+\section{Notation}
+
+$p,q$ denote primes; $\gamma$ is Euler's constant,
+$\e^{\gamma}=1.781072\ldots$; $\varphi$ is Euler's totient;
+$\phi=(1+\sqrt5)/2$; $F_n$ the Fibonacci numbers; $p\#$ the primorial.
+For irreducible $f_1,\dots,f_k\in\mathbb Z[x]$ with positive leading
+coefficients, the Bateman--Horn singular series is
+\[
+  C(f_1,\dots,f_k)\;=\;\prod_{p}\frac{1-\omega(p)/p}{(1-1/p)^{k}},
+  \qquad
+  \omega(p)=\#\{n \bmod p:\ p\mid f_1(n)\cdots f_k(n)\},
+\]
+and the corresponding main term is
+\[
+  I(N)\;=\;\int_{2}^{N}\frac{dt}{\prod_{i}\log f_i(t)},
+\]
+which absorbs the usual $1/\prod_i \deg f_i$.  The Bateman--Horn
+conjecture \cite{BH} asserts
+$\#\{n\le N: \text{all } f_i(n) \text{ prime}\}\sim C\cdot I(N)$
+whenever $C\neq0$; each Bateman--Horn conjecture below is an instance
+with its constant evaluated.  For nonlinear systems the product
+converges only conditionally; throughout, it is taken in the canonical
+ordering of increasing primes, in which convergence follows from the
+equidistribution of $\omega(p)$ about its Chebotarev mean.  Our
+numerical truncation wobble is an error bar for this canonically
+ordered product, not a substitute for that convergence statement.  We write
+$\Li_k(x)=\int_2^x(\log t)^{-k}\,dt$.  The twin singular series is
+$\SG(d)=2C_2\prod_{p\mid d,\,p>2}\frac{p-1}{p-2}$ for even $d$, with
+$2C_2=1.3203236\ldots$; the Goldbach series $\SG(n)$ is the same product
+over odd $p\mid n$.
+
+Eight of the conjectures below are built over the Bateman--Horn
+move---choose an admissible system, compute its singular series,
+state the count---but none is a bare instance of it:
+\ref{c1} and \ref{c2} are family laws with derived constant
+distributions, \ref{c4} and \ref{c5} carry structural classifications,
+\ref{c6} is a searched chain, and \ref{c3}, \ref{c7}, \ref{c8} are
+contamination-calculus predictions (two fresh races and the negative
+control) whose mechanism is the contamination calculus of
+Conjecture~\ref{c21}(v).  Each carries
+its classical calibration instance as an attributed remark.
+The heuristic is uniform, so we give it once.  Model the primality of the values $f_i(n)$ as independent events
+of probability $1/\log f_i(n)$, corrected by the factor
+$(1-\omega(p)/p)/(1-1/p)^k$ at each prime $p$ to account for the joint
+local behaviour; multiplying the corrections and integrating gives
+$C\cdot I(N)$.
+
+For locally integrable $F$ we write
+$\M_x(F)=\frac1{\log x}\int_2^x F(t)\,\frac{dt}t$ for the logarithmic
+mean; all race conjectures below state their drift and null clauses
+through $\M_x$, so that ``no persistent leader'' and ``systematic
+surplus'' are claims about a defined functional rather than about
+pointwise behaviour.  Drift clauses are stated at the \emph{drift
+scale}---for a pair race, $\M_x(D(t)\log^2t/\sqrt t)$ converging to
+an explicit constant---never as
+$\M_x((D-T)/\sqrt\pi)\to0$, which is vacuous for the drift coefficient
+(both $T/\sqrt\pi$ and its multiples have logarithmic mean $\to0$).
+Convergence of $\M_x$ at
+drift scale is itself part of each such conjecture: a pure
+random-walk fluctuation model would make these means divergent in
+variance, so their convergence encodes the Rubinstein--Sarnak-type
+almost-periodicity that the zero-oscillation hypothesis names.
+
+Admissibility ($\omega(p)<p$ for all $p$) is checked for every constant
+computed.  The check does real work: the
+natural-looking pair $\{n^2+n+1,\ n^2+n+3\}$ has $\omega(3)=3$ and is
+rejected; the $k=4$ branch of Conjecture~\ref{c5} and the naive
+iterated chain behind Conjecture~\ref{c6} are inadmissible for the
+same reason, and both exclusions are part of the statements.
+
+\section{Principal conjectures}
+
+The twin-race statement is split into its provable algebraic core and
+its conjectural clauses, stated through the logarithmic-mean
+functional $\M_x$ of the notation section.
+
+\begin{lemma}[Orientation elimination and class assignment]\label{l:c21}
+In $\psi_2(x)=\sum_{n\le x}\Lambda(n)\Lambda(n+2)$, the total
+contribution of terms in which $n$ or $n+2$ is a proper prime power
+is, apart from $O(x^{1/3}\log^2 x)$ from cubes and higher powers,
+carried entirely by the patterns $(q^2-2,\,q^2)$ with $q$ prime and
+$q^2-2$ prime: the mirror pattern $(q^2,\,q^2+2)$ is annihilated by
+$3\mid q^2+2$ for every prime $q>3$.  Moreover, for every prime
+$q\neq5$, $q^2-2\equiv2$ or $4\pmod 5$ (never $1$), and for every odd
+$q$, $q^2-2\equiv7\pmod8$.  (The single exceptional term $q=5$,
+$(23,25)$, lands outside the twin-start classes altogether and is
+absorbed in the bounded error.)
+\end{lemma}
+
+The proof is elementary (squares mod $3$, $5$, $8$; the prime-power
+count).  The lemma orients the race: prime-square contamination can
+enter only specific residue classes, and the model converts that into
+a drift prediction for the \emph{unweighted} twin counts.
+
+\setcounter{conjecture}{0}%
+\begin{conjecture}[Twin races modulo 5 and 8, and the prime-power
+contamination calculus; apparently new]\label{c21}
+Twin starts $p>5$ lie in classes $p\equiv1,2,4\pmod5$.  Let
+$D_1(x)=\pi_t(x;5,1)-\tfrac12\bigl(\pi_t(x;5,2)+\pi_t(x;5,4)\bigr)$
+and
+\[
+T(x)\;=\;\frac1{2\log^2x}
+\sum_{\substack{q\le\sqrt x\\ q^2-2\ \mathrm{prime}}}
+\log q\,\log(q^2-2),
+\]
+whose scale is governed by the constant $C_7$ of
+Conjecture~\ref{c7}.  Then:
+\emph{(i)} [drift law, at drift-scale normalization] class $1$
+carries the systematic surplus $T$, stated so that the coefficient
+is actually identified.  A normalization at the noise scale,
+$\M_x((D_1-T)/\sqrt{\pi_t})\to0$, would be \emph{vacuous} for the
+coefficient: since $T/\sqrt{\pi_t}\asymp1/\log t$, one has
+$\M_x(T/\sqrt{\pi_t})\asymp\log\log x/\log x\to0$, so the condition
+holds with $T$ replaced by $0$, $2T$, or any fixed multiple, and
+does not express ``exactly the removed mass.''  The statement
+therefore normalizes at the \emph{drift} scale, where the claimed
+limit is a nonzero constant:
+\[
+\M_x\!\left(\frac{D_1(t)\,\log^2t}{\sqrt t}\right)
+\;\longrightarrow\;
+c_T\;:=\;\lim_{x\to\infty}\frac{T(x)\log^2x}{\sqrt x}
+\;=\;\tfrac12\,C(x,\,x^2-2),
+\]
+the half of the Bateman--Horn constant of the pair $(q,\,q^2-2)$
+(the weighted census sum is $\sim C\sqrt x$, so the limit exists and
+is explicit).  Two layers are being conjectured at once, and we say
+so: \emph{that} the logarithmic mean converges at this
+normalization---under a pure random-walk model it would not (its
+variance grows like $\log x$), so convergence is an assertion of
+Rubinstein--Sarnak-type almost-periodic structure for the twin race,
+and is the precise content of the zero-oscillation
+hypothesis---and that its limit is $c_T$ rather than $0$ or $2c_T$,
+which is the calculus.  Equivalently:
+$\M_x(D_1)/\M_x(T)\to1$;
+\emph{(ii)} [zero deterministic drift in the symmetric differences]
+the symmetric classes carry no deterministic term \emph{at the same
+normalization}:
+$\M_x\bigl((\pi_t(\cdot;5,2)-\pi_t(\cdot;5,4))\log^2t/\sqrt
+t\bigr)\to0$,
+and likewise for each of the three pairwise differences among classes
+$\{1,3,5\}$ mod $8$ in clause (iv)---now a statement genuinely
+distinct from (i), since at drift scale ``zero'' and ``$c_T$'' are
+different limits;
+\emph{(iii)} [sign density, conditional] conditional on the Gaussian
+fluctuation model for the normalized remainder in (i)--(ii), the
+logarithmic density of $\{D_1>0\}$ exists and equals $\tfrac12$,
+approached from above with a finite-$x$ excess of order
+$\log\log x/\log x$: the pointwise drift-to-noise ratio is
+$T/\sqrt{\pi_t}\asymp1/\log t$, and its \emph{logarithmic average}
+$\M_x(1/\log t)\sim\log\log x/\log x$ carries an extra $\log\log$
+(the scale is not $1/\log x$).  In contrast to Chebyshev's races, the twin
+race has no
+persistent leader;
+\emph{(iv)} [mod-8 companion] since $q^2-2\equiv7\pmod8$ always
+(Lemma~\ref{l:c21}), the \emph{entire} deterministic term falls on
+the single class $7\pmod 8$: with
+$D_7(x)=\tfrac13\sum_{a\in\{1,3,5\}}\pi_t(x;8,a)-\pi_t(x;8,7)$,
+\[
+\M_x\!\left(\frac{D_7(t)\,\log^2t}{\sqrt t}\right)
+\longrightarrow2c_T
+\]
+(twice the mod-5 constant, undiluted---and at this normalization
+the factor $2$ is a falsifiable prediction, not absorbed into a
+vacuous remainder), while classes $1,3,5$ are mutually
+symmetric.  The mod-5 and mod-8 races are two projections of one
+mechanism, so their joint behaviour is a family test in the sense of
+the shape-of-agreement criterion;
+\emph{(v)} [contamination calculus for balanced races] for a pattern
+$(n,n+d)$ and modulus $m$, call the race \emph{balanced} if the
+prime-prime singular series is identical across the competing residue
+classes (as CRT gives for the classes compared in (i)--(iv)) and no
+mechanism other than prime powers contributes at the $\sqrt x$ scale
+under the zero-oscillation hypothesis.  For balanced races the
+deterministic drift vector is computed by one operator.  Define the
+\emph{contamination operator}
+\[
+\mathcal C_{d,m}(a;x)\;=\;
+\sum_{\text{orientations }o\in\{(q^2-d,q^2),\,(q^2,q^2+d)\}}
+\ \sum_{\substack{q\le\sqrt x,\ o\ \text{prime-compatible}\\
+\mathrm{start}(o)\equiv a\ (m)}}
+\Lambda(q^2)\,\Lambda(\text{prime member of }o),
+\]
+where prime-compatible means the non-square member is prime and no
+fixed prime annihilates the orientation.  The provable layer is the
+orientation census and class assignment (which $o$ survive, and
+where their starts land---Lemma~\ref{l:c21} and its analogues); the
+conjectural layer is the transfer: the unweighted class counts are
+depressed by $\mathcal C_{d,m}(a;x)/\log^2x$ relative to the clean
+classes, in the drift-scale limiting-log-mean sense of (i)---for
+each class $a$, the deficit obeys
+$\M_x\bigl(\mathrm{deficit}_a(t)\log^2t/\sqrt t\bigr)\to
+c(a):=\lim\mathcal C_{d,m}(a;x)/\sqrt x$, an explicit Bateman--Horn
+constant per class, so every coefficient in the vector is
+identified---i.e.\ ``exactly the removed
+mass,'' which requires the weighted identity, partial summation
+uniform in classes, higher-power bounds (exponents $r\ge3$
+contribute $O(x^{1/3+\varepsilon})$ against the operator's
+$\asymp\sqrt x$ and are negligible---the one easy layer of the
+transfer), and the zero-oscillation
+hypothesis, and is the calculus's single analytic conjecture rather
+than a rule---this transfer step, not the census, is the mathematical
+content.  The operating scale should be
+kept in view throughout: the drift is
+$\asymp\sqrt x/\log^2x$ against a count fluctuation
+$\asymp\sqrt x/\log x$, i.e.\ smaller by $1/\log x$ in
+standard-deviation units at every height---so the calculus predicts
+occupation biases under long logarithmic aggregation, never a fixed
+nonzero standardized mean, and every verification in this family is
+designed around that fact.  (Races with unequal primary
+constants, or with interfering orientations beyond those enumerated,
+are outside the calculus until those terms are separated.)  In
+particular,
+for the cousin pattern $d=4$ the calculus makes two predictions with
+no free choices: the orientation $(q^2-4,q^2)$ is dead
+($q^2-4=(q-2)(q+2)$ is composite), the orientation $(q^2,q^2+4)$
+survives (no prime annihilates it), $q^2+4$ prime forces
+$q\equiv\pm2\pmod5$ for $q\neq5$ (at $q=5$ the value $29$ is prime,
+but the start $25\equiv0\pmod5$ lies outside the cousin start classes
+$\{2,3,4\}$), so the contaminated cousin-start class is
+$4\pmod 5$ (of $\{2,3,4\}$) and---since $q^2\equiv1\pmod8$---the
+class $1\pmod 8$ (of $\{1,3,5,7\}$): both deficits converge, in the
+drift-scale limiting-log-mean sense of (i)--(ii), to
+$c^{\mathrm c}=\lim_{x\to\infty}T^{\mathrm c}(x)\log^2x/\sqrt x$,
+the Bateman--Horn constant of the pair $(q,\,q^2+4)$, where
+$T^{\mathrm c}(x)=\frac1{\log^2x}\sum_{q\le\sqrt x,\ q\neq5,\ q^2+4\
+\mathrm{prime}}\log q\,\log(q^2+4)$.
+\end{conjecture}
+
+Clause (v) answers the structural question of what general principle
+the mod-5 and mod-8 races instantiate, and the cousin predictions it
+yields were derived first and tested second.  At $x=10^9$ the predicted
+drift is far inside the
+noise ($T^{\mathrm c}/\sqrt{\pi_{\mathrm c}}\approx0.09$, as the
+$1/\log x$ law requires), so the sharp statistic is leadership under
+logarithmic averaging, calibrated against the null of
+Conjecture~\ref{c8}(ii) (log-occupation $\tfrac12$ with Gaussian
+spread $\sqrt{\log2/\log x}\approx0.18$ at $10^9$, at the
+occupation-fraction constant): the
+class-4 deficit race led on the predicted side with log-density
+$0.99$ ($+2.7$ null standard deviations), the class-1 mod-8 race
+with $0.92$ ($+2.3$), both signs agreeing with the prediction, while
+the control differences among uncontaminated classes stayed within
+one noise unit of zero in log-mean.  This is moderately strong directional
+evidence---two independent
+projections each between two and three null standard deviations on
+the predicted side---though the races share underlying primes and
+the two statistics are positively correlated, so we still do not
+call it sharp confirmation;
+the family now has five projections of one mechanism (twin mod 5,
+twin mod 8, cousin mod 5, cousin mod 8, and the Goldbach lanes of
+Conjecture~\ref{c25}) plus two algebraic nulls (Conjecture~\ref{c8}
+and the dead cousin orientation), which is the shape-of-agreement
+standard applied to the calculus itself.
+
+Two points of formulation deserve emphasis.  A limiting sign density
+strictly between $\tfrac12$ and $1$ would be inconsistent with the
+scale analysis: when drift/noise $\to0$, a Gaussian model forces the
+sign density to $\tfrac12$, and a nontrivial limiting density would
+require a persistent normalized bias that no mechanism here produces.
+And the fluctuation in (iv) is deliberately not written as
+$O^{*}(\sqrt{\pi_t})$, since $O$-notation asserts a provable bound
+where only a conjectural fluctuation statement is meant; the
+$\M_x$-clauses above say exactly what is conjectured and no more.  Two model
+assumptions
+remain open and are stated as such: the passage from the
+$\Lambda$-weighted count to unweighted twin counts is a
+partial-summation argument whose error terms need writing out (higher
+prime powers are disposed of by Lemma~\ref{l:c21}); and the
+\emph{zero-oscillation caveat}---the drift law treats the oscillatory
+explicit-formula contributions to class differences as having
+vanishing logarithmic mean, the exact analogue of the
+Rubinstein--Sarnak GRH-plus-linear-independence framework
+\cite{RubinsteinSarnak}, and a conspiracy among hypothetical zeros
+could in principle mimic or cancel part of the drift; clause (i) is
+conjectured on the standard side of that hypothesis.
+
+The mechanism is the twin analogue of the classical explanation of
+Chebyshev's bias: prime-square terms contaminate the classes that can
+contain them.  (Biases of twin primes in residue classes have been
+studied before---Sahoo \cite{Sahoo} for the mod-$4$ race, and
+\cite{PairBias} for prime pairs versus isolated primes---but we could
+find no prior statement of the mod-$5$ race, the $(q^2-2,q^2)$
+mechanism, or the quantified surplus below.)  Mod $3$ kills the pattern
+$(q^2,q^2+2)$ outright, an amusing local accident that halves the
+mechanism and concentrates the surplus entirely on class $1$, as a
+mod-$3$ computation confirms.  Data to $4\cdot10^9$:
+class counts $(3980017,\ 3982505,\ 3981922)$, $D_1$ within one noise
+unit of $T$ throughout, no persistent leader, and the
+control race $\pi_{t,2}-\pi_{t,4}$ wandering like a fair coin.
+Mod-8 data to $10^9$: class counts
+$(856684,\ 855807,\ 856046,\ 855967)$ for $a=1,3,5,7$;
+$D_7=+212$ at $10^9$ against predicted $T=+254$ with noise ${\sim}1068$,
+positive through most of the range (log-density $0.775$), and the three
+pairwise $\{1,3,5\}$ controls all within one noise unit of zero---the
+two projections of the mechanism behave coherently, none of it provable
+at present.
+
+\setcounter{conjecture}{1}%
+\begin{conjecture}[The pair-level Montgomery--Soundararajan reduction;
+apparently new]\label{c12}
+For the window field of Conjecture~\ref{c16}(ii), the diagonal
+variance of the twin-pair count reduces to a \emph{pinned}
+singular-series average.  With
+$R(h)=C_4(0,2,h,h+2)/\SG(2)^2$ for $h\ge1$ (zero when the offset set
+is degenerate or inadmissible---all odd $h$, and $h=2$ since
+$\{0,2,4\}$ dies at $3$; consecutive twin pairs cannot overlap beyond
+$(3,5,7)$, so no overlap term exists) and
+\[
+G(H)\;=\;\sum_{1\le h\le H}\Bigl(1-\frac hH\Bigr)\bigl(R(h)-1\bigr),
+\]
+the derived identity is
+\[
+\frac{\operatorname{Var}_t\,\pi_2(t;H)}{\mathbb E_t\,\pi_2(t;H)}
+\;=\;1+\frac{\SG(2)\,\bigl(2G(H)-1\bigr)}{\log^2x}
++o\!\Bigl(\frac1{\log^2 x}\Bigr):
+\]
+with $p=\SG(2)/\log^2x$ the per-site intensity, the variance is
+$Hp(1-p)+2p^2HG(H)$, so $\operatorname{Var}/\mathbb E=1-p+2pG(H)$
+---the Bernoulli diagonal term $-p=-\SG(2)/\log^2x$ is of exactly
+the order of the claimed error and cannot be dropped (it is the same
+diagonal that, in the single-prime case, merges into
+Montgomery--Soundararajan's constant $\gamma+\log2\pi-1$).  With
+that term retained, the entire deficit left open at
+Conjecture~\ref{c16}(ii) is
+the single computable function $G$ plus the explicit Bernoulli
+correction---the pair analogue of
+Montgomery--Soundararajan's reduction of the prime-count variance to
+$\sum_{h\le H}\SG(h)(H-h)$ \cite{MS}.  Clause (i) is a
+\emph{conditional proposition}, not an independent conjecture: given
+quantitative Hardy--Littlewood for $4$-tuples, the reduction
+follows.  The conjectural clause is (ii): $-G(H)/\log H$ diverges
+---the pinned average grows strictly faster than the single-prime
+secondary term $\tfrac12(\log H+\gamma+\log2\pi-1)$, so pair counts
+in windows are more sub-Poisson than prime counts---with the honest
+caveat that data to $H=3000$ cannot distinguish divergence from a pure
+$\log$ with a large constant
+(nor $c\log H\log\log H$ from $(\log H)^\alpha$): what the
+computation \emph{establishes} is only that the local slope exceeds
+the single-prime value sevenfold across the computable range; the
+divergence and its exact form are registered, not evidenced beyond
+that.
+\end{conjecture}
+
+$G$ was computed exactly to $H=3000$ ($4$-tuple constants by Euler
+products to $2\times10^4$): $G(3000)=-20.9$, with local logarithmic
+slope increasing from $3.4$ to $3.7$ across the range---seven times
+the single-prime slope $\tfrac12$, consistent with (ii) over the
+computable range while leaving the limiting form genuinely
+undetermined (a quadratic-in-$\log$ fit is unstable on subranges).
+The window measurement brackets the extrapolation: at $H=10^5$,
+$x\in[10^8,2\times10^8]$ the pure-log form predicts
+$\operatorname{Var}/\mathbb E=0.97$, the $\log^2$ form $0.72$, and
+the observed value is $0.815$---intermediate growth, exactly where
+the computable range points.  (Caldwell--Gallot's factorial-prime law
+$\#\{n\le N: n!+1 \text{ prime}\}\sim\e^{\gamma}\log N$
+\cite{CaldwellGallot}, the divergent single-sided companion of
+Conjecture~\ref{c10}, is included as an attributed calibration
+benchmark: $15$ primes to $n=700$ against $11.7$,
+$z=+0.98$---a probable-prime count, $n!+1$ leaving the deterministic
+range at $n\approx26$.)
+
+\emph{Verification.}  The pinned singular-series computation and window
+comparison are reported at the statement; its factorial
+benchmark stands at $15$ primes with $n\le700$ against $11.7$
+($z=+0.98$; a probable-prime count for $n$ beyond about $26$), the
+divergent single-sided companion of
+Conjecture~\ref{c10}'s convergent side.
+
+\setcounter{conjecture}{2}%
+\begin{conjecture}[Least primes in progressions; part (i) previously
+stated \cite{HLS,Wagstaff,Fiori,Leung}, part (ii) apparently
+new]\label{c22}
+Let $p(a,q)$ be the least prime $\equiv a\pmod q$ and
+$U(a,q)=\Li(p(a,q))/\varphi(q)$.  Then:
+\emph{(i)} $U\Rightarrow\mathrm{Exp}(1)$ marginally as $q\to\infty$;
+and, under the additional hypothesis that the class processes are
+asymptotically jointly independent in the extreme-value sense (which
+marginal convergence alone does not supply),
+$\max_a U-H_{\varphi(q)}$ converges to a Gumbel law
+($H_n=\sum_{k\le n}1/k$), the order-statistics form of Wagstaff's
+$\max_a p(a,q)\sim\varphi(q)\log^2q$;
+\emph{(ii)} [canonical deficit, dyadic-average form] define, with no
+reference to any control model,
+$\Theta(q)=\bigl(1-\mathbb E_a[U(a,q)]\bigr)\log q$.  The conjecture
+is stated for dyadic averages over prime moduli---pointwise
+convergence along every prime $q$ may be too strong, since
+arithmetic fluctuations in $q$ could persist:
+\[
+\frac1{\#\{q\in[Q,2Q]\ \text{prime}\}}
+\sum_{\substack{Q\le q\le2Q\\ q\ \mathrm{prime}}}\Theta(q)
+\;\longrightarrow\;\Theta\;>\;0
+\qquad(Q\to\infty).
+\]
+(The formal claim is deliberately model-free: existence and strict
+positivity of the dyadic-average limit.  The stronger reading---that
+$\Theta$ exceeds the discreteness level any parity-aware control
+produces---is the diagnostic layer below, not part of the display,
+since a control constant has no place in a model-free statement.)
+The limiting \emph{distribution} of $\Theta(q)$ over the dyadic
+block is left open, and in particular we do \emph{not} assert
+$\operatorname{sd}(\Theta(q))\to0$: fluctuations driven by the
+arithmetic of $q$ and of $q-1$ (through the singular-series pair
+terms $\SG(kq)$ and the class structure mod $q$) may well persist at
+bounded size, so $\Theta(q)$ need not concentrate around its
+dyadic mean.
+\end{conjecture}
+
+The decomposition
+$\Theta(q)=\theta_{\mathrm{disc}}(q)+\theta_{\mathrm{corr}}(q)$ is a
+\emph{diagnostic}, not a canonical invariant: its two parts move if
+the benchmark moves, and clause (ii) is therefore stated through the
+model-free $\Theta(q)$ alone.  The named benchmark (the parity-aware
+Cram\'er--Bernoulli
+control: candidates $a,\,a+q,\,a+2q,\dots$ independently ``prime''
+with hazard $h_i=(q/\varphi(q))\cdot s_i/\log(a+iq)$, $s_i=2$ for odd
+candidates and $0$ for even, matching density and parity) defines
+$\theta_{\mathrm{disc}}(q)=(1-\mathbb E_a[U^{\mathrm{model}}])\log q$
+exactly for each $q$, and
+$\theta_{\mathrm{corr}}:=\Theta-\theta_{\mathrm{disc}}$ is the part
+of the measured deficit that the control cannot produce; it is this
+diagnostic that localizes the anomaly in the \emph{ordering} of the
+primes (Remark~\ref{r:c22}).  Measured on prime moduli
+$q\in[1500,6000]$: $\Theta=1.671\pm0.009$, of which the control
+accounts for $0.847$.
+
+One further deterministic baseline must be subtracted before any of
+the residue is called an anomaly: for prime $q$, the primes $p<q$
+occupy
+\emph{distinct} classes mod $q$---an injective initial phase that no
+exchangeable allocation reproduces.  Its size has a closed form in
+index time (where $\Li(p_i)\approx i$, so $U$ is the first-hit index
+over $\varphi$): forcing the first $\pi(q)$ arrivals to be
+collision-free and leaving the rest exchangeable gives
+$\mathbb E[U]=1-\pi(q)^2/2\varphi^2+O(\pi(q)/\varphi^2)$, hence
+\[
+\Theta_{\mathrm{inj}}(q)
+\;=\;\frac{\pi(q)^2}{2\varphi(q)^2}\,\log q\;(1+o(1))
+\;=\;\frac{1+o(1)}{2\log q},
+\]
+closed form $0.092,\ 0.082,\ 0.074$ at $q=1499,\ 3001,\ 5987$, with
+Monte Carlo agreeing within sampling error and the exchangeable
+control at $1.000$.
+The injective phase is therefore real but an order of magnitude too
+small to be the explanation: it accounts for ${\approx}0.08$ of the
+measured $\theta_{\mathrm{corr}}=0.824\pm0.009$, and carries a
+$1/\log q$ decay that the flat measured values do not show.  (One might
+expect the effect
+to sit at the full deficit scale, since the \emph{affected-class
+fraction} is $\pi(q)/\varphi\asymp1/\log q$; but the deficit is the affected
+fraction times the collision
+probability an exchangeable model would have suffered in that phase,
+$\asymp\pi(q)/2\varphi$, giving $1/2\log^2q$ in $\mathbb E[U]$, not
+$1/\log q$.)  The injective phase is in any case the $y<q$ head of
+the pair-correlation expansion already registered below---collisions
+require $q\mid p_2-p_1$, impossible before $y=q$---so subtracting it
+is the first term of the stated programme, not a rival explanation.
+The residue $\theta_{\mathrm{corr}}-\Theta_{\mathrm{inj}}
+\approx0.74$ remains the unexplained ordering anomaly.
+
+A derivation route for the deficit, which we adopt as the programme
+stated here, runs as follows.  Let $V_q(y)$ be the number of reduced
+classes mod $q$ not
+yet visited by a prime $\le y$; then
+$\mathbb E_a[U]=\int_0^\infty \overline{V_q(y_\tau)}/\varphi(q)\,
+d\tau$ with the $\Li$-time change $y_\tau$ defined by
+$\Li(y_\tau)=\tau\varphi(q)$, and inclusion--exclusion expands
+$V_q(y)$ in prime-tuple correlations \emph{within} a class:
+\[
+\mathbb E\binom{N_a}{2}\ \text{summed over }a
+\;=\;\#\{p_1<p_2\le y:\ q\mid p_2-p_1\}
+\;\approx\;\Li_2(y)\sum_{k\ge1}\SG(kq),
+\]
+so the first correction to the exchangeable occupancy model is
+carried by the Hardy--Littlewood singular series of gaps divisible by
+$q$.  Evaluating this expansion to second order, and comparing it
+with the measured $\Theta$, is the concrete open computation that
+would either derive the ordering anomaly from pair correlations or
+prove it lies deeper; either outcome would reduce the mystery of
+Question~\ref{q:theta} by one level.
+
+The stratified experiment behind these numbers separates moduli by
+factorization type in the matched range $q\in[1500,6000]$: over $40$
+\emph{prime} moduli, $\theta_{\mathrm{disc}}=0.847$ (essentially
+constant across $q$) and $\theta_{\mathrm{corr}}=0.824\pm0.009$;
+over $40$ \emph{$7$-smooth} moduli in the same range,
+$\theta_{\mathrm{disc}}=4.32\pm0.22$ (the large $q/\varphi(q)$
+hazards make discreteness dominant) while
+$\theta_{\mathrm{corr}}=-2.32\pm0.22$ reverses sign.  The comparison
+with Leung \cite{Leung} is thereby given its answer-shaped
+experiment: Leung derives the exponential law under
+a uniform Hardy--Littlewood hypothesis and reports discrepancies for
+\emph{smooth} moduli, and our smooth stratum indeed behaves
+anomalously---but the positive ordering term survives, with small
+error bars, exactly where smooth-modulus effects cannot reach.
+Whether $\theta_{\mathrm{corr}}$ tends to a constant, and the exact
+functional form in $1/\log q$, remain open: data at $q\le6000$ cannot
+distinguish $1/\log q$ from $(\log\log q)/\log q$-type
+refinements---the aggregate $\theta\approx1.5$--$1.9$ over
+$q\in[10^2,6\times10^3]$, with $\mathbb E_a[U]$ bottoming near
+$0.737$ around $q\approx200$ and recovering through $0.776$ by
+$q\approx6000$, is calibration, not a determination of the form.  The
+averaging family is fixed as: all moduli of the stated type in
+dyadic ranges of $q$, per stratum.
+
+\begin{remark}\label{r:c22}
+The deficit is reproducible and is \emph{not} an artifact of the
+time-change: a Cram\'er pseudo-prime control (independent Bernoulli
+``primes'' with the correct densities and parity) shows roughly half
+of it---the discreteness of large per-candidate hazards---while the
+other half vanishes under any reshuffling of the actual prime residues
+(iid labels, or a random permutation of the true residue sequence,
+both restore $\mathbb E[U]=1.00$).  The ordered sequence of primes
+fills residue classes measurably faster than any exchangeable model,
+and the stratified experiment above shows the effect is not a
+smooth-modulus artifact: it is largest and cleanest on prime moduli.
+We measure $\theta_{\mathrm{corr}}$; we cannot yet derive it.  It is
+the deepest unexplained number produced by this exercise.
+\end{remark}
+
+\setcounter{conjecture}{3}%
+\begin{conjecture}[The Goldbach lane race; apparently new]\label{c25}
+For $n\equiv2\pmod4$ let $R_1(n)$, $R_3(n)$ be the ordered Goldbach
+representation counts in the lanes $p\equiv q\equiv1$ and
+$p\equiv q\equiv3\pmod4$ (Conjecture~\ref{c15}), and
+$D(n)=R_3(n)-R_1(n)$.  Prime-square terms $n=q^2+p$ ($q$ odd prime)
+land \emph{exclusively} in the $(1,1)$ lane, since
+$q^2\equiv1\pmod4$ and then $n-q^2\equiv1\pmod4$ automatically.
+Consequently the $(3,3)$ lane leads on average: with
+\[
+D_{\mathrm{sys}}(n)\;=\;\frac{2}{\bar\ell(n)}
+\sum_{\substack{q \text{ odd prime},\ q\le\sqrt n\\ n-q^2 \text{ prime}}}
+\log q\,\log(n-q^2),
+\qquad
+\bar\ell(n)\;=\;\frac{n-6}{\displaystyle\int_3^{n-3}
+\frac{dt}{\log t\,\log(n-t)}},
+\]
+(the analytic mean of $\log p\log(n-p)$ under the lane profile; the
+empirical lane mean is its estimator).  Write $\mathbb E_x$ for the
+average over $n$ drawn from $\{n\equiv2\ (4),\ n\le x\}$ with weight
+proportional to $1/n$ (the logarithmic sampling measure, now
+explicit).  Then:
+\emph{(i)} [drift law]
+$\mathbb E_x[D-D_{\mathrm{sys}}]=o(\mathbb E_x[D_{\mathrm{sys}}])$ as
+$x\to\infty$: the $(3,3)$ lane leads on average by exactly the square
+contamination;
+\emph{(ii)} [weighted mean and internal null lane]
+$\mathbb E_x[D_{\mathrm{sys}}]$ is given by the Hardy--Littlewood
+(Conjecture H) local model for $n-q^2$, whose local factors vary
+strongly with $n$---most drastically at $p=3$: for $n\equiv1\pmod3$, $3\mid
+n-q^2$ for \emph{every} prime
+$q>3$, so the contamination collapses to exactly two boundary
+families---the $q=3$ term (when $n-9$ is prime) and---a second family, not a
+single term---the sparse exceptional family $n-q^2=3$ (when $n-3$ is
+itself a
+prime square, so that the divisible-by-3 value \emph{is} 3)---both
+negligible in logarithmic mean, so the race carries no drift at the
+systematic scale on the subprogression $n\equiv10\pmod{12}$: with the
+positive comparison scale
+$A_G(x):=\mathbb E_x^{(\not\equiv1\,(3))}[D_{\mathrm{sys}}]$, the
+logarithmic-ensemble mean of the systematic term over the
+contaminated lane $n\not\equiv1\pmod3$ (a comparison against this
+subprogression's own systematic term, which vanishes, would be
+empty), the claim is $\mathbb E_x[D]=o\bigl(A_G(x)\bigr)$ on
+$n\equiv10\pmod{12}$, while the drift
+concentrates on $n\not\equiv1\pmod3$: an internal null lane,
+predicted by the same mechanism that predicts the lead;
+\emph{(iii)} [sign density] the per-$n$ drift-to-noise ratio
+$\kappa(n)=D_{\mathrm{sys}}(n)\big/\sqrt{\SG(n)J(n)}$
+(where $J(n)=\int_3^{n-3}dt/(\log t\log(n-t))$, so that
+$\SG(n)J(n)$ is the total ordered representation count) satisfies
+$\kappa(n)\asymp c(n)/\log n\to0$; under the Gaussian fluctuation
+model the logarithmic density of $\{D>0\}$ is therefore $\tfrac12$ in
+the limit, with the finite-$x$ sign fraction predicted to be
+$\mathbb E_x[\Phi(\kappa)]$ ($\Phi$ the standard normal distribution
+function)---decaying, but far from $\tfrac12$ at any accessible
+height.
+\end{conjecture}
+
+Derivation status: the identity behind $D_{\mathrm{sys}}$ is the
+$\Lambda$-weighted lane symmetry minus its prime-power part; the
+transfer to unweighted counts is a partial-summation argument whose
+error terms (higher prime powers, which enter only at the $n^{1/3}$
+scale, and the variation of the weight across the lane) remain to be
+written out---the same open transfer flagged at
+Conjecture~\ref{c21}---and clause (iii) inherits the zero-oscillation
+caveat stated there.
+
+This is the Goldbach-partition analogue of Chebyshev's bias, produced
+by the same explicit-formula mechanism as Conjecture~\ref{c21} but
+through $q^2+p$ patterns rather than twin patterns; the single-sign
+prediction (every square contamination falls into one lane) makes it
+cleaner than the classical race.  We could find no prior statement.
+The neighbouring phenomenon for consecutive primes is the Lemke
+Oliver--Soundararajan mod-3 law, whose verification here---%
+$\hat c$ drifting $0.400\to0.370$ over $10^7\!\to\!4\cdot10^9$ with
+$(1,1)/(2,2)$ symmetry $0.99989$---serves as calibration for the
+present race.
+
+Verification.  Over $500$ log-spaced samples $n\le10^8$: mean
+$D=76.5$ against mean empirical $D_{\mathrm{sys}}=64.5$, the
+$(3,3)$-lane lead significant at $5.2$ standard errors of the mean.
+Clause (ii)'s weighted model, computed in presieve-exact form
+(trial division of each $n-q^2$ to $10^3$ with the exact Mertens
+normalization), reproduces the empirical contamination with no fitted
+parameter: model mean $66.3$ against empirical $67.8$ (ratio
+$0.98$) on a $400$-sample run.  The internal null lane behaves as
+predicted: on $n\equiv1\ (3)$ ($123$ samples) the model and empirical
+$D_{\mathrm{sys}}$ both vanish and the measured lead drops to
+$31\pm23$ (consistent with zero), while on $n\not\equiv1\ (3)$
+($277$ samples) the lead is $88\pm21$ against predicted
+contamination $96$---the drift lives exactly where the mechanism puts
+it.  Clause (iii): computed $\mathbb E_x[\Phi(\kappa)]=0.572$
+($\kappa$ ranging $0$--$0.64$ with mean $0.18$) against observed sign
+fraction $0.588$; weak, and quantitatively the weakness the model
+requires.
+
+\setcounter{conjecture}{4}%
+\begin{conjecture}[The least Goldbach summand: exponential law and
+ordering deficit; the time-changed law and deficit constant
+apparently unstated]\label{c15}
+Let $s(n)$ be the least prime $p\nmid n$ with $n-p$ prime (the
+exclusion $p\nmid n$ is not an afterthought but the removal of a
+trivial obstruction: $p\mid n$ forces $p\mid n-p$, so $n-p$ is
+composite except in the diagonal case $n=2p$, which would otherwise
+distort the hazard at one atypical point), and
+time-change by the expected-arrivals clock
+$U(n)=\SG(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$.  Then:
+The ensemble is fixed first, since $U(n)$ is deterministic at each
+$n$ and an expectation therefore needs a declared measure: for a scale
+$X$,
+\[
+\mathbb E_XU=
+\frac{\sum_{X<n\le2X,\ 2\mid n}U(n)/n}
+{\sum_{X<n\le2X,\ 2\mid n}1/n},
+\qquad
+\Theta_G(X)=\bigl(1-\mathbb E_XU\bigr)\log X.
+\]
+\emph{(i)} [limit law] under $\mathbb E_X$-sampling,
+$U\Rightarrow\mathrm{Exp}(1)$ as $X\to\infty$;
+\emph{(ii)} [canonical ordering deficit]
+$\Theta_G(X)\to\Theta_G>0$---the Goldbach sibling of the
+least-prime deficit of Conjecture~\ref{c22}(ii), produced by the
+same occupancy mechanism: the ordered primes fill the available
+representations faster than an exchangeable model, so the first
+arrival comes \emph{early} and $\mathbb E_X[U]<1$.
+\end{conjecture}
+
+The extremal theory of $s(n)$ is well developed---Granville, van de
+Lune and te Riele conjectured $s(n)=O(\log^2n\log\log n)$, and
+Oliveira e Silva--Herzog--Pardi \cite{OSHP} tabulate first
+occurrences of minimal Goldbach summands to $4\times10^{18}$ against
+prime $k$-tuple predictions---but the time-changed distributional
+law (i) and the deficit constant (ii) appear unstated (we could not
+rule out that the untransformed version of (i) is implicit in the
+comparisons of \cite{OSHP}, and say so).  Measured on $2{,}000$
+log-sampled $n\le10^8$: $\mathbb E[U]=0.796$, with
+$\Theta_G=3.12\pm0.35$ on $[10^6,10^7)$ and $3.42\pm0.45$ on
+$[10^7,10^8)$---positive, stable, and roughly \emph{twice} the
+least-prime-in-progressions deficit $\Theta=1.67$ of
+Conjecture~\ref{c22}, a comparison the occupancy expansion there
+should eventually explain; the Kolmogorov--Smirnov distance to
+$\mathrm{Exp}(1)$ ($0.088$ at this size) is dominated by the deficit
+displacement itself, as (ii) requires.  The derivation route for
+$\Theta_G$, parallel to the occupancy expansion at
+Conjecture~\ref{c22}: expand the survival probability
+$\Pr(s(n)>y)=1-\sum_{p\le y}h_p+\sum_{p_1<p_2\le y}h_{p_1,p_2}
+-\cdots$, where the pair term requires $n-p_1$ and $n-p_2$
+simultaneously prime and so carries the Hardy--Littlewood singular
+series of the shift $p_2-p_1$; inserting the $k$-tuple predictions
+and integrating against the time change isolates the $1/\log X$
+coefficient---deriving $\Theta_G$ rather than measuring it is the
+programme registered here.  Note that $\SG(n)$ alone does not encode the
+between-candidate dependence that the pair term carries.  (The $(3,3)$-lane
+refined
+Goldbach statement---every $n\equiv2\ (4)$, $n\ge6$,
+is $p+q$ with $p\equiv q\equiv3\ (4)$, with the halved
+singular-series count law, formulated by K.~Martin
+\cite{Martin}---is included as an attributed calibration benchmark:
+exhaustively
+verified to $10^9$, count formula matching to $0.2$--$1.3\%$; its
+comparative lane statement is Conjecture~\ref{c25}.)
+
+For sequences whose $n$th term has size $\e^{cn}$ the expected number of
+primes is $\sum_n \kappa_n/(c\,n)$: convergence or divergence of this
+sum is the entire question, and when it diverges it diverges
+logarithmically, so the right conjecture has counting function
+$\alpha\log x$ with a derived $\alpha$---never more.
+
+\setcounter{conjecture}{5}%
+\begin{conjecture}[{$n^2+2^n$}; sequence is OEIS A064539]\label{c11}
+Every prime of the form $n^2+2^n$ with $n>1$ has $n\equiv3\pmod6$
+(elementary), and:
+\emph{(i)} infinitely many such primes exist, with counting function
+$\asymp\log N$;
+\emph{(ii)} [candidate law, entanglement-aware form] for a finite set
+$S$ of primes $p\ge5$ (the primes $2$ and $3$ are exact in the lane
+reduction, $\delta_2=\delta_3=0$, and $\ord_2 2$ is undefined) let
+$D_S$ be the \emph{exact} joint density,
+within the lane $n\equiv3\ (6)$, of $n$ with $p\nmid n^2+2^n$ for all
+$p\in S$, computed over the full joint period
+$\mathrm{lcm}_{p\in S}\,\mathrm{lcm}(6,\,p\cdot\ord_p2)$, and set
+$\kappa_S=D_S/\prod_{p\in S}(1-1/p)$.  The conjecture is stated
+along the \emph{canonical exhaustion} $S_z=\{p\ \text{prime}:5\le
+p\le z\}$, and its three layers are logically separate and are
+asserted separately:
+\emph{(ii-a)} the sequence $\kappa_{S_z}$ converges as
+$z\to\infty$ (a general net over arbitrary finite $S$ carries an
+order-of-exhaustion ambiguity we do not need), with limit $\kappa$;
+\emph{(ii-b)} whether the limit \emph{factors}---i.e.\ whether the
+exact finite-level factorization observed below persists, so that
+entanglement is asymptotically absent---is an \emph{open question},
+expressly not counted among this paper's conjectural assertions (a
+question is not a conjecture), on
+which (ii-a) takes no position; and
+\emph{(ii-c)} the count is
+$\sim\sum_{n\le N,\,n\equiv3\,(6)}\kappa/\log(n^2+2^n)$---a genuine
+further step, since a convergent local density does not
+automatically govern the global count.  The working
+value $\kappa^{*}=4.2734\ldots$ is explicitly a \emph{hybrid}, not a
+computation of any single $\kappa_{S_z}$: the CRT-exact core
+$S_{19}$ times independent per-prime factors for $19<p\le300$---so
+$\kappa^{*}=\kappa_{S_{300}}$ exactly if and only if the observed
+exact factorization persists to $300$.
+\end{conjecture}
+
+This is not a Bateman--Horn problem: the local conditions at different
+primes are tied through the orders $\ord_p2$, so the per-prime
+product $\prod_p(1-\delta_p)/(1-1/p)$ would tacitly assume their
+independence.  The law is therefore stated through the CRT-exact
+quantities $\kappa_S$, which make no independence assumption.  The
+computation then returned a small
+surprise in the other direction: through $p\le19$ (joint period
+$116{,}396{,}280$) the joint survivor fraction equals the product of
+the per-prime fractions as an \emph{exact rational identity},
+verified in exact arithmetic at every level $S=\{5\le p\le P\}$,
+$P\in\{5,7,11,13,17,19\}$ (the identity is exact, not approximate, and
+is not a statement about numerical precision).  Entanglement is thus
+absent at all computed levels; whether exact factorization persists
+for all $p$---equivalently, whether the survival events are exactly
+independent over every joint period, which would itself be a striking
+equidistribution statement about the orbits of $2$---is part of what
+clause (ii) asks.  We separate the robust claim (i) from the
+candidate law (ii), and note that the eight hits below $6000$ are far
+too few to validate a four-digit constant---the verification below
+checks consistency, not the constant.  The OEIS records further candidate
+indices beyond our completed
+range:
+$29355$, $34653$, $57285$, $99069$, and the probable-prime candidate
+$1933695$.  We could not independently re-verify these (and label
+them accordingly), but all five satisfy the lane constraint
+$n\equiv3\ (6)$, and taking them at face value the $\kappa^{*}$-model
+predicts $2.9$ hits in $(6\times10^3,10^5]$ against $4$ reported and
+$5.9$ in $(6\times10^3,1.94\times10^6]$ against $5$ ($z=+0.65$ and
+$-0.38$): the records extend the consistency check by two decades.
+
+The congruence claim is elementary: $n$ odd is forced by parity, and for
+odd $n$ with $3\nmid n$ we have $n^2+2^n\equiv1+2\equiv0\pmod3$.  What
+appears to be a harsh obstruction is, inside the surviving lane, a local
+bonus: $\delta_2=\delta_3=0$ contribute the factors $2\cdot\tfrac32=3$
+to $\kappa$.  Mixed polynomial--exponential sequences are exactly where
+hand-waving fails and the computed local product earns its keep.
+
+\emph{Verification} (probable-prime count beyond $n\approx80$).
+Hits $\{3,9,15,21,33,2007,2127,3759\}$ up to $6000$:
+observed $8$, model $8.55$, $z=-0.19$ (over the shorter range $n\le4200$:
+$8$ vs $8.19$, $z=-0.07$); the lane constraint was verified
+exhaustively (no prime off $n\equiv3\ (6)$ to $n=3000$, independently
+reconfirmed), and the CRT-exact factorization of clause (ii) was
+verified through $p\le19$ as described at the statement.
+
+\setcounter{conjecture}{6}%
+\begin{conjecture}[Fermat quotients: the multibase subtorus law and
+the Wieferich ledger; single-base heuristic previously stated
+\cite{CDP}, the vertical multibase law apparently new]\label{c23}
+With $q_p(a)=(a^{p-1}-1)/p\bmod p$ (defined for primes $p\nmid a$;
+all clauses below range over such $p$ only) and $q_p=q_p(2)$, five
+clauses:
+\emph{(0)} [structure, classical] $q_p(ab)\equiv q_p(a)+q_p(b)
+\pmod p$ (the Eisenstein--Lerch homomorphism; verified exactly on
+every tested prime), so for multiplicatively \emph{dependent} bases
+the vector $(q_p(a_1),\dots,q_p(a_r))/p$ is confined to the rational
+subtorus cut out by the relations;
+\emph{(iv)} [multibase equidistribution, the claimed law] for
+multiplicatively \emph{independent} bases the vector equidistributes
+on the full torus as $p$ varies---the \emph{vertical} joint law,
+complementing the fixed-$p$, varying-base statistics of
+Ostafe--Shparlinski and Cobeli--Zaharescu---with correlations
+vanishing and the same LIL calibration as (i);
+\emph{(v)} [simultaneous Wieferich] the expected count of $p\le x$
+with $q_p(2)=q_p(3)=0$ has convergent sum $\sum1/p^2$: at most
+finitely many simultaneous Wieferich primes exist (the single-base
+folklore of this accounting is Conrad's), and the empirical list is
+empty to $10^7$.  Three further clauses on the base-2 quotient
+alone:
+\emph{(i)} [global equidistribution] $q_p/p$ equidistributes on
+$[0,1)$ with discrepancy at exactly the calibrated random-model
+scale: in its sharp form,
+\[
+\limsup_{x\to\infty}
+\frac{\sqrt{\pi(x)}\,D_{\mathrm{KS}}(x)}
+{\sqrt{\log\log\pi(x)}}
+\;=\;\frac1{\sqrt2},
+\]
+the Chung--Smirnov law-of-the-iterated-logarithm constant for an
+i.i.d.\ uniform sequence---demanding both no more (a bound
+$O(\pi(x)^{-1/2})$ would be \emph{stronger than the random model
+supports}, the same over-demand that killed the Mertens conjecture)
+and no less than the model earns: the upper bound alone would be consistent
+with
+hidden rigidity, and the matching lower bound asserts the quotients
+fluctuate like genuine noise;
+\emph{(ii)} [shrinking targets] for every fixed $K\ge1$, and uniformly
+for $K=K(x)\le\log x$,
+$\#\{p\le x:\ q_p<K\}\sim\sum_{p\le x}\min(1,K/p)$---the fixed-$K$
+case down to $K=1$ is what governs the zero event and does NOT follow
+from (i), since $\{q_p=0\}$ is a target of shrinking measure $1/p$;
+\emph{(iii)} [Wieferich count, fluctuation-calibrated, with the
+probability space declared]
+$W(x)=\#\{\text{Wieferich } p\le x\}$ is a deterministic function,
+so its fluctuation clauses are stated in the two legitimate forms,
+an unqualified CLT for a fixed sequence having no meaning: the
+\emph{deterministic envelope conjecture}
+\[
+\limsup_{x\to\infty}
+\frac{W(x)-\log\log x}
+{\sqrt{2\log\log x\,\log\log\log\log x}}\;=\;1
+\]
+(the iterated-logarithm scale at variance $V(x)\sim\log\log x$; a
+bound $O_\varepsilon(V^{1/2+\varepsilon})$ would be weaker than
+the model's exact prediction), and the \emph{almost-sure central
+limit law, at the correct logarithmic weighting}: with
+$u=\log\log x$ the variance-time of the count, sample $u$ with
+density $du/u$ on $[\e,\,L]$, $L=\log\log X$ (equivalently: $\log u
+=\log\log\log x$ uniform); then the sampled distribution of
+$(W(x)-u)/\sqrt u$ converges to $N(0,1)$ as $X\to\infty$.  The
+weighting is what makes the clause true, and the two natural
+alternatives both fail.  A block-sampled version on $[X,X^A]$
+fails because only $\log A=O(1)$ new events enter the block.  A
+\emph{uniform}-in-$u$ version on $[1,L]$ fails too, by Brownian
+scaling: with
+$W(\e^{\e^u})-u\approx B(u)$ and $u=Ls$, the self-similarity
+$B(Ls)/\sqrt{Ls}\overset{d}=\widetilde B(s)/\sqrt s$ means the
+uniform-$u$ empirical distribution converges not to $\Phi$ but to
+the \emph{random} occupation functional
+$\int_0^1\mathbf 1\{\widetilde B(s)/\sqrt s\le z\}\,ds$---values at
+proportional times stay correlated, so uniform sampling never
+averages over enough independent scales.  The $du/u$ weighting is
+the classical almost-sure-CLT weighting (the continuous analogue of
+the $1/k$ weights), for which the model does predict almost-sure
+convergence of the sampled law to $\Phi$.  Both clauses are
+conjectured on the
+Crandall--Dilcher--Pomerance side of the model choice that clause
+(iv)'s discussion records.
+\end{conjecture}
+
+Two things do not follow, and are not claimed.  Clause (iii) is not a
+consequence of (i): a square-root-size error in the aggregate
+distribution is astronomically larger than $\log\log x$, and only the
+shrinking-target clause (ii) at bounded $K$ speaks to the zero event.
+And an $O(1)$ fluctuation claim would violate this paper's calibration
+principle of demanding exactly the fluctuations the model earns: with
+event probabilities $1/p$ the count has standard deviation
+$\sim\sqrt{\log\log x}$, and the statement says so.  Nor is any
+location predicted for a third Wieferich prime: the expected count
+reaching $3$ ``at doubly exponential heights'' is an expected-count
+statement whose additive constant is uncalibrated, not a forecast.
+Consistency data: $\{1093,3511\}$ below $10^8$ against
+expected $\approx2.7$; $\sqrt n\,\mathrm{KS}=0.82,\ 0.82,\ 0.52,\
+0.63$ at $x=10^5,\dots,10^8$ (bounded, no drift); census at $K=100$:
+observed $169$ against model $161.2$.
+
+The multibase clauses were verified at $10^7$ ($664{,}577$ primes):
+the homomorphism (0) held \emph{exactly} on every spot-checked prime;
+for the independent pair $(2,3)$, correlation
+$+0.0023\pm0.0012$, a $20\times20$ joint occupancy $\chi^2$ of
+$441$ on $399$ degrees of freedom ($+1.5\sigma$), joint
+small-quotient census $46$ against model $41.2$ ($z=+0.75$), and no
+simultaneous Wieferich prime.  Two positions taken deliberately: the
+vertical multibase law (iv) sides with the Crandall--Dilcher--Pomerance
+accounting against Gras's competing probabilistic model (which
+predicts $q_p(a)=0$ \emph{rarer} than $1/p$, hence possibly finitely
+many Wieferich primes even for a single base)---the disagreement is
+precisely what gives clauses (iii)--(iv) content; and the horizontal
+literature (fixed $p$, base varying: Ostafe--Shparlinski's joint
+distributions and the Fermat-quotient-matrix statistics of
+Cobeli--Zaharescu and coauthors) is the attributed neighbour whose
+vertical counterpart is what we claim here.
+
+\setcounter{conjecture}{7}%
+\begin{conjecture}[Uniform quantitative de Polignac; the core is
+previously stated]\label{c16}
+\emph{(i)} $\pi_d(x)=\#\{p\le x-d:\ p,\ p+d \text{ prime}\}
+=\SG(d)\,\Li_2(x)\,(1+o(1))$ uniformly for even $d\le(\log x)^{A}$.
+\emph{(ii)} [residual field, with derived covariance kernel]  The
+same primes participate in many pair counts, and the covariance of
+two of them is carried by triple configurations sharing one prime.
+For even $d\neq d'$ define the overlap constant
+\[
+K(d,d')=\CT(0,d,d')+\CT(0,d',d+d')+\CT(0,d,d+d')
++\CT\bigl(0,\,|d-d'|,\,\max(d,d')\bigr),
+\]
+where $\CT$ denotes the Hardy--Littlewood triple constant of the
+offset set (degenerate or inadmissible triples contributing $0$).
+The field is randomized canonically---covariances of the
+deterministic cumulative counts are otherwise undefined: for $t$ uniform on
+$[x,2x]$ and a window length $H$, let
+$\pi_d(t;H)=\#\{t<n\le t+H:\ n,\,n+d \text{ prime}\}$ and let
+$Z_d(t;H)$ be its studentization.  The mean count per window is
+$\asymp H/\log^2x$, and the regime is set by that ratio (a phase
+condition: a bare $H\to\infty$ does not fix the regime):
+\[
+\operatorname{Cov}_t\bigl(\pi_d,\pi_{d'}\bigr)
+\sim\frac{K(d,d')\,H}{\log^3x},
+\qquad
+\rho(d,d')\sim\frac{K(d,d')}{\sqrt{\SG(d)\SG(d')}\,\log x},
+\]
+valid for $\max(d,d')=o(H)$, which is the standing restriction of
+this clause and holds throughout the window class fixed below.  In
+general each overlap orientation $o$---the in-window displacements
+$h_o\in\{0,\,d,\,-d',\,d-d'\}$ and their reflections---enters with
+multiplicity $(H-|h_o|)_+$ rather than $H$, so that the shared-prime
+term reads
+\[
+\frac1{\log^3x}\sum_{o}\bigl(H-|h_o|\bigr)_+\,K_3^{(o)}(d,d'),
+\qquad \sum_o K_3^{(o)}(d,d')=K(d,d'),
+\]
+and an orientation with $|h_o|>H$ is absent from the window
+altogether; under $\max(d,d')=o(H)$ one has $(H-|h_o|)_+=H(1+o(1))$
+for every orientation and the displayed form is recovered, so the
+uniform-in-$d$ statement carries that restriction throughout.
+Here the shared-prime (triple) term is the \emph{first} covariance
+contribution but not the whole of it: the full expansion is
+\[
+\operatorname{Cov}_t(\pi_d,\pi_{d'})
+=\frac{K(d,d')\,H}{\log^3x}
++\frac1{\log^4x}\sum_{|h|\le H}(H-|h|)\,K_4(d,d';h)
++\text{error},
+\]
+with $K_4$ the centered singular series of the off-index four-point
+sets $\{0,d,h,h+d'\}$---the cross analogue of the pinned diagonal
+average of Conjecture~\ref{c12}---where degenerate offset relations
+are handled inside the kernels, not ignored: whenever the four-point set
+collapses (repeated
+entries, as at $h=0,\ h=d,\ h=-d'$, or $d'-d=\pm h$) the
+configuration is a triple or pair and its contribution belongs to
+the $K$-term (or to the mean), so $K_4$ is defined as the centered
+singular series of \emph{genuinely four-element} sets, with special
+pairs such as $d'=2d$ acquiring their extra overlap orientations in
+$K(d,d')$'s census rather than double-counted across kernels.  The
+triple term dominates only
+where the pinned sum satisfies $\sum(1-|h|/H)K_4=o(\log x)$; the
+dominance range is stated as an explicit function class, an imprecise
+``narrower than $x^{o(1)}$'' being no substitute: for
+$H=\lambda(\log x)^{\alpha}$, any
+fixed $\lambda>0$ and any $\alpha\ge1$ with $\alpha>A$---the
+inequality on the exponents that makes $\max(d,d')=o(H)$ hold
+uniformly for all $d,d'\le(\log x)^{A}$---the per-shift centered average
+grows only polylogarithmically in $H$ (the Conjecture-\ref{c12}
+scale), so $\sum(1-|h|/H)K_4/H=O((\log\log x)^{2+\varepsilon})
+=o(\log x)$ and the triple term dominates throughout the
+polylogarithmic window class; the conjecture asserts the two-term
+form on exactly that class and takes no position outside it.  When $H/\log^2x\to\lambda$ the
+window counts converge jointly to Poisson laws with these vanishing
+covariances, and when $H/\log^2x\to\infty$ every fixed finite
+collection $\{Z_{d_1},\dots,Z_{d_r}\}$ is asymptotically jointly
+normal with \emph{independent} limiting coordinates: both kernels
+are finite-$x$ corrections to independence (test below), not
+nondegenerate limiting kernels.  The diagonal correction to
+$\operatorname{Var}_t(\pi_d)$ is Conjecture~\ref{c12}'s pinned
+average, stated there rather than folded into a fitted $\sigma$.
+\end{conjecture}
+
+The kernel is verified twice over.  Direct window-field measurement
+($x=10^8$, $H=10^5$, $2000$ windows, all even $d\le40$, $190$
+pairs): the empirical correlation matrix matches the predicted kernel
+entrywise with correlation $0.86$, mean off-diagonal $0.33$ observed
+against $0.37$ predicted, the small deficit having the sign of the
+omitted diagonal corrections, which are also directly visible as
+$\operatorname{Var}/\text{mean}=0.94$ on average across $d$.
+Second, the deterministic cumulative profile
+$z_d(x)=(\pi_d(x)-\SG(d)\Li_2(x))/\sqrt{\SG(d)\Li_2(x)}$---the
+estimator the uniformity verification in (i) uses---shows the same
+structure at cumulative scale (there
+$\rho\sim K\Li_3/\sqrt{\SG\SG'}\Li_2$): mean off-diagonal $\rho=0.43$
+over all even $d,d'\le60$ at $x=10^8$, hence predicted profile spread
+$\sigma^2\le1-0.41=0.59$ before the diagonal correction, against
+observed ${\approx}0.27$, implying a diagonal factor ${\approx}0.5$
+of Montgomery--Soundararajan sign and order.  A bare assertion that
+``$\sigma^2\le1$, determined by the covariance structure'' would be a
+task rather than a law; the kernel above is the law that task
+produces, and the moving-window field supplies the genuine probability
+space it requires.
+
+The force of the statement is its uniformity: the singular series takes
+a thousand different values over $d\le2000$, spanning a factor of about
+three between $d=2$ and the primorial-rich $d$, and the counts must
+reproduce the entire profile simultaneously with square-root errors.  A
+conspiracy would need to bend a thousand-dimensional vector, not one
+number.  At $x=10^8$: correlation $0.999999$, slope $0.99966$,
+$\max_d|z_d|=1.80$; stressed to $d\le6000$, $\max|z_d|=2.01$ over three
+thousand values.
+
+(A further Hardy--Littlewood calibration, on a prime quintuplet
+constellation, gives observed $15{,}236$ against predicted
+$15{,}230.3$ at $4\cdot10^9$, ratio $1.0004$, $z=+0.05$.)
+
+\setcounter{conjecture}{8}%
+\begin{conjecture}[The sub-diffusivity of balanced prime races;
+apparently new]\label{c18}
+Model a balanced race (Conjecture~\ref{c21}(ii)'s symmetric class
+differences) as the walk of its class-assignment steps, the process
+defined at event index: enumerate
+the pattern occurrences $n_1<n_2<\cdots$ in the two competing
+classes, set $\xi_i=\pm1$ by class membership of $n_i$, and let
+$\rho_k(x)$ denote the lag-$k$ sample autocorrelation of
+$(\xi_i)$ over the events with $n_i\le x$.  Then the
+walk is measurably \emph{sub-diffusive}:
+\emph{(i)} [decaying-repulsion law] the step autocorrelations are
+negative at small lags---the race analogue of the Lemke
+Oliver--Soundararajan consecutive-pattern repulsion \cite{LOS},
+which supplies the mechanism---and, since that repulsion is
+scale-dependent rather than fixed, the conjectured form is a decay
+law
+\[
+\rho_k(x)\;=\;-\,\frac{c_k\log\log x+d_k}{\log x}\,(1+o(1)),
+\]
+with constants $c_k,d_k$ in principle derivable from the LOS
+correlation series (underived here; and the measured values
+$\rho_1\approx-0.037$, $\rho_2\approx-0.009$ at $10^9$---universal
+across twin and cousin races mod $5$ and $8$ to within $0.004$, each
+${\sim}50$ standard errors from zero---are observations at one height,
+consistent with $c_1\approx0.25$ there, not asymptotic constants);
+\emph{(ii)} [long memory, measured] short lags do not exhaust the
+deficit: the running maxima
+$M(x)=\max_{t\le x}|D(t)|/\sqrt{\text{count}}$ of the four races
+land at quantiles $0.02$--$0.17$ of the simulated independent-step
+null (median $2.34$ at this span), and still only $0.03$--$0.23$
+after correcting for $\rho_{1,2}$: the negative correlation persists
+across lags, so the cumulative diffusivity
+$\sigma^2(x)=1+2\sum_k\rho_k(x)$ sits well below $1$ at this
+height.  The model layer is declared rather than assumed silently:
+$(\xi_i)$ is a deterministic, nonstationary family and the
+$\rho_k(x)$ are empirical statistics of it, so the Green--Kubo
+identity $\sigma^2=1+2\sum_k\rho_k$ is invoked under an explicit
+\emph{local-stationarity model hypothesis}---the step process
+restricted to a window $[x,2x]$ is modelled as a stationary sequence
+whose autocorrelations are the measured $\rho_k(x)$---and the
+variance statement can equivalently be taken as a direct
+\emph{definition} of $\sigma^2(x)$ through block averages of
+$(S_{n+m}-S_n)^2/m$ over the events up to $x$, a form in which no
+stationarity is assumed at all.  The Green--Kubo sum requires more than the fixed-lag law
+of (i), and the gap is real: the
+per-lag decay controls each $\rho_k(x)$ but not the sum unless the
+decay is \emph{uniform in $k$ with summable tail}, since the number
+of relevant lags may grow with $x$.  We therefore state the needed
+hypothesis as part of the clause: $\rho_k(x)$ obeys the law of (i)
+uniformly for $k\le K(x)$ with
+$\sum_{k>K(x)}|\rho_k(x)|=o(\log\log x/\log x)$ for some
+$K(x)\to\infty$, \emph{and}---since the tail bound alone leaves the
+growing head sum uncontrolled---the
+repulsion constants are summable, $\sum_k c_k<\infty$ and
+$\sum_k|d_k|<\infty$, so that
+$\sigma^2(x)=1-2\bigl(\textstyle\sum_kc_k\,\log\log
+x+\sum_kd_k\bigr)/\log x\,(1+o(1))$ is a genuine consequence
+rather than an unjustified interchange of limits.  The measured
+correlation length at $10^9$ (a few tens of lags, with
+$|\rho_k|$ decreasing geometrically in the observable range) is
+consistent with both hypotheses.  Under them,
+$\sigma^2(x)$ returns to $1$
+asymptotically, making sub-diffusivity a finite-height phenomenon
+of $\log\log x/\log x$ size, like every other second-order law in
+this paper;
+\emph{(iii)} [registered dichotomy, open] asymptotically the two
+possibilities are \emph{mutually exclusive}, and which of them holds
+is the open question.  Either the fixed-lag expansion of (i) extends
+uniformly in $k$ with summable constants---in which case the
+hypotheses of (ii) hold, (ii) applies, and the race is asymptotically
+diffusive with $\sigma^2(x)\to1$ (running maxima
+$\sim\sqrt{2\log\log x}$, Darling--Erd\H os class)---or that
+expansion fails at long lags, and only in that case can the race
+inherit the almost-periodic rigidity that Rubinstein--Sarnak-type
+structure \cite{RubinsteinSarnak} forces on classical races (maxima
+$\asymp(\log\log\log x)^{A}$, the Montgomery--Ng class).  Rigidity
+therefore requires a failure of the hypotheses of (ii) at long lags,
+and cannot coexist with them.  No explicit
+formula is known for twin patterns, the two branches differ only
+beyond any computable height, and we register the dichotomy without
+choosing---what is conjectured is the finite-height law (i)--(ii).
+\end{conjecture}
+
+The measurement is the content: the repulsion constants
+$\rho_1,\rho_2$ are pattern-independent across our four races---a
+universality the LOS correlation series should predict
+quantitatively, and the derivation programme stated here---and the
+suppressed maxima are the first (to our knowledge) direct measurement
+of race sub-diffusivity, an effect invisible to endpoint statistics.
+(The twin-gap record benchmark---$G_t(x)\asymp\log^3x$
+with working constant $1/(2C_2)$, inside Kourbatov's
+extreme-value framework \cite{Kourbatov}---is included as an
+attributed calibration benchmark: records to $4\cdot10^9$ wander in
+$[0.41,0.56]\log^3x$, approaching from below on a $\log\log$ clock,
+largest observed twin-to-twin gap $5292$ after the twin at
+$2{,}466{,}641{,}069$; the Cram\'er--Granville fragility of such
+constants \cite{Granville} is why the constant was always flagged as
+first-order.)
+
+\section{Family laws and second-order refinements}
+
+\setcounter{conjecture}{9}%
+\begin{conjecture}[Uniform quadratic de Polignac; family law apparently
+unstated, the $d=2$ instance previously stated, cf.\ OEIS A080149,
+\cite{Carella}]\label{c1}
+For even $d\ge2$ let
+$\pi^{\mathrm q}_d(N)=\#\{n\le N:\ n^2+1,\ n^2+1+d \text{ both
+prime}\}$ and $C(d)=C(x^2+1,\,x^2+1+d)$.  Then:
+\emph{(i)} [uniform family law] for every fixed $B>0$,
+$\pi^{\mathrm q}_d(N)=C(d)\,I_d(N)(1+o(1))$ uniformly over even
+$d\le(\log N)^{B}$;
+\emph{(ii)} [registered rate, strictly stronger] there is
+$\eta_B>0$ with
+\[
+\sup_{\substack{2\le d\le(\log N)^{B}\\ 2\mid d}}
+\Bigl|\frac{\pi^{\mathrm q}_d(N)}{C(d)\,I_d(N)}-1\Bigr|
+\;\ll_B\;(\log N)^{-\eta_B}
+\]
+---an error clause that no version of Bateman--Horn supplies and
+which we register separately from (i), since its analytic content is
+independent and an unspecified exponent must not be presented as part
+of the base conjecture;
+\emph{(iii)} [family statistic: the law of the constants]
+each local factor of $C(d)$ depends only on $d\bmod p$, and the
+factors at any \emph{finite} set of primes are exactly independent
+as $d$ varies (CRT), with the passage to the infinite product
+controlled by the convergent tail-variance sum---which supplies the
+uniform integrability (via $L^2$-boundedness of the normalized
+partial products) that the moment identities require, since
+almost-sure convergence alone would not carry means through the
+limit; so the moments of
+$C(d)$ over even $d\le D$ converge, as $D\to\infty$, to
+\emph{derived} Euler products; in particular
+\[
+\frac1{\#}\sum_{2\mid d\le D}C(d)\to\bar C=2.7447\ldots,
+\qquad
+\operatorname{sd}\bigl(C(d)\bigr)\to1.6835\ldots,
+\]
+and the empirical distribution of $C(d)$ converges to the law of the
+random product $\prod_p f_p(U_p)$ with independent uniform residues
+$U_p$.  In particular ($d=2$, the classical instance):
+$\#\{n\le N:\ n^2+1,\ n^2+3 \text{ both prime}\}\sim C(2)\,I(N)$,
+$C(2)=2.954014\ldots$
+\end{conjecture}
+
+This is the quadratic analogue of the uniform de Polignac law of
+Conjecture~\ref{c16}: not one count but the whole profile of constants
+must be matched at once, and the family, unlike its linear parent, has
+no known prior statement.  Every even shift is admissible (for
+$p\ge5$, $\omega(p)\le4<p$; the classes mod $3$ and $5$ vary with $d$,
+which is what makes the $C(d)$-profile nonconstant, spanning a factor
+${\approx}3$ over $d\le300$).  At $d=2$ the local analysis reads:
+$n$ even, $n\not\equiv0\pmod3$,
+$\omega(p)=2+\bigl(\frac{-1}{p}\bigr)+\bigl(\frac{-3}{p}\bigr)$ for
+$p\ge5$, and the conjecture implies infinitely many twin pairs
+$(m+1,m+3)$ with $m$ a perfect square.  Profile verification at
+$N=10^6$ over all $150$ even shifts $d\le300$: correlation
+$0.99976$ between observed and predicted counts, regression slope
+$1.0022$, residual mean $z=+0.24$ with spread $0.84$ and
+$\max_d|z|=2.28$---the shape-of-agreement standard applied across the
+family, not cherry-picked at one shift.  Clause (iii) was verified by
+computing both sides independently: the derived Euler-product moments
+give mean $2.7447$ and standard deviation $1.6835$, against
+$2.7434$ and $1.6726$ measured over the $150$ constants with
+$d\le300$ (ratios $0.9995$ and $0.9935$)---a family-level statistic
+whose constants are derived, not fitted.  One question the family raises is
+recorded as
+open rather than conjectured: the maximal range $D(N)$ for which the
+uniform law can hold (the analogue of the Elliott--Halberstam
+question for this family---whether there is a sharp transition at
+some power scale $N^{\delta}$ rather than a logarithmic one).
+
+\emph{Verification (the classical single instance).}  At $d=2$ and
+bound $10^{7}$: observed $32{,}898$ against predicted $32{,}862.7$,
+ratio $1.0011$, $z=+0.19$; the family-profile verification across the
+$150$ shifts $d\le300$ is reported above.
+
+\setcounter{conjecture}{10}%
+\begin{conjecture}[First occurrences of prime gaps, liminf form; the
+family is classical, the quantified form apparently
+unstated]\label{c19}
+Let $\mathcal G$ be the set of even $g$ that occur as gaps between
+consecutive primes (all even $g$, under Polignac's conjecture), and for
+$g\in\mathcal G$ let $p(g)$ be the prime starting the first such gap.
+Then:
+\emph{(i)} $\log p(g)/\sqrt g$ is bounded between positive constants
+on $\mathcal G$;
+\emph{(ii)} [liminf law, stated as the dual of the maximal-gap
+limsup, \emph{conditional on the realization hypothesis below}]
+\[
+\liminf_{\substack{g\to\infty\\ g\in\mathcal G}}
+\ \frac{\log p(g)}{\sqrt g}
+\;=\;\sqrt{\e^{\gamma}/2}\;=\;0.943682\ldots
+\]
+The inversion of Granville's $\limsup G(X)/\log^2X=2\e^{-\gamma}$
+into first-occurrence coordinates is \emph{not} automatic, and we do
+not pretend it is: the limsup controls how large maximal gaps get,
+not which gap \emph{sizes} are realized as first occurrences near the
+envelope.  Clause (ii) is therefore conditional on the
+\emph{realization hypothesis}: infinitely many $g\in\mathcal G$ first
+occur inside a maximal-gap event at the Cram\'er--Granville envelope
+scale, i.e.\ with $g=(2\e^{-\gamma}+o(1))\log^2 p(g)$.  Under that
+hypothesis the displayed value is forced by algebra; without it only
+the lower bound
+$\liminf\log p(g)/\sqrt g\ge\sqrt{\e^{\gamma}/2}$ follows from the
+envelope.  The value is registered \emph{as} that dual (against the
+slope-1 laws), not claimed as an independent phenomenon;
+\emph{(iii)} [second-order, singular-series dependence] sampling $g$
+uniformly from the realized gaps $\mathcal G\cap[G,2G]$ and letting
+$G\to\infty$,
+\[
+\log p(g)\;=\;\sqrt g+\tfrac12\log g-\tfrac12\log\SG^{*}(g)+E_g,
+\qquad
+\SG^{*}(g)=\prod_{\substack{p\mid g\\ p>2}}\frac{p-1}{p-2},
+\]
+where the error $E_g$ converges in distribution: for the sampled $g$,
+\[
+\Pr\bigl[E_g\le t\bigr]\;\longrightarrow\;
+1-\exp\bigl(-\e^{\,2(t-\mu)}\bigr)
+\qquad(G\to\infty)
+\]
+for some centering constant $\mu$---the min-type (reversed) Gumbel
+law \emph{at scale} $\tfrac12$, i.e.\ the law of $\tfrac12\log W$
+for $W$ a unit exponential.  The scale is forced by the hazard
+computation and is not a free parameter: the cumulative intensity of
+gap-$g$ events is $\Lambda_g(y)\asymp(\SG(g)/y^2)\exp(y-g/y)$ in
+$y=\log x$ (the factor $\e^{-g/y}$ \emph{is} the no-intervening-prime
+probability), so
+$\frac{d}{dy}\log\Lambda_g=1+g/y^2-2/y=2+o(1)$ at the centering
+point $y_0\approx\sqrt g$, and the first-passage identity
+$\Lambda_g(y)=W$ gives $E_g=y-y_0=\tfrac12\log W+o(1)$.  The scale is
+$\tfrac12$ and not $1$ precisely because the slope of the
+log-intensity at $y_0$ is $2$ (both the $y$-term and the $g/y$-term
+contribute), and the same slope-$2$ expansion is what produces the
+$\tfrac12$ coefficients of the centering.  (Gumbel-type modeling of gap
+extremes and first occurrences is Kourbatov--Wolf territory
+\cite{Kourbatov,KW2020}; the claim of this clause is only the
+$\SG^{*}$-centering and the scale-$\tfrac12$ first-passage form,
+not the extreme-value framework.  One selection caveat: sampling uniformly
+over the \emph{realized}
+gaps in
+$[G,2G]$ conditions on realization, which the independent
+first-passage model does not represent; the clause conjectures that
+this selection does not shift the limiting law, and that assumption
+is part of what a refutation would refute.)  Smooth
+gaps, whose tuple constant is large, appear \emph{earlier} by exactly
+half a logarithm of that constant---the waiting-time first-passage
+computation makes the coefficient $-\tfrac12$, not a free parameter,
+while $\mu$ is left as the one unresolved constant of the clause.  (The
+restriction to $\mathcal G$ is not cosmetic: $p(g)$ is not known
+to be defined for every even $g$, and quantifying over all $g$ would
+smuggle Polignac's conjecture into the statement.  The
+$\SG^{*}$-clause records that the Hardy--Littlewood factor of $g$
+materially shifts waiting times; it does not move the liminf constant,
+since $\log\SG^{*}(g)=O(\log\log g)$.)
+\end{conjecture}
+
+Clause (iii) was tested on the full first-occurrence table to $10^9$:
+over the $100$ even gaps realized in $[60,500]$, regressing
+$\log p(g)-\sqrt g-\tfrac12\log g$ on $\log\SG^{*}(g)$ (with a
+$\sqrt g$ trend term absorbing the liminf-versus-typical drift) gives
+coefficient $-0.466$ against the predicted $-\tfrac12$, partial
+correlation $-0.24$: the singular series of the gap is visible in
+when the gap first appears, at the predicted strength.
+
+The full limit does not follow by inverting Granville's
+$\limsup G(x)/\log^2x=2\e^{-\gamma}$: that inversion is invalid, since
+a limsup envelope for maximal gaps controls only where gaps \emph{can
+first appear at the earliest}, i.e.\ a lower envelope for
+$p(g)$---hence a liminf claim, not a limit.
+Whether $\log p(g)/\sqrt g$ converges at all, and if so whether the
+limit is Shanks's classical $1$ \cite{Shanks} (as Wolf's refinement
+$p(g)\sim\sqrt g\,\e^{\sqrt g}$ and the Kourbatov--Wolf residue-class
+laws \cite{KW2020} also assert) or the envelope value, involves at
+least three distinct phenomena---whether a given $g$ occurs near the
+extreme scale at all, the distribution of exact gap lengths near
+records, and the difference between record gaps and non-record first
+occurrences---and is left open here.  The two candidate constants
+differ by $6\%$, beneath the resolution of any feasible computation:
+our regression slope over $g\ge100$ falls from $1.307$ at $10^9$ to
+$1.297$ at $4\cdot10^9$, far above both and decreasing, as it must be
+for either.
+
+\setcounter{conjecture}{11}%
+\begin{conjecture}[The Stern lane race; apparently new]\label{c14}
+In Stern's representation problem $n=p+2k^2$ ($n$ odd), race the
+$k$-even and $k$-odd lanes.  Prime-square contamination of the
+$\Lambda$-weighted lane counts comes from $n=q^2+2k^2$---the norm
+form $x^2+2y^2$ of $\mathbb Q(\sqrt{-2})$ with prime $x$---and since
+$q^2\equiv1\pmod8$ while $2k^2\equiv0$ or $2\pmod 8$ by the parity of
+$k$:
+\emph{(i)} [class assignment, direct congruence] contamination
+sits in the $k$-\emph{even} lane iff $n\equiv1\pmod8$, in the
+$k$-\emph{odd} lane iff $n\equiv3\pmod8$, and for
+$n\equiv5,7\pmod8$ \emph{no} square contamination exists at all:
+$q^2+2k^2\equiv1$ or $3\pmod 8$ always, a two-line congruence (and no
+more than that: genus theory enters only for the converse question of
+which $n$ \emph{are} represented), so the null classes
+are provable, not conjectured;
+\emph{(ii)} [drift law, in the ensemble form of
+Conjecture~\ref{c25}, which is the template here: a bare
+``$D=D_{\mathrm{sys}}+$noise in the log-sampled mean'' would specify
+neither the measure, nor the sign, nor the limit relation]  Fix the
+ensemble: for a scale $X$, let
+$\mathbb E_X$ average over odd $n\in(X,2X]$ of the given residue
+class mod $8$ with weight proportional to $1/n$ (the logarithmic
+sampling measure, as at Conjectures~\ref{c15} and~\ref{c25}).
+Define, per class, the \emph{clean-minus-contaminated} difference
+with explicit sign: $D(n)=R_{\mathrm o}-R_{\mathrm e}$ for
+$n\equiv1\pmod 8$ (even lane contaminated),
+$D(n)=R_{\mathrm e}-R_{\mathrm o}$ for $n\equiv3\pmod 8$, and
+$D(n)=R_{\mathrm e}-R_{\mathrm o}$ (sign immaterial) on the null
+classes $n\equiv5,7\pmod8$.  Set
+$D_{\mathrm{sys}}(n)=\bigl[\sum_{(q,k):\,q^2+2k^2=n,\ q\
+\mathrm{prime},\,k\ge1}\log q\bigr]/\lambda(n)$---the weight is
+$\Lambda(q^2)=\log q$, each representation counted once in the
+$k\ge1$ convention (the ordered-representation factor $2$ of
+Conjecture~\ref{c25} has no counterpart here, and doubling would be a
+normalization error)---where
+$\lambda(n)$ is the \emph{analytic} lane mean of $\log p$ over the
+representation profile ($\lambda(n)=\int\log(n-2u^2)\,d\mu_n$ under
+the lane measure; the verification uses the empirical lane mean as
+its estimator, and says so).  The law, coefficient-identifying as at
+Conjecture~\ref{c25}(i): on the contaminated classes
+\[
+\mathbb E_X\bigl[D-D_{\mathrm{sys}}\bigr]
+=o\bigl(\mathbb E_X[D_{\mathrm{sys}}]\bigr)
+\qquad(X\to\infty),
+\]
+and on the null classes---where $D_{\mathrm{sys}}$ vanishes
+identically, so that a comparison against it would be empty---the
+statement is made against the positive comparison scale
+\[
+A(X)\;:=\;\mathbb E_X^{(1)}\bigl[D_{\mathrm{sys}}\bigr],
+\]
+the logarithmic-ensemble mean of the systematic census taken over the
+\emph{contaminated} class $n\equiv1\pmod 8$: writing
+$D_{\mathrm{null}}$ for the difference $D$ on a null class
+$n\equiv5$ or $7\pmod 8$, the claim is
+$\mathbb E_X[D_{\mathrm{null}}]=o\bigl(A(X)\bigr)$.
+\end{conjecture}
+
+This is the calculus applied to a \emph{representation} problem with
+norm-form contamination---the drift weight is carried by the
+arithmetic of $\mathbb Q(\sqrt{-2})$ rather than by a polynomial
+lane---and it comes with two provable null classes, the strongest
+internal controls in the mechanism family.  One honest caveat on
+depth: an \emph{asymptotic} for the
+contaminating count $\#\{(q,k):q^2+2k^2=n,\ q\ \text{prime}\}$,
+averaged over $n$, is a norm-form-with-prime-argument problem of
+genuine analytic difficulty (the same species as primes represented
+with restricted variables), and nothing here pretends otherwise:
+$D_{\mathrm{sys}}(n)$ is \emph{computed exactly per sample}, so the
+verification tests the transfer conjecture against the true census,
+not against an unproved averaged asymptotic.  Verified on $2{,}500$
+log-sampled odd $n\le10^8$ (mean ${\sim}330$ representations each):
+contaminated strata pooled $D=+0.27\pm0.33$ against predicted
+$D_{\mathrm{sys}}=+0.15$ (at the $\Lambda(q^2)$ weight);
+null strata pooled $-0.22\pm0.33$,
+consistent with zero (one of the four strata sits at $-2\sigma$
+individually, within a four-test family).  (Stern's exceptional list
+---the ten known odd integers that are not $p+2k^2$, the largest
+$5993$, with the seven prime members the Stern primes; completeness
+of the list is conjectural, OEIS A060003---is
+included as the attributed calibration benchmark anchoring this
+conjecture: no further exception occurs below $10^9$ in our
+computation.)
+
+\setcounter{conjecture}{12}%
+\begin{conjecture}[Microscopic variance law; classical family, the
+constant is Montgomery--Soundararajan's \cite{MS}]\label{c20}
+Fix $\lambda>0$ and $c\in(0,1]$, and let $X$ count primes in
+$[t,\,t+\lambda\log x)$ for $t$ uniform on $[x,(1+c)x]$.  Then, under
+the Hardy--Littlewood $k$-tuple conjectures,
+$X\Rightarrow\mathrm{Poisson}(\lambda)$ (Gallagher's argument
+\cite{Gallagher}, which is conditional on exactly those conjectures),
+and---\emph{conditional on the quantitative hypothesis} spelled out
+after the statement (uniform Hardy--Littlewood with $o(h)$ control
+of the averaged singular series), without which the display
+below is a registered extrapolation rather than a consequence---at
+finite $x$
+\[
+\frac{\operatorname{Var}X}{\mathbb E\,X}
+\;=\;1-\frac{\log(\lambda\log x)+\gamma+\log2\pi-1}{\log x}
++o\!\Bigl(\frac1{\log x}\Bigr),
+\]
+with $\gamma+\log2\pi-1=1.41509\ldots$, the leading correction being
+independent of the sampling constant $c$.  [Interpolation clause]
+More generally, for windows of length $H=\lambda(\log x)^{\alpha}$
+the \emph{same} formula with $\log H$ in place of
+$\log(\lambda\log x)$,
+\[
+\frac{\operatorname{Var}X}{\mathbb E\,X}
+\;=\;1-\frac{\log H+\gamma+\log2\pi-1}{\log x}
++o\!\Bigl(\frac1{\log x}\Bigr),
+\]
+holds uniformly for $1\le\alpha\le A$ (any fixed $A$ with
+$H\le x^{o(1)}$): one expression interpolates from Gallagher's
+Poisson boundary ($\alpha=1$, deficit $\asymp\log\log x/\log x$)
+through the mesoscopic Montgomery--Soundararajan regime (deficit
+$\asymp\alpha\log\log x/\log x$), with no transition other than the
+slow growth of $\log H$.
+\end{conjecture}
+
+The deficit arises by inserting Montgomery's singular-series average
+$\sum_{d\le h}\SG(d)(h-d)=\tfrac{h^2}2-\tfrac h2(\log h+\gamma+\log2\pi
+-1)+o(h)$ into the second factorial moment at the microscopic window
+$h=\lambda\log x$.  We state plainly what this is and is not:
+the constant $\gamma+\log2\pi-1$ is Montgomery--Soundararajan's, was
+identified in their framework long before this paper, and the statement
+is a \emph{microscopic extrapolation and numerical test} of their
+second-moment formula at Gallagher's boundary---not a newly discovered
+second-order law.  The hypothesis must also be quantitative: what is
+required is not the qualitative $k$-tuple conjectures but uniform
+Hardy--Littlewood estimates for all shifts up to $O(\log x)$, control
+of the average singular series at the $o(h)$ level, and bounds for
+prime powers, endpoint weights, and the variation of $\log t$ across
+the sampling range.  Three further cautions are built into the
+statement: Gallagher's Poisson law is conditional, not a theorem about
+primes; the sampling measure for $t$ is specified, since different
+weightings shift lower-order terms; and the error is claimed only as
+$o(1/\log x)$.  The naive claim $\operatorname{Var}/\mathbb E=1$ fails at
+every accessible scale by $18$--$28\%$; the corrected law matches with
+no fitted parameter, and the observed residual $\approx+0.003$ is
+consistent with (but not evidence for) a genuine $1/\log^2x$ term.
+(Numerical precedent: Sanchis-Lozano \cite{SL} fitted the
+Montgomery--Soundararajan variance shape at $x\sim10^8$ in the
+mesoscopic regime $h\gg\log N$; the microscopic statement and test
+appear to be new, and we claim no more than that.)
+
+\begin{center}\small
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{$x=10^9$} & \multicolumn{2}{c}{$x=4\cdot10^9$}\\
+$\lambda$ & observed & predicted & observed & predicted\\
+\midrule
+$1/2$ & $0.8241$ & $0.8189$ & --- & ---\\
+$1$   & $0.7910$ & $0.7854$ & $0.7998$ & $0.7960$\\
+$2$   & $0.7527$ & $0.7520$ & $0.7670$ & $0.7646$\\
+$4$   & $0.7201$ & $0.7185$ & --- & ---\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent The residual $\approx+0.003$ is the anticipated
+$O(1/\log^2x)$ term.
+
+\setcounter{conjecture}{13}%
+\begin{conjecture}[The null-mechanism race; apparently new]\label{c8}
+For the quadratic twin pairs of Conjecture~\ref{c1} at $d=2$, square
+contamination is \emph{algebraically impossible}: $n^2+1=q^2$ has no
+solution with $n\ge1$, and $n^2+3=q^2$ only at $(n,q)=(1,2)$.  The
+surviving classes of $n$ mod $5$ are $\{0,1,4\}$, and the classes
+$1$ and $4$ have identical singular series (elementary, via CRT).
+Let $\pi^{\mathrm q}_a(x)$ count solutions with $n\equiv a\pmod5$,
+$D(x)=\pi^{\mathrm q}_1(x)-\pi^{\mathrm q}_4(x)$, and define the
+normalized race process
+$Y(x)=D(x)\big/\sqrt{\pi^{\mathrm q}_1(x)+\pi^{\mathrm q}_4(x)}$.
+Then, in contrast to the twin race of Conjecture~\ref{c21}, this race
+is \emph{driftless}:
+\emph{(i)} $\M_x\bigl(D(t)\log^2t/\sqrt t\bigr)\to0$ at the
+\emph{drift-scale} normalization of Conjecture~\ref{c21}(i)---the
+scale at which the contaminated races converge to nonzero
+constants---so this is the genuine negation of
+Conjecture~\ref{c21}(i) for this pair (the weaker normalization
+$\M_x(Y)\to0$ with $Y=D/\sqrt{\pi^{\mathrm q}}$ would not exclude a
+drift at the contamination scale, hence would not make this race a
+control; the form stated excludes exactly that);
+\emph{(ii)} [occupation law, stated as a conditional consequence] the
+arithmetic content of this clause is a \emph{strong approximation
+hypothesis}, for the process defined precisely at event index: let
+$n_1<n_2<\cdots$ enumerate the $n$ with $n^2+1$ and $n^2+3$ both
+prime and $n\equiv1$ or $4\pmod5$, set $\xi_i=+1$ if
+$n_i\equiv1$ and $-1$ if $n_i\equiv4$, and let
+$S_N=\xi_1+\cdots+\xi_N$ (so $D(x)=S_{N(x)}$ with $N(x)$ the number
+of such events to $x$).  The hypothesis is an \emph{almost-sure
+invariance principle} (ASIP): on a common probability space carrying
+$(\xi_i)$ and a standard Brownian motion $B$,
+\[
+S_N\;=\;B(N)+O\bigl(N^{1/2-\delta}\bigr)
+\qquad\text{almost surely, for some }\delta>0.
+\]
+Weak convergence alone would not suffice, since a distributional
+limit on each fixed interval does not control pathwise occupation
+across unboundedly many logarithmic scales; under the ASIP the
+almost-sure error is absorbed at every logarithmic scale and the
+Lamperti/ergodic occupation argument below is valid.  The weak
+functional limit theorem---$S_{\lfloor N\tau\rfloor}/\sqrt N$
+converging weakly to standard Brownian motion on
+$\tau\in[0,1]$---is retained only as the weaker, separately
+falsifiable consequence of the ASIP.  Everything after that is
+probability, not number theory: granting the ASIP,
+$D(t)=B(N(t))+O\bigl(N(t)^{1/2-\delta}\bigr)$
+with $N(t)\asymp t/\log^2t$, the error being $o(\sqrt{N(t)})$
+almost surely, and in \emph{logarithmic} time
+$u=\log t$ the
+Lamperti reduction $Z(s)=\e^{-s/2}B(\e^s)$ is a stationary, ergodic
+Ornstein--Uhlenbeck process, so the logarithmic occupation measure of
+leadership converges almost surely to $\tfrac12$:
+\[
+\frac1{\log x}\int_2^x\mathbf 1_{\{D(t)>0\}}\,\frac{dt}t
+\;\longrightarrow\;\frac12,
+\]
+with fluctuations of the Gaussian scale
+$\sqrt{\log2/\log x}$ (the occupation-indicator covariance
+$\frac1{2\pi}\arcsin\e^{-u/2}$ integrates to $\tfrac12\log2$; note
+that the constant for the \emph{sign} average $2\mathbf 1-1$ is twice
+this, the occupation fraction itself carrying
+$\sqrt{\log2/\log x}$); the classical
+arcsine spread survives only in the \emph{natural} event clock,
+i.e.\ for occupation fractions of $\{B(m)>0,\ m\le N(x)\}$.  A
+persistent systematic leader---a log-occupation stuck near $0$ or
+$1$ beyond the stated Gaussian scale---is the refutation.
+\end{conjecture}
+
+The clock matters here.  An arcsine-distributed limit for the
+logarithmic occupation itself is incompatible with the change of
+clock: the arcsine law lives in the natural time of the walk, whereas
+under $dt/t$ averaging the Lamperti transform is ergodic and forces
+the limit $\tfrac12$.  The distinction is what makes the statistic
+informative: the observed log-occupation $0.21$ at $10^7$ sits $1.4$
+null standard deviations below $\tfrac12$ (scale
+$\sqrt{\log2/\log x}\approx0.21$ there)---still consistent with the
+driftless null---whereas read as an arcsine draw the same number would
+carry no information at all.
+
+This is the negative control that completes the mechanism family of
+Conjectures~\ref{c21} and~\ref{c25}: those races carry a predicted
+drift \emph{because} prime squares can infiltrate specific residue
+classes of specific patterns; here the quadratic form blocks squares
+identically, so the same model predicts \emph{nothing}---a falsifiable
+contrast.  If a persistent drift were found in this race, the
+mechanism story behind the family would be wrong no matter how well
+the positive cases fit.  One caution is built into the statement:
+the absence of \emph{this} drift source does
+not by itself prove the race driftless---oscillatory zero terms,
+higher prime powers, and endpoint corrections are other conceivable
+sources---so clause (i) is a conjecture under the same
+zero-oscillation hypothesis as Conjecture~\ref{c21}, not a
+consequence of the square-blocking algebra alone.  What the algebra
+supplies is the \emph{contrast}: whatever residual model one adopts,
+it must produce drift in Conjectures~\ref{c21} and~\ref{c25} and
+none here.  Verification at $10^7$: $32{,}898$ pairs,
+class counts $10{,}917$ against $10{,}981$
+($D=-64$, i.e.\ $-0.43$ noise units), log-mean normalized drift
+$-0.46$ (consistent with $0$ at one noise unit), log-occupation of
+leadership $0.21$---$1.4$ null standard deviations below $\tfrac12$
+on the clock and constant of clause (ii), within the fair race's
+$95\%$ band.  (The quadratic triple $n^2+\{1,3,7\}$,
+$C=10.64599\pm0.006$, is included as a calibration benchmark---observed
+$3{,}963$ against predicted $3{,}998.6$ at $10^7$, $z=-0.56$,
+independently recomputed to $3\times10^7$; the longer pattern
+$n^2+\{1,3,7,9,13\}$ has been recorded in the OEIS since 2000, so the
+tuple family has prior presence and only its singular-series
+evaluation is plausibly new.)
+
+\emph{Verification.}  The race data are reported at the statement
+above; independent recomputation of this conjecture's calibration
+member, the quadratic triple, gave $10.647706$, with primes to
+$10^9$---inside our stated wobble---and an independent count to
+$3\times10^7$ with final ratio $1.0059$.
+
+\setcounter{conjecture}{14}%
+\begin{conjecture}[The cubic shift family: the distribution of its
+constants; instance-level law apparently unstated]\label{c2}
+For non-cube $a\ge1$ let $C(a)=C(x^3+a)$.  Only $p\equiv1\pmod3$
+moves the product, and the local root count there takes \emph{three}
+values as $a$ varies mod $p$:
+$\omega=3$ with probability $(p-1)/3p$ ($-a$ a nonzero cube),
+$\omega=1$ with probability $1/p$ (the case $p\mid a$, easy to
+overlook and essential to the mean-value identity below), and
+$\omega=0$ with probability
+$2(p-1)/3p$; for $p\equiv2\pmod 3$ the cube map is a bijection and
+$\omega=1$ identically.  Then:
+\emph{(i)} [mean-value one, elementary lemma]
+$\mathbb E_a[\omega(p)]=3\cdot\frac{p-1}{3p}+\frac1p=1$ exactly at
+every $p$, so the derived mean of $C(a)$ is exactly $1$---the cubic
+analogue of the Korevaar--te Riele mean-value-one theorem for linear
+prime-pair constants (arXiv:0806.1667), here a one-line computation
+at each finite level; passing the mean through the infinite product
+needs more than almost-sure convergence, and the needed ingredient is
+on hand: the convergent
+variance sum makes the partial products an $L^2$-bounded martingale
+(each factor has mean $1$ and is independent of the earlier ones),
+so they are uniformly integrable and the limit law has mean exactly
+$1$, not merely limit-of-means $1$;
+\emph{(ii)} [limit law] as $a\to\infty$ over non-cubes, $C(a)$
+converges in distribution to the random Euler product
+$\prod_{p\equiv1(3)}f_p(\xi_p)$ with the three-state local variables
+$\xi_p$ above---independent at any finite set of primes exactly, by
+CRT, with the infinite product's tail controlled by the convergent
+variance sum (unlike the quadratic family of
+Conjecture~\ref{c1}(iii), no normalization is needed)---with derived
+standard deviation $0.2762\ldots$ computed from the full three-state
+law;
+\emph{(iii)} [uniformity] $\#\{n\le N: n^3+a \text{ prime}\}
+=C(a)I_a(N)(1+o(1))$ uniformly over non-cube $a\le(\log N)^B$.
+\end{conjecture}
+
+The framework here is Kowalski's theory of averages of Euler products
+and singular-series distributions \cite{Kowalski}, which proves such
+limit laws for $k$-tuple singular series; the one-parameter cubic
+shift family, its exact mean-one lemma, and the short-range
+uniformity appear unstated, and we present (ii) explicitly as an
+instance-level law inside that framework rather than a new mechanism.
+Verification: derived moments (mean exactly $1$, sd $0.2762$)
+against the $294$ non-cube shifts $a\le300$: empirical mean $1.0215$
+($+1.5$ profile standard errors), sd $0.2481$ (finite-family tail
+correlations account for the sd gap: for $p>a_{\max}$ the residues of
+$a$ are not yet equidistributed); uniformity profile over $57$ shifts
+at $N=2\times10^5$: mean $z=+0.09$, spread $0.72$, $\max|z|=2.31$.
+(The single instance $a=2$, $C=1.298435\pm0.0003$, verified at $10^7$
+with $z=+0.32$, is included as the calibration member; no statement
+of Bunyakovsky type is proven for any cubic, the nearest theorem
+being Heath-Brown's $x^3+2y^3$ \cite{HB}, which is what keeps the
+whole family conjectural.)
+
+\emph{Verification (the classical single instance).}  At $a=2$ and
+bound $10^{7}$: observed $287{,}956$ against predicted $287{,}784.8$,
+ratio $1.0006$, $z=+0.32$; the family-profile verification across the
+$57$ shifts is reported above.
+
+\setcounter{conjecture}{15}%
+\begin{conjecture}[Conjecture F as a family; the core is previously
+stated, \cite{HL1923}, cf.~\cite{JW}]\label{c24}
+For odd $A$ let $Q_A(N)=\#\{n\le N:\ n^2+n+A \text{ prime}\}$ and
+$C(A)=C(x^2+x+A)$.  Then, for every fixed $B>0$,
+$Q_A(N)=C(A)\,I_A(N)\,(1+o(1))$ uniformly over odd
+$1\le A\le(\log N)^B$, with the residual field obeying the analogue
+of Conjecture~\ref{c16}(ii), kernel derived and probability space
+specified: for $t$ uniform on $[N,2N]$ and window length $H\le
+N^{o(1)}$, let
+$Q_A(t;H)=\#\{t<n\le t+H:\ n^2+n+A \text{ prime}\}$ (mean
+${\asymp}H/2\log N$, which sets the regime).  Two members share the
+index window, so with $C(A,A')=C(x^2+x+A,\ x^2+x+A')$,
+\[
+\operatorname{Cov}_t\bigl(Q_A,Q_{A'}\bigr)\;\sim\;
+\bigl[C(A,A')-C(A)\,C(A')\bigr]\,\frac{H}{4\log^2N},
+\]
+with $C(A,A')=0$ (hence \emph{negative} correlation) for the locally
+exclusive pairs.  This is the \emph{same-index} contribution only: the full
+covariance adds the off-index pinned sum
+\[
+\frac1{4\log^2N}\sum_{0<|h|\le H}(H-|h|)\,
+\bigl[C(f_A(x),f_{A'}(x+h))-C(A)C(A')\bigr],
+\]
+the two-parameter analogue of
+Conjecture~\ref{c12}'s $G(H)$, whose evaluation is this family's
+open component.  (The order of this sum matters, and is easy to get wrong by
+a factor
+$\log^2N$: the joint event here is \emph{two single prime values} at
+distinct indices, of probability $\asymp1/4\log^2N$, unlike
+Conjecture~\ref{c16}'s pair-of-pairs events at $1/\log^4x$.  At that
+order the off-index sum, which grows like a pinned
+$G$-average over $\asymp H$ shifts against the same-index term's
+single $H$, is generically the \emph{larger} component, so the
+numerical cancellation of the same-index kernel establishes nothing
+about the full cross-member covariance, and the localization of the
+observed profile deficit to the diagonal is an open question rather
+than an inference.)  For $H/\log N\to\lambda$ the counts are jointly
+Poisson with local exclusions, and for $H/\log N\to\infty$ each
+fixed finite collection of studentized counts is asymptotically
+jointly normal, all correlations of size $\asymp1/\log N$ making
+both kernels finite-$N$ corrections to independence, exactly as at
+Conjecture~\ref{c16}(ii).
+(Uniformity over a range growing with $N$ is the substantive claim;
+uniformity over any \emph{fixed} finite set of $A$ is logically
+automatic from the individual asymptotics.)  Among
+odd $A\le199$, Euler's $A=41$ has the largest constant,
+$C(41)=6.6395463\ldots$ (Cohen's high-precision value \cite{Cohen}).
+\end{conjecture}
+
+Numerical evaluation of the kernel (all odd $A,A'\le99$ at
+$N=10^6$: $1{,}225$ pairs, of which $289$ locally exclusive) returned
+a structurally clean answer: the positive correlations of admissible
+pairs and the negative correlations of exclusive pairs \emph{cancel},
+mean off-diagonal $\rho=-0.003$, so the derived \emph{same-index}
+cross-member kernel is null.  With the off-index sum at its
+correct order (larger, not smaller, than the same-index term), this
+cancellation does not license the conclusion that the members are
+asymptotically independent or that the observed profile variance
+${\approx}0.37$ must be diagonal; the natural reading remains that
+each
+$\operatorname{Var}(Q_A)$ is sub-Poisson through within-sequence pair
+correlations, the quadratic-family analogue of the
+Montgomery--Soundararajan deficit (Conjecture~\ref{c20}), but the
+off-index cross terms are an unevaluated competitor---and part of
+the spread is truncation noise in the constants themselves (the
+$\pm10^{-3}$ wobble moves each $z_A$ by ${\sim}0.3$).  Deriving the
+diagonal law and the off-index pinned sums is the family's remaining
+open component, and the more important one; the numerical
+cancellation of the \emph{same-index}
+cross-member kernel is a finite computation over $A\le99$, which
+localizes the deficit off the same-index diagonal without proving
+that the averaged kernel or the off-index contributions
+vanish---an analytic classification of the sign of
+$C(A,A')-C(A)C(A')$, and the evaluation of the two-parameter pinned
+sums, remain open.
+At $N=10^6$: mean ratio $1.0006$, standard deviation $0.0027$,
+$\max|z|=1.92$, rank correlation $0.99988$; for $A=41$, observed
+$261{,}080$ against predicted $261{,}017.6$ ($z=+0.12$, using Cohen's
+constant).  A cautionary note on precision belongs here: a
+truncated Euler product for $C(41)$ at cutoff $2\cdot10^5$ reads
+$6.64092$---wrong in the fourth significant decimal---because these
+conditionally convergent products drift at the $10^{-3}$ scale over
+practical cutoffs.  Quoted digits for all quadratic-family constants in
+this paper are limited by the stated truncation wobble, not by the last
+printed digit.  The entire
+$10^8$-bit primality dataset compresses to one product formula per
+$A$---the description-length virtue in its purest form.
+
+\setcounter{conjecture}{16}%
+\begin{conjecture}[Twin-member Goldbach, orientation-resolved; the
+basis conjecture and the integral kernel are Dubner's
+\cite{Dubner2000}; the orientation decomposition apparently
+new]\label{c17}
+For even $n$ let $R_T(n)$ count ordered $(a,b)$, $a+b=n$, with $a$
+and $b$ both members of twin pairs, each ordered role (lower/upper)
+counted.  Each of the four role assignments is a $4$-form linear
+system in $t=a$ with root set
+$\{0,\pm2\}\cup\{n,n\pm2\}$-type mod each $p$, hence its own
+$n$-dependent singular series $\SG_4^{(o)}(n)$, and
+\[
+R_T(n)\;=\;\Bigl[\sum_{o}\SG_4^{(o)}(n)\Bigr]
+\int_5^{n-5}\frac{dt}{\log^2t\,\log^2(n-t)}\;\bigl(1+o(1)\bigr),
+\]
+the four constants computed exactly per $n$ from the coincidence
+pattern of the root sets (which of $n,n\pm2,n\pm4$ each small prime
+divides).  The error term is stated as $(1+o(1))$, not
+$(1+O(1/\log n))$: our own measurements show a second-order deficit
+whose $1/\log n$ coefficient is not yet pinned down (below), and
+claiming the rate before identifying the coefficient would outrun
+the evidence.  Two precision notes: the
+asymptotic runs over \emph{varying} $n$, so what is assumed is a
+Hardy--Littlewood estimate for $4$-form systems \emph{uniform in the
+$n$-dependent coefficients}---strictly stronger than the fixed-system
+conjecture---and the number $5$, the unique prime that is
+simultaneously a lower twin member (of $(5,7)$) and an upper one (of
+$(3,5)$), is double-counted consistently by the ordered-role
+convention, affecting finitely many representations per $n$ and no
+asymptotic.
+\end{conjecture}
+
+Dubner's paper already contains the integral kernel (his quotient
+$\mu_4$) and the qualitative basis conjecture; the content claimed
+here is exactly the orientation-resolved singular series and its
+$n$-profile.  The four orientations are not unrelated, and two exact identities
+compress them: the substitution $t\mapsto n-t$ exchanges the two
+summand roles, forcing
+$\SG_4^{(\mathrm{lu})}(n)=\SG_4^{(\mathrm{ul})}(n)$ identically
+(each of the $(\mathrm{ll})$ and $(\mathrm{uu})$ systems being
+self-dual under it), and the affine substitution $t\mapsto t+2$
+gives $\SG_4^{(\mathrm{uu})}(n)=\SG_4^{(\mathrm{ll})}(n-4)$.  So
+only one function of $n$ per symmetry class is free, and the profile
+is really two-dimensional; determining the average of
+$\sum_o\SG_4^{(o)}(n)$ over $n$ in closed form is a
+registered identity-hunting programme.  Verified on $150$ log-sampled
+$n\le10^8$: the profile
+\emph{shape} is confirmed at log-log correlation $0.9993$ across two
+decades, while the \emph{level} runs at $0.87$ of prediction on
+$[10^6,10^7)$ and $0.81$ on $[10^7,10^8)$---a systematic deficit of
+second-order size (${\approx}3.4/\log n$ at the top range,
+the same order as the $18$--$28\%$ finite-height Poisson deficit of
+Conjecture~\ref{c20}), which we flag as the open component here
+rather than absorb into a fitted constant: either the $4$-tuple
+second-order correction accounts for it, or the orientation model
+needs repair, and the two are distinguishable at $10^{10}$.  (The
+attributed benchmark stands inside the statement: every even
+$n\ge4210$ is a sum of two twin members, with the conjectured
+complete list of $35$ exceptions (OEIS A007534)---verified to $10^8$,
+re-swept to $10^9$, independently
+re-verified by a different algorithm, the same
+$35$ exceptions each time.)
+
+\section{Instances and structural companions}
+
+\setcounter{conjecture}{17}%
+\begin{conjecture}[Contamination in prime triplets; apparently
+new]\label{c3}
+The contamination calculus of Conjecture~\ref{c21}(v) extends to
+$k$-tuples, and the triplet pattern $(n,\,n+2,\,n+6)$ is its first
+instance beyond pairs.  Of the three configurations placing a prime
+square inside the pattern, two die algebraically for
+$q>3$---$(q^2,q^2+2,q^2+6)$
+by $3\mid q^2+2$, and $(q^2-6,q^2-4,q^2)$ because
+$q^2-4=(q-2)(q+2)$ is composite (at $q=3$ the factorization is
+trivial, $q^2-4=5$ is prime, and the single bounded exceptional
+configuration $(3,5,9)$ occurs---one term, harmless to every
+asymptotic)---leaving the single
+\emph{doubly-thinned} survivor $(q^2-2,\ q^2,\ q^2+4)$, which
+requires $q^2-2$ \emph{and} $q^2+4$ simultaneously prime and forces
+$q\equiv\pm2\pmod5$ for $q\neq5$ (else $5\mid q^2+4$; at $q=5$ all
+three conditions do hold, the configuration being $(23,25,29)$, but
+its start $23\equiv3\pmod5$ lies outside the triplet start classes
+$\{1,2\}$, so the single term is harmless).  Triplet starts lie in
+classes $n\equiv1,2\pmod 5$, and the surviving configuration has
+start $q^2-2\equiv2$: class $2$ is contaminated and class $1$ leads,
+in the drift-scale form of Conjecture~\ref{c21}(i) (a normalization
+at the noise scale, $\M_x((D-T_3)/\sqrt{\pi_3})$, would be vacuous
+for the coefficient, exactly as at the pair races):
+\[
+\M_x\!\left(
+\frac{\bigl(\pi_3(t;5,1)-\pi_3(t;5,2)\bigr)\log^3t}{\sqrt t}\right)
+\to c_3:=\lim_{x\to\infty}\frac{T_3(x)\log^3x}{\sqrt x},
+\quad
+T_3(x)=\frac1{\log^3x}\!\!
+\sum_{\substack{q\le\sqrt x,\ q\neq5\\ q^2-2,\ q^2+4\ \mathrm{prime}}}
+\!\!\log(q^2-2)\log q\,\log(q^2+4)
+\]
+($c_3$ exists and is the Bateman--Horn constant of the triple
+$(q,\,q^2-2,\,q^2+4)$, since the census sum is $\sim c_3\sqrt x$;
+convergence of the logarithmic mean at this normalization is the
+same Rubinstein--Sarnak-type structure hypothesis as at
+Conjecture~\ref{c21}(i)), with drift-to-noise
+$\asymp\log^{-3/2}x$---one logarithm weaker than
+the pair races, a scale the calculus itself predicts and the
+verification must respect.
+\end{conjecture}
+
+This is the calculus made to pay rent at tuple level: the
+configuration census, the double thinning, and the mod-5 class
+assignment are all forced, and the prediction was derived before the
+data were taken.  At $10^9$: classes $189{,}837$ against $189{,}670$
+($D=+167$ on the predicted side; $T_3=+25$ against noise $616$, so
+the endpoint is uninformative exactly as the $\log^{-3/2}$ law
+requires), leadership log-density $0.65$ ($+0.8$ null standard
+deviations at the occupation constant of
+Conjecture~\ref{c8}(ii)---directionally
+consistent, sharpness unavailable at this height by the calculus's
+own accounting).  (The Chernick chain
+$\{p,2p-1,3p-2\}$---the population behind the universal-form
+Carmichael numbers, quantified by Dubner \cite{Dubner2002}---is
+included as an attributed calibration benchmark:
+$C=2.858249$, observed $125{,}379$ against predicted $125{,}429.4$ at
+$3\times10^8$, $z=-0.14$.)
+
+\emph{Verification.}  The triplet-race data and the Chernick-chain
+calibration count are reported at the statement above.
+
+\setcounter{conjecture}{18}%
+\begin{conjecture}[The contamination matrix: sexy pairs with two
+surviving orientations; apparently new]\label{c7}
+For the pattern $(n,n+6)$, \emph{both} prime-square orientations
+survive, on complementary classes of $q$ mod $5$---the first matrix
+instance of the calculus (every pair race so far had exactly one):
+orientation $A=(q^2-6,\,q^2)$ requires $q^2-6$ prime, forcing
+$q\equiv\pm2\pmod5$ for $q\neq5$ (at $q=5$ the value $19$ is prime,
+but its start $19\equiv4\pmod5$ lies outside the sexy start classes
+$\{1,2,3\}$), and lands in start class $3$ (mod $5$), class
+$3$ (mod $8$); orientation $B=(q^2,\,q^2+6)$ requires $q^2+6$ prime,
+forcing $q\equiv\pm1\pmod5$ (the term $q=5$ falls outside the start
+classes), and lands in class $1$ (mod $5$), class $1$ (mod $8$).
+Sexy starts occupy classes $\{1,2,3\}$ mod $5$ and $\{1,3,5,7\}$ mod
+$8$; with
+$T_{A}(x)=\frac1{\log^2x}\sum_{q^2-6\ \mathrm{prime},\,q\neq5}\log
+q\log(q^2-6)$,
+$T_{B}(x)=\frac1{\log^2x}\sum_{q^2+6\ \mathrm{prime},\,q\neq5}\log
+q\log(q^2+6)$, and $c_A,c_B$ their drift-scale limits
+($c_A=\lim T_A\log^2x/\sqrt x$, the Bateman--Horn constant of
+$(q,q^2-6)$, likewise $c_B$ for $(q,q^2+6)$), the predicted drift
+vector, in the drift-scale limiting-log-mean sense of
+Conjecture~\ref{c21}(i) (an $\M_x$-over-$\sqrt\pi$ normalization would
+be coefficient-blind), is:
+mod 5: $\M_x\bigl((\pi(2)-\pi(3))\log^2t/\sqrt t\bigr)\to c_A$,
+$\M_x\bigl((\pi(2)-\pi(1))\log^2t/\sqrt t\bigr)\to c_B$ (class $2$
+\emph{clean}); mod 8:
+$\M_x\bigl((\tfrac12(\pi(5)+\pi(7))-\pi(3))\log^2t/\sqrt t\bigr)\to
+c_A$,
+$\M_x\bigl((\tfrac12(\pi(5)+\pi(7))-\pi(1))\log^2t/\sqrt t\bigr)\to
+c_B$ (classes $5,7$ clean, mutually symmetric, with
+$\M_x\bigl((\pi(5)-\pi(7))\log^2t/\sqrt t\bigr)\to0$).  Two
+independently computable drift constants,
+one certified null class per modulus.
+\end{conjecture}
+
+The matrix structure---two orientations feeding disjoint classes on
+complementary $q$-classes, with an interior null---is what
+distinguishes this from every single-orientation race, and it tests
+the calculus beyond its balanced one-mechanism cases; the class
+assignments were verified independently before the data were taken.
+At $10^9$ the predicted components ($T_A=191$, $T_B=110$) sit far
+inside the noise ($\approx2{,}100$), as the $1/\log x$ law forces;
+all four measured components and the $5$--$7$ control lie within one
+noise unit of their predictions (trivially, at this height), and the
+four leadership log-densities $(0.48,0.56,0.53,0.73)$ sit at
+$(-0.1,+0.3,+0.1,+1.2)$ null standard deviations
+(occupation constant $0.18$): three at the null, the mod-8
+$B$-component mildly positive on the predicted side.  The
+matrix is \emph{registered and consistent}, with sharpness
+unavailable below ${\sim}10^{14}$ by the calculus's own accounting.
+(The pair $\{p,\ p^2-2\}$, OEIS A062326, $C=3.383216$, the input that
+sets Conjecture~\ref{c21}'s drift scale, is included as an attributed
+calibration benchmark: verified at
+$10^7$, $z=-1.31$, independently recomputed to $10^9$; a refutation
+of its infinitude would remove the twin race's predicted mechanism.)
+
+\emph{Verification.}  The sexy-pair race data are reported at the
+statement above; independent recomputation of this conjecture's
+calibration member, the pair $\{p,p^2-2\}$, gave $3.383227$, with
+primes to $10^9$---inside our stated wobble---and an independent count
+to $3\times10^7$ with final ratio $0.9965$.
+
+\setcounter{conjecture}{19}%
+\begin{conjecture}[Fibonacci--Lucas twins: the convergent side
+stress-tested; the object is OEIS A080327]\label{c9}
+\emph{(i)} [rank-disjointness, elementary, with its exception stated]
+every \emph{odd} prime factor $r$ of $L_p$ has rank of apparition
+exactly $2p$ (from $z(r)\mid2p$, $z(r)\nmid p$, and $z(r)=2$ being
+impossible), and every prime factor of $F_p$ ($p\neq5$ prime) has
+rank exactly $p$: the odd divisor pools of the two numbers are
+disjoint.  The prime $2$ is the unique exception: $2$ divides both
+$F_p$ and $L_p$ precisely when $p=3$
+($F_3=2$, $L_3=4$; $\gcd(F_p,L_p)=2$ iff $3\mid p$)---the
+restriction to odd divisors is essential, the clause being false at
+$p=3$ without it.  Disjoint pools remove shared-\emph{prime}
+correlation but not all correlation: dependence can still enter
+through the order structure of the recurrence, which is why (iii)
+matters;
+\emph{(ii)} [finiteness] only finitely many primes $p$ have $F_p$ and
+$L_p$ simultaneously prime;
+\emph{(iii)} [calibration clause, deliberately quantitative] the
+naive joint accounting---probability
+$(\e^{\gamma}\log p/(p\log\phi))^2$ per index---is contradicted at
+the $3\times10^{-3}$ level by the record: it prices the catalogued
+index
+$p=148091$ (OEIS A080327; \emph{both} $F_p$ and $L_p$ are
+\emph{probable} primes---numbers of roughly $30{,}950$ digits, with
+Lucas numbers proved prime only up to index $56003$---so the
+contradiction is conditional on both probable-prime classifications,
+for which no Baillie--PSW pseudoprime is known: no unconditional
+refutation is claimed from uncertified numbers) at
+that much expected mass beyond $10^4$.  A single surprising event is
+not a strict refutation, and it does not by itself estimate the
+\emph{size} of the correction: an underestimated constant, genuine
+cross-dependence,
+and a mis-calibrated finite-range tail are competing explanations
+that one event cannot separate.  What it does establish
+(conditionally as above) is that the naive model is wrong somewhere,
+and it is fatal
+to any Goldilocks completeness list; the conjectural content of (ii)
+is that even the corrected accounting has convergent sum.
+\end{conjecture}
+
+This conjecture is our stress test of the convergent
+Borel--Cantelli template that Conjecture~\ref{c10} exemplifies.  The
+joint scan to $p\le10^4$ found exactly the indices
+$\{5,7,11,13,17,47\}$, with expected further mass $1.6\times10^{-3}$,
+while the catalogued index $148091$, at which $F_p$ and $L_p$ are
+both probable primes, lies beyond that range.  We
+therefore conjecture finiteness \emph{without} a completeness clause.
+The lesson, in the language of
+Grantham--Granville
+\cite{GranthamGranville}, is that recurrence-sequence constants need
+their local corrections \emph{before} tail masses are trusted.  The
+single-sided calibration (probable-prime counts: $F_p$ and $L_p$
+leave the deterministic range at very small $p$): $25$ Fibonacci
+prime indices
+$\le10^4$ against the naive screening prediction $34.1$
+($z=-1.6$, a deficit confirmed by independent recomputation); $29$ Lucas
+prime indices $\le10^4$; the
+corrected $c_F$ is this paper's most concrete ``needs a
+Granville-type patch'' constant, and clause (iii) quantifies the
+same need at the joint level.
+
+\emph{Verification.}  Joint scan and single-sided calibration reported at the
+statement (Fibonacci prime indices $\{3,5,7,\dots,9311,9677\}$, $25$
+of predicted $34.1$, $z=-1.56$; Lucas indices $29$; joint
+$\{5,7,11,13,17,47\}$ to $10^4$)---probable-prime counts at all but
+the smallest indices, the Fibonacci and Lucas values leaving the
+deterministic range almost at once.
+
+\setcounter{conjecture}{20}%
+\begin{conjecture}[Factorial twins; the uniqueness core is previously
+stated, OEIS A088054; clauses (i) and (iii) are ours]\label{c10}
+\emph{(i)} [window rigidity, elementary] for $n\ge4$ and
+$2\le|a|\le n$ the number $n!+a$ is composite (any prime factor $p$
+of $a$ satisfies $p\le n$, so $p\mid n!+a$, and $n!+a>n\ge p$); the
+two small anomalies $2!-2=0$ and $3!-3=3$ are the only exceptions,
+which is why the clause is restricted to $n\ge4$.  Hence among all offsets
+of bounded size the only
+candidates for primality near $n!$ are $a=\pm1$: the twin question
+below is the \emph{unique} bounded-offset constellation question at
+$n!$, and every admissible offset set is a subset of $\{-1,+1\}$.
+\emph{(ii)} [uniqueness; previously stated] Only finitely many $n$ have $n!-1$ and
+$n!+1$ simultaneously prime, and the complete list is $n=3$: i.e.\
+$6=3!=3\#$ is the unique factorial lying between twin primes.
+\emph{(iii)} [joint fluctuation model] the two single-sided counts
+$F_{\pm}(N)=\#\{n\le N:\ n!\pm1 \text{ prime}\}$ are each
+$\sim\e^{\gamma}\log N$ and, \emph{under the independent-indices
+model stated below}, asymptotically independent, with
+$F_{+}-F_{-}$ normalized by $\sqrt{2\e^{\gamma}\log N}$
+asymptotically standard normal.  The probability space is declared:
+the clause is about a random model in which the events
+$E_n^{\pm}=\{n!\pm1\ \text{prime}\}$ carry the Caldwell--Gallot
+marginal hazards $\e^{\gamma}/n$ with an \emph{unspecified}
+dependence structure, and the Gaussian limit is asserted under two
+explicit hypotheses on that structure: the covariance bound
+$\sum_{m<n\le N}\bigl|\operatorname{Cov}(\mathbf 1_{E_m},
+\mathbf 1_{E_n})\bigr|=o(\log N)$ over the four sign pairs (the
+variance itself is $\asymp\log N$), \emph{and}---since pairwise
+control alone cannot preclude higher-order dependence---the
+higher-cumulant condition
+$\kappa_r(F_+-F_-)=o\bigl((\log N)^{r/2}\bigr)$ for each fixed
+$r\ge3$, the method-of-moments sufficient condition.  Neither is
+imported from an independence model; whether they hold for the
+arithmetic dependence across
+factorial indices is the open
+component of this clause.
+\end{conjecture}
+
+Each event separately has Caldwell--Gallot probability
+$\sim\e^{\gamma}/n$ \cite{CaldwellGallot} and divergent sum (the
+$n!+1$ side is the classical law retained as calibration at
+Conjecture~\ref{c12}); the \emph{joint} event
+has probability $\sim(\e^{\gamma}/n)^2$, whose sum converges.  This is
+our exemplar of the convergent side of the Borel--Cantelli
+dichotomy---the accounting that predicts finitude rather than
+infinitude.  The at-a-common-index independence in (iii) has a
+derivation, not just an assertion: a generic twin pair near $n!$ would carry
+the Hardy--Littlewood twin
+factor $2C_2\prod_{2<p\le n}\frac{p-2}{p-1}\big/
+\prod_{2<p\le n}\bigl(\tfrac{p-1}p\bigr)^{\!2}$-type couplings, but
+here the screening (coprimality to all $p\le n$) is
+\emph{deterministic}---both neighbors always pass it---and the twin
+coupling factor and the reciprocal sieve factors cancel to first
+order, leaving the joint probability $\sim(\e^{\gamma}/n)^2$ with no
+singular-series correlation; what remains open, and is flagged in
+(iii), is dependence \emph{across} distinct indices $n$, whose
+divisibility structures are nested.  That open component has a
+concrete first computation, which we register as a
+programme: for $m<n$ and a prime $p>n$, the residues $m!\bmod p$ and
+$n!\bmod p$ are deterministically linked by
+$n!=m!\cdot(m{+}1)\cdots n$, so the covariance of the events
+$p\mid m!\pm1$ and $p\mid n!\pm1$ is an explicit character-sum
+average over the multiplier $(m{+}1)\cdots n$; summing it over $p$
+either bounds the cross-index dependence at $o(1/n)$---vindicating
+the independent-indices model---or exhibits genuine coupling, and
+the computation is finite at each height.
+Verified for $n\le700$ ($F_+=14$, $F_-=16$: difference $-2$ against
+noise scale $\approx4.8$); the model-expected number of further twin
+examples beyond $700$ is $\e^{2\gamma}/700\approx4.5\times10^{-3}$
+(computed tail).  The defensible core is finiteness; the exact
+one-element list is the Goldilocks-maximal form---strictly stronger
+than the tail estimate can guarantee.  On priority: the exact
+uniqueness conjecture is on the public record, OEIS A088054 stating
+that $3$ is conjecturally the intersection of A002981 and A002982, so
+clause (ii) is attributed there and our contribution here is
+exactly clauses (i) and (iii).
+
+The primorial analogue---$p\#\pm1$ both prime only for
+$p\in\{3,5,11\}$---is due to Lillie \cite{Lillie}, whose abstract
+gives both the $O(n^{-2})$ joint probability and the prediction that
+there are three instances in total; it is included here as an
+attributed calibration benchmark, independently verified to
+$p\le4000$.
+
+\emph{Verification} (probable-prime count for $n$ beyond about $26$).
+Exhaustive to $n\le700$: the only factorial twin is
+$n=3$; individually, $n!+1$ is prime for
+$n\in\{2,3,11,27,37,41,73,77,116,154,320,340,399,427\}$ and $n!-1$
+for $n\in\{3,4,6,7,12,14,30,32,33,38,94,166,324,379,469,546\}$---two
+divergent single-sided laws straddling their shared constant while
+the joint count stops at one, the convergent accounting in action.
+(The primorial companion, attributed to Lillie \cite{Lillie}:
+exhaustive to $p\le4000$, twins exactly
+$\{3,5,11\}$, with $p\#+1$ prime for eleven $p$ against the
+Caldwell--Gallot prediction $14.8$, $z=-0.98$; again a probable-prime
+count above the deterministic range.)
+
+\begin{theorem}[Cube obstruction]\label{t:cube}
+For $k\ge2$, the cube $k^3$ is representable as $p+j^3$ with $p$ prime,
+$j\ge1$, if and only if $3k^2-3k+1$ is prime.  Consequently the set of
+integers not representable as $p+k^3$ is infinite: the non-representable
+\emph{cubes} alone have counting function $\sim x^{1/3}$.  (That the
+full exceptional set is $\sim x^{1/3}$ follows only when combined with
+Conjecture~\ref{c13}(i), and is conjectural.)
+\end{theorem}
+
+\begin{proof}
+$k^3-j^3=(k-j)(k^2+kj+j^2)$; for $1\le j\le k-2$ both factors exceed
+$1$, so the difference is composite.  The only candidate is $j=k-1$,
+giving $3k^2-3k+1$.  Since $3k^2-3k+1$ is composite for a density-one
+set of $k$ (all but $O(K/\log K)$ of $k\le K$, by an upper-bound sieve
+of Brun or Selberg type applied to the quadratic's prime values), all
+but a vanishing proportion of cubes are unrepresentable.
+\end{proof}
+
+The restriction to non-cubes in the next conjecture is therefore
+essential rather than cosmetic: the exception set of $n=p+k^3$ over
+\emph{all} $n$ is infinite, and the cubes are exactly what makes it so.
+The effect is visible immediately in the data---all $412$ exceptions
+found in $(10^8,10^9]$ are perfect cubes---and it is invisible to a
+Borel--Cantelli sum taken over all $n$, since the cubes have density
+zero.  The cube lane is not lost, only relocated: by
+Theorem~\ref{t:cube} it is governed by the primality of $3k^2-3k+1$,
+which is a Bateman--Horn family in its own right and appears as such in
+Conjecture~\ref{c13}.
+
+\setcounter{conjecture}{21}%
+\begin{conjecture}[The boundary trichotomy for polynomial ladders; the
+divisibility principle is classical and its cubic case is
+Cunningham's cuban observation (OEIS A002407); the family
+classification is apparently new]\label{c13}
+For $F\in\mathbb Z[x]$ with $\deg F\ge2$ and \emph{positive leading
+coefficient}, and $m>j\ge1$,
+$(m-j)\mid F(m)-F(j)$ (textbook), and the divided difference
+$(F(m)-F(j))/(m-j)$---whose leading form is then positive on the cone
+$m>j\ge1$---exceeds $1$ outside an effectively bounded region; so
+$F(m)-F(j)$ prime forces $m-j=1$ apart from finitely many
+exceptional pairs (for the family below the exceptional set is
+provably \emph{empty}).  Both hypotheses are necessary: for
+$\deg F=1$ the cofactor can be identically $1$ and the collapse
+fails, and for negative leading coefficient the divided difference
+tends to $-\infty$ on the cone, so the ``exceeds $1$'' clause would be
+false as stated (one may equivalently keep general sign and read the
+claim through $|F(m)-F(j)|$).  Every representation problem $F(m)=p+F(j)$ in
+this range
+thus collapses to the boundary polynomial $D_F(m)=F(m)-F(m-1)$.  The content is the classification
+of the boundary lanes.  For $F=x^3+cx$, $c\ge0$:
+\emph{(i)} [trichotomy, elementary] $D_F=3m^2-3m+1+c$ and the lane is
+\emph{dead-parity} for $c$ odd ($D_F$ always even),
+\emph{dead-3-adic} for even $c\equiv2\pmod3$ ($3\mid D_F$ always),
+and admissible exactly for $c\equiv0,4\pmod6$;
+\emph{(ii)} [uniform boundary law] over the admissible lanes,
+$\#\{m\le M: D_F(m) \text{ prime}\}\sim C(D_F)\,I(M)$ uniformly for
+$c\le(\log M)^B$---a Bateman--Horn family whose members are indexed
+by the ladder classification rather than chosen ad hoc;
+\emph{(iii)} [attributed core] the case $c=0$ is the cuban ladder:
+Cunningham's classical observation that a prime difference of cubes
+forces consecutive arguments, with the non-cube exceptional set of
+$n=p+k^3$ finite (Hardy--Littlewood's $E_3(X)=O(1)$ \cite{HL1923}).
+\end{conjecture}
+
+The reducible-boundary phenomenon is part of the same
+classification: $F=x^4$ has $D_F=(2m-1)(2m^2-2m+1)$---the boundary
+lane itself factors, which is precisely the composite-$k$ obstruction
+of Conjecture~\ref{c4} seen from the ladder side, and
+$F=x^3+x^2$ gives $D_F=m(3m-1)$, dead by reducibility.  Verified:
+the collapse is algebraically empty for $x^3+cx$ ($c\ge0$), the
+trichotomy checked to $m=5000$ on all $c\le12$, and the two smallest
+admissible new lanes counted at $M=10^6$: $c=4$
+($C=2.12956$, $z=+0.27$) and $c=6$ ($C=2.68954$, $z=-0.92$).
+(Empirically the non-cube exception census of (iii) by decade is
+$4,\,27,\,168,\,763,\,2011,\,2808,\,1181,\,88$ up to $10^8$, peaking
+at the sixth decade and collapsing thereafter, largest found
+$78{,}526{,}384$; verification data, not statement.)
+
+\setcounter{conjecture}{22}%
+\begin{conjecture}[The power-obstruction ladder: an elementary
+structural proposition with a Bateman--Horn corollary; apparently new
+as a family]\label{c4}
+For $k\ge2$ and $m\ge2$, write $D_k(m)=m^k-(m-1)^k$, and call $m^k$
+representable if $m^k=p+j^k$ for some prime $p$ and $j\ge1$.  Then:
+\emph{(i)} [theorem] for \emph{composite} $k$, no $k$-th power is
+representable: if $r$ is a proper divisor of $k$ with $r>1$ (such
+$r$ exists precisely because $k$ is composite; the excluded value
+$r=1$ would allow only the useless factor $m-j=1$ at $j=m-1$), then
+for every
+$1\le j<m$ the difference $m^k-j^k$ has the proper factor $m^r-j^r>1$
+with cofactor $>1$;
+\emph{(ii)} [elementary] for \emph{prime} $k$ (including $k=2$),
+$m^k$ is representable if and only if $D_k(m)$ is prime; and $D_k$ is
+irreducible for prime $k$ (its roots $\zeta^j/(\zeta^j-1)$, $\zeta$ a
+primitive $k$-th root of unity, form a single Galois orbit---$D_k$ is a
+linear-fractional transform of the cyclotomic polynomial $\Phi_k$);
+\emph{(iii)} [conjecture] for each prime $k$ the representable lane
+follows Bateman--Horn:
+$\#\{m\le M:\ D_k(m) \text{ prime}\}\sim C_k\int_2^M dt/\log D_k(t)$.
+\end{conjecture}
+
+The dividing line is prime versus composite $k$, not odd versus even:
+for \emph{odd} composite $k=rs$ the factorization of clause (i) applies
+verbatim, so that $D_9(m)$, for instance, is \emph{never} prime.  This
+was checked directly for $k=9,15,21,25,27,33$---no prime value of $D_k$
+occurs up to $m=2000$, and the predicted divisor $D_r(m)\mid D_k(m)$ is
+present identically---and it is the same algebraic mechanism, seen from
+the ladder side, that Theorem~\ref{t:cube} exhibits for cubes.  The
+family generalizes the cubic case $k=3$ of Conjecture~\ref{c13}.
+
+\emph{Verification.}  The even-rung theorem was checked numerically to
+$10^8$ (no fourth power is $p+j^4$); the three verifiable
+Bateman--Horn lanes $k=2,3,5$ (constants $2$ exactly, $3.36181$, and
+$3.67770\pm0.007$, the quartic product computed by brute-force root
+counts to $10^5$) all sit within $|z|<0.6$: at bound $10^{7}$ the lane
+$k=2$ gives observed $1{,}270{,}606$ against predicted
+$1{,}270{,}902.8$ (ratio $0.9998$, $z=-0.26$); at $10^{6}$ the lane
+$k=3$ gives $126{,}826$ against $126{,}641.6$ (ratio $1.0015$,
+$z=+0.52$); and at $8\cdot10^{5}$ the lane $k=5$ gives $56{,}925$
+against $57{,}021.3$ (ratio $0.9983$, $z=-0.40$).
+
+\setcounter{conjecture}{23}%
+\begin{conjecture}[The alternating cyclotomic chain; apparently
+new]\label{c6}
+There are infinitely many primes $p$ such that, writing
+$u=\Phi_3(p)=p^2+p+1$, the three integers
+\[
+p,\qquad u=p^2+p+1,\qquad
+\Phi_6(u)=u^2-u+1=p^4+2p^3+2p^2+p+1
+\]
+are all prime, with
+$\#\{p\le x\}\sim C_6^{\mathrm{ch}}\,I(x)$ for the Bateman--Horn
+system $\{x,\ x^2+x+1,\ x^4+2x^3+2x^2+x+1\}$,
+$C_6^{\mathrm{ch}}=3.6143\pm0.011$.  The first chains are
+$(2,7,43)$ and $(3,13,157)$.
+\end{conjecture}
+
+This is the repunit analogue of a Cunningham chain: a prime base $p$,
+its length-3 repunit $u=(p^3-1)/(p-1)$, then $(u^3+1)/(u+1)$.  The
+chain must \emph{alternate} between $\Phi_3$ and $\Phi_6$: the naive
+iterate $\{p,\ \Phi_3(p),\ \Phi_3(\Phi_3(p))\}$ is
+\emph{inadmissible}---if $p\equiv2\pmod3$ then $u\equiv1\pmod3$, so
+$3\mid\Phi_3(u)$ always, while $p\equiv1\pmod 3$ forces $3\mid u$, so
+the admissibility check rejects the naive chain outright.
+The uniqueness claim is made over a specified construction space:
+among length-3 chains
+$\{x,\ \Phi_j(x),\ \Phi_k(\Phi_j(x))\}$ with $j,k\in\{3,6\}$
+\emph{extending the repunit sub-chain} (i.e.\ $j=3$), the
+mod-3 arithmetic above forces $k=6$: alternation is the unique
+admissible continuation.  (Dropping the repunit anchor admits one
+sibling, the pure-$\Phi_6$ chain $\{x,\Phi_6(x),\Phi_6(\Phi_6(x))\}$
+on the complementary lane $x\equiv1\pmod3$; since
+$\Phi_6(x)=\Phi_3(x-1)$, its second element is again a repunit value,
+and we regard the classification of all admissible words in the
+two-letter alphabet $\{\Phi_3,\Phi_6\}$---which words are
+obstruction-free at every prime, and whether they form a regular
+language---as a natural open programme.)  The length-2 sub-chain
+$\{p,\ p^2+p+1\}$ is the classical cyclotomic Sophie Germain
+statement, included here as an attributed calibration benchmark
+($C=1.521661\pm0.0005$, catalogue value $1.5217315\ldots$,
+OEIS A188596; verified at $z=-1.06$ at $10^7$): infinitely many prime bases
+have prime
+repunits of length $3$, the base-independent home of the phenomenon
+whose base-2 shadow is the Mersenne sequence.  The length-3 chain
+stated here is, as far as we can find, unstated, and its quartic layer
+makes it the highest-degree system in this paper.
+
+\emph{Verification.}  At bound $10^{7}$: observed $1{,}362$ against
+predicted $1{,}357.2$, ratio $1.0035$, $z=+0.13$.  The chain census by
+decade is $4,\ 11,\ 41,\ 224,\ 1362$ at $N=10^3,\dots,10^7$ (a
+probable-prime count for the quartic layer beyond
+$p\approx2\times10^6$; $z$ from $+0.40$ to $+0.13$, no drift), the
+quartic layer's singular series computed by brute-force root counts to
+$10^5$; the retained sub-chain benchmark $\{p,\,p^2+p+1\}$ stands at
+$33{,}661$ against $33{,}855.5$ at $10^7$ ($z=-1.06$).  Independent
+recomputation of that calibration member, the Sophie Germain
+sub-chain, gave $1.521730$, with primes to $10^9$---inside our stated
+wobble---and an independent count to $3\times10^7$ with final ratio
+$0.9962$.
+
+\setcounter{conjecture}{24}%
+\begin{conjecture}[Twin cyclotomic bases: the complete quadratic
+family; no prior trace found]\label{c5}
+For the three cyclotomic polynomials of degree $2$ (indices $k$ with
+$\varphi(k)=2$, i.e.\ $k\in\{3,4,6\}$), consider
+$\Phi_k(n)$ and $\Phi_k(n+1)$ simultaneously prime.  Then:
+\emph{(i)} [parity obstruction, elementary] for $k=4$ one member of
+the pair $(n^2+1,\,n^2+2n+2)$ is even for \emph{every} $n$, so the
+only prime pair is $n=1$, giving $(2,5)$---the same obstruction that
+forbids consecutive $n^2+1$ primes;
+\emph{(ii)} [collapse, elementary] $\Phi_6(x)=\Phi_3(x-1)$
+identically, so the $k=6$ pair at index $n$ \emph{is} the $k=3$ pair
+at index $n-1$: the family contains exactly one nontrivial statement;
+\emph{(iii)} [conjecture, the live instance] there are infinitely many
+$n$ for which the length-3 repunits in bases $n$ and $n+1$ are
+simultaneously prime:
+$\#\{n\le N:\ \Phi_3(n)=n^2+n+1 \text{ and }
+\Phi_3(n+1)=n^2+3n+3 \text{ both prime}\}\sim C_5\,I(N)$,
+with $C_5=C(x^2+x+1,\,x^2+3x+3)$.
+\end{conjecture}
+
+Both forms in (iii) are odd for every $n$ (each is $\Phi_3$ of an
+integer), and mod $3$ each vanishes on exactly one class ($n\equiv1$
+and $n\equiv0$ respectively), so the pair is admissible with
+$\omega(3)=2$.  Unlike an arbitrary shifted pair, the companion here is
+structurally
+forced: it is the same cyclotomic
+value at the consecutive base, making this the natural ``twin''
+statement inside the cyclotomic-chain family of Conjecture~\ref{c6}.
+The family analysis (i)--(ii) is what a family \emph{lift} of the
+statement uncovers, and both clauses were found by the admissibility
+computation itself: the $k=4$ branch was rejected as inadmissible
+at $p=2$ at singular-series time (both-odd count to $10^6$: zero,
+prime pairs: $n=1$ only), and the $k=6$ run returned counts
+\emph{identical} to $k=3$, which is the numerical shadow of the
+polynomial identity in (ii).
+
+\emph{Verification.}  $C_5=2.964239\pm0.002$; at bound $10^{7}$,
+observed $33{,}274$ against predicted $32{,}976.7$, ratio $1.0090$,
+$z=+1.64$.
+
+\section{Stress tests and independent recomputation}\label{sec:audit}
+
+Each statement was tested three ways: against the literature, against
+computation well beyond its original range, and against an independent
+reimplementation.
+
+\emph{Layer 1: literature.}  Five independent searches combed OEIS,
+arXiv, and the standard references for prior art, producing the novelty
+labels and the attribution ledger of \S\ref{sec:attrib}.  Each search
+was run at neighbourhood depth: defining objects, derived sequences,
+OEIS comments, and the abstracts and bodies of near-neighbour papers
+read in full rather than skimmed from search summaries---the depth at
+which, for instance, OEIS A088054's intersection comment
+(Conjecture~\ref{c10}(ii)) and the second half of Lillie's abstract
+(the primorial companion) are found, neither being visible in the
+defining sequences or in a search snippet.  This layer also fixes two
+attributions used above: the $k\ge1$ Stern list of
+Conjecture~\ref{c14} is OEIS A060003 verbatim, with $1493$ the largest
+known Stern prime, and the primorial-twin statement is Lillie's
+\cite{Lillie}.
+
+\emph{Layer 2: computational refutation.}  Every
+falsifiable-by-instance statement was pushed at least a decade past its
+original bound: exception hunts across $(10^8,10^9]$ for
+Conjectures~\ref{c15}, \ref{c14}, \ref{c17}, \ref{c13}; the uniformity
+of Conjecture~\ref{c16} stressed on $d\le6000$; the statistical laws
+re-tested at $4\cdot10^9$ (Conjectures~\ref{c21}, \ref{c25},
+\ref{c18}, \ref{c19}, and~\ref{c20}, and the quintuplet calibration
+count reported with Conjecture~\ref{c16}); the recovery clause of
+Conjecture~\ref{c22} tested on fresh moduli $q\in(3000,6000]$.  No
+statement moved.
+
+Each statement was also verified at production scale: the
+Conjecture~\ref{c1} profile across $150$ shifts and the moment law for
+its constants $C(d)$ (derived mean $2.7447$ and sd $1.6835$ against
+measured $2.7434$ and $1.6726$); the cubic family moments and
+uniformity of Conjecture~\ref{c2} ($294$ constants, $57$ count
+profiles); the triplet and sexy-pair races of Conjectures~\ref{c3}
+and~\ref{c7} at $10^9$ and the Stern lanes of Conjecture~\ref{c14} on
+$2{,}500$ samples at $10^8$; the chain of Conjecture~\ref{c6} over five
+decades to $10^7$; the null race of Conjecture~\ref{c8} at $10^7$; the
+Fibonacci--Lucas joint scan to $p\le10^4$; factorial twins to $n=700$;
+the CRT-exact factorization of Conjecture~\ref{c11} through a joint
+period of $1.2\times10^8$, with the scan extended to $n=6000$; the
+pinned average $G(H)$ of Conjecture~\ref{c12} computed exactly to
+$H=3000$; the boundary trichotomy of Conjecture~\ref{c13} with two new
+lanes counted at $10^6$; the least-summand law of
+Conjecture~\ref{c15} on $2{,}000$ samples; the covariance kernels of
+Conjectures~\ref{c16}(ii) and~\ref{c24}(ii) evaluated over $870$ and
+$1{,}225$ pairs, with the moving-window randomization of
+Conjecture~\ref{c16}(ii) over $2000$ windows (empirical correlation
+matrix matching the predicted kernel entrywise at $0.86$); the
+orientation-resolved twin-member profile of Conjecture~\ref{c17} on
+$150$ samples; the race autocorrelation and running-maximum
+measurements of Conjecture~\ref{c18} at $10^9$ against simulated
+nulls; the singular-series waiting-time clause of
+Conjecture~\ref{c19}(iii) (regression coefficient $-0.466$ against the
+predicted $-\tfrac12$); the stratified experiment of
+Conjecture~\ref{c22} on $80$ moduli; the multibase quotient tests of
+Conjecture~\ref{c23} on $664{,}577$ primes; and the weighted drift and
+internal null lane of Conjecture~\ref{c25} on $400$ fresh samples,
+together with the cousin-race predictions of the contamination
+calculus, Conjecture~\ref{c21}(v), at $10^9$ (leadership log-densities
+$0.99$ and $0.92$ on the predicted sides).  In each case the
+prediction was derived before the corresponding data were taken.
+
+\emph{Layer 3: independent replication.}  Constants were recomputed
+from their definitions, and sequences recounted, by implementations
+developed independently of the primary computation and working from
+the bare
+statements alone.  All recomputed constants landed inside the stated
+truncation error, and all recounts agreed.  The same layer reproduced
+the Fibonacci deficit recorded at Conjecture~\ref{c9} and the ordering
+anomaly of Remark~\ref{r:c22}, confirming that both are properties of
+the primes rather than of a single implementation.
+
+One methodological conclusion is worth recording.  The mathematical
+failure modes in this subject are not statistical but \emph{algebraic}:
+factorizations and congruence collapses living on density-zero or
+positive-density-but-structured subsequences---the cubes obstructing
+$n=p+k^3$ (Theorem~\ref{t:cube}), the composite-$k$ factorization of
+$D_k$ (Conjecture~\ref{c4}(i)), the $k=4$ parity branch of
+Conjecture~\ref{c5}, the inadmissible naive chain of
+Conjecture~\ref{c6}.  Probabilistic sanity checks, however extensive,
+integrate over density and cannot see such families; only structural
+tests---testing a claimed exception census on special subsequences, for
+instance---find them.  A verification that only re-runs an existing
+count at a larger bound is blind to every one of them.
+
+\section{Attribution and novelty}\label{sec:attrib}
+
+The calibration layer---statements previously known in essence, kept
+inside the conjectures as attributed remarks, our contribution being
+the uniform quantification, the computed constants, and the
+re-verification:
+C\ref{c1}$_{d=2}$ (OEIS A080149; \cite{Carella});
+$a=2$ inside C\ref{c2};
+the Chernick chain inside C\ref{c3} \cite{Dubner2002};
+C\ref{c6}'s length-2 sub-chain (constant catalogued as OEIS A188596);
+$\{p,p^2-2\}$ inside C\ref{c7} (OEIS A062326);
+the single-sided Fibonacci/Lucas laws inside C\ref{c9}
+\cite{GranthamGranville} and the twin object OEIS A080327;
+C\ref{c10}(ii) (OEIS A088054, the intersection comment);
+the factorial-prime law inside C\ref{c12} \cite{CaldwellGallot};
+C\ref{c13}(iii) \cite{HL1923} and Cunningham's cuban observation
+(OEIS A002407);
+the Stern list inside C\ref{c14} (OEIS A060003);
+the $(3,3)$-lane conjecture inside C\ref{c15} \cite{Martin} and the
+extremal theory of least summands \cite{OSHP};
+C\ref{c16}-core (uniform Hardy--Littlewood B, cf.\ \cite{GL});
+the twin-member basis conjecture and integral kernel inside
+C\ref{c17} \cite{Dubner2000};
+the record framework inside C\ref{c18} \cite{Kourbatov};
+the single-base Fermat-quotient heuristic inside C\ref{c23}
+\cite{CDP}, with the Eisenstein--Lerch homomorphism classical;
+C\ref{c24}-core \cite{HL1923,JW}.
+Further attributed statements carried alongside their conjectures: the
+primorial twins accompanying Conjecture~\ref{c10}, due to Lillie
+\cite{Lillie}, with the primorial prime law itself due to
+Caldwell--Gallot \cite{CaldwellGallot}; the Lemke
+Oliver--Soundararajan mod-3 law \cite{LOS} neighbouring
+Conjecture~\ref{c25}; the Sophie Germain statement inside
+Conjecture~\ref{c6}, and the quadratic triple inside
+Conjecture~\ref{c8}.  Framework attributions for claimed clauses
+that are instances inside another theory: Kowalski's Euler-product
+limit laws \cite{Kowalski} for C\ref{c2}(ii);
+Montgomery--Soundararajan \cite{MS} for the reductions behind
+C\ref{c12} and C\ref{c20}; the Korevaar--te Riele mean-value-one
+theorem (arXiv:0806.1667) as the linear antecedent of
+C\ref{c1}(iii) and C\ref{c2}(i).
+
+For our own contribution we grade as follows.
+\emph{Bibliographic novelty only}: the constant of C\ref{c5}(iii).
+\emph{Conceptual novelty}---a mechanism, law, family uniformity, or
+dichotomy we could not find in the literature:
+C\ref{c1}'s uniform quadratic de Polignac family with its derived
+constant-moment law;
+C\ref{c2}'s cubic constant-distribution law (instance-level inside
+Kowalski's framework, so graded);
+C\ref{c3}, C\ref{c7} and C\ref{c14}: fresh contamination-calculus
+predictions (triplet race, two-orientation matrix, and the
+norm-form Stern lanes with provable null classes);
+C\ref{c4}'s power-obstruction ladder and C\ref{c13}'s boundary
+trichotomy (Cunningham's cuban case attributed);
+C\ref{c5}'s complete twin-base family analysis;
+C\ref{c6}'s alternating cyclotomic chain;
+C\ref{c8}'s null-mechanism contrast prediction;
+C\ref{c9}'s rank-disjointness analysis and its quantified
+calibration clause;
+C\ref{c10}'s window-rigidity and joint-fluctuation clauses;
+C\ref{c11}'s entanglement-aware local product with its exact CRT
+identity;
+C\ref{c12}'s pinned singular-series reduction of the pair variance;
+C\ref{c15}'s time-changed least-summand law and deficit
+$\Theta_G$;
+C\ref{c16}(ii)'s derived covariance kernel (and its C\ref{c24}(ii)
+family analogue with the computed null cross-kernel);
+C\ref{c17}'s orientation-resolved twin-member singular series;
+C\ref{c18}'s measured race sub-diffusivity;
+C\ref{c19}'s liminf constant and $\SG^*$-waiting-time clause
+(against the slope-1 laws of Shanks, Wolf, and Kourbatov--Wolf
+\cite{KW2020}); C\ref{c20}'s microscopic variance law (a sharpening
+of \cite{MS}, with the mesoscopic numerics of \cite{SL} as
+precedent); C\ref{c21}'s race mechanism and calculus (against the
+twin-bias literature \cite{Sahoo,PairBias}); C\ref{c22}(ii)'s
+canonical deficit with its stratified differentiating experiment;
+C\ref{c23}'s vertical multibase subtorus law; and
+C\ref{c25}'s Goldbach lane race.  Among these we
+consider the contamination calculus with its six verified
+projections and three nulls (C\ref{c3}, C\ref{c7}, C\ref{c8},
+C\ref{c14}, C\ref{c21}, C\ref{c25}), the two ordering deficits
+(C\ref{c15}, C\ref{c22}(ii)), the pinned-average reduction
+C\ref{c12}, and the sub-diffusivity measurement C\ref{c18} the
+paper's most genuinely new content, and Question~\ref{q:theta} its
+best export.
+
+Three structural programmes are folded into the statements themselves
+(the boundary-factorization principle, Conjecture~\ref{c13}; the
+quantitative twin-member law, Conjecture~\ref{c17}; multibase
+Fermat quotients, Conjecture~\ref{c23}(iv)--(v)), and two are
+recorded as open directions: the admissibility dynamics of
+cyclotomic composition words (Conjecture~\ref{c6}), and
+centering-and-scaling extreme-value laws for record gaps, where
+Kourbatov's Gumbel-type framework \cite{Kourbatov} already occupies
+part of the ground and any contribution of ours would need
+separating from it.  The asymptotic form of the pinned average
+$G(H)$ (Conjecture~\ref{c12}) and the derivation of the race
+repulsion constants $\rho_k$ from the Lemke Oliver--Soundararajan
+series (Conjecture~\ref{c18}) join them as further open exports.
+
+\begin{question}\label{q:theta}
+Determine $\theta(q)$ of Conjecture~\ref{c22}: derive, from the
+Hardy--Littlewood correlations or otherwise, the first-order deficit of
+$\mathbb E_a\,\Li(p(a,q))/\varphi(q)$ below its random-model value
+$1$---equivalently, explain quantitatively why the primes in their
+natural order occupy residue classes faster than any exchangeable
+resampling of themselves.
+\end{question}
+
+\begin{thebibliography}{99}\small
+
+\bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
+\emph{Some problems of `Partitio numerorum'; III: On the expression of
+a number as a sum of primes}, Acta Math.\ 44 (1923), 1--70.
+DOI: 10.1007/BF02403921.
+
+\bibitem{BH} P.~T. Bateman and R.~A. Horn,
+\emph{A heuristic asymptotic formula concerning the distribution of
+prime numbers}, Math.\ Comp.\ 16 (1962), 363--367.
+DOI: 10.1090/S0025-5718-1962-0148632-7.
+
+\bibitem{HB} D.~R. Heath-Brown,
+\emph{Primes represented by $x^3+2y^3$},
+Acta Math.\ 186 (2001), 1--84.  DOI: 10.1007/BF02392715.
+
+\bibitem{CaldwellGallot} C.~K. Caldwell and Y.~Gallot,
+\emph{On the primality of $n!\pm1$ and
+$2\times3\times5\times\cdots\times p\pm1$},
+Math.\ Comp.\ 71 (2002), 441--448.
+DOI: 10.1090/S0025-5718-01-01315-1.
+
+\bibitem{Lillie} G.~Lillie,
+\emph{About the primality of primorials},
+arXiv:2110.04302 [math.NT] (2021).
+
+\bibitem{RubinsteinSarnak} M.~Rubinstein and P.~Sarnak,
+\emph{Chebyshev's bias},
+Experiment.\ Math.\ 3 (1994), no.~3, 173--197.
+DOI: 10.1080/10586458.1994.10504289.
+
+\bibitem{GranthamGranville} J.~Grantham and A.~Granville,
+\emph{Fibonacci primes, primes of the form $2^n-k$ and beyond},
+J.~Number Theory 261 (2024), 190--219; arXiv:2307.07894.
+DOI: 10.1016/j.jnt.2024.02.002.
+
+\bibitem{Wagstaffheu} S.~S. Wagstaff, Jr.,
+\emph{Divisors of Mersenne numbers},
+Math.\ Comp.\ 40 (1983), 385--397.
+DOI: 10.1090/S0025-5718-1983-0679454-X.
+
+\bibitem{Dubner2000} H.~Dubner,
+\emph{Twin prime conjectures},
+J.~Recreational Math.\ 30, no.~3 (1999--2000) (article reproduced at
+OEIS A007534).
+
+\bibitem{Dubner2002} H.~Dubner,
+\emph{Carmichael numbers of the form $(6m+1)(12m+1)(18m+1)$},
+J.~Integer Seq.\ 5 (2002), Article 02.2.1.
+
+\bibitem{Kowalski} E.~Kowalski,
+\emph{Averages of Euler products, distribution of singular series and
+the ubiquity of Poisson distribution},
+Acta Arith.\ 148 (2011), no.~2, 153--187; arXiv:0805.4682.
+
+\bibitem{OSHP} T.~Oliveira e Silva, S.~Herzog, and S.~Pardi,
+\emph{Empirical verification of the even Goldbach conjecture and
+computation of prime gaps up to $4\cdot10^{18}$},
+Math.\ Comp.\ 83 (2014), no.~288, 2033--2060.
+DOI: 10.1090/S0025-5718-2013-02787-1.
+
+\bibitem{Martin} K.~Martin,
+\emph{Refined Goldbach conjectures with primes in progressions},
+Exp.\ Math.\ 31 (2022), 226--232; arXiv:1806.00946.
+DOI: 10.1080/10586458.2019.1596849.
+
+\bibitem{GL} D.~A. Goldston and A.~H. Ledoan,
+\emph{Jumping champions and gaps between consecutive primes},
+Int.\ J. Number Theory 7 (2011), 1413--1421; arXiv:0910.2960.
+DOI: 10.1142/S179304211100471X.
+
+\bibitem{Kourbatov} A.~Kourbatov,
+\emph{Maximal gaps between prime $k$-tuples: a statistical approach},
+J.~Integer Seq.\ 16 (2013), Article 13.5.2; arXiv:1301.2242.  See also
+arXiv:1309.4053.
+
+\bibitem{Shanks} D.~Shanks,
+\emph{On maximal gaps between successive primes},
+Math.\ Comp.\ 18 (1964), 646--651.
+DOI: 10.1090/S0025-5718-1964-0167472-8.
+
+\bibitem{Granville} A.~Granville,
+\emph{Harald Cram\'er and the distribution of prime numbers},
+Scand.\ Actuar.\ J.\ 1995:1, 12--28.
+DOI: 10.1080/03461238.1995.10413946.
+
+\bibitem{Gallagher} P.~X. Gallagher,
+\emph{On the distribution of primes in short intervals},
+Mathematika 23 (1976), 4--9.  DOI: 10.1112/S0025579300016442.
+
+\bibitem{MS} H.~L. Montgomery and K.~Soundararajan,
+\emph{Primes in short intervals},
+Comm.\ Math.\ Phys.\ 252 (2004), 589--617.
+DOI: 10.1007/s00220-004-1222-4.
+
+\bibitem{HLS} T.~Haddad, S.-K. Leung, and C.~Sabuncu,
+\emph{Visiting early at prime times}, arXiv:2408.11781 (2024).
+DOI: 10.48550/arXiv.2408.11781.
+
+\bibitem{Wagstaff} S.~S. Wagstaff, Jr.,
+\emph{Greatest of the least primes in arithmetic progressions having a
+given modulus}, Math.\ Comp.\ 33 (1979), 1073--1080.
+DOI: 10.1090/S0025-5718-1979-0528061-7.
+
+\bibitem{CDP} R.~Crandall, K.~Dilcher, and C.~Pomerance,
+\emph{A search for Wieferich and Wilson primes},
+Math.\ Comp.\ 66 (1997), 433--449.
+DOI: 10.1090/S0025-5718-97-00791-6.
+
+\bibitem{JW} M.~J. Jacobson, Jr.\ and H.~C. Williams,
+\emph{New quadratic polynomials with high densities of prime values},
+Math.\ Comp.\ 72 (2003), 499--519.
+DOI: 10.1090/S0025-5718-02-01418-7.
+
+\bibitem{LOS} R.~J. Lemke Oliver and K.~Soundararajan,
+\emph{Unexpected biases in the distribution of consecutive primes},
+Proc.\ Natl.\ Acad.\ Sci.\ USA 113 (2016), E4446--E4454;
+arXiv:1603.03720.  DOI: 10.1073/pnas.1605366113.
+
+\bibitem{KW2020} A.~Kourbatov and M.~Wolf,
+\emph{On the first occurrences of gaps between primes in a residue
+class}, J.~Integer Seq.\ 23 (2020), Article 20.9.3; arXiv:2002.02115.
+
+\bibitem{SL} M.-A. Sanchis-Lozano,
+\emph{A heuristic study of the distribution of primes in short and
+not-so-short intervals}, arXiv:1804.07659 (2018).
+DOI: 10.48550/arXiv.1804.07659.
+
+\bibitem{Sahoo} S.~Sahoo,
+\emph{On twin prime distribution and associated biases},
+arXiv:2111.09053 (2021).  DOI: 10.48550/arXiv.2111.09053.
+
+\bibitem{PairBias} W.~Puszkarz,
+\emph{Statistical bias in the distribution of prime pairs and isolated
+primes}, arXiv:1807.00406 (2018).  DOI: 10.48550/arXiv.1807.00406.
+
+\bibitem{Leung} S.-K. Leung,
+\emph{Moments of primes in progressions to a large modulus},
+Forum Mathematicum, published online 26 August 2024;
+arXiv:2402.07941.
+
+\bibitem{Fiori} A.~Fiori,
+\emph{The least prime in arithmetic an progression} [sic],
+arXiv:2404.02329 (2024).  DOI: 10.48550/arXiv.2404.02329.
+
+\bibitem{Cohen} H.~Cohen,
+\emph{High precision computation of Hardy--Littlewood constants},
+unpublished notes (PDF hosted at OEIS A221712).
+
+\bibitem{Carella} N.~A. Carella,
+\emph{Twin primes in quadratic arithmetic progressions},
+arXiv:1710.07827 (unrefereed preprint).
+DOI: 10.48550/arXiv.1710.07827.
+
+\end{thebibliography}
+
+\end{document}

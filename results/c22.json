@@ -1,0 +1,64 @@
+{
+  "conjecture": "tail of Li(p(a,q))/phi is Exp(1); max ~ H_phi + Gumbel",
+  "qmax": 3000,
+  "pooled_classes": 2736186,
+  "tail_slope": -1.5448878977755802,
+  "tail_intercept": 0.27751351320441775,
+  "gumbel_mean": -2.4539049067532526,
+  "gumbel_sd": 0.7982214419048503,
+  "gumbel_sd_model": 1.282549830161864,
+  "mean_U_overall": 0.7610005383257243,
+  "mean_U_by_band": [
+    {
+      "q_band_lo": 2.2,
+      "mean_U": 0.8507,
+      "theta": 0.172
+    },
+    {
+      "q_band_lo": 4.6,
+      "mean_U": 0.9633,
+      "theta": 0.07
+    },
+    {
+      "q_band_lo": 10.0,
+      "mean_U": 0.9008,
+      "theta": 0.266
+    },
+    {
+      "q_band_lo": 21.5,
+      "mean_U": 0.8046,
+      "theta": 0.675
+    },
+    {
+      "q_band_lo": 46.4,
+      "mean_U": 0.76,
+      "theta": 1.013
+    },
+    {
+      "q_band_lo": 100.0,
+      "mean_U": 0.7405,
+      "theta": 1.294
+    },
+    {
+      "q_band_lo": 215.4,
+      "mean_U": 0.7368,
+      "theta": 1.515
+    },
+    {
+      "q_band_lo": 464.2,
+      "mean_U": 0.7428,
+      "theta": 1.678
+    },
+    {
+      "q_band_lo": 1000.0,
+      "mean_U": 0.7537,
+      "theta": 1.796
+    },
+    {
+      "q_band_lo": 2154.4,
+      "mean_U": 0.7621,
+      "theta": 1.917
+    }
+  ],
+  "_generated_unix": 1785131331
+}

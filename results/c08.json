@@ -1,0 +1,10 @@
+{
+  "conjecture": "null-mechanism race: quadratic twin pairs have no square contamination; class race n=1 vs n=4 (mod 5) is driftless",
+  "N": 10000000,
+  "n_pairs": 32898,
+  "final_c1": 10917,
+  "final_c4": 10981,
+  "normalized_drift_logmean": -0.46126598946398695,
+  "lead_fraction": 0.20593132237728895,
+  "_generated_unix": 1785168045
+}

@@ -1,0 +1,30 @@
+{
+  "conjecture": "HL-weighted drift, sign-density constant, and internal null lane n=1(3) for the Goldbach lane race",
+  "X": 100000000,
+  "n_samples": 400,
+  "mean_Dsys_model": 66.27566235719055,
+  "mean_Dsys_empirical_analytic_lbar": 67.79580000738288,
+  "mean_D": 70.58,
+  "mean_kappa": 0.18263946094282912,
+  "pred_sign_density": 0.5715411438527359,
+  "obs_sign_frac": 0.5875,
+  "strata": {
+    "null n=1(3)": {
+      "n": 123,
+      "mean_D": 31.16260162601626,
+      "se": 23.257780783539488,
+      "mean_Dsys_model": 0.027171668955100356,
+      "mean_Dsys_emp": 0.02899410388515223,
+      "sign_frac": 0.5528455284552846
+    },
+    "live n=0,2(3)": {
+      "n": 277,
+      "mean_D": 88.08303249097473,
+      "se": 20.724775943150537,
+      "mean_Dsys_model": 95.69286219348284,
+      "mean_Dsys_emp": 97.88719757463998,
+      "sign_frac": 0.6028880866425993
+    }
+  },
+  "_generated_unix": 1785169426
+}
