@@ -85,7 +85,7 @@ print("mod5: pi(2)-pi(3)=%+d (pred %+.0f)  pi(2)-pi(1)=%+d (pred %+.0f)"
       % (DA5, TA, DB5, TB))
 print("mod8: avg(5,7)-pi(3)=%+.1f (pred %+.0f)  avg(5,7)-pi(1)=%+.1f (pred %+.0f)  "
       "ctrl 5-7: %+d" % (DA8, TA, DB8, TB, ctrl8))
-sd_null = 2 * math.sqrt(math.log(2) / math.log(X))
+sd_null = math.sqrt(math.log(2) / math.log(X))  # occupation-fraction constant
 print("leadership log-densities (null 1/2 +- %.3f): %s"
       % (sd_null, {k: round(v, 3) for k, v in leads.items()}))
 save_result("c07b", {"conjecture": "sexy-pair contamination matrix: two surviving orientations, "

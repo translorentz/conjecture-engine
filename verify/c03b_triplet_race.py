@@ -69,7 +69,7 @@ def T3(x):
 
 T = T3(X)
 noise = math.sqrt(tot)
-sd_null = 2 * math.sqrt(math.log(2) / math.log(X))
+sd_null = math.sqrt(math.log(2) / math.log(X))  # occupation-fraction constant (ln2/L), not the sign-average 4ln2/L
 print("classes at %.0e: c1=%d c2=%d  D=%+d  (T3 pred %+.1f, noise %.0f)"
       % (X, c[1], c[2], D_end, T, noise))
 print("leadership log-density {D>0}: %.3f  (null 1/2 +- %.3f)" % (lead, sd_null))

@@ -8,7 +8,7 @@ q^2 = 1 (mod 8) for odd q and 2k^2 = 0 or 2 (mod 8) by k parity:
   n = 5, 7 (mod 8):  NO square contamination exists (null classes).
 Predicted drift (clean lane minus contaminated lane):
   D(n) = R_clean(n) - R_contam(n) = D_sys(n) + noise,
-  D_sys(n) = [ sum_{(q,k): q^2+2k^2=n, q prime, k>=1} 2 log q ] / lam(n),
+  D_sys(n) = [ sum_{(q,k): q^2+2k^2=n, q prime, k>=1} log q ] / lam(n),
 lam(n) the mean of log p over the representations (empirical
 estimator of the analytic lane mean); for n = 5,7 (mod 8) the lane
 difference is pure noise.  Four-way stratified test.
@@ -51,7 +51,7 @@ with Timer("lane race over %d samples" % len(samples)):
         for i in np.nonzero(sq)[0]:
             qq = int(q[i])
             if is_prime(qq):
-                dsys += 2 * math.log(qq)
+                dsys += math.log(qq)  # Lambda(q^2) = log q
         dsys /= lam
         cls = n % 8
         if cls == 1:

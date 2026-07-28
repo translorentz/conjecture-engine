@@ -425,12 +425,12 @@ ran at production scale.  Verdicts and consequences:
 | Slot | Result |
 |---|---|
 | C02 | derived mean C(a) = 1 EXACTLY (one-line lemma) + sd 0.2762 vs empirical 1.0215 / 0.2481 over 294 shifts; uniformity mean z +0.09, max 2.31 over 57 profiles (`c02b_cubic_family.py`) |
-| C03 | 1e9: D=+167 predicted side (T3=+25, noise 616); leadership 0.65 (+0.4 null sd) (`c03b_triplet_race.py`) |
-| C07 | 1e9: all four matrix components and 5-7 control within one noise unit; leaderships (0.48,0.56,0.53,0.73) vs null 1/2 +- 0.37 — registered, sharp only at ~1e14 (`c07b_sexy_matrix.py`) |
+| C03 | 1e9: D=+167 predicted side (T3=+25, noise 616); leadership 0.65 (+0.8 null sd after the round-7 occupation-constant fix) (`c03b_triplet_race.py`) |
+| C07 | 1e9: all four matrix components and 5-7 control within one noise unit; leaderships (0.48,0.56,0.53,0.73) vs null 1/2 +- 0.183 (round-7 corrected constant), i.e. (-0.1,+0.3,+0.1,+1.2) sd — registered, sharp only at ~1e14 (`c07b_sexy_matrix.py`) |
 | C09 | joint {5,7,11,13,17,47} to 1e4, naive tail 1.6e-3 — vs A080327's 148091 (`c09b_fib_lucas_twins.py`) |
 | C12 | G(H) exact to H=3000: G(3000)=-20.9, local slope 3.4→3.7 (single-prime slope: 1/2); window Var/E observed 0.815 bracketed by log-form (0.97) and log²-form (0.72) extrapolations (`c12b_pair_ms.py`) |
 | C13 | collapse algebraically empty for x³+cx; trichotomy verified c<=12; lanes c=4,6 at 1e6 (`c13b_boundary.py`) |
-| C14 | 2500 samples <= 1e8: contaminated strata pooled D=+0.27+-0.33 vs pred +0.30; null strata -0.22+-0.33 (`c14b_stern_lane_race.py`) |
+| C14 | 2500 samples <= 1e8: contaminated strata pooled D=+0.27+-0.33 vs pred +0.15 (round-7 weight fix: Lambda(q^2)=log q, halving the prediction); null strata -0.22+-0.33 (`c14b_stern_lane_race.py`) |
 | C15 | E[U]=0.796; Theta_G = 3.12+-0.35 and 3.42+-0.45 in dyadic blocks (`c15b_least_goldbach.py`) |
 | C17 | shape log-log corr 0.9993 over two decades; level 0.87→0.81 deficit flagged open (`c17b_twin_member_goldbach.py`) |
 | C18 | rho1 in [-0.040,-0.036] on all four races (~50 s.e.); maxima quantiles 0.02–0.17 vs simulated null (`c18b_race_max.py`) |
@@ -445,3 +445,96 @@ against an erroneous aggregator listing in favour of the
 authoritative AMS record; Kowalski's DOI omission noted as a style
 choice, entry unambiguous), re-confirmed the Fiori [sic] typo in the
 original, and re-verified all 28 carried-over entries.
+
+## Seventh external review (paper v9 -> v10)
+
+A referee-style assessment with a scorecard and specific mathematical
+error claims.  Every error claim was checked by direct computation
+before being conceded; all that survived checking were fixed.  No
+bibliography changes were made (inline names only), so **gate round 6
+(32/32 unanimous) remains in force**.
+
+**Confirmed errors, fixed:**
+
+* **C08(ii) occupation constant (factor 2)** — the review is right:
+  the OU occupation-fraction covariance is (1/2pi) arcsin(e^{-u/2}),
+  whose integral is (ln 2)/2, so the null sd is sqrt(ln2/log x), NOT
+  2 sqrt(ln2/log x) (the 2 belongs to the sign average 2I-1).
+  Verified by direct quadrature.  Paper + `c03b`/`c07b` fixed and
+  rerun.  Consequence: every leadership significance DOUBLES —
+  cousin races (C21(v)) become +2.7 and +2.3 null sd (now described
+  as moderately strong directional evidence, with a correlated-races
+  caveat), triplet race +0.8, sexy matrix (-0.1,+0.3,+0.1,+1.2), C08
+  null control -1.4 (still within its stated band).
+* **C09 p=3 exception** — gcd(F_3, L_3) = gcd(2,4) = 2 and z(2)=3:
+  the Fibonacci–Lucas divisor-disjointness claim holds only for odd
+  prime divisors, with 3|p characterizing gcd = 2.  Verified; clause
+  restated.  (iii)'s "refuted" softened to "contradicted at the
+  3e-3 level" — a tail estimate cannot be refuted by one event.
+* **C14 weight (factor 2)** — Lambda(q^2) = log q, not 2 log q.
+  Script + paper fixed; predicted contaminated drift halves to
+  +0.15 (observed +0.27 +- 0.33, consistent either way).
+* **C13 degenerate cases** — for deg F = 1 the cofactor is
+  identically 1; hypotheses deg F >= 2, m > j >= 1 added.
+* **C02 local law prose** — the three-state law (omega = 3 w.p.
+  (p-1)/3p; omega = 1 w.p. 1/p when p | a; omega = 0 otherwise) was
+  always in the computations but the prose omitted the p | a state;
+  fixed, with the finite-CRT wording aligned to C01(iii).
+
+**Formalization gaps, repaired as demanded:**
+
+* C15/C23(iii): probability spaces now explicit — C15 via the
+  dyadic-log ensemble E_X U = (sum U(n)/n)/(sum 1/n) over (X,2X];
+  C23(iii) split into a deterministic limsup clause and a randomized
+  CLT clause (x log-sampled from [X, X^A]).
+* C16(ii)/C24(ii): the off-index pinned 4-point covariance term
+  (K4) added to the two-term display, with the dominance-range
+  clause; C24's same-index contribution relabeled.
+* C19(ii): now explicitly conditional on the REALIZATION HYPOTHESIS
+  (infinitely many g first occur at the Cramér–Granville envelope
+  scale) — the inversion of the limsup is not automatic and the
+  paper now says so; without it only the lower bound follows.
+  C19(iii) upgraded to an explicit min-type (reversed) Gumbel
+  distributional law for the first-passage error E_g.
+* C22(ii): theta_disc^infty removed from the formal display (a
+  control constant has no place in a model-free statement; the
+  excess-over-discreteness reading is now explicitly the diagnostic
+  layer); the sd(Theta(q)) -> 0 spread clause withdrawn — the
+  limiting distribution over dyadic blocks is left open, since
+  arithmetic fluctuations from q and q-1 may persist.
+* C11: convergence stated along the canonical exhaustion
+  S_z = {5 <= p <= z} (killing the net's order-of-exhaustion
+  ambiguity); kappa* = 4.2734 explicitly labeled a HYBRID
+  (CRT-exact core p <= 19 times independent per-prime factors to
+  300), equal to kappa_{S_300} iff exact factorization persists.
+* C17: display error term weakened from (1+O(1/log n)) to
+  (1+o(1)) — our own 13–19% level deficit means the 1/log n
+  coefficient is not pinned down, and the rate claim would outrun
+  the evidence.
+* C18(i): restated as the decaying-repulsion law
+  rho_k(x) = -(c_k loglog x + d_k)/log x (1+o(1)), with the
+  measured rho_1 = -0.037, rho_2 = -0.009 labeled one-height
+  observations (consistent with c_1 ~ 0.25), not asymptotic
+  constants; (ii) notes sigma^2(x) -> 1 under the decay law.
+* C12: clause (i) marked a conditional proposition (follows from
+  quantitative HL for 4-tuples), clause (ii) the conjecture, with
+  the caveat that H <= 3000 cannot distinguish divergence forms;
+  "establishing" -> "consistent with".
+* C20: the finite-x variance display now tagged conditional on the
+  quantitative hypothesis in-statement, not only in prose.
+* C21(v): the contamination operator C_{d,m}(a;x) given a formal
+  display separating the provable census layer from the conjectural
+  transfer layer.
+* C10(iii): cross-index covariance programme added — the
+  m! vs n! residue linkage at primes p > n reduces the dependence
+  question to explicit character-sum averages.
+
+**Declined:** the review's recommendation to split the paper into
+three separate papers.  The operator's brief is a single suite of 25
+substantive conjectures; the sectioning already separates the
+mechanism families.
+
+**Scripts changed this round:** `c03b_triplet_race.py`,
+`c07b_sexy_matrix.py` (null sd constant), `c14b_stern_lane_race.py`
+(Lambda(q^2) weight) — all rerun at production scale; no other
+numerical results were affected.
