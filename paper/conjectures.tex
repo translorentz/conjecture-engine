@@ -203,10 +203,10 @@ class $2$ (mod $5$) and classes $5,7$ (mod $8$) are provably clean.
 \item \textbf{Fibonacci--Lucas twins (Conjecture~\ref{c9}).}  The
 odd prime-divisor pools of $F_p$ and $L_p$ are disjoint (ranks $p$
 vs $2p$; $\gcd=2$ iff $3\mid p$); only finitely many $p$ have both
-prime; the naive joint constant is contradicted at the
-$3\times10^{-3}$ level by the catalogued index $148091$
-(conditionally on the probable-prime status of both $F_{148091}$ and
-$L_{148091}$).
+prime; the naive joint accounting assigns the catalogued index
+$148091$ prior mass about $3\times10^{-3}$ beyond $10^4$, recorded
+descriptively and conditionally on the probable-prime status of both
+$F_{148091}$ and $L_{148091}$, and fatal to any completeness list.
 
 \item \textbf{Factorial twins (Conjecture~\ref{c10}).}  Window
 rigidity: $n!+a$ is composite for $2\le|a|\le n$ (theorem), so
@@ -404,7 +404,11 @@ conjectures.
 All counts below are exact (sieves; deterministic Miller--Rabin for
 $n<3.3\times10^{24}$; Baillie--PSW beyond, flagged as such).  Every
 comparison reports the Poisson-normalized residual
-$z=(\mathrm{obs}-\mathrm{pred})/\sqrt{\mathrm{pred}}$.  For sparse
+$z=(\mathrm{obs}-\mathrm{pred})/\sqrt{\mathrm{pred}}$.  Every quoted
+$z$-score is such a residual and is used \emph{descriptively}: where
+the counts compared are correlated, overlapping, or examined after
+selection, these residuals are not calibrated tail probabilities, and
+no significance claim in this paper rests on them.  For sparse
 counts the cumulative comparison is contaminated at small $x$ by the
 phantom mass of the main-term integral near its lower limit; in those
 cases we also report per-decade increments, which are clean.  Constants
@@ -578,7 +582,7 @@ c_T\;:=\;\lim_{x\to\infty}\frac{T(x)\log^2x}{\sqrt x}
 \]
 is the half of the Bateman--Horn constant of the pair $(q,\,q^2-2)$
 (the weighted census sum is $\sim C\sqrt x$, so the limit exists and
-is explicit); equivalently $\M_x(D_1)/\M_x(T)\to1$.  A normalization
+is explicit).  A normalization
 at the noise scale, $\M_x((D_1-T)/\sqrt{\pi_t})\to0$, would be
 \emph{vacuous} for the coefficient of (i-a): since
 $T/\sqrt{\pi_t}\asymp1/\log t$, one has
@@ -804,6 +808,16 @@ the single-prime value sevenfold across the computable range; the
 divergence and its exact form are registered, not evidenced beyond
 that.
 \end{conjecture}
+
+The pinning leaves the local densities in exact balance.  At every
+odd prime $p$ the relative local factor of $R(h)$ takes the value
+$p/(p-2)$ for $h\equiv0$, the value $p(p-3)/(p-2)^2$ for
+$h\equiv\pm2$, and the value $p(p-4)/(p-2)^2$ otherwise, and their
+exact average over $h$ mod $p$ equals $1$, since
+$(p-2)+2(p-3)+(p-3)(p-4)=(p-2)^2$.  Any persistent negativity of
+$G(H)$ is therefore not a first-order local-density effect but a
+global correlation effect across primes, which is what makes its
+growth rate delicate.
 
 $G$ was computed exactly to $H=3000$ ($4$-tuple constants by Euler
 products to $2\times10^4$): $G(3000)=-20.9$, with local logarithmic
@@ -2236,7 +2250,12 @@ the same order as the $18$--$28\%$ finite-height Poisson deficit of
 Conjecture~\ref{c20}), which we flag as the slot's open component
 rather than absorb into a fitted constant: either the $4$-tuple
 second-order correction accounts for it, or the orientation model
-needs repair, and the two are distinguishable at $10^{10}$.  (The
+needs repair, and the two are distinguishable at $10^{10}$.  The
+\emph{direction} of the trend is itself the anomaly: a genuine
+$1-c/\log n$ correction shrinks as $n$ grows, so a ratio moving
+\emph{away} from $1$ across the decades indicates either a different
+error shape or a normalization problem, and settling which is part
+of what the open component must resolve.  (The
 attributed benchmark stands inside the statement: every even
 $n\ge4210$ is a sum of two twin members, with the conjectured
 complete list of $35$ exceptions (OEIS A007534)---verified to $10^8$,
@@ -2395,34 +2414,35 @@ matters;
 $L_p$ simultaneously prime;
 \emph{(iii)} [calibration clause, quantitative] the
 naive joint accounting---probability
-$(\e^{\gamma}\log p/(p\log\phi))^2$ per index---is contradicted at
-the $3\times10^{-3}$ level by the record: it prices the catalogued
+$(\e^{\gamma}\log p/(p\log\phi))^2$ per index---assigns the
+catalogued
 index
 $p=148091$ (OEIS A080327; \emph{both} $F_p$ and $L_p$ are
 \emph{probable} primes---numbers of roughly $30{,}950$ digits, with
-Lucas numbers proved prime only up to index $56003$---so the
-contradiction is conditional on both probable-prime classifications,
+Lucas numbers proved prime only up to index $56003$---so everything
+recorded here is conditional on both probable-prime classifications,
 for which no Baillie--PSW pseudoprime is known: no unconditional
-refutation is claimed from uncertified numbers) at
-that much expected mass beyond $10^4$.  A single surprising event is
+refutation is claimed from uncertified numbers) prior mass about
+$3\times10^{-3}$ beyond $10^4$.  That rare-event datum is recorded
+descriptively, with no significance claim attached to it: the model
+was examined after the event was known, and no test protocol was
+fixed in advance.  A single surprising event is
 not a strict refutation, and it does not by itself estimate the
 \emph{size} of the correction: an underestimated constant, genuine
 cross-dependence,
 and a mis-calibrated finite-range tail are competing explanations
-that one event cannot separate.  What it does establish
-(conditionally as above) is that the naive model is wrong somewhere,
-and it is fatal
+that one event cannot separate.  What the datum does bear on
+(conditionally as above) is not the model but the list: it is fatal
 to any Goldilocks completeness list; the conjectural content of (ii)
 is that even the corrected accounting has convergent sum.
 \end{conjecture}
 
 This slot is the suite's designated stress test of the convergent
-Borel--Cantelli template that Conjecture~\ref{c10} exemplifies, and it fails
-the naive version: our
+Borel--Cantelli template that Conjecture~\ref{c10} exemplifies.  Our
 scan to $p\le10^4$ found exactly the joint indices
-$\{5,7,11,13,17,47\}$ with expected further mass $1.6\times10^{-3}$
----and the catalogued index $148091$, at which $F_p$ and $L_p$ are
-both probable primes, exists anyway.  We therefore
+$\{5,7,11,13,17,47\}$ with expected further mass $1.6\times10^{-3}$,
+while the catalogued index $148091$, at which $F_p$ and $L_p$ are
+both probable primes, lies beyond that range.  We therefore
 conjecture finiteness \emph{without} a completeness clause: the
 Goldilocks-maximal list that is defensible for factorial twins is
 indefensible here.  The lesson, in the language of
