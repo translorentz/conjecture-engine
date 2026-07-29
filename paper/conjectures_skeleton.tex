@@ -130,32 +130,47 @@ T(x)\;=\;\frac1{2\log^2x}
 \]
 whose scale is governed by the constant $C_7$ of
 Conjecture~\ref{c7}.  Then:
-\emph{(i)} [drift law, at drift-scale normalization] class $1$
-carries the systematic surplus $T$.  A normalization at the noise scale,
-$\M_x((D_1-T)/\sqrt{\pi_t})\to0$, would be \emph{vacuous} for the
-coefficient: since $T/\sqrt{\pi_t}\asymp1/\log t$, one has
+\emph{(i)} [drift law, at drift-scale normalization] the clause
+asserts two sub-claims, labelled separately because they can fail
+independently.
+\emph{(i-a)} [mechanism] class $1$ carries the systematic surplus
+$T$: one has the decomposition $D_1(t)=T(t)+R(t)$ in which the
+remainder $R$ carries no deterministic component at the drift scale,
+so that the entire drift-scale deterministic content of $D_1$ is the
+contamination term and its coefficient is thereby identified.
+\emph{(i-b)} [averaging] at the drift-scale normalization the
+remainder averages away:
+\[
+\M_x\!\left(\frac{R(t)\,\log^2t}{\sqrt t}\right)\longrightarrow0,
+\qquad\text{equivalently}\qquad
+\M_x\!\left(\frac{D_1(t)\,\log^2t}{\sqrt t}\right)
+\;\longrightarrow\;c_T,
+\]
+where
+\[
+c_T\;:=\;\lim_{x\to\infty}\frac{T(x)\log^2x}{\sqrt x}
+\;=\;\tfrac12\,C(x,\,x^2-2)
+\]
+is the half of the Bateman--Horn constant of the pair $(q,\,q^2-2)$
+(the weighted census sum is $\sim C\sqrt x$, so the limit exists and
+is explicit); equivalently $\M_x(D_1)/\M_x(T)\to1$.  A normalization
+at the noise scale, $\M_x((D_1-T)/\sqrt{\pi_t})\to0$, would be
+\emph{vacuous} for the coefficient of (i-a): since
+$T/\sqrt{\pi_t}\asymp1/\log t$, one has
 $\M_x(T/\sqrt{\pi_t})\asymp\log\log x/\log x\to0$, so the condition
 holds with $T$ replaced by $0$, $2T$, or any fixed multiple, and
 does not express ``exactly the removed mass.''  The statement
 therefore normalizes at the \emph{drift} scale, where the claimed
-limit is a nonzero constant:
-\[
-\M_x\!\left(\frac{D_1(t)\,\log^2t}{\sqrt t}\right)
-\;\longrightarrow\;
-c_T\;:=\;\lim_{x\to\infty}\frac{T(x)\log^2x}{\sqrt x}
-\;=\;\tfrac12\,C(x,\,x^2-2),
-\]
-the half of the Bateman--Horn constant of the pair $(q,\,q^2-2)$
-(the weighted census sum is $\sim C\sqrt x$, so the limit exists and
-is explicit).  Two layers are being conjectured at once: \emph{that} the
-logarithmic mean converges at this
-normalization---under a pure random-walk model it would not (its
-variance grows like $\log x$), so convergence is an assertion of
-Rubinstein--Sarnak-type almost-periodic structure for the twin race,
-and is the precise content of the zero-oscillation
-hypothesis---and that its limit is $c_T$ rather than $0$ or $2c_T$,
-which is the calculus.  Equivalently:
-$\M_x(D_1)/\M_x(T)\to1$;
+limit is a nonzero constant.  Convergence at this normalization is a
+Rubinstein--Sarnak-type regularity assertion: under a pure
+random-walk model the logarithmic mean would not converge (its
+variance grows like $\log x$), so (i-b) asserts almost-periodic
+structure for the twin race and is the precise content of the
+zero-oscillation hypothesis, while (i-a) is what fixes the limit at
+$c_T$ rather than $0$ or $2c_T$, and is the calculus.  The
+convergence asserted in (i-b) selects the rigid branch of the
+dichotomy registered at Conjecture~\ref{c18}(iii); the two
+statements stand or fall together at drift scale;
 \emph{(ii)} [zero deterministic drift in the symmetric differences]
 the symmetric classes carry no deterministic term \emph{at the same
 normalization}:
@@ -184,8 +199,9 @@ $D_7(x)=\tfrac13\sum_{a\in\{1,3,5\}}\pi_t(x;8,a)-\pi_t(x;8,7)$,
 \longrightarrow2c_T
 \]
 (twice the mod-5 constant, undiluted---at this normalization the factor $2$
-is a falsifiable prediction), while classes $1,3,5$ are mutually
-symmetric.  The mod-5 and mod-8 races are two projections of one
+is a falsifiable prediction, the mechanism and averaging claims
+separating here exactly as in (i-a)--(i-b)), while classes $1,3,5$
+are mutually symmetric.  The mod-5 and mod-8 races are two projections of one
 mechanism, so their joint behaviour is a family test in the sense of
 the shape-of-agreement criterion;
 \emph{(v)} [contamination calculus for balanced races] for a pattern
@@ -209,7 +225,8 @@ orientation census and class assignment (which $o$ survive, and
 where their starts land---Lemma~\ref{l:c21} and its analogues); the
 conjectural layer is the transfer: the unweighted class counts are
 depressed by $\mathcal C_{d,m}(a;x)/\log^2x$ relative to the clean
-classes, in the drift-scale limiting-log-mean sense of (i)---for
+classes, in the drift-scale limiting-log-mean sense of (i), with the
+mechanism and averaging claims separated as in (i-a)--(i-b)---for
 each class $a$, the deficit obeys
 $\M_x\bigl(\mathrm{deficit}_a(t)\log^2t/\sqrt t\bigr)\to
 c(a):=\lim\mathcal C_{d,m}(a;x)/\sqrt x$, an explicit Bateman--Horn
@@ -622,7 +639,13 @@ covariances, and when $H/\log^2x\to\infty$ every fixed finite
 collection $\{Z_{d_1},\dots,Z_{d_r}\}$ is asymptotically jointly
 normal with \emph{independent} limiting coordinates: both kernels
 are finite-$x$ corrections to independence (test below), not
-nondegenerate limiting kernels.  The diagonal correction to
+nondegenerate limiting kernels.  Both distributional conclusions are
+asserted under an explicit hypothesis beyond the displayed
+covariances, namely uniform Hardy--Littlewood tuple estimates on the
+window class fixed above, strong enough to control all higher joint
+cumulants of the window counts: every joint cumulant of order at
+least three vanishes in the respective normalizations.  The diagonal
+correction to
 $\operatorname{Var}_t(\pi_d)$ is Conjecture~\ref{c12}'s pinned
 average, stated there.
 \end{conjecture}
@@ -957,13 +980,27 @@ $n_1<n_2<\cdots$ enumerate the $n$ with $n^2+1$ and $n^2+3$ both
 prime and $n\equiv1$ or $4\pmod5$, set $\xi_i=+1$ if
 $n_i\equiv1$ and $-1$ if $n_i\equiv4$, and let
 $S_N=\xi_1+\cdots+\xi_N$ (so $D(x)=S_{N(x)}$ with $N(x)$ the number
-of such events to $x$).  The hypothesis is an \emph{almost-sure
-invariance principle} (ASIP): on a common probability space carrying
-$(\xi_i)$ and a standard Brownian motion $B$,
+of such events to $x$).  The sequence $(\xi_i)$ is deterministic, so the hypothesis is
+stated for a randomly sited window rather than for $S_N$ itself.
+Fix a growth scale $N_0$ and a window length $N=N(N_0)$ with
+$N=o(N_0)$, and choose the starting index $M$ of the window
+according to the logarithmic measure on $[1,N_0]$:
 \[
-S_N\;=\;B(N)+O\bigl(N^{1/2-\delta}\bigr)
-\qquad\text{almost surely, for some }\delta>0.
+\Pr[M=m]\;=\;\Bigl(\sum_{1\le m'\le N_0}\tfrac1{m'}\Bigr)^{-1}
+\frac1m,\qquad 1\le m\le N_0 .
 \]
+The hypothesis is an \emph{almost-sure invariance principle} (ASIP)
+for the induced random path $(S_{M+j}-S_M)_{0\le j\le N}$ under that
+sampling law: on a probability space carrying $M$ and a standard
+Brownian motion $B$,
+\[
+S_{M+j}-S_M\;=\;B(j)+O\bigl(N^{1/2-\delta}\bigr)
+\qquad\text{uniformly for }0\le j\le N,
+\]
+almost surely in $M$ as $N_0\to\infty$, for some $\delta>0$.  The
+logarithmic sampling law is the same clock in which the occupation
+statement below is read, and randomizing the window start is what
+supplies the deterministic step sequence with a probability space.
 Weak convergence alone would not suffice, since a distributional
 limit on each fixed interval does not control pathwise occupation
 across unboundedly many logarithmic scales; under the ASIP the
@@ -973,8 +1010,8 @@ functional limit theorem---$S_{\lfloor N\tau\rfloor}/\sqrt N$
 converging weakly to standard Brownian motion on
 $\tau\in[0,1]$---is retained only as the weaker, separately
 falsifiable consequence of the ASIP.  Everything after that is
-probability, not number theory: granting the ASIP,
-$D(t)=B(N(t))+O\bigl(N(t)^{1/2-\delta}\bigr)$
+probability, not number theory: granting the randomized ASIP just
+stated, $D(t)=B(N(t))+O\bigl(N(t)^{1/2-\delta}\bigr)$
 with $N(t)\asymp t/\log^2t$, the error being $o(\sqrt{N(t)})$
 almost surely, and in \emph{logarithmic} time
 $u=\log t$ the
@@ -1156,7 +1193,8 @@ same Rubinstein--Sarnak-type structure hypothesis as at
 Conjecture~\ref{c21}(i)), with drift-to-noise
 $\asymp\log^{-3/2}x$---one logarithm weaker than
 the pair races, a scale the calculus itself predicts and the
-verification must respect.
+verification must respect.  The mechanism clause and the averaging
+clause are asserted separately, as at Conjecture~\ref{c21}(i).
 \end{conjecture}
 
 \setcounter{conjecture}{18}%
@@ -1192,7 +1230,9 @@ $\M_x\bigl((\tfrac12(\pi(5)+\pi(7))-\pi(1))\log^2t/\sqrt t\bigr)\to
 c_B$ (classes $5,7$ clean, mutually symmetric, with
 $\M_x\bigl((\pi(5)-\pi(7))\log^2t/\sqrt t\bigr)\to0$).  Two
 independently computable drift constants,
-one certified null class per modulus.
+one certified null class per modulus.  The mechanism clause and the
+averaging clause are asserted separately, as at
+Conjecture~\ref{c21}(i).
 \end{conjecture}
 
 \setcounter{conjecture}{19}%
