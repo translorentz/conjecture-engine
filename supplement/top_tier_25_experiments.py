@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Targeted finite diagnostics for the research-quality set of 25 conjectures.
+"""Targeted finite diagnostics for the top-tier set of 25 conjectures.
 
 The computations are deliberately modest.  They test definitions, exact algebraic
 relations, finite structural predictions, null cases, and the direction of proposed
@@ -19,7 +19,7 @@ from pathlib import Path
 import numpy as np
 from scipy.stats import skew, kurtosis
 from scipy.integrate import quad
-from sympy import Poly, factor_list, factorint, mobius, symbols
+from sympy import Poly, factor_list, factorint, mobius, symbols, sqrt_mod
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -90,7 +90,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
     # C1: connected cumulant diagnostics already computed in core.
     c1 = base["C1_connected_field"]
 
-    # C2: exact overlap levels.
+    # C2: exact overlap levels (correcting the former two-level simplification).
     c2 = {
         "motifs": [list(H) for H in motifs],
         "overlap_levels": overlap_matrices(motifs),
@@ -125,7 +125,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
         "warning": "The multiple-zero spectral matching is not computationally tested at this range.",
     }
 
-    # C4: the polymer graph includes chains not seen by the finite difference graph.
+    # C4: the corrected polymer graph includes chains not seen by the old finite difference graph.
     H6 = (0, 6)
     start_sets = []
     for A in itertools.combinations(range(0, 19, 6), 3):
@@ -162,7 +162,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
     c4 = {
         "connected_three_start_polymers": start_sets,
         "empirical_sexy_pair_run_length_counts": dict(Counter(run_lengths)),
-        "three_start_chain_polymer_admissible": any(x["starts"] == [0, 6, 12] and x["admissible"] for x in start_sets),
+        "old_finite_component_bound_refuted": any(x["starts"] == [0, 6, 12] and x["admissible"] for x in start_sets),
     }
 
     # C5: first odd cumulants and the Kuperberg-calibrating scale, for prime counts.
@@ -308,22 +308,9 @@ def occupancy_program(primes: np.ndarray) -> dict:
         transfer_rows.append({"q":q,"gauss_transfer_max_relative_error":float(max(errs)),
                               "additive_autocorrelation_lags_1_10":ac,
                               "multiplicative_character_energies":energies})
-    projection_rows=[]
-    for q in selected:
-        least=np.zeros(q,dtype=np.int64);least[0]=q;remaining=q-1
-        for p0 in primes:
-            pp=int(p0)
-            if pp==q:continue
-            a=pp%q
-            if a and least[a]==0:
-                least[a]=pp;remaining-=1
-                if remaining==0:break
-        u=np.array([core.li(int(x)) for x in least],dtype=float)/(q-1)
-        projection_rows.append(operator_projection_diagnostic(u-u.mean(),q))
     c7 = {
         "sampled_moduli": detailed,
         "gauss_transfer_and_autocorrelation_rows": transfer_rows,
-        "operator_projection": projection_rows,
         "cross_correlation_low_additive_vs_first_multiplicative_power": float(np.corrcoef(addv, multv)[0,1]) if len(detailed)>2 else None,
         "warning": "The exact Gauss identity is checked; the arithmetic asymptotics of the two autocorrelation families remain untested.",
     }
@@ -334,12 +321,31 @@ def occupancy_program(primes: np.ndarray) -> dict:
         counts = np.array([sum(v > x for v in d["terminal_excesses"]) for d in detailed], dtype=float)
         c8[str(x)] = {"mean": float(counts.mean()), "variance": float(counts.var(ddof=1)),
                       "poisson_target_e_minus_x": math.exp(-x), "sample_moduli": len(counts)}
-    # C9: null diagnostic; no exceptional-zero ensemble is claimed.
+    # C9: synthetic nonlinear character-response check.  This verifies harmonic
+    # bookkeeping only; it is not evidence for the arithmetic Volterra kernels.
+    qsyn=101
+    residues=np.arange(1,qsyn)
+    factors=list(factorint(qsyn-1))
+    g=next(a for a in range(2,qsyn) if all(pow(a,(qsyn-1)//r,qsyn)!=1 for r in factors))
+    logtab=np.empty(qsyn,dtype=int);xx=1
+    for jj in range(qsyn-1): logtab[xx]=jj;xx=(xx*g)%qsyn
+    chi=np.exp(2j*math.pi*logtab[residues]/5)
+    eps=1e-3;t=1.7
+    # log survival for a toy Cox hazard exp(eps Re chi).
+    resp=-t*(np.exp(eps*np.real(chi))-1)
+    first=-t*eps*np.real(chi)
+    second=resp-first
+    coeffs={}
+    for k in range(5):
+        basis=np.exp(2j*math.pi*k*logtab[residues]/5)
+        coeffs[str(k)]=float(abs(np.mean(second*np.conjugate(basis)))/(eps*eps))
     c9 = {
+        "synthetic_second_order_character_coefficients_scaled": coeffs,
+        "expected_support": "constant and character products of length two",
         "quadratic_projection_L1_proxy_spearman": occ["char_projection_L1_spearman"],
-        "interpretation": "No exceptional conductor occurs in the range; this is intentionally a null diagnostic.",
+        "warning": "The synthetic calculation checks harmonic support only; arithmetic response operators are untested.",
     }
-    # C10 class-group conditioning: only genus rank, not exact discriminant factors.
+    # C10 corrected class-group conditioning: only genus rank, not exact discriminant factors.
     c10 = core.class_group_local_independence(18000)
     return {"C6": c6, "C7": c7, "C8": c8, "C9": c9, "C10": c10}
 
@@ -382,6 +388,54 @@ def family_wieferich(H: int = 3000, tuple_samples: int = 500, seed: int = 7) -> 
         }
     return out
 
+
+
+def quadratic_unit_regulator_shadow(ps: list[int]) -> dict:
+    """Split-prime finite-log matrix shadow for Q(sqrt(2)), epsilon=1+sqrt(2).
+
+    At a split prime the two rows are constrained by Norm(epsilon)=-1, hence their
+    finite logarithms sum to zero.  This checks the relation module and fixed-frequency
+    Haar shadows, not the horizontal matrix law or determinantal point processes.
+    """
+    coords=[]
+    relation_errors=[]
+    zero_primes=[]
+    rows=[]
+    for p in ps:
+        if p < 5 or pow(2,(p-1)//2,p) != 1:
+            continue
+        roots=sqrt_mod(2,p,all_roots=True)
+        if not roots:
+            continue
+        r=int(min(roots))
+        mod=p*p
+        # Hensel lift r^2=2 modulo p^2.
+        r2=(r-(r*r-2)*pow(2*r,-1,mod))%mod
+        vals=[]
+        for sign in (1,-1):
+            a=(1+sign*r2)%mod
+            vals.append((-core.fermat_quotient(p,a))%p)
+        err=(vals[0]+vals[1])%p
+        relation_errors.append(err)
+        coords.append(vals[0]/p)
+        if vals[0]==0:
+            zero_primes.append(p)
+        if len(rows)<20:
+            rows.append({'p':p,'row_logs':vals,'norm_relation_error':err})
+    fourier={}
+    z=np.array(coords,dtype=float)
+    for m in (1,2,3,5,8,13):
+        fourier[str(m)]=float(abs(np.mean(np.exp(2j*math.pi*m*z)))) if len(z) else None
+    return {
+        'field':'Q(sqrt(2))',
+        'unit':'1+sqrt(2)',
+        'split_prime_count':len(coords),
+        'norm_relation_max_error':int(max(relation_errors) if relation_errors else 0),
+        'fixed_frequency_fourier_magnitudes':fourier,
+        'regulator_vanishing_primes':zero_primes,
+        'sample_rows':rows,
+        'warning':'Checks the exact relation module and fixed-frequency rank-one shadow only; matrix Haar laws and codimension processes are untested.',
+    }
 
 def toric_functoriality(ps: list[int]) -> dict:
     # Split-torus morphism phi(x,y)=x^2 y^3; corrected logarithm is -q_p on G_m.
@@ -438,7 +492,7 @@ def finite_log_program(primes: np.ndarray) -> dict:
     c13 = {"exact_hits": base["exact_hits"], "exact_hit_loglog_times":exact_logtimes,
            "heuristic_sums": harmonic,"shrinking_box_counts":shrink,
            "near_zero_counts": base["near_zero_counts"]}
-    c14 = family_wieferich()
+    c14 = quadratic_unit_regulator_shadow(ps)
     c15 = {"functoriality_checks": toric_functoriality(ps[:5000]),
            "equidistribution_checks": base["C15_toric_finite_logarithm"]}
     return {"C11": c11, "C12": c12, "C13": c13, "C14": c14, "C15": c15}
@@ -474,14 +528,11 @@ def eval_poly_mod(poly: Poly, x: int, mod: int) -> int:
     return val
 
 
-def squarefree_local_product(poly: Poly, prime_bound: int = 47, earlier: list[Poly] | None = None) -> tuple[float, dict]:
+def squarefree_local_product(poly: Poly, prime_bound: int = 47) -> tuple[float, dict]:
     prod = 1.0; rows = {}
-    earlier = earlier or []
     for p in np.flatnonzero(core.prime_sieve(prime_bound)):
         p = int(p); mod = p*p
-        rho = sum(eval_poly_mod(poly, a, mod) == 0
-                  and all(eval_poly_mod(v, a, p) != 0 for v in earlier)
-                  for a in range(mod))
+        rho = sum(eval_poly_mod(poly, a, mod) == 0 for a in range(mod))
         delta = rho/mod
         prod *= 1-delta
         rows[str(p)] = {"rho_mod_p2": rho, "delta": delta}
@@ -530,7 +581,8 @@ def arboreal_program(primes: np.ndarray) -> dict:
             "collision_effective_even":1/sum(x*x for x in even.values()),
             "proxy_critical_sample_full":crit_full,"proxy_critical_sample_even":crit_even}
 
-    # C17 exact iid sampling functional for the observed finite state laws.
+    # C17: iid occupancy functional plus a small parameter-prime independence test
+    # for the family x^2+c at level one.
     c17 = {}
     for n, row in old["C16_growing_arboreal_chebotarev"].items():
         mu = np.array(list(row["wreath_distribution"].values()), dtype=float)
@@ -542,8 +594,30 @@ def arboreal_program(primes: np.ndarray) -> dict:
                 "poissonized_expected_missing_mass": float(missing_mass),
             }
 
+
+    test_primes=[7,11,13,17,19,23,29,31]
+    B=1200
+    mat=[]
+    for cv in range(-B,B+1):
+        row=[]
+        for p in test_primes:
+            # x^2+c has a root modulo p iff -c is zero or a quadratic residue.
+            z=(-cv)%p
+            root=(z==0) or pow(z,(p-1)//2,p)==1
+            row.append(int(root))
+        mat.append(row)
+    arr=np.array(mat,dtype=float)
+    cov=np.corrcoef(arr,rowvar=False)
+    off=cov-np.eye(len(test_primes))
+    c17["level_one_family_large_sieve_shadow"]={
+        "family":"x^2+c", "parameter_height":B, "primes":test_primes,
+        "max_absolute_cross_prime_correlation":float(np.max(np.abs(off))),
+        "mean_absolute_cross_prime_correlation":float(np.mean(np.abs(off[np.triu_indices(len(test_primes),1)]))),
+        "warning":"This is a level-one independence shadow, not a growing-depth large-sieve test."
+    }
+
     c, v, psi = critical_orbit_polys(4)
-    # C18 coloured dynatomic components at level 4.
+    # C18 colored dynatomic components at level 5.
     facs = [Poly(f, c, domain='ZZ') for f, _ in factor_list(psi[4].as_expr())[1]]
     color_stats = []
     for cv in range(-45, 46):
@@ -566,17 +640,34 @@ def arboreal_program(primes: np.ndarray) -> dict:
     c19 = {}
     for n in (2,3,4):
         poly = psi[n]
-        local_prod, rows = squarefree_local_product(poly, 43, earlier=[v[m] for m in range(1, n)])
+        local_prod, rows = squarefree_local_product(poly, 43)
         vals=[]
         for cv in range(-120,121):
             if cv in (-2,-1,0): continue
             val=abs(int(poly.eval(cv)))
             if val<=1: continue
             vals.append(all(e==1 for e in factorint(val).values()))
+        val_hists={}
+        for pp in (2,3,5,7,11):
+            emp=Counter();loc=Counter()
+            for cv in range(-250,251):
+                if cv in (-2,-1,0): continue
+                vv=abs(int(poly.eval(cv)));e=0
+                while vv and vv%pp==0: vv//=pp;e+=1
+                emp[min(e,4)]+=1
+            for cv in range(pp*pp):
+                vv=int(poly.eval(cv));e=0
+                while vv%pp==0 and e<4: vv//=pp;e+=1
+                loc[min(e,4)]+=1
+            val_hists[str(pp)]={
+                "empirical_height_box":{str(k):v/sum(emp.values()) for k,v in emp.items()},
+                "exact_mod_p2_shadow":{str(k):v/sum(loc.values()) for k,v in loc.items()}
+            }
         c19[str(n)] = {
             "degree": poly.degree(), "empirical_squarefree_fraction": float(np.mean(vals)),
             "truncated_local_product_p_le_43": local_prod,
             "local_rows": rows,
+            "primitive_valuation_histograms":val_hists,
         }
 
     # C20 synchronized divisor-sensitive gcd examples.
@@ -659,6 +750,25 @@ def factorization_program(primes: np.ndarray) -> dict:
     old = core.polynomial_suite(primes, N=1600)
     c21=old["C21_frobenius_marked_PD"]
     c22=old["C22_small_large_independence"]
+    # Three-scale diagnostic for n^3-2: small valuations, mesoscopic factor count,
+    # and macroscopic largest residual share.
+    small=[];meso=[];macro=[];mass_error=[]
+    for n in range(200,1800):
+        vv=abs(n**3-2);ff=factorint(vv)
+        small_mass=sum(e*math.log(p) for p,e in ff.items() if p<=100)
+        residual_log=math.log(vv)-small_mass
+        meso_count=sum(e for p,e in ff.items() if 100<p<=vv**0.30)
+        macro_share=max((math.log(p)/residual_log for p in ff if p>100),default=0.0)
+        small.append(sum(e for p,e in ff.items() if p<=100));meso.append(meso_count);macro.append(macro_share)
+        mass_error.append(abs(sum(e*math.log(p) for p,e in ff.items())-math.log(vv)))
+    c22["three_scale_shadow"]={
+        "samples":len(small),
+        "corr_small_count_meso_count":float(np.corrcoef(small,meso)[0,1]),
+        "corr_meso_count_macro_residual_share":float(np.corrcoef(meso,macro)[0,1]),
+        "corr_small_count_macro_residual_share":float(np.corrcoef(small,macro)[0,1]),
+        "max_log_mass_conservation_error":float(max(mass_error)),
+        "warning":"The scale-invariant Poisson and joint-limit assertions are not tested."
+    }
     # C23 exact local states and conditioned residual correlations.
     polys=[[1,0,1],[1,1,1]]
     local={str(p):exact_local_states(polys,p) for p in (2,3,5,7,11,13)}
@@ -693,7 +803,7 @@ def factorization_program(primes: np.ndarray) -> dict:
                        "joint_over_product":pj/(pa*pb) if pa*pb else None}
     c24={"true_smoothness_thresholds":joint,"exact_local_states":local}
 
-    # C25 dyadic interval calculation.
+    # C25 corrected dyadic interval calculation.
     lo,hi=70000,140000
     ns=np.arange(lo,hi+1,dtype=np.int64);vals_arr=ns*ns+1
     isprime_vals=np.array([core.is_prime64(int(v)) for v in vals_arr])
@@ -722,7 +832,7 @@ def factorization_program(primes: np.ndarray) -> dict:
 
 def main() -> None:
     ap=argparse.ArgumentParser()
-    ap.add_argument('--out', default=str(HERE/'research_quality_25_results.json'))
+    ap.add_argument('--out', default=str(HERE/'top_tier_25_results.json'))
     ap.add_argument('--prime-max', type=int, default=3_000_000)
     args=ap.parse_args()
     started=time.perf_counter()

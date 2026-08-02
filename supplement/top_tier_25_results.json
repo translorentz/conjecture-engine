@@ -2,7 +2,7 @@
   "metadata": {
     "deterministic": true,
     "prime_max": 3000000,
-    "runtime_seconds": 16.966055097999742,
+    "runtime_seconds": 11.274979311000152,
     "warning": "Finite diagnostics only; not evidence of proof or priority."
   },
   "program_I": {
@@ -1239,7 +1239,7 @@
         "3": 702,
         "4": 1
       },
-      "three_start_chain_polymer_admissible": true
+      "old_finite_component_bound_refuted": true
     },
     "C5": {
       "1500": {
@@ -1446,7 +1446,7 @@
         "by_bin": [
           {
             "count": 28,
-            "cover_shift": -2.1163567198762845,
+            "cover_shift": -2.1163567198762827,
             "fourier_low_high": 1.199908725688466,
             "range": [
               101,
@@ -1462,7 +1462,7 @@
           },
           {
             "count": 42,
-            "cover_shift": -2.141713029334039,
+            "cover_shift": -2.141713029334041,
             "fourier_low_high": 1.131001209694151,
             "range": [
               251,
@@ -1478,7 +1478,7 @@
           },
           {
             "count": 59,
-            "cover_shift": -2.275710336182041,
+            "cover_shift": -2.275710336182039,
             "fourier_low_high": 1.4241022177577254,
             "range": [
               501,
@@ -1494,7 +1494,7 @@
           },
           {
             "count": 42,
-            "cover_shift": -2.5103444174672362,
+            "cover_shift": -2.5103444174672376,
             "fourier_low_high": 1.401013269957144,
             "range": [
               901,
@@ -1636,53 +1636,6 @@
             "6": 0.18796396188707917
           },
           "q": 149
-        }
-      ],
-      "operator_projection": [
-        {
-          "additive_component_norm_over_total": 0.1425270540258031,
-          "design_columns": 105,
-          "design_rank": 103,
-          "matrix_dimension": 52,
-          "multiplicative_component_norm_over_total": 0.16421388157039626,
-          "q": 53,
-          "relative_residual_hs": 0.9710403221939272
-        },
-        {
-          "additive_component_norm_over_total": 0.11723562560966537,
-          "design_columns": 157,
-          "design_rank": 155,
-          "matrix_dimension": 78,
-          "multiplicative_component_norm_over_total": 0.12981876055895883,
-          "q": 79,
-          "relative_residual_hs": 0.9812800303661188
-        },
-        {
-          "additive_component_norm_over_total": 0.11195781040936366,
-          "design_columns": 201,
-          "design_rank": 199,
-          "matrix_dimension": 100,
-          "multiplicative_component_norm_over_total": 0.10939758120546936,
-          "q": 101,
-          "relative_residual_hs": 0.9851129974050168
-        },
-        {
-          "additive_component_norm_over_total": 0.10244977933334395,
-          "design_columns": 253,
-          "design_rank": 251,
-          "matrix_dimension": 126,
-          "multiplicative_component_norm_over_total": 0.1149268479585962,
-          "q": 127,
-          "relative_residual_hs": 0.9860507625569703
-        },
-        {
-          "additive_component_norm_over_total": 0.1273213773254754,
-          "design_columns": 297,
-          "design_rank": 295,
-          "matrix_dimension": 148,
-          "multiplicative_component_norm_over_total": 0.09818567576053923,
-          "q": 149,
-          "relative_residual_hs": 0.9852652687755188
         }
       ],
       "sampled_moduli": [
@@ -2699,8 +2652,16 @@
       }
     },
     "C9": {
-      "interpretation": "No exceptional conductor occurs in the range; this is intentionally a null diagnostic.",
-      "quadratic_projection_L1_proxy_spearman": 0.08082415340677275
+      "expected_support": "constant and character products of length two",
+      "quadratic_projection_L1_proxy_spearman": 0.08082415340677275,
+      "synthetic_second_order_character_coefficients_scaled": {
+        "0": 0.425000026557451,
+        "1": 0.00010625442946900798,
+        "2": 0.21253543441869552,
+        "3": 0.2125354344186958,
+        "4": 0.00010625442946865647
+      },
+      "warning": "The synthetic calculation checks harmonic support only; arithmetic response operators are untested."
     }
   },
   "program_III": {
@@ -2818,8 +2779,8 @@
         ]
       },
       "heuristic_sums": {
-        "rank1_sum": 1.6875204175485712,
-        "rank2_sum": 0.051135649138478796
+        "rank1_sum": 1.6875204175485832,
+        "rank2_sum": 0.051135649138478644
       },
       "near_zero_counts": {
         "rank1_2": {
@@ -2860,32 +2821,184 @@
       }
     },
     "C14": {
-      "1": {
-        "histogram": {
-          "0": 193,
-          "1": 202,
-          "2": 83,
-          "3": 20,
-          "4": 2
-        },
-        "mean_count": 0.872,
-        "poisson_mean_sum_p_minus_r": 0.8696456461869017,
-        "prime_max": 31,
-        "sample_size": 500,
-        "variance": 0.7330821643286576
+      "field": "Q(sqrt(2))",
+      "fixed_frequency_fourier_magnitudes": {
+        "1": 0.019903946813466064,
+        "13": 0.0034200158384616514,
+        "2": 0.016297589499123258,
+        "3": 0.0068928135138734865,
+        "5": 0.012854114213432289,
+        "8": 0.012445915412005026
       },
-      "2": {
-        "histogram": {
-          "0": 442,
-          "1": 57,
-          "2": 1
+      "norm_relation_max_error": 0,
+      "regulator_vanishing_primes": [
+        31
+      ],
+      "sample_rows": [
+        {
+          "norm_relation_error": 0,
+          "p": 7,
+          "row_logs": [
+            5,
+            2
+          ]
         },
-        "mean_count": 0.118,
-        "poisson_mean_sum_p_minus_r": 0.1112122647086625,
-        "prime_max": 31,
-        "sample_size": 500,
-        "variance": 0.1082925851703407
-      }
+        {
+          "norm_relation_error": 0,
+          "p": 17,
+          "row_logs": [
+            16,
+            1
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 23,
+          "row_logs": [
+            7,
+            16
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 31,
+          "row_logs": [
+            0,
+            0
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 41,
+          "row_logs": [
+            33,
+            8
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 47,
+          "row_logs": [
+            22,
+            25
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 71,
+          "row_logs": [
+            7,
+            64
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 73,
+          "row_logs": [
+            8,
+            65
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 79,
+          "row_logs": [
+            40,
+            39
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 89,
+          "row_logs": [
+            67,
+            22
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 97,
+          "row_logs": [
+            85,
+            12
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 103,
+          "row_logs": [
+            15,
+            88
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 113,
+          "row_logs": [
+            71,
+            42
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 127,
+          "row_logs": [
+            54,
+            73
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 137,
+          "row_logs": [
+            94,
+            43
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 151,
+          "row_logs": [
+            131,
+            20
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 167,
+          "row_logs": [
+            123,
+            44
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 191,
+          "row_logs": [
+            65,
+            126
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 193,
+          "row_logs": [
+            191,
+            2
+          ]
+        },
+        {
+          "norm_relation_error": 0,
+          "p": 199,
+          "row_logs": [
+            154,
+            45
+          ]
+        }
+      ],
+      "split_prime_count": 5618,
+      "unit": "1+sqrt(2)",
+      "warning": "Checks the exact relation module and fixed-frequency rank-one shadow only; matrix Haar laws and codimension processes are untested."
     },
     "C15": {
       "equidistribution_checks": {
@@ -2956,7 +3069,7 @@
             "8": 0.0032679738562091504
           },
           "samples": 918,
-          "total_variation": 0.04212614379084972,
+          "total_variation": 0.04212614379084971,
           "wreath_distribution": {
             "0": 0.6899,
             "2": 0.15965,
@@ -2978,7 +3091,7 @@
             "8": 0.013071895424836602
           },
           "samples": 918,
-          "total_variation": 0.04311143790849674,
+          "total_variation": 0.043111437908496746,
           "wreath_distribution": {
             "0": 0.7397,
             "10": 0.00495,
@@ -3056,7 +3169,7 @@
         },
         "5": {
           "collision_effective_even": 1.6278442489996494,
-          "collision_effective_full": 1.6278442598238119,
+          "collision_effective_full": 1.6278442598238114,
           "even_subgroup_distribution": {
             "0": 0.7750815013423562,
             "2": 0.08058342337608337,
@@ -3098,41 +3211,41 @@
           "proxy_critical_sample_full": 100
         },
         "6": {
-          "collision_effective_even": 1.5389110682755933,
-          "collision_effective_full": 1.5389110682755924,
+          "collision_effective_even": 1.5389110682755938,
+          "collision_effective_full": 1.5389110682755915,
           "even_subgroup_distribution": {
-            "0": 0.8003756665006353,
-            "2": 0.062458726510924004,
-            "4": 0.058560012435335,
-            "6": 0.035499325994424305,
-            "8": 0.021295560733334173,
-            "10": 0.011061252726789214,
-            "12": 0.0057354031919909865,
-            "14": 0.0027502028166500035,
-            "16": 0.0012817209194476416,
-            "18": 0.0005708335940022705,
-            "20": 0.00024573130571083404,
-            "22": 0.00010130982408093621,
-            "24": 4.027838989277032e-05,
-            "26": 1.538671358154719e-05,
-            "28": 5.6445764021577335e-06,
-            "30": 1.9803087106806663e-06,
-            "32": 6.633728309390037e-07,
-            "34": 2.1128746331700022e-07,
-            "36": 6.39673179390898e-08,
-            "38": 1.8251572447836033e-08,
-            "40": 4.9606874667068565e-09,
-            "42": 1.2367058349616038e-09,
-            "44": 3.0286482002872523e-10,
-            "46": 6.184702749933988e-11,
-            "48": 1.422380182386495e-11,
-            "50": 2.0344975704134064e-12,
-            "52": 4.933241315452362e-13,
-            "54": 3.555489236362062e-14,
-            "56": 1.1079678841063862e-14,
-            "58": 2.0816681711721675e-16,
-            "60": 1.1449174941446922e-16,
-            "64": 2.168404344971008e-19
+            "0": 0.8003756665006351,
+            "2": 0.06245872651092399,
+            "4": 0.058560012435334985,
+            "6": 0.0354993259944243,
+            "8": 0.02129556073333417,
+            "10": 0.011061252726789213,
+            "12": 0.005735403191990986,
+            "14": 0.002750202816650003,
+            "16": 0.0012817209194476414,
+            "18": 0.0005708335940022703,
+            "20": 0.000245731305710834,
+            "22": 0.00010130982408093618,
+            "24": 4.0278389892770314e-05,
+            "26": 1.5386713581547185e-05,
+            "28": 5.644576402157733e-06,
+            "30": 1.980308710680666e-06,
+            "32": 6.633728309390036e-07,
+            "34": 2.112874633170002e-07,
+            "36": 6.396731793908979e-08,
+            "38": 1.8251572447836026e-08,
+            "40": 4.960687466706856e-09,
+            "42": 1.2367058349616036e-09,
+            "44": 3.028648200287252e-10,
+            "46": 6.184702749933986e-11,
+            "48": 1.4223801823864947e-11,
+            "50": 2.034497570413406e-12,
+            "52": 4.933241315452361e-13,
+            "54": 3.555489236362061e-14,
+            "56": 1.1079678841063859e-14,
+            "58": 2.081668171172167e-16,
+            "60": 1.144917494144692e-16,
+            "64": 2.1684043449710074e-19
           },
           "full_distribution": {
             "0": 0.8003756665006356,
@@ -3200,22 +3313,39 @@
         },
         "50": {
           "poissonized_expected_missing_mass": 0.012342531861253503,
-          "sampling_L1_functional": 0.12674756209157081
+          "sampling_L1_functional": 0.1267475620915708
         }
       },
       "4": {
         "1000": {
           "poissonized_expected_missing_mass": 0.0006959887244584274,
-          "sampling_L1_functional": 0.030616583173412756
+          "sampling_L1_functional": 0.030616583173412752
         },
         "200": {
           "poissonized_expected_missing_mass": 0.0038925098197683224,
-          "sampling_L1_functional": 0.06754730167129085
+          "sampling_L1_functional": 0.06754730167129086
         },
         "50": {
           "poissonized_expected_missing_mass": 0.020137907963891696,
           "sampling_L1_functional": 0.13100947375385563
         }
+      },
+      "level_one_family_large_sieve_shadow": {
+        "family": "x^2+c",
+        "max_absolute_cross_prime_correlation": 0.007783371901084459,
+        "mean_absolute_cross_prime_correlation": 0.0020070957881713008,
+        "parameter_height": 1200,
+        "primes": [
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "warning": "This is a level-one independence shadow, not a growing-depth large-sieve test."
       }
     },
     "C18": {
@@ -3291,6 +3421,73 @@
             "rho_mod_p2": 1
           }
         },
+        "primitive_valuation_histograms": {
+          "11": {
+            "empirical_height_box": {
+              "0": 0.9116465863453815,
+              "1": 0.08032128514056225,
+              "2": 0.008032128514056224
+            },
+            "exact_mod_p2_shadow": {
+              "0": 0.9090909090909091,
+              "1": 0.08264462809917356,
+              "2": 0.008264462809917356
+            }
+          },
+          "2": {
+            "empirical_height_box": {
+              "0": 0.5,
+              "1": 0.25100401606425704,
+              "2": 0.12449799196787148,
+              "3": 0.0642570281124498,
+              "4": 0.060240963855421686
+            },
+            "exact_mod_p2_shadow": {
+              "0": 0.5,
+              "1": 0.25,
+              "2": 0.25
+            }
+          },
+          "3": {
+            "empirical_height_box": {
+              "0": 0.6666666666666666,
+              "1": 0.2248995983935743,
+              "2": 0.07228915662650602,
+              "3": 0.024096385542168676,
+              "4": 0.012048192771084338
+            },
+            "exact_mod_p2_shadow": {
+              "0": 0.6666666666666666,
+              "1": 0.2222222222222222,
+              "2": 0.1111111111111111
+            }
+          },
+          "5": {
+            "empirical_height_box": {
+              "0": 0.8012048192771084,
+              "1": 0.1606425702811245,
+              "2": 0.0321285140562249,
+              "3": 0.006024096385542169
+            },
+            "exact_mod_p2_shadow": {
+              "0": 0.8,
+              "1": 0.16,
+              "2": 0.04
+            }
+          },
+          "7": {
+            "empirical_height_box": {
+              "0": 0.8594377510040161,
+              "1": 0.12048192771084337,
+              "2": 0.020080321285140562
+            },
+            "exact_mod_p2_shadow": {
+              "0": 0.8571428571428571,
+              "1": 0.12244897959183673,
+              "2": 0.02040816326530612
+            }
+          }
+        },
         "truncated_local_product_p_le_43": 0.6105653967872567
       },
       "3": {
@@ -3352,6 +3549,63 @@
           "7": {
             "delta": 0.02040816326530612,
             "rho_mod_p2": 1
+          }
+        },
+        "primitive_valuation_histograms": {
+          "11": {
+            "empirical_height_box": {
+              "0": 0.9076305220883534,
+              "1": 0.08433734939759036,
+              "2": 0.008032128514056224
+            },
+            "exact_mod_p2_shadow": {
+              "0": 0.9090909090909091,
+              "1": 0.08264462809917356,
+              "2": 0.008264462809917356
+            }
+          },
+          "2": {
+            "empirical_height_box": {
+              "0": 1.0
+            },
+            "exact_mod_p2_shadow": {
+              "0": 1.0
+            }
+          },
+          "3": {
+            "empirical_height_box": {
+              "0": 1.0
+            },
+            "exact_mod_p2_shadow": {
+              "0": 1.0
+            }
+          },
+          "5": {
+            "empirical_height_box": {
+              "0": 0.7991967871485943,
+              "1": 0.1606425702811245,
+              "2": 0.0321285140562249,
+              "3": 0.006024096385542169,
+              "4": 0.002008032128514056
+            },
+            "exact_mod_p2_shadow": {
+              "0": 0.8,
+              "1": 0.16,
+              "3": 0.04
+            }
+          },
+          "7": {
+            "empirical_height_box": {
+              "0": 0.8554216867469879,
+              "1": 0.12248995983935743,
+              "2": 0.018072289156626505,
+              "3": 0.004016064257028112
+            },
+            "exact_mod_p2_shadow": {
+              "0": 0.8571428571428571,
+              "1": 0.12244897959183673,
+              "2": 0.02040816326530612
+            }
           }
         },
         "truncated_local_product_p_le_43": 0.9239068040543174
@@ -3417,6 +3671,48 @@
             "rho_mod_p2": 0
           }
         },
+        "primitive_valuation_histograms": {
+          "11": {
+            "empirical_height_box": {
+              "0": 1.0
+            },
+            "exact_mod_p2_shadow": {
+              "0": 1.0
+            }
+          },
+          "2": {
+            "empirical_height_box": {
+              "0": 1.0
+            },
+            "exact_mod_p2_shadow": {
+              "0": 1.0
+            }
+          },
+          "3": {
+            "empirical_height_box": {
+              "0": 1.0
+            },
+            "exact_mod_p2_shadow": {
+              "0": 1.0
+            }
+          },
+          "5": {
+            "empirical_height_box": {
+              "0": 1.0
+            },
+            "exact_mod_p2_shadow": {
+              "0": 1.0
+            }
+          },
+          "7": {
+            "empirical_height_box": {
+              "0": 1.0
+            },
+            "exact_mod_p2_shadow": {
+              "0": 1.0
+            }
+          }
+        },
         "truncated_local_product_p_le_43": 0.9888686011370735
       }
     },
@@ -3443,7 +3739,15 @@
       "mass_renormalized_pearson": 0.10712968301577341,
       "mass_renormalized_spearman": 0.08066639131740103,
       "mean_residual_largest_share": 0.8132592554039721,
-      "raw_pearson_small_vs_largest_log_share": -0.43397969266533193
+      "raw_pearson_small_vs_largest_log_share": -0.43397969266533193,
+      "three_scale_shadow": {
+        "corr_meso_count_macro_residual_share": -0.476547953583529,
+        "corr_small_count_macro_residual_share": 0.06341329607126178,
+        "corr_small_count_meso_count": -0.01628190633395551,
+        "max_log_mass_conservation_error": 3.552713678800501e-15,
+        "samples": 1600,
+        "warning": "The scale-invariant Poisson and joint-limit assertions are not tested."
+      }
     },
     "C23": {
       "adequate_conditioning_cells": 16,
@@ -3573,15 +3877,15 @@
           },
           "31": {
             "buchstab_component_prediction_at_mean_u": {
-              "1": 0.2735965082771846,
-              "2": 0.4669027191775092,
-              "3": 0.2254811005036051,
-              "4": 0.033085403821893,
-              "5": 0.0009338273261377709,
-              "6": 4.4089367010211977e-07
+              "1": 0.2735965082771847,
+              "2": 0.46690271917750925,
+              "3": 0.22548110050360515,
+              "4": 0.033085403821893004,
+              "5": 0.000933827326137771,
+              "6": 4.408936701021199e-07
             },
             "buchstab_omega": 0.5613896638732255,
-            "component_sum": 0.5614594641376621,
+            "component_sum": 0.561459464137662,
             "mean_u": 6.5098509145428105,
             "polynomial_conditional_Omega": {
               "1": 0.3152,
@@ -3624,14 +3928,14 @@
           },
           "71": {
             "buchstab_component_prediction_at_mean_u": {
-              "1": 0.3396226450789901,
-              "2": 0.49095013943752913,
-              "3": 0.1608270379283785,
-              "4": 0.008598436195910763,
-              "5": 1.741359191650776e-06
+              "1": 0.33962264507899004,
+              "2": 0.4909501394375291,
+              "3": 0.16082703792837846,
+              "4": 0.00859843619591076,
+              "5": 1.7413591916507757e-06
             },
             "buchstab_omega": 0.5613870551332785,
-            "component_sum": 0.5614568224514879,
+            "component_sum": 0.561456822451488,
             "mean_u": 5.244293587244968,
             "polynomial_conditional_Omega": {
               "1": 0.37523809523809526,
