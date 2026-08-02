@@ -2,7 +2,7 @@
   "metadata": {
     "deterministic": true,
     "prime_max": 3000000,
-    "runtime_seconds": 11.274979311000152,
+    "runtime_seconds": 25.33044139699996,
     "warning": "Finite diagnostics only; not evidence of proof or priority."
   },
   "program_I": {
@@ -1239,7 +1239,7 @@
         "3": 702,
         "4": 1
       },
-      "old_finite_component_bound_refuted": true
+      "three_start_chain_polymer_admissible": true
     },
     "C5": {
       "1500": {
@@ -1446,7 +1446,7 @@
         "by_bin": [
           {
             "count": 28,
-            "cover_shift": -2.1163567198762827,
+            "cover_shift": -2.1163567198762845,
             "fourier_low_high": 1.199908725688466,
             "range": [
               101,
@@ -1462,7 +1462,7 @@
           },
           {
             "count": 42,
-            "cover_shift": -2.141713029334041,
+            "cover_shift": -2.141713029334039,
             "fourier_low_high": 1.131001209694151,
             "range": [
               251,
@@ -1478,7 +1478,7 @@
           },
           {
             "count": 59,
-            "cover_shift": -2.275710336182039,
+            "cover_shift": -2.275710336182041,
             "fourier_low_high": 1.4241022177577254,
             "range": [
               501,
@@ -1494,7 +1494,7 @@
           },
           {
             "count": 42,
-            "cover_shift": -2.5103444174672376,
+            "cover_shift": -2.5103444174672362,
             "fourier_low_high": 1.401013269957144,
             "range": [
               901,
@@ -2636,19 +2636,22 @@
         "mean": 0.23255813953488372,
         "poisson_target_e_minus_x": 2.718281828459045,
         "sample_moduli": 43,
-        "variance": 0.27796234772978956
+        "variance": 0.27796234772978956,
+        "warning": "Terminal excesses are centred at log(q-1), not at the conjecture's empirical quantile b_Q; at q<=1200 the mean exceedance count sits far below the e^{-x} target, so this block tests only the centering convention, not the conjecture."
       },
       "0.0": {
         "mean": 0.023255813953488372,
         "poisson_target_e_minus_x": 1.0,
         "sample_moduli": 43,
-        "variance": 0.023255813953488372
+        "variance": 0.023255813953488372,
+        "warning": "Terminal excesses are centred at log(q-1), not at the conjecture's empirical quantile b_Q; at q<=1200 the mean exceedance count sits far below the e^{-x} target, so this block tests only the centering convention, not the conjecture."
       },
       "1.0": {
         "mean": 0.0,
         "poisson_target_e_minus_x": 0.36787944117144233,
         "sample_moduli": 43,
-        "variance": 0.0
+        "variance": 0.0,
+        "warning": "Terminal excesses are centred at log(q-1), not at the conjecture's empirical quantile b_Q; at q<=1200 the mean exceedance count sits far below the e^{-x} target, so this block tests only the centering convention, not the conjecture."
       }
     },
     "C9": {
@@ -2779,8 +2782,8 @@
         ]
       },
       "heuristic_sums": {
-        "rank1_sum": 1.6875204175485832,
-        "rank2_sum": 0.051135649138478644
+        "rank1_sum": 1.6875204175485712,
+        "rank2_sum": 0.051135649138478796
       },
       "near_zero_counts": {
         "rank1_2": {
@@ -3069,7 +3072,7 @@
             "8": 0.0032679738562091504
           },
           "samples": 918,
-          "total_variation": 0.04212614379084971,
+          "total_variation": 0.04212614379084972,
           "wreath_distribution": {
             "0": 0.6899,
             "2": 0.15965,
@@ -3091,7 +3094,7 @@
             "8": 0.013071895424836602
           },
           "samples": 918,
-          "total_variation": 0.043111437908496746,
+          "total_variation": 0.04311143790849674,
           "wreath_distribution": {
             "0": 0.7397,
             "10": 0.00495,
@@ -3169,7 +3172,7 @@
         },
         "5": {
           "collision_effective_even": 1.6278442489996494,
-          "collision_effective_full": 1.6278442598238114,
+          "collision_effective_full": 1.6278442598238119,
           "even_subgroup_distribution": {
             "0": 0.7750815013423562,
             "2": 0.08058342337608337,
@@ -3211,41 +3214,41 @@
           "proxy_critical_sample_full": 100
         },
         "6": {
-          "collision_effective_even": 1.5389110682755938,
-          "collision_effective_full": 1.5389110682755915,
+          "collision_effective_even": 1.5389110682755933,
+          "collision_effective_full": 1.5389110682755924,
           "even_subgroup_distribution": {
-            "0": 0.8003756665006351,
-            "2": 0.06245872651092399,
-            "4": 0.058560012435334985,
-            "6": 0.0354993259944243,
-            "8": 0.02129556073333417,
-            "10": 0.011061252726789213,
-            "12": 0.005735403191990986,
-            "14": 0.002750202816650003,
-            "16": 0.0012817209194476414,
-            "18": 0.0005708335940022703,
-            "20": 0.000245731305710834,
-            "22": 0.00010130982408093618,
-            "24": 4.0278389892770314e-05,
-            "26": 1.5386713581547185e-05,
-            "28": 5.644576402157733e-06,
-            "30": 1.980308710680666e-06,
-            "32": 6.633728309390036e-07,
-            "34": 2.112874633170002e-07,
-            "36": 6.396731793908979e-08,
-            "38": 1.8251572447836026e-08,
-            "40": 4.960687466706856e-09,
-            "42": 1.2367058349616036e-09,
-            "44": 3.028648200287252e-10,
-            "46": 6.184702749933986e-11,
-            "48": 1.4223801823864947e-11,
-            "50": 2.034497570413406e-12,
-            "52": 4.933241315452361e-13,
-            "54": 3.555489236362061e-14,
-            "56": 1.1079678841063859e-14,
-            "58": 2.081668171172167e-16,
-            "60": 1.144917494144692e-16,
-            "64": 2.1684043449710074e-19
+            "0": 0.8003756665006353,
+            "2": 0.062458726510924004,
+            "4": 0.058560012435335,
+            "6": 0.035499325994424305,
+            "8": 0.021295560733334173,
+            "10": 0.011061252726789214,
+            "12": 0.0057354031919909865,
+            "14": 0.0027502028166500035,
+            "16": 0.0012817209194476416,
+            "18": 0.0005708335940022705,
+            "20": 0.00024573130571083404,
+            "22": 0.00010130982408093621,
+            "24": 4.027838989277032e-05,
+            "26": 1.538671358154719e-05,
+            "28": 5.6445764021577335e-06,
+            "30": 1.9803087106806663e-06,
+            "32": 6.633728309390037e-07,
+            "34": 2.1128746331700022e-07,
+            "36": 6.39673179390898e-08,
+            "38": 1.8251572447836033e-08,
+            "40": 4.9606874667068565e-09,
+            "42": 1.2367058349616038e-09,
+            "44": 3.0286482002872523e-10,
+            "46": 6.184702749933988e-11,
+            "48": 1.422380182386495e-11,
+            "50": 2.0344975704134064e-12,
+            "52": 4.933241315452362e-13,
+            "54": 3.555489236362062e-14,
+            "56": 1.1079678841063862e-14,
+            "58": 2.0816681711721675e-16,
+            "60": 1.1449174941446922e-16,
+            "64": 2.168404344971008e-19
           },
           "full_distribution": {
             "0": 0.8003756665006356,
@@ -3313,17 +3316,17 @@
         },
         "50": {
           "poissonized_expected_missing_mass": 0.012342531861253503,
-          "sampling_L1_functional": 0.1267475620915708
+          "sampling_L1_functional": 0.12674756209157081
         }
       },
       "4": {
         "1000": {
           "poissonized_expected_missing_mass": 0.0006959887244584274,
-          "sampling_L1_functional": 0.030616583173412752
+          "sampling_L1_functional": 0.030616583173412756
         },
         "200": {
           "poissonized_expected_missing_mass": 0.0038925098197683224,
-          "sampling_L1_functional": 0.06754730167129086
+          "sampling_L1_functional": 0.06754730167129085
         },
         "50": {
           "poissonized_expected_missing_mass": 0.020137907963891696,
@@ -3742,7 +3745,7 @@
       "raw_pearson_small_vs_largest_log_share": -0.43397969266533193,
       "three_scale_shadow": {
         "corr_meso_count_macro_residual_share": -0.476547953583529,
-        "corr_small_count_macro_residual_share": 0.06341329607126178,
+        "corr_small_count_macro_residual_share": 0.06341329607126175,
         "corr_small_count_meso_count": -0.01628190633395551,
         "max_log_mass_conservation_error": 3.552713678800501e-15,
         "samples": 1600,
@@ -3877,15 +3880,15 @@
           },
           "31": {
             "buchstab_component_prediction_at_mean_u": {
-              "1": 0.2735965082771847,
-              "2": 0.46690271917750925,
-              "3": 0.22548110050360515,
-              "4": 0.033085403821893004,
-              "5": 0.000933827326137771,
-              "6": 4.408936701021199e-07
+              "1": 0.2735965082771846,
+              "2": 0.4669027191775092,
+              "3": 0.2254811005036051,
+              "4": 0.033085403821893,
+              "5": 0.0009338273261377709,
+              "6": 4.4089367010211977e-07
             },
             "buchstab_omega": 0.5613896638732255,
-            "component_sum": 0.561459464137662,
+            "component_sum": 0.5614594641376621,
             "mean_u": 6.5098509145428105,
             "polynomial_conditional_Omega": {
               "1": 0.3152,
@@ -3928,14 +3931,14 @@
           },
           "71": {
             "buchstab_component_prediction_at_mean_u": {
-              "1": 0.33962264507899004,
-              "2": 0.4909501394375291,
-              "3": 0.16082703792837846,
-              "4": 0.00859843619591076,
-              "5": 1.7413591916507757e-06
+              "1": 0.3396226450789901,
+              "2": 0.49095013943752913,
+              "3": 0.1608270379283785,
+              "4": 0.008598436195910763,
+              "5": 1.741359191650776e-06
             },
             "buchstab_omega": 0.5613870551332785,
-            "component_sum": 0.561456822451488,
+            "component_sum": 0.5614568224514879,
             "mean_u": 5.244293587244968,
             "polynomial_conditional_Omega": {
               "1": 0.37523809523809526,
