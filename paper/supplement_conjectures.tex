@@ -65,9 +65,10 @@ assumed.
 
 \item \textbf{Overlap-filtration variance law (Conjecture~\ref{c2}).}
 The variance of a linear combination of motif counts expands over the
-overlap poset, annihilation of the incidence tensors through codimension
-$s$ deletes exactly those strata, and the first surviving stratum fixes
-the leading scale.
+two-level overlap poset of a pair, with explicit powers of $\log X$
+indexed by coincidence multiplicity, annihilation of the coincidence
+matrices deletes that whole level, and the renormalized disjoint kernel
+then fixes the leading scale.
 
 \item \textbf{Local-to-spectral covariance decomposition
 (Conjecture~\ref{c3}).}  The motif covariance splits into a coincidence
@@ -113,7 +114,7 @@ field by exactly one spectral spike along the associated real character.
 \item \textbf{Growing local-condition independence for odd class groups
 (Conjecture~\ref{c10}).}  After the two-primary genus data are fixed, the
 odd class group remains Cohen--Lenstra distributed under prescribed
-splitting signs at all primes up to $B$ whenever $B=o(\log|D|)$.
+splitting signs at all primes up to $B$ whenever $\pi(B)=o(\log|D|)$.
 
 \item \textbf{Kummer--Haar law for Fermat quotients
 (Conjecture~\ref{c11}).}  For a saturated group of rank $r$ the normalized
@@ -134,9 +135,10 @@ groups.
 
 \item \textbf{Rank-depth Poisson law for higher strata
 (Conjecture~\ref{c14}).}  Over a uniformly sampled height ensemble of
-generator tuples, the depth-marked exceptional primes form a Poisson
-process of intensity $\kappa(r,k;p)p^{-rk}$ with Haar lifts between
-depths.
+generator tuples, the maximal-depth exceptional primes form a Poisson
+process of intensity $\kappa(r,k;p)p^{-rk}-\kappa(r,k+1;p)p^{-r(k+1)}$,
+each fixed depth slice is Poisson of intensity $\kappa(r,k;p)p^{-rk}$,
+and the depths are joined by Haar lifts.
 
 \item \textbf{Toric finite logarithm and codimension principle
 (Conjecture~\ref{c15}).}  The first congruence quotient on any algebraic
@@ -192,11 +194,10 @@ component probabilities times an Euler product of local root
 distributions tilted by the multivariate saddle-point parameters, so the
 entanglement factor moves with the smoothness parameters.
 
-\item \textbf{Buchstab--Bateman--Horn sieve-to-prime martingale
+\item \textbf{Buchstab--Bateman--Horn sieve-to-prime bridge
 (Conjecture~\ref{c25}).}  Rough-value densities follow the finite-$u$
-Buchstab law, the conditional prime probability is the Bateman--Horn
-density divided by that law with an elementary endpoint at $1<u\le2$, and
-the conditional probabilities form an asymptotic martingale in $y$.
+Buchstab law, and the conditional prime probability is the Bateman--Horn
+density divided by that law, with an elementary endpoint at $1<u\le2$.
 
 \end{enumerate}
 
@@ -300,23 +301,58 @@ partition of $A$.  This is the exact sense of ``connected'' used
 throughout Programme~I, and it is what isolates genuine $r$-way
 arithmetic interaction from products of lower-order interactions.
 
-For a coefficient vector $c\in\mathbb R^m$ and $j\ge0$, the
-\emph{incidence tensor} $A^{(j)}$ of overlap strata of codimension $j$ is
-the symmetric $j$-th order form on $\mathbb R^m$ whose entries are the
-connected singular-series masses of the overlap types of codimension $j$,
-the final stratum being the disjoint connected kernel of
-Conjecture~\ref{c3}.  For second-order statistics $A^{(j)}$ is a
-symmetric $m\times m$ matrix and $A^{(j)}c$ is a vector.
+For $r\ge2$ and $j\ge0$ the \emph{incidence tensor} $A^{(j)}_r$ of the
+family is the symmetric $r$-th order form on $\mathbb R^{m}$ whose entry
+at $(i_1,\dots,i_r)$ is the total connected singular-series mass of the
+overlap types of codimension $j$ carried by the $r$-fold configurations
+of $H_{i_1},\dots,H_{i_r}$, weighted by the window integrals of
+Conjecture~\ref{c1}.  The order of the tensor is the cumulant order $r$,
+whereas the superscript $j$ indexes the strata by codimension and is not
+a tensor order, so the two indices never coincide in meaning.  In
+particular at second order $A^{(j)}:=A^{(j)}_2$ is a symmetric $m\times
+m$ matrix and $A^{(j)}c$ is a vector, for every $j$ and not only for
+$j=2$.  Two translates carry
+a single shift parameter, so the overlap poset of a pair has exactly two
+levels, codimension $0$, the disjoint stratum, in which the shift is
+free, and codimension $1$, the coincidence strata, in which a coincidence
+pins the shift to one of finitely many values.  Thus $j\in\{0,1\}$ when
+$r=2$.  The coincidence strata are graded further by the coincidence
+multiplicity $e(\tau)\ge1$ of Conjecture~\ref{c1}, and $A^{(1,e)}$
+denotes the part of $A^{(1)}$ carried by the types with $e(\tau)=e$, so
+that the coincidence matrix of scale $X$ is
+\[
+  A^{(1)}(X)\;=\;\sum_{e\ge1}(\log X)^{e}A^{(1,e)} .
+\]
+The disjoint stratum $j=0$ carries no constant tensor.  Its mass is the
+renormalized kernel matrix $K_{\mathrm{HL}}(L)$ of
+Conjecture~\ref{c3}, which is a symmetric $m\times m$ matrix for each $L$
+but depends on the actual shift values and on $L$ rather than on the
+overlap type alone, and
+it is placed last in the filtrations of Conjectures~\ref{c2}
+and~\ref{c5} because the annihilation conditions are imposed on the
+coincidence tensors first.  ``Last stratum'' therefore refers to the
+order in which the strata are examined and not to the codimension
+grading, in which the disjoint stratum is the minimum.
 
 \subsection*{Least primes and occupancy}
 
 For prime $q$ and $a\in(\mathbb Z/q\mathbb Z)^{\times}$ let $p(q,a)$ be
 the least prime congruent to $a$ modulo $q$ and set
 $T_q(a)=\Li(p(q,a))/(q-1)$.  Under (M) this is a random variable.  The
-\emph{first-arrival transform} $\mathcal F[K]$ of a kernel $K$ is the
-operator obtained by linearizing, at the constant intensity, the map that
-sends a local prime intensity to the law of the first arrival time
-measured in $\Li$-scale.  The \emph{connected two-prime exclusion
+\emph{first-arrival transform} $\mathcal F$ has for domain the bounded
+measurable kernels $K\colon\mathbb R_{\ge0}\to\mathbb R$ and for codomain
+the continuous functions on $\mathbb R_{\ge0}$ vanishing to second order
+at the origin, and it is defined by the linearization
+\[
+  \mathcal F[K](t)\;=\;\tfrac12\int_0^{t}\!\!\int_0^{t}K(|u-v|)\,du\,dv
+  \;=\;\int_0^{t}(t-u)K(u)\,du .
+\]
+This is the derivative at the constant unit intensity of the map that
+sends the connected two-point correlation of a point process on
+$\Li$-time to minus the logarithm of its first-arrival survival function:
+a process of unit intensity and connected pair correlation $K$ has
+$-\log\mathbb P[\text{no arrival in }[0,t]]=t-\mathcal
+F[K](t)+O(\|K\|_\infty^{2})$.  The \emph{connected two-prime exclusion
 kernel} is the family of numbers $\SG(\{0,kq\})-1$ for $k\ge1$, where
 $\SG(\{0,d\})$ is the singular series of the pair motif of shift $d$,
 these being the connected densities of two primes lying in the same class
@@ -379,10 +415,35 @@ $p$-th powers is exactly $\{x:x^{p-1}=1\}$, so
 which is the identification of $q_p$ with the connecting map $\Gamma\to
 (\mathbb Z/p^2\mathbb Z)^{\times}/\bigl((\mathbb Z/p^2\mathbb
 Z)^{\times}\bigr)^{p}\cong\mathbb Z/p\mathbb Z$ used throughout
-Programme~III.  A \emph{nonrelation character} of $\Gamma$ is an element
-$m\in\Hom(\Gamma,\mathbb Z)$ not annihilating the relation lattice of the
-chosen generators, and its \emph{height} is the maximum absolute value of
-its coordinates.
+Programme~III.
+
+Characters are taken on the ambient generator torus and not on $\Gamma$.
+Fix an ordered generating tuple $g=(g_1,\dots,g_s)$ of $\Gamma$, so that
+the Fermat-quotient vector
+\[
+  \mathbf q_p(g)/p\;=\;\bigl(q_p(g_1),\dots,q_p(g_s)\bigr)/p
+  \ \in\ (\mathbb R/\mathbb Z)^{s}
+\]
+lives on the ambient torus $(\mathbb R/\mathbb Z)^{s}$.  Let
+\[
+  R(g)\;=\;\Bigl\{m\in\mathbb Z^{s}:\ \prod_{i=1}^{s}g_i^{m_i}=1\Bigr\}
+\]
+be the \emph{relation lattice} of the tuple, of rank $s-r$, let
+$R(g)^{\mathrm{sat}}=(R(g)\otimes\mathbb Q)\cap\mathbb Z^{s}$ be its
+saturation in $\mathbb Z^{s}$, and let $\mathbb T_\Gamma\le(\mathbb
+R/\mathbb Z)^{s}$ be the identity component of the annihilator of
+$R(g)$, a subtorus of dimension exactly $r$.  A \emph{character} is an
+element $m\in\mathbb Z^{s}$, acting on the ambient torus by $\langle
+m,\mathbf q_p(g)\rangle=\sum_im_iq_p(g_i)$, and its \emph{height} is
+$\max_i|m_i|$.  A character $m$ is a \emph{nonrelation character} of the
+tuple if $m\notin R(g)^{\mathrm{sat}}$, equivalently if $m$ restricts
+nontrivially to $\mathbb T_\Gamma$.  The exclusion is exactly the right
+one, since for $m\in R(g)^{\mathrm{sat}}$, say with $km\in R(g)$, one has
+$k\langle m,\mathbf q_p(g)\rangle\equiv0\pmod p$ and hence $\langle
+m,\mathbf q_p(g)\rangle\equiv0\pmod p$ at every $p\nmid k$, so such a
+character is constant on the values and carries no information, whereas
+for $m\in\Hom(\Gamma,\mathbb Z)$ the relations of $\Gamma$ are killed
+automatically and no nontrivial exclusion is available at all.
 
 \subsection*{Arboreal notation}
 
@@ -390,7 +451,10 @@ Let $f\in\mathbb Q[x]$ have degree $d\ge2$ and let $a\in\mathbb Q$ have
 infinite backward orbit.  Write $K_n=\mathbb Q(f^{-n}(a))$ for the $n$-th
 preimage field, $G_n=\Gal(K_n/\mathbb Q)$, $D_n=\disc(K_n)$, and $T_n$
 for the tree of preimages of $a$ to level $n$, so that
-$G_n\hookrightarrow\Aut(T_n)=[C_d]^{\wr n}$.  The \emph{arboreal image}
+$G_n\hookrightarrow\Aut(T_n)=[S_d]^{\wr n}$, the $n$-fold iterated wreath
+product of the symmetric group $S_d$, of order
+$(d!)^{(d^{n}-1)/(d-1)}$.  Only for $d=2$ is this an iterated wreath
+product of cyclic groups.  The \emph{arboreal image}
 is $G_\infty=\varprojlim G_n\le\Aut(T_\infty)$, and it has \emph{finite
 index} if $[\Aut(T_\infty):G_\infty]<\infty$.  A \emph{conjugacy
 cylinder} at level $n$ is a conjugacy class of $G_n$, and a
@@ -469,7 +533,12 @@ said.  All prime-pattern window statistics below were sampled at step
 $L/4$ within a window of length $L$, so consecutive samples overlap in
 three quarters of their support and the effective number of independent
 samples is about one quarter of the nominal count, with no error bars
-computed by the generating script.  Reproducible bounds are primes to
+computed by the generating script.  The generating script samples window
+positions on a uniform grid over $[X,2X]$ rather than from the
+dyadic-log density of (W), an admissible discretization of (W) because
+the two densities differ by a factor bounded between $1/(2\log2)$ and
+$1/\log2$ on that interval, so no reported statistic is affected beyond
+that bounded reweighting.  Reproducible bounds are primes to
 $3{,}000{,}000$, prime moduli below $1000$, Fermat quotients to
 $250{,}000$, imaginary quadratic discriminants to $15{,}000$, and the
 polynomial and dynamical samples recorded with each note.
@@ -492,26 +561,55 @@ order $r$ under $\mathbb P_X$.  Then:
 \emph{(i)} [overlap expansion] for every $r\ge2$ and every choice of
 indices $i_1,\dots,i_r$ the cumulant
 $\kappa_r\bigl(Y_{i_1},\dots,Y_{i_r}\bigr)$ has an asymptotic expansion
-indexed by the overlap poset $\mathcal O(H_{i_1},\dots,H_{i_r})$,
+indexed by the overlap poset $\mathcal O(H_{i_1},\dots,H_{i_r})$, in
+which each stratum carries an explicit power of $\log X$ and a
+renormalized kernel sum over its free shifts.  For $\tau\in\mathcal O$
+put $\mathrm{fr}(\tau)=r-1-\codim\tau$ for the number of free shifts of
+$\tau$, and for $s\in\mathbb Z^{\mathrm{fr}(\tau)}$ let $U(\tau;s)$ be
+the union pattern of the configuration of type $\tau$ with free shifts
+$s$, a set of distinct integers, and let $\SGc(\tau;s)=\SGc\bigl(U(\tau;
+s)\bigr)$ be its connected singular series, obtained by M\"obius
+inversion over the partition lattice as in Section~\ref{sec:notation}.
+Let
+\[
+  e(\tau)\;=\;\sum_{u=1}^{r}|H_{i_u}|\;-\;|U(\tau;s)|
+\]
+be the \emph{coincidence multiplicity} of $\tau$, a quantity independent
+of $s$, so that a point of the union pattern carried by $\mu$ translates
+contributes $\mu-1$ to $e(\tau)$.  Then
 \[
   \kappa_r\bigl(Y_{i_1},\dots,Y_{i_r}\bigr)
-  \;=\;\sum_{\tau\in\mathcal O}L^{\,r-\codim\tau}\,
-  \SGc(\tau)\,I_w(\tau)\;+\;\text{lower strata},
+  \;=\;\sum_{\tau\in\mathcal O}(\log X)^{e(\tau)}\,\mathcal
+  K_\tau(L)\;+\;\text{lower strata},
 \]
-in which $\SGc(\tau)$ is the connected singular series of the union
-pattern of the configuration of type $\tau$, obtained by M\"obius
-inversion over the partition lattice as in Section~\ref{sec:notation},
-and $I_w(\tau)$ is the explicit convolution integral of $w$ determined by
-the free shifts of $\tau$.
+\[
+  \mathcal K_\tau(L)\;=\;\sum_{s\in\mathbb Z^{\mathrm{fr}(\tau)}}
+  w_L^{(\tau)}(s)\,\SGc(\tau;s),\qquad
+  w_L^{(\tau)}(s)=L\int_{\mathbb R}w(t)\prod_{j=1}^{\mathrm{fr}(\tau)}
+  w\!\left(t+\frac{s_j}{L}\right)dt ,
+\]
+the window weight $w_L^{(\tau)}$ contributing one factor $L$ for the
+summation over $n$ and one for each free shift, so that $\mathcal
+K_\tau(L)$ sits at scale $L^{\,r-\codim\tau}$ up to the logarithmic
+renormalization described in clause (v).  The power of $\log X$ is the
+coincidence bookkeeping: a point of multiplicity $\mu$ contributes
+$\Lambda^{\mu}$, and $\sum_{n\le x}\Lambda(n)^{\mu}\sim x(\log
+x)^{\mu-1}$.  In the smallest case $H=\{0\}$ and $r=2$ the
+full-coincidence stratum has $e(\tau)=1$ and $\codim\tau=1$ and
+contributes $L\log X$, matching $\sum_{n\le x}\Lambda(n)^{2}\sim x\log
+x$.
 \emph{(ii)} [strong converse layer] no coefficient and no scale occurs
 outside this expansion: for every $s\ge0$ the difference between
 $\kappa_r$ and the expansion of (i) truncated at codimension $s$ is
-$o(L^{\,r-s})$.  Clause (ii) is separately falsifiable from (i), since a
-persistent normalized cumulant not assigned to any overlap stratum
-refutes (ii) while leaving the expansion of (i) intact.
+$o\bigl(L^{\,r-s}(\log X)^{e_{\max}}\bigr)$, where $e_{\max}$ is the
+largest coincidence multiplicity occurring at codimension at most $s$.
+Clause (ii) is separately falsifiable from (i), since a persistent
+normalized cumulant not assigned to any overlap stratum refutes (ii)
+while leaving the expansion of (i) intact.
 \emph{(iii)} [hypothesis $\mathrm H_r$] let $V=V(H_i;X,L)$ and let
-$\kappa_r^{\mathrm{disj}}$ denote the contribution of the disjoint
-stratum.  The hypothesis $\mathrm H_r$, for $r\ge3$, asserts that
+$\kappa_r^{\mathrm{disj}}=\mathcal K_{\hat0}(L)$ denote the contribution
+of the disjoint stratum, the renormalized kernel sum of (i) at
+$\codim\tau=0$.  The hypothesis $\mathrm H_r$, for $r\ge3$, asserts that
 $\kappa_r^{\mathrm{disj}}=o\bigl(V^{r/2}\bigr)$ in every range in which
 $V\to\infty$.  This is a hypothesis and not a consequence of (i) and
 (ii), which fix the shape of the expansion but not the size of its
@@ -521,6 +619,21 @@ $r\ge3$] $Y_i/\sqrt V$ converges in law under $\mathbb P_X$ to the
 standard Gaussian, and all higher joint cumulants of the normalized
 fields obey Wick pairing.  Gaussianity is thus the conclusion drawn from
 clause (iii) and is not an independent input to the conjecture.
+\emph{(v)} [renormalization of the free-shift strata] the free-shift
+strata, and in particular the disjoint stratum $\codim\tau=0$, are
+asserted only in the kernel-sum form displayed in (i), and not as a
+constant depending on $\tau$ alone times a window integral.  The union
+pattern, and therefore $\SGc(\tau;s)$, depends on the shift values $s$
+and not merely on the type, and the centred shift sum diverges
+logarithmically, the two-motif case being
+\[
+  \sum_{0<h\le H}\bigl(\SG(\{0,h\})-1\bigr)\;=\;-\tfrac12\log H+O(1),
+\]
+in the form established by Montgomery and Soundararajan.  Consequently
+$\mathcal K_\tau(L)$ is smaller than $L^{\,r-\codim\tau}$ by a
+logarithmic factor on the free-shift strata, and the kernel of the
+disjoint stratum at $r=2$ is exactly the renormalized kernel
+$K_{\mathrm{HL}}$ of Conjecture~\ref{c3}.
 \end{conjecture}
 
 M\"obius inversion over set partitions is what isolates genuine $r$-way
@@ -552,25 +665,43 @@ range identifies no coefficient of the expansion.
 Fix admissible motifs $H_1,\dots,H_m$, a window $w$ and the law (W).  For
 $c\in\mathbb R^{m}$ put $Y_c=\sum_ic_iY(H_i;\cdot,L)$.  Then:
 \emph{(i)} [variance filtration] $\Var_XY_c$ has an asymptotic expansion
-indexed by the overlap poset, whose stratum of codimension $j$
-contributes $L^{\,2-j}\,c^{\mathsf T}A^{(j)}c$ up to the explicit window
-integral, with $A^{(j)}$ the incidence tensor of
-Section~\ref{sec:notation} and the final stratum the disjoint connected
-kernel.
-\emph{(ii)} [annihilation] if $A^{(0)}c=\dots=A^{(s)}c=0$ then exactly
-those strata vanish from the expansion and the leading scale of
-$\Var_XY_c$ is $L^{\,2-(s+1)}\,c^{\mathsf T}A^{(s+1)}c$, so the first
-non-annihilated overlap type determines both the scale and the constant.
-\emph{(iii)} [strong converse layer] no variance scale occurs outside the
-overlap poset and the disjoint connected kernel, separately falsifiable
-from (i) and (ii) in the sense that an unassigned scale refutes (iii)
+indexed by the overlap poset of the pairs $(H_i,H_j)$, which at second
+order has exactly the two levels recorded in
+Section~\ref{sec:notation}.  Grading the codimension-one strata by the
+coincidence multiplicity $e(\tau)\ge1$ of Conjecture~\ref{c1},
+\[
+  \Var_XY_c\;=\;\sum_{e\ge1}L(\log X)^{e}\,c^{\mathsf T}A^{(1,e)}c
+  \;+\;c^{\mathsf T}K_{\mathrm{HL}}(L)\,c\;+\;o(L),
+\]
+in which $A^{(1,e)}$ is the symmetric $m\times m$ incidence matrix of
+Section~\ref{sec:notation} carrying the connected singular-series masses
+of the codimension-one overlap types of coincidence multiplicity $e$
+together with their window integrals, and $K_{\mathrm{HL}}(L)$ is the
+renormalized disjoint kernel matrix of Conjecture~\ref{c3},
+$K_{\mathrm{HL}}(i,j)=\sum_hw_L(h)\SGc(H_i,H_j+h)$.  The disjoint stratum
+enters as a kernel sum over the actual shifts and not as a constant times
+$L^{2}$, since the centred shift sum converges only after the
+logarithmic renormalization of Conjecture~\ref{c1}(v), and it carries no
+divergent mass.
+\emph{(ii)} [annihilation, of depth one at second order] if
+$A^{(1,e)}c=0$ for every $e\ge1$ then the whole coincidence level
+vanishes from the expansion and the leading scale of $\Var_XY_c$ is
+$c^{\mathsf T}K_{\mathrm{HL}}(L)c$, provided that quantity does not
+vanish.  Because $j\in\{0,1\}$ at $r=2$, the annihilation chain has depth
+one: a second-order statistic admits exactly one nontrivial annihilation
+step, and any deeper cancellation is a condition on the higher-order
+tensors $A^{(j)}_r$ with $r\ge3$ and is not visible in the variance
 alone.
+\emph{(iii)} [strong converse layer] no variance scale occurs outside the
+coincidence matrices $A^{(1,e)}$ and the renormalized disjoint kernel,
+separately falsifiable from (i) and (ii) in the sense that an unassigned
+scale refutes (iii) alone.
 \end{conjecture}
 
 Two occurrences of a motif may share $0,1,2,\dots$ prime constraints, and
-each sharing pattern contributes at its own power of the window length,
-so the overlap lattice is the arithmetic analogue of a diagram expansion
-and the variance is graded by it.  The consequence is constructive:
+each sharing pattern contributes at its own power of the window length
+and its own power of $\log X$, so the overlap lattice is the arithmetic
+analogue of a diagram expansion and the variance is graded by it.  The consequence is constructive:
 balanced observables can be designed to annihilate the low-codimension
 diagrams and thereby manufacture rigid prime statistics, which is the
 route to the arithmetic wavelets classified in Conjecture~\ref{c5}, and
@@ -593,32 +724,75 @@ effective samples and no error bars.
 motifs]\label{c3}
 Fix admissible motifs $H_i$, a smooth compactly supported window $w$, a
 fixed $\varepsilon>0$ and the law (W), and let $X^{\varepsilon}\le L\le
-X^{1-\varepsilon}$.  Then:
-\emph{(i)} [decomposition] the covariance
-$\Cov_X\bigl(Y(H_i;\cdot,L),Y(H_j;\cdot,L)\bigr)$ admits a unique
+X^{1-\varepsilon}$.  Fix a modulus $Q_0=Q_0(H_i,H_j)$ divisible by every
+prime $p\le|H_i|+|H_j|$ and restrict $n$ to a fixed class modulo $Q_0$,
+so that each translated von Mangoldt factor $\Lambda(n+h)$ is expanded by
+the explicit formula in an arithmetic progression modulo $Q_0$.  Let
+$\mathcal L(H)$ be the resulting finite set of Dirichlet $L$-functions
+$L(s,\chi)$, $\chi$ modulo $Q_0$, one for each character occurring in
+that expansion for the motif $H$, and write $\mathcal Z(H)$ for the
+multiset of nontrivial zeros of the members of $\mathcal L(H)$, each zero
+carried with the coefficient $\overline{\chi(a+h)}/\varphi(Q_0)$ with
+which it enters.  Let
+\[
+  M_{w,L,x}(s)\;=\;\int_0^{\infty}w\!\left(\frac{u-x}{L}\right)u^{\,s-1}\,du
+\]
+be the window Mellin transform, so that the explicit formula gives
+\[
+  Y(H;x,L)\;=\;-\sum_{\rho\in\mathcal Z(H)}M_{w,L,x}(\rho)
+  \;+\;\text{local terms} .
+\]
+Let $\mu_{ij}$ be the \emph{joint zero-correlation measure} of the pair,
+that is, the pair-correlation measure of the two zero multisets,
+\[
+  \mu_{ij}\;=\;\sum_{\rho\in\mathcal Z(H_i)}\ \sum_{\rho'\in\mathcal
+  Z(H_j)}c_\rho\overline{c_{\rho'}}\,
+  \delta_{(\rho,\rho')} ,
+\]
+$c_\rho$ denoting the coefficient carried by $\rho$.  Then:
+\emph{(i)} [decomposition] the motif covariance admits a unique
 asymptotic decomposition
 \[
-  D_{\mathrm{ov}}(i,j)\;+\;K_{\mathrm{HL}}(i,j)\;+\;K_{\mathrm{spec}}(i,j)
-  \;+\;o(V),
+  \Cov_X\bigl(Y(H_i;\cdot,L),Y(H_j;\cdot,L)\bigr)\;=\;
+  D_{\mathrm{ov}}(i,j)+K_{\mathrm{HL}}(i,j)+K_{\mathrm{spec}}(i,j)+o(V),
 \]
 in which $D_{\mathrm{ov}}$ is the sum over the strata of positive
-codimension of the overlap poset of the pair, with connected
-singular-series coefficients, $K_{\mathrm{HL}}$ is the renormalized
-connected kernel of the disjoint stratum,
-$K_{\mathrm{HL}}(i,j)=\sum_{h}w_L(h)\,\SGc(H_i,H_j+h)$ with the window
-autocorrelation weight $w_L(h)=L\int_{\mathbb R}w(t)w(t+h/L)\,dt$, and
-$K_{\mathrm{spec}}$ is the pullback through the Mellin transform of $w$
-of the joint zero-correlation measure of the $L$-functions attached to
-the two motifs.
+codimension of the overlap poset of the pair, carrying the same
+logarithmic bookkeeping as Conjecture~\ref{c1},
+\[
+  D_{\mathrm{ov}}(i,j)\;=\;\sum_{e\ge1}L(\log X)^{e}\,A^{(1,e)}_{ij},
+\]
+$K_{\mathrm{HL}}$ is the renormalized connected kernel of the disjoint
+stratum, given by
+\[
+  K_{\mathrm{HL}}(i,j)=\sum_{h}w_L(h)\,\SGc(H_i,H_j+h),\qquad
+  w_L(h)=L\int_{\mathbb R}w(t)w(t+h/L)\,dt ,
+\]
+with $w_L$ the window autocorrelation weight, and $K_{\mathrm{spec}}$ is
+the pullback of $\mu_{ij}$ through the window Mellin transforms,
+\[
+  K_{\mathrm{spec}}(i,j)\;=\;\int\!\!\int
+  \Cov_X\bigl(M_{w,L,\cdot}(\rho),\,M_{w,L,\cdot}(\rho')\bigr)
+  \,d\mu_{ij}(\rho,\rho') ,
+\]
+the covariance being taken in the window position $x$ under $\mathbb
+P_X$, so that $K_{\mathrm{spec}}$ is the window pullback of the joint
+zero-correlation measure and of nothing else.
 \emph{(ii)} [strong converse layer] no fourth covariance source survives
 at leading order, that is, the residual after subtracting the three
 displayed terms is $o(V)$ for every admissible pair.  This clause is
 separately falsifiable from (i), and a mixed term representable by
 neither connected local densities nor zero correlations refutes it alone.
 \emph{(iii)} [crossover scale, derived] the crossover length $L_*(X)$ is
-defined by equality of the total masses of $K_{\mathrm{HL}}$ and
-$K_{\mathrm{spec}}$ and is therefore determined by (i), not by a fitted
-exponent.
+defined by equality of the Hilbert--Schmidt norms of the two $m\times m$
+matrix kernels,
+\[
+  \bigl\|K_{\mathrm{HL}}(L)\bigr\|_{\mathrm{HS}}
+  \;=\;\bigl\|K_{\mathrm{spec}}(L)\bigr\|_{\mathrm{HS}},
+  \qquad\|A\|_{\mathrm{HS}}^{2}=\sum_{i,j}|A_{ij}|^{2},
+\]
+this being the sense of ``equal mass'' used throughout, and $L_*(X)$ is
+therefore determined by (i) and not by a fitted exponent.
 \end{conjecture}
 
 Local congruence correlations and global zero oscillations are not
@@ -647,35 +821,75 @@ motifs]\label{c4}
 Fix an admissible motif $H$ and the window-position law (W) on
 $\Omega_X=[X,2X]$ with window length $L$.  Let $N_H(x)$ be the point
 process of occurrences of $H$ in $[x,x+L]$, transformed by the exact
-cumulative Hardy--Littlewood hazard $t\mapsto\SG(H)\int^{t}(\log
+cumulative Hardy--Littlewood hazard $t\mapsto\SG(H)\int_2^{t}(\log
 s)^{-|H|}ds$ so that it has unit intensity.  Fix a cutoff wavelength
-$\Lambda$ with $\Lambda/L\to\infty$, let $\Psi_\Lambda(x)$ be the
-restriction to $[x,x+L]$ of the truncated explicit-formula sum over the
-zeros of the relevant $L$-functions with $|\Im\rho|\le X/\Lambda$, and
-let $\mathcal F_\Lambda=\sigma\bigl(\Psi_\Lambda\bigr)$ be the
-sub-sigma-field of the Borel field of $\Omega_X$ that it generates.  Let
-$O(H)$ be the admissible self-overlap graph of $H$, whose vertices are
-the shifts $t\neq0$ with $(H+t)\cap H\neq\emptyset$ and $H\cup(H+t)$
-admissible, and whose edges record the induced coincidences.  Then:
+$L_{\mathrm{spec}}$ with $L_{\mathrm{spec}}/L\to\infty$, the symbol
+$\Lambda$ being reserved for the von Mangoldt function, let
+$\Psi_{L_{\mathrm{spec}}}(x)$ be the restriction to $[x,x+L]$ of the
+truncated explicit-formula sum over the zeros of the relevant
+$L$-functions with $|\Im\rho|\le X/L_{\mathrm{spec}}$, and let $\mathcal
+F_{L_{\mathrm{spec}}}=\sigma\bigl(\Psi_{L_{\mathrm{spec}}}\bigr)$ be the
+sub-sigma-field of the Borel field of $\Omega_X$ that it generates.
+
+The \emph{admissible self-overlap graph} $O(H)$ has for vertex set
+\[
+  V(H)\;=\;\bigl\{t\in\mathbb Z\setminus\{0\}:\ (H+t)\cap
+  H\neq\emptyset\ \text{and}\ H\cup(H+t)\ \text{admissible}\bigr\},
+\]
+a finite set contained in $(H-H)\setminus\{0\}$, and two vertices $t\neq
+t'$ are joined by an edge exactly when the three translates share a
+further coincidence and the triple union is admissible, that is, when
+\[
+  (H+t)\cap(H+t')\neq\emptyset,\quad\text{equivalently}\quad
+  t-t'\in(H-H)\setminus\{0\},
+\]
+and the union $H\cup(H+t)\cup(H+t')$ is admissible.
+For a set $S\subseteq V(H)$ write $\SG(S)=\SG\bigl(H\cup\bigcup_{t\in
+S}(H+t)\bigr)$ for the Bateman--Horn density of the corresponding union
+pattern, so that $\SG(\emptyset)=\SG(H)$.  Let $\mathcal K(H)$ be the set
+of connected components of $O(H)$ together with the empty component
+$\emptyset$, which records an isolated occurrence.  The
+\emph{visited-component law} is the probability measure on $\mathcal
+K(H)$ given by
+\[
+  \mathbb P\bigl[\mathcal C\bigr]\;=\;
+  \frac{\SG\bigl(V(\mathcal C)\bigr)}
+  {\sum_{\mathcal C'\in\mathcal K(H)}\SG\bigl(V(\mathcal C')\bigr)} ,
+\]
+the weight of a component being proportional to the Bateman--Horn density
+of the constellation it realizes, and the size of the visited component
+is $|V(\mathcal C)|+1$, the base occurrence included, so that the empty
+component has size one.  Then:
 \emph{(i)} the conditional law of the cluster starts of $N_H$ given
-$\mathcal F_\Lambda$ converges, as $X\to\infty$ and in probability under
-$\mathbb P_X$, to that of a homogeneous Poisson process.
-\emph{(ii)} the within-cluster law is the law of the connected component
-of $O(H)$ visited, so the conditional extremal index $\theta(H)$ is the
-reciprocal of the mean cluster size computed from $O(H)$ and involves no
-fitted parameter.
+$\mathcal F_{L_{\mathrm{spec}}}$ converges, as $X\to\infty$ and in
+probability under $\mathbb P_X$, to that of a homogeneous Poisson
+process.
+\emph{(ii)} the within-cluster law is the visited-component law just
+defined, so the conditional extremal index is the reciprocal mean
+component size
+\[
+  \theta(H)\;=\;\Bigl(\sum_{\mathcal C\in\mathcal K(H)}\mathbb P[\mathcal
+  C]\bigl(|V(\mathcal C)|+1\bigr)\Bigr)^{-1}
+\]
+and involves no fitted parameter.
 \emph{(iii)} after the conditioning is removed, that is, after averaging
-over $\mathcal F_\Lambda$ under $\mathbb P_X$, the limit is the Cox
-cluster process directed by the exponential of the limiting low-mode
-field.
-\emph{(iv)} [functoriality] motifs with isomorphic admissible
-self-overlap graphs have the same $\theta(H)$ after normalization by
-local density, and motifs with edgeless $O(H)$ have $\theta(H)=1$.
+over $\mathcal F_{L_{\mathrm{spec}}}$ under $\mathbb P_X$, the limit is
+the Cox cluster process directed by the exponential of the limiting
+low-mode field.
+\emph{(iv)} [functoriality] if two motifs $H$ and $H'$ have isomorphic
+admissible self-overlap graphs, then $\theta(H)=\theta(H')$ once each
+process has been put on the unit-intensity clock by its own cumulative
+Hardy--Littlewood hazard, which is the local-density normalization meant
+here: the transform divides by $\SG(H)(\log t)^{-|H|}$, so the extremal
+index compares cluster structure and not the differing occurrence rates
+of the two motifs.  Motifs with empty $O(H)$, that is with
+$V(H)=\emptyset$, admit only the empty component and have
+$\theta(H)=1$.
 All four clauses are assertions about the probability space
 $(\Omega_X,\mathbb P_X)$.  The spectral field is deterministic, what is
-random is the window position, and $\mathcal F_\Lambda$ is the
-sigma-field the window position generates through the long-wavelength
-component.
+random is the window position, and $\mathcal F_{L_{\mathrm{spec}}}$ is
+the sigma-field the window position generates through the
+long-wavelength component.
 \end{conjecture}
 
 Short overlaps create genuine clusters while zeros and other long modes
@@ -694,26 +908,42 @@ within-cluster law with the admissible self-overlap graph.
 tested range the mean-scaled hazard had coefficient of variation $0.904$
 and Kolmogorov--Smirnov distance $0.060$ from $\Exp(1)$, and since the one
 per cent critical value at that sample size is about $0.012$, the
-unconditioned hazard law is decisively non-exponential, which is exactly
-what the conditioning thesis of clauses (i) to (iii) requires, no
-spectral conditioning being available at this range.
+unconditioned hazard law is decisively non-exponential.  The direction
+matters.  A coefficient of variation of $0.904$ is below one and is
+therefore underdispersion, whereas every mixture of exponentials, and in
+particular every Cox law of the form asserted in clause (iii), has
+coefficient of variation at least one.  The measurement therefore argues
+against the bare exponential and against an unconditioned Cox reading
+alike, and is informative about rigidity at this range rather than about
+the mixture mechanism.  No spectral conditioning is available here, so
+clauses (i) and (ii) are untested.
 
 \begin{conjecture}[Completeness of arithmetic wavelets]\label{c5}
 Fix a finite family of admissible motifs $H_1,\dots,H_m$, the law (W),
-and the incidence tensors $A^{(j)}$ of Section~\ref{sec:notation},
-including the disjoint connected tensor as the final stratum.  Then:
+and the incidence tensors $A^{(j)}_r$ of Section~\ref{sec:notation},
+together with the renormalized disjoint kernel $K_{\mathrm{HL}}$, which
+is examined last.  Write $\mathcal A=\bigcap_{e\ge1}\ker A^{(1,e)}$ for
+the joint kernel of the second-order coincidence matrices.  Then:
 \emph{(i)} [constructive layer] if $c\in\mathbb R^{m}$ satisfies
-$A^{(0)}c=\dots=A^{(s)}c=0$ and $A^{(s+1)}c\neq0$, then $\Var_XY_c$
-begins exactly at the stratum $A^{(s+1)}$, with the scale and constant
-predicted by Conjectures~\ref{c2} and~\ref{c3}.
+$A^{(1,e)}c=0$ for every $e\ge1$ and $c^{\mathsf T}K_{\mathrm{HL}}(L)c
+\neq0$, then $\Var_XY_c$ begins exactly at the renormalized disjoint
+kernel, with the scale and constant predicted by Conjectures~\ref{c2}
+and~\ref{c3}, and if $c\notin\mathcal A$ then $\Var_XY_c$ begins at
+$L(\log X)^{e}c^{\mathsf T}A^{(1,e)}c$ for the largest $e$ with
+$A^{(1,e)}c\neq0$.
 \emph{(ii)} [strong converse layer] conversely, every sequence of
-coefficient vectors whose variance is smaller than the generic stratum by
-a fixed power of $L$ or by a fixed power of $\log X$ converges in
-direction to the joint kernel $\bigcap_{j\le s}\ker A^{(j)}$ for some
-$s$.
-\emph{(iii)} the spaces $\bigcap_{j\le s}\ker A^{(j)}$ therefore form a
-finite decreasing filtration of canonical arithmetic wavelet spaces
-attached to the family.
+coefficient vectors whose variance is smaller than the generic
+coincidence scale $L(\log X)^{e_{\max}}$ by a fixed power of $L$ or by a
+fixed power of $\log X$ converges in direction to $\mathcal A$.
+\emph{(iii)} the space $\mathcal A$ is therefore the first canonical
+arithmetic wavelet space attached to the family, and the second-order
+filtration $\mathbb R^{m}\supseteq\mathcal A$ has depth one, in
+accordance with the two-level overlap poset of a pair.  Its deeper terms
+are not visible in the variance and are cut out by the higher-order
+tensors, the space of level $(r,s)$ being $\bigcap_{j\le s}\ker
+A^{(j)}_r$ for $r\ge3$, so that the arithmetic wavelet spaces of the
+family form a decreasing filtration indexed by the cumulant order as well
+as by the codimension.
 Clause (ii) is separately falsifiable from (i): a rigid coefficient
 sequence generated by a global spectral cancellation not represented in
 the finite overlap tensors refutes (ii) while leaving (i) and (iii)
@@ -743,7 +973,8 @@ the nominal samples are effective, and no error bar accompanies the
 alignment.
 
 \begin{question}\label{q:kernel}
-For four pair motifs, is the kernel $\bigcap_{j\le1}\ker A^{(j)}$
+For four pair motifs, is the joint kernel $\mathcal
+A=\bigcap_{e\ge1}\ker A^{(1,e)}$ of Conjecture~\ref{c5}
 nonzero over $\mathbb Q$, and does the rational vector spanning it agree
 in direction with the empirically smallest covariance mode?  This is an
 open question and is not counted among the twenty-five conjectures.
@@ -778,9 +1009,12 @@ obtained by applying the first-arrival transform $\mathcal F$ to that
 kernel and integrating to $\Li$-time $t$.  In particular $A$ carries no
 fitted parameter and $A(0)=0$.
 [stated programme] The closed evaluation of $A$ from the numbers
-$\SG(\{0,kq\})$, and the proof that all higher connected corrections are
-$O(1/\log^2Q)$ after averaging $q$ over the dyadic block, is the
-derivation route registered with this conjecture.
+$\SG(\{0,kq\})$, the passage from the discrete kernel indexed by $k$ to
+the bounded kernel on $\mathbb R_{\ge0}$ on which the first-arrival
+transform $\mathcal F$ of Section~\ref{sec:notation} acts, which is the
+change of variable to $\Li$-time, and the proof that all higher connected
+corrections are $O(1/\log^2Q)$ after averaging $q$ over the dyadic block,
+are the derivation route registered with this conjecture.
 \end{conjecture}
 
 The independent collector gives the bare exponential, but nearby primes
@@ -817,12 +1051,22 @@ Section~\ref{sec:notation}.  Then:
 \]
 where $\widehat K_{\mathrm{add}}$ is the Fourier transform of $\mathcal
 F$ applied to the connected two-prime exclusion kernel, an explicit
-function carrying no fitted parameter.
-\emph{(ii)} [multiplicative half] for every fixed order $k\ge2$, the
-average of $S^{\mathrm{mult}}_q(\chi)$ over the Dirichlet characters of
-exact order $k$ modulo $q$ equals $\lambda_k+o(1/\log Q)$ under $\mathbb
-E_Q$, where $\lambda_k$ is the explicit-formula contribution of the zeros
-of the corresponding $L$-functions to the first-arrival functional.
+function carrying no fitted parameter.  [stated programme] The closed
+evaluation of $\widehat K_{\mathrm{add}}$ from the numbers
+$\SG(\{0,kq\})$ through the transform $\mathcal F$ of
+Section~\ref{sec:notation} is the derivation route registered here.
+\emph{(ii)} [multiplicative half] characters of exact order $k$ modulo
+$q$ exist only when $k$ divides $q-1$, so the average is taken over the
+subensemble of (M) carried by the moduli $q\equiv1\pmod k$, renormalized
+to a probability measure on that subensemble, which is nonempty and of
+positive mass for every fixed $k$ by Dirichlet's theorem.  For every
+fixed order $k\ge2$ the average of $S^{\mathrm{mult}}_q(\chi)$ over the
+Dirichlet characters of exact order $k$ modulo $q$ equals
+$\lambda_k+o(1/\log Q)$ under that conditioned expectation, where
+$\lambda_k$ is the explicit-formula contribution of the zeros of the
+corresponding $L$-functions to the first-arrival functional.  [stated
+programme] The closed evaluation of $\lambda_k$ from those zeros through
+$\mathcal F$ is the derivation route registered here.
 \emph{(iii)} both halves carry mass of the same order, so the field is
 diagonal in neither the additive nor the multiplicative basis, its
 covariance being the sum of two canonical operators of low complexity,
@@ -849,14 +1093,16 @@ Conjecture~\ref{c8} and the background against which the spike of
 Conjecture~\ref{c9} is defined.  Prime races are expanded in
 multiplicative characters in the tradition surveyed by Martin and
 coauthors, and effective Chebotarev inputs of the kind refined by Thorner
-and Zhang govern the character side, while the exclusion between nearby
+and Zaman govern the character side, while the exclusion between nearby
 primes is an additive phenomenon in the sense of Li, Pratt and Shakan, so
 the claim is that the least-prime field contains both geometries and that
 they exhaust its first-order covariance.
 
 \emph{Evidence.}  The $q$-point transform on the full additive group,
-including the zero class, gave low-frequency to high-frequency power
-ratios of $1.13$ to $1.42$ across modulus bands, which rejects a flat
+including the zero class, at which the recorded value is
+$p(q,0)=q$ and therefore $T_q(0)=\Li(q)/(q-1)$, gave low-frequency to
+high-frequency power ratios of $1.13$ to $1.42$ across modulus bands,
+which rejects a flat
 spectrum and supports the additive half, while the multiplicative
 covariance was not estimated at all, so clause (i) is tested on one of
 its two operators and clause (iii) is untested.
@@ -866,15 +1112,32 @@ classes]\label{c8}
 Work on the modulus-class law (M), so that the modulus $q$ is uniform on
 the primes of $[Q,2Q]$ and the centred arrival field
 $a\mapsto\widetilde T_q(a)$ is a random element of $\mathbb R^{q-1}$.
-Let $Z_q$ be the projection of $\widetilde T_q$ onto the finitely many
-additive frequencies and Dirichlet characters whose spectral mass in
-Conjecture~\ref{c7} does not vanish on the terminal scale, a random
-vector on $\Omega_Q$, and let $\mathcal G_Q=\sigma(Z_q)$ be the sub-sigma-field it
-generates.  Let $c_6(q)$ denote the deterministic centring supplied by
-Conjecture~\ref{c6} and let
+Say that a mode of $\widetilde T_q$ is of \emph{terminal scale} if its
+contribution to the variance of the field on the last-arrival window,
+that is to $\Var$ of $a\mapsto T_q(a)-\log(q-1)$, stays bounded away from
+$0$ and from $\infty$ as $Q\to\infty$.  Conjecture~\ref{c7} lists them
+explicitly: they are the additive frequencies $\xi$ with $|\xi|\le\xi_0$,
+where $\xi_0$ is the fixed cutoff beyond which $\widehat
+K_{\mathrm{add}}(\xi/q)$ falls below a fixed positive threshold, together
+with the Dirichlet characters of exact order $k\le k_0$, where $k_0$ is
+the fixed cutoff beyond which $\lambda_k$ falls below the same threshold.
+The list is finite and does not depend on $q$.  Let $Z_q$ be the
+projection of $\widetilde T_q$ onto those modes, a random vector on
+$\Omega_Q$, and let $\mathcal G_Q=\sigma(Z_q)$ be the sub-sigma-field it
+generates.  Let $c_6(q)$ be the deterministic centring supplied by
+Conjecture~\ref{c6}, namely the value that turns the survival law of that
+conjecture into a unit-rate exponential tail at the last-arrival level,
+\[
+  c_6(q)\;=\;\log\Bigl(1-\frac{A\bigl(\log(q-1)\bigr)}{\log q}\Bigr)
+  \;=\;-\frac{A\bigl(\log(q-1)\bigr)}{\log q}
+  +O\Bigl(\frac1{\log^{2}q}\Bigr),
+\]
+the extension of $A$ from compact arguments to arguments of size $\log q$
+being part of the stated programme registered with
+Conjecture~\ref{c6}.  Let
 \[
   \Xi_q\;=\;\sum_{a\in(\mathbb Z/q\mathbb Z)^{\times}}
-  \delta_{\,(q-1)T_q(a)-\log(q-1)-c_6(q)}
+  \delta_{\,T_q(a)-\log(q-1)-c_6(q)}
 \]
 be the point process of last-arrival excesses.  Then:
 \emph{(i)} conditionally on $\mathcal G_Q$, $\Xi_q$ converges in law
@@ -914,12 +1177,19 @@ which supports a nontrivial centring in clause (iii), was observed.
 
 \begin{conjecture}[Rank-one exceptional-zero deformation of
 occupancy]\label{c9}
-Work on the modulus-class law (M) restricted to those $q$ admitting a
-primitive real character $\chi_q$ whose $L$-function has a real zero
-$\beta$ with $(1-\beta)\log q\le\varepsilon$, the limits being taken
-along any sequence of $Q$ for which this subensemble is nonempty and
-carries positive mass.  Then, after the ordinary occupancy kernel of
-Conjecture~\ref{c6} is removed:
+Fix $\varepsilon_0=10^{-2}$ and let $\varepsilon\le\varepsilon_0$ be
+fixed.  Work on the modulus-class law (M) restricted to those $q$
+admitting a primitive real character $\chi_q$ whose $L$-function has a
+real zero $\beta$ with $(1-\beta)\log q\le\varepsilon$, the limits being
+taken along any sequence of $Q$ for which this subensemble is nonempty
+and carries positive mass.  The statement is made for every fixed
+$\varepsilon\le\varepsilon_0$, the value of $\varepsilon_0$ serving only
+to fix the meaning of ``close to $1$'' and no clause depending on it
+otherwise.  Under the generalized Riemann hypothesis the subensemble is
+empty for every $Q$, and all three clauses are then instanceless rather
+than false, which is why the conjecture is stated conditionally on the
+subensemble carrying positive mass.  Then, after the ordinary occupancy
+kernel of Conjecture~\ref{c6} is removed:
 \emph{(i)} the centred first-arrival field has a deterministic component
 along $\chi_q$ whose amplitude is the first-arrival transform $\mathcal
 F$ applied to the exceptional explicit-formula term $x^{\beta}/\beta$,
@@ -941,7 +1211,7 @@ occupancy a sensitive diagnostic for exceptional zeros and separates
 ordinary arithmetic dependence from zero-driven bias precisely, and if
 false the failure locates the nonlinearity that generates the missing
 harmonics.  Effective Chebotarev and comparative prime number theory, in
-the forms developed by Thorner and Zhang and surveyed by Martin and
+the forms developed by Thorner and Zaman and surveyed by Martin and
 coauthors, establish that real zeros create character biases in linear
 counts, and the new claim is that their effect on the nonlinear
 first-arrival field is of rank one.
@@ -959,15 +1229,18 @@ fundamental discriminants with $|D|\le Y$, and condition on the complete
 two-primary genus data of $D$ in the sense of
 Section~\ref{sec:notation}.  Let $B=B(Y)$ and let
 $\Sigma_B(D)=\bigl((D/p)\bigr)_{p\le B}$ be the vector of splitting
-signs.  Then:
-\emph{(i)} whenever $B(Y)=o(\log Y)$, the conditional law of
-$\mathrm{Cl}(D)[\ell^{\infty}]$ given the genus data and given
+signs.  The single information measure used throughout is the number of
+imposed local bits $\pi(B)$, compared against the logarithmic information
+content $\log Y$ of the discriminant.  Then:
+\emph{(i)} whenever $\pi\bigl(B(Y)\bigr)=o(\log Y)$, the conditional law
+of $\mathrm{Cl}(D)[\ell^{\infty}]$ given the genus data and given
 $\Sigma_B(D)$ converges in total variation, as $Y\to\infty$ and uniformly
 over the attainable sign vectors, to the Cohen--Lenstra law for the odd
 part conditioned on the genus data alone.
-\emph{(ii)} the total-variation error is governed explicitly by the
-number of imposed local bits, that is, by $\pi(B)$ measured against
-$\log Y$, and tends to zero precisely in the stated range.
+\emph{(ii)} the total-variation error is governed explicitly by
+$\pi(B)/\log Y$ and tends to zero whenever $\pi\bigl(B(Y)\bigr)=o(\log
+Y)$, which is the same range as in (i).  No sharpness is claimed at the
+boundary $\pi(B)\asymp\log Y$, where the conjecture makes no assertion.
 \emph{(iii)} the assertion is made for the full isomorphism type of
 $\mathrm{Cl}(D)[\ell^{\infty}]$ and not only for the divisibility of
 $h(D)$ by $\ell$, the latter being a coarse projection of the former.
@@ -1009,21 +1282,28 @@ computed.
 \begin{conjecture}[Kummer--Haar law for Fermat-quotient
 homomorphisms]\label{c11}
 Let $\Gamma\le\mathbb Q^{\times}$ be finitely generated and saturated of
-rank $r$, and let $p$ range over the primes dividing no numerator or
-denominator of a generator.  Then:
+rank $r$, fix an ordered generating tuple $g=(g_1,\dots,g_s)$ with
+relation lattice $R(g)$ and ambient torus $(\mathbb R/\mathbb Z)^{s}$ as
+in Section~\ref{sec:notation}, and let $p$ range over the primes dividing
+no numerator or denominator of a generator.  Then:
 \emph{(i)} [elementary] $q_p(ab)\equiv q_p(a)+q_p(b)\pmod p$, so
-$q_p\colon\Gamma\to\mathbb F_p$ is a homomorphism and the vector
-$q_p/p\in\Hom(\Gamma,\mathbb R/\mathbb Z)$ lies in the subtorus
-$\mathbb T_\Gamma$ cut out by the multiplicative relations of the chosen
-generators, a subtorus of dimension exactly $r$.
+$q_p\colon\Gamma\to\mathbb F_p$ is a homomorphism and the ambient vector
+$\mathbf q_p(g)/p\in(\mathbb R/\mathbb Z)^{s}$ lies in the subtorus
+$\mathbb T_\Gamma$ cut out by the relation lattice $R(g)$, a subtorus of
+dimension exactly $r$.
 \emph{(ii)} as $p$ varies through any fixed compatible Chebotarev class,
 defined by prescribed splitting behaviour in a fixed cyclotomic-Kummer
-field, $q_p/p$ equidistributes with respect to Haar measure on
+field, $\mathbf q_p(g)/p$ equidistributes with respect to Haar measure on
 $\mathbb T_\Gamma$.
 \emph{(iii)} [strong converse layer] the support is exactly
 $\mathbb T_\Gamma$ and no further constraint holds: for every nonrelation
-character $m$ of $\Gamma$ the mean of $\exp\bigl(2\pi i\langle
-m,q_p\rangle/p\bigr)$ over the class tends to zero.  Clause (iii) is separately falsifiable from
+character $m\in\mathbb Z^{s}$ of the tuple, that is every $m$ outside the
+saturation $R(g)^{\mathrm{sat}}$, the mean of $\exp\bigl(2\pi i\langle
+m,\mathbf q_p(g)\rangle/p\bigr)$ over the class tends to zero.  The
+exclusion of $R(g)^{\mathrm{sat}}$ is necessary and sufficient, since on
+that sublattice the exponential is identically $1$ at all but finitely
+many $p$, whereas every $m$ outside it restricts nontrivially to $\mathbb
+T_\Gamma$.  Clause (iii) is separately falsifiable from
 (ii), a persistent Fourier coefficient at a nonrelation frequency
 refuting it alone.
 \emph{(iv)} [invariance, with the saturation caveat in force] the law
@@ -1060,11 +1340,16 @@ for that sample, so clause (iii) is tested only at fixed frequencies.
 
 \begin{conjecture}[Square-root large sieve for finite
 logarithms]\label{c12}
-For every saturated $\Gamma\le\mathbb Q^{\times}$ of rank $r$ there
-exists $\delta(\Gamma)>0$ such that, for every nonrelation character $m$
-of $\Gamma$ of height at most $X^{\delta(\Gamma)}$,
+For every saturated $\Gamma\le\mathbb Q^{\times}$ of rank $r$ and every
+ordered generating tuple $g=(g_1,\dots,g_s)$ of $\Gamma$ there exists
+$\delta(\Gamma)>0$ such that, for every nonrelation character
+$m\in\mathbb Z^{s}$ of the tuple in the sense of
+Section~\ref{sec:notation}, that is every $m$ outside the saturated
+relation lattice $R(g)^{\mathrm{sat}}$, of height $\max_i|m_i|$ at most
+$X^{\delta(\Gamma)}$,
 \[
-  \Bigl|\sum_{X<p\le2X}\e\Bigl(\frac{\langle m,q_p\rangle}{p}\Bigr)\Bigr|
+  \Bigl|\sum_{X<p\le2X}\e\Bigl(\frac{\langle m,\mathbf
+  q_p(g)\rangle}{p}\Bigr)\Bigr|
   \;\ll_{\Gamma,\varepsilon}\;\pi(X)^{1/2}X^{\varepsilon},
 \]
 uniformly after conditioning on fixed compatible cyclotomic and Kummer
@@ -1139,12 +1424,13 @@ Wieferich questions and gives an algebraic explanation of the threshold,
 and it is the direct arithmetic test of Conjecture~\ref{c11}.  The
 one-base heuristic with probability $1/p$ is classical folklore, the
 mod-$p$ Leopoldt framework of Boeckle, Guiraud, Kalyanswamy and Khare
-supplies the broader regulator setting, and Graves and Weiss derive
-non-Wieferich statements from the $abc$ conjecture, so the sharpening
+supplies the broader regulator setting, and Silverman derives
+non-Wieferich statements from the $abc$ conjecture, with progressions by
+Graves and Murty, so the sharpening
 claimed here is that the saturated Kummer rank, and not the displayed
 number of bases, is the exact exponent.
 
-\emph{Evidence.}  For symmetric near-zero boxes of width $0.02$ the rank
+\emph{Evidence.}  For symmetric near-zero boxes of half-width $0.02$ the rank
 one, two and three counts were $922$, $33$ and $1$ against Haar-volume
 predictions of about $882$, $35$ and $1.4$, and exact vanishing occurred
 for individual bases but for no pair of bases below $250{,}000$, which is
@@ -1159,17 +1445,39 @@ from the admissible tuples, admissibility excluding the
 Kummer-incompatible tuples of Section~\ref{sec:notation}.  Let
 $\Gamma(H)$ be the saturation of the sampled tuple.  Mark the pair
 $(p,k)$, for $p\le H^{\theta}$ and $k\ge1$, when every generator $a$
-satisfies $a^{p-1}\equiv1\pmod{p^{k+1}}$.  Then:
+satisfies $a^{p-1}\equiv1\pmod{p^{k+1}}$, and put
+\[
+  k_{\max}(p)\;=\;\max\bigl\{k\ge0:\ (p,k)\ \text{is marked}\bigr\},
+\]
+with the convention that $(p,0)$ is always marked, so that the marks are
+nested by construction and no Poisson law is available for the full set
+of marked pairs.  Write
+\[
+  \kappa(r,k;p)\;=\;\lim_{H\to\infty}\mathbb
+  E\bigl[p^{rk}/\Delta_{\Gamma(H)}(p^{k})\bigr]
+\]
+for the limiting expected local Kummer factor of the sampled tuple at
+depth $k$, computed from the Kummer degrees of
+Section~\ref{sec:notation} and equal to $1$ when almost every sampled
+tuple is Kummer-generic at $p$.  Existence of the limit, and hence
+independence of the intensity from the height parameter $H$, is part of
+the assertion.  Then:
 \emph{(i)} after the explicit Kummer local factors are inserted, the
-marked process converges as $H\to\infty$ to a Poisson process on pairs
-$(p,k)$ with intensity $\kappa(r,k;p)\,p^{-rk}$, in which
-$\kappa(r,k;p)=\mathbb E\bigl[p^{rk}/\Delta_{\Gamma(H)}(p^{k})\bigr]$ is
-the expected local Kummer factor of the sampled tuple at depth $k$,
-computed from the Kummer degrees of Section~\ref{sec:notation} and equal
-to $1$ when almost every sampled tuple is Kummer-generic at $p$.
+process of maximal-depth points
+$\bigl\{\bigl(p,k_{\max}(p)\bigr):k_{\max}(p)\ge1\bigr\}$ converges as
+$H\to\infty$ to a Poisson process on pairs $(p,k)$ with intensity
+\[
+  \kappa(r,k;p)\,p^{-rk}\;-\;\kappa(r,k+1;p)\,p^{-r(k+1)} ,
+\]
+equivalently, for each fixed $k\ge1$ the depth-$k$ slice $\{p:
+k_{\max}(p)\ge k\}$ converges to a Poisson process of intensity
+$\kappa(r,k;p)p^{-rk}$.  The Poisson statement is made for the
+maximal-depth process and for the individual depth slices, and not for
+the nested family of marked pairs.
 \emph{(ii)} conditionally on a depth-$k$ mark at $p$, the depth-$(k+1)$
 mark is a Haar lift imposing $r$ further linear conditions, so the depths
-form a codimension-$r$ tower rather than an independent sequence.
+form a codimension-$r$ tower rather than an independent sequence, which
+is the deterministic nesting recorded above.
 \emph{(iii)} for a fixed $\Gamma$ the same intensities give the
 Borel--Cantelli predictions of Conjecture~\ref{c13}.  Clause (iii) is a
 conjecture and not a consequence of (i), since a single fixed $\Gamma$ is
@@ -1186,7 +1494,7 @@ finite exceptional set when $rk>1$, and it connects Wieferich primes to
 the theory of random $p$-adic Smith normal forms.  Higher Wieferich
 congruences are usually treated one base and one depth at a time, in the
 regulator language of Boeckle, Guiraud, Kalyanswamy and Khare or the
-$abc$-conditional language of Graves and Weiss, and the joint
+$abc$-conditional language of Silverman and of Graves and Murty, and the joint
 rank-by-depth point process with a declared family ensemble is what is
 claimed here.
 
@@ -1202,13 +1510,24 @@ principle]\label{c15}
 Let $T/\mathbb Q$ be an algebraic torus with connected N\'eron model over
 $\mathbb Z[1/N]$, let $P\in T(\mathbb Q)$, and let $S$ be the identity
 component of the Zariski closure of the subgroup generated by $P$, of
-dimension $r$.  For a good prime $p$, that is, $p\nmid N$ and $p$
-unramified in the splitting field of $T$, let $N_p$ be the exponent of
-$T(\mathbb F_p)$ and define the first finite logarithm
+dimension $r$.  Write $\mathcal T$ for the connected N\'eron model.  A
+prime $p$ is \emph{good} if $p\nmid N$, if $p$ is unramified in the
+splitting field of $T$, and if $P$ is integral at $p$, that is if
+$P\in T\bigl(\mathbb Z[1/N]\bigr)$ so that $p$ divides no denominator of
+$P$ and $P$ extends to a section of $\mathcal T$ over $\mathbb
+Z_{(p)}$.  For a good prime $p$ let $N_p$ be the exponent of $T(\mathbb
+F_p)$.  Then $[N_p]P$ reduces to the identity modulo $p$, so its image in
+$\mathcal T(\mathbb Z/p^{2}\mathbb Z)$ lies in the kernel of reduction,
+and the first finite logarithm $\ell_p(P)$ is defined as its image under
+the canonical isomorphism
 \[
-  \ell_p(P)\;=\;\frac{[N_p]P-e}{p}\ \in\ \Lie(T)(\mathbb F_p),
+  \ker\bigl(\mathcal T(\mathbb Z/p^{2}\mathbb Z)\longrightarrow
+  \mathcal T(\mathbb F_p)\bigr)\ \xrightarrow{\ \sim\ }\
+  \Lie(\mathcal T)(\mathbb F_p)\;=\;\Lie(T)(\mathbb F_p),
 \]
-using the first congruence neighbourhood of the identity.  Then:
+the isomorphism of the first congruence neighbourhood of the identity
+with the Lie algebra, which for $T=\mathbb G_m$ sends $1+pu$ to $u$ and
+recovers the Fermat quotient.  Then:
 \emph{(i)} [elementary] $\ell_p(P)\in\Lie(S)(\mathbb F_p)$, so the
 algebraic relations satisfied by $P$ annihilate the corresponding
 tangent coordinates identically.
@@ -1221,11 +1540,16 @@ T'$ one has $\ell_p(\varphi(P))=d\varphi\bigl(\ell_p(P)\bigr)$ at every
 good prime for both, so the construction and the law are functorial and
 the codimension invariant is geometric rather than a coordinate count.
 \emph{(iv)} vanishing of $\ell_p(P)$ to $p$-adic depth $k$ has local
-probability $p^{-rk}$ times the explicit splitting factor determined by
-the decomposition of $p$ in the splitting field of $T$, so the
-divergent-summable boundary depends only on $\dim S$ and $k$.
-\emph{(v)} the case $T=\mathbb G_m$ recovers Conjectures~\ref{c11}
-and~\ref{c13}.
+density $p^{-rk}$ times the explicit splitting factor determined by the
+decomposition of $p$ in the splitting field of $T$, the density being
+that of the target inside $\Lie(S)(\mathbb Z/p^{k}\mathbb Z)$ under Haar
+measure.  This is a statement about the measure of the target and not a
+probability over a declared ensemble of primes, no such ensemble being
+attached to a fixed $P$, and the divergent-summable boundary of the
+associated Borel--Cantelli sum $\sum_pp^{-rk}$ therefore depends only on
+$\dim S$ and $k$.
+\emph{(v)} the case $T=\mathbb G_m$, and more generally the case of
+powers of $\mathbb G_m$, recovers Conjectures~\ref{c11} and~\ref{c13}.
 The construction depends on the integral model, and the statement is
 asserted for the connected N\'eron model at good primes, where the
 component group is trivial.
@@ -1318,18 +1642,39 @@ Let $K_n$, $G_n$, $D_n$ and $E(n,X)$ be as in
 Section~\ref{sec:notation}, and let $\mathrm{TV}(n,X)$ denote the total
 variation distance between the empirical frequency vector of
 conjugacy cylinders up to level $n$, computed over the primes $p\le X$
-unramified in $K_n$, and the Haar--Chebotarev vector.  Then:
+unramified in $K_n$, and the Haar--Chebotarev vector.  Write
+\[
+  D_n(f,X)\;=\;\max_{C}\left|
+  \frac{\#\{p\le X\ \text{unramified in}\ K_n:\ \mathrm{Frob}_p\in
+  C\}}{\#\{p\le X\ \text{unramified in}\ K_n\}}
+  \;-\;\frac{|C|}{|G_n|}\right|
+\]
+for the \emph{maximal cylinder discrepancy} at level $n$, the maximum
+being over the conjugacy cylinders $C$ of $G_n$.  Call
+$(f_c)_{|c|\le H}$ a \emph{one-parameter family of finite-index type} if
+every $f_c$ has degree $d\ge2$, if the basepoint has infinite backward
+orbit for every $c$ outside a set of density zero in the parameter law
+(P), and if for every such $c$ the arboreal image
+$G_\infty(f_c)$ has finite index in $\Aut(T_\infty)$ with the index
+bounded uniformly in $c$.  Then:
 \emph{(i)} [upper half, conditional proposition under the generalized
 Riemann hypothesis for the Dedekind zeta functions of the fields $K_n$]
-one has $\mathrm{TV}(n,X)\ll E(n,X)^{1/2}$, the first term of $E$
-supplying the multinomial sampling error over $|G_n|$ states and the
-second the effective Chebotarev error summed over states, so
-$E(n,X)\to0$ implies $\mathrm{TV}(n,X)\to0$.
+one has $\mathrm{TV}(n,X)\ll E(n,X)^{1/2}(\log X)^{O(1)}$, the first term
+of $E$ supplying the multinomial sampling error over $|G_n|$ states and
+the second the effective Chebotarev error summed over states, so
+$E(n,X)(\log X)^{O(1)}\to0$ implies $\mathrm{TV}(n,X)\to0$.  The
+logarithmic factor is not decorative.  The effective Chebotarev bound
+under a Riemann hypothesis carries powers of $\log D_n$ and of $\log X$,
+and the second term of $E$ records the square-root conductor obstruction
+without them, so clause (i) is asserted only up to factors of that
+shape.  The sharpness pairing with clause (ii) is unaffected, since the
+two clauses are separated by a power of $E$ and not by a logarithm.
 \emph{(ii)} [lower half, family-averaged] let $(f_c)_{|c|\le H}$ be a
-one-parameter family of finite-index type with $c$ sampled by the
-parameter law (P), and suppose $E(n,X)\to\infty$ along a sequence of
-pairs $(n,X)$.  Then the family average of the maximal cylinder
-discrepancy at level $n$ stays bounded below by a positive absolute
+one-parameter family of finite-index type in the sense above, with $c$
+sampled by the parameter law (P), and suppose $E(n,X)\to\infty$ along a
+sequence of pairs $(n,X)$.  Then the family average $\mathbb
+E_c\bigl[D_n(f_c,X)\bigr]$ of the maximal cylinder discrepancy at level
+$n$ stays bounded below by a positive absolute
 constant along that sequence.  The clause is stated as a family average
 because a single fixed $f$ produces a deterministic sequence of
 discrepancies for which no probability space is declared, and an
@@ -1356,7 +1701,7 @@ representation can be observed below a given height, would organize
 growing-level questions throughout arithmetic dynamics, and would
 separate group growth from ramification growth as sources of
 irresolvability.  The effective Chebotarev bounds that make clause (i) a
-deduction are those of Thorner and Zhang in the tradition of Lagarias and
+deduction are those of Thorner and Zaman in the tradition of Lagarias and
 Odlyzko, while arboreal group calculations in the surveys of Jones and in
 Doyle, Healey, Hindes and Jones fix the growth of $|G_n|$, and the
 identification of the maximal resolvable depth is the claimed content.
@@ -1414,13 +1759,24 @@ stated growth regime.
 
 \begin{conjecture}[Euler law for squarefull primitive orbit
 factors]\label{c19}
-In the family and growth regime of Conjecture~\ref{c18}:
-\emph{(i)} the probability that $P_n(c)$ is squarefree converges to
-$\prod_p(1-\delta_p)$, where $\delta_p$ is the density of residues
-$c\bmod p^2$ for which $p^2\mid v_n(c)$ while $p$ divides no earlier
-orbit term, a quantity computed by counting parameters modulo $p^2$ and
-therefore derived rather than fitted.
-\emph{(ii)} after conditioning on the critical-orbit collision locus, the
+In the family and growth regime of Conjecture~\ref{c18}, let
+$\delta_p(n)$ be the density of residues $c\bmod p^{2}$ for which
+$p^{2}\mid v_n(c)$ while $p$ divides no earlier orbit term, a quantity
+computed by counting parameters modulo $p^{2}$ and therefore derived
+rather than fitted.  Let the \emph{critical-orbit collision locus} at
+level $n$ be the set of parameters
+\[
+  \mathcal R_n\;=\;\bigl\{c:\ v_i(c)\equiv v_j(c)\ (\mathrm{mod}\ p^{2})
+  \ \text{for some}\ 1\le i<j\le n\ \text{and some}\ p\mid P_n(c)\bigr\},
+\]
+on which two distinct forward images of the critical point $0$ agree to
+the second power of a primitive prime and the codimension-two congruence
+defining a repeated primitive factor degenerates.  Then:
+\emph{(i)} the sequence $\delta_p(n)$ stabilizes, in the sense that there
+is $n_0(p)$ with $\delta_p(n)=\delta_p$ for every $n\ge n_0(p)$, and with
+that stable value the probability that $P_n(c)$ is squarefree converges
+to $\prod_p(1-\delta_p)$.
+\emph{(ii)} after conditioning on the complement of $\mathcal R_n$, the
 valuations $v_p(P_n(c))$ at distinct primes are asymptotically
 independent.
 \emph{(iii)} the logarithm of the squarefull part of $P_n(c)$ is tight as
@@ -1449,11 +1805,25 @@ and give no information about clauses (ii) and (iii).
 gcds]\label{c20}
 Let $f,g\in\overline{\mathbb Q}[x]$ be disintegrated of degree at least
 two and let $a,b$ have positive canonical height for $f$ and $g$
-respectively.  Consider
+respectively.  For $\alpha,\beta\in\overline{\mathbb Q}^{\times}$ lying
+in a number field $K$, the \emph{logarithmic gcd} is Silverman's
+generalized logarithmic greatest common divisor
 \[
-  \limsup_{(n,m)}\ \frac{\log\gcd\bigl(f^{n}(a),g^{m}(b)\bigr)}
-  {\max\bigl(h(f^{n}(a)),\,h(g^{m}(b))\bigr)}\;>\;0 .
+  \log\gcd(\alpha,\beta)\;=\;\sum_{v\in M_K^{0}}n_v\,
+  \min\bigl\{v^{+}(\alpha),\,v^{+}(\beta)\bigr\},
+  \qquad n_v=\frac{[K_v:\mathbb Q_v]}{[K:\mathbb Q]},
 \]
+the sum being over the finite places of $K$ with
+$v^{+}(x)=\max\{0,-\log|x|_v\}$, a quantity independent of the field $K$
+containing $\alpha$ and $\beta$ and equal to $\log\gcd(a,b)$ for positive
+integers.  Consider
+\[
+  \limsup_{\min(n,m)\to\infty}\
+  \frac{\log\gcd\bigl(f^{n}(a),g^{m}(b)\bigr)}
+  {\max\bigl(h(f^{n}(a)),\,h(g^{m}(b))\bigr)}\;>\;0 ,
+\]
+the limit superior being taken over all pairs $(n,m)$ of positive
+integers with $\min(n,m)\to\infty$, so that both orbits advance.
 Then:
 \emph{(i)} [constructive direction] if, after replacing $f$ and $g$ by
 iterates, the orbit pair lies on a nontrivial periodic algebraic
@@ -1469,8 +1839,18 @@ special subvariety, refutes it alone.
 \emph{(iii)} [functoriality] such a correspondence induces a common
 quotient of the distinguished arboreal representations of $f$ and $g$.
 \emph{(iv)} in the absence of a correspondence the normalized gcd is
-$o(1)$ outside a set of pairs $(n,m)$ of density zero, and the process of
-common primes has summable connected covariance.
+$o(1)$ outside a set of pairs $(n,m)$ of density zero, and the
+deterministic second-moment bound
+\[
+  \frac1{N^{2}}\sum_{n,m\le N}
+  \left(\frac{\log\gcd\bigl(f^{n}(a),g^{m}(b)\bigr)}
+  {\max\bigl(h(f^{n}(a)),\,h(g^{m}(b))\bigr)}\right)^{2}
+  \;\ll\;\frac1{\log N}
+\]
+holds as $N\to\infty$.  The bound is deterministic and is asserted over
+the pairs $(n,m)$ directly.  The pairs carry no sampling law, so no
+covariance, connected or otherwise, is attributed to the sequence of
+common primes.
 \end{conjecture}
 
 A common prime is a Frobenius event in the fibre product of the two
@@ -1484,7 +1864,10 @@ congruence.  Orbit gcds, invariant curves and arboreal entanglement are
 studied separately in the work of Ingram and Silverman, of Asgarli and
 coauthors on collisions of orbits over function fields, and in the
 classification of invariant varieties by Medvedev and Scanlon, which is
-what makes the disintegrated hypothesis the right one, and the claimed
+what makes the disintegrated hypothesis the right one.  The
+gcd bounds for values of algebraic functions are those of Bugeaud,
+Corvaja and Zannier, and the dynamical gcd conjectures of Silverman are
+the immediate predecessors of the constructive direction, so the claimed
 content is that the geometric correspondence is the complete source.
 
 \emph{Evidence.}  For small quadratic maps at levels $2$ to $6$ the
@@ -1574,7 +1957,8 @@ theory of Bharadwaj and Rodgers, and the corrected conditional
 independence with the residual-mass normalization is the claimed content.
 
 \emph{Evidence.}  For $n^3-2$ the raw Pearson correlation between the
-number of prime factors at most $100$ and the largest-factor logarithmic
+number of prime factors at most $100$, counted with multiplicity, and the
+largest-factor logarithmic
 share was $-0.465$ and fell to $0.104$, with Spearman $0.074$, after
 renormalizing by the logarithm of the residual cofactor, so the
 correction is empirically essential, though $0.104$ sits about three
@@ -1594,10 +1978,22 @@ normalized by its own residual logarithmic mass, the coloured
 Frobenius-marked macroscopic factor processes of the $g_i$ are
 asymptotically independent $\PD(1)$ processes.
 \emph{(ii)} before conditioning, their entire interaction is the explicit
-Gibbs--Euler factor assembled from the tensors $\rho(I,p)$, the primes
-dividing the resultant contributing hard shared atoms and the remaining
-primes contributing exclusion or attraction according to whether
-$\rho(I,p)$ falls below or above the independent product.
+Gibbs--Euler factor assembled from the tensors $\rho(I,p)$, whose leading
+part is
+\[
+  \mathcal G(f)\;=\;\prod_p\frac{\displaystyle\sum_{I\subseteq\{1,\dots,s\}}
+  (-1)^{|I|}\frac{\rho(I,p)}{p}}
+  {\displaystyle\prod_{i=1}^{s}\Bigl(1-\frac{\rho(\{i\},p)}{p}\Bigr)},
+\]
+the numerator being the density of residues modulo $p$ avoiding every
+component by inclusion and exclusion and the denominator the same density
+computed as if the components were independent, so that the primes
+dividing the resultant contribute hard shared atoms and the remaining
+primes contribute exclusion or attraction according to whether
+$\rho(I,p)$ falls below or above the independent product.  [stated
+programme] The closed assembly of the full Gibbs weight from the tensors
+$\rho(I,p)$ at every $|I|$, of which $\mathcal G(f)$ is the two-point
+part, is the derivation route registered with this conjecture.
 \emph{(iii)} [strong converse layer] no further long-range colour
 coupling survives.  Clause (iii) is separately falsifiable from (i) and
 (ii), and an archimedean size correlation or a medium-prime coupling
@@ -1628,14 +2024,32 @@ one is observed.
 smoothness]\label{c24}
 Let $f_1,\dots,f_s\in\mathbb Z[x]$ be pairwise coprime and primitive,
 sample $n$ uniformly from $\{1,\dots,N\}$, and let the smoothness
-parameters $u_i=\log|f_i(n)|/\log y_i$ range over a compact admissible
-region.  Then:
+parameters $u_i=\log|f_i(n)|/\log y_i$ range over the \emph{admissible
+region}, by which is meant a fixed compact subset of
+$\{(u_1,\dots,u_s):u_i>1\ \text{for every}\ i\}$ together with the
+restriction $y_i\ge(\log N)^{1+\varepsilon}$ for a fixed
+$\varepsilon>0$, the range in which the saddle-point expansion for smooth
+values is available.  For $J\subseteq\{1,\dots,s\}$ and a prime $p$ let
+\[
+  \mu_p^{\sigma}(J)\;=\;\frac{\rho(J,p)\,p^{-\sum_{i\in J}\sigma_i}}
+  {\sum_{J'\subseteq\{1,\dots,s\}}\rho(J',p)\,p^{-\sum_{i\in J'}\sigma_i}}
+\]
+be the tilted joint local measure attached to a vector
+$\sigma=(\sigma_1,\dots,\sigma_s)$, with $\rho(J,p)$ the joint root-count
+tensor of Section~\ref{sec:notation}.  The \emph{joint saddle equations}
+are the $s$ coupled equations
+\[
+  \sum_{p\le y_i}\ \sum_{J\ni i}\mu_p^{\sigma}(J)\,\log p
+  \;=\;\log|f_i(n)|,\qquad 1\le i\le s,
+\]
+which determine $\sigma$ and reduce for $s=1$ to the classical
+saddle-point equation for smooth numbers.  Then:
 \emph{(i)} the joint density of $n$ for which every $f_i(n)$ is
 $y_i$-smooth equals the product of the component Dickman probabilities
-multiplied by an Euler product of local root distributions tilted by the
-multivariate saddle-point parameters $(\sigma_1,\dots,\sigma_s)$ solving
-the joint saddle equations, so the entanglement factor is a function of
-$(u_1,\dots,u_s)$ and not a fixed constant.
+multiplied by an Euler product of the tilted local root distributions
+$\mu_p^{\sigma}$ at the solution $\sigma$ of the joint saddle equations,
+so the entanglement factor is a function of $(u_1,\dots,u_s)$ and not a
+fixed constant.
 \emph{(ii)} [strong converse layer] after this tilt no additional
 long-range correlation between the components survives.  Clause (ii) is
 separately falsifiable from (i), and a correlation persisting near the
@@ -1652,8 +2066,8 @@ give a coherent local-to-global theory of simultaneous smooth polynomial
 values and would correct a common heuristic error, linking saddle-point
 analysis, resultants and multivariate sieves.  The single-polynomial
 theory rests on Dickman and on the saddle-point method for smooth
-numbers, and the parameter-dependent entanglement factor is the claimed
-content.
+numbers, in the uniform form developed by Hildebrand and Tenenbaum, and
+the parameter-dependent entanglement factor is the claimed content.
 
 \emph{Evidence.}  For $n^2+1$ and $n^2+n+1$ the ratio of the joint
 probability to the product of the marginals was $0.674$, $0.893$ and
@@ -1664,7 +2078,7 @@ rather than genuine smoothness parameters and the sample is $6000$
 values.
 
 \begin{conjecture}[Buchstab--Bateman--Horn sieve-to-prime
-martingale]\label{c25}
+bridge]\label{c25}
 Let $f\in\mathbb Z[x]$ be primitive, irreducible and admissible, sample
 $n$ uniformly from $\{1,\dots,N\}$, and put $u=\log|f(n)|/\log y$ and
 $V_f(y)=\prod_{p\le y}\bigl(1-\rho_f(p)/p\bigr)$.  Then:
@@ -1682,9 +2096,10 @@ $y^2$ has no admissible nontrivial factorization and is therefore prime
 unless it is a unit, so the conditional probability in (ii) equals one
 exactly on that range, the values being positive on the range considered
 and the unit case therefore not arising.
-\emph{(iv)} the conditional probabilities of (ii) form an asymptotic
-martingale as $y$ increases, the sieve flow from roughness to primality
-being consistent scale by scale.
+The conditional probabilities of (ii) are consistent by construction as
+$y$ increases, each being the ratio of the same Bateman--Horn density to
+the roughness density at that scale, and no martingale property is
+asserted.
 \end{conjecture}
 
 The finite sieve accounts for the local factors up to $y$, the Buchstab
@@ -1705,7 +2120,12 @@ the finite-$u$ prediction of clause (i) within $0.11$ per cent and the
 observed conditional prime probabilities were uniformly $0.984$ to
 $0.985$ of the prediction of clause (ii) with no parameter fitted, and
 that uniform shortfall of about $1.5$ per cent across five values of $y$
-is a systematic secondary term rather than sampling noise.
+is a systematic secondary term rather than sampling noise.  The five
+rows are not five independent measurements: they share one nested sample
+of $n$, the rough survivors at a larger $y$ being a subset of those at a
+smaller one, so the five agreements are strongly correlated and the
+consistency of the shortfall across the rows carries much less
+information than five independent confirmations would.
 
 \section{Reading the collection}\label{sec:reading}
 
@@ -1721,17 +2141,23 @@ boundaries.  Conjecture~\ref{c9} is a sharp anomaly statement, and
 Conjectures~\ref{c5}, \ref{c10}, \ref{c12}, \ref{c15}, \ref{c20}
 and~\ref{c23} are converse classifications or functorial laws.
 
-Six conjectures carry a strong converse layer that is stated separately
-from its constructive companion and can fail on its own:
-Conjecture~\ref{c1}(ii) on the absence of coefficients outside the
-overlap-connected expansion, Conjecture~\ref{c3}(ii) on the absence of a
-fourth covariance source, Conjecture~\ref{c5}(ii) on the converse
-classification of rigid coefficient sequences, Conjecture~\ref{c7}(iv)
-on the absence of mixed additive-multiplicative terms,
+Eleven conjectures carry a strong converse layer that is stated
+separately from its constructive companion and can fail on its own.  The
+eleven tags are of one kind and form one list: Conjecture~\ref{c1}(ii) on
+the absence of coefficients outside the overlap-connected expansion,
+Conjecture~\ref{c2}(iii) on the absence of a variance scale outside the
+coincidence matrices and the renormalized disjoint kernel,
+Conjecture~\ref{c3}(ii) on the absence of a fourth covariance source,
+Conjecture~\ref{c5}(ii) on the converse classification of rigid
+coefficient sequences, Conjecture~\ref{c7}(iv) on the absence of mixed
+additive-multiplicative terms, Conjecture~\ref{c9}(iii) on the rank-one
+form of the exceptional-zero deformation, Conjecture~\ref{c11}(iii) on
+the absence of a constraint beyond the relation subtorus,
 Conjecture~\ref{c20}(ii) on the necessity of a geometric correspondence,
-and Conjecture~\ref{c23}(iii) on the absence of further colour coupling.
-Conjectures~\ref{c2}(iii), \ref{c9}(iii), \ref{c11}(iii),
-\ref{c22}(ii) and~\ref{c24}(ii) carry converse layers of the same kind.
+Conjecture~\ref{c22}(ii) on the absence of a further small-large
+coupling, Conjecture~\ref{c23}(iii) on the absence of further colour
+coupling, and Conjecture~\ref{c24}(ii) on the absence of a correlation
+surviving the saddle-point tilt.
 Refuting a converse layer identifies a missing invariant and leaves the
 constructive layer of that conjecture standing, which is why the two are
 never merged into one clause.
