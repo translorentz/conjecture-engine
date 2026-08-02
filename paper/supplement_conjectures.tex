@@ -106,7 +106,7 @@ No. & Name & Independent top-tier content \\
 15 & Functorial horizontal logarithms on tori & A finitely generated global subgroup of a torus has a functorial matrix-valued finite-logarithm Haar law.\\
 16 & Entropy--conductor universality of arboreal resolution & The observable depth of an open arboreal representation is asymptotic to $\log_d\log X$ and is finite-index stable.\\
 17 & Arboreal family large sieve & Growing preimage quotients satisfy a square-root Frobenius large sieve over parameters and primes.\\
-18 & Coloured dynatomic Galois-factor process & Exact-period components generate independent coloured, Frobenius-marked factor processes, with honest growing-degree support restrictions.\\
+18 & Coloured dynatomic Galois-factor process & Exact-period components generate independent coloured, Frobenius-marked factor processes, with growing-degree support restrictions.\\
 19 & Primitive valuation process for dynatomic values & The full primitive valuation vector has an exact adelic product law retaining every bad-prime and collision state.\\
 20 & Divisor-sensitive dynamical gcd classification & Positive normalized gcd height is exactly eventual entry into a preperiodic subvariety carrying the relevant common divisor.\\
 21 & Frobenius-marked Poisson--Dirichlet process & Macroscopic polynomial-value factors carry fixed-point-size-biased Galois marks.\\
@@ -147,7 +147,9 @@ $H_{i_1}+t_1,\ldots,H_{i_r}+t_r$ contributes, at the leading order of its stratu
  \SG\Bigl(\bigcup_{j=1}^r(H_{i_j}+t_j)\Bigr)
  \prod_v(\log X)^{m_v-1},
 \]
-where $m_v$ is the multiplicity of the prime constraint at $v$: any set partition that
+where $W_\tau(X,L;\mathbf t)=L\int_{\R}\prod_{j=1}^rw(u+t_j/L)\,du$ is the
+archimedean window-overlap weight of the diagram and
+$m_v$ is the multiplicity of the prime constraint at $v$: any set partition that
 separates a coincidence loses at least one factor of $\log X$, so the M\"obius
 alternation leaves the single-block moment as the leading term of a connected diagram.
 The same alternation cancels the leading terms of disconnected diagrams, whose
@@ -222,8 +224,8 @@ prime-power contribution is retained as its named remainder.  Define
 $Q^{\mathrm{spec}}_{ij}(\phi;X,L;T)$ by replacing every von Mangoldt factor in the
 smoothed motif covariance by $\Lambda_T^\sharp$, expanding the product, and applying the
 same exact-overlap M\"obius projection as on the local side.  Thus the two forms are
-defined independently, and pole, trivial-zero, diagonal, and prime-power terms are not
-hidden inside an unspecified counterterm.
+defined independently, with pole, trivial-zero, diagonal, and prime-power terms
+carried explicitly.
 
 For every sufficiently large fixed $A$, take
 $Y=L(\log X)^A$ and $T=(X/L)(\log X)^A$.  After adding the explicit tails of the two
@@ -414,7 +416,9 @@ $\E_q\#\{a:T_q(a)>b_Q\}=1$ and define the random directing measure
  e^{G_{q,A}(a)-\frac12\Var(G_{q,A}(a))}
  \delta_{G_{q,A}(a)}(dg)\,dx.
 \]
-The pair of $G_{q,A}$ and the point process
+Here $\theta_{\mathrm{occ}}=\E^{\mathrm{Palm}}\bigl[|A|^{-1}\bigr]$ is the
+cluster-start fraction of the terminal polymer law, the analogue of $\theta(H)$ in
+\cref{c4}.  The pair of $G_{q,A}$ and the point process
 $\sum_a\delta_{(G_{q,A}(a),T_q(a)-b_Q)}$ converges jointly in law along the same
 successive limits, the directing measures $\Lambda_{q,A}$ converging to a (possibly
 nondegenerate) log-Gaussian directing measure $\Lambda_G$.  Conditionally on the
@@ -439,9 +443,9 @@ arrival intensity
  V_Q(a,t)=\sum_{\chi\in\mathcal C_Q}v_{Q,\chi}(t)\chi(a),
  \qquad \|V_Q\|_{T}\to0,
 \]
-where $\mathcal C_Q$ has uniformly bounded cardinality.  On every fixed interval
-$[0,T]$, use the canonical norm
-$\|V\|_T=\sup_{a,0\le t\le T}|V(a,t)|$ and assume that the connected hierarchy of
+where $\mathcal C_Q$ has uniformly bounded cardinality and, on every fixed interval
+$[0,T]$, the canonical norm is
+$\|V\|_T=\sup_{a,0\le t\le T}|V(a,t)|$.  Assume that the connected hierarchy of
 \cref{c6} satisfies an exponential cluster bound there, so its Laplace functional is
 analytic in a fixed $\|\cdot\|_T$-ball.  If $S_Q(a,t)$ and
 $S_Q^{(0)}(t)$ are the perturbed and ordinary survival functions, then for every fixed
@@ -483,7 +487,7 @@ ambient discriminant family.  Write
  \left|\frac{\#\{D\in\mathcal D_Y:\Sigma_Y(D)=\sigma\}}
  {|\mathcal D_Y|\,\delta_Y(\sigma)}-1\right|
 \]
-over attainable cells with $|\mathcal D_Y|\delta_Y(\sigma)\to\infty$.
+over attainable cells with $|\mathcal D_Y|\delta_Y(\sigma)\ge\log Y$.
 
 There is a sequence $\varepsilon_Y\to0$, independent of $S_Y$ in the subcritical range,
 such that uniformly over those cells
@@ -500,7 +504,8 @@ for every $\eps>0$, the conclusion is uniform whenever
  \qquad \log M_Y\le(\tfrac12-\eps)\log Y,
  \qquad \Delta_Y(S_Y)=o(1).
 \]
-Since every prime contributes at most one sign bit, $H_Y\le\log M_Y$ throughout, so
+Since every odd prime contributes at most $\log3\le\log p$ of cell entropy,
+$H_Y\le\log M_Y$ throughout, so
 the conductor constraint is the binding one in the displayed range, while the entropy
 governs the impossibility clause below.
 At $H_Y\ge(1+\eps)\log Y$ no uniform statement is possible.  Up to the conductor scale
@@ -536,8 +541,8 @@ cyclotomic--Kummer Chebotarev class, the vectors
 \]
 equidistribute with Haar measure on $\T_g$.  More strongly, for every finite collection
 of compatible Chebotarev restrictions, the conditional empirical measures converge to
-the Haar disintegration on the corresponding components, and the support contains no
-proper closed subgroup of $\T_g$.  The law is invariant under changing generators and
+the Haar disintegration on the corresponding components, and the support is contained in no
+proper closed coset of $\T_g$.  The law is invariant under changing generators and
 depends on $\Gamma$ only through its saturation and the fixed Kummer conditioning data.
 \end{conjecture}
 
@@ -592,7 +597,7 @@ $B\subset\Z^r$, there is an arithmetic regulator intensity
 $\kappa_{\Gamma,B}\ge0$ such that
 \[
  \#\{p\le X:q_p|_\Gamma\in B\}
- \sim\kappa_{\Gamma,B}\sum_{p\le X}p^{-r}
+ =(\kappa_{\Gamma,B}+o(1))\sum_{p\le X}p^{-r}
 \]
 whenever the sum diverges, while only finitely many such primes occur when $r\ge2$.
 As a separately falsifiable genericity clause, for Kummer-generic $\Gamma$ and $B=\{0\}$ one has $\kappa_{\Gamma,B}=1$.  The transition from
@@ -607,8 +612,12 @@ arithmetic regulator intensity.  Gras's much rarer fixed-base model and the Haar
 therefore disagree precisely at the lattice boundary \cite{Gras,BGKK}.  The first
 theorem is mesoscopic universality for $w_p=p^\eta$ with one rank-one base.
 
-For a $p$-adic unit $a$, write $\langle a\rangle_p$ for the Teichm\"uller lift of its residue and define
-$ q_{p,k}(a)=p^{-1}\log(a\langle a\rangle_p^{-1})\pmod{p^k}$.
+For a $p$-adic unit $a$, write $\langle a\rangle_p$ for the Teichm\"uller lift of
+its residue, and for a prime $\mathfrak p\mid p$ of a number field write
+$\tau_{\mathfrak p}$ for the Teichm\"uller lift in the completion at
+$\mathfrak p$.  Define
+$ q_{p,k}(a)=p^{-1}\log(a\langle a\rangle_p^{-1})\pmod{p^k}$; the matrix entries
+below are the $\mathfrak p$-adic analogues of $q_{p,k}$.
 
 \begin{conjecture}[Horizontal $p$-adic regulator-matrix law]\label{c14}
 Let $K/\Q$ be a fixed Galois number field and let
@@ -683,7 +692,8 @@ $\mu_n(C)=|C|/|G_n|$ on conjugacy classes.  For primes $p\le X$ unramified in $K
 let $\widehat\mu_{n,X}$ be the empirical Frobenius measure.
 
 \begin{conjecture}[Entropy--conductor universality of arboreal resolution]\label{c16}
-Fix $0<\eta<1$.  For a one-parameter family $\mathcal F$ of non-PCF degree-$d$ maps,
+Fix $0<\eta<1$.  For a one-parameter family $\mathcal F$ of non-PCF (not postcritically finite)
+degree-$d$ maps,
 let $G_{n,f}$ and $\mu_{n,f}$ be the level-$n$ arboreal quotient and its Haar
 conjugacy-class measure for the parameter $f$.  Sample parameters of height at most $B$
 and define
@@ -699,11 +709,13 @@ GRH holds for the preimage fields, and $(B,X,n)$ lies in the family large-sieve 
  R_{\mathcal F}(B,X;\eta)=\log_d\log X+O_{\mathcal F,\eta}(1).
 \]
 The $O(1)$ term is determined by the limiting R\'enyi-entropy profile of the nonuniform
-class measures and by the normalized ramification entropy
-$d^{-n}\log|D_{K_{n,f}}|$.
+class measures and by the degree-normalized root-discriminant rate
+$d^{-n}[K_{n,f}:\Q]^{-1}\log|D_{K_{n,f}}|$, which stays bounded because
+$\log|D_{K_{n,f}}|/[K_{n,f}:\Q]$ grows like the critical-orbit height scale
+$d^{n}$, whereas $\log|D_{K_{n,f}}|$ itself is doubly exponential in $n$.
 
 If two such families have the same degree, open generic images, uniformly comparable
-normalized ramification entropy, and boundedly different class-measure R\'enyi profiles,
+degree-normalized root-discriminant rates, and boundedly different class-measure R\'enyi profiles,
 then their observable depths differ by $O(1)$.  In particular passage to a fixed-index
 open subgroup changes the resolution boundary by only a bounded number of levels.
 \end{conjecture}
@@ -782,8 +794,8 @@ prime $p$, let $\nu_{n,p}$ be the exact Haar law on $\Z_p$ of the primitive valu
  V_{n,p}(c)=v_p(\Psi_n^{\rm new}(c))\,
  \mathbf1_{p\nmid f_c^m(0)\ \forall m<n}.
 \]
-All discriminant, resultant, and collision primes are retained in these exact local
-laws, and none is hidden in an unspecified exceptional set.
+All discriminant, resultant, and collision primes are carried explicitly by these
+exact local laws.
 
 If $n=n(H)$ satisfies $\deg\Psi_n=o(\log H)$ and the local squarefree product is
 nonzero, then the full vector $(V_{n,p}(c))_p$, for $c$ in a dyadic height interval,
@@ -807,8 +819,9 @@ The process supplies the multiplicity input needed for dynatomic factor laws.  T
 squarefree phenomena, not this uniform adelic process \cite{Primitive,KrummDynatomic}.
 
 \begin{conjecture}[Divisor-sensitive classification of dynamical gcd height]\label{c20}
-Let $F=(f,g)$ be a split map on $(\mathbb P^1)^2$, with $f,g$ disintegrated of the same
-degree, and let $P=(a,b)$ have positive canonical heights.  Let $D_1,D_2$ be the two
+Let $F=(f,g)$ be a split map on $(\mathbb P^1)^2$, with $f,g$ disintegrated (in the sense of Medvedev and Scanlon, so neither is
+linearly conjugate to a power map, a Chebyshev map, or a close relative of these) of
+the same degree, and let $P=(a,b)$ have positive canonical heights.  Let $D_1,D_2$ be the two
 coordinate-zero divisors and let $E$ be the exceptional divisor of the blow-up at
 $D_1\cap D_2$.  Then
 \[
@@ -861,7 +874,8 @@ cleanest bridge in the collection between Galois theory and probabilistic factor
 \begin{conjecture}[Three-scale factorization of polynomial values]\label{c22}
 Let $f\in\Z[x]$ be irreducible, sample $n\in[N,2N]$, choose
 $y=y(N)\to\infty$ with $\log y=o(\log N)$, and write
-$R_y=f(n)/S_y(f(n))$.  Jointly with the complete small-prime valuation field
+$R_y=f(n)/S_y(f(n))$, where $S_y(m)=\prod_{p\le y}p^{v_p(m)}$ is the $y$-smooth
+part.  Jointly with the complete small-prime valuation field
 $(v_p(f(n)))_{p\le y}$, the residual logarithmic factor process
 \[
  \sum_{p\mid R_y}v_p(R_y)\,
@@ -924,14 +938,26 @@ $n\in[N,2N]$, and put $t=n/N$.  For complex variables $\mathbf s$ and smoothness
 $\mathbf y$, define
 \[
  \mathcal Z_{p,\mathbf y}(\mathbf s)=
- \int_{\Z_p}p^{-\sum_{i:p\le y_i}(s_i-1)v_p(f_i(x))}\,dx
+ \int_{\Z_p}p^{-\sum_{i:p\le y_i}(s_i-1)v_p(f_i(x))}\,dx,
+ \qquad
+ \widehat{\mathcal Z}_{p,\mathbf y}(\mathbf s)=
+ \frac{\mathcal Z_{p,\mathbf y}(\mathbf s)}
+      {\mathcal Z_{p,\mathbf y}(+\boldsymbol\infty)},
 \]
-and the exact multivariate Perron action
+where $\mathcal Z_{p,\mathbf y}(+\boldsymbol\infty)$, the limit as every
+$s_i\to+\infty$, is the Haar probability that $p$ divides no $f_i(x)$ with
+$p\le y_i$, and the exact multivariate saddle action is
 \[
  \Phi_t(\mathbf s)=
- \sum_p\log\mathcal Z_{p,\mathbf y}(\mathbf s)
- +\sum_i(s_i-1)\log|f_i(Nt)|-\sum_i\log s_i.
+ \sum_p\log\widehat{\mathcal Z}_{p,\mathbf y}(\mathbf s)
+ +\sum_i(s_i-1)\log|f_i(Nt)|.
 \]
+The normalization is fixed by the one-variable calibration: for $f(x)=x$ the local
+factors $\widehat{\mathcal Z}_{p,y}(s)=(1-p^{-s})^{-1}$ and the action reduce
+exactly to the Hildebrand--Tenenbaum saddle for the smooth-number density, whereas the
+unnormalized probability partition function would insert the spurious sieve factor
+$\prod_{p\le y}(1-1/p)$, and the omitted Perron kernel $\prod_i s_i^{-1}$ would
+return the cumulative average rather than the local density.
 Let $\boldsymbol\sigma_t$ be the unique real saddle in the admissible region.  Define the
 joint saddle density by the independently specified inverse-Mellin integral
 \[
@@ -949,7 +975,8 @@ saddle-point region,
  \sim\int_1^2\mathscr D_t^{\rm joint}\,dt,
 \]
 and the integral admits the full Gaussian saddle expansion with action
-$\Phi_t(\boldsymbol\sigma_t)$ and curvature matrix $H_t$.
+$\Phi_t(\boldsymbol\sigma_t)$ and curvature matrix $H_t$, with
+$\mathscr D_t^{\rm joint}$ the local smooth-value density at $t$.
 
 If $\mathscr D_{i,t}^{\rm marg}$ are the one-polynomial saddle densities, then
 $\mathscr D_t^{\rm joint}/\prod_i\mathscr D_{i,t}^{\rm marg}$ is asymptotic to the
@@ -1010,7 +1037,7 @@ total roughness follows Buchstab.
 \section{Adversarial quality audit}
 
 The set is intentionally not a list of equally likely claims, but every numbered entry
-now passes the same top-tier gate.  The principal parent mechanisms are
+passes the same top-tier gate.  The principal parent mechanisms are
 \cref{c1,c3,c4,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25},
 while \cref{c2,c5} are classification laws with independent content rather than generic
 consequences.
