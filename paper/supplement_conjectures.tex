@@ -193,7 +193,7 @@ prime constraints.  Put
 Then the covariance operator has a complete asymptotic spectral filtration: on every
 nonzero quotient $\mathcal W_j/\mathcal W_{j-1}$,
 \[
-  \frac{\Cov(Y)}{L(\log X)^j}
+  \frac{\Var(Y_c)}{L(\log X)^j}
 \]
 converges to a nondegenerate quadratic form induced by $A_j$.  On the terminal space
 $\bigcap_{j\ge1}\ker A_j$, the covariance divided by its renormalized disjoint-kernel
@@ -220,7 +220,7 @@ $\phi(0)=0$, define the local quadratic form
  \left[L\int_{\R}w(u)w(u+t/L)\,du\right]
  \phi(t/L)\,\SG^{\rm c}(H_i,H_j+t),
 \]
-the translation sum is finite, because the compact support of $w$ makes the window
+The translation sum is finite because the compact support of $w$ makes the window
 overlap factor vanish for $|t|\gg L$, and it carries the Montgomery--Soundararajan
 logarithmic drift of partial singular-series sums.  Independently,
 insert the full explicit formulas for every factor $\Lambda(n+h)$ in the smoothed motif
@@ -290,9 +290,12 @@ same vertices by at least a factor of $(\log L)^{-g}$.  Consequently the first n
 of any balanced motif statistic is carried by connected acyclic overlap hypergraphs.
 For the single-prime motif this recovers Kuperberg's predicted order
 \[
-  \kappa_{2m+1}\asymp L^m(\log L)^{m+1},
+  \kappa_{2m+1}\asymp L^m(\log L)^{m+1}.
 \]
-with leading constant equal to the total connected hypertree weight.
+As a separately falsifiable sharper layer, in the fixed logarithmic variable
+$\log L$ the same quantity is conjectured to obey
+$\kappa_{2m+1}=(c_m+o(1))\,L^m(\log L)^{m+1}$ with $c_m$ the total connected
+hypertree weight.
 \end{conjecture}
 
 \paragraph{Insight.}
@@ -324,15 +327,17 @@ For every fixed $R\ge2$ and $t$ in a fixed compact subset of $[0,\infty)$,
 The coefficient $A_r$ is the first-arrival transform of the connected $r$-prime
 correlation for primes lying in one residue class, averaged over the dyadic modulus
 block: writing $w^{\mathrm c}_r(u_1,\dots,u_r)$ for the connected correlation density
-of the class arrival times in the normalized clock $u=\Li(p)/(q-1)$, the exponential
-formula gives
+of the arrival times under the full $(q,a)$-ensemble, in the normalized clock
+$u=\Li(p)/(q-1)$, the exponential formula gives
 \[
  -\log\Pp[T_q(a)>t]
    =\sum_{r\ge1}\frac{(-1)^{r-1}}{r!}
-    \int_{[0,t]^r}\E\bigl[w^{\mathrm c}_r(\mathbf u)\bigr]\,d\mathbf u,
+    \int_{[0,t]^r}w^{\mathrm c}_r(\mathbf u)\,d\mathbf u,
 \]
 with $w^{\mathrm c}_1=1$ supplying the leading term $t$, and $A_r(t)$ is the $r$th
-term rescaled by $(\log Q)^{r-1}$.  No assertion that $A_2$ alone gives the first correction is built into the
+term rescaled by $(\log Q)^{r-1}$.  The ensemble is the one fixed above, so the
+connected densities include the block-of-modulus cumulants, and no
+average-of-logarithms interchange is committed.  No assertion that $A_2$ alone gives the first correction is built into the
 definition.
 \end{conjecture}
 
@@ -347,7 +352,7 @@ harmonic benchmark.  The range cannot distinguish $1/\log Q$ from nearby slowly 
 scales.
 
 \begin{conjecture}[Dual autocorrelation laws and the Gauss transfer]\label{c7}
-Extend the centered least-prime field to $f_q:\Fq_q\to\R$ by assigning a fixed recorded
+Extend the centred least-prime field to $f_q:\Fq_q\to\R$ by assigning a fixed recorded
 value at $0$ and then subtracting its full mean.  Define normalized additive and
 multiplicative coefficients
 \[
@@ -385,11 +390,11 @@ script performs this projection, verifies the Gauss identity numerically, and re
 the two autocorrelation families separately.
 
 \begin{conjecture}[Terminal environment--polymer process for the last classes]\label{c8}
-Let $b_Q$ be the unique centering satisfying
+Let
 \[
- \E_{q\in[Q,2Q]}\#\{a:T_q(a)>b_Q\}=1,
+ b_Q=\inf\bigl\{b:\ \E_{q\in[Q,2Q]}\#\{a:T_q(a)>b\}\le1\bigr\},
 \]
-and put $\Xi_q=\sum_{a\ne0}\delta_{T_q(a)-b_Q}$.  For $\eta>0$, let
+the canonical centering for the finite ensemble, and put $\Xi_q=\sum_{a\ne0}\delta_{T_q(a)-b_Q}$.  For $\eta>0$, let
 $\mathcal G_{Q,\eta}$ be the sigma-field generated, under the random-modulus law, by
 those normalized multiplicative-character coordinates of the arrival field whose
 dyadic variance is at least $\eta$.  Define the conditional log-intensity field
@@ -643,8 +648,9 @@ functional by
 \]
 It is explicitly computable from $\mu_n$.  The usual bound
 $\cS\ll\frac12\sum_C\min\{\mu_n(C),\sqrt{\mu_n(C)/N_X}\}$ is used only as a proxy in
-the finite script.  If $k_n$ is the number of conjugacy classes, define the GRH-scale
-aggregate conductor term
+the finite script.  If $k_n$ is the number of conjugacy classes, define the
+aggregate conductor functional, a deliberately conservative proxy at the
+generalized-Riemann-hypothesis scale,
 \[
  \cA(n,X)=
  \frac{\sqrt{k_n|G_n|}\,[\log|D_{K_n}|+[K_n:\Q]\log X]\log X}{\sqrt X}.
@@ -654,7 +660,7 @@ aggregate conductor term
 For an arboreal representation with finite quotient $G_n$, let $\mathcal S_G(n,X)$ be
 the expected total variation of the empirical measure of $\pi(X)$ iid samples from Haar
 conjugacy-class measure on $G_n$.  Let $\mathcal A_f(n,X)$ be the explicit aggregated
-GRH-scale Chebotarev functional defined immediately above from $k_n$, $|G_n|$, the field
+aggregate conductor functional defined immediately above from $k_n$, $|G_n|$, the field
 degree, and $\log|D_{K_n}|$.  Define the model resolution depth
 \[
  n_f^*(X)=\max\{n:\mathcal S_G(n,X)+\mathcal A_f(n,X)\le1/10\}.
@@ -975,8 +981,8 @@ and no scalar Euler factor pretending to specify a full point-process interactio
 arXiv:math/0206292.
 
 \bibitem{Gras} G. Gras,
-\emph{Etude probabiliste des $p$-quotients de Fermat},
-arXiv:1409.2815.
+\emph{\'Etude probabiliste des quotients de Fermat},
+Funct. Approx. Comment. Math. 54 (2016), arXiv:1409.2815.
 
 \bibitem{Kuperberg} V. Kuperberg,
 \emph{Odd moments in the distribution of primes}, arXiv:2109.03767.

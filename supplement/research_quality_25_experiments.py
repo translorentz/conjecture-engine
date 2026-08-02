@@ -474,11 +474,14 @@ def eval_poly_mod(poly: Poly, x: int, mod: int) -> int:
     return val
 
 
-def squarefree_local_product(poly: Poly, prime_bound: int = 47) -> tuple[float, dict]:
+def squarefree_local_product(poly: Poly, prime_bound: int = 47, earlier: list[Poly] | None = None) -> tuple[float, dict]:
     prod = 1.0; rows = {}
+    earlier = earlier or []
     for p in np.flatnonzero(core.prime_sieve(prime_bound)):
         p = int(p); mod = p*p
-        rho = sum(eval_poly_mod(poly, a, mod) == 0 for a in range(mod))
+        rho = sum(eval_poly_mod(poly, a, mod) == 0
+                  and all(eval_poly_mod(v, a, p) != 0 for v in earlier)
+                  for a in range(mod))
         delta = rho/mod
         prod *= 1-delta
         rows[str(p)] = {"rho_mod_p2": rho, "delta": delta}
@@ -540,7 +543,7 @@ def arboreal_program(primes: np.ndarray) -> dict:
             }
 
     c, v, psi = critical_orbit_polys(4)
-    # C18 colored dynatomic components at level 5.
+    # C18 coloured dynatomic components at level 4.
     facs = [Poly(f, c, domain='ZZ') for f, _ in factor_list(psi[4].as_expr())[1]]
     color_stats = []
     for cv in range(-45, 46):
@@ -563,7 +566,7 @@ def arboreal_program(primes: np.ndarray) -> dict:
     c19 = {}
     for n in (2,3,4):
         poly = psi[n]
-        local_prod, rows = squarefree_local_product(poly, 43)
+        local_prod, rows = squarefree_local_product(poly, 43, earlier=[v[m] for m in range(1, n)])
         vals=[]
         for cv in range(-120,121):
             if cv in (-2,-1,0): continue
