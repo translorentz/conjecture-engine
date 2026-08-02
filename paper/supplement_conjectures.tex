@@ -125,7 +125,10 @@ Let $H\subset\Z$ be finite and admissible, and write
  Y_H(x,L)=\sum_n w\!\left(\frac{n-x}{L}\right)
  \bigl(\Lambda_H(n)-\SG(H)\bigr),
 \]
-where $w$ is a fixed smooth compactly supported function.  The window position $x$ is
+where $w$ is a fixed smooth compactly supported function and $\SG(H)$ is the
+Hardy--Littlewood singular series
+$\prod_p(1-\nu_H(p)/p)(1-1/p)^{-|H|}$, with $\nu_H(p)$ the number of residue
+classes occupied by $H$ modulo $p$.  The window position $x$ is
 sampled from $[X,2X]$ with density $dx/(x\log2)$ and
 $X^\eps\le L\le X^{1-\eps}$.  For translated motifs $H_i+t_i$, their \emph{exact
 overlap type} records every equality among shifted prime constraints.  The connected
@@ -210,9 +213,9 @@ which one overlap form has a rational kernel and the next form is nondegenerate 
 
 \begin{conjecture}[Mesoscopic local--spectral trace formula]\label{c3}
 Fix motifs $H_i,H_j$ and a Schwartz function $\phi$ with $\phi(0)=0$.  Let
-$Q^{\mathrm{loc}}_{ij}(\phi;L;Y)$ be the exact-overlap-renormalized singular-series form
+$Q^{\mathrm{loc}}_{ij}(\phi;L)$ be the exact-overlap-renormalized singular-series form
 \[
- \sum_{|t|\le Y}
+ \sum_{t\in\Z}
  \left[L\int_{\R}w(u)w(u+t/L)\,du\right]
  \phi(t/L)\,\SG^{\mathrm c}(H_i,H_j+t).
 \]
@@ -227,12 +230,12 @@ same exact-overlap M\"obius projection as on the local side.  Thus the two forms
 defined independently, with pole, trivial-zero, diagonal, and prime-power terms
 carried explicitly.
 
-For every sufficiently large fixed $A$, take
-$Y=L(\log X)^A$ and $T=(X/L)(\log X)^A$.  After adding the explicit tails of the two
-truncations,
+The translation sum is finite, since the compact support of $w$ makes the window
+overlap vanish for $|t|\gg L$.  For every sufficiently large fixed $A$, take
+$T=(X/L)(\log X)^A$.  After adding the explicit tail of the spectral truncation,
 \[
  Q^{\mathrm{spec}}_{ij}(\phi;X,L;T)
- -Q^{\mathrm{loc}}_{ij}(\phi;L;Y)
+ -Q^{\mathrm{loc}}_{ij}(\phi;L)
  =o\bigl(V_{ij}(X,L)\bigr)
 \]
 uniformly for $X^\eps\le L\le X^{1-\eps}$ and for $\phi$ in bounded Schwartz sets,
@@ -251,8 +254,10 @@ correlation languages.  The first theorem is the pair-motif covariance with one 
 unshifted.
 
 \begin{conjecture}[Arithmetic polymer Gibbs law for prime motifs]\label{c4}
-Fix an admissible motif $H$.  A polymer is a finite connected set $A\subset\Z$ of
-occurrence starts such that $U_A=\bigcup_{t\in A}(H+t)$ is admissible.  In the truncated
+Fix an admissible motif $H$.  A finite set $A\subset\Z$ of occurrence starts is
+connected when the graph on $A$ with an edge between $u$ and $v$ whenever
+$(H+u)\cap(H+v)\ne\emptyset$ is connected, and a polymer is a finite connected set
+$A$ such that $U_A=\bigcup_{t\in A}(H+t)$ is admissible.  In the truncated
 multiple-zero expansion used in \cref{c3}, let $Z_{X,L,R}$ be the vector of all zero
 monomials contributing to the one-point motif intensity whose total spectral height is
 at most $RX/L$, and let $\lambda_{X,L,R}(t)$ be the one-point intensity functional it
@@ -336,7 +341,7 @@ measure $K_r$ on $\R_+^r$ such that
 \[
  (\log Q)^{r-1}w^{\mathrm c}_{r,Q}\Longrightarrow K_r
 \]
-vaguely on compact subsets.  The measure $K_r$ is obtained by averaging, over the
+vaguely.  The measure $K_r$ is obtained by averaging, over the
 modulus aspect, the connected Hardy--Littlewood densities of $r$ primes constrained to
 one residue class.  For every nonnegative compactly supported $f$,
 \[
@@ -364,7 +369,8 @@ Set $T_q(0)=\Li(q)/(q-1)$ and centre the resulting field $f_q$ on all of $\Fq_q$
 \]
 On the subspace of fields vanishing at $0$ with zero mean the Gauss transform is an
 explicit unitary matrix, and the recorded value at $0$ enters through an explicit
-rank-one correction, and together these give an explicit invertible Gauss matrix $U_q$
+rank-one correction, and together these give an explicit Gauss matrix $U_q$,
+invertible between the centred subspaces on which the two transforms are faithful,
 with
 $\mathbf M_q=U_q\mathbf A_q$, and the tensor identity below needs only linearity.  Hence, for every $r\ge2$, the full cumulant tensors obey
 the exact finite identity
@@ -402,7 +408,8 @@ $\Li(x_q)/(q-1)=\log(q-1)$ and, for $A>0$, define the centred low-zero field
  \sum_{\substack{L(1/2+i\gamma,\chi)=0\\|\gamma|\le(\log q)^A}}
  \frac{x_q^{i\gamma}}{1/2+i\gamma},
 \]
-where $\sigma_{q,A}^2$ is its empirical variance over reduced classes.  Under the
+where $\sigma_{q,A}^2$ is the average over reduced classes of its variance under
+the random-phase law, the same convention as in the compensator below.  Under the
 random-phase law, its finite-dimensional distributions converge, first as a random
 prime modulus $q\in[Q,2Q]$ tends to infinity and then as $A\to\infty$, to the
 Rubinstein--Sarnak Gaussian field at terminal scale.
@@ -416,9 +423,10 @@ $\E_q\#\{a:T_q(a)>b_Q\}=1$ and define the random directing measure
  e^{G_{q,A}(a)-\frac12\Var(G_{q,A}(a))}
  \delta_{G_{q,A}(a)}(dg)\,dx.
 \]
-Here $\theta_{\mathrm{occ}}=\E^{\mathrm{Palm}}\bigl[|A|^{-1}\bigr]$ is the
-cluster-start fraction of the terminal polymer law, the analogue of $\theta(H)$ in
-\cref{c4}.  The pair of $G_{q,A}$ and the point process
+Here $\theta_{\mathrm{occ}}=\E^{\mathrm{Palm}}\bigl[|\mathcal A|^{-1}\bigr]$,
+with $\mathcal A$ the terminal polymer cluster, is the cluster-start fraction of the
+terminal polymer law, the analogue of $\theta(H)$ in \cref{c4}.  The symbol is
+distinct from the zero-height exponent $A$.  The pair of $G_{q,A}$ and the point process
 $\sum_a\delta_{(G_{q,A}(a),T_q(a)-b_Q)}$ converges jointly in law along the same
 successive limits, the directing measures $\Lambda_{q,A}$ converging to a (possibly
 nondegenerate) log-Gaussian directing measure $\Lambda_G$.  Conditionally on the
@@ -477,7 +485,7 @@ is the Fr\'echet derivative $\mathcal R_1$ from the two-point occupancy kernel.
 \begin{conjecture}[Local-information capacity of odd class groups]\label{c10}
 Fix an odd prime $\ell$.  Sample negative fundamental discriminants
 $D\in[-2Y,-Y]$, conditioned on a fixed coarse two-primary invariant.  For a set of
-primes $S_Y$, put $M_Y=\prod_{p\in S_Y}p$, let $\Sigma_Y(D)=((D/p))_{p\in S_Y}$ be the
+odd primes $S_Y$, put $M_Y=\prod_{p\in S_Y}p$, let $\Sigma_Y(D)=((D/p))_{p\in S_Y}$ be the
 attainable sign vector, and let $H_Y$ be the logarithm of the number of attainable cells.
 Let $\delta_Y(\sigma)$ be the exact CRT density of the sign cell after imposing
 quadratic reciprocity and the fixed two-primary data, and let $\mathcal D_Y$ be the
@@ -654,7 +662,7 @@ correct global relation module built in.  Determinantal codimension, rather than
 number of displayed units, controls rare regulator defects, while the Smith strata retain
 higher $p$-adic depth.  Existing work supplies the regulator and random-matrix languages
 separately \cite{BGKK,WangStanley,VanPeski}.  Their horizontal arithmetic
-identification is the new content.  The first theorem is the rank-one real-quadratic split-prime law.  The companion diagnostic verifies the norm relation exactly and finds fixed-frequency Fourier magnitudes below $0.02$ for $\Q(\sqrt2)$, while making no claim about the matrix law.
+identification is the new content.  The first theorem is the rank-one real-quadratic split-prime law.  The companion diagnostic verifies the norm relation exactly and finds fixed-frequency Fourier magnitudes at most $0.020$ for $\Q(\sqrt2)$, while making no claim about the matrix law.
 
 \begin{conjecture}[Functorial horizontal finite logarithms on algebraic tori]\label{c15}
 Let $T/\Q$ be an algebraic torus, let $\mathcal T$ be its smooth integral model away from
@@ -850,6 +858,10 @@ macroscopic Diophantine proximity outside invariant geometry.
 
 \section{Programme V: adelic factorization and sieve flow}
 
+Throughout this programme $P^+(m)$ and $P^-(m)$ denote the largest and smallest prime
+factors of $m$, the constant $\gamma$ is Euler's, and $\rho_f(p)$ counts the roots
+of $f$ modulo $p$.
+
 \begin{conjecture}[Frobenius-marked Poisson--Dirichlet process]\label{c21}
 Let $f\in\Z[x]$ be irreducible with splitting field $L$ and transitive Galois group
 $G$.  Sample $n\in[N,2N]$.  Mark each unramified prime factor $p$ of $f(n)$ by its
@@ -1038,9 +1050,8 @@ total roughness follows Buchstab.
 
 The set is intentionally not a list of equally likely claims, but every numbered entry
 passes the same top-tier gate.  The principal parent mechanisms are
-\cref{c1,c3,c4,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25},
-while \cref{c2,c5} are classification laws with independent content rather than generic
-consequences.
+all the numbered statements except \cref{c2,c5}, which are classification laws with
+independent content rather than generic consequences.
 
 The first decisive theorem for each programme is deliberately much smaller than the full
 conjecture:

@@ -90,7 +90,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
     # C1: connected cumulant diagnostics already computed in core.
     c1 = base["C1_connected_field"]
 
-    # C2: exact overlap levels (correcting the former two-level simplification).
+    # C2: exact overlap levels.
     c2 = {
         "motifs": [list(H) for H in motifs],
         "overlap_levels": overlap_matrices(motifs),
@@ -125,7 +125,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
         "warning": "The multiple-zero spectral matching is not computationally tested at this range.",
     }
 
-    # C4: the corrected polymer graph includes chains not seen by the old finite difference graph.
+    # C4: the polymer graph includes chains not seen by the finite difference graph.
     H6 = (0, 6)
     start_sets = []
     for A in itertools.combinations(range(0, 19, 6), 3):
@@ -162,7 +162,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
     c4 = {
         "connected_three_start_polymers": start_sets,
         "empirical_sexy_pair_run_length_counts": dict(Counter(run_lengths)),
-        "old_finite_component_bound_refuted": any(x["starts"] == [0, 6, 12] and x["admissible"] for x in start_sets),
+        "three_start_chain_polymer_admissible": any(x["starts"] == [0, 6, 12] and x["admissible"] for x in start_sets),
     }
 
     # C5: first odd cumulants and the Kuperberg-calibrating scale, for prime counts.
@@ -320,7 +320,8 @@ def occupancy_program(primes: np.ndarray) -> dict:
     for x in thresholds:
         counts = np.array([sum(v > x for v in d["terminal_excesses"]) for d in detailed], dtype=float)
         c8[str(x)] = {"mean": float(counts.mean()), "variance": float(counts.var(ddof=1)),
-                      "poisson_target_e_minus_x": math.exp(-x), "sample_moduli": len(counts)}
+                      "poisson_target_e_minus_x": math.exp(-x), "sample_moduli": len(counts),
+                      "warning": "Terminal excesses are centred at log(q-1), not at the conjecture's empirical quantile b_Q; at q<=1200 the mean exceedance count sits far below the e^{-x} target, so this block tests only the centering convention, not the conjecture."}
     # C9: synthetic nonlinear character-response check.  This verifies harmonic
     # bookkeeping only; it is not evidence for the arithmetic Volterra kernels.
     qsyn=101
@@ -803,7 +804,7 @@ def factorization_program(primes: np.ndarray) -> dict:
                        "joint_over_product":pj/(pa*pb) if pa*pb else None}
     c24={"true_smoothness_thresholds":joint,"exact_local_states":local}
 
-    # C25 corrected dyadic interval calculation.
+    # C25 dyadic interval calculation.
     lo,hi=70000,140000
     ns=np.arange(lo,hi+1,dtype=np.int64);vals_arr=ns*ns+1
     isprime_vals=np.array([core.is_prime64(int(v)) for v in vals_arr])
