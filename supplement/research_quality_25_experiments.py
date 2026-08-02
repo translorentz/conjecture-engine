@@ -90,7 +90,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
     # C1: connected cumulant diagnostics already computed in core.
     c1 = base["C1_connected_field"]
 
-    # C2: exact overlap levels (correcting the former two-level simplification).
+    # C2: exact overlap levels.
     c2 = {
         "motifs": [list(H) for H in motifs],
         "overlap_levels": overlap_matrices(motifs),
@@ -125,7 +125,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
         "warning": "The multiple-zero spectral matching is not computationally tested at this range.",
     }
 
-    # C4: the corrected polymer graph includes chains not seen by the old finite difference graph.
+    # C4: the polymer graph includes chains not seen by the finite difference graph.
     H6 = (0, 6)
     start_sets = []
     for A in itertools.combinations(range(0, 19, 6), 3):
@@ -162,7 +162,7 @@ def prime_program(isprime: np.ndarray, N: int) -> dict:
     c4 = {
         "connected_three_start_polymers": start_sets,
         "empirical_sexy_pair_run_length_counts": dict(Counter(run_lengths)),
-        "old_finite_component_bound_refuted": any(x["starts"] == [0, 6, 12] and x["admissible"] for x in start_sets),
+        "three_start_chain_polymer_admissible": any(x["starts"] == [0, 6, 12] and x["admissible"] for x in start_sets),
     }
 
     # C5: first odd cumulants and the Kuperberg-calibrating scale, for prime counts.
@@ -308,9 +308,22 @@ def occupancy_program(primes: np.ndarray) -> dict:
         transfer_rows.append({"q":q,"gauss_transfer_max_relative_error":float(max(errs)),
                               "additive_autocorrelation_lags_1_10":ac,
                               "multiplicative_character_energies":energies})
+    projection_rows=[]
+    for q in selected:
+        least=np.zeros(q,dtype=np.int64);least[0]=q;remaining=q-1
+        for p0 in primes:
+            pp=int(p0)
+            if pp==q:continue
+            a=pp%q
+            if a and least[a]==0:
+                least[a]=pp;remaining-=1
+                if remaining==0:break
+        u=np.array([core.li(int(x)) for x in least],dtype=float)/(q-1)
+        projection_rows.append(operator_projection_diagnostic(u-u.mean(),q))
     c7 = {
         "sampled_moduli": detailed,
         "gauss_transfer_and_autocorrelation_rows": transfer_rows,
+        "operator_projection": projection_rows,
         "cross_correlation_low_additive_vs_first_multiplicative_power": float(np.corrcoef(addv, multv)[0,1]) if len(detailed)>2 else None,
         "warning": "The exact Gauss identity is checked; the arithmetic asymptotics of the two autocorrelation families remain untested.",
     }
@@ -326,7 +339,7 @@ def occupancy_program(primes: np.ndarray) -> dict:
         "quadratic_projection_L1_proxy_spearman": occ["char_projection_L1_spearman"],
         "interpretation": "No exceptional conductor occurs in the range; this is intentionally a null diagnostic.",
     }
-    # C10 corrected class-group conditioning: only genus rank, not exact discriminant factors.
+    # C10 class-group conditioning: only genus rank, not exact discriminant factors.
     c10 = core.class_group_local_independence(18000)
     return {"C6": c6, "C7": c7, "C8": c8, "C9": c9, "C10": c10}
 
@@ -677,7 +690,7 @@ def factorization_program(primes: np.ndarray) -> dict:
                        "joint_over_product":pj/(pa*pb) if pa*pb else None}
     c24={"true_smoothness_thresholds":joint,"exact_local_states":local}
 
-    # C25 corrected dyadic interval calculation.
+    # C25 dyadic interval calculation.
     lo,hi=70000,140000
     ns=np.arange(lo,hi+1,dtype=np.int64);vals_arr=ns*ns+1
     isprime_vals=np.array([core.is_prime64(int(v)) for v in vals_arr])
@@ -706,7 +719,7 @@ def factorization_program(primes: np.ndarray) -> dict:
 
 def main() -> None:
     ap=argparse.ArgumentParser()
-    ap.add_argument('--out', default=str(HERE/'sound_25_results.json'))
+    ap.add_argument('--out', default=str(HERE/'research_quality_25_results.json'))
     ap.add_argument('--prime-max', type=int, default=3_000_000)
     args=ap.parse_args()
     started=time.perf_counter()
