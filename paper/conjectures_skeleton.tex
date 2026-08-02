@@ -452,7 +452,11 @@ $D_S$ be the \emph{exact} joint density,
 within the lane $n\equiv3\ (6)$, of $n$ with $p\nmid n^2+2^n$ for all
 $p\in S$, computed over the full joint period
 $\mathrm{lcm}_{p\in S}\,\mathrm{lcm}(6,\,p\cdot\ord_p2)$, and set
-$\kappa_S=D_S/\prod_{p\in S}(1-1/p)$.  The conjecture is stated
+$\kappa_S=3\,D_S/\prod_{p\in S}(1-1/p)$: the factor
+$3=2\cdot\tfrac32$ is the exact lane bonus at the primes $2$ and $3$
+(within the lane $\delta_2=\delta_3=0$, so each contributes its full
+$(1-1/p)^{-1}$), included in the definition so that $\kappa_S$ is the
+complete local constant of the count in (ii-c).  The conjecture is stated
 along the \emph{canonical exhaustion} $S_z=\{p\ \text{prime}:5\le
 p\le z\}$, and its three layers are logically separate and are
 asserted separately:
@@ -469,7 +473,8 @@ $\sim\sum_{n\le N,\,n\equiv3\,(6)}\kappa/\log(n^2+2^n)$---a genuine
 further step, since a convergent local density does not
 automatically govern the global count.  The working
 value $\kappa^{*}=4.2734\ldots$ is a \emph{hybrid}, not a
-computation of any single $\kappa_{S_z}$: the CRT-exact core
+computation of any single $\kappa_{S_z}$: the lane factor $3$ times
+the CRT-exact core
 $S_{19}$ times independent per-prime factors for $19<p\le300$---so
 $\kappa^{*}=\kappa_{S_{300}}$ exactly if and only if the observed
 exact factorization persists to $300$.
@@ -732,7 +737,16 @@ therefore requires a failure of the hypotheses of (ii) at long lags,
 and cannot coexist with them.  No explicit
 formula is known for twin patterns, the two branches differ only
 beyond any computable height, and we register the dichotomy without
-choosing---what is conjectured is the finite-height law (i)--(ii).
+choosing \emph{in this conjecture}.  What is conjectured here is
+therefore the fixed-lag law (i) outright, and the variance law of
+(ii) \emph{conditionally on} its stated uniformity and summability
+hypotheses, which belong to the finite-height model layer and are
+not asserted asymptotically: asserting them would silently select
+the diffusive branch of (iii).  The pattern-specific selection is
+made elsewhere---Conjecture~\ref{c21}(i-b) asserts the rigid branch
+for its contaminated races---and consistency between the two
+conjectures then requires exactly that the hypotheses of (ii) fail
+at long lags for those races.
 \end{conjecture}
 
 \section{Family laws and second-order refinements}
@@ -888,15 +902,26 @@ $D(n)=R_{\mathrm e}-R_{\mathrm o}$ for $n\equiv3\pmod 8$, and
 $D(n)=R_{\mathrm e}-R_{\mathrm o}$ (sign immaterial) on the null
 classes $n\equiv5,7\pmod8$.  Set
 $D_{\mathrm{sys}}(n)=\bigl[\sum_{(q,k):\,q^2+2k^2=n,\ q\
-\mathrm{prime},\,k\ge1}\log q\bigr]/\lambda(n)$---the weight is
+\mathrm{prime},\,k\ge1}\log q\bigr]/\lambda_{\mathrm{an}}(n)$---the weight is
 $\Lambda(q^2)=\log q$, each representation counted once in the
 $k\ge1$ convention (the ordered-representation factor $2$ of
 Conjecture~\ref{c25} has no counterpart here, and doubling would be a
 normalization error)---where
-$\lambda(n)$ is the \emph{analytic} lane mean of $\log p$ over the
-representation profile ($\lambda(n)=\int\log(n-2u^2)\,d\mu_n$ under
-the lane measure; the verification uses the empirical lane mean as its
-estimator).  The law, coefficient-identifying as at
+$\lambda_{\mathrm{an}}(n)$ is the \emph{analytic} lane mean of
+$\log p$ over the candidate profile, defined with no reference to
+which candidates are prime:
+\[
+\lambda_{\mathrm{an}}(n)\;=\;
+\frac{\displaystyle\int_0^{\sqrt{n/2}}du}
+{\displaystyle\int_0^{\sqrt{n/2}}\frac{du}{\log(n-2u^2)}},
+\]
+the mean of $\log(n-2u^2)$ under the density proportional to
+$1/\log(n-2u^2)$ on the candidate interval, which is the profile a
+Bateman--Horn heuristic assigns to the prime representations.  The
+definition is out-of-sample: the verification's empirical lane mean
+over the observed prime representations is an estimator of
+$\lambda_{\mathrm{an}}$, used as a consistency check, not part of the
+definition.  The law, coefficient-identifying as at
 Conjecture~\ref{c25}(i): on the contaminated classes
 \[
 \mathbb E_X\bigl[D-D_{\mathrm{sys}}\bigr]
@@ -973,9 +998,9 @@ Conjecture~\ref{c21}(i) for this pair (the weaker normalization
 $\M_x(Y)\to0$ with $Y=D/\sqrt{\pi^{\mathrm q}}$ would not exclude a
 drift at the contamination scale, hence would not make this race a
 control; the form stated excludes exactly that);
-\emph{(ii)} [occupation law, stated as a conditional consequence] the
-arithmetic content of this clause is a \emph{strong approximation
-hypothesis}, for the process defined precisely at event index: let
+\emph{(ii)} [occupation law, conjectured directly, with a separately
+falsifiable local hypothesis] the process is defined precisely at
+event index: let
 $n_1<n_2<\cdots$ enumerate the $n$ with $n^2+1$ and $n^2+3$ both
 prime and $n\equiv1$ or $4\pmod5$, set $\xi_i=+1$ if
 $n_i\equiv1$ and $-1$ if $n_i\equiv4$, and let
@@ -1001,23 +1026,32 @@ almost surely in $M$ as $N_0\to\infty$, for some $\delta>0$.  The
 logarithmic sampling law is the same clock in which the occupation
 statement below is read, and randomizing the window start is what
 supplies the deterministic step sequence with a probability space.
-Weak convergence alone would not suffice, since a distributional
-limit on each fixed interval does not control pathwise occupation
-across unboundedly many logarithmic scales; under the ASIP the
-almost-sure error is absorbed at every logarithmic scale and the
-Lamperti/ergodic occupation argument below is valid.  The weak
+The weak
 functional limit theorem---$S_{\lfloor N\tau\rfloor}/\sqrt N$
 converging weakly to standard Brownian motion on
-$\tau\in[0,1]$---is retained only as the weaker, separately
-falsifiable consequence of the ASIP.  Everything after that is
-probability, not number theory: granting the randomized ASIP just
-stated, $D(t)=B(N(t))+O\bigl(N(t)^{1/2-\delta}\bigr)$
-with $N(t)\asymp t/\log^2t$, the error being $o(\sqrt{N(t)})$
-almost surely, and in \emph{logarithmic} time
+$\tau\in[0,1]$---is retained as the weaker, separately
+falsifiable consequence of the windowed ASIP.  The occupation law
+itself, however, is \emph{not} a consequence of the windowed
+hypothesis, and is conjectured directly.  The windowed path
+$S_{M+j}-S_M$ is recentred at the window start, and recentring
+erases exactly the absolute level that occupation measures: a
+deterministic bias $b(n)=\sqrt n/\log n$ added to $S_n$ shifts the
+level by $\sqrt n/\log n$ while contributing window increments of
+size ${\sim}j/(2\sqrt n\,\log n)\ll\sqrt j$, invisible to the
+windowed ASIP at every window scale, yet it would drive the
+occupation fraction to $1$.  A global coupling
+$D(t)=B(N(t))+o(\sqrt{N(t)})$
+with $N(t)\asymp t/\log^2t$ would suffice, but for the
+deterministic sequence $(\xi_i)$ no randomization is available that
+makes such a coupling well posed, so we do not hypothesize it.  The
+Brownian computation is instead the motivation that identifies the
+limit and the constant: for a coupled walk, in \emph{logarithmic}
+time
 $u=\log t$ the
 Lamperti reduction $Z(s)=\e^{-s/2}B(\e^s)$ is a stationary, ergodic
-Ornstein--Uhlenbeck process, so the logarithmic occupation measure of
-leadership converges almost surely to $\tfrac12$:
+Ornstein--Uhlenbeck process, and the logarithmic occupation measure
+of leadership converges almost surely to $\tfrac12$.  The
+conjectured law is that conclusion itself:
 \[
 \frac1{\log x}\int_2^x\mathbf 1_{\{D(t)>0\}}\,\frac{dt}t
 \;\longrightarrow\;\frac12,
@@ -1110,9 +1144,16 @@ observed profile deficit to the diagonal is an open question rather
 than an inference.)  For $H/\log N\to\lambda$ the counts are jointly
 Poisson with local exclusions, and for $H/\log N\to\infty$ each
 fixed finite collection of studentized counts is asymptotically
-jointly normal, all correlations of size $\asymp1/\log N$ making
-both kernels finite-$N$ corrections to independence, exactly as at
-Conjecture~\ref{c16}(ii).
+jointly normal with independent limiting coordinates, all
+correlations of size $\asymp1/\log N$ making
+both kernels finite-$N$ corrections to independence.  As at
+Conjecture~\ref{c16}(ii), both distributional conclusions are
+asserted under an explicit hypothesis beyond the displayed
+covariances---uniform Hardy--Littlewood tuple estimates over the
+family, strong enough that every joint cumulant of order at least
+three of the studentized counts vanishes in the respective
+normalizations---since the covariance kernels alone do not
+determine the limit laws.
 (Uniformity over a range growing with $N$ is the substantive claim;
 uniformity over any \emph{fixed} finite set of $A$ is logically
 automatic from the individual asymptotics.)  Among
