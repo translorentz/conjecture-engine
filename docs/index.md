@@ -2,6 +2,8 @@
 title: Twenty-five conjectures from a local–global random model
 ---
 
+<p style="color:#999;font-size:0.8em;margin:0 0 1em 0;">Trial Project by Bryan Cheong</p>
+
 # Twenty-five conjectures from a local–global random model
 
 *July 27, 2026*
