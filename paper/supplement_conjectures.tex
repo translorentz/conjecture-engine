@@ -13,10 +13,6 @@
 \Crefname{conjecture}{Conjecture}{Conjectures}
 
 \newtheorem{conjecture}{Conjecture}
-\newtheorem{principle}{Principle}
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{question}{Question}
 
 \newcommand{\Li}{\operatorname{Li}}
 \newcommand{\Var}{\operatorname{Var}}
@@ -149,8 +145,10 @@ where $w$ is a fixed smooth compactly supported function.  The window position $
 sampled from $[X,2X]$ with density $dx/(x\log2)$, and
 $X^\eps\le L\le X^{1-\eps}$.  For a finite collection of translated motifs, the
 \emph{exact overlap type} records every equality between their shifted prime
-constraints.  The connected singular series is obtained from the usual singular series
-by M\"obius inversion over set partitions.
+constraints.  The connected singular series $\SG^{\mathrm c}(K_1,\dots,K_r)$ of a
+tuple of finite sets is obtained from the usual singular series of unions by M\"obius
+inversion over set partitions of the index set, so it depends on the tuple and not
+only on the union $\bigcup_jK_j$.
 
 \begin{conjecture}[Connected motif cumulant expansion]\label{c1}
 Fix $r\ge2$ and admissible motifs $H_1,\dots,H_r$.  The joint cumulant
@@ -159,7 +157,7 @@ overlap types $\tau$ of $r$ translated motifs.  The term attached to $\tau$ is t
 over all translation vectors realizing $\tau$, of
 \[
   W_\tau(X,L;\mathbf t)\,
-  \SG^{\mathrm c}\!\left(\bigcup_{j=1}^r(H_j+t_j)\right)
+  \SG^{\mathrm c}\!\left(H_1+t_1,\dots,H_r+t_r\right)
   \prod_{v}(\log X)^{m_v-1},
 \]
 where $m_v$ is the multiplicity of the prime constraint at the union point $v$ and
@@ -190,8 +188,7 @@ shared-point rank $j\ge1$, let $A_j$ be the limiting overlap form obtained by su
 the connected local weights over translations for which two motifs share exactly $j$
 prime constraints.  Put
 \[
-  \mathcal W_j=\bigcap_{k>j}\ker A_k,\qquad
-  \mathcal W_{-1}=\{0\}.
+  \mathcal W_j=\bigcap_{k>j}\ker A_k.
 \]
 Then the covariance operator has a complete asymptotic spectral filtration: on every
 nonzero quotient $\mathcal W_j/\mathcal W_{j-1}$,
@@ -223,7 +220,9 @@ $\phi(0)=0$, define the local quadratic form
  \left[L\int_{\R}w(u)w(u+t/L)\,du\right]
  \phi(t/L)\,\SG^{\rm c}(H_i,H_j+t),
 \]
-with the standard logarithmic renormalization of the translation sum.  Independently,
+the translation sum is finite, because the compact support of $w$ makes the window
+overlap factor vanish for $|t|\gg L$, and it carries the Montgomery--Soundararajan
+logarithmic drift of partial singular-series sums.  Independently,
 insert the full explicit formulas for every factor $\Lambda(n+h)$ in the smoothed motif
 covariance and let $\mathcal Q^{\rm spec}_{ij}(\phi;X,L)$ be the resulting quadratic
 form in the multiple correlations of zeta and Dirichlet-$L$ zeros, using the Mellin
@@ -264,10 +263,13 @@ moment measures of the occurrence process converge to the Hardy--Littlewood dens
 all complete unions $U_A$, and these finite-radius laws are projectively consistent.
 In the successive limits $X\to\infty$, then $R\to\infty$, then polymer radius
 $\to\infty$, the Palm cluster is finite almost surely, cluster starts are conditionally
-Poisson, and
+Poisson, and the cluster-start fraction $\theta(H)$, the limiting ratio of the
+cluster-start intensity to the occurrence intensity, satisfies
 \[
-       \theta(H)=\frac1{\E^{\rm Palm}|A|}.
+       \theta(H)=\E^{\rm Palm}\bigl[\,|A|^{-1}\bigr],
 \]
+which equals $1/\E|A|$ for the per-cluster size law, since the occurrence-Palm
+cluster-size law is the size-biased version of that law.
 Equivalently, the arithmetic polymer partition function is subcritical for every fixed
 admissible motif.
 \end{conjecture}
@@ -284,7 +286,7 @@ In the exact connected expansion of \cref{c1}, contract every forced coincidence
 associate to each remaining translation diagram its cyclomatic number $g$, the number of
 independent cycles in its overlap hypergraph.  After all larger coincidence scales are
 removed, a diagram of cyclomatic number $g$ is smaller than a hypertree diagram with the
-same vertices by at least $(\log L)^{-g}$.  Consequently the first nonzero odd cumulant
+same vertices by at least a factor of $(\log L)^{-g}$.  Consequently the first nonzero odd cumulant
 of any balanced motif statistic is carried by connected acyclic overlap hypergraphs.
 For the single-prime motif this recovers Kuperberg's predicted order
 \[
@@ -321,7 +323,16 @@ For every fixed $R\ge2$ and $t$ in a fixed compact subset of $[0,\infty)$,
 \]
 The coefficient $A_r$ is the first-arrival transform of the connected $r$-prime
 correlation for primes lying in one residue class, averaged over the dyadic modulus
-block.  No assertion that $A_2$ alone gives the first correction is built into the
+block: writing $w^{\mathrm c}_r(u_1,\dots,u_r)$ for the connected correlation density
+of the class arrival times in the normalized clock $u=\Li(p)/(q-1)$, the exponential
+formula gives
+\[
+ -\log\Pp[T_q(a)>t]
+   =\sum_{r\ge1}\frac{(-1)^{r-1}}{r!}
+    \int_{[0,t]^r}\E\bigl[w^{\mathrm c}_r(\mathbf u)\bigr]\,d\mathbf u,
+\]
+with $w^{\mathrm c}_1=1$ supplying the leading term $t$, and $A_r(t)$ is the $r$th
+term rescaled by $(\log Q)^{r-1}$.  No assertion that $A_2$ alone gives the first correction is built into the
 definition.
 \end{conjecture}
 
@@ -367,9 +378,11 @@ Additive and multiplicative Fourier systems are not independent coordinate world
 Gauss transform converts one coefficient vector into the other exactly.  The
 number-theoretic claim is instead that two different autocorrelation observables isolate
 two mechanisms while remaining algebraically compatible.  A projection of the tensor square onto additive-difference and multiplicative-ratio
-matrix algebras cannot serve here: in direct computation such subspaces explain only a
-small fraction of the rank-one energy.  The script verifies the Gauss identity
-numerically and records the two autocorrelation families separately.
+matrix algebras cannot serve here: computed on the sampled moduli, those combined
+algebras leave a relative Hilbert--Schmidt residual above $0.97$ on the centred
+tensor square, so neither family, nor both together, spans the observable.  The
+script performs this projection, verifies the Gauss identity numerically, and records
+the two autocorrelation families separately.
 
 \begin{conjecture}[Terminal environment--polymer process for the last classes]\label{c8}
 Let $b_Q$ be the unique centering satisfying
@@ -390,8 +403,10 @@ $W_{Q,\eta}$ converge in this successive limit to a random locally bounded field
 Conditionally on $W_{Q,\eta}$, the cluster starts of $\Xi_q$ converge to a Poisson process
 with intensity
 \[
-       \theta_{\rm occ}\exp\{-x+W(x)\}\,dx.
+       \theta_{\rm occ}\exp\{-x+W(x)\}\,dx,
 \]
+where $\theta_{\rm occ}\in(0,1]$ is the limiting cluster-start fraction of the
+terminal process, the analogue of $\theta(H)$ in \cref{c4}.
 The within-cluster law is the projective connected-polymer law generated by the terminal
 connected occupancy coefficients of \cref{c6}.  Removing the conditioning gives the
 corresponding Cox polymer process.  Both the random environment and the cluster law are
@@ -739,7 +754,7 @@ probability.
 For fixed $p$, a first primitive hit occurs by bounded time modulo $p^2$, so no nonzero
 fixed-prime density can stabilize as $n\to\infty$: the local density must depend on
 $n$.  For levels $2,3,4$, empirical squarefree fractions
-$0.622,0.916,0.987$ compare with truncated local products $0.611,0.924,0.989$, and the
+$0.622,0.916,0.987$ compare with local products truncated at $p\le43$, namely $0.611,0.924,0.989$, and the
 agreement checks the level-dependent local object at small degree only.
 
 \begin{conjecture}[Divisor-sensitive classification of dynamical gcd height]\label{c20}
@@ -863,7 +878,11 @@ by
  {\prod_i Z_{p,i,y_i}(\sigma_i(t))}.
 \]
 Here $Z_{p,i,y_i}$ is the one-polynomial partition function obtained from
-$Z_{p,\mathbf y}$ by retaining the factor $f_i$ alone.  After both this archimedean
+$Z_{p,\mathbf y}$ by retaining the factor $f_i$ alone, and the marginal saddle density
+of $f_i$ at $t$ is the one-polynomial saddle-point expression
+$\exp\bigl(\sum_{p\le y_i}\log Z_{p,i,y_i}(\sigma^{*}_i(t))
++\sigma^{*}_i(t)\log|f_i(Nt)|\bigr)$ at the one-polynomial saddle
+$\sigma^{*}_i(t)$, with the usual Gaussian curvature factor.  After both this archimedean
 integration and the moving $p$-adic Euler factor are included,
 the remaining relative error tends to zero.
 \end{conjecture}
@@ -882,7 +901,9 @@ local--global bridge.
 Let $f\in\Z[x]$ be primitive, irreducible, and admissible, and sample
 $n\in[N,2N]$.  For $y$ with $u_n=\log|f(n)|/\log y$ in a fixed compact subset of
 $(1,\infty)$, let $\Omega_y(f(n))$ be the number of prime factors of $f(n)$ exceeding
-$y$, counted with multiplicity, on the event $P^-(f(n))>y$.
+$y$, counted with multiplicity, on the event $P^-(f(n))>y$.  Write $\rho_f(p)$ for
+the number of roots of $f$ modulo $p$, $V_f(y)=\prod_{p\le y}(1-\rho_f(p)/p)$ for
+the sieve density, and $C_f$ for the Bateman--Horn constant of $f$.
 
 Define universal Buchstab component functions by
 \[
@@ -920,7 +941,7 @@ random-integer sample, and checks the pointwise endpoint.
 The collection is not flat.  The strongest parent mechanisms are
 \cref{c1,c3,c4,c6,c10,c11,c12,c13,c15,c16,c17,c21,c23,c24,c25}.  The remaining conjectures are
 structural consequences or extensions that introduce a distinct invariant: overlap
-rank, cluster polymers, hypertree corrections, terminal occupancy, exceptional spectral
+rank, Gauss-transfer duality, hypertree corrections, terminal occupancy, exceptional spectral
 response, rank-depth processes, dynatomic colouring, growing-degree squarefreeness,
 divisor-sensitive gcd geometry and residual-mass decoupling.
 
