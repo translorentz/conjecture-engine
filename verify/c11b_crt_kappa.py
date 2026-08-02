@@ -7,13 +7,18 @@ periodic in n with period T_p = lcm(6, p * ord_p 2), and distinct T_p
 share factors.  Following the fourth external review we define, for
 each finite set S of primes, the CRT-exact quantity
 
-    kappa_S = D_S / prod_{p in S} (1 - 1/p),
+    kappa_S = 3 * D_S / prod_{p in S} (1 - 1/p),
 
 where D_S is the EXACT density, within the lane n = 3 (mod 6), of n
 with p | n^2 + 2^n for no p in S, computed over the full joint period
-L_S = lcm of the T_p.  The upgraded conjecture is that the net
+L_S = lcm of the T_p, and the factor 3 = 2 * (3/2) is the lane bonus
+at the primes 2 and 3 (delta_2 = delta_3 = 0 within the lane), part
+of the definition so that kappa_S is the complete local constant of
+the count.  The upgraded conjecture is that the net
 {kappa_S} converges as S increases to all primes; the working constant
-multiplies kappa_{p<=19}^CRT by the per-prime factors for
+kappa* multiplies the lane factor 3 (lane_factor below) by
+kappa_{p<=19}^CRT (the p >= 5 core, computed without the 3) and by
+the per-prime factors for
 23 <= p <= 300 (conjecturally negligible entanglement in the tail).
 
 This script (1) computes kappa_S exactly for nested S = {p <= P},
