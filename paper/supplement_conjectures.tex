@@ -302,9 +302,12 @@ Then the cluster-start fraction has the first nontrivial expansion
  \theta_X(H)=1-\frac{c_H}{(\log X)^{\delta(H)}}
    +o\bigl((\log X)^{-\delta(H)}\bigr),
  \qquad
- c_H=\sum_{t\in\mathcal T_H}
+ c_H=\sum_{\substack{t\in\mathcal T_H\\ t<0}}
  \frac{\SG(H\cup(H+t))}{\SG(H)}.
 \]
+The set $\mathcal T_H$ is symmetric under $t\mapsto-t$, and the cluster-start fraction
+counts, for each occurrence, only whether it has an overlapping predecessor, so the sum
+is restricted to $t<0$ and equals half the symmetric sum over $\mathcal T_H$.
 If no admissible overlap exists, $\theta_X(H)=1+o((\log X)^{-M})$ for every fixed
 $M$.  Higher corrections are the connected Ursell sums of anchored polymers ordered by
 $d_H(A)$.  These finite-$X$ Gibbs expansions are projectively consistent and
@@ -466,6 +469,9 @@ terminal cluster-start process is Poisson with directing measure
 \[
  \theta_{\mathrm{occ}}e^{-x}\,\mathcal M(dg)\,dx,
 \]
+where $\theta_{\mathrm{occ}}$ is the extremal index of the terminal occurrence
+process, the analogue for the last classes of the cluster-start fraction
+$\theta_X(H)$ of \cref{c4},
 and its finite-modulus cluster decorations are the terminal connected-polymer expansion
 of \cref{c6}, entering at their first nonzero connected scale rather than at a
 universally prescribed power of $1/\log q$.
@@ -715,7 +721,7 @@ summable large-prime tail together with the exact small-prime atoms.
 The horizontal state space is one fixed global torus rather than a relation module that
 changes with $p$.  The conjecture turns mod-$p$ Leopoldt defects into a Galois-equivariant
 random-matrix problem, with exact Smith strata retaining higher depth.  Existing
-mod-$p$ Leopoldt and random-matrix theories provide neighboring languages
+mod-$p$ Leopoldt and random-matrix theories provide neighbouring languages
 \cite{BGKK,WangStanley,VanPeski}.  Recent number-field Wieferich results strengthen the
 arithmetic motivation without supplying this horizontal matrix law
 \cite{FelliniMurty,LiZhao}.  The first theorem is the rank-one split-prime law for a real
