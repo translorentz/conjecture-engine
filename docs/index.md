@@ -1,14 +1,16 @@
 ---
-title: Twenty-five conjectures from a local–global random model
+title: Fifty conjectures in number theory
 ---
 
 <p style="color:#999;font-size:0.8em;margin:0 0 1em 0;">Trial Project by Bryan Cheong</p>
 
-# Twenty-five conjectures from a local–global random model
+# Fifty conjectures in number theory
 
 *July 27, 2026*
 
 ## Summary of the conjectures
+
+**Part I — conjectures from the local–global random model, in importance–novelty order.**
 
 1. **Prime-power contamination calculus (Conjecture 1).** For a balanced pair race $$(n,n+d)$$ mod $$m$$, the surviving prime-square orientations $$(q^2-d,q^2)$$, $$(q^2,q^2+d)$$ occupy provably computable residue classes, and the operator $$\mathcal C_{d,m}(a;x)=\sum_{o}\sum_{q}\Lambda(q^2)\Lambda(\text{prime member})$$ determines the drift vector: for twins, $$\mathcal{M}_x\bigl(D_1(t)\log^2t/\sqrt t\bigr)\to c_T=\tfrac12C(x,x^2-2)$$ (mod $$5$$) and $$\to2c_T$$ on class $$7$$ (mod $$8$$), symmetric differences $$\to0$$; in general each class deficit satisfies $$\mathcal{M}_x(\mathrm{deficit}\cdot\log^2t/\sqrt t)\to\lim\mathcal C_{d,m}(a;x)/\sqrt x$$. Convergence of these logarithmic means at drift scale is part of the conjecture (Rubinstein–Sarnak-type structure for pattern races).
 
@@ -59,6 +61,61 @@ title: Twenty-five conjectures from a local–global random model
 24. **Alternating cyclotomic chain (Conjecture 24).** Infinitely many primes $$p$$ with $$\Phi_3(p)$$ and $$\Phi_6(\Phi_3(p))$$ prime, at the derived Bateman–Horn rate; alternation is the unique admissible continuation in the anchored construction space.
 
 25. **Twin cyclotomic bases (Conjecture 25).** Of the $$\varphi(k)=2$$ family, only $$k=3$$ survives ($$k=4$$ parity-dead, $$k=6$$ a translate), and $$\Phi_3(n)$$, $$\Phi_3(n+1)$$ are simultaneously prime infinitely often with the computed Bateman–Horn constant.
+
+
+**Part II — structural conjectures, in programme order.**
+
+
+26. **Connected motif generating functional (Conjecture 26).** A full connected diagram calculus for all joint cumulants of prime motifs.
+
+27. **Complete overlap-renormalization filtration (Conjecture 27).** A classification of every possible covariance scale and rigid eigenspace in a finite motif family.
+
+28. **Regularized mesoscopic local–spectral trace formula (Conjecture 28).** Independently mollified Euler-product and multiple-zero functionals agree after named counterterms, and the limit is regularization independent.
+
+29. **Anchored arithmetic polymer expansion (Conjecture 29).** Palm cluster activities are graded by the number of new prime constraints beyond one anchored motif.
+
+30. **Topological expansion of non-Gaussianity (Conjecture 30).** The first non-Gaussian terms are graded by the homology of overlap-incidence complexes.
+
+31. **Connected first-arrival functional (Conjecture 31).** The entire least-prime point process has connected kernels obtained from same-class prime correlations.
+
+32. **Tested Gauss-polyspectral reciprocity (Conjecture 32).** Scalar tensor observables have exact Gauss-transport identities under the random-modulus law and dual arithmetic limits.
+
+33. **Rubinstein–Sarnak terminal chaos dichotomy (Conjecture 33).** Terminal extremes are directed by the limiting low-zero chaos measure, with an explicit self-averaging versus Cox criterion.
+
+34. **Nonlinear spectral response calculus (Conjecture 34).** Low-zero and exceptional-zero perturbations pass through first-arrival statistics by universal Volterra response operators.
+
+35. **Local-information capacity of odd class groups (Conjecture 35).** Cohen–Lenstra independence has a sharp two-resource boundary governed by cell entropy and conductor complexity.
+
+36. **Kummer–Haar law on relation tori (Conjecture 36).** Saturated multiplicative relations give the exact horizontal support and Haar law of Fermat-quotient vectors.
+
+37. **Rank-dimensional finite-logarithm large sieve (Conjecture 37).** A positive power range of frequencies obeys a large sieve whose dual dimension is saturated rank.
+
+38. **Mesoscopic-to-lattice shrinking-target transition (Conjecture 38).** Haar universality persists for growing targets, while bounded lattice targets acquire a separate arithmetic regulator intensity.
+
+39. **Global-lattice $$p$$-adic regulator-matrix law (Conjecture 39).** A fixed integral Galois-relation lattice controls horizontal regulator matrices and their determinantal rare events.
+
+40. **Functorial horizontal logarithms on tori (Conjecture 40).** A finitely generated global subgroup of a torus has a functorial matrix-valued finite-logarithm Haar law.
+
+41. **Entropy–conductor profile of arboreal resolution (Conjecture 41).** Exact class-measure entropy and Artin-conductor profiles determine observable depth and finite-index shifts.
+
+42. **Arboreal family large sieve and cumulant independence (Conjecture 42).** Growing preimage quotients satisfy square-root trace bounds and higher connected Frobenius factorization over parameters.
+
+43. **Coloured dynatomic Galois-factor process (Conjecture 43).** Exact-period components generate independent coloured, Frobenius-marked factor processes, with growing-degree support restrictions.
+
+44. **Complexity-uniform primitive valuation process (Conjecture 44).** The complete primitive valuation vector has an adelic product law under an explicit height–discriminant complexity regime and uniform squarefull tails.
+
+45. **Divisor-sensitive dynamical gcd classification (Conjecture 45).** Positive normalized gcd height is exactly eventual entry into a preperiodic subvariety carrying the relevant common divisor.
+
+46. **Frobenius-marked Poisson–Dirichlet process (Conjecture 46).** Macroscopic polynomial-value factors carry fixed-point-size-biased Galois marks.
+
+47. **Three-scale polynomial factorization (Conjecture 47).** Small valuations, mesoscopic scale-invariant factors, and macroscopic marked factors form one conservation-corrected product structure.
+
+48. **Adelic Gibbs gluing for reducible values (Conjecture 48).** Reducible polynomial factor processes are an archimedean–$$p$$-adic Gibbs mixture of independent component processes.
+
+49. **Full multivariate adelic saddle law (Conjecture 49).** Joint smoothness is governed by a complete joint Perron action, saddle displacement, and Hessian, not a scalar Euler correction.
+
+50. **Buchstab–Bateman–Horn component flow (Conjecture 50).** Rough prime, semiprime, and higher-almost-prime polynomial values follow universal Buchstab components with Galois marks.
+
 
 ## Abstract
 
@@ -638,6 +695,538 @@ Both forms in (iii) are odd for every $$n$$ (each is $$\Phi_3$$ of an integer), 
 
 *Verification.* $$C_5=2.964239\pm0.002$$; at bound $$10^{7}$$, observed $$33{,}274$$ against predicted $$32{,}976.7$$, ratio $$1.0090$$, $$z=+1.64$$.
 
+## Part II: structural conjectures in five programmes
+
+The twenty-five conjectures below are organized by mechanism rather than by the contamination calculus of Part I. Each names a canonical object and averaging law, identifies an arithmetic, geometric, spectral, or adelic source, and states a first decisive theorem and a failure mode.
+
+### Programme I: connected prime-pattern fields
+
+Let $$H\subset\mathbb Z$$ be finite and admissible, and write
+$$
+\Lambda_H(n)=\prod_{h\in H}\Lambda(n+h),\qquad
+ Y_H(x,L)=\sum_n w\!\left(\frac{n-x}{L}\right)
+ \bigl(\Lambda_H(n)-\mathfrak S(H)\bigr),
+$$
+where $$w$$ is a fixed smooth compactly supported function and $$\mathfrak S(H)$$ is the Hardy–Littlewood singular series $$\prod_p(1-\nu_H(p)/p)(1-1/p)^{-\vert H\vert }$$, with $$\nu_H(p)$$ the number of residue classes occupied by $$H$$ modulo $$p$$. The window position $$x$$ is sampled from $$[X,2X]$$ with density $$dx/(x\log2)$$ and $$X^\varepsilon\le L\le X^{1-\varepsilon}$$. For translated motifs $$H_i+t_i$$, their *exact overlap type* records every equality among shifted prime constraints. The connected singular series $$\mathfrak S^{\mathrm c}(K_1,\ldots,K_r)$$ is obtained by Möbius inversion over set partitions of the indexed tuple $$(K_1,\ldots,K_r)$$.
+
+**Connected motif generating functional (Conjecture 26).** Fix admissible motifs $$H_1,\ldots,H_m$$ and put
+$$
+\mathcal Z_{X,L}(\mathbf z)=
+ \mathbb E_x\exp\!\left(\sum_{i=1}^m z_iY_{H_i}(x,L)\right).
+$$
+For every fixed total degree $$R$$, the degree-$$\le R$$ Taylor polynomial of $$\log\mathcal Z_{X,L}$$ has a uniform asymptotic expansion indexed by connected exact- overlap diagrams of at most $$R$$ translated motifs. A diagram whose coincidence hypergraph connects the $$r$$ translated sets $$H_{i_1}+t_1,\ldots,H_{i_r}+t_r$$ contributes, at the leading order of its stratum,
+$$
+W_\tau(L;\mathbf t)\,
+ \mathfrak S\Bigl(\bigcup_{j=1}^r(H_{i_j}+t_j)\Bigr)
+ \prod_v(\log X)^{m_v-1},
+$$
+where $$W_\tau(L;\mathbf t)=L\int_{\mathbb R}\prod_{j=1}^rw(u+t_j/L)\,du$$ is the archimedean window-overlap weight of the diagram and $$m_v$$ is the multiplicity of the prime constraint at $$v$$: any set partition that separates a coincidence loses at least one factor of $$\log X$$, so the Möbius alternation leaves the single-block moment as the leading term of a connected diagram. The same alternation cancels the leading terms of disconnected diagrams, whose contribution is carried by the connected singular series of their disjoint blocks at strictly smaller logarithmic order, reducing for the fully disjoint type to $$\mathfrak S^{\mathrm c}(H_{i_1}+t_1,\ldots,H_{i_r}+t_r)$$ with no logarithmic enhancement. The log powers are therefore partition dependent and are never factored across the alternation, and every prime-power counterterm is included in the local weight attached to its multiplicity. Ordering terms lexicographically by powers of $$L$$ and $$\log X$$, the remainder after any fixed truncation is smaller than the last retained scale, uniformly in the mesoscopic range.
+
+*Significance.* This is a multitype connected field theory for prime constellations. It simultaneously organizes covariance, odd moments, mixed motifs, overlap singularities, and lower-order prime-power effects. Montgomery–Soundararajan and Kuperberg provide the closest one-field moment frameworks, while constrained singular-series sums provide the nearest local input [19, 34, 35]. The new content is the complete connected multitype functional. The first decisive theorem is the full third-cumulant formula for two distinct pair motifs.
+
+**Complete overlap-renormalization filtration (Conjecture 27).** Fix a finite motif family $$H_1,\ldots,H_m$$. Apply the degree-two specialization of Conjecture 26 and order all of its connected covariance strata by their asymptotic scales $$s_1\succ s_2\succ\cdots$$ (lexicographically in powers of $$L$$, $$\log X$$, and the renormalized disjoint scales). In the mesoscopic range scales sharing the same total power of $$L$$ and of logarithms differ only by powers of $$\theta=\log L/\log X$$ and merge into a single stratum whose limiting form is polynomial in $$\theta$$. The filtration, the graded convergence, and the eigenvalue asymptotics below are asserted for every fixed $$\theta\in(\varepsilon,1-\varepsilon)$$, with each $$A_\nu=A_\nu(\theta)$$ nondegenerate for every such $$\theta$$. Recursively subtract the earlier strata and let $$A_\nu$$ be the limiting covariance form at scale $$s_\nu$$, and put
+$$
+\mathcal W_\nu=\bigcap_{\mu<\nu}\ker A_\mu.
+$$
+For every fixed truncation of this ordered diagram expansion, the spectral projections of the covariance matrix converge to the associated graded spaces $$\mathcal W_\nu/\mathcal W_{\nu+1}$$, and every eigenvalue whose first nonzero term occurs within the truncation is asymptotic to $$s_\nu$$ times a positive eigenvalue of the induced form $$A_\nu$$. Vectors annihilating all retained forms pass canonically to the next connected diagram scales of Conjecture 26.
+
+Consequently every asymptotic variance scale of a finite motif statistic is generated by a connected overlap or renormalized disjoint diagram from Conjecture 26, and no scale external to that diagrammatic expansion occurs. The filtration is invariant under replacing the motif family by one with isomorphic exact-overlap incidence algebra and identical local Euler weights.
+
+*Significance.* The claim classifies all mechanisms by which a finite linear combination of prime motifs can become rigid. It predicts a canonical renormalization filtration, not merely one variance formula, and gives an algorithm for constructing observables that expose deeper arithmetic strata. A counterexample would identify a genuinely new source of rigidity outside overlap and disjoint correlation. The first theorem is a three-motif example in which one overlap form has a rational kernel and the next form is nondegenerate on it.
+
+**Regularized mesoscopic local–spectral trace formula (Conjecture 28).** Fix motifs $$H_i,H_j$$, a Schwartz function $$\phi$$ with $$\phi(0)=0$$, an even cutoff $$\eta\in C_c^\infty(\mathbb R)$$ with $$\eta=1$$ near the origin, and an even mollifier $$\kappa\in C_c^\infty(\mathbb R)$$ of integral one. Let $$Q^{\mathrm{loc}}_{ij}(\phi;L)$$ be the exact-overlap-renormalized singular-series form
+$$
+\sum_{t\in\mathbb Z}
+ \left[L\int_{\mathbb R}w(u)w(u+t/L)\,du\right]
+ \phi(t/L)\,\mathfrak S^{\mathrm c}(H_i,H_j+t).
+$$
+
+Let $$\Lambda_{T,\eta}^{\sharp}$$ be the Weil explicit-formula distribution in the logarithmic variable, with each nontrivial zero of ordinate $$\gamma$$ multiplied by $$\eta(\gamma/T)$$ and with the pole, trivial-zero, archimedean, and prime-power terms kept as separately named summands. For $$\delta>0$$, put
+$$
+\Lambda_{T,\eta,\delta}^{\sharp}
+   =\Lambda_{T,\eta}^{\sharp}*_{\log}\kappa_\delta,
+ \qquad \kappa_\delta(u)=\delta^{-1}\kappa(u/\delta).
+$$
+This is a smooth function, so products of its shifted copies are unambiguous. Define
+$$
+Q^{\mathrm{spec}}_{ij}[\eta,\kappa]
+ =Q^{\mathrm{spec}}_{ij}(\phi;X,L;T,\delta,\eta,\kappa)
+$$
+by inserting these mollified copies into the smoothed motif covariance, applying the same exact-overlap Möbius projection as on the local side, and subtracting the explicitly specified pole, diagonal, trivial-zero, archimedean, and prime-power counterterms before the mollifier is removed.
+
+For every sufficiently large fixed $$A,B$$, take
+$$
+T=(X/L)(\log X)^A,
+ \qquad
+ \delta=(L/X)(\log X)^{-B}.
+$$
+Then
+$$
+Q^{\mathrm{spec}}_{ij}(\phi;X,L;T,\delta,\eta,\kappa)
+ -Q^{\mathrm{loc}}_{ij}(\phi;L)
+ =o\bigl(V_{ij}(X,L)\bigr)
+$$
+uniformly for $$X^\varepsilon\le L\le X^{1-\varepsilon}$$ and for $$\phi$$ in bounded Schwartz sets, where $$V_{ij}$$ is the first nonzero disjoint covariance scale. The same limit holds jointly for every fixed matrix of motifs and tests. Changing $$A,B,\eta$$, or $$\kappa$$ within the stated admissible class changes the renormalized spectral form by $$o(V_{ij})$$, so the limiting trace functional is canonical.
+
+*Significance.* The spectral side is a finite smooth expression before any products are taken, and regularization independence is part of the conjecture rather than an implicit convention. The statement extends the Goldston–Montgomery and Chan prime/zero equivalence from one prime-counting field to products of shifted von Mangoldt functions [54, 33]. Failure can occur in two mathematically different ways: a missing mesoscopic covariance functional, or a genuine regularization anomaly. The first decisive theorem is the pair-motif covariance with one factor unshifted and two independent admissible mollifiers.
+
+**Anchored arithmetic polymer expansion for prime motifs (Conjecture 29).** Fix an admissible motif $$H$$ of size $$k$$. A finite set $$A\subset\mathbb Z$$ of occurrence starts is a polymer when $$0\in A$$, the overlap graph on $$A$$ is connected, and $$U_A=\bigcup_{t\in A}(H+t)$$ is admissible. Define its *anchored codimension*
+$$
+d_H(A)=\vert U_A\vert -\vert H\vert ;
+$$
+this is the number of new prime constraints beyond the occurrence anchored at $$0$$. In the regularized spectral model of Conjecture 28, let $$Z$$ be the limiting low-mode vector, let $$\lambda(t\mid Z)$$ be the conditional one-point occurrence intensity, and set
+$$
+\lambda_H^0=\frac{\mathfrak S(H)}{(\log X)^k},
+ \qquad
+ \widetilde\lambda(t\mid Z)=\lambda(t\mid Z)/\lambda_H^0.
+$$
+For every fixed polymer $$A$$, uniformly for bounded diameter,
+$$
+\frac{(\log X)^{d_H(A)}\rho^{(\vert A\vert )}(A\mid Z)}
+      {\lambda(0\mid Z)\prod_{t\in A\setminus\{0\}}
+       \widetilde\lambda(t\mid Z)}
+ \longrightarrow
+ \frac{\mathfrak S(U_A)}{\mathfrak S(H)}
+$$
+in probability in the successive limits defining $$Z$$. Thus the conditional environment supplies only the one-point intensity, while every connected Palm activity is graded by $$(\log X)^{-d_H(A)}$$ and weighted by the complete-union singular series.
+
+If admissible overlapping translates exist, put
+$$
+\delta(H)=\min_{\substack{t\ne0\\H\cup(H+t)\ \mathrm{admissible}}}
+ \bigl(\vert H\cup(H+t)\vert -\vert H\vert \bigr),
+ \qquad
+ \mathcal T_H=\{t\ne0:\ H\cup(H+t)\ \mathrm{admissible},\ \vert H\cup(H+t)\vert -\vert H\vert =\delta(H)\}.
+$$
+Then the cluster-start fraction has the first nontrivial expansion
+$$
+\theta_X(H)=1-\frac{c_H}{(\log X)^{\delta(H)}}
+   +o\bigl((\log X)^{-\delta(H)}\bigr),
+ \qquad
+ c_H=\sum_{\substack{t\in\mathcal T_H\\ t<0}}
+ \frac{\mathfrak S(H\cup(H+t))}{\mathfrak S(H)}.
+$$
+The set $$\mathcal T_H$$ is symmetric under $$t\mapsto-t$$, and the cluster-start fraction counts, for each occurrence, only whether it has an overlapping predecessor, so the sum is restricted to $$t<0$$ and equals half the symmetric sum over $$\mathcal T_H$$. If no admissible overlap exists, $$\theta_X(H)=1+o((\log X)^{-M})$$ for every fixed $$M$$. Higher corrections are the connected Ursell sums of anchored polymers ordered by $$d_H(A)$$. These finite-$$X$$ Gibbs expansions are projectively consistent and subcritical, and after division by the low-zero intensity the cluster-start process is Poisson to each fixed order of this triangular expansion.
+
+*Significance.* The relevant rarity is the number of new constraints after one occurrence is given, not the enhancement relative to a product of all one-point intensities. For two translates sharing $$s$$ of the $$k$$ prime positions, the Palm scale is $$(\log X)^{-(k-s)}$$. A universal $$1/\log X$$ correction therefore holds only for special motifs, such as pair motifs that admit an overlapping translate. The law keeps polymers of every size, supplies a canonical extremal-index exponent $$\delta(H)$$, and links Hardy–Littlewood constants, low-zero environments, Palm theory, and extreme motif gaps. For $$H=\{0,6\}$$ one has $$\delta(H)=1$$ and the pair-motif coefficient is recovered.
+
+**Topological expansion of non-Gaussian prime cumulants (Conjecture 30).** For every connected exact-overlap diagram in Conjecture 26, form the bipartite incidence complex whose vertices are motif occurrences and distinct surviving prime constraints, with an edge for incidence. Let $$g$$ be its first Betti number after forced coincidences are contracted. Once all larger coincidence strata have been subtracted, a diagram of Betti number $$g$$ is smaller than a tree diagram with the same external motifs by at least $$(\log L)^{-g}$$. The complete leading coefficient at each logarithmic order is the sum of the connected diagram weights with the corresponding Betti number. In particular, the first nonzero odd cumulant of a balanced motif statistic, a combination $$Y_c$$ whose coefficient vector annihilates every coincidence-stratum form of Conjecture 27, is carried by incidence trees. For the single-prime field the fully spread connected part $$\kappa^{\mathrm{sp}}_{2m+1}$$, defined by subtracting every coincidence stratum as in Conjecture 27, obeys
+$$
+\kappa^{\mathrm{sp}}_{2m+1}=(c_m+o(1))L^m(\log L)^{m+1},
+$$
+where $$c_m$$ is the total connected tree weight. The raw cumulant adds the explicit coincidence diagrams of Conjecture 26, which carry powers of $$\log X$$ and are computable term by term, so the tree law is a statement about the spread diagrams, exactly the regime of Kuperberg’s singular-series sums.
+
+*Significance.* This predicts a topological genus expansion for prime statistics: every independent cycle costs a logarithmic order. Kuperberg’s odd-moment conjecture is the one-field calibration, and the incidence-homology filtration with its motif-dependent coefficients is the new mechanism [34]. A failure would show that logarithmic suppression is controlled by an arithmetic invariant not visible in diagram topology.
+
+### Programme II: arithmetic first-arrival fields and class groups
+
+For a prime modulus $$q$$ and $$a\in\mathbb F_q^\times$$, let $$p(q,a)$$ be the least prime in the class $$a$$ and put
+$$
+T_q(a)=\frac{\operatorname{Li}(p(q,a))}{q-1},\qquad
+ \mathcal N_{q,a}=\sum_{p\equiv a\, (q)}
+ \delta_{\operatorname{Li}(p)/(q-1)}.
+$$
+The probability space chooses $$q$$ uniformly among primes in $$[Q,2Q]$$ and then chooses $$a$$ uniformly from $$\mathbb F_q^\times$$. Write $$e(x)=\mathrm e^{2\pi ix}$$.
+
+**Connected first-arrival functional (Conjecture 31).** Let $$w^{\mathrm c}_{r,Q}$$ be the connected factorial-cumulant measure of the random point process $$\mathcal N_{q,a}$$. For every fixed $$r\ge2$$ there is a locally finite signed measure $$K_r$$ on $$\mathbb R_+^r$$ such that
+$$
+(\log Q)^{r-1}w^{\mathrm c}_{r,Q}\Longrightarrow K_r
+$$
+vaguely, and $$K_1$$ denotes the limiting intensity measure, which in this clock is Lebesgue measure on $$\mathbb R_+$$. The measure $$K_r$$ is obtained by averaging, over the modulus aspect, the connected Hardy–Littlewood densities of $$r$$ primes constrained to one residue class. For every nonnegative compactly supported $$f$$ in a fixed uniform ball on which the Laplace functional is analytic,
+$$
+\log\mathbb E\exp(-\langle f,\mathcal N_{q,a}\rangle)
+ =\sum_{r\ge1}\frac{(-1)^r}{r!}
+ \int\prod_{j=1}^r(1-e^{-f(u_j)})\,dw^{\mathrm c}_{r,Q}(\mathbf u),
+$$
+and the asymptotic expansion obtained by inserting the limits $$K_r$$ is uniform to every fixed connected order. In particular the entire survival function, not merely its first correction, is determined by the hierarchy $$(K_r)_{r\ge2}$$.
+
+*Significance.* This is an arithmetic point-process theory of least primes. The coupon-collector model of Li–Pratt–Shakan supplies the nearest extremal analogy, but not a connected Laplace functional [36]. Truth would determine waiting times, occupancy covariance, cover times, and terminal clustering from one hierarchy. The first theorem is the existence and explicit evaluation of $$K_2$$ on compact time intervals.
+
+**Tested Gauss-polyspectral reciprocity for the least-prime field (Conjecture 32).** Set $$T_q(0)=\operatorname{Li}(q)/(q-1)$$ and centre the resulting field $$f_q$$ on all of $$\mathbb F_q$$. Let $$\mathbf A_q$$ and $$\mathbf M_q$$ be its complete additive and multiplicative Fourier coefficient vectors, including the explicit rank-one coordinate needed to record the value at $$0$$. There is then an explicit invertible Gauss matrix $$U_q$$ with
+$$
+\mathbf M_q=U_q\mathbf A_q.
+$$
+
+Choose $$q$$ uniformly among primes in $$[Q,2Q]$$. For every finite family of degrees $$r_1,\ldots,r_m$$ and uniformly bounded fibrewise test tensors $$\Phi_{j,q}$$, define the scalar additive observables
+$$
+X_{j,Q}(q)=\langle\Phi_{j,q},\mathbf A_q^{\otimes r_j}\rangle
+$$
+and the transported multiplicative observables
+$$
+Y_{j,Q}(q)=
+ \left\langle (U_q^{-1})^{*\otimes r_j}\Phi_{j,q},
+               \mathbf M_q^{\otimes r_j}\right\rangle.
+$$
+For every modulus, $$X_{j,Q}(q)=Y_{j,Q}(q)$$, so all joint cumulants under the random-modulus law satisfy the exact finite identity
+$$
+\operatorname{Cum}_Q(X_{1,Q},\ldots,X_{m,Q})
+ =\operatorname{Cum}_Q(Y_{1,Q},\ldots,Y_{m,Q}).
+$$
+This is the probability-space-correct form of Gauss transport. It makes no reference to a cumulant of a deterministic coefficient vector.
+
+The conjectural content is that, after normalization by the first nonzero connected scale, tests supported on additive zero-sum tensors converge to contractions of the Fourier transforms of the arrival kernels $$K_r$$ from Conjecture 31. Transporting those tests fibrewise by the exact Gauss matrices and only then taking the modulus average gives the same limits as the corresponding multiple explicit-formula correlations of Dirichlet $$L$$-function zeros. The two descriptions determine the same continuous multilinear functional on the completion of the tested tensor class.
+
+*Significance.* The elementary input is the finite Gauss matrix. The new claim is a complete higher-order tomography principle for the random-modulus least-prime field. Every scalar statistic is compared on a genuine probability space, while the varying finite fields are handled fibrewise before averaging. Failure would isolate a tensor class on which local same-class prime correlations and character-zero correlations disagree even though the underlying finite transforms are exact. The first theorem is the quadratic identity for tests localized to one additive lag and its transported character kernel.
+
+**Rubinstein–Sarnak terminal chaos dichotomy (Conjecture 33).** Assume GRH and a $$q$$-aspect linear-independence/random-phase hypothesis for the low zeros of primitive Dirichlet $$L$$-functions. Let $$x_q$$ satisfy $$\operatorname{Li}(x_q)/(q-1)=\log(q-1)$$ and let $$G_{q,A}(a)$$ be the centred, variance-normalized low-zero field obtained from characters $$\chi\ne\chi_0$$ and zeros $$\vert \gamma\vert \le(\log q)^A$$, with the standard compensator $$-\tfrac12\operatorname{Var} G_{q,A}(a)$$. Define the random empirical chaos measure
+$$
+\mathcal M_{q,A}(dg)=\frac1{q-1}\sum_{a\in\mathbb F_q^\times}
+  \exp\!\left(G_{q,A}(a)-\tfrac12\operatorname{Var} G_{q,A}(a)\right)
+  \delta_{G_{q,A}(a)}(dg).
+$$
+Let $$b_Q$$ be determined by $$\mathbb E_q\#\{a:T_q(a)>b_Q\}=1$$. In the successive limits $$Q\to\infty$$ and then $$A\to\infty$$, the pair consisting of $$\mathcal M_{q,A}$$ and
+$$
+\sum_a\delta_{(G_{q,A}(a),\,T_q(a)-b_Q)}
+$$
+converges jointly. Conditionally on the limiting chaos measure $$\mathcal M$$, the terminal cluster-start process is Poisson with directing measure
+$$
+e^{-x}\,\mathcal M(dg)\,dx.
+$$
+At finite modulus the cluster-start thinning enters through the terminal extremal index $$\theta_{\mathrm{occ}}(q)$$, the analogue for the last classes of the cluster-start fraction $$\theta_X(H)$$ of Conjecture 29, together with the terminal connected-polymer decorations of Conjecture 31. Both corrections enter at the first nonzero connected scale and vanish in the successive limit, so $$\theta_{\mathrm{occ}}(q)\to1$$ and the limiting directing measure carries no cluster factor.
+
+The nature of the directing measure is governed by the covariance-energy statistic
+$$
+\mathfrak E_{q,A}=\frac1{(q-1)^2}
+ \sum_{a,b\in\mathbb F_q^\times}
+ \operatorname{Cov}(G_{q,A}(a),G_{q,A}(b))^2.
+$$
+If $$\mathfrak E_{q,A}\to0$$ along the successive limit, $$\mathcal M$$ self-averages to the deterministic exponentially tilted Gaussian law and the terminal process is an ordinary decorated Poisson process. If $$\liminf\mathfrak E_{q,A}>0$$ and the Gaussian-chaos second moments are uniformly integrable, $$\mathcal M$$ is nondegenerate and the limit is a genuine Cox process. No nondegeneracy is asserted without this criterion.
+
+*Significance.* Rubinstein–Sarnak theory supplies the fixed-modulus prime-race environment [6]. The new object is its terminal first-arrival chaos measure in the modulus aspect. The statement now treats self-averaging as a serious competing model rather than assuming a Cox limit by terminology. It predicts the complete last class process, its prime-race marks, and an explicit spectral criterion separating a deterministic environment from persistent random mixing.
+
+**Nonlinear spectral response calculus for arithmetic first arrivals (Conjecture 34).** Let a sequence of modulus ensembles have a small explicit-formula perturbation of the arrival intensity
+$$
+V_Q(a,t)=\sum_{\chi\in\mathcal C_Q}v_{Q,\chi}(t)\chi(a),
+ \qquad \|V_Q\|_{T}\to0,
+$$
+where $$\mathcal C_Q$$ has uniformly bounded cardinality and, on every fixed interval $$[0,T]$$, the canonical norm is $$\|V\|_T=\sup_{a,0\le t\le T}\vert V(a,t)\vert $$. Assume that the connected hierarchy of Conjecture 31 satisfies an exponential cluster bound there, so its Laplace functional is analytic in a fixed $$\|\cdot\|_T$$-ball. If $$S_Q(a,t)$$ and $$S_Q^{(0)}(t)$$ are the perturbed and ordinary survival functions, then for every fixed $$R$$
+$$
+\log\frac{S_Q(a,t)}{S_Q^{(0)}(t)}
+ =\sum_{m=1}^{R}\mathcal R_m[V_Q^{\otimes m}](a,t)
+   +o(\|V_Q\|_{T}^{R})
+$$
+uniformly on compact $$t$$-ranges. The causal Volterra operator $$\mathcal R_m$$ is the universal linked-cluster contraction of the full hierarchy $$(K_r)_{r\ge1}$$ with $$m$$ marked perturbation insertions, and truncating the connected hierarchy at order $$J$$ gives a convergent approximation as $$J\to\infty$$.
+
+If the input character support is $$\mathcal C_Q$$, the $$m$$th response is supported exactly on products of at most $$m$$ input characters (subject only to coincidences and the trivial character). In particular the linear response preserves character rank, while the first new harmonics occur at quadratic order with coefficients determined by connected three-point arrival correlations.
+
+*Significance.* This is a nonlinear transfer calculus from zeros to first-hit statistics. A Siegel zero, a cluster of low zeros, and an ordinary prime-race bias become different inputs to the same response operators. The exceptional-zero rank-one statement is a special case, while the second-order harmonics provide a direct falsification test. The first theorem is the Fréchet derivative $$\mathcal R_1$$ from the two-point occupancy kernel.
+
+**Local-information capacity of odd class groups (Conjecture 35).** Fix an odd prime $$\ell$$. Sample negative fundamental discriminants $$D\in[-2Y,-Y]$$, conditioned on a fixed coarse two-primary invariant. For a set of odd primes $$S_Y$$, put $$M_Y=\prod_{p\in S_Y}p$$, let $$\Sigma_Y(D)=((D/p))_{p\in S_Y}$$ be the attainable sign vector, and let $$H_Y$$ be the logarithm of the number of attainable cells. Let $$\delta_Y(\sigma)$$ be the exact CRT density of the sign cell after imposing quadratic reciprocity and the fixed two-primary data, and let $$\mathcal D_Y$$ be the ambient discriminant family. Write
+$$
+\Delta_Y(S_Y)=\sup_\sigma
+ \left\vert \frac{\#\{D\in\mathcal D_Y:\Sigma_Y(D)=\sigma\}}
+ {\vert \mathcal D_Y\vert \,\delta_Y(\sigma)}-1\right\vert 
+$$
+over attainable cells with $$\vert \mathcal D_Y\vert \delta_Y(\sigma)\ge\log Y$$.
+
+There is a sequence $$\varepsilon_Y\to0$$, independent of $$S_Y$$ in the subcritical range, such that uniformly over those cells
+$$
+d_{\mathrm{TV}}\!\left(
+ \mathcal L(\mathrm{Cl}(D)[\ell^\infty]\mid\Sigma_Y=\sigma,\text{2-data}),
+ \mathcal L_{\mathrm{CL},\ell}\right)
+ \le \varepsilon_Y+O(\Delta_Y(S_Y)),
+$$
+and the analogous bound holds for every fixed Cohen–Lenstra moment. In particular, for every $$\varepsilon>0$$, the conclusion is uniform whenever
+$$
+H_Y\le(1-\varepsilon)\log Y,
+ \qquad \log M_Y\le(\tfrac12-\varepsilon)\log Y,
+ \qquad \Delta_Y(S_Y)=o(1).
+$$
+Since every odd prime contributes at most $$\log3\le\log p$$ of cell entropy, $$H_Y\le\log M_Y$$ throughout, so the conductor constraint is the binding one in the displayed range, while the entropy governs the impossibility clause below. At $$H_Y\ge(1+\varepsilon)\log Y$$ no uniform statement is possible. Up to the conductor scale at which $$\Delta_Y$$ becomes macroscopic, every first-order failure of local independence factors through this discriminant-cell discrepancy, and there is no earlier odd-class-group obstruction.
+
+*Significance.* Wood’s framework treats fixed local conditions [37]. The new statement proposes the full information capacity of an odd class group under a growing local sigma-algebra, with the entropy governing impossibility and the conductor governing equidistribution. It would transfer directly to Selmer groups, ray class groups, and unramified extension statistics. The first theorem is uniformity for $$\vert S_Y\vert \to\infty$$ with $$M_Y=Y^{o(1)}$$.
+
+### Programme III: finite logarithms, regulators, and algebraic tori
+
+For $$p\nmid a$$, write
+$$
+q_p(a)=\frac{a^{p-1}-1}{p}\pmod p.
+$$
+For a generating tuple $$g=(g_1,\ldots,g_s)$$, let $$R(g)$$ be its multiplicative relation lattice and let $$\mathbb T_g\subset(\mathbb R/\mathbb Z)^s$$ be the identity component of its annihilator. Its dimension is the saturated multiplicative rank.
+
+**Kummer–Haar law on relation tori (Conjecture 36).** Let $$\Gamma\le\mathbb Q^\times$$ be finitely generated, saturated, and torsion-free, and let $$g$$ be any ordered generating tuple. As $$p$$ varies in every fixed compatible cyclotomic–Kummer Chebotarev class, the vectors
+$$
+\frac{(q_p(g_1),\ldots,q_p(g_s))}{p}\in(\mathbb R/\mathbb Z)^s
+$$
+equidistribute with Haar measure on $$\mathbb T_g$$. More strongly, for every finite collection of compatible Chebotarev restrictions, the conditional empirical measures converge to the Haar disintegration on the corresponding components, and the support is contained in no proper closed coset of $$\mathbb T_g$$. The law is invariant under changing generators and depends on $$\Gamma$$ only through its saturation and the fixed Kummer conditioning data.
+
+*Significance.* Katz formulated horizontal Wieferich equidistribution principles for algebraic groups, and Shparlinski proved estimates in different horizontal and averaged regimes [38, 39]. The new content here is the exact saturated relation torus, full generator invariance, and disintegration under fixed Kummer classes. It turns multiplicative rank into a geometric support theorem rather than a heuristic count of coordinates.
+
+**Rank-dimensional large sieve for finite logarithms (Conjecture 37).** Choose a Smith-normal-form basis of the character lattice $$X^*(\mathbb T_g)=\mathbb Z^s/R(g)^{\mathrm{sat}}$$. There is a constant $$\delta_\Gamma>0$$ such that, for every $$\varepsilon>0$$, every $$M\le X^{\delta_\Gamma}$$, and all complex weights $$a_p$$ supported on $$X<p\le2X$$,
+$$
+\sum_{\substack{m\in X^*(\mathbb T_g)\\\|m\|_\infty\le M}}
+ \left\vert \sum_{X<p\le2X}a_p
+ e\!\left(\frac{\langle m,q_p(g)\rangle}{p}\right)\right\vert ^2
+ \ll_{\Gamma,\varepsilon}(M^{\operatorname{rank}\Gamma}+\pi(X))X^\varepsilon\sum_p\vert a_p\vert ^2.
+$$
+The same inequality holds after every fixed compatible cyclotomic–Kummer restriction, and for matrix-valued weights with the Hilbert–Schmidt norm. The exponent $$\delta_\Gamma$$ is invariant under changing the generating tuple.
+
+*Significance.* This is the quantitative mechanism behind Conjecture 36. It predicts that saturated rank is not only the support dimension but the exact dual dimension in a prime-varying large sieve. A proof for any positive power range would control genuine shrinking targets and would be far beyond currently available fixed-frequency tests. Failure would reveal an unrecognized spacing or energy obstruction among finite-logarithm vectors.
+
+**Mesoscopic-to-lattice shrinking-target transition (Conjecture 38).** Let $$\Gamma\le\mathbb Q^\times$$ be saturated and torsion-free of rank $$r$$, and choose a basis of $$\Gamma$$, identifying its relation torus with $$(\mathbb R/\mathbb Z)^r$$. For integers $$w_p$$ with $$1\le w_p=o(p)$$, let $$E_p(w)$$ be the event that every coordinate of the Fermat-quotient vector has a representative of absolute value at most $$w_p$$.
+
+*Mesoscopic universality.* If $$w_p\to\infty$$, then in every range in which the Haar mass
+$$
+\lambda(X)=\sum_{p\le X}\left(\frac{2w_p+1}{p}\right)^r
+$$
+tends to infinity, the count of $$E_p(w)$$ is asymptotic to $$\lambda(X)$$. On prime blocks with bounded Haar mass, the randomly translated event process converges to a Poisson process with that mass.
+
+*Lattice transition.* For every fixed finite target set $$B\subset\mathbb Z^r$$, there is an arithmetic regulator intensity $$\kappa_{\Gamma,B}\ge0$$ such that
+$$
+\#\{p\le X:q_p\vert _\Gamma\in B\}
+ =(\kappa_{\Gamma,B}+o(1))\sum_{p\le X}p^{-r}
+$$
+whenever the sum diverges, while only finitely many such primes occur when $$r\ge2$$. As a separately falsifiable genericity clause, for Kummer-generic $$\Gamma$$ and $$B=\{0\}$$ one has $$\kappa_{\Gamma,B}=1$$. The transition from Haar universality to the arithmetic intensity occurs only when $$w_p$$ remains bounded.
+
+*Significance.* This separates two universality classes that a single undifferentiated model conflates. Growing targets are controlled by Haar geometry, while exact Wieferich targets can carry a genuinely arithmetic regulator intensity. Gras’s much rarer fixed-base model and the Haar model therefore disagree precisely at the lattice boundary [40, 41]. The first theorem is mesoscopic universality for $$w_p=p^\eta$$ with one rank-one base.
+
+For a $$p$$-adic unit $$a$$, write $$\langle a\rangle_p$$ for the Teichmüller lift of its residue, and for a prime $$\mathfrak p\mid p$$ of a number field write $$\tau_{\mathfrak p}$$ for the Teichmüller lift in the completion at $$\mathfrak p$$. Define $$q_{p,k}(a)=p^{-1}\log(a\langle a\rangle_p^{-1})\pmod{p^k}$$. The matrix entries below are the $$\mathfrak p$$-adic analogues of $$q_{p,k}$$.
+
+**Global-lattice horizontal $$p$$-adic regulator-matrix law (Conjecture 39).** Let $$K/\mathbb Q$$ be a fixed Galois number field with group $$G$$, and let $$\Gamma\le\mathcal O_K^\times$$ be saturated and torsion-free, with ordered basis $$\epsilon_1,\ldots,\epsilon_s$$. Define the fixed global relation lattice
+$$
+\mathcal R_\Gamma=
+ \left\{(c_{\sigma j})\in\mathbb Z^{G\times s}:
+   \prod_{\sigma\in G}\prod_{j=1}^s
+   \sigma(\epsilon_j)^{c_{\sigma j}}\in\mu(K)\right\}.
+$$
+Let $$\mathbb T_\Gamma\subset(\mathbb R/\mathbb Z)^{G\times s}$$ be its annihilator. This lattice contains the norm and Galois relations and is independent of the chosen basis up to the natural integral change of coordinates.
+
+For a rational prime $$p$$ splitting completely in $$K$$, label the primes above $$p$$ by $$G$$, use the Teichmüller lift in each completion, and form the depth-$$k$$ matrix
+$$
+L_{p,k}(\Gamma)=
+ \left(p^{-1}\log_{\mathfrak p}
+   (\epsilon_j\tau_{\mathfrak p}(\bar\epsilon_j)^{-1})
+   \bmod p^k\right)_{\mathfrak p\mid p,\,1\le j\le s}.
+$$
+It lies in the annihilator of $$\mathcal R_\Gamma\otimes\mathbb Z/p^k\mathbb Z$$. As $$p$$ varies through any fixed compatible Frobenius class, $$L_{p,1}/p$$ equidistributes with Haar measure on $$\mathbb T_\Gamma$$, and the depth-$$k$$ matrices are Haar in the projective system of its reductions modulo $$p^k$$.
+
+Let $$\mathcal D$$ be a basis-invariant determinantal or Smith stratum in this projective module, and let $$\mu_{p,k}(\mathcal D)$$ be its exact local Haar mass. The primes for which $$L_{p,k}\in\mathcal D$$ have counting law governed by $$\sum_{p\le X}\mu_{p,k}(\mathcal D)$$. For a smooth transverse codimension-$$c$$ stratum, $$\mu_{p,1}(\mathcal D)=p^{-c}+O(p^{-c-1})$$, and codimension one has a Poisson point process in $$\log\log p$$ after uniform random translation, while codimension at least two has a summable large-prime tail together with the exact small-prime atoms.
+
+*Significance.* The horizontal state space is one fixed global torus rather than a relation module that changes with $$p$$. The conjecture turns mod-$$p$$ Leopoldt defects into a Galois-equivariant random-matrix problem, with exact Smith strata retaining higher depth. Existing mod-$$p$$ Leopoldt and random-matrix theories provide neighbouring languages [41, 42, 43]. Recent number-field Wieferich results strengthen the arithmetic motivation without supplying this horizontal matrix law [57, 58]. The first theorem is the rank-one split-prime law for a real quadratic field.
+
+**Functorial horizontal finite logarithms on algebraic tori (Conjecture 40).** Let $$T/\mathbb Q$$ be an algebraic torus, let $$\mathcal T$$ be its smooth integral model away from a finite set, and let $$\Gamma\le T(\mathbb Q)$$ be finitely generated. Let $$S$$ be the identity component of the Zariski closure of $$\Gamma$$. At a good unramified prime $$p$$, let $$\tau_p(\bar P)$$ be the canonical prime-to-$$p$$ torsion lift of the reduction of $$P\in\Gamma$$ and define
+$$
+\ell_p(P)=p^{-1}\log_T\bigl(P\tau_p(\bar P)^{-1}\bigr)\pmod p
+ \in\operatorname{Lie}(S)(\mathbb F_p).
+$$
+For any generators $$P_1,\ldots,P_s$$ of $$\Gamma$$, the normalized matrix $$(\ell_p(P_i)/p)_i$$ equidistributes, in every compatible Frobenius class, with Haar measure on the real relation subtorus cut out jointly by the algebraic subgroup $$S$$ and the integral relations among the $$P_i$$. For every morphism of tori $$\phi:T\to T'$$,
+$$
+\ell_p(\phi(P))=d\phi(\ell_p(P)),
+$$
+and the horizontal Haar measures push forward under the induced map. Isogenies preserve the shrinking-target intensities after the explicit finite kernel correction.
+
+*Significance.* Katz already proposed Wieferich equidistribution beyond $$\mathbb G_m$$ [38]. The additional content is a matrix-valued law for a finitely generated global subgroup, relation-subtorus support, fixed-Frobenius disintegration, and exact functoriality under morphisms and isogenies. It turns horizontal finite logarithms into a functor on the category of tori with arithmetic subgroups.
+
+### Programme IV: arboreal arithmetic dynamics
+
+For a degree-$$d$$ map $$f$$ and basepoint $$a$$, write $$K_n=\mathbb Q(f^{-n}(a))$$, $$G_n=\operatorname{Gal}(K_n/\mathbb Q)$$, and let $$\mu_n(C)=\vert C\vert /\vert G_n\vert $$ on conjugacy classes. For primes $$p\le X$$ unramified in $$K_n$$, let $$\widehat\mu_{n,X}$$ be the empirical Frobenius measure.
+
+**Entropy–conductor profile of arboreal resolution (Conjecture 41).** For a degree-$$d$$ map $$f$$ and level $$n$$, let $$G_{n,f}$$ be the arboreal quotient and $$\mu_{n,f}$$ its Haar measure on conjugacy classes. For $$N$$ independent samples from $$\mu_{n,f}$$ define the exact sampling obstruction
+$$
+\mathcal S_{n,f}(N)=
+ \mathbb E\,d_{\mathrm{TV}}\!\left(N^{-1}\sum_{j=1}^N\delta_{Z_j},\mu_{n,f}\right).
+$$
+For each nontrivial irreducible Artin representation $$\rho$$ of $$G_{n,f}$$, let $$q(\rho)$$ be its Artin conductor and define the GRH conductor energy
+$$
+\mathcal A_{n,f}(X)=
+ \frac{\log X}{\sqrt X}
+ \left(\sum_{\rho\ne1}(\dim\rho)^2
+  \bigl(\log q(\rho)+\dim(\rho)\log X\bigr)^2\right)^{1/2}.
+$$
+This is a canonical character-theoretic replacement for a single discriminant proxy. For a parameter family $$\mathcal F(B)$$ put
+$$
+n^*_{\mathcal F}(B,X;\eta)=
+ \max\left\{n:\mathbb E_{f\in\mathcal F(B)}
+   \bigl[\mathcal S_{n,f}(\pi(X))+\mathcal A_{n,f}(X)\bigr]\le\eta\right\}.
+$$
+
+Assume the generic arboreal image is open, exceptional parameters have density zero, Artin holomorphy and GRH hold at the levels considered, and the family is in the large-sieve range of Conjecture 42. Then the actual empirical resolution depth, defined by the same total-variation threshold with prime Frobenius samples, differs from $$n^*_{\mathcal F}(B,X;\eta)$$ by $$O_{\mathcal F,\eta}(1)$$.
+
+More precisely, suppose, uniformly for a density-one set of parameters, that the class measures have a limiting complete Rényi profile
+$$
+\psi_{\mathcal F}(\alpha)=
+ \lim_{n\to\infty}d^{-n}\log\sum_C\mu_{n,f}(C)^\alpha
+$$
+uniformly for $$\alpha$$ in a fixed interval containing $$[1/2,2]$$, and the corresponding Artin-conductor energies have finite positive exponential profiles on the same $$d^n$$ scale. Then
+$$
+n^*_{\mathcal F}(B,X;\eta)=\log_d\log X+O_{\mathcal F,\eta}(1).
+$$
+Two families of the same degree with boundedly different complete Rényi and conductor profiles have resolution depths differing by $$O(1)$$, and in particular a fixed-index open subgroup changes only the bounded shift.
+
+*Significance.* The observable depth is defined through the exact nonuniform sampling law and a representation-by-representation conductor energy. The $$\log_d\log X$$ scale follows from explicit Rényi and conductor profiles on the natural $$d^n$$ complexity scale. Large arboreal images and effective Chebotarev are inputs [44, 45, 46]. Recent work on fixed-point profiles shows why the full class-measure tail, rather than group order alone, matters [59]. The first theorem is bounded-shift stability for one explicit index-two subgroup of the binary wreath tower.
+
+**Arboreal family large sieve and cumulant independence (Conjecture 42).** Let $$\mathcal F\to\mathbb A^1$$ be a generically finite-index arboreal family. For each level $$n$$ and irreducible representation $$\rho$$ of the generic quotient $$G_n$$, let $$\mathcal V_{n,\rho}$$ be the associated middle-extension sheaf on the good parameter locus. Define the geometric conductor budgets
+$$
+\mathfrak C_{n,r}=
+ \sum_{\rho_1,\ldots,\rho_r}
+ \left(\prod_{j=1}^r\dim\rho_j\right)^2
+ \operatorname{cond}\!\left(\boxtimes_{j=1}^r\mathcal V_{n,\rho_j}\right)^2,
+ \qquad \mathfrak C_n=\mathfrak C_{n,1},
+$$
+where the external tensor product is taken on the CRT parameter space for distinct primes, and the conductor includes rank, singularities, tame drop, and Swan terms.
+
+*Square-root tier.* For every $$\varepsilon>0$$ and all complex coefficients $$\alpha_{p,\rho}$$,
+$$
+\sum_{\vert c\vert \le B}
+ \left\vert \sum_{p\le X}\sum_{\rho\ne1}
+  \alpha_{p,\rho}\operatorname{tr}
+  \rho(\operatorname{Frob}_{p,c})\right\vert ^2
+ \ll_{\varepsilon,\mathcal F}
+ \bigl(B+X^2\mathfrak C_n^{1+\varepsilon}\bigr)
+ \sum_{p,\rho}\vert \alpha_{p,\rho}\vert ^2,
+$$
+uniformly when $$X^2\mathfrak C_n^{1+\varepsilon}\le B^{1-\varepsilon}$$, after deleting the singular fibres.
+
+*Connected tier.* For every fixed $$r\ge3$$, centred trace functions at distinct primes have family-averaged connected cumulants of square-root size, uniformly in the range $$X^r\mathfrak C_{n,r}^{1+\varepsilon}\le B^{1-\varepsilon}$$, and equivalently, after normalization, every fixed connected Frobenius cumulant tends to zero. An exponential connected-moment bound makes this convergence uniform in $$r$$ over the range needed for occupancy functionals.
+
+Consequently, whenever the analytic Chebotarev error is $$o(1)$$ but the iid sampling functional of $$\mu_n$$ is nonvanishing, the complete conjugacy-cylinder count vector, averaged over parameters, has the nonuniform multinomial occupancy law of independent samples from $$\mu_n$$, including its missing-mass, collision, and total-variation profile. The multinomial conclusion is derived from the connected tier, not from the $$L^2$$ bound alone.
+
+*Significance.* This separates the two analytic inputs that a single-tier statement compresses into one claim. The square-root tier is a growing-monodromy large sieve in the spirit of Kowalski [47]. The connected tier is the genuinely stronger cross-prime independence principle required for an occupancy limit. The conductor budget is attached to the actual sheaves and their tensor products rather than to an undefined scalar conductor of a cover. A failure identifies either geometric complexity missed by the sheaf conductors or arithmetic entanglement surviving all fixed-order trace tests.
+
+**Coloured dynatomic Galois-factor process (Conjecture 43).** For $$f_c(x)=x^d+c$$, let the critical exact-period polynomial factor as $$\Psi_n(c)=\prod_{j=1}^{s_n}F_{n,j}(c)$$ over $$\mathbb Z$$. Sample $$c$$ from a dyadic height interval away from postcritically finite, discriminant, and fixed-resultant loci.
+
+For every fixed $$n$$, condition on any fixed finite local valuation state and normalize the prime factors of each $$F_{n,j}(c)$$ by that component’s residual logarithmic mass. The component-coloured factor processes converge jointly to independent Frobenius-marked Poisson–Dirichlet $$\operatorname{PD}(1)$$ processes, with the mark in colour $$j$$ given by the fixed-point-size-biased conjugacy law in the splitting field of $$F_{n,j}$$. The total logarithmic mass of ramified factors tends to zero.
+
+Uniformly for $$n=n(H)$$ with $$\deg\Psi_n=o(\log H)$$, every fixed correlation functional whose support lies inside the available level of distribution converges to the corresponding restricted-support correlation of these coloured marked processes. No full-process claim is made at growing degree without level-one distribution.
+
+*Significance.* Exact-period components are genuine geometric colours, and their Galois marks distinguish dynamical families with similar unmarked factor sizes. The statement deliberately separates the full fixed-degree process from the restricted-support growing-degree law, in accordance with the distribution thresholds in Bharadwaj–Rodgers [51]. The first theorem is a two-colour correlation law at one fixed period.
+
+**Complexity-uniform primitive valuation process for dynatomic values (Conjecture 44).** For the critical exact-period polynomial $$\Psi_n(c)$$, remove its canonical greatest common divisor in $$\mathbb Q[c]$$ with the earlier critical-orbit product and denote the result by $$\Psi_n^{\mathrm{new}}$$. Define the logarithmic arithmetic complexity
+$$
+\mathfrak H_n=
+ \deg\Psi_n^{\mathrm{new}}
+ +\log^+H_{\mathrm{coeff}}(\Psi_n^{\mathrm{new}})
+ +\log^+\vert \operatorname{Disc}(\Psi_n^{\mathrm{new}})\vert 
+ +\sum_{m<n}\log^+\vert \operatorname{Res}(\Psi_n^{\mathrm{new}},f_c^m(0))\vert ,
+$$
+where zero resultants have already been removed by the canonical gcd. For each prime $$p$$, let $$\nu_{n,p}$$ be the exact Haar law on $$\mathbb Z_p$$ of the primitive valuation
+$$
+V_{n,p}(c)=v_p(\Psi_n^{\mathrm{new}}(c))
+ \mathbf 1_{p\nmid f_c^m(0)\ \forall m<n}.
+$$
+All discriminant, resultant, and collision primes remain inside these local laws.
+
+For every control function $$\omega(H)=o(\log H)$$, uniformly over levels with $$\mathfrak H_n\le\omega(H)$$, the finite-prime valuation vectors for $$c$$ in a dyadic height interval converge to the corresponding marginals of $$\bigotimes_p\nu_{n,p}$$. In addition, for every $$\eta>0$$,
+$$
+\lim_{z\to\infty}\limsup_{H\to\infty}
+ \sup_{n:\,\mathfrak H_n\le\omega(H)}
+ \mathbb P\!\left(
+   \sum_{p>z}(\log p)(V_{n,p}-1)_+>
+   \eta\log\vert \Psi_n^{\mathrm{new}}(c)\vert 
+ \right)=0,
+$$
+and the analogous unnormalized tail $$\sum_{p>z}\mathbb P(V_{n,p}\ge2)$$ tends to zero whenever the local squarefree product is positive. These two clauses give convergence in the topology generated by bounded cylinder functions and the logarithmic squarefull-mass functional.
+
+Consequently
+$$
+\mathbb P\bigl(\Psi_n^{\mathrm{new}}(c)\ \text{is squarefree}\bigr)
+ =\prod_p\nu_{n,p}(\{0,1\})+o(1)
+$$
+uniformly in the stated complexity range, and the logarithmic squarefull mass converges to the law determined by the complete local product.
+
+*Significance.* Degree alone does not control a growing polynomial family. The controlling range includes coefficient height, discriminant, and resultants, while the infinite-product conclusion is supported by an explicit uniform squarefull-tail assertion. The local process still retains every bad-prime and collision state and remains level dependent, as primitive hits at a fixed prime occur by bounded time modulo $$p^k$$. The nearest literature treats primitive divisors and fixed-polynomial squarefree values, not this complexity-uniform adelic process [49, 48].
+
+**Divisor-sensitive classification of dynamical gcd height (Conjecture 45).** Let $$F=(f,g)$$ be a split map on $$(\mathbb P^1)^2$$, with $$f,g$$ disintegrated (in the sense of Medvedev and Scanlon [56], so neither is linearly conjugate to a power map, a Chebyshev map, or a close relative of these) of the same degree, and let $$P=(a,b)$$ have positive canonical heights. Let $$D_1,D_2$$ be the two coordinate-zero divisors and let $$E$$ be the exceptional divisor of the blow-up at $$D_1\cap D_2$$. Then
+$$
+\limsup_{n\to\infty}
+ \frac{h_E(F^n(P))}{\max\{h(f^n(a)),h(g^n(b))\}}>0
+$$
+if and only if there exist $$m\ge0$$ and an irreducible $$F$$-periodic curve $$Z$$ containing $$F^m(P)$$ such that, on the normalization of $$Z$$, the pullbacks of $$D_1$$ and $$D_2$$ have a common nonzero effective component. In the absence of such eventual entry into a divisor-compatible periodic curve, the normalized gcd height tends to zero.
+
+The converse is unconditional in every setting where the required Vojta inequality for the blow-up is known, and otherwise is explicitly conditional on that inequality. The same criterion extends to split maps on $$(\mathbb P^1)^r$$ by replacing a common component with positive codimension-one intersection multiplicity among the pulled-back divisors.
+
+*Significance.* The obstruction is not merely a common dynamical quotient. It is a periodic geometric relation carrying the actual divisors measured by the gcd height. Eventual entry is the right notion, since a preperiodic tail can carry the divisor relation before periodicity begins. Recent work resolves several set-theoretic dynamical-GCD problems, while this height-theoretic divisor classification is the additional boundary [50]. Failure would point to a new source of macroscopic Diophantine proximity outside invariant geometry.
+
+### Programme V: adelic factorization and sieve flow
+
+Throughout this programme $$P^+(m)$$ and $$P^-(m)$$ denote the largest and smallest prime factors of $$m$$, the constant $$\gamma$$ is Euler’s, $$\rho_f(p)$$ counts the roots of $$f$$ modulo $$p$$, and every sample $$n\in[N,2N]$$ is drawn uniformly.
+
+**Frobenius-marked Poisson–Dirichlet process (Conjecture 46).** Let $$f\in\mathbb Z[x]$$ be irreducible with splitting field $$L$$ and transitive Galois group $$G$$. Sample $$n\in[N,2N]$$. Mark each unramified prime factor $$p$$ of $$f(n)$$ by its conjugacy class $$C\subset G$$ and give it mass $$u=\log p/\log\vert f(n)\vert $$. The macroscopic marked process converges to a marked $$\operatorname{PD}(1)$$ process with conditional mark law
+$$
+\mathbb P(C\mid u)=\frac{\vert C\vert }{\vert G\vert }\operatorname{fix}(C),\qquad\text{$\operatorname{fix}(C)$ the number of fixed roots of an element of $C$,}
+$$
+independent of $$u$$. Given the masses and every fixed finite local valuation state, the marks of finitely many macroscopic factors are asymptotically independent. Under a normal quotient equipped with the induced permutation representation, the marked process pushes forward functorially.
+
+*Significance.* Chebotarev contributes $$\vert C\vert /\vert G\vert $$, divisibility by a polynomial value size-biases by the number of fixed roots, and Burnside’s lemma normalizes the result. Bharadwaj–Rodgers supply the unmarked factor-process framework [51]. Simultaneous Galois marking, conditional independence, and functorial pushforward are the new content. This is the cleanest bridge in the collection between Galois theory and probabilistic factorization.
+
+**Three-scale factorization of polynomial values (Conjecture 47).** Let $$f\in\mathbb Z[x]$$ be irreducible, sample $$n\in[N,2N]$$, choose $$y=y(N)\to\infty$$ with $$\log y=o(\log N)$$, and write $$R_y=f(n)/S_y(f(n))$$, where $$S_y(m)=\prod_{p\le y}p^{v_p(m)}$$ is the $$y$$-smooth part. Jointly with the complete small-prime valuation field $$(v_p(f(n)))_{p\le y}$$, the residual logarithmic factor process
+$$
+\sum_{p\mid R_y}v_p(R_y)\,
+ \delta_{\left(\log p/\log\vert R_y\vert ,\,\mathrm{Frob}_p\right)}
+$$
+converges to the following conservation-corrected product object: the small valuations have their polynomial Kubilius law, and conditional on their consumed logarithmic mass the residual process is a scale-invariant Poisson process of intensity $$du/u$$, marked by Conjecture 46, conditioned to have total mass one. The small field and the unconditioned residual Poisson process are asymptotically independent, and all leading dependence after conditioning is the single residual-mass constraint.
+
+For disjoint normalized size bands bounded away from zero, the unconditioned residual process has independent increments. Its mesoscopic restriction and its ranked macroscopic atoms yield respectively the scale-invariant factor process and the Frobenius-marked $$\operatorname{PD}(1)$$ partition. Thus the local Kubilius field is the boundary variable fixing the available mass, while the mesoscopic and macroscopic laws are two projections of one residual process, and no additional cross-scale coupling survives.
+
+*Significance.* Raw small–large independence is false because small factors consume mass. This conjecture identifies the complete conservation-corrected product structure and adds the mesoscopic scale that is absent from a two-scale statement. It would justify, in one limit theorem, the local sieve model, the scale-invariant factor process, and the macroscopic partition.
+
+**Adelic Gibbs gluing for reducible polynomial values (Conjecture 48).** Let $$f=\prod_{i=1}^s g_i$$ be squarefree with irreducible components, sample $$n\in[N,2N]$$, and put $$t=n/N$$. For each prime $$p$$, let $$\nu_p$$ be the exact Haar law on $$\mathbb Z_p$$ of the valuation vector $$(v_p(g_1(x)),\ldots,v_p(g_s(x)))$$. For $$y\to\infty$$ with $$\log y=o(\log N)$$, consider stable convergence jointly with the archimedean coordinate $$t$$ and condition on $$\mathscr L_y=(v_p(g_i(n)))_{p\le y,i\le s}$$. After normalizing each component by its own residual logarithmic mass, the coloured Frobenius-marked factor processes converge to conditionally independent copies of the three-scale law of Conjecture 47, with the marks of Conjecture 46.
+
+Unconditionally, the joint process is the projective Gibbs mixture obtained by integrating those conditional product laws against Lebesgue measure in $$t$$ and the adelic local law $$\bigotimes_p\nu_p$$, in the iterated order $$N\to\infty$$ and then $$y\to\infty$$. Every bounded finite-dimensional Laplace functional is determined by
+$$
+Z_p(\mathbf z)=\int_{\mathbb Z_p}\prod_i z_i^{v_p(g_i(x))}\,dx
+$$
+together with the archimedean size profile $$(\log\vert g_i(Nt)\vert )_i$$. No additional colour coupling survives after this adelic–archimedean mixture.
+
+*Significance.* A scalar Euler factor cannot specify a point process. This statement gives the full local-to-global gluing rule and includes the archimedean variable that can couple component sizes. It is functorial under multiplying, splitting, or regrouping components. A persistent medium-prime or archimedean coupling after the stated mixture would identify a new nonadelic invariant.
+
+**Full multivariate adelic saddle law for joint smoothness (Conjecture 49).** Let $$f_1,\ldots,f_s\in\mathbb Z[x]$$ be pairwise coprime and primitive, sample $$n\in[N,2N]$$, and put $$t=n/N$$. For complex variables $$\mathbf s$$ and smoothness bounds $$\mathbf y$$, define
+$$
+\mathcal Z_{p,\mathbf y}(\mathbf s)=
+ \int_{\mathbb Z_p}p^{-\sum_{i:p\le y_i}(s_i-1)v_p(f_i(x))}\,dx,
+ \qquad
+ \widehat{\mathcal Z}_{p,\mathbf y}(\mathbf s)=
+ \frac{\mathcal Z_{p,\mathbf y}(\mathbf s)}
+      {\mathcal Z_{p,\mathbf y}(+\boldsymbol\infty)}.
+$$
+The denominator is the exact Haar probability that $$p$$ divides none of the relevant $$f_i(x)$$. Put
+$$
+\Phi_t(\mathbf s)=
+ \sum_p\log\widehat{\mathcal Z}_{p,\mathbf y}(\mathbf s)
+ +\sum_i(s_i-1)\log\vert f_i(Nt)\vert .
+$$
+For $$f(x)=x$$, this gives the usual truncated zeta factor $$(1-p^{-s})^{-1}$$. Define the joint local probability by the Perron-calibrated multivariate inverse Mellin integral
+$$
+\mathscr P_t^{\mathrm{joint}}=
+ \frac{1}{(2\pi i)^s}
+ \int_{\boldsymbol\sigma_t+i\mathbb R^s}
+ e^{\Phi_t(\mathbf s)}\prod_{i=1}^s\frac{ds_i}{s_i},
+$$
+with the standard truncated-contour limit, where $$\boldsymbol\sigma_t$$ is the unique real saddle in the admissible region. The factors $$s_i^{-1}$$ are part of the canonical cumulative smoothness event, and for one variable they recover the Hildebrand–Tenenbaum Perron normalization [55].
+
+Uniformly when every $$u_i(t)=\log\vert f_i(Nt)\vert /\log y_i$$ lies in a fixed compact saddle-point region,
+$$
+\mathbb P(P^+(f_i(n))\le y_i\ \forall i)
+ \sim\int_1^2\mathscr P_t^{\mathrm{joint}}\,dt.
+$$
+The integral has the full multivariate saddle expansion. Writing $$H_t=\nabla^2\Phi_t(\boldsymbol\sigma_t)$$, its leading term includes the joint action, the amplitude $$\prod_i\sigma_{i,t}^{-1}$$, and $$(\det H_t)^{-1/2}$$, with the usual lattice correction when the valuation span is proper.
+
+If $$\mathscr P_{i,t}^{\mathrm{marg}}$$ are the identically calibrated one-polynomial probabilities, then $$\mathscr P_t^{\mathrm{joint}}/\prod_i\mathscr P_{i,t}^{\mathrm{marg}}$$ is the complete ratio of joint and marginal actions, Perron amplitudes, Hessian determinants, and lattice corrections. Its Euler-product component is the ratio of the exact $$p$$-adic partition functions evaluated at the joint and marginal saddles. None of these factors may be replaced by a scalar Euler correction at the marginal saddle.
+
+*Significance.* The statement is calibrated to the cumulative smoothness probability. It combines exact higher $$p$$-adic valuations, moving archimedean sizes, the joint saddle displacement, Perron amplitudes, mixed curvature, and possible lattice effects. Even one-polynomial smooth-value asymptotics are difficult [52, 53]. A complete multivariate adelic saddle law would be a major new local–global bridge.
+
+**Buchstab–Bateman–Horn component flow (Conjecture 50).** Let $$f\in\mathbb Z[x]$$ be primitive, irreducible, and admissible, and sample $$n\in[N,2N]$$. For $$y$$ with $$u_n=\log\vert f(n)\vert /\log y$$ in a fixed compact subset of $$(1,\infty)$$, let $$\Omega_y(f(n))$$ be the number of prime factors of $$f(n)$$ exceeding $$y$$, counted with multiplicity, on the event $$P^-(f(n))>y$$. Put
+$$
+V_f(y)=\prod_{p\le y}\left(1-\frac{\rho_f(p)}p\right).
+$$
+Define the Buchstab component functions by
+$$
+\omega_1(u)=\frac1u,
+ \qquad
+ \omega_j(u)=\frac{1}{u(j-1)!}
+ \int_{\substack{t_1,\ldots,t_{j-1}\ge1\\
+ t_1+\cdots+t_{j-1}\le u-1}}
+ \frac{dt_1\cdots dt_{j-1}}{t_1\cdots t_{j-1}}
+ \quad(j\ge2),
+$$
+so that $$\sum_{j\ge1}\omega_j(u)=\omega(u)$$. Then for every fixed $$j$$,
+$$
+\mathbb P\bigl(P^-(f(n))>y,\ \Omega_y(f(n))=j\bigr)
+ =V_f(y)e^\gamma\mathbb E_{n\in[N,2N]}\omega_j(u_n)+o(V_f(y)),
+$$
+uniformly on compact $$u$$-ranges. Conditional on the ordered logarithmic sizes of the $$j$$ remaining factors, their unramified Frobenius marks are independent with the fixed-point-size-biased law of Conjecture 46. Summing over $$j$$ gives the rough-value Buchstab law, $$j=1$$ gives the Bateman–Horn prime density, and $$j=2$$ gives the semiprime transition. Whenever $$\max_{N\le n\le2N}\vert f(n)\vert <y^2$$, every rough value has exactly one prime factor above $$y$$, so the $$j=1$$ component exhausts the rough set, while the density formula itself remains conjectural.
+
+*Significance.* The conjecture resolves a rough polynomial value into its complete finite-$$u$$ factor count and Galois mark content. Primes and semiprimes are not inserted as separate heuristics. They are components of one universal flow. Generalized Buchstab equations are the random-integer antecedent [60], and the fixed-polynomial, Galois-marked component law with its local factors is the new statement. It is strongly falsifiable even when total roughness follows Buchstab.
+
 ## 6. Stress tests and independent recomputation
 
 Each statement was tested three ways: against the literature, against computation well beyond its original range, and against an independent reimplementation.
@@ -729,6 +1318,62 @@ Determine $$\theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 31. H. Cohen, *High precision computation of Hardy–Littlewood constants*, unpublished notes (PDF hosted at OEIS A221712).
 
 32. N. A. Carella, *Twin primes in quadratic arithmetic progressions*, arXiv:1710.07827 (unrefereed preprint). DOI: 10.48550/arXiv.1710.07827.
+
+33. T. H. Chan, *More precise pair correlation of zeros and primes in short intervals*, arXiv:math/0206292.
+
+34. V. Kuperberg, *Odd moments in the distribution of primes*, arXiv:2109.03767.
+
+35. V. Kuperberg, B. Rodgers and E. Roditty-Gershon, *Sums of singular series and primes in short intervals in algebraic number fields*, arXiv:2001.09513.
+
+36. J. Li, K. Pratt and G. Shakan, *A lower bound for the least prime in an arithmetic progression*, arXiv:1607.02543.
+
+37. M. M. Wood, *Cohen–Lenstra heuristics and local conditions*, arXiv:1710.01350.
+
+38. N. M. Katz, *Wieferich past and future*, Contemporary Mathematics 632 (2015), 253–270.
+
+39. I. E. Shparlinski, *Fermat quotients: exponential sums, value set and primitive roots*, arXiv:1104.3909.
+
+40. G. Gras, *Etude probabiliste des quotients de Fermat*, Funct. Approx. Comment. Math. 54 (2016), arXiv:1409.2815.
+
+41. G. Boeckle, D.-A. Guiraud, S. Kalyanswamy and C. Khare, *Wieferich primes and a mod $$p$$ Leopoldt conjecture*, arXiv:1805.00131.
+
+42. Y. Wang and R. P. Stanley, *The Smith normal form distribution of a random integer matrix*, arXiv:1506.00160.
+
+43. R. Van Peski, *Limits and fluctuations of $$p$$-adic random matrix products*, arXiv:2011.09356.
+
+44. R. Jones, *Galois representations from pre-image trees: an arboreal survey*, arXiv:1402.6018.
+
+45. B. Kadets, *Large arboreal Galois representations*, arXiv:1802.09074.
+
+46. J. Thorner and A. Zaman, *A unified and improved Chebotarev density theorem*, arXiv:1803.02823.
+
+47. E. Kowalski, *The large sieve, monodromy and zeta functions of curves*, J. reine angew. Math. 601 (2006), 29–69, arXiv:math/0503714.
+
+48. D. Krumm, *Galois groups in a family of dynatomic polynomials*, arXiv:1707.02501.
+
+49. K. Doerksen and A. Haensch, *Primitive prime divisors in zero orbits of polynomials*, arXiv:1009.3971.
+
+50. S. Yang and X. Zhong, *Dynamical GCD problems and a variant of the Dynamical Mordell–Lang conjecture*, arXiv:2602.18302.
+
+51. A. Bharadwaj and B. Rodgers, *Large prime factors of well-distributed sequences*, arXiv:2402.11884.
+
+52. G. Martin, *An asymptotic formula for the number of smooth values of a polynomial*, arXiv:math/9909180.
+
+53. M. Mine, *An upper bound for the number of smooth values of a polynomial and its applications*, arXiv:2410.09558.
+
+54. D. A. Goldston and H. L. Montgomery, *Pair correlation of zeros and primes in short intervals*, in Analytic Number Theory and Diophantine Problems, Progr. Math. 70, Birkh\"auser, 1987, 183–203.
+
+55. A. Hildebrand and G. Tenenbaum, *On integers free of large prime factors*, Trans. Amer. Math. Soc. 296 (1986), 265–290.
+
+56. A. Medvedev and T. Scanlon, *Invariant varieties for polynomial dynamical systems*, Ann. of Math. 179 (2014), 81–177, arXiv:0901.2352.
+
+57. N. Fellini and M. R. Murty, *Wieferich primes in number fields and the conjectures of Ankeny–Artin–Chowla and Mordell*, J. Number Theory 285 (2026), 209–229; arXiv:2508.08472.
+
+58. R. Li and J. Zhao, *Non-Wieferich property of prime ideals and a conjecture of Erd\H{o*s}, arXiv:2601.12753.
+
+59. J. Fariña-Asategui, *Arboreal Galois representations of rational functions: fixed-point proportion and the extension problem*, arXiv:2601.19414.
+
+60. P. Moree, *A generalization of the Buchstab equation*, Manuscripta Math. 94 (1997), 267–270.
 
 ## Explanations
 
