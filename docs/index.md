@@ -187,7 +187,7 @@ T(x)\;=\;\frac1{2\log^2x}
 \log q\,\log(q^2-2),
 $$
 
-whose scale is governed by the constant $$C_7$$ of Conjecture 19. Then: *(i)* [drift law, at drift-scale normalization] the clause asserts two sub-claims, labelled separately because they can fail independently. *(i-a)* [mechanism] class $$1$$ carries the systematic surplus $$T$$: one has the decomposition $$D_1(t)=T(t)+R(t)$$ in which the remainder $$R$$ carries no deterministic component at the drift scale, so that the entire drift-scale deterministic content of $$D_1$$ is the contamination term and its coefficient is thereby identified. *(i-b)* [averaging] at the drift-scale normalization the remainder averages away:
+Then: *(i)* [drift law, at drift-scale normalization] the clause asserts two sub-claims, labelled separately because they can fail independently. *(i-a)* [mechanism] class $$1$$ carries the systematic surplus $$T$$: one has the decomposition $$D_1(t)=T(t)+R(t)$$ in which the remainder $$R$$ carries no deterministic component at the drift scale, so that the entire drift-scale deterministic content of $$D_1$$ is the contamination term and its coefficient is thereby identified. *(i-b)* [averaging] at the drift-scale normalization the remainder averages away:
 
 $$
 \mathcal{M}_x\!\left(\frac{R(t)\,\log^2t}{\sqrt t}\right)\longrightarrow0,

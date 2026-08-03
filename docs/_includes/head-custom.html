@@ -38,8 +38,25 @@ window.MathJax = {
 <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
-  /* Long formulas and the one wide table scroll instead of overflowing. */
-  mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
+  /* Wide formulas and tables scroll sideways instead of being cut off on
+     narrow (mobile) screens. */
+  mjx-container[display="true"] {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;   /* momentum scroll on iOS */
+    padding-bottom: 0.35em;              /* keep a scrollbar off the glyphs */
+  }
+  /* A faint scrollbar makes it obvious a wide equation can be swiped sideways. */
+  mjx-container[display="true"]::-webkit-scrollbar { height: 4px; }
+  mjx-container[display="true"]::-webkit-scrollbar-thumb {
+    background: rgba(128,128,128,0.5); border-radius: 2px;
+  }
+  /* Belt and braces: nothing may force the page wider than the screen, and a
+     very wide inline formula (which cannot scroll on its own) makes the content
+     column scroll rather than clip at the right edge. */
+  .wrapper, section, p, li { max-width: 100%; }
+  section { overflow-x: auto; }
   table { display: block; width: fit-content; max-width: 100%; overflow-x: auto; }
 </style>
 <style>p.view, .view { display: none !important; }</style>
