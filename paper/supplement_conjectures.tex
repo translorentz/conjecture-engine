@@ -136,11 +136,11 @@ $\log\mathcal Z_{X,L}$ has a uniform asymptotic expansion indexed by connected e
 overlap diagrams of at most $R$ translated motifs.  A diagram whose coincidence hypergraph connects the $r$ translated sets
 $H_{i_1}+t_1,\ldots,H_{i_r}+t_r$ contributes, at the leading order of its stratum,
 \[
- W_\tau(X,L;\mathbf t)\,
+ W_\tau(L;\mathbf t)\,
  \SG\Bigl(\bigcup_{j=1}^r(H_{i_j}+t_j)\Bigr)
  \prod_v(\log X)^{m_v-1},
 \]
-where $W_\tau(X,L;\mathbf t)=L\int_{\R}\prod_{j=1}^rw(u+t_j/L)\,du$ is the
+where $W_\tau(L;\mathbf t)=L\int_{\R}\prod_{j=1}^rw(u+t_j/L)\,du$ is the
 archimedean window-overlap weight of the diagram and
 $m_v$ is the multiplicity of the prime constraint at $v$: any set partition that
 separates a coincidence loses at least one factor of $\log X$, so the M\"obius
@@ -257,32 +257,45 @@ limiting mode vector, a nondegenerate random object, not on a sigma-field genera
 finite $X$, where conditioning on deterministic functions of the window position would
 degenerate to the sample point.
 
+Write $e(A)=|A|\,|H|-|U_A|$ for the number of shared prime constraints of a
+polymer, so $e(A)\ge|A|-1$ for connected $A$ by the multiplicity rule of \cref{c1}.
 For every fixed polymer $A$, under the limiting joint law,
 \[
  \frac{\rho^{(|A|)}(A\mid Z)}
-      {\prod_{t\in A}\lambda(t)}
+      {(\log X)^{e(A)}\prod_{t\in A}\lambda(t)}
  \longrightarrow
  \frac{\SG(U_A)}{\SG(H)^{|A|}}
 \]
-in probability as $R\to\infty$, uniformly for bounded polymer
-diameter.  These normalized conditional Palm ratios generate a projectively consistent
-Gibbs polymer measure.  Its cluster partition function is subcritical for every fixed
-admissible $H$ and has an exponential cluster-size tail.  Consequently the rescaled
-occurrence process is a Cox process of Poisson cluster starts directed by the low-zero
-one-point intensity, decorated by this arithmetic polymer law, and
+in probability as $R\to\infty$, uniformly for bounded polymer diameter.  The polymer
+activities therefore carry the factors $(\log X)^{-e(A)}$, every non-singleton
+activity vanishes in the limit, and the cluster structure is a finite-$X$
+triangular-array phenomenon rather than a nondegenerate limiting decoration.  The
+conjectured law is the first-order extremal-index expansion: the cluster-start
+fraction of the occurrence process obeys
 \[
- \theta(H)=\E^{\mathrm{Palm}}\!\left[|A|^{-1}\right]
+ \theta_X(H)=1-\frac{c(H)}{\log X}+o\!\left(\frac1{\log X}\right),
+ \qquad
+ c(H)=\sum_{t\ne0}\frac{\SG\bigl(H\cup(H+t)\bigr)}{\SG(H)},
 \]
-is the extremal index for long gaps between occurrences.
+the sum running over the shifts sharing exactly one prime constraint, with the
+higher-order polymer corrections carrying higher powers of $1/\log X$ through the
+analogous connected activities.  The finite-$X$ Gibbs polymer expansion built from
+these activities is projectively consistent, its cluster partition function is
+subcritical for every fixed admissible $H$, and the rescaled occurrence process is,
+to first order, a Cox process of Poisson starts directed by the low-zero one-point
+intensity with the polymer corrections entering at the scale $1/\log X$.
 \end{conjecture}
 
 \paragraph{Why this is top-tier.}
 The conditional normalization is what makes the law canonical: the
 low-zero field controls only the varying one-point intensity, while complete union
-singular series control the residual cluster geometry.  The law uses polymers of every
-size: for $H=\{0,6\}$, starts $0,6,12$ already form a legitimate three-occurrence
-polymer.  A proof would connect Hardy--Littlewood constants, explicit-formula fields,
-Palm theory, and extreme gaps in one object.
+singular series control the residual cluster geometry, at the explicit
+$(\log X)^{-e(A)}$ activity scale that the multiplicity rule forces.  The law uses
+polymers of every size: for $H=\{0,6\}$, starts $0,6,12$ already form a legitimate
+three-occurrence polymer, and for that motif
+$c(H)=2\,\SG(\{0,6,12\})/\SG(\{0,6\})$.  A proof would connect
+Hardy--Littlewood constants, explicit-formula fields, Palm theory, and extreme gaps
+in one object.
 
 \begin{conjecture}[Topological expansion of non-Gaussian prime cumulants]\label{c5}
 For every connected exact-overlap diagram in \cref{c1}, form the bipartite incidence
@@ -336,7 +349,8 @@ measure $K_r$ on $\R_+^r$ such that
 vaguely, and $K_1$ denotes the limiting intensity measure, which in this clock is
 Lebesgue measure on $\R_+$.  The measure $K_r$ is obtained by averaging, over the
 modulus aspect, the connected Hardy--Littlewood densities of $r$ primes constrained to
-one residue class.  For every nonnegative compactly supported $f$,
+one residue class.  For every nonnegative compactly supported $f$ in a fixed uniform ball on which the
+Laplace functional is analytic,
 \[
  \log\E\exp(-\langle f,\mathcal N_{q,a}\rangle)
  =\sum_{r\ge1}\frac{(-1)^r}{r!}
@@ -377,7 +391,8 @@ are not asserted to determine one another.
 
 After dyadic averaging and normalization by the first nonzero connected scale, the full
 additive cumulant tensors converge to the Fourier transforms of the connected arrival
-kernels $K_r$ of \cref{c6}.  Applying the exact Gauss tensors before passing to the limit
+kernels $K_r$ of \cref{c6} carried on the zero-sum frequency sublattice, that is to
+$\delta_{\sum_j\xi_j\equiv0}\otimes\widehat K_r$.  Applying the exact Gauss tensors before passing to the limit
 gives the same limiting contractions as the $r$-fold explicit-formula correlations of
 Dirichlet $L$-function zeros on the multiplicative side.  Thus the local arrival kernels
 and character-zero correlations are two exactly compatible tomographic representations
@@ -425,7 +440,8 @@ successive limits, the directing measures $\Lambda_{q,A}$ converging, under the
 random-phase hypothesis, to a nondegenerate log-Gaussian directing measure
 $\Lambda_G$.  Conditionally on the
 limiting field, the cluster-start process is Poisson directed by $\Lambda_G$, and each
-start is decorated by the terminal arithmetic polymer law generated by \cref{c6}.  No
+start carries, at finite modulus, the terminal analogue of the polymer corrections
+of \cref{c4}, entering at the scale $1/\log q$.  No
 conditioning on a sigma-field generated at finite $q$ is invoked, since the field is a
 deterministic function of the sample modulus and such conditioning would degenerate.  Thus the cover time, final
 class profiles, and their prime-race marks are projections of one decorated Cox process.
@@ -580,8 +596,8 @@ and would be far beyond currently available fixed-frequency tests.  Failure woul
 an unrecognized spacing or energy obstruction among finite-logarithm vectors.
 
 \begin{conjecture}[Mesoscopic-to-lattice shrinking-target transition]\label{c13}
-Let $\Gamma\le\Q^\times$ be saturated and torsion-free of rank $r$, and choose a basis of
-its relation torus.  For integers $w_p$ with $1\le w_p=o(p)$, let $E_p(w)$ be the event
+Let $\Gamma\le\Q^\times$ be saturated and torsion-free of rank $r$, and choose a
+basis of $\Gamma$, identifying its relation torus with $(\R/\Z)^r$.  For integers $w_p$ with $1\le w_p=o(p)$, let $E_p(w)$ be the event
 that every coordinate of the Fermat-quotient vector has a representative of absolute
 value at most $w_p$.
 
@@ -770,7 +786,7 @@ interval away from PCF, discriminant, and fixed-resultant loci.
 For every fixed $n$, condition on any fixed finite local valuation state and normalize
 the prime factors of each $F_{n,j}(c)$ by that component's residual logarithmic mass.
 The component-coloured factor processes converge jointly to independent
-Frobenius-marked $\PD(1)$ processes, with the mark in colour $j$ given by the
+Frobenius-marked Poisson--Dirichlet $\PD(1)$ processes, with the mark in colour $j$ given by the
 fixed-point-size-biased conjugacy law in the splitting field of $F_{n,j}$.  The total
 logarithmic mass of ramified factors tends to zero.
 
@@ -919,7 +935,8 @@ $y\to\infty$ with $\log y=o(\log N)$, consider stable convergence jointly with t
 archimedean coordinate $t$ and condition on
 $\mathscr L_y=(v_p(g_i(n)))_{p\le y,i\le s}$.  After normalizing each component by its
 own residual logarithmic mass, the coloured Frobenius-marked factor processes converge
-to conditionally independent copies of the three-scale law in \cref{c21,c22}.
+to conditionally independent copies of the three-scale law of \cref{c22}, with the
+marks of \cref{c21}.
 
 Unconditionally, the joint process is the projective Gibbs mixture obtained by
 integrating those conditional product laws against Lebesgue measure in $t$ and the
@@ -1030,8 +1047,9 @@ uniformly on compact $u$-ranges.  Conditional on the ordered logarithmic sizes o
 $j$ remaining factors, their unramified Frobenius marks are independent with the
 fixed-point-size-biased law of \cref{c21}.  Summing over $j$ gives the rough-value
 Buchstab law, $j=1$ gives the Bateman--Horn prime density, and $j=2$ gives the
-semiprime transition.  The pointwise endpoint is exact whenever
-$\max_{N\le n\le2N}|f(n)|<y^2$.
+semiprime transition.  Whenever $\max_{N\le n\le2N}|f(n)|<y^2$, every rough value has exactly one prime
+factor above $y$, so the $j=1$ component exhausts the rough set, while the density
+formula itself remains conjectural.
 \end{conjecture}
 
 \paragraph{Why this is top-tier.}
@@ -1055,7 +1073,7 @@ conjecture:
 \item Prove the two-point connected arrival kernel $K_2$ and its additive polyspectrum.
 \item Prove a rank-one positive-power finite-logarithm large sieve.
 \item Prove the arboreal family large sieve at one growing quadratic level.
-\item Prove the two-colour restricted-support factor law and the $j=2$ Buchstab
+\item Prove the two-component case of \cref{c23} and the $j=2$ Buchstab
 component in an averaged polynomial family.
 \end{enumerate}
 
