@@ -295,7 +295,7 @@ If admissible overlapping translates exist, put
  \delta(H)=\min_{\substack{t\ne0\\H\cup(H+t)\ \mathrm{admissible}}}
  \bigl(|H\cup(H+t)|-|H|\bigr),
  \qquad
- \mathcal T_H=\{t:\ |H\cup(H+t)|-|H|=\delta(H)\}.
+ \mathcal T_H=\{t\ne0:\ H\cup(H+t)\ \mathrm{admissible},\ |H\cup(H+t)|-|H|=\delta(H)\}.
 \]
 Then the cluster-start fraction has the first nontrivial expansion
 \[
@@ -320,7 +320,7 @@ The relevant rarity is the number of new constraints after one occurrence is giv
 the enhancement relative to a product of all one-point intensities.  For two translates
 sharing $s$ of the $k$ prime positions, the Palm scale is
 $(\log X)^{-(k-s)}$.  A universal $1/\log X$ correction therefore holds
-only for special motifs, including pair motifs.  The law keeps polymers of
+only for special motifs, such as pair motifs that admit an overlapping translate.  The law keeps polymers of
 every size, supplies a canonical extremal-index exponent $\delta(H)$, and links
 Hardy--Littlewood constants, low-zero environments, Palm theory, and extreme motif gaps.
 For $H=\{0,6\}$ one has $\delta(H)=1$ and the pair-motif coefficient is
@@ -467,14 +467,15 @@ $\mathcal M_{q,A}$ and
 converges jointly.  Conditionally on the limiting chaos measure $\mathcal M$, the
 terminal cluster-start process is Poisson with directing measure
 \[
- \theta_{\mathrm{occ}}e^{-x}\,\mathcal M(dg)\,dx,
+ e^{-x}\,\mathcal M(dg)\,dx.
 \]
-where $\theta_{\mathrm{occ}}$ is the extremal index of the terminal occurrence
-process, the analogue for the last classes of the cluster-start fraction
-$\theta_X(H)$ of \cref{c4},
-and its finite-modulus cluster decorations are the terminal connected-polymer expansion
-of \cref{c6}, entering at their first nonzero connected scale rather than at a
-universally prescribed power of $1/\log q$.
+At finite modulus the cluster-start thinning enters through the terminal extremal
+index $\theta_{\mathrm{occ}}(q)$, the analogue for the last classes of the
+cluster-start fraction $\theta_X(H)$ of \cref{c4}, together with the terminal
+connected-polymer decorations of \cref{c6}.  Both corrections enter at the first
+nonzero connected scale and vanish in the successive limit, so
+$\theta_{\mathrm{occ}}(q)\to1$ and the limiting directing measure carries no
+cluster factor.
 
 The nature of the directing measure is governed by the covariance-energy statistic
 \[
@@ -876,7 +877,7 @@ fixed-order trace tests.
 \begin{conjecture}[Coloured dynatomic Galois-factor process]\label{c18}
 For $f_c(x)=x^d+c$, let the critical exact-period polynomial factor as
 $\Psi_n(c)=\prod_{j=1}^{s_n}F_{n,j}(c)$ over $\Z$.  Sample $c$ from a dyadic height
-interval away from PCF, discriminant, and fixed-resultant loci.
+interval away from postcritically finite, discriminant, and fixed-resultant loci.
 
 For every fixed $n$, condition on any fixed finite local valuation state and normalize
 the prime factors of each $F_{n,j}(c)$ by that component's residual logarithmic mass.
@@ -995,7 +996,7 @@ $G$.  Sample $n\in[N,2N]$.  Mark each unramified prime factor $p$ of $f(n)$ by i
 conjugacy class $C\subset G$ and give it mass $u=\log p/\log|f(n)|$.  The macroscopic
 marked process converges to a marked $\PD(1)$ process with conditional mark law
 \[
- \Pp(C\mid u)=\frac{|C|}{|G|}\operatorname{fix}(C),
+ \Pp(C\mid u)=\frac{|C|}{|G|}\operatorname{fix}(C),\qquad\text{$\operatorname{fix}(C)$ the number of fixed roots of an element of $C$,}
 \]
 independent of $u$.  Given the masses and every fixed finite local valuation state, the
 marks of finitely many macroscopic factors are asymptotically independent.  Under a
