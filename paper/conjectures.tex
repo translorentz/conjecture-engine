@@ -405,7 +405,7 @@ known.  Where a statement exists in essence it is attributed and
 labelled: some verbatim (Dubner's twin-sum conjecture, the Stern list
 for $p+2k^2$, Caldwell--Gallot's $\e^{\gamma}\log N$ laws), one with an
 exact constant catalogued as an OEIS entry (A188596), and the rest
-recorded in the ledger of \S\ref{sec:attrib}.  No such statement
+attributed accordingly.  No such statement
 occupies a slot on its own; each is retained \emph{inside} the slot
 whose claimed content it calibrates, restated in our uniform framework
 and re-verified at our bounds.  Second, every
@@ -464,7 +464,7 @@ them; the remaining clauses are conjectures; and open questions are
 labelled as such and are not counted among the twenty-five
 conjectures.
 
-\subsection*{Verification standards}
+\subsection*{Computational-check standards}
 
 All counts below are exact (sieves; deterministic Miller--Rabin for
 $n<3.3\times10^{24}$; Baillie--PSW beyond, flagged as such).  Every
@@ -583,8 +583,7 @@ rejected; the $k=4$ branch of Conjecture~\ref{c5} and the naive
 iterated chain behind Conjecture~\ref{c6} were both rejected by the
 same machinery, and both rejections became part of the statements.
 
-Novelty labels, from the independent literature search
-(\S\ref{sec:attrib}): \textbf{(a)} previously stated in essence;
+Novelty labels, from the independent literature search: \textbf{(a)} previously stated in essence;
 \textbf{(b)} classical family, quantified instance apparently unstated.
 
 \part{Conjectures from a local--global random model}
@@ -904,7 +903,7 @@ benchmark: $15$ primes to $n=700$ against $11.7$,
 $z=+0.98$---a probable-prime count, $n!+1$ leaving the deterministic
 range at $n\approx26$.)
 
-\emph{Verification.}  The pinned singular-series computation and window
+\emph{Computational checks.}  The pinned singular-series computation and window
 comparison are reported at the statement; its factorial
 benchmark stands at $15$ primes with $n\le700$ against $11.7$
 ($z=+0.98$; a probable-prime count for $n$ beyond about $26$), the
@@ -1145,7 +1144,7 @@ $\hat c$ drifting $0.400\to0.370$ over $10^7\!\to\!4\cdot10^9$ with
 $(1,1)/(2,2)$ symmetry $0.99989$---serves as calibration for the
 present race.
 
-Verification.  Over $500$ log-spaced samples $n\le10^8$: mean
+Computational checks.  Over $500$ log-spaced samples $n\le10^8$: mean
 $D=76.5$ against mean empirical $D_{\mathrm{sys}}=64.5$, the
 $(3,3)$-lane lead significant at $5.2$ standard errors of the mean.
 Clause (ii)'s weighted model, computed in presieve-exact form
@@ -1311,7 +1310,7 @@ appears to be a harsh obstruction is, inside the surviving lane, a local
 bonus: $\delta_2=\delta_3=0$ contribute the factors $2\cdot\tfrac32=3$
 carried explicitly in the definition of $\kappa_S$.
 
-\emph{Verification} (probable-prime count beyond $n\approx80$).
+\emph{Computational checks} (probable-prime count beyond $n\approx80$).
 Hits $\{3,9,15,21,33,2007,2127,3759\}$ up to $6000$:
 observed $8$, model $8.55$, $z=-0.19$ (over the shorter range $n\le4200$:
 $8$ vs $8.19$, $z=-0.07$); the lane constraint was verified
@@ -1738,7 +1737,7 @@ uniform law can hold (the analogue of the Elliott--Halberstam
 question for this family---whether there is a sharp transition at
 some power scale $N^{\delta}$ rather than a logarithmic one).
 
-\emph{Verification (the classical single instance).}  At $d=2$ and
+\emph{Computational checks (the classical single instance).}  At $d=2$ and
 bound $10^{7}$: observed $32{,}898$ against predicted $32{,}862.7$,
 ratio $1.0011$, $z=+0.19$; the family-profile verification across the
 $150$ shifts $d\le300$ is reported above.
@@ -2136,7 +2135,7 @@ zero-oscillation hypothesis as Conjecture~\ref{c21}, not a
 consequence of the square-blocking algebra alone.  What the algebra
 supplies is the \emph{contrast}: whatever residual model one adopts,
 it must produce drift in Conjectures~\ref{c21} and~\ref{c25} and
-none here.  Verification at $10^7$: $32{,}898$ pairs,
+none here.  Computational checks at $10^7$: $32{,}898$ pairs,
 class counts $10{,}917$ against $10{,}981$
 ($D=-64$, i.e.\ $-0.43$ noise units), log-mean normalized drift
 $-0.46$ (consistent with $0$ at one noise unit), log-occupation of
@@ -2150,7 +2149,7 @@ $n^2+\{1,3,7,9,13\}$ has been recorded in the OEIS since 2000, so the
 tuple family has prior presence and only its singular-series
 evaluation is plausibly new.)
 
-\emph{Verification.}  The race data are reported at the statement
+\emph{Computational checks.}  The race data are reported at the statement
 above; independent recomputation of this conjecture's calibration
 member, the quadratic triple, gave $10.647706$, with primes to
 $10^9$---inside our stated wobble---and an independent count to
@@ -2199,7 +2198,7 @@ limit laws for $k$-tuple singular series; the one-parameter cubic
 shift family, its exact mean-one lemma, and the short-range
 uniformity appear unstated, and we present (ii) as an
 instance-level law inside that framework rather than a new mechanism.
-Verification: derived moments (mean exactly $1$, sd $0.2762$)
+Computational checks: derived moments (mean exactly $1$, sd $0.2762$)
 against the $294$ non-cube shifts $a\le300$: empirical mean $1.0215$
 ($+1.5$ profile standard errors), sd $0.2481$ (finite-family tail
 correlations account for the sd gap: for $p>a_{\max}$ the residues of
@@ -2211,7 +2210,7 @@ of Bunyakovsky type is proven for any cubic, the nearest theorem
 being Heath-Brown's $x^3+2y^3$ \cite{HB}, which is what keeps the
 whole family conjectural.)
 
-\emph{Verification (the classical single instance).}  At $a=2$ and
+\emph{Computational checks (the classical single instance).}  At $a=2$ and
 bound $10^{7}$: observed $287{,}956$ against predicted $287{,}784.8$,
 ratio $1.0006$, $z=+0.32$; the family-profile verification across the
 $57$ shifts is reported above.
@@ -2440,7 +2439,7 @@ included as an attributed calibration benchmark:
 $C=2.858249$, observed $125{,}379$ against predicted $125{,}429.4$ at
 $3\times10^8$, $z=-0.14$.)
 
-\emph{Verification.}  The triplet-race data and the Chernick-chain
+\emph{Computational checks.}  The triplet-race data and the Chernick-chain
 calibration count are reported at the statement above.
 
 \setcounter{conjecture}{18}%
@@ -2502,7 +2501,7 @@ calibration benchmark: verified at
 $10^7$, $z=-1.31$, independently recomputed to $10^9$; a refutation
 of its infinitude would remove the twin race's predicted mechanism.)
 
-\emph{Verification.}  The sexy-pair race data are reported at the
+\emph{Computational checks.}  The sexy-pair race data are reported at the
 statement above; independent recomputation of this conjecture's
 calibration member, the pair $\{p,p^2-2\}$, gave $3.383227$, with
 primes to $10^9$---inside our stated wobble---and an independent count
@@ -2571,7 +2570,7 @@ $\le10^4$ against the naive screening prediction $34.1$
 prime indices $\le10^4$; the corrected $c_F$ needs a Granville-type patch,
 and clause (iii) quantifies the same need at the joint level.
 
-\emph{Verification.}  Joint scan and single-sided calibration reported at the
+\emph{Computational checks.}  Joint scan and single-sided calibration reported at the
 statement (Fibonacci prime indices $\{3,5,7,\dots,9311,9677\}$, $25$
 of predicted $34.1$, $z=-1.56$; Lucas indices $29$; joint
 $\{5,7,11,13,17,47\}$ to $10^4$)---probable-prime counts at all but
@@ -2662,7 +2661,7 @@ there are three instances in total; it is included here as an
 attributed calibration benchmark, independently verified to
 $p\le4000$.
 
-\emph{Verification} (probable-prime count for $n$ beyond about $26$).
+\emph{Computational checks} (probable-prime count for $n$ beyond about $26$).
 Exhaustive to $n\le700$: the only factorial twin is
 $n=3$; individually, $n!+1$ is prime for
 $n\in\{2,3,11,27,37,41,73,77,116,154,320,340,399,427\}$ and $n!-1$
@@ -2790,7 +2789,7 @@ present identically---and it is the same algebraic mechanism, seen from
 the ladder side, that Theorem~\ref{t:cube} exhibits for cubes.  The
 family generalizes the cubic case $k=3$ of Conjecture~\ref{c13}.
 
-\emph{Verification.}  The even-rung theorem was checked numerically to
+\emph{Computational checks.}  The even-rung theorem was checked numerically to
 $10^8$ (no fourth power is $p+j^4$); the three verifiable
 Bateman--Horn lanes $k=2,3,5$ (constants $2$ exactly, $3.36181$, and
 $3.67770\pm0.007$, the quartic product computed by brute-force root
@@ -2847,7 +2846,7 @@ whose base-2 shadow is the Mersenne sequence.  The length-3 chain
 stated here is, as far as we can find, unstated, and its quartic layer
 makes it the highest-degree system in the suite.
 
-\emph{Verification.}  At bound $10^{7}$: observed $1{,}362$ against
+\emph{Computational checks.}  At bound $10^{7}$: observed $1{,}362$ against
 predicted $1{,}357.2$, ratio $1.0035$, $z=+0.13$.  The chain census by
 decade is $4,\ 11,\ 41,\ 224,\ 1362$ at $N=10^3,\dots,10^7$ (a
 probable-prime count for the quartic layer beyond
@@ -2897,7 +2896,7 @@ prime pairs: $n=1$ only), and the $k=6$ run returned counts
 \emph{identical} to $k=3$, which is the numerical shadow of the
 polynomial identity in (ii).
 
-\emph{Verification.}  $C_5=2.964239\pm0.002$; at bound $10^{7}$,
+\emph{Computational checks.}  $C_5=2.964239\pm0.002$; at bound $10^{7}$,
 observed $33{,}274$ against predicted $32{,}976.7$, ratio $1.0090$,
 $z=+1.64$.
 
@@ -3981,7 +3980,7 @@ reimplementation.
 
 \emph{Layer 1: literature.}  Five independent searches combed OEIS,
 arXiv, and the standard references for prior art, producing the novelty
-labels and the attribution ledger of \S\ref{sec:attrib}.  Each search
+labels and the attributions used throughout.  Each search
 was run at neighbourhood depth: defining objects, derived sequences,
 OEIS comments, and the abstracts and bodies of near-neighbour papers
 read in full rather than skimmed from search summaries---the depth at
@@ -4067,119 +4066,7 @@ tests---testing a claimed exception census on special subsequences, for
 instance---find them.  A verification that only re-runs an existing
 count at a larger bound is blind to every one of them.
 
-\section{Attribution and novelty}\label{sec:attrib}
-
-A numbering note: the conjectures are numbered in
-importance--novelty order (the summary sheet's order), while the
-repository artefacts---verifier scripts and results files---carry a
-thematic slot numbering.  The map from conjecture number to repository
-slot is: $1\mapsto21$, $2\mapsto12$, $3\mapsto22$, $4\mapsto25$,
-$5\mapsto15$, $6\mapsto11$, $7\mapsto23$, $8\mapsto16$,
-$9\mapsto18$, $10\mapsto1$, $11\mapsto19$, $12\mapsto14$,
-$13\mapsto20$, $14\mapsto8$, $15\mapsto2$, $16\mapsto24$,
-$17\mapsto17$, $18\mapsto3$, $19\mapsto7$, $20\mapsto9$,
-$21\mapsto10$, $22\mapsto13$, $23\mapsto4$, $24\mapsto6$,
-$25\mapsto5$.  Constant symbols carrying numeric subscripts
-($C_5$, $C_7$, $C_6^{\mathrm{ch}}$, $c_3$) are named after
-repository slots, not paper numbers, and keep those names.
-
-The calibration layer---statements previously known in essence, kept
-inside the slots as attributed remarks, our contribution being the
-uniform quantification, the computed constants, and the
-re-verification:
-C\ref{c1}$_{d=2}$ (OEIS A080149; \cite{Carella});
-$a=2$ inside C\ref{c2};
-the Chernick chain inside C\ref{c3} \cite{Dubner2002};
-C\ref{c6}'s length-2 sub-chain (constant catalogued as OEIS A188596);
-$\{p,p^2-2\}$ inside C\ref{c7} (OEIS A062326);
-the single-sided Fibonacci/Lucas laws inside C\ref{c9}
-\cite{GranthamGranville} and the twin object OEIS A080327;
-C\ref{c10}(ii) (OEIS A088054, the intersection comment);
-the factorial-prime law inside C\ref{c12} \cite{CaldwellGallot};
-C\ref{c13}(iii) \cite{HL1923} and Cunningham's cuban observation
-(OEIS A002407);
-the Stern list inside C\ref{c14} (OEIS A060003);
-the $(3,3)$-lane conjecture inside C\ref{c15} \cite{Martin} and the
-extremal theory of least summands \cite{OSHP};
-C\ref{c16}-core (uniform Hardy--Littlewood B, cf.\ \cite{GL});
-the twin-member basis conjecture and integral kernel inside
-C\ref{c17} \cite{Dubner2000};
-the record framework inside C\ref{c18} \cite{Kourbatov};
-the single-base Fermat-quotient heuristic inside C\ref{c23}
-\cite{CDP}, with the Eisenstein--Lerch homomorphism classical;
-C\ref{c24}-core \cite{HL1923,JW}.
-Further attributed statements carried alongside their slots: the
-primorial twins accompanying Conjecture~\ref{c10}, due to Lillie
-\cite{Lillie}, with the primorial prime law itself due to
-Caldwell--Gallot \cite{CaldwellGallot}; the Lemke
-Oliver--Soundararajan mod-3 law \cite{LOS} neighbouring
-Conjecture~\ref{c25}; the Sophie Germain statement inside
-Conjecture~\ref{c6}, and the quadratic triple inside
-Conjecture~\ref{c8}.  Framework attributions for claimed clauses
-that are instances inside another theory: Kowalski's Euler-product
-limit laws \cite{Kowalski} for C\ref{c2}(ii);
-Montgomery--Soundararajan \cite{MS} for the reductions behind
-C\ref{c12} and C\ref{c20}; the Korevaar--te Riele mean-value-one
-theorem (arXiv:0806.1667) as the linear antecedent of
-C\ref{c1}(iii) and C\ref{c2}(i).
-
-For the claimed layer we grade as follows.
-\emph{Bibliographic novelty only}: the constant of C\ref{c5}(iii).
-\emph{Conceptual novelty}---a mechanism, law, family uniformity, or
-dichotomy we could not find in the literature:
-C\ref{c1}'s uniform quadratic de Polignac family with its derived
-constant-moment law;
-C\ref{c2}'s cubic constant-distribution law (instance-level inside
-Kowalski's framework, so graded);
-C\ref{c3}, C\ref{c7} and C\ref{c14}: fresh contamination-calculus
-predictions (triplet race, two-orientation matrix, and the
-norm-form Stern lanes with provable null classes);
-C\ref{c4}'s power-obstruction ladder and C\ref{c13}'s boundary
-trichotomy (Cunningham's cuban case attributed);
-C\ref{c5}'s complete twin-base family analysis;
-C\ref{c6}'s alternating cyclotomic chain;
-C\ref{c8}'s null-mechanism contrast prediction;
-C\ref{c9}'s rank-disjointness analysis and quantified
-naive-constant refutation;
-C\ref{c10}'s window-rigidity and joint-fluctuation clauses;
-C\ref{c11}'s entanglement-aware local product with its exact CRT
-identity;
-C\ref{c12}'s pinned singular-series reduction of the pair variance;
-C\ref{c15}'s time-changed least-summand law and deficit
-$\Theta_G$;
-C\ref{c16}(ii)'s derived covariance kernel (and its C\ref{c24}(ii)
-family analogue with the computed null cross-kernel);
-C\ref{c17}'s orientation-resolved twin-member singular series;
-C\ref{c18}'s measured race sub-diffusivity;
-C\ref{c19}'s liminf constant and $\SG^*$-waiting-time clause
-(against the slope-1 laws of Shanks, Wolf, and Kourbatov--Wolf
-\cite{KW2020}); C\ref{c20}'s microscopic variance law (a sharpening
-of \cite{MS}, with the mesoscopic numerics of \cite{SL} as
-precedent); C\ref{c21}'s race mechanism and calculus (against the
-twin-bias literature \cite{Sahoo,PairBias}); C\ref{c22}(ii)'s
-canonical deficit with its stratified differentiating experiment;
-C\ref{c23}'s vertical multibase subtorus law; and
-C\ref{c25}'s Goldbach lane race.  Among these we
-consider the contamination calculus with its six verified
-projections and three nulls (C\ref{c3}, C\ref{c7}, C\ref{c8},
-C\ref{c14}, C\ref{c21}, C\ref{c25}), the two ordering deficits
-(C\ref{c15}, C\ref{c22}(ii)), the pinned-average reduction
-C\ref{c12}, and the sub-diffusivity measurement C\ref{c18} the
-paper's principal new content, and Question~\ref{q:theta} its main open question.
-
-Three structural programmes are folded into the statements themselves
-(the boundary-factorization principle, Conjecture~\ref{c13}; the
-quantitative twin-member law, Conjecture~\ref{c17}; multibase
-Fermat quotients, Conjecture~\ref{c23}(iv)--(v)), and two are
-recorded as open directions: the admissibility dynamics of
-cyclotomic composition words (Conjecture~\ref{c6}), and
-centring-and-scaling extreme-value laws for record gaps, where
-Kourbatov's Gumbel-type framework \cite{Kourbatov} already occupies
-part of the ground and any contribution of ours would need
-separating from it.  The asymptotic form of the pinned average
-$G(H)$ (Conjecture~\ref{c12}) and the derivation of the race
-repulsion constants $\rho_k$ from the Lemke Oliver--Soundararajan
-series (Conjecture~\ref{c18}) join them as further open exports.
+\section{An open question}
 
 \begin{question}\label{q:theta}
 Determine $\theta(q)$ of Conjecture~\ref{c22}: derive, from the
