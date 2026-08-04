@@ -3052,7 +3052,7 @@ $U_A=\bigcup_{t\in A}(H+t)$ is admissible.  Define its \emph{anchored codimensio
  d_H(A)=|U_A|-|H|;
 \]
 this is the number of new prime constraints beyond the occurrence anchored at $0$.
-In the regularized spectral model of \cref{s3}, let $Z$ be the limiting low-mode vector,
+In the regularized spectral model of \cref{s3}, let $Z$ be the limiting low-mode vector (the joint limit, asserted as part of this conjecture, of the mode integrals of the \cref{s3} functional against frequencies below a fixed cutoff $K$ on the $L$-scale, the \cref{s3} limits taken first and $K\to\infty$ last),
 let $\lambda(t\mid Z)$ be the conditional one-point occurrence intensity, and set
 \[
  \lambda_H^0=\frac{\SG(H)}{(\log X)^k},
@@ -3108,13 +3108,7 @@ For $H=\{0,6\}$ one has $\delta(H)=1$ and the pair-motif coefficient is
 recovered.
 
 \begin{conjecture}[Topological expansion of non-Gaussian prime cumulants]\label{s5}
-For every connected exact-overlap diagram in \cref{s1}, form the bipartite incidence
-complex whose vertices are motif occurrences and distinct surviving prime constraints,
-with an edge for incidence.  Let $g$ be its first Betti number after forced coincidences
-are contracted.  Once all larger coincidence strata have been subtracted, a diagram of
-Betti number $g$ is smaller than a tree diagram with the same external motifs by at
-least $(\log L)^{-g}$.  The complete leading coefficient at each logarithmic order is
-the sum of the connected diagram weights with the corresponding Betti number.  In
+For every connected exact-overlap diagram in \cref{s1}, expand its connected singular series over the linking primes and form the linkage graph of each term, whose vertices are the motif occurrences and whose edges join two occurrences sharing a linking prime in that term.  Let $g$ be the first Betti number of the linkage graph.  Once all larger coincidence strata have been subtracted, the total contribution of the terms of Betti number $g$ is smaller than that of the spanning-tree terms with the same external motifs by at least $(\log L)^{-g}$.  The complete leading coefficient at each logarithmic order is the sum of the linked-term weights with the corresponding Betti number.  In
 particular, the first nonzero odd cumulant of a balanced motif statistic, a
 combination $Y_c$ whose coefficient vector annihilates every coincidence-stratum form
 of \cref{s2}, is carried by
@@ -3151,8 +3145,7 @@ $a$ uniformly from $\Fq_q^\times$.  Write $e(x)=\e^{2\pi ix}$.
 
 \begin{conjecture}[Connected first-arrival functional]\label{s6}
 Let $w^{\mathrm c}_{r,Q}$ be the connected factorial-cumulant measure of the random point
-process $\mathcal N_{q,a}$.  For every fixed $r\ge2$ there is a locally finite signed
-measure $K_r$ on $\R_+^r$ such that
+process $\mathcal N_{q,a}$.  For every fixed $r\ge2$ there is a signed measure $K_r$, locally finite on the off-diagonal region $\{u\in\R_+^r:u_i\ \text{distinct}\}$, such that, on that region (the diagonal strata carry strictly smaller normalizations, as in the stratification of \cref{s1}, and are excluded here),
 \[
  (\log Q)^{r-1}w^{\mathrm c}_{r,Q}\Longrightarrow K_r
 \]
@@ -3176,7 +3169,7 @@ This is an arithmetic point-process theory of least primes.  The coupon-collecto
 of Li--Pratt--Shakan supplies the nearest extremal analogy, but not a connected Laplace
 functional \cite{LPS}.  Truth would determine waiting times, occupancy covariance,
 cover times, and terminal clustering from one hierarchy.  The first theorem is the
-existence and explicit evaluation of $K_2$ on compact time intervals.
+existence and explicit evaluation of $K_2$ on compact off-diagonal sets.
 
 \begin{conjecture}[Tested Gauss-polyspectral reciprocity for the least-prime field]\label{s7}
 Set $T_q(0)=\Li(q)/(q-1)$ and centre the resulting field $f_q$ on all of $\Fq_q$.
@@ -3238,8 +3231,7 @@ $-\tfrac12\Var G_{q,A}(a)$.  Define the random empirical chaos measure
   \exp\!\left(G_{q,A}(a)-\tfrac12\Var G_{q,A}(a)\right)
   \delta_{G_{q,A}(a)}(dg).
 \]
-Let $b_Q$ be determined by
-$\E_q\#\{a:T_q(a)>b_Q\}=1$.  In the successive limits
+Let $b_Q$ be the smallest level with $\E_q\#\{a:T_q(a)>b_Q\}\le1$.  In the successive limits
 $Q\to\infty$ and then $A\to\infty$, the pair consisting of
 $\mathcal M_{q,A}$ and
 \[
@@ -3376,7 +3368,7 @@ relation lattice and let $\T_g\subset(\R/\Z)^s$ be the identity component of its
 annihilator.  Its dimension is the saturated multiplicative rank.
 
 \begin{conjecture}[Kummer--Haar law on relation tori]\label{s11}
-Let $\Gamma\le\Q^\times$ be finitely generated, saturated, and torsion-free, and let
+Let $\Gamma\le\Q^\times$ be finitely generated and torsion-free, saturated modulo torsion (if $x^n\in\Gamma\cdot\{\pm1\}$ for some $n\ge1$ then $x\in\Gamma\cdot\{\pm1\}$), and let
 $g$ be any ordered generating tuple.  As $p$ varies in every fixed compatible
 cyclotomic--Kummer Chebotarev class, the vectors
 \[
@@ -3421,7 +3413,7 @@ and would be far beyond currently available fixed-frequency tests.  Failure woul
 an unrecognized spacing or energy obstruction among finite-logarithm vectors.
 
 \begin{conjecture}[Mesoscopic-to-lattice shrinking-target transition]\label{s13}
-Let $\Gamma\le\Q^\times$ be saturated and torsion-free of rank $r$, and choose a
+Let $\Gamma\le\Q^\times$ be torsion-free of rank $r$ and saturated modulo torsion, and choose a
 basis of $\Gamma$, identifying its relation torus with $(\R/\Z)^r$.  For integers $w_p$ with $1\le w_p=o(p)$, let $E_p(w)$ be the event
 that every coordinate of the Fermat-quotient vector has a representative of absolute
 value at most $w_p$.
@@ -3463,7 +3455,7 @@ $ q_{p,k}(a)=p^{-1}\log(a\langle a\rangle_p^{-1})\pmod{p^k}$.  The matrix entrie
 
 \begin{conjecture}[Global-lattice horizontal $p$-adic regulator-matrix law]\label{s14}
 Let $K/\Q$ be a fixed Galois number field with group $G$, and let
-$\Gamma\le\mathcal O_K^\times$ be saturated and torsion-free, with ordered basis
+$\Gamma\le\mathcal O_K^\times$ be torsion-free and saturated modulo $\mu(K)$, with ordered basis
 $\epsilon_1,\ldots,\epsilon_s$.  Define the fixed global relation lattice
 \[
  \mathcal R_\Gamma=

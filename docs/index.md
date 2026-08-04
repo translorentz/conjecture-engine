@@ -793,7 +793,7 @@ $$
 d_H(A)=\vert U_A\vert -\vert H\vert ;
 $$
 
-this is the number of new prime constraints beyond the occurrence anchored at $$0$$. In the regularized spectral model of Conjecture 28, let $$Z$$ be the limiting low-mode vector, let $$\lambda(t\mid Z)$$ be the conditional one-point occurrence intensity, and set
+this is the number of new prime constraints beyond the occurrence anchored at $$0$$. In the regularized spectral model of Conjecture 28, let $$Z$$ be the limiting low-mode vector (the joint limit, asserted as part of this conjecture, of the mode integrals of the Conjecture 28 functional against frequencies below a fixed cutoff $$K$$ on the $$L$$-scale, the Conjecture 28 limits taken first and $$K\to\infty$$ last), let $$\lambda(t\mid Z)$$ be the conditional one-point occurrence intensity, and set
 
 $$
 \lambda_H^0=\frac{\mathfrak S(H)}{(\log X)^k},
@@ -836,7 +836,7 @@ The set $$\mathcal T_H$$ is symmetric under $$t\mapsto-t$$, and the cluster-star
 
 *Significance.* The relevant rarity is the number of new constraints after one occurrence is given, not the enhancement relative to a product of all one-point intensities. For two translates sharing $$s$$ of the $$k$$ prime positions, the Palm scale is $$(\log X)^{-(k-s)}$$. A universal $$1/\log X$$ correction therefore holds only for special motifs, such as pair motifs that admit an overlapping translate. The law keeps polymers of every size, supplies a canonical extremal-index exponent $$\delta(H)$$, and links Hardy–Littlewood constants, low-zero environments, Palm theory, and extreme motif gaps. For $$H=\{0,6\}$$ one has $$\delta(H)=1$$ and the pair-motif coefficient is recovered.
 
-**Topological expansion of non-Gaussian prime cumulants (Conjecture 30).** For every connected exact-overlap diagram in Conjecture 26, form the bipartite incidence complex whose vertices are motif occurrences and distinct surviving prime constraints, with an edge for incidence. Let $$g$$ be its first Betti number after forced coincidences are contracted. Once all larger coincidence strata have been subtracted, a diagram of Betti number $$g$$ is smaller than a tree diagram with the same external motifs by at least $$(\log L)^{-g}$$. The complete leading coefficient at each logarithmic order is the sum of the connected diagram weights with the corresponding Betti number. In particular, the first nonzero odd cumulant of a balanced motif statistic, a combination $$Y_c$$ whose coefficient vector annihilates every coincidence-stratum form of Conjecture 27, is carried by incidence trees. For the single-prime field the fully spread connected part $$\kappa^{\mathrm{sp}}_{2m+1}$$, defined by subtracting every coincidence stratum as in Conjecture 27, obeys
+**Topological expansion of non-Gaussian prime cumulants (Conjecture 30).** For every connected exact-overlap diagram in Conjecture 26, expand its connected singular series over the linking primes and form the linkage graph of each term, whose vertices are the motif occurrences and whose edges join two occurrences sharing a linking prime in that term. Let $$g$$ be the first Betti number of the linkage graph. Once all larger coincidence strata have been subtracted, the total contribution of the terms of Betti number $$g$$ is smaller than that of the spanning-tree terms with the same external motifs by at least $$(\log L)^{-g}$$. The complete leading coefficient at each logarithmic order is the sum of the linked-term weights with the corresponding Betti number. In particular, the first nonzero odd cumulant of a balanced motif statistic, a combination $$Y_c$$ whose coefficient vector annihilates every coincidence-stratum form of Conjecture 27, is carried by incidence trees. For the single-prime field the fully spread connected part $$\kappa^{\mathrm{sp}}_{2m+1}$$, defined by subtracting every coincidence stratum as in Conjecture 27, obeys
 
 $$
 \kappa^{\mathrm{sp}}_{2m+1}=(c_m+o(1))L^m(\log L)^{m+1},
@@ -858,7 +858,7 @@ $$
 
 The probability space chooses $$q$$ uniformly among primes in $$[Q,2Q]$$ and then chooses $$a$$ uniformly from $$\mathbb F_q^\times$$. Write $$e(x)=\mathrm e^{2\pi ix}$$.
 
-**Connected first-arrival functional (Conjecture 31).** Let $$w^{\mathrm c}_{r,Q}$$ be the connected factorial-cumulant measure of the random point process $$\mathcal N_{q,a}$$. For every fixed $$r\ge2$$ there is a locally finite signed measure $$K_r$$ on $$\mathbb R_+^r$$ such that
+**Connected first-arrival functional (Conjecture 31).** Let $$w^{\mathrm c}_{r,Q}$$ be the connected factorial-cumulant measure of the random point process $$\mathcal N_{q,a}$$. For every fixed $$r\ge2$$ there is a signed measure $$K_r$$, locally finite on the off-diagonal region $$\{u\in\mathbb R_+^r:u_i\ \text{distinct}\}$$, such that, on that region (the diagonal strata carry strictly smaller normalizations, as in the stratification of Conjecture 26, and are excluded here),
 
 $$
 (\log Q)^{r-1}w^{\mathrm c}_{r,Q}\Longrightarrow K_r
@@ -874,7 +874,7 @@ $$
 
 and the asymptotic expansion obtained by inserting the limits $$K_r$$ is uniform to every fixed connected order. In particular the entire survival function, not merely its first correction, is determined by the hierarchy $$(K_r)_{r\ge2}$$.
 
-*Significance.* This is an arithmetic point-process theory of least primes. The coupon-collector model of Li–Pratt–Shakan supplies the nearest extremal analogy, but not a connected Laplace functional [36]. Truth would determine waiting times, occupancy covariance, cover times, and terminal clustering from one hierarchy. The first theorem is the existence and explicit evaluation of $$K_2$$ on compact time intervals.
+*Significance.* This is an arithmetic point-process theory of least primes. The coupon-collector model of Li–Pratt–Shakan supplies the nearest extremal analogy, but not a connected Laplace functional [36]. Truth would determine waiting times, occupancy covariance, cover times, and terminal clustering from one hierarchy. The first theorem is the existence and explicit evaluation of $$K_2$$ on compact off-diagonal sets.
 
 **Tested Gauss-polyspectral reciprocity for the least-prime field (Conjecture 32).** Set $$T_q(0)=\operatorname{Li}(q)/(q-1)$$ and centre the resulting field $$f_q$$ on all of $$\mathbb F_q$$. Let $$\mathbf A_q$$ and $$\mathbf M_q$$ be its complete additive and multiplicative Fourier coefficient vectors, including the explicit rank-one coordinate needed to record the value at $$0$$. There is then an explicit invertible Gauss matrix $$U_q$$ with
 
@@ -917,7 +917,7 @@ $$
   \delta_{G_{q,A}(a)}(dg).
 $$
 
-Let $$b_Q$$ be determined by $$\mathbb E_q\#\{a:T_q(a)>b_Q\}=1$$. In the successive limits $$Q\to\infty$$ and then $$A\to\infty$$, the pair consisting of $$\mathcal M_{q,A}$$ and
+Let $$b_Q$$ be the smallest level with $$\mathbb E_q\#\{a:T_q(a)>b_Q\}\le1$$. In the successive limits $$Q\to\infty$$ and then $$A\to\infty$$, the pair consisting of $$\mathcal M_{q,A}$$ and
 
 $$
 \sum_a\delta_{(G_{q,A}(a),\,T_q(a)-b_Q)}
@@ -1005,7 +1005,7 @@ $$
 
 For a generating tuple $$g=(g_1,\ldots,g_s)$$, let $$R(g)$$ be its multiplicative relation lattice and let $$\mathbb T_g\subset(\mathbb R/\mathbb Z)^s$$ be the identity component of its annihilator. Its dimension is the saturated multiplicative rank.
 
-**Kummer–Haar law on relation tori (Conjecture 36).** Let $$\Gamma\le\mathbb Q^\times$$ be finitely generated, saturated, and torsion-free, and let $$g$$ be any ordered generating tuple. As $$p$$ varies in every fixed compatible cyclotomic–Kummer Chebotarev class, the vectors
+**Kummer–Haar law on relation tori (Conjecture 36).** Let $$\Gamma\le\mathbb Q^\times$$ be finitely generated and torsion-free, saturated modulo torsion (if $$x^n\in\Gamma\cdot\{\pm1\}$$ for some $$n\ge1$$ then $$x\in\Gamma\cdot\{\pm1\}$$), and let $$g$$ be any ordered generating tuple. As $$p$$ varies in every fixed compatible cyclotomic–Kummer Chebotarev class, the vectors
 
 $$
 \frac{(q_p(g_1),\ldots,q_p(g_s))}{p}\in(\mathbb R/\mathbb Z)^s
@@ -1028,7 +1028,7 @@ The same inequality holds after every fixed compatible cyclotomic–Kummer restr
 
 *Significance.* This is the quantitative mechanism behind Conjecture 36. It predicts that saturated rank is not only the support dimension but the exact dual dimension in a prime-varying large sieve. A proof for any positive power range would control genuine shrinking targets and would be far beyond currently available fixed-frequency tests. Failure would reveal an unrecognized spacing or energy obstruction among finite-logarithm vectors.
 
-**Mesoscopic-to-lattice shrinking-target transition (Conjecture 38).** Let $$\Gamma\le\mathbb Q^\times$$ be saturated and torsion-free of rank $$r$$, and choose a basis of $$\Gamma$$, identifying its relation torus with $$(\mathbb R/\mathbb Z)^r$$. For integers $$w_p$$ with $$1\le w_p=o(p)$$, let $$E_p(w)$$ be the event that every coordinate of the Fermat-quotient vector has a representative of absolute value at most $$w_p$$.
+**Mesoscopic-to-lattice shrinking-target transition (Conjecture 38).** Let $$\Gamma\le\mathbb Q^\times$$ be torsion-free of rank $$r$$ and saturated modulo torsion, and choose a basis of $$\Gamma$$, identifying its relation torus with $$(\mathbb R/\mathbb Z)^r$$. For integers $$w_p$$ with $$1\le w_p=o(p)$$, let $$E_p(w)$$ be the event that every coordinate of the Fermat-quotient vector has a representative of absolute value at most $$w_p$$.
 
 *Mesoscopic universality.* If $$w_p\to\infty$$, then in every range in which the Haar mass
 
@@ -1051,7 +1051,7 @@ whenever the sum diverges, while only finitely many such primes occur when $$r\g
 
 For a $$p$$-adic unit $$a$$, write $$\langle a\rangle_p$$ for the Teichmüller lift of its residue, and for a prime $$\mathfrak p\mid p$$ of a number field write $$\tau_{\mathfrak p}$$ for the Teichmüller lift in the completion at $$\mathfrak p$$. Define $$q_{p,k}(a)=p^{-1}\log(a\langle a\rangle_p^{-1})\pmod{p^k}$$. The matrix entries below are the $$\mathfrak p$$-adic analogues of $$q_{p,k}$$; on $$\mathbb Q$$ with $$k=1$$ one has $$q_{p,1}(a)\equiv-q_p(a)\pmod p$$, the Fermat quotient up to sign.
 
-**Global-lattice horizontal $$p$$-adic regulator-matrix law (Conjecture 39).** Let $$K/\mathbb Q$$ be a fixed Galois number field with group $$G$$, and let $$\Gamma\le\mathcal O_K^\times$$ be saturated and torsion-free, with ordered basis $$\epsilon_1,\ldots,\epsilon_s$$. Define the fixed global relation lattice
+**Global-lattice horizontal $$p$$-adic regulator-matrix law (Conjecture 39).** Let $$K/\mathbb Q$$ be a fixed Galois number field with group $$G$$, and let $$\Gamma\le\mathcal O_K^\times$$ be torsion-free and saturated modulo $$\mu(K)$$, with ordered basis $$\epsilon_1,\ldots,\epsilon_s$$. Define the fixed global relation lattice
 
 $$
 \mathcal R_\Gamma=
@@ -1618,7 +1618,7 @@ The least prime in a residue class is an extreme statistic, and rather than trac
 
 ### Conjecture 32: Tested Gauss–polyspectral reciprocity
 
-Additive and multiplicative Fourier analysis of a function on the residues are related exactly by the Gauss transform, and this conjecture makes that elementary fact the base of a higher-order reciprocity for the least-prime field. Applied fibrewise at each modulus, the transform carries the additive coefficient vector to the multiplicative one, so every joint cumulant of the scalar tensor observables, the scalar quantities built from tensor products of the additive and multiplicative Fourier coefficients, is defined and matches under the transform before any limit is taken. The conjectural content is what the two families of limits then compute. The additive cumulants converge to the Fourier transforms of the arrival kernels of Conjecture 31 on the zero-sum frequency sublattice, and the multiplicative energies to the low-zero correlations of the corresponding Dirichlet functions. The statement is careful to assert only that these are two compatible tomographic views of one non-Gaussian field, with no claim that either alone determines the other, and a failure would expose information destroyed by both polyspectra, the additive and multiplicative families of higher-order spectra, despite their exact duality.
+Additive and multiplicative Fourier analysis of a function on the residues are related exactly by the Gauss transform, and this conjecture makes that elementary fact the base of a higher-order reciprocity for the least-prime field. Applied fibrewise at each modulus, the transform carries the additive coefficient vector to the multiplicative one, so every joint cumulant of the scalar tensor observables, the scalar quantities built from tensor products of the additive and multiplicative Fourier coefficients, is defined and matches under the transform before any limit is taken. The conjectural content is what the two families of limits then compute. The additive cumulants converge to the Fourier transforms of the arrival kernels of Conjecture 31 on the zero-sum frequency sublattice, and the multiplicative energies to the low-zero correlations of the corresponding Dirichlet functions. The statement is careful to assert only that these are two compatible tomographic views of one non-Gaussian field, determining a single continuous multilinear functional between them, and a failure would expose information destroyed by both polyspectra, the additive and multiplicative families of higher-order spectra, despite their exact duality.
 
 ### Conjecture 33: Rubinstein–Sarnak terminal chaos dichotomy
 
