@@ -602,9 +602,7 @@ carried entirely by the patterns $(q^2-2,\,q^2)$ with $q$ prime and
 $q^2-2$ prime: the mirror pattern $(q^2,\,q^2+2)$ is annihilated by
 $3\mid q^2+2$ for every prime $q>3$.  Moreover, for every prime
 $q\neq5$, $q^2-2\equiv2$ or $4\pmod 5$ (never $1$), and for every odd
-$q$, $q^2-2\equiv7\pmod8$.  (The single exceptional term $q=5$,
-$(23,25)$, lands outside the twin-start classes altogether and is
-absorbed in the bounded error.)
+$q$, $q^2-2\equiv7\pmod8$.  (Two bounded exceptions: at $q=5$ the term $(23,25)$ lands outside the twin-start classes altogether, and at $q=3$ the mirror term $(9,11)$ survives, the annihilation beginning only at $q>3$; each is a single term, absorbed in the bounded error.)
 \end{lemma}
 
 The proof is elementary (squares mod $3$, $5$, $8$; the prime-power
@@ -743,8 +741,7 @@ constants, or with interfering orientations beyond those enumerated,
 are outside the calculus until those terms are separated.)  In
 particular,
 for the cousin pattern $d=4$ the calculus makes two predictions with
-no free choices: the orientation $(q^2-4,q^2)$ is dead
-($q^2-4=(q-2)(q+2)$ is composite), the orientation $(q^2,q^2+4)$
+no free choices: the orientation $(q^2-4,q^2)$ is dead apart from a single term ($q^2-4=(q-2)(q+2)$ is composite for $q>3$, while at $q=3$ the value $5$ is prime: one bounded term, whose start $5$ lies outside the mod-$5$ cousin classes and contributes one bounded term to class $5$ mod $8$), the orientation $(q^2,q^2+4)$
 survives (no prime annihilates it), $q^2+4$ prime forces
 $q\equiv\pm2\pmod5$ for $q\neq5$ (at $q=5$ the value $29$ is prime,
 but the start $25\equiv0\pmod5$ lies outside the cousin start classes
@@ -1095,12 +1092,7 @@ $\mathbb E_x[D_{\mathrm{sys}}]$ is given by the Hardy--Littlewood
 (Conjecture H) local model for $n-q^2$, whose local factors vary
 strongly with $n$---most drastically at $p=3$: for $n\equiv1\pmod3$, $3\mid
 n-q^2$ for \emph{every} prime
-$q>3$, so the contamination collapses to exactly two boundary
-families---the $q=3$ term (when $n-9$ is prime) and---a second family, not a
-single term---the sparse exceptional family $n-q^2=3$ (when $n-3$ is
-itself a
-prime square, so that the divisible-by-3 value \emph{is} 3)---both
-negligible in logarithmic mean, so the race carries no drift at the
+$q>3$, so the contamination collapses to a single boundary family, the $q=3$ term (when $n-9$ is prime): the complementary possibility $n-q^2=3$ is empty on this ensemble, since $n\equiv2\pmod4$ forces $n-3\equiv3\pmod4$, never a square.  The family is negligible in logarithmic mean, so the race carries no drift at the
 systematic scale on the subprogression $n\equiv10\pmod{12}$: with the
 positive comparison scale
 $A_G(x):=\mathbb E_x^{(\not\equiv1\,(3))}[D_{\mathrm{sys}}]$, the
@@ -1642,9 +1634,7 @@ therefore the fixed-lag law (i) outright, and the variance law of
 (ii) \emph{conditionally on} its stated uniformity and summability
 hypotheses, which belong to the finite-height model layer and are
 not asserted asymptotically: asserting them would silently select
-the diffusive branch of (iii).  The pattern-specific selection is
-made elsewhere---Conjecture~\ref{c21}(i-b) asserts the rigid branch
-for its contaminated races---and consistency between the two
+the diffusive branch of (iii).  The pattern-specific selection is made elsewhere---Conjecture~\ref{c21} asserts the rigid branch for its races, through (i-b) for the contaminated combinations and through the drift-scale nulls of its clause (ii) for the symmetric differences---and consistency between the two
 conjectures then requires exactly that the hypotheses of (ii) fail
 at long lags for those races.
 \end{conjecture}
@@ -3475,8 +3465,7 @@ For a $p$-adic unit $a$, write $\langle a\rangle_p$ for the Teichm\"uller lift o
 its residue, and for a prime $\mathfrak p\mid p$ of a number field write
 $\tau_{\mathfrak p}$ for the Teichm\"uller lift in the completion at
 $\mathfrak p$.  Define
-$ q_{p,k}(a)=p^{-1}\log(a\langle a\rangle_p^{-1})\pmod{p^k}$.  The matrix entries
-below are the $\mathfrak p$-adic analogues of $q_{p,k}$.
+$ q_{p,k}(a)=p^{-1}\log(a\langle a\rangle_p^{-1})\pmod{p^k}$.  The matrix entries below are the $\mathfrak p$-adic analogues of $q_{p,k}$; on $\Q$ with $k=1$ one has $q_{p,1}(a)\equiv-q_p(a)\pmod p$, the Fermat quotient up to sign.
 
 \begin{conjecture}[Global-lattice horizontal $p$-adic regulator-matrix law]\label{s14}
 Let $K/\Q$ be a fixed Galois number field with group $G$, and let
@@ -3509,8 +3498,7 @@ reductions modulo $p^k$.
 Let $\mathcal D$ be a basis-invariant determinantal or Smith stratum in this projective
 module, and let $\mu_{p,k}(\mathcal D)$ be its exact local Haar mass.  The primes for
 which $L_{p,k}\in\mathcal D$ have counting law governed by
-$\sum_{p\le X}\mu_{p,k}(\mathcal D)$.  For a smooth transverse codimension-$c$ stratum,
-$\mu_{p,1}(\mathcal D)=p^{-c}+O(p^{-c-1})$, and codimension one has a Poisson point process
+$\sum_{p\le X}\mu_{p,k}(\mathcal D)$.  For a determinantal or Smith stratum of codimension $c$, whose point counts are polynomial in $p$, $\mu_{p,1}(\mathcal D)=p^{-c}+O(p^{-c-1})$, and codimension one has a Poisson point process
 in $\log\log p$ after uniform random translation, while codimension at least two has a
 summable large-prime tail together with the exact small-prime atoms.
 \end{conjecture}
@@ -3647,7 +3635,7 @@ uniformly when $X^2\mathfrak C_n^{1+\eps}\le B^{1-\eps}$, after deleting the
 singular fibres.
 
 \emph{Connected tier.}  For every fixed $r\ge3$, centred trace functions at distinct
-primes have family-averaged connected cumulants of square-root size, uniformly in the
+primes have family-averaged connected cumulants of size the square root of the parameter-family count, uniformly in the
 range $X^r\mathfrak C_{n,r}^{1+\eps}\le B^{1-\eps}$, and equivalently, after normalization,
 every fixed connected Frobenius cumulant tends to zero.  An exponential connected-moment
 bound makes this convergence uniform in $r$ over the range needed for occupancy
@@ -3735,9 +3723,9 @@ cylinder functions and the logarithmic squarefull-mass functional.
 Consequently
 \[
  \Pp\bigl(\Psi_n^{\mathrm{new}}(c)\ \text{is squarefree}\bigr)
- =\prod_p\nu_{n,p}(\{0,1\})+o(1)
+ =\prod_p\tilde\nu_{n,p}(\{0,1\})+o(1)
 \]
-uniformly in the stated complexity range, and the logarithmic squarefull mass converges
+uniformly in the stated complexity range, where $\tilde\nu_{n,p}=\nu_{n,p}$ except at the finitely many collision primes dividing one of the resultants $\operatorname{Res}(\Psi_n^{\mathrm{new}},f_c^m(0))$, at which $\tilde\nu_{n,p}$ is the law of the raw valuation $v_p(\Psi_n^{\mathrm{new}}(c))$, and the logarithmic squarefull mass converges
 to the law determined by the complete local product.
 \end{conjecture}
 
@@ -3761,8 +3749,7 @@ $D_1\cap D_2$.  Then
  \limsup_{n\to\infty}
  \frac{h_E(F^n(P))}{\max\{h(f^n(a)),h(g^n(b))\}}>0
 \]
-if and only if there exist $m\ge0$ and an irreducible $F$-periodic curve $Z$ containing
-$F^m(P)$ such that, on the normalization of $Z$, the pullbacks of $D_1$ and $D_2$ have a
+if and only if there exist $m\ge0$ and an irreducible $F$-periodic curve $Z$ containing $F^m(P)$, with $Z$ not contained in $D_1\cup D_2$ (automatic when both coordinates have positive canonical height), such that, on the normalization of $Z$, the pullbacks of $D_1$ and $D_2$ have a
 common nonzero effective component.  In the absence of such eventual entry into a
 divisor-compatible periodic curve, the normalized gcd height tends to zero.
 
@@ -3819,7 +3806,7 @@ $(v_p(f(n)))_{p\le y}$, the residual logarithmic factor process
  \delta_{\left(\log p/\log|R_y|,\,\mathrm{Frob}_p\right)}
 \]
 converges to the following conservation-corrected product object: the small valuations
-have their polynomial Kubilius law, and conditional on their consumed logarithmic mass
+have their polynomial Kubilius law (independent exact local limit laws for the small-prime valuations), and conditional on their consumed logarithmic mass
 the residual process is a scale-invariant Poisson process of intensity $du/u$, marked by
 \cref{s21}, conditioned to have total mass one.  The small field and the unconditioned
 residual Poisson process are asymptotically independent, and all leading dependence
@@ -3931,7 +3918,7 @@ possible lattice effects.  Even one-polynomial smooth-value asymptotics are diff
 local--global bridge.
 
 \begin{conjecture}[Buchstab--Bateman--Horn component flow]\label{s25}
-Let $f\in\Z[x]$ be primitive, irreducible, and admissible, and sample
+Let $f\in\Z[x]$ be primitive, irreducible, and admissible ($\rho_f(p)<p$ for every prime $p$), and sample
 $n\in[N,2N]$.  For $y$ with
 $u_n=\log|f(n)|/\log y$ in a fixed compact subset of $(1,\infty)$, let
 $\Omega_y(f(n))$ be the number of prime factors of $f(n)$ exceeding $y$, counted with
