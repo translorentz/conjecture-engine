@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 import numpy as np
 from ntlib import *
 
-PMAX = int(float(sys.argv[1])) if len(sys.argv) > 1 else 100_000
+PMAX = int(float(sys.argv[1])) if len(sys.argv) > 1 else 10_000_000
 DMAX = int(sys.argv[2]) if len(sys.argv) > 2 else 300
 
 with Timer("derived moments (Euler products over p <= %d)" % PMAX):
@@ -33,19 +33,21 @@ with Timer("derived moments (Euler products over p <= %d)" % PMAX):
         p = int(p)
         if p == 2:
             continue
-        # roots of x^2+1 mod p: 1+chi(-1); roots of x^2+1+d: 1+chi(-1-d)
-        # (single root 0 if p | 1+d); root sets coincide iff p | d.
-        n = np.arange(p, dtype=np.int64)
-        issq = np.zeros(p, dtype=bool)
-        issq[(n * n) % p] = True
-        r1 = 2 if issq[p - 1] else 0
-        a = (p - 1 - n) % p                       # a = -(1+d) mod p for d = n
-        r2 = np.where(a == 0, 1, np.where(issq[a], 2, 0))
-        om = (r1 + r2).astype(float)
-        om[0] = r1                                # d = 0: same polynomial
-        fs = (1 - om / p) / (1 - 1.0 / p) ** 2
-        log_mean += math.log(fs.mean())
-        log_m2 += math.log((fs ** 2).mean())
+        # Closed forms for the d-averages (validated against the direct
+        # enumeration above 8 primes; exact, O(1) per prime).  With
+        # r1 = 1 + chi_{-4}(p):
+        #   E_d[f_p]   = (p - r1)/(p - 1)
+        #   E_d[f_p^2] = ((p - 2*Sw/p + Sw2/p^2)/p) / (1-1/p)^4,
+        #   Sw  = p*r1 + p - r1,
+        #   Sw2 = p*r1^2 + 2*r1*p + 2*p - 1 - 3*r1^2.
+        pf = float(p)
+        r1 = 2.0 if p % 4 == 1 else 0.0
+        Ef = (pf - r1) / (pf - 1.0)
+        Sw = pf * r1 + pf - r1
+        Sw2 = pf * r1 * r1 + 2.0 * r1 * pf + 2.0 * pf - 1.0 - 3.0 * r1 * r1
+        Ef2 = ((pf - 2.0 * Sw / pf + Sw2 / (pf * pf)) / pf) / (1.0 - 1.0 / pf) ** 4
+        log_mean += math.log(Ef)
+        log_m2 += math.log(Ef2)
     Cbar = f2 * math.exp(log_mean)
     C2bar = f2 ** 2 * math.exp(log_m2)
     sd = math.sqrt(max(C2bar - Cbar ** 2, 0.0))

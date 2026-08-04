@@ -145,7 +145,7 @@ for its contaminated races.
 \text{ prime}\}=C(d)I_d(N)(1+o(1))$ uniformly for even
 $d\le(\log N)^B$; a separate power-saving rate clause; and the
 family law: moments of $C(d)$ converge to derived Euler products
-(mean $2.7447\ldots$, sd $1.6835\ldots$), the empirical law
+(mean $2.7456\ldots$, sd $1.6840\ldots$), the empirical law
 converging to the random product with CRT-independent local factors.
 
 \item \textbf{First occurrences of prime gaps
@@ -173,7 +173,7 @@ $\operatorname{Var}X/\mathbb EX=1-(\log H+\gamma+\log2\pi-1)/\log x
 Poisson law at the boundary $\alpha=1$.
 
 \item \textbf{Null-mechanism race (Conjecture~\ref{c8}).}  For
-$(n^2+1,n^2+3)$, square contamination is algebraically impossible;
+$(n^2+1,n^2+3)$, square contamination is algebraically impossible (single bounded exception $(n,q)=(1,2)$);
 the race mod $5$ is driftless at the contamination scale,
 $\M_x(D(t)\log^2t/\sqrt t)\to0$---the negative control for
 item 1---and the logarithmic occupation of leadership tends to
@@ -1664,9 +1664,9 @@ limit; so the moments of
 $C(d)$ over even $d\le D$ converge, as $D\to\infty$, to
 \emph{derived} Euler products; in particular
 \[
-\frac1{\#}\sum_{2\mid d\le D}C(d)\to\bar C=2.7447\ldots,
+\frac1{\#}\sum_{2\mid d\le D}C(d)\to\bar C=2.7456\ldots,
 \qquad
-\operatorname{sd}\bigl(C(d)\bigr)\to1.6835\ldots,
+\operatorname{sd}\bigl(C(d)\bigr)\to1.6840\ldots,
 \]
 and the empirical distribution of $C(d)$ converges to the law of the
 random product $\prod_p f_p(U_p)$ with independent uniform residues
@@ -1680,8 +1680,7 @@ Conjecture~\ref{c16}: not one count but the whole profile of constants
 must be matched at once, and the family, unlike its linear parent, has
 no known prior statement.  Every even shift is admissible (for
 $p\ge5$, $\omega(p)\le4<p$; the classes mod $3$ and $5$ vary with $d$,
-which is what makes the $C(d)$-profile nonconstant, spanning a factor
-${\approx}3$ over $d\le300$).  At $d=2$ the local analysis reads:
+which is what makes the $C(d)$-profile nonconstant, spanning a factor of about twenty over $d\le300$, from $0.47$ at $d=298$ to $9.06$ at $d=162$).  At $d=2$ the local analysis reads:
 $n$ even, $n\not\equiv0\pmod3$,
 $\omega(p)=2+\bigl(\frac{-1}{p}\bigr)+\bigl(\frac{-3}{p}\bigr)$ for
 $p\ge5$, and the conjecture implies infinitely many twin pairs
@@ -1692,9 +1691,9 @@ $1.0022$, residual mean $z=+0.24$ with spread $0.84$ and
 $\max_d|z|=2.28$---the shape-of-agreement standard applied across the
 family.  Clause (iii) was verified by
 computing both sides independently: the derived Euler-product moments
-give mean $2.7447$ and standard deviation $1.6835$, against
+give mean $2.7456$ and standard deviation $1.6840$, against
 $2.7434$ and $1.6726$ measured over the $150$ constants with
-$d\le300$ (ratios $0.9995$ and $0.9935$)---a family-level statistic
+$d\le300$ (ratios $0.9992$ and $0.9932$)---a family-level statistic
 whose constants are derived, not fitted.  One question the family raises is
 recorded as
 open rather than conjectured: the maximal range $D(N)$ for which the
@@ -1852,11 +1851,10 @@ $\log p$ over the candidate profile, defined with no reference to
 which candidates are prime:
 \[
 \lambda_{\mathrm{an}}(n)\;=\;
-\frac{\displaystyle\int_0^{\sqrt{n/2}}du}
-{\displaystyle\int_0^{\sqrt{n/2}}\frac{du}{\log(n-2u^2)}},
+\frac{\displaystyle\int_0^{\sqrt{(n-2)/2}}du}
+{\displaystyle\int_0^{\sqrt{(n-2)/2}}\frac{du}{\log(n-2u^2)}},
 \]
-the mean of $\log(n-2u^2)$ under the density proportional to
-$1/\log(n-2u^2)$ on the candidate interval, which is the profile a
+the mean of $\log(n-2u^2)$ under the density proportional to $1/\log(n-2u^2)$ on the candidate interval (the upper limit keeps $n-2u^2\ge2$, the convention of $I(N)$, avoiding the nonintegrable point $n-2u^2=1$), which is the profile a
 Bateman--Horn heuristic assigns to the prime representations.  The
 definition is out-of-sample: the verification's empirical lane mean
 over the observed prime representations is an estimator of
@@ -1989,8 +1987,7 @@ $O(1/\log^2x)$ term.
 \begin{conjecture}[The null-mechanism race; apparently new]\label{c8}
 For the quadratic twin pairs of Conjecture~\ref{c1} at $d=2$, square
 contamination is \emph{algebraically impossible}: $n^2+1=q^2$ has no
-solution with $n\ge1$, and $n^2+3=q^2$ only at $(n,q)=(1,2)$.  The
-surviving classes of $n$ mod $5$ are $\{0,1,4\}$, and the classes
+solution with $n\ge1$, and $n^2+3=q^2$ only at $(n,q)=(1,2)$.  The surviving classes of $n$ mod $5$ are $\{0,1,4\}$ (the single escape $n=2$, the pair $(5,7)$ in the killed class $2$, is one bounded term), and the classes
 $1$ and $4$ have identical singular series (elementary, via CRT).
 Let $\pi^{\mathrm q}_a(x)$ count solutions with $n\equiv a\pmod5$,
 $D(x)=\pi^{\mathrm q}_1(x)-\pi^{\mathrm q}_4(x)$, and define the
@@ -2066,9 +2063,7 @@ conjectured law is that conclusion itself:
 \]
 with fluctuations of the Gaussian scale
 $\sqrt{\log2/\log x}$ (the occupation-indicator covariance
-$\frac1{2\pi}\arcsin\e^{-u/2}$ integrates to $\tfrac12\log2$; note
-that the constant for the \emph{sign} average $2\mathbf 1-1$ is twice
-this, the occupation fraction itself carrying
+$\frac1{2\pi}\arcsin\e^{-u/2}$ integrates to $\tfrac12\log2$; note that the integrated covariance for the \emph{sign} average $2\mathbf 1-1$ is four times this, its standard deviation twice, the occupation fraction itself carrying
 $\sqrt{\log2/\log x}$); the classical
 arcsine spread survives only in the \emph{natural} event clock,
 i.e.\ for occupation fractions of $\{B(m)>0,\ m\le N(x)\}$.  A
@@ -2146,8 +2141,7 @@ variance sum makes the partial products an $L^2$-bounded martingale
 (each factor has mean $1$ and is independent of the earlier ones),
 so they are uniformly integrable and the limit law has mean exactly
 $1$, not merely limit-of-means $1$;
-\emph{(ii)} [limit law] as $a\to\infty$ over non-cubes, $C(a)$
-converges in distribution to the random Euler product
+\emph{(ii)} [limit law] the empirical law of $\{C(a):a\le A,\ a\ \text{a non-cube}\}$ converges, as $A\to\infty$, to the law of the random Euler product
 $\prod_{p\equiv1(3)}f_p(\xi_p)$ with the three-state local variables
 $\xi_p$ above---independent at any finite set of primes exactly, by
 CRT, with the infinite product's tail controlled by the convergent
@@ -3969,7 +3963,7 @@ statement moved.
 
 Each statement was also verified at production scale: the
 Conjecture~\ref{c1} profile across $150$ shifts and the moment law for
-its constants $C(d)$ (derived mean $2.7447$ and sd $1.6835$ against
+its constants $C(d)$ (derived mean $2.7456$ and sd $1.6840$ against
 measured $2.7434$ and $1.6726$); the cubic family moments and
 uniformity of Conjecture~\ref{c2} ($294$ constants, $57$ count
 profiles); the triplet and sexy-pair races of Conjectures~\ref{c3}

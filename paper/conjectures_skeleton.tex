@@ -790,9 +790,9 @@ limit; so the moments of
 $C(d)$ over even $d\le D$ converge, as $D\to\infty$, to
 \emph{derived} Euler products; in particular
 \[
-\frac1{\#}\sum_{2\mid d\le D}C(d)\to\bar C=2.7447\ldots,
+\frac1{\#}\sum_{2\mid d\le D}C(d)\to\bar C=2.7456\ldots,
 \qquad
-\operatorname{sd}\bigl(C(d)\bigr)\to1.6835\ldots,
+\operatorname{sd}\bigl(C(d)\bigr)\to1.6840\ldots,
 \]
 and the empirical distribution of $C(d)$ converges to the law of the
 random product $\prod_p f_p(U_p)$ with independent uniform residues
@@ -920,11 +920,10 @@ $\log p$ over the candidate profile, defined with no reference to
 which candidates are prime:
 \[
 \lambda_{\mathrm{an}}(n)\;=\;
-\frac{\displaystyle\int_0^{\sqrt{n/2}}du}
-{\displaystyle\int_0^{\sqrt{n/2}}\frac{du}{\log(n-2u^2)}},
+\frac{\displaystyle\int_0^{\sqrt{(n-2)/2}}du}
+{\displaystyle\int_0^{\sqrt{(n-2)/2}}\frac{du}{\log(n-2u^2)}},
 \]
-the mean of $\log(n-2u^2)$ under the density proportional to
-$1/\log(n-2u^2)$ on the candidate interval, which is the profile a
+the mean of $\log(n-2u^2)$ under the density proportional to $1/\log(n-2u^2)$ on the candidate interval (the upper limit keeps $n-2u^2\ge2$, the convention of $I(N)$, avoiding the nonintegrable point $n-2u^2=1$), which is the profile a
 Bateman--Horn heuristic assigns to the prime representations.  The
 definition is out-of-sample: the verification's empirical lane mean
 over the observed prime representations is an estimator of
@@ -989,8 +988,7 @@ slow growth of $\log H$.
 \begin{conjecture}[The null-mechanism race; apparently new]\label{c8}
 For the quadratic twin pairs of Conjecture~\ref{c1} at $d=2$, square
 contamination is \emph{algebraically impossible}: $n^2+1=q^2$ has no
-solution with $n\ge1$, and $n^2+3=q^2$ only at $(n,q)=(1,2)$.  The
-surviving classes of $n$ mod $5$ are $\{0,1,4\}$, and the classes
+solution with $n\ge1$, and $n^2+3=q^2$ only at $(n,q)=(1,2)$.  The surviving classes of $n$ mod $5$ are $\{0,1,4\}$ (the single escape $n=2$, the pair $(5,7)$ in the killed class $2$, is one bounded term), and the classes
 $1$ and $4$ have identical singular series (elementary, via CRT).
 Let $\pi^{\mathrm q}_a(x)$ count solutions with $n\equiv a\pmod5$,
 $D(x)=\pi^{\mathrm q}_1(x)-\pi^{\mathrm q}_4(x)$, and define the
@@ -1066,9 +1064,7 @@ conjectured law is that conclusion itself:
 \]
 with fluctuations of the Gaussian scale
 $\sqrt{\log2/\log x}$ (the occupation-indicator covariance
-$\frac1{2\pi}\arcsin\e^{-u/2}$ integrates to $\tfrac12\log2$; note
-that the constant for the \emph{sign} average $2\mathbf 1-1$ is twice
-this, the occupation fraction itself carrying
+$\frac1{2\pi}\arcsin\e^{-u/2}$ integrates to $\tfrac12\log2$; note that the integrated covariance for the \emph{sign} average $2\mathbf 1-1$ is four times this, its standard deviation twice, the occupation fraction itself carrying
 $\sqrt{\log2/\log x}$); the classical
 arcsine spread survives only in the \emph{natural} event clock,
 i.e.\ for occupation fractions of $\{B(m)>0,\ m\le N(x)\}$.  A
@@ -1100,8 +1096,7 @@ variance sum makes the partial products an $L^2$-bounded martingale
 (each factor has mean $1$ and is independent of the earlier ones),
 so they are uniformly integrable and the limit law has mean exactly
 $1$, not merely limit-of-means $1$;
-\emph{(ii)} [limit law] as $a\to\infty$ over non-cubes, $C(a)$
-converges in distribution to the random Euler product
+\emph{(ii)} [limit law] the empirical law of $\{C(a):a\le A,\ a\ \text{a non-cube}\}$ converges, as $A\to\infty$, to the law of the random Euler product
 $\prod_{p\equiv1(3)}f_p(\xi_p)$ with the three-state local variables
 $\xi_p$ above---independent at any finite set of primes exactly, by
 CRT, with the infinite product's tail controlled by the convergent
