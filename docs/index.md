@@ -1167,7 +1167,7 @@ $$
 
 uniformly when $$X^2\mathfrak C_n^{1+\varepsilon}\le B^{1-\varepsilon}$$, after deleting the singular fibres.
 
-*Connected tier.* For every fixed $$r\ge3$$, centred trace functions at distinct primes have family-averaged connected cumulants of size the square root of the parameter-family count, uniformly in the range $$X^r\mathfrak C_{n,r}^{1+\varepsilon}\le B^{1-\varepsilon}$$, and equivalently, after normalization, every fixed connected Frobenius cumulant tends to zero. An exponential connected-moment bound makes this convergence uniform in $$r$$ over the range needed for occupancy functionals.
+*Connected tier.* For every fixed $$r\ge3$$, centred trace functions at distinct primes have family-averaged connected cumulants with square-root cancellation in the parameter-family count, uniformly in the range $$X^r\mathfrak C_{n,r}^{1+\varepsilon}\le B^{1-\varepsilon}$$, and equivalently, after normalization, every fixed connected Frobenius cumulant tends to zero. An exponential connected-moment bound makes this convergence uniform in $$r$$ over the range needed for occupancy functionals.
 
 Consequently, whenever the analytic Chebotarev error is $$o(1)$$ but the iid sampling functional of $$\mu_n$$ is nonvanishing, the complete conjugacy-cylinder count vector, averaged over parameters, has the nonuniform multinomial occupancy law of independent samples from $$\mu_n$$, including its missing-mass, collision, and total-variation profile. The multinomial conclusion is derived from the connected tier, not from the $$L^2$$ bound alone.
 
