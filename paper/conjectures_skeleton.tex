@@ -1922,7 +1922,7 @@ $\kappa_{\Gamma,B}\ge0$ such that
  =(\kappa_{\Gamma,B}+o(1))\sum_{p\le X}p^{-r}
 \]
 whenever the sum diverges, while only finitely many such primes occur when $r\ge2$.
-As a separately falsifiable genericity clause, for Kummer-generic $\Gamma$ and $B=\{0\}$ one has $\kappa_{\Gamma,B}=1$.  The transition from
+As a separately falsifiable genericity clause, for Kummer-generic $\Gamma$ (the Kummer fields $\Q(\zeta_m,\Gamma^{1/m})$ have the maximal degree $\varphi(m)m^{r}$ for every $m$) and $B=\{0\}$ one has $\kappa_{\Gamma,B}=1$.  The transition from
 Haar universality to the arithmetic intensity occurs only when $w_p$ remains bounded.
 \end{conjecture}
 
@@ -1957,8 +1957,7 @@ $G$, use the Teichm\"uller lift in each completion, and form the depth-$k$ matri
 It lies in the annihilator of
 $\mathcal R_\Gamma\otimes\Z/p^k\Z$.  As $p$ varies through any fixed compatible
 Frobenius class, $L_{p,1}/p$ equidistributes with Haar measure on
-$\mathbb T_\Gamma$, and the depth-$k$ matrices are Haar in the projective system of its
-reductions modulo $p^k$.
+$\mathbb T_\Gamma$, and the depth-$k$ matrices are Haar at every fixed depth $k$, with the depth-$(k+1)$ law pushing forward to the depth-$k$ law under reduction (the moduli vary with $p$, so this is a per-depth statement with compatible marginals, not Haar on one fixed group).
 
 Let $\mathcal D$ be a basis-invariant determinantal or Smith stratum in this projective
 module, and let $\mu_{p,k}(\mathcal D)$ be its exact local Haar mass.  The primes for
@@ -1978,7 +1977,7 @@ $P\in\Gamma$ and define
  \ell_p(P)=p^{-1}\log_T\bigl(P\tau_p(\bar P)^{-1}\bigr)\pmod p
  \in\operatorname{Lie}(S)(\Fq_p).
 \]
-For any generators $P_1,\ldots,P_s$ of $\Gamma$, the normalized matrix
+Here $\operatorname{Lie}(S)(\Fq_p)$ is identified with $(\Z/p)^{\dim S}$ through a fixed integral basis of the Lie algebra of $\mathcal T$, with representatives in $[0,p)$; a different basis changes the matrix by a fixed element of $\mathrm{GL}_{\dim S}(\Z)$, which preserves the Haar law and the shrinking-target intensities.  For any generators $P_1,\ldots,P_s$ of $\Gamma$, the normalized matrix
 $(\ell_p(P_i)/p)_i$ equidistributes, in every compatible Frobenius class, with Haar
 measure on the real relation subtorus cut out jointly by the algebraic subgroup $S$ and
 the integral relations among the $P_i$.  For every morphism of tori $\phi:T\to T'$,

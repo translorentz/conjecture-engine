@@ -367,7 +367,7 @@ conjecture died of demanding fewer);
 (iv) sit inside the standard hierarchy of conjectures
 (Hardy--Littlewood $k$-tuples $\subset$ Schinzel's Hypothesis~H
 $\subset$ Bateman--Horn), so that its failure would propagate; and
-(v) be falsifiable instance-by-instance by computation.
+(v) expose instance-falsifiable content---congruences, null lanes, exact identities, derived constants---so that computation can refute the derivation even where the asymptotic itself lies beyond finite refutation.
 Numerical range is the least important column in the ledger: most deep
 phenomena drift at the rate $\log\log x$, and $\log\log 10^{18}\approx
 3.7$, so verification ``to $10^{18}$'' is weak evidence by itself.  What
@@ -585,6 +585,9 @@ same machinery, and both rejections became part of the statements.
 
 Novelty labels, from the independent literature search: \textbf{(a)} previously stated in essence;
 \textbf{(b)} classical family, quantified instance apparently unstated.
+
+\medskip
+\noindent\textbf{How to read the fifty.}  The count is a numbering convention, not a claim of fifty independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several slots pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Depth and independence therefore vary by design across the fifty, and the summary sheet's ordering, not the raw count, carries the priority claim.
 
 \part{Conjectures from a local--global random model}
 
@@ -1121,8 +1124,7 @@ transfer to unweighted counts is a partial-summation argument whose
 error terms (higher prime powers, which enter only at the $n^{1/3}$
 scale, and the variation of the weight across the lane) remain to be
 written out---the same open transfer flagged at
-Conjecture~\ref{c21}---and clause (iii) inherits the zero-oscillation
-caveat stated there.
+Conjecture~\ref{c21}---and clause (iii) inherits the zero-oscillation caveat stated there.  One further disclosure: the census $D_{\mathrm{sys}}$ is computed from the primes in the same sample it is compared against, so the level agreement is in-sample; the out-of-sample content of the verification is the null lane and the class assignment, which the mechanism fixes in advance.
 
 This is the Goldbach-partition analogue of Chebyshev's bias, produced
 by the same explicit-formula mechanism as Conjecture~\ref{c21} but
@@ -1717,8 +1719,7 @@ family.  Clause (iii) was verified by
 computing both sides independently: the derived Euler-product moments
 give mean $2.7456$ and standard deviation $1.6840$, against
 $2.7434$ and $1.6726$ measured over the $150$ constants with
-$d\le300$ (ratios $0.9992$ and $0.9932$)---a family-level statistic
-whose constants are derived, not fitted.  One question the family raises is
+$d\le300$ (ratios $0.9992$ and $0.9932$)---a family-level statistic whose constants are derived, not fitted.  Clause (iii), unlike (i) and (ii), may prove accessible unconditionally by the exact-CRT and martingale route recorded at the cubic family below; the hard content of the slot is the uniform law and the rate clause.  One question the family raises is
 recorded as
 open rather than conjectured: the maximal range $D(N)$ for which the
 uniform law can hold (the analogue of the Elliott--Halberstam
@@ -3431,7 +3432,7 @@ $\kappa_{\Gamma,B}\ge0$ such that
  =(\kappa_{\Gamma,B}+o(1))\sum_{p\le X}p^{-r}
 \]
 whenever the sum diverges, while only finitely many such primes occur when $r\ge2$.
-As a separately falsifiable genericity clause, for Kummer-generic $\Gamma$ and $B=\{0\}$ one has $\kappa_{\Gamma,B}=1$.  The transition from
+As a separately falsifiable genericity clause, for Kummer-generic $\Gamma$ (the Kummer fields $\Q(\zeta_m,\Gamma^{1/m})$ have the maximal degree $\varphi(m)m^{r}$ for every $m$) and $B=\{0\}$ one has $\kappa_{\Gamma,B}=1$.  The transition from
 Haar universality to the arithmetic intensity occurs only when $w_p$ remains bounded.
 \end{conjecture}
 
@@ -3474,8 +3475,7 @@ $G$, use the Teichm\"uller lift in each completion, and form the depth-$k$ matri
 It lies in the annihilator of
 $\mathcal R_\Gamma\otimes\Z/p^k\Z$.  As $p$ varies through any fixed compatible
 Frobenius class, $L_{p,1}/p$ equidistributes with Haar measure on
-$\mathbb T_\Gamma$, and the depth-$k$ matrices are Haar in the projective system of its
-reductions modulo $p^k$.
+$\mathbb T_\Gamma$, and the depth-$k$ matrices are Haar at every fixed depth $k$, with the depth-$(k+1)$ law pushing forward to the depth-$k$ law under reduction (the moduli vary with $p$, so this is a per-depth statement with compatible marginals, not Haar on one fixed group).
 
 Let $\mathcal D$ be a basis-invariant determinantal or Smith stratum in this projective
 module, and let $\mu_{p,k}(\mathcal D)$ be its exact local Haar mass.  The primes for
@@ -3505,7 +3505,7 @@ $P\in\Gamma$ and define
  \ell_p(P)=p^{-1}\log_T\bigl(P\tau_p(\bar P)^{-1}\bigr)\pmod p
  \in\operatorname{Lie}(S)(\Fq_p).
 \]
-For any generators $P_1,\ldots,P_s$ of $\Gamma$, the normalized matrix
+Here $\operatorname{Lie}(S)(\Fq_p)$ is identified with $(\Z/p)^{\dim S}$ through a fixed integral basis of the Lie algebra of $\mathcal T$, with representatives in $[0,p)$; a different basis changes the matrix by a fixed element of $\mathrm{GL}_{\dim S}(\Z)$, which preserves the Haar law and the shrinking-target intensities.  For any generators $P_1,\ldots,P_s$ of $\Gamma$, the normalized matrix
 $(\ell_p(P_i)/p)_i$ equidistributes, in every compatible Frobenius class, with Haar
 measure on the real relation subtorus cut out jointly by the algebraic subgroup $S$ and
 the integral relations among the $P_i$.  For every morphism of tori $\phi:T\to T'$,
@@ -3716,8 +3716,7 @@ Degree alone does not control a growing polynomial family.  The controlling rang
 coefficient height, discriminant, and resultants, while the infinite-product conclusion
 is supported by an explicit uniform squarefull-tail assertion.  The local process still
 retains every bad-prime and collision state and remains level dependent, as primitive
-hits at a fixed prime occur by bounded time modulo $p^k$.  The nearest literature treats
-primitive divisors and fixed-polynomial squarefree values, not this complexity-uniform
+hits at a fixed prime occur by bounded time modulo $p^k$.  For the unicritical families $x^d+c$ the resultants at the first levels are units, so the stated complexity range is nonempty there.  The nearest literature treats primitive divisors and fixed-polynomial squarefree values, not this complexity-uniform
 adelic process \cite{Primitive,KrummDynatomic}.
 
 \begin{conjecture}[Divisor-sensitive classification of dynamical gcd height]\label{s20}
