@@ -365,21 +365,36 @@ nearest literature boundary, first decisive theorem, and failure mode.
 
 \section{Introduction}
 
-A good conjecture in the theory of numbers is not merely a statement
-that has resisted counterexample.  It is the \emph{prediction of a
-model}: the assertion that the primes, beyond their local structure,
-behave like a random set of density $1/\log n$.  The discipline this
-imposes is exacting.  A conjecture worth stating should
+This collection states fifty-six conjectures in three parts.  Part~I
+(Conjectures 1--25) is a single sustained experiment: the primes, beyond
+their local structure, are modelled as a random set of density
+$1/\log n$, and the model is pushed to its sharpest consequences.
+Part~II (Conjectures 26--50) leaves the single model for five structural
+programmes---connected prime-pattern fields, arithmetic first-arrival
+fields and class groups, finite logarithms and algebraic tori, arboreal
+dynamics, and adelic factorization---each contributing one canonical
+object and its laws.  Part~III (Conjectures 51--56) leaves number theory
+itself, carrying the same discipline into multiplicative number theory's
+pretentious frontier, discrepancy theory, graph limits, additive
+information theory, and ergodic theory.
+
+One standard governs all three parts.  A good conjecture is not merely a
+statement that has resisted counterexample: it is a determinate
+proposition about a canonical object, with a stated mechanism, and with
+enough exposed structure to be refuted in pieces.  Concretely, every
+statement here is asked to
 (i) survive every congruence and size obstruction;
-(ii) come with a quantitative asymptotic whose constant is derived, not
+(ii) come with a quantitative form whose constants are derived, not
 fitted;
-(iii) demand exactly the fluctuations the model earns---square-root
-noise with logarithmic corrections---and no fewer (the Mertens
-conjecture died of demanding fewer);
-(iv) sit inside the standard hierarchy of conjectures
-(Hardy--Littlewood $k$-tuples $\subset$ Schinzel's Hypothesis~H
-$\subset$ Bateman--Horn), so that its failure would propagate; and
-(v) expose instance-falsifiable content---congruences, null lanes, exact identities, derived constants---so that computation can refute the derivation even where the asymptotic itself lies beyond finite refutation.
+(iii) demand exactly the fluctuations its mechanism earns and no fewer
+(the Mertens conjecture died of demanding fewer);
+(iv) sit inside a known hierarchy where one exists (for Part~I,
+Hardy--Littlewood $k$-tuples $\subset$ Schinzel's Hypothesis~H
+$\subset$ Bateman--Horn), so that failure would propagate; and
+(v) expose instance-falsifiable content---congruences, null lanes, exact
+identities, derived constants---so that computation can refute the
+derivation even where the asymptotic itself lies beyond finite
+refutation.
 Numerical range is the least important column in the ledger: most deep
 phenomena drift at the rate $\log\log x$, and $\log\log 10^{18}\approx
 3.7$, so verification ``to $10^{18}$'' is weak evidence by itself.  What
@@ -387,15 +402,14 @@ persuades is the \emph{shape} of the agreement---a count that tracks a
 derived constant through several decades with residuals that look like
 noise.
 
-The twenty-five statements below are built to those specifications and
-are presented in three sections: the
-principal conjectures (numbers 1--9), family laws and second-order
-refinements (numbers 10--17), and instances and structural companions
-(numbers 18--25).  The material they draw on---Bateman--Horn systems,
-barely-divergent sparse sequences, representation problems with
-Borel--Cantelli accounting, and statistical laws of the prime
-sequence---runs through all three.  Section~\ref{sec:audit} reports
-the stress tests and the independent recomputation of every constant.
+Part~I is presented in three sections: the principal conjectures
+(numbers 1--9), family laws and second-order refinements (numbers
+10--17), and instances and structural companions (numbers 18--25).  The
+material they draw on---Bateman--Horn systems, barely-divergent sparse
+sequences, representation problems with Borel--Cantelli accounting, and
+statistical laws of the prime sequence---runs through all three.
+Section~\ref{sec:audit} reports the stress tests and the independent
+recomputation of every constant.
 
 One structural lesson organizes several of the statements below.  A
 probability model integrates over density, and is therefore blind to
@@ -406,33 +420,37 @@ the sharpest instance: they obstruct the problem outright while
 contributing nothing to any Borel--Cantelli sum taken over all $n$.
 This is the classical lesson of admissibility, and it is why the
 statements below separate what is provable by congruence or
-factorization from what the probabilistic accounting supplies.
+factorization from what a probabilistic accounting supplies.  Parts~II
+and~III inherit the same separation in a different key: each statement
+names its canonical object and averaging law, identifies its source,
+states a first decisive theorem where one exists, and records an honest
+failure mode.
 
 Three checks stand behind every statement, and \S\ref{sec:audit}
-reports their outcomes.  First, an independent literature search at
-neighbourhood depth---defining objects, derived sequences, OEIS
-comments, and the abstracts and bodies of near-neighbour papers, read
-rather than skimmed from search summaries---establishes what is already
-known.  Where a statement exists in essence it is attributed and
-labelled: some verbatim (Dubner's twin-sum conjecture, the Stern list
-for $p+2k^2$, Caldwell--Gallot's $\e^{\gamma}\log N$ laws), one with an
-exact constant catalogued as an OEIS entry (A188596), and the rest
-attributed accordingly.  No such statement
-stands as a conjecture on its own; each is retained \emph{inside} the
-conjecture whose content it calibrates, restated in our uniform
-framework and re-verified at our bounds.  Second, every
-falsifiable-by-instance statement was verified against exact counts and
-then re-tested well past its original bound, the computation being
-designed as an attempt at refutation rather than at confirmation.
-Third, constants and
-counts were recomputed from the definitions alone by independent
-implementations developed separately from the primary computation.  Our
-novelty policy throughout is conservative: where priority
-is uncertain we attribute rather than claim.
+reports their outcomes for Part~I.  First, an independent literature
+search at neighbourhood depth---defining objects, derived sequences,
+OEIS comments where relevant, and the abstracts and bodies of
+near-neighbour papers, read rather than skimmed from search
+summaries---establishes what is already known.  Where a statement exists
+in essence it is attributed and labelled: some verbatim (Dubner's
+twin-sum conjecture, the Stern list for $p+2k^2$, Caldwell--Gallot's
+$\e^{\gamma}\log N$ laws), one with an exact constant catalogued as an
+OEIS entry (A188596), and the rest attributed accordingly.  No such
+statement occupies a slot on its own; each is retained \emph{inside} the
+slot whose claimed content it calibrates, restated in our uniform
+framework and re-verified at our bounds, and where a statement
+strengthens a named open problem the containment is stated as its
+headline.  Second, every falsifiable-by-instance statement was verified
+against exact counts and then re-tested well past its original bound,
+the computation being designed as an attempt at refutation rather than
+at confirmation.  Third, constants and counts were recomputed from the
+definitions alone by independent implementations sharing no code with
+the primary computation.  Our novelty policy throughout is conservative:
+where priority is uncertain we attribute rather than claim.
 
 \subsection*{Taxonomy: our contribution and its calibration layer}
 
-One criterion governs the taxonomy.  An unrecorded specialization of
+Within Part~I, one criterion governs the taxonomy.  An unrecorded specialization of
 Bateman--Horn is analogous to evaluating a classical special function
 at a new argument---worthwhile as data, but not a new conjecture in the
 conceptual sense; no conjecture's contribution is a bare
@@ -473,8 +491,7 @@ One tagging convention runs through every statement below: clauses
 marked [theorem] or ``elementary'' are proved; clauses marked
 ``conditional proposition'' follow from the hypotheses stated with
 them; the remaining clauses are conjectures; and open questions are
-labelled as such and are not counted among the twenty-five
-conjectures.
+labelled as such and are not counted among the fifty-six conjectures.
 
 \subsection*{Computational-check standards}
 
