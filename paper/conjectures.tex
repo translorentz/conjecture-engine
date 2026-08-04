@@ -37,8 +37,8 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Fifty conjectures in number theory\\
-\large A local--global random model and five structural programmes}
+\title{Fifty-six conjectures in mathematics\\
+\large A local--global random model, five structural programmes, and six conjectures across fields}
 \author{The Conjecture Engine\thanks{This paper was produced by an
 automated conjecture engine (Claude, Anthropic), operated as an exercise
 in disciplined conjecture-making.  All constants, counts, and
@@ -50,10 +50,20 @@ probable-prime classification; all smaller primality claims are
 deterministic (fixed-base Miller--Rabin).}}
 \date{July 27, 2026}
 
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\Q}{\mathbb Q}
+\providecommand{\R}{\mathbb R}
+\providecommand{\T}{\mathbb T}
+\providecommand{\E}{\mathbb E}
+\providecommand{\Pp}{\mathbb P}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remarkx}{Remark}
+
 \begin{document}
 \maketitle
 
-\section*{Summary sheet: the fifty conjectures}
+\section*{Summary sheet: the fifty-six conjectures}
 \addcontentsline{toc}{section}{Summary sheet}
 
 \paragraph{Part I: conjectures from the local--global random model,
@@ -300,10 +310,21 @@ Bateman--Horn constant.
 \item \textbf{Buchstab--Bateman--Horn component flow (Conjecture~\ref{s25}).}  Rough prime, semiprime, and higher-almost-prime polynomial values follow universal Buchstab components with Galois marks.
 \end{enumerate}
 
+\paragraph{Part III: six conjectures across fields, in statement order.}
+\begin{enumerate}\setcounter{enumi}{50}
+\item \textbf{Relative polynomial pretentiousness inverse principle (Conjecture~\ref{t1}).} A persistently nonzero logarithmic correlation of completely multiplicative unimodular functions along multiplicatively independent irreducible polynomials forces one existential block of primitive characters and archimedean parameters with finite relative pretentious distances, the balance identity $\sum_j t_j \deg P_j = 0$, and a nonvanishing joint character average at a common modulus.
+\item \textbf{Monotone threshold purification of vector paths (Conjecture~\ref{t2}).} Every monotone fractional activation schedule of $m$ vectors of norm at most one in $\R^d$ admits a rounding to single irreversible activation times whose path error is $O(\sqrt d)$ uniformly in $m$, containing the open Euclidean Steinitz prefix-sum problem and asserting removal of the logarithm from Banaszczyk's $O(\sqrt{d+\log m})$.
+\item \textbf{Entropy dimension of random-free graphons (Conjecture~\ref{t3}).} If the row space of a $\{0,1\}$-valued graphon is Ahlfors $s$-regular then $H(G(n,W))/(n\log n)\to s$, the hypothesis class being nonvacuous at every $s\in(0,2]$ by Cantor-type threshold constructions.
+\item \textbf{A Hessian principle for isolated microcanonical graph phases (Conjecture~\ref{t4}).} Under isolated-phase, transversally Lipschitz, and nonemptiness hypotheses, the tangent block averages of a microcanonical coloured graph ensemble fluctuate at scale $n^{-1}$ around their mean with centred Gaussian limit of covariance $A^{-1}$, the inverse of the contracted entropy Hessian.
+\item \textbf{Sharp stability of entropy idempotence on finite abelian groups (Conjecture~\ref{t5}).} The squared total variation distance from a probability measure to the nearest uniform coset measure is bounded by a universal constant, conjecturally exactly $2/\log 2$ as pinned by discretized Gaussians on $\Z/p\Z$, times the convolution entropy defect $H(\mu*\mu)-H(\mu)$.
+\item \textbf{Stationary convolution-entropy rigidity (Conjecture~\ref{t6}).} An ergodic stationary process over a finite abelian group preserves entropy under independent self-convolution exactly when its quotient by the translational stabilizer has zero entropy, so in particular every ergodic binary process of intermediate entropy gains entropy under independent XOR.
+\end{enumerate}
+
+
 
 
 \begin{abstract}
-We state fifty conjectures in elementary and analytic number theory in two
+We state fifty-six conjectures in elementary and analytic number theory in two
 parts.  The twenty-five conjectures of Part~I are each derived from the
 local--global random model of the primes:
 Cram\'er's model corrected by Hardy--Littlewood singular series, with
@@ -347,6 +368,7 @@ finite logarithms and algebraic tori, arboreal arithmetic dynamics, and
 adelic factorization processes---each introducing a canonical operator,
 process, invariant, classification, or phase boundary, with its mechanism,
 nearest literature boundary, first decisive theorem, and failure mode.
+  Part~III adds six conjectures across fields: a relative pretentious inverse principle for polynomial arguments, a threshold purification law for monotone vector paths, an entropy--dimension law for random-free graphons, a Hessian principle for microcanonical graph phases, a sharp stability law for entropy idempotence on finite abelian groups, and a convolution-entropy rigidity for stationary processes.
 \end{abstract}
 
 \tableofcontents
@@ -587,7 +609,7 @@ Novelty labels, from the independent literature search: \textbf{(a)} previously 
 \textbf{(b)} classical family, quantified instance apparently unstated.
 
 \medskip
-\noindent\textbf{How to read the fifty.}  The count is a numbering convention, not a claim of fifty independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several slots pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Depth and independence therefore vary by design across the fifty, and the summary sheet's ordering, not the raw count, carries the priority claim.
+\noindent\textbf{How to read the fifty-six.}  The count is a numbering convention, not a claim of fifty independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several slots pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Depth and independence therefore vary by design across the fifty-six, and the summary sheet's ordering, not the raw count, carries the priority claim.
 
 \part{Conjectures from a local--global random model}
 
@@ -3937,6 +3959,553 @@ are the random-integer antecedent \cite{Moree}, and the fixed-polynomial,
 Galois-marked component law with its local factors is the new statement.  It is strongly falsifiable even when
 total roughness follows Buchstab.
 
+
+
+\part{Six conjectures across fields}
+
+The six conjectures below leave the prime model.  They range over multiplicative number theory, discrepancy theory, graph limits, additive information theory, and ergodic theory, and each is held to the same standard as the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.
+
+\section{Relative polynomial pretentiousness}
+
+Let $P\in\Z[x]$ be primitive (the greatest common divisor of its
+coefficients is $1$) and irreducible, with positive leading
+coefficient.  For a prime $p$ write
+\[
+\rho_P(p)=\#\{a\in\Z/p\Z:P(a)\equiv0\pmod p\}.
+\]
+The weight $\rho_P(p)/p$ is the first-order frequency with which $p$
+divides a polynomial value $P(n)$.  A function $f$ on the positive
+integers is completely multiplicative if $f(mn)=f(m)f(n)$ for all
+$m,n\ge1$.  For completely multiplicative $f,g$ with values in the
+closed complex unit disc, define the truncated $P$-relative pretentious
+distance
+\[
+\mathbb D_P(f,g;X)^2
+=
+\sum_{p\le X}\frac{\rho_P(p)}{p}
+\bigl(1-\operatorname{Re}\bigl(f(p)\overline{g(p)}\bigr)\bigr),
+\qquad
+\mathbb D_P(f,g)^2=\lim_{X\to\infty}\mathbb D_P(f,g;X)^2\in[0,\infty].
+\]
+Every summand is nonnegative, so the truncated distance is
+nondecreasing in $X$ and the limit exists.  Throughout, a primitive
+Dirichlet character $\chi$ of conductor $c$ is regarded as the
+$c$-periodic completely multiplicative function on $\Z$ that vanishes
+on integers not coprime to $c$, so that expressions such as
+$\chi(P(a))$ are defined for every residue $a$ modulo any multiple of
+$c$.  For $t\in\R$, the comparison function $n\mapsto\chi(n)n^{it}$ is
+completely multiplicative with values in the closed unit disc.
+
+Let $P_1,\ldots,P_m\in\Z[x]$ be pairwise distinct primitive
+irreducible polynomials with positive leading coefficients and no
+fixed prime divisor, meaning $\rho_{P_j}(p)<p$ for every $j$ and every
+prime $p$.  Assume multiplicative independence modulo constants:
+\[
+\prod_{j=1}^m P_j(x)^{e_j}\in\Q^\times,\quad e_j\in\Z
+\quad\Longrightarrow\quad
+e_1=\cdots=e_m=0.
+\]
+Write $\mathbb S^1$ for the unit circle in the complex plane.
+
+\begin{conjecture}[Relative polynomial pretentiousness inverse principle]\label{t1}
+Let $f_1,\ldots,f_m:\{1,2,3,\ldots\}\to\mathbb S^1$ be completely
+multiplicative.  If
+\[
+\limsup_{X\to\infty}
+\left|
+\frac{1}{\log X}
+\sum_{\substack{n\le X\\P_j(n)>0\ \forall j}}
+\frac{\prod_{j=1}^m f_j(P_j(n))}{n}
+\right|>0,
+\]
+then there exist primitive Dirichlet characters
+$\chi_1,\ldots,\chi_m$ and real numbers $t_1,\ldots,t_m$ such that
+the following three conditions hold simultaneously:
+\begin{enumerate}
+\item[(i)] $\mathbb D_{P_j}\bigl(f_j,\chi_j(n)n^{it_j}\bigr)<\infty$
+for every $1\le j\le m$,
+\item[(ii)] $\displaystyle\sum_{j=1}^m t_j\deg P_j=0$,
+\item[(iii)] for some common multiple $q$ of the conductors of
+$\chi_1,\ldots,\chi_m$,
+\[
+\frac1q\sum_{a\bmod q}\prod_{j=1}^m\chi_j(P_j(a))\ne0,
+\]
+the characters being extended by $0$ on nonunits as above.
+\end{enumerate}
+\end{conjecture}
+
+\paragraph{Significance.}
+The mechanism is that a persistent logarithmic correlation should have
+exactly two sources: an archimedean resonance carried by the factors
+$n^{it_j}$ and a finite local resonance carried by the characters
+$\chi_j$.  The balance condition (ii) is forced by the expansion
+$P_j(n)^{it_j}=c_j^{it_j}n^{it_j\deg P_j}(1+o(1))$, with $c_j$ the
+leading coefficient, because logarithmic averaging annihilates any
+nonzero total power of $n$, and (iii) asserts that the finite-modulus
+resonances are jointly compatible, so that the model correlation does
+not vanish identically for local reasons.  Packaging the conclusion as
+one existential block matters: the characters and archimedean
+parameters cannot be chosen independently for each $j$, and it is the
+joint system (i)--(iii) that reproduces the correlation.  The
+decisive-theorem ledger for the linear case is as follows.  For linear
+polynomials the two-point case is Tao's logarithmically averaged
+two-point Elliott theorem (Tao 2016).  The odd-order cases are the
+theorems of Tao--Ter\"av\"ainen, and the shape of the conclusion here,
+one existential block coupling characters, archimedean parameters, and
+a nonvanishing local average, is the template of their structure
+theorem for logarithmically averaged correlations
+(Tao--Ter\"av\"ainen 2019).  The general even-order linear case is
+precisely the logarithmically averaged Elliott conjecture.  All of the
+novelty of the present statement therefore sits at
+$\max_j\deg P_j\ge2$, where even the logarithmic mean value of
+$f(n^2+1)$ for a single nonpretentious completely multiplicative $f$
+is open, and a logarithmic mean value theorem for $f(n^2+1)$ with a
+conclusion of the stated relative-pretentious type would be the first
+decisive theorem.  The failure mode is a system of functions
+nonpretentious in every relative metric whose logarithmic correlation
+has positive limsup, which would reveal a correlation mechanism beyond
+the archimedean and finite local resonances.
+
+\begin{remark}\label{t1:cm}
+The restriction to completely multiplicative $f_j$ is not cosmetic.
+For $1$-bounded multiplicative functions that are not completely
+multiplicative, the fixed-parameter form of the conclusion is false:
+Matom\"aki--Radziwi\l\l--Tao constructed a $1$-bounded multiplicative
+function that pretends to be $n^{it_k}$ for different parameters $t_k$
+on different scales, refuting the original fixed-parameter Elliott
+conjecture, and the corrected conjecture must allow the comparison
+parameter to vary with the scale $X$.  Complete multiplicativity
+restores the fixed-parameter form because the truncated distance
+$\mathbb D_{P_j}(f_j,\chi(n)n^{it};X)$ is monotone nondecreasing in
+$X$: smallness of the truncations at every scale then forces a single
+parameter pair that works uniformly, and the scale-switching pretence
+underlying the counterexample is unavailable.
+\end{remark}
+
+\begin{remark}\label{t1:badprimes}
+For each $j$, the finitely many primes dividing
+$\operatorname{disc}(P_j)\operatorname{lc}(P_j)$, the discriminant
+times the leading coefficient, may be weighted arbitrarily: replacing
+the weights $\rho_{P_j}(p)/p$ at those primes by any bounded values
+changes $\mathbb D_{P_j}(f,g)^2$ by a bounded amount and leaves the
+finiteness condition (i) unchanged.  The relative metric is therefore
+canonical up to the bad primes, and the conjecture is insensitive to
+that choice.
+\end{remark}
+
+\section{Monotone threshold purification of vector paths}
+
+Let $d,m\ge1$.  Let $v_1,\ldots,v_m\in\R^d$ satisfy $\|v_i\|_2\le1$,
+where $\|\cdot\|_2$ is the Euclidean norm.  Let
+$a_i:[0,1]\to[0,1]$ be continuous nondecreasing functions with
+$a_i(0)=0$ and $a_i(1)=1$, called a monotone activation schedule, and
+define the fractional path
+\[
+F(t)=\sum_{i=1}^m a_i(t)v_i.
+\]
+A threshold rounding of $F$ is a choice of
+$\tau_1,\ldots,\tau_m\in(0,1]$ together with the pure path
+\[
+G(t)=\sum_{i:\ \tau_i\le t}v_i .
+\]
+
+\begin{conjecture}[Monotone threshold purification of vector paths]\label{t2}
+There exists a universal constant $C<\infty$ such that for every
+$d,m\ge1$, every $(v_i)_{i\le m}$, and every monotone activation
+schedule $(a_i)_{i\le m}$ as above, some threshold rounding satisfies
+\[
+\sup_{0\le t\le1}\|G(t)-F(t)\|_2\le C\sqrt d .
+\]
+\end{conjecture}
+
+\paragraph{Significance.}
+The headline attribution comes first.  The special case $a_i(t)=t$ for
+all $i$ with $\sum_iv_i=0$ is exactly the open prefix-sum form of the
+Euclidean Steinitz problem at the scale $O(\sqrt d)$: there $F\equiv0$,
+and ordering the vectors by their thresholds turns the display into
+the assertion that some permutation $\pi$ has all prefix sums bounded,
+$\max_{k\le m}\|\sum_{i\le k}v_{\pi(i)}\|_2\le C\sqrt d$.
+Grinberg--Sevastyanov proved the bound $d$ in every norm, the best
+known Euclidean bound is Banaszczyk's $O(\sqrt{d+\log m})$, and so
+already in this special case the conjecture asserts the removal of the
+logarithmic term uniformly in $m$.  For the general threshold form,
+even the existence of any bound $C(d)$ depending on $d$ alone and
+uniform in $m$ appears to be open.  The mechanism is that $F$ is a
+monotone trajectory in the zonotope generated by the $v_i$, the set of
+sums $\sum_i\lambda_iv_i$ with $\lambda_i\in[0,1]$, and the conjecture
+asserts that every monotone zonotope path admits an integral shadow at
+the optimal Euclidean discrepancy scale.  The order $\sqrt d$ is
+verified sharp: take $m=d$, $v_i=e_i$ the standard basis, and
+$a_i(t)=t$, so that at $t=1/2$ every coordinate of $G(1/2)-F(1/2)$
+equals $\pm1/2$ whatever the thresholds, giving
+$\|G(1/2)-F(1/2)\|_2=\sqrt d/2$.  No decisive theorem exists: the
+first would be any $m$-uniform bound $C(d)$ for the threshold form,
+even with a $d$-dependence far worse than $\sqrt d$.  A falsification
+honesty note: the statement has content only at large $d$, since any
+bounded range of dimensions is absorbed into $C$, so small-$d$
+computer searches cannot test it, and the failure mode is an infinite
+family of monotone paths, with $d\to\infty$, every threshold rounding
+of which has discrepancy $\omega(\sqrt d)$.
+
+\section{Entropy dimension of random-free graphons}
+
+A graphon is a symmetric measurable function
+$W:[0,1]^2\to[0,1]$, and $W$ is random-free if it takes values in
+$\{0,1\}$ almost everywhere.  Define the row pseudometric
+\[
+d_W(x,y)=\int_0^1|W(x,z)-W(y,z)|\,\mathrm dz .
+\]
+Identifying points at zero distance and completing yields a
+metric-measure space $(\Omega_W,d_W,\rho_W)$, the row space, where
+$\rho_W$ is the pushforward of Lebesgue measure.  The row space is
+Ahlfors $s$-regular if it is compact and there exist
+$c,C,r_0>0$ such that
+\[
+cr^s\le\rho_W(B(x,r))\le Cr^s
+\]
+for every $x\in\operatorname{supp}\rho_W$ and every $0<r<r_0$.  Let
+$G(n,W)$ be the random labelled graph on $[n]=\{1,\ldots,n\}$ obtained
+from independent uniform $U_1,\ldots,U_n$ on $[0,1]$ by declaring
+$ij$ an edge exactly when $W(U_i,U_j)=1$, and let $H(G(n,W))$ be its
+Shannon entropy with natural logarithms.
+
+\begin{conjecture}[Entropy dimension of random-free graphons]\label{t3}
+\leavevmode
+\begin{enumerate}
+\item[(i)] \textup{[nonvacuity]}  For every $s\in(0,2]$ there exists a
+random-free graphon whose row space is Ahlfors $s$-regular.
+\item[(ii)] \textup{[entropy-dimension law]}  If the row space of a
+random-free graphon $W$ is Ahlfors $s$-regular for some $s>0$, then
+\[
+\lim_{n\to\infty}\frac{H(G(n,W))}{n\log n}=s .
+\]
+\end{enumerate}
+\end{conjecture}
+
+\begin{remark}\label{t3:refined}
+The refined assertion $H(G(n,W))=s\,n\log n+O_W(n)$ is a strictly
+stronger open refinement of clause (ii), and nothing in the mechanism
+below reaches it.  The type-coding mechanism by itself yields only
+$H(G(n,W))=s\,n\log n+O_W(n\log\log n)$: encoding a latent type for
+each vertex at metric resolution $1/n$ costs about $s\log n$ nats per
+vertex and predicts all but on the order of $n$ of the edges, but
+recording which edges are mispredicted costs order $n\log n$ if done
+naively, since each such edge must be located by a pair of labels.  A
+two-scale argument, which first codes coarse types and then corrects
+within coarse classes, lowers the correction cost to
+$O(n\log\log n)$ and stops there.
+\end{remark}
+
+\paragraph{Significance.}
+The mechanism is metric distinguishability of rows: two row types at
+$d_W$-distance $\varepsilon$ disagree on an $\varepsilon$-fraction of
+potential neighbours and become statistically distinguishable against
+$n$ sampled vertices at a scale comparable to $1/n$, an Ahlfors
+$s$-regular row space has about $n^s$ distinguishable types at that
+scale, and the latent type of each of the $n$ labelled vertices then
+carries $s\log n+O(1)$ nats.  Clause (i) certifies that the
+hypothesis class is nonvacuous at every fractional $s$: it is expected
+to be provable by Cantor-type threshold constructions, in which $W$ is
+the indicator of a threshold event read along a self-similar Cantor
+set, and it is included so that clause (ii) quantifies over a
+genuinely rich family.  The nearest literature boundary is
+Hatami--Norine: a graphon is random-free exactly when
+$H(G(n,W))=o(n^2)$, and every subquadratic growth order occurs for
+suitable random-free graphons, so no hypothesis short of a
+metric-measure condition on the row space can pin the coefficient of
+$n\log n$, and Ahlfors regularity is exactly the condition that does.
+No decisive theorem exists: the first would be a proof of clause (i)
+together with the verification of clause (ii) for one explicit
+self-similar threshold graphon of noninteger $s$.  The failure mode is
+concentrated in the lower bound, since the coding upper bound follows
+from the mechanism of \cref{t3:refined}: an Ahlfors regular
+random-free graphon whose sampled neighbourhoods distinguish types
+less efficiently than the metric suggests would drive the coefficient
+below $s$, or destroy convergence altogether.
+
+\section{A Hessian principle for isolated microcanonical graph phases}
+
+Fix a partition
+\[
+[0,1]=I_1\sqcup\cdots\sqcup I_q,
+\qquad|I_a|=\alpha_a>0 .
+\]
+A coloured graphon is a symmetric measurable $U:[0,1]^2\to[0,1]$
+considered together with this fixed colour partition.  Let
+$p(U)\in[0,1]^D$ with $D=q(q+1)/2$ denote the block-average vector
+\[
+p_{ab}(U)=\frac1{|I_a||I_b|}\int_{I_a\times I_b}U(x,y)\,\mathrm
+dx\,\mathrm dy,
+\qquad 1\le a\le b\le q .
+\]
+A coloured finite graph is a finite simple graph $F$ with a colour
+$c(v)\in\{1,\ldots,q\}$ attached to each vertex, and its coloured
+homomorphism density in $U$ is
+\[
+t(F,U)=\int_{[0,1]^{V(F)}}
+\prod_{v\in V(F)}\alpha_{c(v)}^{-1}\mathbf 1_{I_{c(v)}}(x_v)
+\prod_{uv\in E(F)}U(x_u,x_v)
+\prod_{v\in V(F)}\mathrm dx_v .
+\]
+Fix coloured finite graphs $F_1,\ldots,F_k$ and put
+$\mathbf t(U)=(t(F_1,U),\ldots,t(F_k,U))$.  Define the graphon entropy
+\[
+\mathcal S(U)=\frac12\int_{[0,1]^2}
+\bigl[-U\log U-(1-U)\log(1-U)\bigr]\,\mathrm dx\,\mathrm dy,
+\]
+with $0\log0=0$, and for a feasible constraint vector $\mathbf a$ the
+contracted entropy
+\[
+\Psi_{\mathbf a}(p)=\sup\{\mathcal S(U):
+\mathbf t(U)=\mathbf a,\ p(U)=p\}.
+\]
+
+The finite graphs are coloured with pinned classes.  For each $n$ set
+$n_a=\lfloor\alpha_an\rfloor$ and $N_n=\sum_an_a$, and fix a partition
+of the vertex set $[N_n]$ into colour classes $V_1,\ldots,V_q$ with
+$|V_a|=\lfloor\alpha_an\rfloor$ exactly, so that $N_n=n+O(q)$.  For a
+graph $G$ on $[N_n]$ with these colour classes, partition each $I_a$
+into $n_a$ consecutive intervals of length $|I_a|/n_a$ assigned to the
+vertices of $V_a$, let $U_G$ be the $\{0,1\}$-valued coloured graphon
+equal to $1$ on a product of two vertex intervals exactly when the
+corresponding pair is an edge, and put
+$\mathbf t(G)=\mathbf t(U_G)$ and $\widehat p(G)=p(U_G)$.
+
+Assume the following regularity hypotheses.
+\begin{enumerate}
+\item[(H1)] The supremum of $\mathcal S(U)$ over
+$\mathbf t(U)=\mathbf a$ is attained at a unique coloured graphon
+$U_*$, up to measure-preserving maps preserving each colour class.
+\item[(H2)] Writing $p_*=p(U_*)$, the feasible block-average set
+$\{p(U):\mathbf t(U)=\mathbf a\}$ is, near $p_*$, a $C^3$ embedded
+manifold $M\subset\R^D$.
+\item[(H3)] The restriction $\Psi_{\mathbf a}|_M$ is $C^3$ near $p_*$
+and has there a unique local maximum.
+\item[(H4)] The quadratic form $A=-D^2_M\Psi_{\mathbf a}(p_*)$ is
+positive definite on the tangent space $T=T_{p_*}M$.
+\item[(H5)] \textup{[transversally Lipschitz constraint
+correspondence]}  There exist $\delta_0>0$ and $L<\infty$ such that
+every coloured graphon $U$ with $\|p(U)-p_*\|\le\delta_0$ and
+$\|\mathbf t(U)-\mathbf a\|_\infty=\delta\le\delta_0$ satisfies
+$\operatorname{dist}(p(U),M)\le L\delta$.  In particular the
+conditioning window below confines $\widehat p_n$, on the event
+$\|\widehat p_n-p_*\|\le\delta_0$, to an $o(n^{-1})$ thickening of
+$M$.
+\item[(H6)] \textup{[nonemptiness]}  For every sufficiently large $n$
+the conditioning set
+$\{G:\|\mathbf t(G)-\mathbf a\|_\infty\le n^{-1-\eta}\}$ over graphs
+$G$ on $[N_n]$ with the pinned colour classes is nonempty.
+\end{enumerate}
+Fix $0<\eta<1$, let $G_n$ be uniform on the conditioning set of (H6),
+let $\widehat p_n=\widehat p(G_n)$, and let $\Pi_T$ be orthogonal
+projection of $\R^D$ onto $T$.
+
+\begin{conjecture}[Hessian principle for an isolated microcanonical phase]\label{t4}
+Under hypotheses \textup{(H1)--(H6)},
+\[
+n\,\Pi_T\bigl(\widehat p_n-\E\,\widehat p_n\bigr)
+\xrightarrow{\ d\ }
+N_T(0,A^{-1}),
+\]
+where $N_T(0,A^{-1})$ denotes the centred Gaussian law on $T$ whose
+precision form is $A$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The mechanism is a Laplace expansion at the dense-graph entropy
+exponent $n^2$: on the feasible manifold,
+$\Psi_{\mathbf a}(p_*+u)=\Psi_{\mathbf a}(p_*)
+-\tfrac12\langle Au,u\rangle+O(\|u\|^3)$, so the fluctuation scale is
+$u\asymp n^{-1}$ and the predicted covariance on the tangent space is
+$A^{-1}$, while (H5) suppresses the transversal directions below the
+fluctuation scale, which is exactly why the conclusion is stated only
+after projection by $\Pi_T$ and centring at $\E\,\widehat p_n$.  The
+nearest literature boundary is the Chatterjee--Varadhan large
+deviation principle, which supplies the $n^2$ normalization and the
+variational description of conditioned dense graphs, together with the
+multipodal structure theory of Kenyon--Radin--Ren--Sadun and
+Neeman--Radin--Sadun, which makes hypotheses (H1)--(H4) verifiable in
+concrete constrained ensembles.  A scale audit disposes of one
+suspect: a single edge toggle moves each coordinate of
+$\mathbf t(G)$ by $O(n^{-2})$, so the lattice of attainable constraint
+values has spacing of order $n^{-2}$, far below the fluctuation scale
+$n^{-1}$, and the genuine risk is therefore Laplace-ratio control,
+namely uniform comparison of microcanonical counts with their Laplace
+approximations across windows of width $o(n^{-1})$, not arithmetic
+oscillation.  Nonemptiness (H6) is a genuine hypothesis and may fail
+along subsequences of $n$ for arithmetic reasons, in which case the
+statement is asserted only along the subsequence where it holds.  No
+decisive theorem exists at this generality: the natural first one is
+the case $q=1$ with the edge-triangle constraint pair in a region
+where the entropy maximizer is bipodal and (H1)--(H5) have been
+verified.  The failure mode is an isolated nondegenerate phase whose
+tangent fluctuations are non-Gaussian or live at a different scale,
+which would necessarily come from a failure of Laplace-ratio control.
+
+\section{Sharp stability of entropy idempotence on finite abelian groups}
+
+Let $G$ be a finite abelian group and $\mu$ a probability measure on
+$G$.  Write $H(\mu)$ for Shannon entropy with natural logarithms,
+$\mu*\mu$ for the convolution, the law of $X+Y$ with $X,Y$
+independent of law $\mu$, and
+\[
+\Delta(\mu)=H(\mu*\mu)-H(\mu)
+\]
+for the convolution entropy defect.  If $H\le G$ is a subgroup and
+$a\in G$, let $u_{a+H}$ be the uniform measure on the coset $a+H$.
+Total variation distance is
+\[
+\|\mu-\nu\|_{\mathrm{TV}}=\frac12\sum_{x\in G}|\mu(x)-\nu(x)| .
+\]
+
+\begin{conjecture}[Sharp stability of entropy idempotence]\label{t5}
+There exists a universal constant $C<\infty$ such that for every
+finite abelian group $G$ and every probability measure $\mu$ on $G$,
+\[
+\inf_{\substack{H\le G\\a\in G}}
+\|\mu-u_{a+H}\|_{\mathrm{TV}}^2
+\le
+C\bigl(H(\mu*\mu)-H(\mu)\bigr).
+\]
+\end{conjecture}
+
+\begin{remark}\label{t5:equality}
+The equality case is verified.  With $X,Y$ independent of law $\mu$,
+\[
+\Delta(\mu)=H(X+Y)-H(X)=H(X+Y)-H(X+Y\mid Y)=I(X+Y;Y)\ge0,
+\]
+where $I$ denotes mutual information.  If $\Delta(\mu)=0$ then $X+Y$
+is independent of $Y$, which forces the translates of $\mu$ by the
+elements of its support to coincide, and hence forces $\mu$ to be
+uniform on a coset of a subgroup.  The right-hand side therefore
+vanishes exactly on the proposed extremizers.
+\end{remark}
+
+\paragraph{Significance.}
+The mechanism is that the defect is the mutual information created by
+one self-convolution, so the conjecture is a dimension-free
+quantitative classification of near-idempotent measures with cosets as
+the exact equality case.  The sharpness discussion identifies the
+extremal geometry.  Coset perturbations $\mu=(1+\varepsilon f)u_H$
+with $\sum_{x\in H}f(x)=0$ give, as $\varepsilon\to0$, the ratio
+\[
+\frac{\|\mu-u_H\|_{\mathrm{TV}}^2}{\Delta(\mu)}
+\longrightarrow
+\frac{(\E|f|)^2}{2\,\E f^2}\le\frac12
+\]
+by Cauchy--Schwarz, so perturbative examples certify at most the
+constant $1/2$.  The near-extremizers are instead discretized
+Gaussians at intermediate scale on $\Z/p\Z$: for
+$1\ll\sigma(p)\ll p$, the discretization $\mu_p$ of a centred Gaussian
+of standard deviation $\sigma(p)$ has
+$\Delta(\mu_p)\to\tfrac12\log2$, the entropy-power constant recording
+the entropy gain of doubling a Gaussian variance, while its total
+variation distance to every $u_{a+H}$ tends to $1$, since the only
+subgroups of $\Z/p\Z$ are trivial and full and $\mu_p$ is
+asymptotically singular to every point mass and to the uniform
+measure.  Hence $C\ge2/\log2$, and we conjecture that the sharp
+constant is exactly $2/\log2$.  The positioning against the
+literature is as follows: the known entropic inverse theorems, Tao's
+sumset entropy theory (2010) and the entropic polynomial
+Freiman--Ruzsa theorem of Gowers--Green--Manners--Tao, conclude in
+Ruzsa distance, an entropic closeness of $X$ to a subgroup-uniform
+variable, not in total variation, and the total variation form over
+all finite abelian groups is neither proven nor refuted by them.  On
+$\Z/p\Z$ there are no proper nontrivial subgroups, so the conjecture
+specializes to a discrete entropy-power-type lower bound for spread
+measures: any $\mu$ far in total variation from every point mass and
+from the uniform measure must create a definite amount of entropy
+under self-convolution.  No decisive theorem exists: the natural
+first one is precisely that $\Z/p\Z$ specialization with some
+constant.  The failure mode is a sequence $\mu_n$ with
+$\Delta(\mu_n)\to0$ whose coset distance is much larger than
+$\sqrt{\Delta(\mu_n)}$, and the natural hunting ground is measures
+straddling several subgroup scales inside groups with rich subgroup
+lattices.
+
+\section{Stationary convolution-entropy rigidity}
+
+Let $K$ be a finite abelian group and $X=K^{\Z}$ with coordinatewise
+addition and the left shift $\sigma$.  Let $\mu$ be a
+$\sigma$-invariant ergodic Borel probability measure on $X$, and write
+$h_\sigma(\mu)$ for its Kolmogorov--Sinai entropy.  Define the
+translational stabilizer
+\[
+H_\mu=\{h\in K^{\Z}:(\tau_h)_*\mu=\mu\},
+\qquad\tau_h(x)=x+h,
+\]
+a closed shift-invariant subgroup of $K^{\Z}$, and let
+$\pi_\mu:K^{\Z}\to K^{\Z}/H_\mu$ be the quotient homomorphism.  Let
+$\mu*\mu$ be the law of $X+Y$ for independent $X,Y\sim\mu$.
+
+\begin{conjecture}[Stationary convolution-entropy rigidity]\label{t6}
+For every shift-ergodic $\mu$,
+\[
+h_\sigma(\mu*\mu)=h_\sigma(\mu)
+\quad\Longleftrightarrow\quad
+h_\sigma\bigl((\pi_\mu)_*\mu\bigr)=0 .
+\]
+\end{conjecture}
+
+\begin{remark}\label{t6:binary}
+The binary specialization deserves prominence.  Take $K=\Z/2\Z$.  By
+Kitchens' structure theory of group shifts, every closed
+shift-invariant subgroup of $(\Z/2\Z)^{\Z}$ is a group shift of finite
+type, and every proper one is the solution set of a nontrivial linear
+recurrence and hence finite.  If $H_\mu$ is finite the quotient map
+has finite fibres and $h_\sigma((\pi_\mu)_*\mu)=h_\sigma(\mu)$, while
+if $H_\mu$ is everything then $\mu$ is the Haar measure, the uniform
+Bernoulli process, with entropy $\log2$.  Since
+$h_\sigma(\mu*\mu)\ge h_\sigma(\mu)$ always, by conditioning on one
+summand, the conjecture therefore asserts: every ergodic binary
+process with $0<h_\sigma(\mu)<\log2$ gains entropy under independent
+XOR, the coordinatewise sum modulo $2$ with an independent copy.
+\end{remark}
+
+\begin{proposition}[Easy direction, conditional]\label{t6:easy}
+Suppose $h_\sigma((\pi_\mu)_*\mu)=0$.  Assume the following two
+ingredients.
+\begin{enumerate}
+\item[(a)] The Abramov--Rokhlin entropy addition formula holds for the
+Haar-fibred compact group extension
+$\pi_\mu:(X,\mu,\sigma)\to(X/H_\mu,(\pi_\mu)_*\mu,\sigma)$ and for the
+corresponding extension of $\mu*\mu$, so that each total entropy
+splits as the quotient entropy plus the common Haar fibre entropy,
+the conditional measures of $\mu$ and of $\mu*\mu$ over the quotient
+being Haar measures on cosets of $H_\mu$.
+\item[(b)] The entropy of a factor of an independent joining is
+bounded by the sum of the entropies of the factors, so that
+$(\pi_\mu)_*(\mu*\mu)=((\pi_\mu)_*\mu)*((\pi_\mu)_*\mu)$ has entropy
+at most $2h_\sigma((\pi_\mu)_*\mu)=0$.
+\end{enumerate}
+Then $h_\sigma(\mu*\mu)=h_\sigma(\mu)$.
+\end{proposition}
+
+\paragraph{Significance.}
+The mechanism is the stationary analogue of entropy idempotence on a
+finite group: equality of entropy under independent self-convolution
+should force all positive entropy to be Haar-type randomness along a
+translation-invariant subgroup process, modulo a quotient that may
+retain arbitrarily rich zero-entropy dynamics such as rotations,
+substitutions, or Toeplitz systems.  The easy direction is recorded
+above as a conditional proposition with its two ingredients named,
+the Abramov--Rokhlin formula for Haar-fibred compact group extensions
+and the factor-of-joining entropy bound, and the difficult direction
+is the rigidity claim that no other equality mechanism exists.  The
+nearest literature boundary consists of
+Ku\l aga-Przymus--Lema\'nczyk on the entropy of products of
+independent stationary processes and Lindenstrauss--Meiri--Peres on
+the entropy of convolutions, neither of which decides the binary
+question of \cref{t6:binary}.  No decisive theorem appears to be on
+record even for Markov processes, and strict XOR entropy gain for
+mixing two-state Markov chains would be the first.  The failure-mode
+honesty note is this: the natural counterexample hunting ground is
+the Ornstein--Weiss bilaterally deterministic processes, positive
+entropy processes whose distant past and distant future jointly
+determine the whole trajectory, together with $T,T^{-1}$-type
+constructions, and no search has yet probed either family, so the
+negation of the conjecture has an unexplored natural habitat.
+
 \section{Stress tests and independent recomputation}\label{sec:audit}
 
 Each statement was tested three ways: against the literature, against
@@ -4300,6 +4869,101 @@ and the extension problem}, arXiv:2601.19414.
 \bibitem{Moree} P. Moree,
 \emph{A generalization of the Buchstab equation}, Manuscripta Math. 94 (1997), 267--270.
 
+
+Entries marked 
+
+\begin{thebibliography}{99}
+
+\bibitem{Ban98}
+W. Banaszczyk,
+Balancing vectors and Gaussian measures of $n$-dimensional convex
+bodies,
+Random Structures Algorithms 12 (1998), no. 4, 351--360.
+
+\bibitem{Ban12}
+W. Banaszczyk,
+On series of signed vectors and their rearrangements,
+Random Structures Algorithms 40 (2012), no. 3, 301--316.
+
+
+\bibitem{CV11}
+S. Chatterjee and S. R. S. Varadhan,
+The large deviation principle for the Erd\H os--R\'enyi random graph,
+European J. Combin. 32 (2011), no. 7, 1000--1017.
+
+\bibitem{GGMT25}
+W. T. Gowers, B. Green, F. Manners, and T. Tao,
+On a conjecture of Marton,
+Ann. of Math. (2) 201 (2025), no. 2, 515--549.
+
+
+\bibitem{GS80}
+V. S. Grinberg and S. V. Sevast'yanov,
+Value of the Steinitz constant,
+Funct. Anal. Appl. 14 (1980), 125--126.
+
+\bibitem{HN13}
+H. Hatami and S. Norine,
+The entropy of random-free graphons and properties,
+Combin. Probab. Comput. 22 (2013), no. 4, 517--526.
+
+\bibitem{KRRS17}
+R. Kenyon, C. Radin, K. Ren, and L. Sadun,
+Multipodal structure and phase transitions in large constrained
+graphs,
+J. Stat. Phys. 168 (2017), no. 2, 233--258.
+
+\bibitem{Kit87}
+B. Kitchens,
+Expansive dynamics on zero-dimensional groups,
+Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
+
+\bibitem{KPL}
+J. Ku\l aga-Przymus and M. Lema\'nczyk,
+On the entropy of products of independent stationary processes.
+
+% after a direct check.
+
+\bibitem{LMP99}
+E. Lindenstrauss, D. Meiri, and Y. Peres,
+Entropy of convolutions on the circle,
+Ann. of Math. (2) 149 (1999), no. 3, 871--904.
+
+\bibitem{MRT15}
+K. Matom\"aki, M. Radziwi\l\l, and T. Tao,
+An averaged form of Chowla's conjecture,
+Algebra Number Theory 9 (2015), no. 9, 2167--2196.
+
+\bibitem{NRS23}
+J. Neeman, C. Radin, and L. Sadun,
+Typical large graphs with given edge and triangle densities,
+Probab. Theory Related Fields 186 (2023), 1057--1087.
+
+
+\bibitem{OW75}
+D. S. Ornstein and B. Weiss,
+Every transformation is bilaterally deterministic,
+Israel J. Math. 21 (1975), 154--158.
+
+\bibitem{Tao10}
+T. Tao,
+Sumset and inverse sumset theory for Shannon entropy,
+Combin. Probab. Comput. 19 (2010), no. 4, 603--639.
+
+\bibitem{Tao16}
+T. Tao,
+The logarithmically averaged Chowla and Elliott conjectures for
+two-point correlations,
+Forum Math. Pi 4 (2016), e8, 36 pp.
+
+\bibitem{TT19}
+T. Tao and J. Ter\"av\"ainen,
+The structure of logarithmically averaged correlations of
+multiplicative functions, with applications to the Chowla and
+Elliott conjectures,
+Duke Math. J. 168 (2019), no. 11, 1977--2027.
+
+\end{thebibliography}
 \end{thebibliography}
 
 \end{document}
