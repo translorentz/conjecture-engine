@@ -1,10 +1,10 @@
 ---
-title: Fifty conjectures in number theory
+title: Fifty-six conjectures in mathematics
 ---
 
 <p style="color:#999;font-size:0.8em;margin:0 0 1em 0;">Trial Project by Bryan Cheong</p>
 
-# Fifty conjectures in number theory
+# Fifty-six conjectures in mathematics
 
 *July 27, 2026*
 
@@ -117,15 +117,31 @@ title: Fifty conjectures in number theory
 50. **Buchstab–Bateman–Horn component flow (Conjecture 50).** Rough prime, semiprime, and higher-almost-prime polynomial values follow universal Buchstab components with Galois marks.
 
 
+
+**Part III — six conjectures across fields, in statement order.**
+
+51. **Relative polynomial pretentiousness inverse principle (Conjecture 51).** A persistently nonzero logarithmic correlation of completely multiplicative unimodular functions along multiplicatively independent irreducible polynomials forces one existential block of primitive characters and archimedean parameters with finite relative pretentious distances, the balance identity $$\sum_j t_j \deg P_j = 0$$, and a nonvanishing joint character average at a common modulus.
+
+52. **Monotone threshold purification of vector paths (Conjecture 52).** Every monotone fractional activation schedule of $$m$$ vectors of norm at most one in $$\R^d$$ admits a rounding to single irreversible activation times whose path error is $$O(\sqrt d)$$ uniformly in $$m$$, containing the open Euclidean Steinitz prefix-sum problem and asserting removal of the logarithm from Banaszczyk's $$O(\sqrt{d+łog m})$$.
+
+53. **Entropy dimension of random-free graphons (Conjecture 53).** If the row space of a $$\{0,1\}$$-valued graphon is Ahlfors $$s$$-regular then $$H(G(n,W))/(nłog n)\to s$$, the hypothesis class being nonvacuous at every $$s\in(0,2]$$ by Cantor-type threshold constructions.
+
+54. **A Hessian principle for isolated microcanonical graph phases (Conjecture 54).** Under isolated-phase, transversally Lipschitz, and nonemptiness hypotheses, the tangent block averages of a microcanonical coloured graph ensemble fluctuate at scale $$n^{-1}$$ around their mean with centred Gaussian limit of covariance $$A^{-1}$$, the inverse of the contracted entropy Hessian.
+
+55. **Sharp stability of entropy idempotence on finite abelian groups (Conjecture 55).** The squared total variation distance from a probability measure to the nearest uniform coset measure is bounded by a universal constant, conjecturally exactly $$2/łog 2$$ as pinned by discretized Gaussians on $$\Z/p\Z$$, times the convolution entropy defect $$H(\mu*\mu)-H(\mu)$$.
+
+56. **Stationary convolution-entropy rigidity (Conjecture 56).** An ergodic stationary process over a finite abelian group preserves entropy under independent self-convolution exactly when its quotient by the translational stabilizer has zero entropy, so in particular every ergodic binary process of intermediate entropy gains entropy under independent XOR.
+
+
 ## Abstract
 
-We state fifty conjectures in elementary and analytic number theory in two parts. The twenty-five conjectures of Part I are each derived from the local–global random model of the primes: Cramér’s model corrected by Hardy–Littlewood singular series, with Bateman–Horn as the organizing framework and Borel–Cantelli accounting for sparse events. Each statement is calibrated to the strongest form the heuristic supports. Every computable constant is computed from its definition, with local admissibility checked for every constant computed; every statement was tested against exact counts (probable-prime counts, so labelled, where the integers involved exceed the deterministic certification range), with success measured by the *shape* of agreement (predicted constant, square-root residuals, no drift) rather than by the size of the range searched. The contributions include: a prime-power contamination calculus for pattern races—twin races modulo $$5$$ and $$8$$ driven by the pairs $$(q^2-2,q^2)$$, cousin, sexy-pair, and triplet predictions derived from the calculus before testing, a Goldbach lane race with a verified internal null lane, a Stern-representation lane race whose null classes are provable by direct congruence, and an algebraic null control; the measured sub-diffusivity of balanced races (universal negative step correlations tied to the Lemke Oliver–Soundararajan repulsion); canonical ordering deficits for least primes in progressions and for least Goldbach summands; derived covariance kernels for moving-window residual fields, with the diagonal deficit reduced to a pinned singular-series average whose growth already exceeds the single-prime Montgomery–Soundararajan term; distribution laws for the constants of the quadratic-pair and cubic-shift families, with exact mean-value lemmas; an entanglement-aware local-global law for $$n^2+2^n$$ with an exact-rational CRT factorization; a boundary trichotomy for polynomial ladders; a multibase subtorus law for Fermat quotients; and singular-series waiting-time refinements for first prime gaps. Every statement was checked against the literature by an independent search, with novelty labelled conservatively: statements already known in essence are attributed and kept *inside* the conjecture whose content they calibrate, since those benchmarks are what make the derived constants credible. Every falsifiable-by-instance statement was then stress-tested computationally well beyond its original range, and every constant was recomputed independently from its definition. Part II adds twenty-five structural conjectures in five programmes—connected prime-pattern fields, arithmetic first-arrival fields and class groups, finite logarithms and algebraic tori, arboreal arithmetic dynamics, and adelic factorization processes—each introducing a canonical operator, process, invariant, classification, or phase boundary, with its mechanism, nearest literature boundary, first decisive theorem, and failure mode.
+We state fifty-six conjectures in three parts. The twenty-five conjectures of Part I are each derived from the local–global random model of the primes: Cramér’s model corrected by Hardy–Littlewood singular series, with Bateman–Horn as the organizing framework and Borel–Cantelli accounting for sparse events. Each statement is calibrated to the strongest form the heuristic supports. Every computable constant is computed from its definition, with local admissibility checked for every constant computed; every statement was tested against exact counts (probable-prime counts, so labelled, where the integers involved exceed the deterministic certification range), with success measured by the *shape* of agreement (predicted constant, square-root residuals, no drift) rather than by the size of the range searched. The contributions include: a prime-power contamination calculus for pattern races—twin races modulo $$5$$ and $$8$$ driven by the pairs $$(q^2-2,q^2)$$, cousin, sexy-pair, and triplet predictions derived from the calculus before testing, a Goldbach lane race with a verified internal null lane, a Stern-representation lane race whose null classes are provable by direct congruence, and an algebraic null control; the measured sub-diffusivity of balanced races (universal negative step correlations tied to the Lemke Oliver–Soundararajan repulsion); canonical ordering deficits for least primes in progressions and for least Goldbach summands; derived covariance kernels for moving-window residual fields, with the diagonal deficit reduced to a pinned singular-series average whose growth already exceeds the single-prime Montgomery–Soundararajan term; distribution laws for the constants of the quadratic-pair and cubic-shift families, with exact mean-value lemmas; an entanglement-aware local-global law for $$n^2+2^n$$ with an exact-rational CRT factorization; a boundary trichotomy for polynomial ladders; a multibase subtorus law for Fermat quotients; and singular-series waiting-time refinements for first prime gaps. Every statement was checked against the literature by an independent search, with novelty labelled conservatively: statements already known in essence are attributed and kept *inside* the conjecture whose content they calibrate, since those benchmarks are what make the derived constants credible. Every falsifiable-by-instance statement was then stress-tested computationally well beyond its original range, and every constant was recomputed independently from its definition. Part II adds twenty-five structural conjectures in five programmes—connected prime-pattern fields, arithmetic first-arrival fields and class groups, finite logarithms and algebraic tori, arboreal arithmetic dynamics, and adelic factorization processes—each introducing a canonical operator, process, invariant, classification, or phase boundary, with its mechanism, nearest literature boundary, first decisive theorem, and failure mode. Part III adds six conjectures across fields: a relative pretentious inverse principle for polynomial arguments, a threshold purification law for monotone vector paths, an entropy–dimension law for random-free graphons, a Hessian principle for microcanonical graph phases, a sharp stability law for entropy idempotence on finite abelian groups, and a convolution-entropy rigidity for stationary processes.
 
 ## 1. Introduction
 
 A good conjecture in the theory of numbers is not merely a statement that has resisted counterexample. It is the *prediction of a model*: the assertion that the primes, beyond their local structure, behave like a random set of density $$1/\log n$$. The discipline this imposes is exacting. A conjecture worth stating should (i) survive every congruence and size obstruction; (ii) come with a quantitative asymptotic whose constant is derived, not fitted; (iii) demand exactly the fluctuations the model earns—square-root noise with logarithmic corrections—and no fewer (the Mertens conjecture died of demanding fewer); (iv) sit inside the standard hierarchy of conjectures (Hardy–Littlewood $$k$$-tuples $$\subset$$ Schinzel’s Hypothesis H $$\subset$$ Bateman–Horn), so that its failure would propagate; and (v) expose instance-falsifiable content—congruences, null lanes, exact identities, derived constants—so that computation can refute the derivation even where the asymptotic itself lies beyond finite refutation. Numerical range is the least important column in the ledger: most deep phenomena drift at the rate $$\log\log x$$, and $$\log\log 10^{18}\approx 3.7$$, so verification “to $$10^{18}$$” is weak evidence by itself. What persuades is the *shape* of the agreement—a count that tracks a derived constant through several decades with residuals that look like noise.
 
-The twenty-five statements of Part I are built to those specifications and are presented in three sections: the principal conjectures (numbers 1–9), family laws and second-order refinements (numbers 10–17), and instances and structural companions (numbers 18–25). Part II adds twenty-five structural conjectures organized by mechanism into five programmes, numbered 26 to 50. The material they draw on—Bateman–Horn systems, barely-divergent sparse sequences, representation problems with Borel–Cantelli accounting, and statistical laws of the prime sequence—runs through all three. Section 6 reports the stress tests and the independent recomputation of every constant.
+The twenty-five statements of Part I are built to those specifications and are presented in three sections: the principal conjectures (numbers 1–9), family laws and second-order refinements (numbers 10–17), and instances and structural companions (numbers 18–25). Part II adds twenty-five structural conjectures organized by mechanism into five programmes, numbered 26 to 50, and Part III adds six conjectures across fields, numbered 51 to 56. The material they draw on—Bateman–Horn systems, barely-divergent sparse sequences, representation problems with Borel–Cantelli accounting, and statistical laws of the prime sequence—runs through all three. Section 6 reports the stress tests and the independent recomputation of every constant.
 
 One structural lesson organizes several of the statements below. A probability model integrates over density, and is therefore blind to algebraic families of density zero; the admissibility clause, checked at every prime for every system, is what repairs that blindness. The cubes inside the representation problem $$n=p+k^3$$ (Theorem 1) are the sharpest instance: they obstruct the problem outright while contributing nothing to any Borel–Cantelli sum taken over all $$n$$. This is the classical lesson of admissibility, and it is why the statements below separate what is provable by congruence or factorization from what the probabilistic accounting supplies.
 
@@ -135,7 +151,7 @@ Three checks stand behind every statement, and §6 reports their outcomes. First
 
 One criterion governs the taxonomy. An unrecorded specialization of Bateman–Horn is analogous to evaluating a classical special function at a new argument—worthwhile as data, but not a new conjecture in the conceptual sense; no conjecture’s contribution is a bare specialization, and the taxonomy is two-layered *within* each one. The *calibration layer*—the previously-known statements this paper begins from (Dubner’s conjectures, the Stern list, the Caldwell–Gallot laws, Martin’s refined Goldbach, Kourbatov’s record framework, the classical single instances of each family)—appears as attributed remarks inside the conjectures, each with its derived constant re-verified at our bounds; membership in the standard hierarchy of conjectures is itself a virtue, and the calibration layer is what makes the new constants credible. Our own contribution is graded as follows: mechanism-level content (the contamination calculus 1(v) with its instances 18, 19, 14, 12, 1, 4; the ordering deficits 5, 3; race sub-diffusivity 9; the entanglement law 6); derived second-order and distributional laws (10, 15, 2, 8(ii), 11(iii), 13, 7(iv), 16(ii)); and structural classifications (23, 25, 24, 20(i), 21(i), 22)—with framework attributions stated where an instance lives inside someone else’s theory (Kowalski’s for 15(ii), Montgomery–Soundararajan’s for 2 and 13). Every statement was novelty-searched at neighbourhood depth and verified at production scale. We regard the prime-power contamination calculus (Conjecture 1(v)) and its mechanism family—1 and 4, the fresh cousin-race predictions it generated, and the negative control 14—together with Conjecture 3(ii) and the derived covariance kernels of 8(ii) and 16(ii) as the paper’s core, joined by 13 and 23; Conjectures 20, 6 and 11 carry open modelling questions flagged in place.
 
-One tagging convention runs through every statement below: clauses marked [theorem] or “elementary” are proved; clauses marked “conditional proposition” follow from the hypotheses stated with them; the remaining clauses are conjectures; and open questions are labelled as such and are not counted among the fifty conjectures.
+One tagging convention runs through every statement below: clauses marked [theorem] or “elementary” are proved; clauses marked “conditional proposition” follow from the hypotheses stated with them; the remaining clauses are conjectures; and open questions are labelled as such and are not counted among the fifty-six conjectures.
 
 ### Computational-check standards
 
@@ -167,7 +183,7 @@ For locally integrable $$F$$ we write $$\mathcal{M}_x(F)=\frac1{\log x}\int_2^x 
 
 Admissibility ($$\omega(p)<p$$ for all $$p$$) is checked for every constant computed. The natural-looking pair $$\{n^2+n+1,\ n^2+n+3\}$$ has $$\omega(3)=3$$ and is rejected; the $$k=4$$ branch of Conjecture 25 and the naive iterated chain behind Conjecture 24 are rejected by the same machinery, and both exclusions are part of the statements.
 
-**How to read the fifty.** The count is a numbering convention, not a claim of fifty independent mechanisms. The contamination calculus is one operator, stated with the twin races at Conjecture 1 and projected onto the Goldbach (Conjecture 4), Stern (12), triplet (18) and sexy-pair (19) patterns, together with the provably null pattern of Conjecture 14 as its control, and those six statements stand or fall largely together. Several conjectures pair a proved classification with a Bateman–Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration, with the tagging convention above separating the layers and the novelty labels marking what is claimed as new. Part II is five programmes, each contributing one central object and its laws. Depth and independence therefore vary by design across the fifty, and the summary's ordering, not the raw count, carries the priority claim.
+**How to read the fifty-six.** The count is a numbering convention, not a claim of fifty independent mechanisms. The contamination calculus is one operator, stated with the twin races at Conjecture 1 and projected onto the Goldbach (Conjecture 4), Stern (12), triplet (18) and sexy-pair (19) patterns, together with the provably null pattern of Conjecture 14 as its control, and those six statements stand or fall largely together. Several conjectures pair a proved classification with a Bateman–Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration, with the tagging convention above separating the layers and the novelty labels marking what is claimed as new. Part II is five programmes, each contributing one central object and its laws. Depth and independence therefore vary by design across the fifty-six, and the summary's ordering, not the raw count, carries the priority claim.
 
 ## 3. Principal conjectures
 
@@ -1350,6 +1366,272 @@ uniformly on compact $$u$$-ranges. Conditional on the ordered logarithmic sizes 
 
 *Significance.* The conjecture resolves a rough polynomial value into its complete finite-$$u$$ factor count and Galois mark content. Primes and semiprimes are not inserted as separate heuristics. They are components of one universal flow. Generalized Buchstab equations are the random-integer antecedent [60], and the fixed-polynomial, Galois-marked component law with its local factors is the new statement. It is strongly falsifiable even when total roughness follows Buchstab.
 
+## Part III: six conjectures across fields
+
+The six conjectures below leave the prime model. They range over multiplicative number theory, discrepancy theory, graph limits, additive information theory, and ergodic theory, and each is held to the same standard as the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.
+
+The six conjectures below leave the prime model. They range over multiplicative number theory, discrepancy theory, graph limits, additive information theory, and ergodic theory, and each is held to the same standard as the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.
+
+### Relative polynomial pretentiousness
+
+Let $$P\in\mathbb Z[x]$$ be primitive (the greatest common divisor of its coefficients is $$1$$) and irreducible, with positive leading coefficient. For a prime $$p$$ write
+
+$$
+\rho_P(p)=\#\{a\in\mathbb Z/p\mathbb Z:P(a)\equiv0\pmod p\}.
+$$
+
+The weight $$\rho_P(p)/p$$ is the first-order frequency with which $$p$$ divides a polynomial value $$P(n)$$. A function $$f$$ on the positive integers is completely multiplicative if $$f(mn)=f(m)f(n)$$ for all $$m,n\ge1$$. For completely multiplicative $$f,g$$ with values in the closed complex unit disc, define the truncated $$P$$-relative pretentious distance
+
+$$
+\mathbb D_P(f,g;X)^2
+=
+\sum_{p\le X}\frac{\rho_P(p)}{p}
+\bigl(1-\operatorname{Re}\bigl(f(p)\overline{g(p)}\bigr)\bigr),
+\qquad
+\mathbb D_P(f,g)^2=\lim_{X\to\infty}\mathbb D_P(f,g;X)^2\in[0,\infty].
+$$
+
+Every summand is nonnegative, so the truncated distance is nondecreasing in $$X$$ and the limit exists. Throughout, a primitive Dirichlet character $$\chi$$ of conductor $$c$$ is regarded as the $$c$$-periodic completely multiplicative function on $$\mathbb Z$$ that vanishes on integers not coprime to $$c$$, so that expressions such as $$\chi(P(a))$$ are defined for every residue $$a$$ modulo any multiple of $$c$$. For $$t\in\mathbb R$$, the comparison function $$n\mapsto\chi(n)n^{it}$$ is completely multiplicative with values in the closed unit disc.
+
+Let $$P_1,\ldots,P_m\in\mathbb Z[x]$$ be pairwise distinct primitive irreducible polynomials with positive leading coefficients and no fixed prime divisor, meaning $$\rho_{P_j}(p)<p$$ for every $$j$$ and every prime $$p$$. Assume multiplicative independence modulo constants:
+
+$$
+\prod_{j=1}^m P_j(x)^{e_j}\in\mathbb Q^\times,\quad e_j\in\mathbb Z
+\quad\Longrightarrow\quad
+e_1=\cdots=e_m=0.
+$$
+
+Write $$\mathbb S^1$$ for the unit circle in the complex plane.
+
+**Relative polynomial pretentiousness inverse principle (Conjecture 51).** Let $$f_1,\ldots,f_m:\{1,2,3,\ldots\}\to\mathbb S^1$$ be completely multiplicative. If
+
+$$
+\limsup_{X\to\infty}
+\left\vert 
+\frac{1}{\log X}
+\sum_{\substack{n\le X\\P_j(n)>0\ \forall j}}
+\frac{\prod_{j=1}^m f_j(P_j(n))}{n}
+\right\vert >0,
+$$
+
+then there exist primitive Dirichlet characters $$\chi_1,\ldots,\chi_m$$ and real numbers $$t_1,\ldots,t_m$$ such that the following three conditions hold simultaneously:
+
+1.  $$\mathbb D_{P_j}\bigl(f_j,\chi_j(n)n^{it_j}\bigr)<\infty$$ for every $$1\le j\le m$$,
+
+2.  $$\displaystyle\sum_{j=1}^m t_j\deg P_j=0$$,
+
+3.  for some common multiple $$q$$ of the conductors of $$\chi_1,\ldots,\chi_m$$,
+
+    $$
+\frac1q\sum_{a\bmod q}\prod_{j=1}^m\chi_j(P_j(a))\ne0,
+    $$
+
+    the characters being extended by $$0$$ on nonunits as above.
+
+*Significance.* The mechanism is that a persistent logarithmic correlation should have exactly two sources: an archimedean resonance carried by the factors $$n^{it_j}$$ and a finite local resonance carried by the characters $$\chi_j$$. The balance condition (ii) is forced by the expansion $$P_j(n)^{it_j}=c_j^{it_j}n^{it_j\deg P_j}(1+o(1))$$, with $$c_j$$ the leading coefficient, because logarithmic averaging annihilates any nonzero total power of $$n$$, and (iii) asserts that the finite-modulus resonances are jointly compatible, so that the model correlation does not vanish identically for local reasons. Packaging the conclusion as one existential block matters: the characters and archimedean parameters cannot be chosen independently for each $$j$$, and it is the joint system (i)–(iii) that reproduces the correlation. The decisive-theorem ledger for the linear case is as follows. For linear polynomials the two-point case is Tao’s logarithmically averaged two-point Elliott theorem [75]. The odd-order cases are the theorems of Tao–Teräväinen, and the shape of the conclusion here, one existential block coupling characters, archimedean parameters, and a nonvanishing local average, is the template of their structure theorem for logarithmically averaged correlations [76]. The general even-order linear case is precisely the logarithmically averaged Elliott conjecture. All of the novelty of the present statement therefore sits at $$\max_j\deg P_j\ge2$$, where even the logarithmic mean value of $$f(n^2+1)$$ for a single nonpretentious completely multiplicative $$f$$ is open, and a logarithmic mean value theorem for $$f(n^2+1)$$ with a conclusion of the stated relative-pretentious type would be the first decisive theorem. The failure mode is a system of functions nonpretentious in every relative metric whose logarithmic correlation has positive limsup, which would reveal a correlation mechanism beyond the archimedean and finite local resonances.
+
+*Remark.* The restriction to completely multiplicative $$f_j$$ is not cosmetic. For $$1$$-bounded multiplicative functions that are not completely multiplicative, the fixed-parameter form of the conclusion is false: Matomäki–Radziwiłł–Tao[71] constructed a $$1$$-bounded multiplicative function that pretends to be $$n^{it_k}$$ for different parameters $$t_k$$ on different scales, refuting the original fixed-parameter Elliott conjecture, and the corrected conjecture must allow the comparison parameter to vary with the scale $$X$$. Complete multiplicativity restores the fixed-parameter form because the truncated distance $$\mathbb D_{P_j}(f_j,\chi(n)n^{it};X)$$ is monotone nondecreasing in $$X$$: smallness of the truncations at every scale then forces a single parameter pair that works uniformly, and the scale-switching pretence underlying the counterexample is unavailable.
+
+*Remark.* For each $$j$$, the finitely many primes dividing $$\operatorname{disc}(P_j)\operatorname{lc}(P_j)$$, the discriminant times the leading coefficient, may be weighted arbitrarily: replacing the weights $$\rho_{P_j}(p)/p$$ at those primes by any bounded values changes $$\mathbb D_{P_j}(f,g)^2$$ by a bounded amount and leaves the finiteness condition (i) unchanged. The relative metric is therefore canonical up to the bad primes, and the conjecture is insensitive to that choice.
+
+### Monotone threshold purification of vector paths
+
+Let $$d,m\ge1$$. Let $$v_1,\ldots,v_m\in\mathbb R^d$$ satisfy $$\|v_i\|_2\le1$$, where $$\|\cdot\|_2$$ is the Euclidean norm. Let $$a_i:[0,1]\to[0,1]$$ be continuous nondecreasing functions with $$a_i(0)=0$$ and $$a_i(1)=1$$, called a monotone activation schedule, and define the fractional path
+
+$$
+F(t)=\sum_{i=1}^m a_i(t)v_i.
+$$
+
+A threshold rounding of $$F$$ is a choice of $$\tau_1,\ldots,\tau_m\in(0,1]$$ together with the pure path
+
+$$
+
+G(t)=\sum_{i:\ \tau_i\le t}v_i .
+
+$$
+
+**Monotone threshold purification of vector paths (Conjecture 52).** There exists a universal constant $$C<\infty$$ such that for every $$d,m\ge1$$, every $$(v_i)_{i\le m}$$, and every monotone activation schedule $$(a_i)_{i\le m}$$ as above, some threshold rounding satisfies
+
+$$
+
+\sup_{0\le t\le1}\|G(t)-F(t)\|_2\le C\sqrt d .
+
+$$
+
+*Significance.* The headline attribution comes first. The special case $$a_i(t)=t$$ for all $$i$$ with $$\sum_iv_i=0$$ is exactly the open prefix-sum form of the Euclidean Steinitz problem at the scale $$O(\sqrt d)$$: there $$F\equiv0$$, and ordering the vectors by their thresholds turns the display into the assertion that some permutation $$\pi$$ has all prefix sums bounded, $$\max_{k\le m}\|\sum_{i\le k}v_{\pi(i)}\|_2\le C\sqrt d$$. Grinberg–Sevastyanov[65] proved the bound $$d$$ in every norm, the best known Euclidean bound is Banaszczyk’s[61, 62] $$O(\sqrt{d+\log m})$$, and so already in this special case the conjecture asserts the removal of the logarithmic term uniformly in $$m$$. For the general threshold form, even the existence of any bound $$C(d)$$ depending on $$d$$ alone and uniform in $$m$$ appears to be open. The mechanism is that $$F$$ is a monotone trajectory in the zonotope generated by the $$v_i$$, the set of sums $$\sum_i\lambda_iv_i$$ with $$\lambda_i\in[0,1]$$, and the conjecture asserts that every monotone zonotope path admits an integral shadow at the optimal Euclidean discrepancy scale. The order $$\sqrt d$$ is verified sharp: take $$m=d$$, $$v_i=e_i$$ the standard basis, and $$a_i(t)=t$$, so that at $$t=1/2$$ every coordinate of $$G(1/2)-F(1/2)$$ equals $$\pm1/2$$ whatever the thresholds, giving $$\|G(1/2)-F(1/2)\|_2=\sqrt d/2$$. No decisive theorem exists: the first would be any $$m$$-uniform bound $$C(d)$$ for the threshold form, even with a $$d$$-dependence far worse than $$\sqrt d$$. A falsification honesty note: the statement has content only at large $$d$$, since any bounded range of dimensions is absorbed into $$C$$, so small-$$d$$ computer searches cannot test it, and the failure mode is an infinite family of monotone paths, with $$d\to\infty$$, every threshold rounding of which has discrepancy $$\omega(\sqrt d)$$.
+
+### Entropy dimension of random-free graphons
+
+A graphon is a symmetric measurable function $$W:[0,1]^2\to[0,1]$$, and $$W$$ is random-free if it takes values in $$\{0,1\}$$ almost everywhere. Define the row pseudometric
+
+$$
+
+d_W(x,y)=\int_0^1\vert W(x,z)-W(y,z)\vert \,\mathrm dz .
+
+$$
+
+Identifying points at zero distance and completing yields a metric-measure space $$(\Omega_W,d_W,\rho_W)$$, the row space, where $$\rho_W$$ is the pushforward of Lebesgue measure. The row space is Ahlfors $$s$$-regular if it is compact and there exist $$c,C,r_0>0$$ such that
+
+$$
+
+cr^s\le\rho_W(B(x,r))\le Cr^s
+
+$$
+
+for every $$x\in\operatorname{supp}\rho_W$$ and every $$0<r<r_0$$. Let $$G(n,W)$$ be the random labelled graph on $$[n]=\{1,\ldots,n\}$$ obtained from independent uniform $$U_1,\ldots,U_n$$ on $$[0,1]$$ by declaring $$ij$$ an edge exactly when $$W(U_i,U_j)=1$$, and let $$H(G(n,W))$$ be its Shannon entropy with natural logarithms.
+
+**Entropy dimension of random-free graphons (Conjecture 53).** 
+
+1.  <span class="upright">[nonvacuity]</span> For every $$s\in(0,2]$$ there exists a random-free graphon whose row space is Ahlfors $$s$$-regular.
+
+2.  <span class="upright">[entropy-dimension law]</span> If the row space of a random-free graphon $$W$$ is Ahlfors $$s$$-regular for some $$s>0$$, then $$\lim_{n\to\infty}H(G(n,W))/(n\log n)=s$$.
+*Remark.* The refined assertion $$H(G(n,W))=s\,n\log n+O_W(n)$$ is a strictly stronger open refinement of clause (ii), and nothing in the mechanism below reaches it. The type-coding mechanism by itself yields only $$H(G(n,W))=s\,n\log n+O_W(n\log\log n)$$: encoding a latent type for each vertex at metric resolution $$1/n$$ costs about $$s\log n$$ nats per vertex and predicts all but on the order of $$n$$ of the edges, but recording which edges are mispredicted costs order $$n\log n$$ if done naively, since each such edge must be located by a pair of labels. A two-scale argument, which first codes coarse types and then corrects within coarse classes, lowers the correction cost to $$O(n\log\log n)$$ and stops there.
+
+*Significance.* The mechanism is metric distinguishability of rows: two row types at $$d_W$$-distance $$\varepsilon$$ disagree on an $$\varepsilon$$-fraction of potential neighbours and become statistically distinguishable against $$n$$ sampled vertices at a scale comparable to $$1/n$$, an Ahlfors $$s$$-regular row space has about $$n^s$$ distinguishable types at that scale, and the latent type of each of the $$n$$ labelled vertices then carries $$s\log n+O(1)$$ nats. Clause (i) certifies that the hypothesis class is nonvacuous at every fractional $$s$$: it is expected to be provable by Cantor-type threshold constructions, in which $$W$$ is the indicator of a threshold event read along a self-similar Cantor set, and it is included so that clause (ii) quantifies over a genuinely rich family. The nearest literature boundary is Hatami–Norine[66]: a graphon is random-free exactly when $$H(G(n,W))=o(n^2)$$, and every subquadratic growth order occurs for suitable random-free graphons, so no hypothesis short of a metric-measure condition on the row space can pin the coefficient of $$n\log n$$, and Ahlfors regularity is exactly the condition that does. No decisive theorem exists: the first would be a proof of clause (i) together with the verification of clause (ii) for one explicit self-similar threshold graphon of noninteger $$s$$. The failure mode is concentrated in the lower bound, since the coding upper bound follows from the mechanism of the refined form above: an Ahlfors regular random-free graphon whose sampled neighbourhoods distinguish types less efficiently than the metric suggests would drive the coefficient below $$s$$, or destroy convergence altogether.
+
+### A Hessian principle for isolated microcanonical graph phases
+
+Fix a partition
+
+$$
+[0,1]=I_1\sqcup\cdots\sqcup I_q,
+\qquad\vert I_a\vert =\alpha_a>0 .
+$$
+
+A coloured graphon is a symmetric measurable $$U:[0,1]^2\to[0,1]$$ considered together with this fixed colour partition. Let $$p(U)\in[0,1]^D$$ with $$D=q(q+1)/2$$ denote the block-average vector
+
+$$
+p_{ab}(U)=\frac1{\vert I_a\vert \vert I_b\vert }\int_{I_a\times I_b}U(x,y)\,\mathrm
+dx\,\mathrm dy,
+\qquad 1\le a\le b\le q .
+$$
+
+A coloured finite graph is a finite simple graph $$F$$ with a colour $$c(v)\in\{1,\ldots,q\}$$ attached to each vertex, and its coloured homomorphism density in $$U$$ is
+
+$$
+t(F,U)=\int_{[0,1]^{V(F)}}
+\prod_{v\in V(F)}\alpha_{c(v)}^{-1}\mathbf 1_{I_{c(v)}}(x_v)
+\prod_{uv\in E(F)}U(x_u,x_v)
+\prod_{v\in V(F)}\mathrm dx_v .
+$$
+
+Fix coloured finite graphs $$F_1,\ldots,F_k$$ and put $$\mathbf t(U)=(t(F_1,U),\ldots,t(F_k,U))$$. Define the graphon entropy
+
+$$
+\mathcal S(U)=\frac12\int_{[0,1]^2}
+\bigl[-U\log U-(1-U)\log(1-U)\bigr]\,\mathrm dx\,\mathrm dy,
+$$
+
+with $$0\log0=0$$, and for a feasible constraint vector $$\mathbf a$$ the contracted entropy
+
+$$
+\Psi_{\mathbf a}(p)=\sup\{\mathcal S(U):
+\mathbf t(U)=\mathbf a,\ p(U)=p\}.
+$$
+
+The finite graphs are coloured with pinned classes. For each $$n$$ set $$n_a=\lfloor\alpha_an\rfloor$$ and $$N_n=\sum_an_a$$, and fix a partition of the vertex set $$[N_n]$$ into colour classes $$V_1,\ldots,V_q$$ with $$\vert V_a\vert =\lfloor\alpha_an\rfloor$$ exactly, so that $$N_n=n+O(q)$$. For a graph $$G$$ on $$[N_n]$$ with these colour classes, partition each $$I_a$$ into $$n_a$$ consecutive intervals of length $$\vert I_a\vert /n_a$$ assigned to the vertices of $$V_a$$, let $$U_G$$ be the $$\{0,1\}$$-valued coloured graphon equal to $$1$$ on a product of two vertex intervals exactly when the corresponding pair is an edge, and put $$\mathbf t(G)=\mathbf t(U_G)$$ and $$\widehat p(G)=p(U_G)$$.
+
+Assume the following regularity hypotheses.
+
+1.  The supremum of $$\mathcal S(U)$$ over $$\mathbf t(U)=\mathbf a$$ is attained at a unique coloured graphon $$U_*$$, up to measure-preserving maps preserving each colour class.
+
+2.  Writing $$p_*=p(U_*)$$, the feasible block-average set $$\{p(U):\mathbf t(U)=\mathbf a\}$$ is, near $$p_*$$, a $$C^3$$ embedded manifold $$M\subset\mathbb R^D$$.
+
+3.  The restriction $$\Psi_{\mathbf a}\vert _M$$ is $$C^3$$ near $$p_*$$ and has there a unique local maximum.
+
+4.  The quadratic form $$A=-D^2_M\Psi_{\mathbf a}(p_*)$$ is positive definite on the tangent space $$T=T_{p_*}M$$.
+
+5.  <span class="upright">[transversally Lipschitz constraint correspondence]</span> There exist $$\delta_0>0$$ and $$L<\infty$$ such that every coloured graphon $$U$$ with $$\|p(U)-p_*\|\le\delta_0$$ and $$\|\mathbf t(U)-\mathbf a\|_\infty=\delta\le\delta_0$$ satisfies $$\operatorname{dist}(p(U),M)\le L\delta$$. In particular the conditioning window below confines $$\widehat p_n$$, on the event $$\|\widehat p_n-p_*\|\le\delta_0$$, to an $$o(n^{-1})$$ thickening of $$M$$.
+
+6.  <span class="upright">[nonemptiness]</span> For every sufficiently large $$n$$ the conditioning set $$\{G:\|\mathbf t(G)-\mathbf a\|_\infty\le n^{-1-\eta}\}$$ over graphs $$G$$ on $$[N_n]$$ with the pinned colour classes is nonempty.
+
+Fix $$0<\eta<1$$, let $$G_n$$ be uniform on the conditioning set of (H6), let $$\widehat p_n=\widehat p(G_n)$$, and let $$\Pi_T$$ be orthogonal projection of $$\mathbb R^D$$ onto $$T$$.
+
+**Hessian principle for an isolated microcanonical phase (Conjecture 54).** Under hypotheses <span class="upright">(H1)–(H6)</span>,
+
+$$
+n\,\Pi_T\bigl(\widehat p_n-\mathbb E\,\widehat p_n\bigr)
+\xrightarrow{\ d\ }
+N_T(0,A^{-1}),
+$$
+
+where $$N_T(0,A^{-1})$$ denotes the centred Gaussian law on $$T$$ whose precision form is $$A$$.
+
+*Significance.* The mechanism is a Laplace expansion at the dense-graph entropy exponent $$n^2$$: on the feasible manifold, $$\Psi_{\mathbf a}(p_*+u)=\Psi_{\mathbf a}(p_*)
+-\tfrac12\langle Au,u\rangle+O(\|u\|^3)$$, so the fluctuation scale is $$u\asymp n^{-1}$$ and the predicted covariance on the tangent space is $$A^{-1}$$, while (H5) suppresses the transversal directions below the fluctuation scale, which is exactly why the conclusion is stated only after projection by $$\Pi_T$$ and centring at $$\mathbb E\,\widehat p_n$$. The nearest literature boundary is the Chatterjee–Varadhan[63] large deviation principle, which supplies the $$n^2$$ normalization and the variational description of conditioned dense graphs, together with the multipodal structure theory of Kenyon–Radin–Ren–Sadun[67] and Neeman–Radin–Sadun[72], which makes hypotheses (H1)–(H4) verifiable in concrete constrained ensembles. A scale audit disposes of one suspect: a single edge toggle moves each coordinate of $$\mathbf t(G)$$ by $$O(n^{-2})$$, so the lattice of attainable constraint values has spacing of order $$n^{-2}$$, far below the fluctuation scale $$n^{-1}$$, and the genuine risk is therefore Laplace-ratio control, namely uniform comparison of microcanonical counts with their Laplace approximations across windows of width $$o(n^{-1})$$, not arithmetic oscillation. Nonemptiness (H6) is a genuine hypothesis and may fail along subsequences of $$n$$ for arithmetic reasons, in which case the statement is asserted only along the subsequence where it holds. No decisive theorem exists at this generality: the natural first one is the case $$q=1$$ with the edge-triangle constraint pair in a region where the entropy maximizer is bipodal and (H1)–(H5) have been verified. The failure mode is an isolated nondegenerate phase whose tangent fluctuations are non-Gaussian or live at a different scale, which would necessarily come from a failure of Laplace-ratio control.
+
+### Sharp stability of entropy idempotence on finite abelian groups
+
+Let $$G$$ be a finite abelian group and $$\mu$$ a probability measure on $$G$$. Write $$H(\mu)$$ for Shannon entropy with natural logarithms, $$\mu*\mu$$ for the convolution, the law of $$X+Y$$ with $$X,Y$$ independent of law $$\mu$$, and
+
+$$
+\Delta(\mu)=H(\mu*\mu)-H(\mu)
+$$
+
+for the convolution entropy defect. If $$H\le G$$ is a subgroup and $$a\in G$$, let $$u_{a+H}$$ be the uniform measure on the coset $$a+H$$. Total variation distance is
+
+$$
+\|\mu-\nu\|_{\mathrm{TV}}=\frac12\sum_{x\in G}\vert \mu(x)-\nu(x)\vert  .
+$$
+
+**Sharp stability of entropy idempotence (Conjecture 55).** There exists a universal constant $$C<\infty$$ such that for every finite abelian group $$G$$ and every probability measure $$\mu$$ on $$G$$,
+
+$$
+\inf_{\substack{H\le G\\a\in G}}
+\|\mu-u_{a+H}\|_{\mathrm{TV}}^2
+\le
+C\bigl(H(\mu*\mu)-H(\mu)\bigr).
+$$
+
+*Remark.* The equality case is verified. With $$X,Y$$ independent of law $$\mu$$,
+
+$$
+\Delta(\mu)=H(X+Y)-H(X)=H(X+Y)-H(X+Y\mid Y)=I(X+Y;Y)\ge0,
+$$
+
+where $$I$$ denotes mutual information. If $$\Delta(\mu)=0$$ then $$X+Y$$ is independent of $$Y$$, which forces the translates of $$\mu$$ by the elements of its support to coincide, and hence forces $$\mu$$ to be uniform on a coset of a subgroup. The right-hand side therefore vanishes exactly on the proposed extremizers.
+
+*Significance.* The mechanism is that the defect is the mutual information created by one self-convolution, so the conjecture is a dimension-free quantitative classification of near-idempotent measures with cosets as the exact equality case. The sharpness discussion identifies the extremal geometry. Coset perturbations $$\mu=(1+\varepsilon f)u_H$$ with $$\sum_{x\in H}f(x)=0$$ give, as $$\varepsilon\to0$$, the ratio
+
+$$
+\frac{\|\mu-u_H\|_{\mathrm{TV}}^2}{\Delta(\mu)}
+\longrightarrow
+\frac{(\mathbb E\vert f\vert )^2}{2\,\mathbb E f^2}\le\frac12
+$$
+
+by Cauchy–Schwarz, so perturbative examples certify at most the constant $$1/2$$. The near-extremizers are instead discretized Gaussians at intermediate scale on $$\mathbb Z/p\mathbb Z$$: for $$1\ll\sigma(p)\ll p$$, the discretization $$\mu_p$$ of a centred Gaussian of standard deviation $$\sigma(p)$$ has $$\Delta(\mu_p)\to\tfrac12\log2$$, the entropy-power constant recording the entropy gain of doubling a Gaussian variance, while its total variation distance to every $$u_{a+H}$$ tends to $$1$$, since the only subgroups of $$\mathbb Z/p\mathbb Z$$ are trivial and full and $$\mu_p$$ is asymptotically singular to every point mass and to the uniform measure. Hence $$C\ge2/\log2$$, and we conjecture that the sharp constant is exactly $$2/\log2$$. The positioning against the literature is as follows: the known entropic inverse theorems, Tao’s sumset entropy theory[74] and the entropic polynomial Freiman–Ruzsa theorem of Gowers–Green–Manners–Tao[64], conclude in Ruzsa distance, an entropic closeness of $$X$$ to a subgroup-uniform variable, not in total variation, and the total variation form over all finite abelian groups is neither proven nor refuted by them. On $$\mathbb Z/p\mathbb Z$$ there are no proper nontrivial subgroups, so the conjecture specializes to a discrete entropy-power-type lower bound for spread measures: any $$\mu$$ far in total variation from every point mass and from the uniform measure must create a definite amount of entropy under self-convolution. No decisive theorem exists: the natural first one is precisely that $$\mathbb Z/p\mathbb Z$$ specialization with some constant. The failure mode is a sequence $$\mu_n$$ with $$\Delta(\mu_n)\to0$$ whose coset distance is much larger than $$\sqrt{\Delta(\mu_n)}$$, and the natural hunting ground is measures straddling several subgroup scales inside groups with rich subgroup lattices.
+
+### Stationary convolution-entropy rigidity
+
+Let $$K$$ be a finite abelian group and $$X=K^{\mathbb Z}$$ with coordinatewise addition and the left shift $$\sigma$$. Let $$\mu$$ be a $$\sigma$$-invariant ergodic Borel probability measure on $$X$$, and write $$h_\sigma(\mu)$$ for its Kolmogorov–Sinai entropy. Define the translational stabilizer
+
+$$
+H_\mu=\{h\in K^{\mathbb Z}:(\tau_h)_*\mu=\mu\},
+\qquad\tau_h(x)=x+h,
+$$
+
+a closed shift-invariant subgroup of $$K^{\mathbb Z}$$, and let $$\pi_\mu:K^{\mathbb Z}\to K^{\mathbb Z}/H_\mu$$ be the quotient homomorphism. Let $$\mu*\mu$$ be the law of $$X+Y$$ for independent $$X,Y\sim\mu$$.
+
+**Stationary convolution-entropy rigidity (Conjecture 56).** For every shift-ergodic $$\mu$$,
+
+$$
+h_\sigma(\mu*\mu)=h_\sigma(\mu)
+\quad\Longleftrightarrow\quad
+h_\sigma\bigl((\pi_\mu)_*\mu\bigr)=0 .
+$$
+
+*Remark.* The binary specialization deserves prominence. Take $$K=\mathbb Z/2\mathbb Z$$. By Kitchens[68]’ structure theory of group shifts, every closed shift-invariant subgroup of $$(\mathbb Z/2\mathbb Z)^{\mathbb Z}$$ is a group shift of finite type, and every proper one is the solution set of a nontrivial linear recurrence and hence finite. If $$H_\mu$$ is finite the quotient map has finite fibres and $$h_\sigma((\pi_\mu)_*\mu)=h_\sigma(\mu)$$, while if $$H_\mu$$ is everything then $$\mu$$ is the Haar measure, the uniform Bernoulli process, with entropy $$\log2$$. Since $$h_\sigma(\mu*\mu)\ge h_\sigma(\mu)$$ always, by conditioning on one summand, the conjecture therefore asserts: every ergodic binary process with $$0<h_\sigma(\mu)<\log2$$ gains entropy under independent XOR, the coordinatewise sum modulo $$2$$ with an independent copy.
+
+*Proposition (Easy direction, conditional).* Suppose $$h_\sigma((\pi_\mu)_*\mu)=0$$. Assume the following two ingredients.
+
+1.  The Abramov–Rokhlin entropy addition formula holds for the Haar-fibred compact group extension $$\pi_\mu:(X,\mu,\sigma)\to(X/H_\mu,(\pi_\mu)_*\mu,\sigma)$$ and for the corresponding extension of $$\mu*\mu$$, so that each total entropy splits as the quotient entropy plus the common Haar fibre entropy, the conditional measures of $$\mu$$ and of $$\mu*\mu$$ over the quotient being Haar measures on cosets of $$H_\mu$$.
+
+2.  The entropy of a factor of an independent joining is bounded by the sum of the entropies of the factors, so that $$(\pi_\mu)_*(\mu*\mu)=((\pi_\mu)_*\mu)*((\pi_\mu)_*\mu)$$ has entropy at most $$2h_\sigma((\pi_\mu)_*\mu)=0$$.
+
+Then $$h_\sigma(\mu*\mu)=h_\sigma(\mu)$$.
+
+*Significance.* The mechanism is the stationary analogue of entropy idempotence on a finite group: equality of entropy under independent self-convolution should force all positive entropy to be Haar-type randomness along a translation-invariant subgroup process, modulo a quotient that may retain arbitrarily rich zero-entropy dynamics such as rotations, substitutions, or Toeplitz systems. The easy direction is recorded above as a conditional proposition with its two ingredients named, the Abramov–Rokhlin formula for Haar-fibred compact group extensions and the factor-of-joining entropy bound, and the difficult direction is the rigidity claim that no other equality mechanism exists. The nearest literature boundary consists of Kułaga-Przymus–Lemańczyk[69] on the entropy of products of independent stationary processes and Lindenstrauss–Meiri–Peres[70] on the entropy of convolutions, neither of which decides the binary question of the binary specialization above. No decisive theorem appears to be on record even for Markov processes, and strict XOR entropy gain for mixing two-state Markov chains would be the first. The failure-mode honesty note is this: the natural counterexample hunting ground is the Ornstein–Weiss[73] bilaterally deterministic processes, positive entropy processes whose distant past and distant future jointly determine the whole trajectory, together with $$T,T^{-1}$$-type constructions, and no search has yet probed either family, so the negation of the conjecture has an unexplored natural habitat.
+
 ## 6. Stress tests and independent recomputation
 
 Each statement was tested three ways: against the literature, against computation well beyond its original range, and against an independent reimplementation.
@@ -1491,6 +1773,38 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 59. J. Fariña-Asategui, *Arboreal Galois representations of rational functions: fixed-point proportion and the extension problem*, arXiv:2601.19414.
 
 60. P. Moree, *A generalization of the Buchstab equation*, Manuscripta Math. 94 (1997), 267–270.
+
+61. W. Banaszczyk, Balancing vectors and Gaussian measures of $$n$$-dimensional convex bodies, Random Structures Algorithms 12 (1998), no. 4, 351–360.
+
+62. W. Banaszczyk, On series of signed vectors and their rearrangements, Random Structures Algorithms 40 (2012), no. 3, 301–316.
+
+63. S. Chatterjee and S. R. S. Varadhan, The large deviation principle for the Erdős–Rényi random graph, European J. Combin. 32 (2011), no. 7, 1000–1017.
+
+64. W. T. Gowers, B. Green, F. Manners, and T. Tao, On a conjecture of Marton, Ann. of Math. (2) 201 (2025), no. 2, 515–549.
+
+65. V. S. Grinberg and S. V. Sevast'yanov, Value of the Steinitz constant, Funct. Anal. Appl. 14 (1980), 125–126.
+
+66. H. Hatami and S. Norine, The entropy of random-free graphons and properties, Combin. Probab. Comput. 22 (2013), no. 4, 517–526.
+
+67. R. Kenyon, C. Radin, K. Ren, and L. Sadun, Multipodal structure and phase transitions in large constrained graphs, J. Stat. Phys. 168 (2017), no. 2, 233–258.
+
+68. B. Kitchens, Expansive dynamics on zero-dimensional groups, Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249–261.
+
+69. J. Kułaga-Przymus and M. Lemańczyk, On the entropy of products of independent stationary processes, arXiv:2004.07648.
+
+70. E. Lindenstrauss, D. Meiri, and Y. Peres, Entropy of convolutions on the circle, Ann. of Math. (2) 149 (1999), no. 3, 871–904.
+
+71. K. Matomäki, M. Radziwiłł, and T. Tao, An averaged form of Chowla's conjecture, Algebra Number Theory 9 (2015), no. 9, 2167–2196.
+
+72. J. Neeman, C. Radin, and L. Sadun, Typical large graphs with given edge and triangle densities, Probab. Theory Related Fields 186 (2023), 1057–1087.
+
+73. D. S. Ornstein and B. Weiss, Every transformation is bilaterally deterministic, Israel J. Math. 21 (1975), 154–158.
+
+74. T. Tao, Sumset and inverse sumset theory for Shannon entropy, Combin. Probab. Comput. 19 (2010), no. 4, 603–639.
+
+75. T. Tao, The logarithmically averaged Chowla and Elliott conjectures for two-point correlations, Forum Math. Pi 4 (2016), e8, 36 pp.
+
+76. T. Tao and J. Teräväinen, The structure of logarithmically averaged correlations of multiplicative functions, with applications to the Chowla and Elliott conjectures, Duke Math. J. 168 (2019), no. 11, 1977–2027.
 
 ## Explanations
 
@@ -1693,3 +2007,27 @@ Joint smoothness of several polynomial values is an adelic problem, and this con
 ### Conjecture 50: Buchstab–Bateman–Horn component flow
 
 Primes, semiprimes and higher almost-primes among polynomial values are usually treated by separate heuristics, and this conjecture resolves a rough value into all of them at once through one universal flow. It defines Buchstab component functions whose sum is the Buchstab function, and asserts that the probability of a value being rough with exactly a given number of large factors is the sieve density times the expectation of the corresponding component, with the remaining factors carrying independent Frobenius marks from Conjecture 46. Summing the components recovers the rough-value law, the first component gives the Bateman and Horn prime density, and the second gives the semiprime transition, so the polynomial enters only through the sieve density while the factor-count flow is universal. The pointwise endpoint, where every rough value has a single large factor, is exact. It is strongly falsifiable, because even if total roughness follows Buchstab the distribution among the components can fail, and it is the sieve-to-prime bridge that Moree's generalized Buchstab equation anticipates.
+
+### Conjecture 51: Relative polynomial pretentiousness inverse principle
+
+A multiplicative function is one that turns products into products, and the pretentious distance of Granville and Soundararajan measures how closely such a function mimics another one at the primes. This conjecture concerns averages of a product of multiplicative functions evaluated along several polynomials, such as $$f_1(n^2+1)f_2(2n+1)$$, where each prime is weighted by how often it divides values of the relevant polynomial. The statement asserts that if these averages, taken with logarithmic weights, do not tend to zero, then the only possible explanation is the obvious one: each function must mimic a Dirichlet character (a periodic multiplicative function) twisted by a power $$n^{it}$$, the twists must cancel in the exact accounting $$\sum_j t_j\deg P_j=0$$, and the characters must be jointly compatible at a common modulus. For linear polynomials the two-point and odd-order cases are theorems of Tao and of Tao and Teräväinen, and the even-order linear case is the logarithmic Elliott conjecture, so all of the new content lives at degree two and higher, where even the average of a single $$f(n^2+1)$$ is open.
+
+### Conjecture 52: Monotone threshold purification of vector paths
+
+Imagine $$m$$ arrows in $$d$$-dimensional space, each of length at most one, and a film in which every arrow grows from zero to full length according to its own nondecreasing schedule. The conjecture asserts that one can replace the film by a jump process, in which each arrow appears fully grown at one chosen instant, so that at every moment the running sums of the two films differ by at most a constant times $$\sqrt d$$. The special case in which all schedules are linear and the arrows sum to zero is a famous open problem, the Euclidean Steinitz prefix-sum problem, which asks whether zero-sum vectors can always be ordered so that every partial sum has length $$O(\sqrt d)$$. The best known bound, due to Banaszczyk, carries an extra logarithm in the number of vectors, and for the full threshold form no bound depending on the dimension alone is known at all. A diagonal example with coordinate vectors shows the $$\sqrt d$$ scale cannot be improved, and the statement only has content when the dimension is large, so no small computer search can decide it.
+
+### Conjecture 53: Entropy dimension of random-free graphons
+
+A graphon is a symmetric measurable function on the unit square that serves as a limit object for large dense graphs, and it is called random-free when it takes only the values zero and one, so that sampling a graph from it involves no coin flips beyond the choice of vertex positions. Each vertex position has a row, its profile of connections, and the rows form a metric space in which the distance between two rows is the measure of the set where they disagree. The conjecture asserts that when this row space is Ahlfors regular of dimension $$s$$, meaning that balls of radius $$r$$ carry measure comparable to $$r^s$$, the Shannon entropy of the sampled $$n$$-vertex graph grows like $$s\,nłog n$$, because each of the $$n$$ vertices carries a latent type resolvable at scale $$1/n$$ and there are about $$n^s$$ such types. A theorem of Hatami and Norine says random-free graphons are exactly those with subquadratic entropy and that any subquadratic growth can occur, so the geometric hypothesis is exactly what pins the coefficient. The construction of regular row spaces of every fractional dimension up to two is part of the statement, and the refined error term of order $$n$$ is recorded separately as a strictly stronger open claim.
+
+### Conjecture 54: Hessian principle for an isolated microcanonical phase
+
+In statistical physics one studies ensembles of systems conditioned to have prescribed values of a few observables, and the analogous graph ensembles fix the densities of several small subgraphs and colour classes of prescribed proportions. Large deviation theory, following Chatterjee and Varadhan, describes the most likely shape of such a conditioned graph as the maximizer of a suitable entropy functional, and later work showed these maximizers are often multipodal, built from finitely many blocks. This conjecture concerns the fluctuations around an isolated, nondegenerate maximizer: it predicts that the block-average statistics of the conditioned graph, projected onto the manifold of feasible values and centred at their mean, are asymptotically Gaussian at scale $$1/n$$ with covariance given by the inverse Hessian (the matrix of second derivatives) of the constrained entropy. The attainable constraint values are spaced at the far finer scale $$1/n^2$$, so no arithmetic obstruction interferes, and the genuine difficulty is comparing exact microcanonical counts with their Laplace approximations. No fluctuation theorem of this kind is currently known in any nontrivial case.
+
+### Conjecture 55: Sharp stability of entropy idempotence
+
+On a finite abelian group, convolving a probability measure with itself, that is, adding two independent samples, can only increase Shannon entropy, and the increase is zero exactly for uniform measures on cosets of subgroups. The conjecture upgrades this equality case to a sharp stability estimate: the squared total variation distance from any measure to the nearest coset uniform is at most a universal constant times the entropy increase. Known entropic inverse theorems, from Tao's sumset entropy theory to the entropic polynomial Freiman--Ruzsa theorem of Gowers, Green, Manners, and Tao, conclude in Ruzsa distance, a weaker entropic notion of closeness, and neither prove nor refute the total variation form. The extremal analysis is delicate: small perturbations of a coset uniform only achieve half the conjectured ratio, and the true near-extremizers are discretized Gaussians on $$\Z/p\Z$$ at scales between one and $$p$$, whose entropy increase approaches the entropy-power constant $$\tfrac12łog2$$ while their distance to every coset approaches one, which forces the constant to be at least $$2/łog2$$ and is conjectured to be exactly sharp. On $$\Z/p\Z$$, which has no proper nontrivial subgroups, the statement becomes a discrete entropy-power inequality for spread measures.
+
+### Conjecture 56: Stationary convolution-entropy rigidity
+
+A stationary process over a finite abelian group is a two-sided random sequence of group elements whose law is invariant under time shifts, and its Kolmogorov--Sinai entropy measures the information produced per symbol. Adding two independent copies of the process coordinatewise can only increase this entropy, and the conjecture characterizes exactly when nothing is gained: precisely when, after quotienting by the group of translations that preserve the law, the remaining process has zero entropy, so that all the randomness was already uniform, Haar-type noise along a subgroup of sequences. The soft direction follows from two standard ingredients, the Abramov--Rokhlin entropy formula for group extensions and the entropy bound for factors of independent joinings, and is recorded as a conditional proposition. The binary case is the sharpest test: by Kitchens' structure theory of group shifts, the conjecture asserts that every ergodic binary process with entropy strictly between zero and $$łog2$$ strictly gains entropy when combined by XOR with an independent copy of itself. The most promising place to look for counterexamples, so far unexplored, is the bilaterally deterministic processes of Ornstein and Weiss and the $$T,T^{-1}$$-type constructions. %============================================================ END COMMENT BLOCK %============================================================
