@@ -1790,13 +1790,13 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 
 68. B. Kitchens, Expansive dynamics on zero-dimensional groups, Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249–261.
 
-69. J. Kułaga-Przymus and M. Lemańczyk, On the entropy of products of independent stationary processes, arXiv:2004.07648.
+69. J. Kułaga-Przymus and M. D. Lemańczyk, Entropy rate of product of independent processes, Monatsh. Math. 200 (2023), 131–162; arXiv:2004.07648.
 
 70. E. Lindenstrauss, D. Meiri, and Y. Peres, Entropy of convolutions on the circle, Ann. of Math. (2) 149 (1999), no. 3, 871–904.
 
 71. K. Matomäki, M. Radziwiłł, and T. Tao, An averaged form of Chowla's conjecture, Algebra Number Theory 9 (2015), no. 9, 2167–2196.
 
-72. J. Neeman, C. Radin, and L. Sadun, Typical large graphs with given edge and triangle densities, Probab. Theory Related Fields 186 (2023), 1057–1087.
+72. J. Neeman, C. Radin, and L. Sadun, Typical large graphs with given edge and triangle densities, Probab. Theory Related Fields 186 (2023), 1167–1223.
 
 73. D. S. Ornstein and B. Weiss, Every transformation is bilaterally deterministic, Israel J. Math. 21 (1975), 154–158.
 
