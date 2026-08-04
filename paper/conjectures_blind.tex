@@ -205,7 +205,7 @@ $\SG_4^{(\mathrm{uu})}(n)=\SG_4^{(\mathrm{ll})}(n-4)$.
 
 \item \textbf{Triplet contamination (Conjecture~\ref{c3}).}  For
 $(n,n+2,n+6)$ mod $5$, the unique surviving square configuration is
-the doubly-thinned $(q^2-2,q^2,q^2+4)$ ($q>3$), contaminating class
+the doubly-thinned $(q^2-2,q^2,q^2+4)$ (the other two configurations dying for every prime $q>3$), contaminating class
 $2$: $\M_x\bigl((\pi_3(t;5,1)-\pi_3(t;5,2))\log^3t/\sqrt
 t\bigr)\to c_3$, the Bateman--Horn constant of
 $(q,q^2-2,q^2+4)$.
@@ -221,7 +221,7 @@ class $2$ (mod $5$) and classes $5,7$ (mod $8$) are provably clean.
 odd prime-divisor pools of $F_p$ and $L_p$ are disjoint (ranks $p$
 vs $2p$; $\gcd=2$ iff $3\mid p$); only finitely many $p$ have both
 prime; the naive joint accounting assigns the catalogued index
-$148091$ prior mass about $3\times10^{-3}$ beyond $10^4$, recorded
+$148091$ prior mass about $1.4\times10^{-2}$ beyond $10^4$, recorded
 descriptively and conditionally on the probable-prime status of both
 $F_{148091}$ and $L_{148091}$, and fatal to any completeness list.
 
@@ -2357,8 +2357,7 @@ requires $q^2-2$ \emph{and} $q^2+4$ simultaneously prime and forces
 $q\equiv\pm2\pmod5$ for $q\neq5$ (else $5\mid q^2+4$; at $q=5$ all
 three conditions do hold, the configuration being $(23,25,29)$, but
 its start $23\equiv3\pmod5$ lies outside the triplet start classes
-$\{1,2\}$, so the single term is harmless).  Triplet starts lie in
-classes $n\equiv1,2\pmod 5$, and the surviving configuration has
+$\{1,2\}$, so the single term is harmless).  Triplet starts lie in classes $n\equiv1,2\pmod 5$ (single bounded exception $(5,7,11)$, start $\equiv0$), and the surviving configuration has
 start $q^2-2\equiv2$: class $2$ is contaminated and class $1$ leads,
 in the drift-scale form of Conjecture~\ref{c21}(i) (a normalization
 at the noise scale, $\M_x((D-T_3)/\sqrt{\pi_3})$, would be vacuous
@@ -2376,9 +2375,7 @@ T_3(x)=\frac1{\log^3x}\!\!
 $(q,\,q^2-2,\,q^2+4)$, since the census sum is $\sim c_3\sqrt x$;
 convergence of the logarithmic mean at this normalization is the
 same Rubinstein--Sarnak-type structure hypothesis as at
-Conjecture~\ref{c21}(i)), with drift-to-noise
-$\asymp\log^{-3/2}x$---one logarithm weaker than
-the pair races, a scale the calculus itself predicts and the
+Conjecture~\ref{c21}(i)), with drift $\asymp\sqrt x/\log^3x$, one logarithm weaker than the pair races, and drift-to-noise $\asymp\log^{-3/2}x$ against their $\log^{-1}$, a scale the calculus itself predicts and the
 verification must respect.  The mechanism clause and the averaging
 clause are asserted separately, as at Conjecture~\ref{c21}(i).
 \end{conjecture}
@@ -2496,8 +2493,7 @@ $p=148091$ (OEIS A080327; \emph{both} $F_p$ and $L_p$ are
 Lucas numbers proved prime only up to index $56003$---so everything
 recorded here is conditional on both probable-prime classifications,
 for which no Baillie--PSW pseudoprime is known: no unconditional
-refutation is claimed from uncertified numbers) prior mass about
-$3\times10^{-3}$ beyond $10^4$.  That rare-event datum is recorded
+refutation is claimed from uncertified numbers) prior mass about $1.4\times10^{-2}$ beyond $10^4$.  That rare-event datum is recorded
 descriptively, with no significance claim attached to it: the model
 was examined after the event was known, and no test protocol was
 fixed in advance.  A single surprising event is
@@ -2514,7 +2510,7 @@ is that even the corrected accounting has convergent sum.
 This conjecture is our stress test of the convergent
 Borel--Cantelli template that Conjecture~\ref{c10} exemplifies.  The
 joint scan to $p\le10^4$ found exactly the indices
-$\{5,7,11,13,17,47\}$, with expected further mass $1.6\times10^{-3}$,
+$\{5,7,11,13,17,47\}$, with expected further mass $1.4\times10^{-2}$,
 while the catalogued index $148091$, at which $F_p$ and $L_p$ are
 both probable primes, lies beyond that range.  We
 therefore conjecture finiteness \emph{without} a completeness clause.
@@ -2525,14 +2521,14 @@ their local corrections \emph{before} tail masses are trusted.  The
 single-sided calibration (probable-prime counts: $F_p$ and $L_p$
 leave the deterministic range at very small $p$): $25$ Fibonacci
 prime indices
-$\le10^4$ against the naive screening prediction $34.1$
-($z=-1.6$, a deficit confirmed by independent recomputation); $29$ Lucas
+$\le10^4$ against the naive screening prediction $29.2$ (the finite sum of the declared per-index hazard over primes to $10^4$)
+($z=-0.8$, a mild deficit, not significant on its own); $29$ Lucas
 prime indices $\le10^4$; the corrected $c_F$ needs a Granville-type patch,
 and clause (iii) quantifies the same need at the joint level.
 
 \emph{Computational checks.}  Joint scan and single-sided calibration reported at the
 statement (Fibonacci prime indices $\{3,5,7,\dots,9311,9677\}$, $25$
-of predicted $34.1$, $z=-1.56$; Lucas indices $29$; joint
+of predicted $29.2$, $z=-0.78$; Lucas indices $29$; joint
 $\{5,7,11,13,17,47\}$ to $10^4$)---probable-prime counts at all but
 the smallest indices, the Fibonacci and Lucas values leaving the
 deterministic range almost at once.
@@ -2603,7 +2599,7 @@ average over the multiplier $(m{+}1)\cdots n$; summing it over $p$
 either bounds the cross-index dependence at $o(1/n)$---vindicating
 the independent-indices model---or exhibits genuine coupling, and
 the computation is finite at each height.
-Verified for $n\le700$ ($F_+=14$, $F_-=16$: difference $-2$ against
+Verified for $n\le700$ ($F_+=15$, $F_-=16$: difference $-1$ against
 noise scale $\approx4.8$); the model-expected number of further twin
 examples beyond $700$ is $\e^{2\gamma}/700\approx4.5\times10^{-3}$
 (computed tail).  The defensible core is finiteness; the exact
@@ -2631,7 +2627,7 @@ the joint count stops at one, the convergent accounting in action.
 (The primorial companion, attributed to Lillie \cite{Lillie}:
 exhaustive to $p\le4000$, twins exactly
 $\{3,5,11\}$, with $p\#+1$ prime for eleven $p$ against the
-Caldwell--Gallot prediction $14.8$, $z=-0.98$; again a probable-prime
+Caldwell--Gallot prediction $12.4$, $z=-0.40$; again a probable-prime
 count above the deterministic range.)
 
 \begin{theorem}[Cube obstruction]\label{t:cube}
@@ -2640,7 +2636,7 @@ $j\ge1$, if and only if $3k^2-3k+1$ is prime.  Consequently the set of
 integers not representable as $p+k^3$ is infinite: the non-representable
 \emph{cubes} alone have counting function $\sim x^{1/3}$.  (That the
 full exceptional set is $\sim x^{1/3}$ follows only when combined with
-Conjecture~\ref{c13}(i), and is conjectural.)
+Conjecture~\ref{c13}(iii), and is conjectural.)
 \end{theorem}
 
 \begin{proof}
@@ -4013,7 +4009,7 @@ count at a larger bound is blind to every one of them.
 \section{An open question}
 
 \begin{question}\label{q:theta}
-Determine $\theta(q)$ of Conjecture~\ref{c22}: derive, from the
+Determine $\Theta(q)$ of Conjecture~\ref{c22}: derive, from the
 Hardy--Littlewood correlations or otherwise, the first-order deficit of
 $\mathbb E_a\,\Li(p(a,q))/\varphi(q)$ below its random-model value
 $1$---equivalently, explain quantitatively why the primes in their
