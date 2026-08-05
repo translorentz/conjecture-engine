@@ -4091,12 +4091,7 @@ Matom\"aki--Radziwi\l\l--Tao~\cite{MRT15} constructed a $1$-bounded multiplicati
 function that pretends to be $n^{it_k}$ for different parameters $t_k$
 on different scales, refuting the original fixed-parameter Elliott
 conjecture, and the corrected conjecture must allow the comparison
-parameter to vary with the scale $X$.  Complete multiplicativity
-restores the fixed-parameter form because the truncated distance
-$\mathbb D_{P_j}(f_j,\chi(n)n^{it};X)$ is monotone nondecreasing in
-$X$: smallness of the truncations at every scale then forces a single
-parameter pair that works uniformly, and the scale-switching pretence
-underlying the counterexample is unavailable.
+parameter to vary with the scale $X$.  For the unimodular completely multiplicative $f_j$ of the present statement the fixed-parameter form survives, and by a rigidity argument rather than by monotonicity alone.  If $\chi n^{it_j}$ and $\chi n^{it_{j+1}}$ are within bounded truncated distance of $f_j$ at scales $X_j\le X_{j+1}$, monotonicity places both within bounded distance of $f_j$ at the common scale $X_j$, the triangle inequality places them within bounded distance of each other, and the Mertens-scale growth of $\sum_{p\le X}(1-\cos(\delta\log p))/p$ then forces $|t_{j+1}-t_j|=O(1/\log X_j)$.  The increments are summable, the parameters converge, and monotonicity converts boundedness along the scales into finiteness of the full distance at the limit parameter.  Unimodularity at the primes is what the argument uses: values of modulus less than one can suppress the Mertens mass of earlier prime ranges, which is exactly the room the scale-switching construction occupies.
 \end{remark}
 
 \begin{remark}\label{t1:badprimes}
@@ -4438,12 +4433,10 @@ specializes to a discrete entropy-power-type lower bound for spread
 measures: any $\mu$ far in total variation from every point mass and
 from the uniform measure must create a definite amount of entropy
 under self-convolution.  No decisive theorem exists: the natural
-first one is precisely that $\Z/p\Z$ specialization with some
-constant.  The failure mode is a sequence $\mu_n$ with
+first one is precisely that $\Z/p\Z$ specialization with some constant.  The defect also has the exact form $H(\mu*\mu)-H(\mu)=\E_Y D_{\mathrm{KL}}(\tau_Y\mu\,\|\,\mu*\mu)$, with $\tau_y$ translation by $y$, so a small defect makes typical support-translates of $\mu$ close to $\mu*\mu$ in relative entropy, and Pinsker's inequality converts that closeness to total variation: the route to a universal constant is to upgrade approximate invariance under many translations to proximity to a coset uniform.  The failure mode is a sequence $\mu_n$ with
 $\Delta(\mu_n)\to0$ whose coset distance is much larger than
 $\sqrt{\Delta(\mu_n)}$, and the natural hunting ground is measures
-straddling several subgroup scales inside groups with rich subgroup
-lattices.
+straddling several subgroup scales inside groups with rich subgroup lattices, a family that computational search through $\Z/2^{8}\Z$ leaves below the Gaussian ratio.
 
 \section{Stationary convolution-entropy rigidity}
 
@@ -4526,8 +4519,7 @@ honesty note is this: the natural counterexample hunting ground is
 the Ornstein--Weiss~\cite{OW75} bilaterally deterministic processes, positive
 entropy processes whose distant past and distant future jointly
 determine the whole trajectory, together with $T,T^{-1}$-type
-constructions, and no search has yet probed either family, so the
-negation of the conjecture has an unexplored natural habitat.
+constructions, and no search has yet probed either family, so the negation of the conjecture has an unexplored natural habitat.  The gap the rigidity must close is quantitative: equality of entropy rates asserts only that the block mutual information $I(X_{1:n}+Y_{1:n};Y_{1:n})$ is $o(n)$, not that it is bounded, so sublinear information spread through arbitrarily long-range structure is the resource a counterexample would exploit.
 
 \section{Stress tests and independent recomputation}\label{sec:audit}
 
