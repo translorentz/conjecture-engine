@@ -230,8 +230,7 @@ class $2$ (mod $5$) and classes $5,7$ (mod $8$) are provably clean.
 \item \textbf{Fibonacci--Lucas twins (Conjecture~\ref{c9}).}  The
 odd prime-divisor pools of $F_p$ and $L_p$ are disjoint (ranks $p$
 vs $2p$; $\gcd=2$ iff $3\mid p$); only finitely many $p$ have both
-prime; the naive joint accounting assigns the catalogued index
-$148091$ prior mass about $1.4\times10^{-2}$ beyond $10^4$, recorded
+prime; the naive joint accounting assigns prior mass about $1.4\times10^{-2}$ to the index range beyond $10^4$, in which the catalogued index $148091$ falls, recorded
 descriptively and conditionally on the probable-prime status of both
 $F_{148091}$ and $L_{148091}$, and fatal to any completeness list.
 
@@ -636,7 +635,7 @@ and
 \[
 T(x)\;=\;\frac1{2\log^2x}
 \sum_{\substack{q\le\sqrt x\\ q^2-2\ \mathrm{prime}}}
-\log q\,\log(q^2-2),
+\log q\,\log(q^2-2).
 \]
 Then:
 \emph{(i)} [drift law, at drift-scale normalization] the clause
@@ -828,7 +827,7 @@ find no prior statement of the mod-$5$ race, the $(q^2-2,q^2)$
 mechanism, or the quantified surplus below.)  Mod $3$ kills the pattern
 $(q^2,q^2+2)$ outright, an amusing local accident that halves the
 mechanism and concentrates the surplus entirely on class $1$, as a
-mod-$3$ computation confirms.  Data to $4\cdot10^9$:
+mod-$3$ computation confirms.  Data to $4\times10^9$:
 class counts $(3980017,\ 3982505,\ 3981922)$, $D_1$ within one noise
 unit of $T$ throughout, no persistent leader, and the
 control race $\pi_{t,2}-\pi_{t,4}$ wandering like a fair coin.
@@ -853,15 +852,14 @@ $(3,5,7)$, so no overlap term exists) and
 \[
 G(H)\;=\;\sum_{1\le h\le H}\Bigl(1-\frac hH\Bigr)\bigl(R(h)-1\bigr),
 \]
-the derived identity is
+the derived identity (clause \emph{(i)}) is
 \[
 \frac{\operatorname{Var}_t\,\pi_2(t;H)}{\mathbb E_t\,\pi_2(t;H)}
 \;=\;1+\frac{\SG(2)\,\bigl(2G(H)-1\bigr)}{\log^2x}
 +o\!\Bigl(\frac1{\log^2 x}\Bigr):
 \]
 with $p=\SG(2)/\log^2x$ the per-site intensity, the variance is
-$Hp(1-p)+2p^2HG(H)$, so $\operatorname{Var}/\mathbb E=1-p+2pG(H)$
----the Bernoulli diagonal term $-p=-\SG(2)/\log^2x$ is of exactly
+$Hp(1-p)+2p^2HG(H)$, so $\operatorname{Var}/\mathbb E=1-p+2pG(H)$---the Bernoulli diagonal term $-p=-\SG(2)/\log^2x$ is of exactly
 the order of the claimed error and cannot be dropped (it is the same
 diagonal that, in the single-prime case, merges into
 Montgomery--Soundararajan's constant $\gamma+\log2\pi-1$).  With
@@ -873,8 +871,7 @@ Montgomery--Soundararajan's reduction of the prime-count variance to
 $\sum_{h\le H}\SG(h)(H-h)$ \cite{MS}.  Clause (i) is a
 \emph{conditional proposition}, not an independent conjecture: given
 quantitative Hardy--Littlewood for $4$-tuples, the reduction
-follows.  The conjectural clause is (ii): $-G(H)/\log H$ diverges
----the pinned average grows strictly faster than the single-prime
+follows.  The conjectural clause is (ii): $-G(H)/\log H$ diverges---the pinned average grows strictly faster than the single-prime
 secondary term $\tfrac12(\log H+\gamma+\log2\pi-1)$, so pair counts
 in windows are more sub-Poisson than prime counts---with the caveat that
 data to $H=3000$ cannot distinguish divergence from a pure
@@ -1056,7 +1053,7 @@ error bars, exactly where smooth-modulus effects cannot reach.
 Whether $\theta_{\mathrm{corr}}$ tends to a constant, and the exact
 functional form in $1/\log q$, remain open: data at $q\le6000$ cannot
 distinguish $1/\log q$ from $(\log\log q)/\log q$-type
-refinements---the aggregate $\theta\approx1.5$--$1.9$ over
+refinements---the aggregate $\Theta\approx1.5$--$1.9$ over
 $q\in[10^2,6\times10^3]$, with $\mathbb E_a[U]$ bottoming near
 $0.737$ around $q\approx200$ and recovering through $0.776$ by
 $q\approx6000$, is calibration, not a determination of the form.  The
@@ -1081,11 +1078,11 @@ We measure $\theta_{\mathrm{corr}}$; we cannot yet derive it.
 \begin{conjecture}[The Goldbach lane race; apparently new]\label{c25}
 For $n\equiv2\pmod4$ let $R_1(n)$, $R_3(n)$ be the ordered Goldbach
 representation counts in the lanes $p\equiv q\equiv1$ and
-$p\equiv q\equiv3\pmod4$ (Conjecture~\ref{c15}), and
+$p\equiv q\equiv3\pmod4$ (the lane convention of the Martin benchmark recorded at Conjecture~\ref{c15}), and
 $D(n)=R_3(n)-R_1(n)$.  Prime-square terms $n=q^2+p$ ($q$ odd prime)
 land \emph{exclusively} in the $(1,1)$ lane, since
 $q^2\equiv1\pmod4$ and then $n-q^2\equiv1\pmod4$ automatically.
-Consequently the $(3,3)$ lane leads on average: with
+Consequently the $(3,3)$ lane leads on average. Define
 \[
 D_{\mathrm{sys}}(n)\;=\;\frac{2}{\bar\ell(n)}
 \sum_{\substack{q \text{ odd prime},\ q\le\sqrt n\\ n-q^2 \text{ prime}}}
@@ -1146,7 +1143,7 @@ prediction (every square contamination falls into one lane) makes it
 cleaner than the classical race.  We could find no prior statement.
 The neighbouring phenomenon for consecutive primes is the Lemke
 Oliver--Soundararajan mod-3 law, whose verification here---%
-$\hat c$ drifting $0.400\to0.370$ over $10^7\!\to\!4\cdot10^9$ with
+$\hat c$ drifting $0.400\to0.370$ over $10^7\!\to\!4\times10^9$ with
 $(1,1)/(2,2)$ symmetry $0.99989$---serves as calibration for the
 present race.
 
@@ -1178,8 +1175,7 @@ n-p$, so $n-p$ is
 composite except in the diagonal case $n=2p$, which would otherwise
 distort the hazard at one atypical point), and
 time-change by the expected-arrivals clock
-$U(n)=\SG(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$.  Then:
-The ensemble is fixed first, since $U(n)$ is deterministic at each
+$U(n)=\SG(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$.  The ensemble is fixed first, since $U(n)$ is deterministic at each
 $n$ and an expectation therefore needs a declared measure: for a scale
 $X$,
 \[
@@ -1189,7 +1185,7 @@ $X$,
 \qquad
 \Theta_G(X)=\bigl(1-\mathbb E_XU\bigr)\log X.
 \]
-\emph{(i)} [limit law] under $\mathbb E_X$-sampling,
+Then: \emph{(i)} [limit law] under $\mathbb E_X$-sampling,
 $U\Rightarrow\mathrm{Exp}(1)$ as $X\to\infty$;
 \emph{(ii)} [canonical ordering deficit]
 $\Theta_G(X)\to\Theta_G>0$---the Goldbach sibling of the
@@ -1329,8 +1325,7 @@ verified through $p\le19$ as described at the statement.
 the Wieferich ledger; single-base heuristic previously stated
 \cite{CDP}, the vertical multibase law apparently new]\label{c23}
 With $q_p(a)=(a^{p-1}-1)/p\bmod p$ (defined for primes $p\nmid a$;
-all clauses below range over such $p$ only) and $q_p=q_p(2)$, five
-clauses:
+all clauses below range over such $p$ only) and $q_p=q_p(2)$, clauses \emph{(0)}--\emph{(v)}, stated multibase group first:
 \emph{(0)} [structure, classical] $q_p(ab)\equiv q_p(a)+q_p(b)
 \pmod p$ (the Eisenstein--Lerch homomorphism; verified exactly on
 every tested prime), so for multiplicatively \emph{dependent} bases
@@ -1341,7 +1336,7 @@ multiplicatively \emph{independent} bases the vector equidistributes
 on the full torus as $p$ varies---the \emph{vertical} joint law,
 complementing the fixed-$p$, varying-base statistics of
 Ostafe--Shparlinski and Cobeli--Zaharescu---with correlations
-vanishing and the same LIL calibration as (i);
+vanishing and the same LIL calibration as (i) below;
 \emph{(v)} [simultaneous Wieferich] the expected count of $p\le x$
 with $q_p(2)=q_p(3)=0$ has convergent sum $\sum1/p^2$: at most
 finitely many simultaneous Wieferich primes exist (the single-base
@@ -1560,7 +1555,7 @@ thousand values.
 
 (A further Hardy--Littlewood calibration, on a prime quintuplet
 constellation, gives observed $15{,}236$ against predicted
-$15{,}230.3$ at $4\cdot10^9$, ratio $1.0004$, $z=+0.05$.)
+$15{,}230.3$ at $4\times10^9$, ratio $1.0004$, $z=+0.05$.)
 
 \setcounter{conjecture}{8}%
 \begin{conjecture}[The sub-diffusivity of balanced prime races;
@@ -1663,7 +1658,7 @@ of race sub-diffusivity, an effect invisible to endpoint statistics.
 (The twin-gap record benchmark---$G_t(x)\asymp\log^3x$
 with working constant $1/(2C_2)$, inside Kourbatov's
 extreme-value framework \cite{Kourbatov}---is included as an
-attributed calibration benchmark: records to $4\cdot10^9$ wander in
+attributed calibration benchmark: records to $4\times10^9$ wander in
 $[0.41,0.56]\log^3x$, approaching from below on a $\log\log$ clock,
 largest observed twin-to-twin gap $5292$ after the twin at
 $2{,}466{,}641{,}069$; the Cram\'er--Granville fragility of such
@@ -1703,7 +1698,7 @@ limit; so the moments of
 $C(d)$ over even $d\le D$ converge, as $D\to\infty$, to
 \emph{derived} Euler products; in particular
 \[
-\frac1{\#}\sum_{2\mid d\le D}C(d)\to\bar C=2.7456\ldots,
+\frac1{\#\{2\mid d\le D\}}\sum_{2\mid d\le D}C(d)\to\bar C=2.7456\ldots,
 \qquad
 \operatorname{sd}\bigl(C(d)\bigr)\to1.6840\ldots,
 \]
@@ -1847,7 +1842,7 @@ records, and the difference between record gaps and non-record first
 occurrences---and is left open here.  The two candidate constants
 differ by $6\%$, beneath the resolution of any feasible computation:
 our regression slope over $g\ge100$ falls from $1.307$ at $10^9$ to
-$1.297$ at $4\cdot10^9$, far above both and decreasing, as it must be
+$1.297$ at $4\times10^9$, far above both and decreasing, as it must be
 for either.
 
 \setcounter{conjecture}{11}%
@@ -1872,8 +1867,7 @@ ensemble: for a scale $X$, let
 $\mathbb E_X$ average over odd $n\in(X,2X]$ of the given residue
 class mod $8$ with weight proportional to $1/n$ (the logarithmic
 sampling measure, as at Conjectures~\ref{c15} and~\ref{c25}).
-Define, per class, the \emph{clean-minus-contaminated} difference
-with explicit sign: $D(n)=R_{\mathrm o}-R_{\mathrm e}$ for
+Define, per class, with $R_{\mathrm o}(n)$ and $R_{\mathrm e}(n)$ the numbers of representations $n=p+2k^2$ with $k$ odd and $k$ even respectively, the \emph{clean-minus-contaminated} difference with explicit sign: $D(n)=R_{\mathrm o}-R_{\mathrm e}$ for
 $n\equiv1\pmod 8$ (even lane contaminated),
 $D(n)=R_{\mathrm e}-R_{\mathrm o}$ for $n\equiv3\pmod 8$, and
 $D(n)=R_{\mathrm e}-R_{\mathrm o}$ (sign immaterial) on the null
@@ -1934,8 +1928,7 @@ contaminated strata pooled $D=+0.27\pm0.33$ against predicted
 $D_{\mathrm{sys}}=+0.15$ (at the $\Lambda(q^2)$ weight);
 null strata pooled $-0.22\pm0.33$,
 consistent with zero (one of the four strata sits at $-2\sigma$
-individually, within a four-test family).  (Stern's exceptional list
----the ten known odd integers that are not $p+2k^2$, the largest
+individually, within a four-test family).  (Stern's exceptional list---the ten known odd integers that are not $p+2k^2$, the largest
 $5993$, with the seven prime members the Stern primes; completeness
 of the list is conjectural, OEIS A060003---is
 included as the attributed calibration benchmark anchoring this
@@ -2007,7 +2000,7 @@ appear to be new.)
 \begin{center}\small
 \begin{tabular}{lcccc}
 \toprule
- & \multicolumn{2}{c}{$x=10^9$} & \multicolumn{2}{c}{$x=4\cdot10^9$}\\
+ & \multicolumn{2}{c}{$x=10^9$} & \multicolumn{2}{c}{$x=4\times10^9$}\\
 $\lambda$ & observed & predicted & observed & predicted\\
 \midrule
 $1/2$ & $0.8241$ & $0.8189$ & --- & ---\\
@@ -2018,8 +2011,7 @@ $4$   & $0.7201$ & $0.7185$ & --- & ---\\
 \end{tabular}
 \end{center}
 
-\noindent The residual $\approx+0.003$ is the anticipated
-$O(1/\log^2x)$ term.
+\noindent The residual $\approx+0.003$ sits at the scale of a $1/\log^2x$ term, consistent with the hedged reading at the statement.
 
 \setcounter{conjecture}{13}%
 \begin{conjecture}[The null-mechanism race; apparently new]\label{c8}
@@ -2171,7 +2163,7 @@ $\omega=1$ identically.  Then:
 $\mathbb E_a[\omega(p)]=3\cdot\frac{p-1}{3p}+\frac1p=1$ exactly at
 every $p$, so the derived mean of $C(a)$ is exactly $1$---the cubic
 analogue of the Korevaar--te Riele mean-value-one theorem for linear
-prime-pair constants (arXiv:0806.1667), here a one-line computation
+prime-pair constants, here a one-line computation
 at each finite level; passing the mean through the infinite product
 needs more than almost-sure convergence, and the needed ingredient is
 on hand: the convergent
@@ -2218,11 +2210,7 @@ $57$ shifts is reported above.
 \begin{conjecture}[Conjecture F as a family; the core is previously
 stated, \cite{HL1923}, cf.~\cite{JW}]\label{c24}
 For odd $A$ let $Q_A(N)=\#\{n\le N:\ n^2+n+A \text{ prime}\}$ and
-$C(A)=C(x^2+x+A)$.  Then, for every fixed $B>0$,
-$Q_A(N)=C(A)\,I_A(N)\,(1+o(1))$ uniformly over odd
-$1\le A\le(\log N)^B$, with the residual field obeying the analogue
-of Conjecture~\ref{c16}(ii), kernel derived and probability space
-specified: for $t$ uniform on $[N,2N]$ and window length $H\le
+$C(A)=C(x^2+x+A)$.  Then: \emph{(i)} for every fixed $B>0$, $Q_A(N)=C(A)\,I_A(N)\,(1+o(1))$ uniformly over odd $1\le A\le(\log N)^B$; \emph{(ii)} [window field] the residual field obeys the analogue of Conjecture~\ref{c16}(ii), kernel derived and probability space specified: for $t$ uniform on $[N,2N]$ and window length $H\le
 N^{o(1)}$, let
 $Q_A(t;H)=\#\{t<n\le t+H:\ n^2+n+A \text{ prime}\}$ (mean
 ${\asymp}H/2\log N$, which sets the regime).  Two members share the
@@ -2300,7 +2288,7 @@ At $N=10^6$: mean ratio $1.0006$, standard deviation $0.0027$,
 $\max|z|=1.92$, rank correlation $0.99988$; for $A=41$, observed
 $261{,}080$ against predicted $261{,}017.6$ ($z=+0.12$, using Cohen's
 constant).  On precision: a truncated Euler product for $C(41)$ at cutoff
-$2\cdot10^5$ reads
+$2\times10^5$ reads
 $6.64092$---wrong in the fourth significant decimal---because these
 conditionally convergent products drift at the $10^{-3}$ scale over
 practical cutoffs.  Quoted digits for all quadratic-family constants in
@@ -2397,9 +2385,7 @@ three conditions do hold, the configuration being $(23,25,29)$, but
 its start $23\equiv3\pmod5$ lies outside the triplet start classes
 $\{1,2\}$, so the single term is harmless).  Triplet starts lie in classes $n\equiv1,2\pmod 5$ (single bounded exception $(5,7,11)$, start $\equiv0$), and the surviving configuration has
 start $q^2-2\equiv2$: class $2$ is contaminated and class $1$ leads,
-in the drift-scale form of Conjecture~\ref{c21}(i) (a normalization
-at the noise scale, $\M_x((D-T_3)/\sqrt{\pi_3})$, would be vacuous
-for the coefficient, exactly as at the pair races):
+in the drift-scale form of Conjecture~\ref{c21}(i):
 \[
 \M_x\!\left(
 \frac{\bigl(\pi_3(t;5,1)-\pi_3(t;5,2)\bigr)\log^3t}{\sqrt t}\right)
@@ -2412,8 +2398,7 @@ T_3(x)=\frac1{\log^3x}\!\!
 ($c_3$ exists and is the Bateman--Horn constant of the triple
 $(q,\,q^2-2,\,q^2+4)$, since the census sum is $\sim c_3\sqrt x$;
 convergence of the logarithmic mean at this normalization is the
-same Rubinstein--Sarnak-type structure hypothesis as at
-Conjecture~\ref{c21}(i)), with drift $\asymp\sqrt x/\log^3x$, one logarithm weaker than the pair races, and drift-to-noise $\asymp\log^{-3/2}x$ against their $\log^{-1}$, a scale the calculus itself predicts and the
+same Rubinstein--Sarnak-type structure hypothesis as at Conjecture~\ref{c21}(i); a normalization at the noise scale, $\M_x\bigl((D-T_3)/\sqrt{\pi_3}\bigr)$ with $D$ the class difference displayed above and $\pi_3$ the total triplet count to $t$, would be vacuous for the coefficient, exactly as at the pair races), with drift $\asymp\sqrt x/\log^3x$, one logarithm weaker than the pair races, and drift-to-noise $\asymp\log^{-3/2}x$ against their $\log^{-1}$, a scale the calculus itself predicts and the
 verification must respect.  The mechanism clause and the averaging
 clause are asserted separately, as at Conjecture~\ref{c21}(i).
 \end{conjecture}
@@ -2460,8 +2445,7 @@ q\log(q^2+6)$, and $c_A,c_B$ their drift-scale limits
 ($c_A=\lim T_A\log^2x/\sqrt x$, the Bateman--Horn constant of
 $(q,q^2-6)$, likewise $c_B$ for $(q,q^2+6)$), the predicted drift
 vector, in the drift-scale limiting-log-mean sense of
-Conjecture~\ref{c21}(i) (an $\M_x$-over-$\sqrt\pi$ normalization would
-be coefficient-blind), is:
+Conjecture~\ref{c21}(i) (an $\M_x$-over-$\sqrt\pi$ normalization would be coefficient-blind), is, writing $\pi(a)$ for the number of sexy starts up to $t$ in class $a$ of the modulus in question:
 mod 5: $\M_x\bigl((\pi(2)-\pi(3))\log^2t/\sqrt t\bigr)\to c_A$,
 $\M_x\bigl((\pi(2)-\pi(1))\log^2t/\sqrt t\bigr)\to c_B$ (class $2$
 \emph{clean}); mod 8:
@@ -2523,15 +2507,11 @@ matters;
 $L_p$ simultaneously prime;
 \emph{(iii)} [calibration clause, quantitative] the
 naive joint accounting---probability
-$(\e^{\gamma}\log p/(p\log\phi))^2$ per index---assigns the
-catalogued
-index
-$p=148091$ (OEIS A080327; \emph{both} $F_p$ and $L_p$ are
+$(\e^{\gamma}\log p/(p\log\phi))^2$ per index---assigns prior mass about $1.4\times10^{-2}$ to the whole index range beyond $10^4$, in which the catalogued index $p=148091$ falls (OEIS A080327; \emph{both} $F_p$ and $L_p$ are
 \emph{probable} primes---numbers of roughly $30{,}950$ digits, with
 Lucas numbers proved prime only up to index $56003$---so everything
 recorded here is conditional on both probable-prime classifications,
-for which no Baillie--PSW pseudoprime is known: no unconditional
-refutation is claimed from uncertified numbers) prior mass about $1.4\times10^{-2}$ beyond $10^4$.  That rare-event datum is recorded
+for which no Baillie--PSW pseudoprime is known: no unconditional refutation is claimed from uncertified numbers). That rare-event datum is recorded
 descriptively, with no significance claim attached to it: the model
 was examined after the event was known, and no test protocol was
 fixed in advance.  A single surprising event is
@@ -2602,8 +2582,7 @@ variance itself is $\asymp\log N$), \emph{and}---since pairwise
 control alone cannot preclude higher-order dependence---the
 higher-cumulant condition
 $\kappa_r(F_+-F_-)=o\bigl((\log N)^{r/2}\bigr)$ for each fixed
-$r\ge3$, the method-of-moments sufficient condition.  Neither is
-imported from an independence model; whether they hold for the
+$r\ge3$, the method-of-moments sufficient condition.  None of the three is imported from an independence model; whether they hold for the
 arithmetic dependence across
 factorial indices is the open
 component of this clause.
@@ -2622,7 +2601,7 @@ the Hardy--Littlewood twin
 factor $2C_2\prod_{2<p\le n}\frac{p-2}{p-1}\big/
 \prod_{2<p\le n}\bigl(\tfrac{p-1}p\bigr)^{\!2}$-type couplings, but
 here the screening (coprimality to all $p\le n$) is
-\emph{deterministic}---both neighbors always pass it---and the twin
+\emph{deterministic}---both neighbours always pass it---and the twin
 coupling factor and the reciprocal sieve factors cancel to first
 order, leaving the joint probability $\sim(\e^{\gamma}/n)^2$ with no
 singular-series correlation; what remains open, and is flagged in
@@ -2791,7 +2770,7 @@ counts to $10^5$) all sit within $|z|<0.6$: at bound $10^{7}$ the lane
 $k=2$ gives observed $1{,}270{,}606$ against predicted
 $1{,}270{,}902.8$ (ratio $0.9998$, $z=-0.26$); at $10^{6}$ the lane
 $k=3$ gives $126{,}826$ against $126{,}641.6$ (ratio $1.0015$,
-$z=+0.52$); and at $8\cdot10^{5}$ the lane $k=5$ gives $56{,}925$
+$z=+0.52$); and at $8\times10^{5}$ the lane $k=5$ gives $56{,}925$
 against $57{,}021.3$ (ratio $0.9983$, $z=-0.40$).
 
 \setcounter{conjecture}{23}%
@@ -2926,8 +2905,7 @@ Fix admissible motifs $H_1,\ldots,H_m$ and put
  \E_x\exp\!\left(\sum_{i=1}^m z_iY_{H_i}(x,L)\right).
 \]
 For every fixed total degree $R$, the degree-$\le R$ Taylor polynomial of
-$\log\mathcal Z_{X,L}$ has a uniform asymptotic expansion indexed by connected exact-
-overlap diagrams of at most $R$ translated motifs.  A diagram whose coincidence hypergraph connects the $r$ translated sets
+$\log\mathcal Z_{X,L}$ has a uniform asymptotic expansion indexed by connected exact-overlap diagrams of at most $R$ translated motifs.  A diagram whose coincidence hypergraph connects the $r$ translated sets
 $H_{i_1}+t_1,\ldots,H_{i_r}+t_r$ contributes, at the leading order of its stratum,
 \[
  W_\tau(L;\mathbf t)\,
@@ -2956,8 +2934,7 @@ organizes covariance, odd moments, mixed motifs, overlap singularities, and lowe
 prime-power effects.  Montgomery--Soundararajan and Kuperberg provide the closest
 one-field moment frameworks, while constrained singular-series sums provide the nearest
 local input \cite{MS,Kuperberg,KRR}.  The new content is the complete connected
-multitype functional.  The first decisive theorem is the full third-cumulant formula for
-two distinct pair motifs.
+multitype functional.  The first decisive theorem is the full third-cumulant formula for two distinct pair motifs. A failure would reveal a term of $\log\mathcal Z_{X,L}$ at a scale indexed by no connected exact-overlap diagram, a correlation source among the motif fields $Y_{H_i}(x,L)$ invisible to the Möbius alternation over set partitions.
 
 \begin{conjecture}[Complete overlap-renormalization filtration]\label{s2}
 Fix a finite motif family $H_1,\ldots,H_m$.  Apply the degree-two specialization of
@@ -2965,11 +2942,7 @@ Fix a finite motif family $H_1,\ldots,H_m$.  Apply the degree-two specialization
 $s_1\succ s_2\succ\cdots$ (lexicographically in powers of $L$, $\log X$, and the
 renormalized disjoint scales).  In the mesoscopic range scales sharing the same total
 power of $L$ and of logarithms differ only by powers of $\theta=\log L/\log X$ and
-merge into a single stratum whose limiting form is polynomial in $\theta$.  The
-filtration, the graded convergence, and the eigenvalue asymptotics below are asserted
-for every fixed $\theta\in(\eps,1-\eps)$, with each $A_\nu=A_\nu(\theta)$
-nondegenerate for every such $\theta$.  Recursively subtract the earlier strata and let $A_\nu$
-be the limiting covariance form at scale $s_\nu$, and put
+merge into a single stratum whose limiting form is polynomial in $\theta$.  The filtration, the graded convergence, and the eigenvalue asymptotics below are asserted for every fixed $\theta\in(\eps,1-\eps)$. Recursively subtract the earlier strata and let $A_\nu=A_\nu(\theta)$ be the limiting covariance form at scale $s_\nu$, asserted nondegenerate for every such $\theta$, and put
 \[
  \mathcal W_\nu=\bigcap_{\mu<\nu}\ker A_\mu.
 \]
@@ -3101,7 +3074,7 @@ The set $\mathcal T_H$ is symmetric under $t\mapsto-t$, and the cluster-start fr
 counts, for each occurrence, only whether it has an overlapping predecessor, so the sum
 is restricted to $t<0$ and equals half the symmetric sum over $\mathcal T_H$.
 If no admissible overlap exists, $\theta_X(H)=1+o((\log X)^{-M})$ for every fixed
-$M$.  Higher corrections are the connected Ursell sums of anchored polymers ordered by
+$M$.  Higher corrections are the connected Ursell sums (the signed connected sums of cluster-expansion theory) of anchored polymers ordered by
 $d_H(A)$.  These finite-$X$ Gibbs expansions are projectively consistent and
 subcritical, and after division by the low-zero intensity the cluster-start process is
 Poisson to each fixed order of this triangular expansion.
@@ -3115,8 +3088,7 @@ $(\log X)^{-(k-s)}$.  A universal $1/\log X$ correction therefore holds
 only for special motifs, such as pair motifs that admit an overlapping translate.  The law keeps polymers of
 every size, supplies a canonical extremal-index exponent $\delta(H)$, and links
 Hardy--Littlewood constants, low-zero environments, Palm theory, and extreme motif gaps.
-For $H=\{0,6\}$ one has $\delta(H)=1$ and the pair-motif coefficient is
-recovered.
+For $H=\{0,6\}$ one has $\delta(H)=1$ and the pair-motif coefficient is recovered. The first decisive theorem is the two-element polymer law for one pair motif, the Palm limit at $A=\{0,t\}$ with $t\in\mathcal T_H$ together with the expansion of $\theta_X(H)$ at order $(\log X)^{-\delta(H)}$. A failure would show that the low-mode environment $Z$ supplies more than the one-point intensity, so connected Palm activities would not be graded by $(\log X)^{-d_H(A)}$ and weighted by $\mathfrak S(U_A)$ alone.
 
 \begin{conjecture}[Topological expansion of non-Gaussian prime cumulants]\label{s5}
 For every connected exact-overlap diagram in \cref{s1}, expand its connected singular series over the linking primes and form the linkage graph of each term, whose vertices are the motif occurrences and whose edges join two occurrences sharing a linking prime in that term.  Let $g$ be the first Betti number of the linkage graph.  Once all larger coincidence strata have been subtracted, the total contribution of the terms of Betti number $g$ is smaller than that of the spanning-tree terms with the same external motifs by at least $(\log L)^{-g}$.  The complete leading coefficient at each logarithmic order is the sum of the linked-term weights with the corresponding Betti number.  In
@@ -3138,8 +3110,7 @@ regime of Kuperberg's singular-series sums.
 \paragraph{Significance.}
 This predicts a topological genus expansion for prime statistics: every independent
 cycle costs a logarithmic order.  Kuperberg's odd-moment conjecture is the one-field
-calibration, and the incidence-homology filtration with its motif-dependent
-coefficients is the new mechanism \cite{Kuperberg}.  A failure would show that logarithmic suppression
+calibration, and the incidence-homology filtration with its motif-dependent coefficients is the new mechanism \cite{Kuperberg}. The first theorem is the case $m=1$ for the single-prime field, the spread third-cumulant tree law $\kappa^{\mathrm{sp}}_{3}=(c_1+o(1))L(\log L)^{2}$ with its one-cycle terms suppressed by $(\log L)^{-1}$.  A failure would show that logarithmic suppression
 is controlled by an arithmetic invariant not visible in diagram topology.
 
 \section{Programme II: arithmetic first-arrival fields and class groups}
@@ -3152,7 +3123,7 @@ class $a$ and put
  \delta_{\Li(p)/(q-1)}.
 \]
 The probability space chooses $q$ uniformly among primes in $[Q,2Q]$ and then chooses
-$a$ uniformly from $\Fq_q^\times$.  Write $e(x)=\e^{2\pi ix}$.
+$a$ uniformly from $\Fq_q^\times$.
 
 \begin{conjecture}[Connected first-arrival functional]\label{s6}
 Let $w^{\mathrm c}_{r,Q}$ be the connected factorial-cumulant measure of the random point
@@ -3179,8 +3150,7 @@ first correction, is determined by the hierarchy $(K_r)_{r\ge2}$.
 This is an arithmetic point-process theory of least primes.  The coupon-collector model
 of Li--Pratt--Shakan supplies the nearest extremal analogy, but not a connected Laplace
 functional \cite{LPS}.  Truth would determine waiting times, occupancy covariance,
-cover times, and terminal clustering from one hierarchy.  The first theorem is the
-existence and explicit evaluation of $K_2$ on compact off-diagonal sets.
+cover times, and terminal clustering from one hierarchy.  The first theorem is the existence and explicit evaluation of $K_2$ on compact off-diagonal sets. A failure would show that least primes in residue classes cluster through a mechanism not captured by modulus-averaged connected Hardy--Littlewood densities, a connected correlation of $\mathcal N_{q,a}$ living outside the hierarchy $(K_r)_{r\ge2}$.
 
 \begin{conjecture}[Tested Gauss-polyspectral reciprocity for the least-prime field]\label{s7}
 Set $T_q(0)=\Li(q)/(q-1)$ and centre the resulting field $f_q$ on all of $\Fq_q$.
@@ -3255,8 +3225,7 @@ terminal cluster-start process is Poisson with directing measure
 \]
 At finite modulus the cluster-start thinning enters through the terminal extremal
 index $\theta_{\mathrm{occ}}(q)$, the analogue for the last classes of the
-cluster-start fraction $\theta_X(H)$ of \cref{s4}, together with the terminal
-connected-polymer decorations of \cref{s6}.  Both corrections enter at the first
+cluster-start fraction $\theta_X(H)$ of \cref{s4}, together with the terminal connected decorations supplied by the hierarchy of \cref{s6}.  Both corrections enter at the first
 nonzero connected scale and vanish in the successive limit, so
 $\theta_{\mathrm{occ}}(q)\to1$ and the limiting directing measure carries no
 cluster factor.
@@ -3279,8 +3248,7 @@ Rubinstein--Sarnak theory supplies the fixed-modulus prime-race environment
 \cite{RubinsteinSarnak}.  The new object is its terminal first-arrival chaos measure in
 the modulus aspect.  The statement now treats self-averaging as a serious competing
 model rather than assuming a Cox limit by terminology.  It predicts the complete last
-class process, its prime-race marks, and an explicit spectral criterion separating a
-deterministic environment from persistent random mixing.
+class process, its prime-race marks, and an explicit spectral criterion separating a deterministic environment from persistent random mixing. The first theorem is the self-averaging branch at one fixed cutoff $A$, where $\mathfrak E_{q,A}\to0$ forces the deterministic exponentially tilted Gaussian limit of $\mathcal M_{q,A}$ and an ordinary decorated Poisson law for the terminal cluster-start process.
 
 \begin{conjecture}[Nonlinear spectral response calculus for arithmetic first arrivals]\label{s9}
 Let a sequence of modulus ensembles have a small explicit-formula perturbation of the
@@ -3374,7 +3342,7 @@ For $p\nmid a$, write
 \]
 For a generating tuple $g=(g_1,\ldots,g_s)$, let $R(g)$ be its multiplicative
 relation lattice and let $\T_g\subset(\R/\Z)^s$ be the identity component of its
-annihilator.  Its dimension is the saturated multiplicative rank.
+annihilator.  Its dimension is the saturated multiplicative rank. Write $e(x)=\e^{2\pi ix}$.
 
 \begin{conjecture}[Kummer--Haar law on relation tori]\label{s11}
 Let $\Gamma\le\Q^\times$ be finitely generated and torsion-free, saturated modulo torsion (if $x^n\in\Gamma\cdot\{\pm1\}$ for some $n\ge1$ then $x\in\Gamma\cdot\{\pm1\}$), and let
@@ -3394,9 +3362,7 @@ depends on $\Gamma$ only through its saturation and the fixed Kummer conditionin
 Katz formulated horizontal Wieferich equidistribution principles for algebraic groups,
 and Shparlinski proved estimates in different horizontal and averaged regimes
 \cite{Katz,Shparlinski}.  The new content here is the exact saturated relation torus,
-full generator invariance, and disintegration under fixed Kummer classes.  It turns
-multiplicative rank into a geometric support theorem rather than a heuristic count of
-coordinates.
+full generator invariance, and disintegration under fixed Kummer classes.  It turns multiplicative rank into a geometric support theorem rather than a heuristic count of coordinates. The first decisive theorem is the Haar law on $\mathbb T_g$ for one rank-one saturated $\Gamma$ presented by two dependent generators, restricted to a single fixed compatible cyclotomic--Kummer Chebotarev class. A failure would show that the vectors $q_p(g_i)/p$ remember more of $\Gamma$ than its saturation, concentrating on a proper closed coset of $\mathbb T_g$ that no relation in $R(g)$ predicts.
 
 \begin{conjecture}[Rank-dimensional large sieve for finite logarithms]\label{s12}
 Choose a Smith-normal-form basis of the character lattice
@@ -3504,8 +3470,7 @@ random-matrix problem, with exact Smith strata retaining higher depth.  Existing
 mod-$p$ Leopoldt and random-matrix theories provide neighbouring languages
 \cite{BGKK,WangStanley,VanPeski}.  Recent number-field Wieferich results strengthen the
 arithmetic motivation without supplying this horizontal matrix law
-\cite{FelliniMurty,LiZhao}.  The first theorem is the rank-one split-prime law for a real
-quadratic field.
+\cite{FelliniMurty,LiZhao}.  The first theorem is the rank-one split-prime law for a real quadratic field. A failure would show that the matrices $L_{p,k}(\Gamma)$ favour some Smith stratum beyond its exact local Haar mass, so mod-$p$ Leopoldt defects would be governed by an arithmetic invariant outside the fixed global torus $\mathbb T_\Gamma$.
 
 \begin{conjecture}[Functorial horizontal finite logarithms on algebraic tori]\label{s15}
 Let $T/\Q$ be an algebraic torus, let $\mathcal T$ be its smooth integral model away from
@@ -3532,8 +3497,7 @@ the shrinking-target intensities after the explicit finite kernel correction.
 Katz already proposed Wieferich equidistribution beyond $\mathbb G_m$ \cite{Katz}.  The
 additional content is a matrix-valued law for a finitely generated global subgroup,
 relation-subtorus support, fixed-Frobenius disintegration, and exact functoriality under
-morphisms and isogenies.  It turns horizontal finite logarithms into a functor on the
-category of tori with arithmetic subgroups.
+morphisms and isogenies.  It turns horizontal finite logarithms into a functor on the category of tori with arithmetic subgroups. The first decisive theorem is the Haar law for the group generated by a single point of a one-dimensional nonsplit torus $T$, in a single fixed compatible Frobenius class. A failure would show that the matrices $(\ell_p(P_i)/p)_i$ concentrate on a proper closed subset of the relation subtorus, an arithmetic constraint beyond the algebraic subgroup $S$ and the integral relations among the $P_i$.
 
 \section{Programme IV: arboreal arithmetic dynamics}
 
@@ -3567,8 +3531,7 @@ For a parameter family $\mathcal F(B)$ put
 \]
 
 Assume the generic arboreal image is open, exceptional parameters have density zero,
-Artin holomorphy and GRH hold at the levels considered, and the family is in the
-large-sieve range of \cref{s17}.  Then the actual empirical resolution depth, defined by
+Artin holomorphy and GRH hold at the levels considered, and the family is in the large-sieve range of \cref{s17} below.  Then the actual empirical resolution depth, defined by
 the same total-variation threshold with prime Frobenius samples, differs from
 $n^*_{\mathcal F}(B,X;\eta)$ by $O_{\mathcal F,\eta}(1)$.
 
@@ -3596,14 +3559,11 @@ follows from explicit R\'enyi and conductor profiles on
 the natural $d^n$ complexity scale.  Large arboreal images and effective Chebotarev are
 inputs \cite{JonesSurvey,Kadets,ThornerZaman}.  Recent work on fixed-point profiles shows
 why the full class-measure tail, rather than group order alone, matters
-\cite{Farina}.  The first theorem is bounded-shift stability for one explicit index-two
-subgroup of the binary wreath tower.
+\cite{Farina}.  The first theorem is bounded-shift stability for one explicit index-two subgroup of the binary wreath tower. A failure would show that resolution depth responds to a family invariant beyond the complete Rényi profile $\psi_{\mathcal F}(\alpha)$ and the conductor energy $\mathcal A_{n,f}(X)$, so two families with matching profiles could separate by an unbounded shift.
 
 \begin{conjecture}[Arboreal family large sieve and cumulant independence]\label{s17}
 Let $\mathcal F\to\mathbb A^1$ be a generically finite-index arboreal family.  For each
-level $n$ and irreducible representation $\rho$ of the generic quotient $G_n$, let
-$\mathcal V_{n,\rho}$ be the associated middle-extension sheaf on the good parameter
-locus.  Define the geometric conductor budgets
+level $n$ and irreducible representation $\rho$ of the generic quotient $G_n$, let $\mathcal V_{n,\rho}$ be the associated middle-extension sheaf on the good parameter locus (the canonical extension of the corresponding local system across the bad parameters).  Define the geometric conductor budgets
 \[
  \mathfrak C_{n,r}=
  \sum_{\rho_1,\ldots,\rho_r}
@@ -3612,7 +3572,7 @@ locus.  Define the geometric conductor budgets
  \qquad \mathfrak C_n=\mathfrak C_{n,1},
 \]
 where the external tensor product is taken on the CRT parameter space for distinct
-primes, and the conductor includes rank, singularities, tame drop, and Swan terms.
+primes, and the conductor includes rank, the number of singular points, and the tame-drop and Swan terms (the tame and wild ramification invariants at those points).
 
 \emph{Square-root tier.}  For every $\eps>0$ and all complex coefficients
 $\alpha_{p,\rho}$,
@@ -3648,8 +3608,7 @@ This separates the two analytic inputs that a single-tier statement compresses i
 claim.  The square-root tier is a growing-monodromy large sieve in the spirit of
 Kowalski \cite{KowalskiSieve}.  The connected tier is the genuinely stronger
 cross-prime independence principle required for an occupancy limit.  The conductor
-budget is attached to the actual sheaves and their tensor products rather than to an
-undefined scalar conductor of a cover.  A failure identifies either geometric
+budget is attached to the actual sheaves and their tensor products rather than to an undefined scalar conductor of a cover. The first theorem is the connected tier at $r=3$ for one fixed level $n$, square-root cancellation of the family-averaged third connected cumulant within the range governed by $\mathfrak C_{n,3}$.  A failure identifies either geometric
 complexity missed by the sheaf conductors or arithmetic entanglement surviving all
 fixed-order trace tests.
 
@@ -3675,12 +3634,11 @@ full-process claim is made at growing degree without level-one distribution.
 Exact-period components are genuine geometric colours, and their Galois marks distinguish
 dynamical families with similar unmarked factor sizes.  The statement deliberately
 separates the full fixed-degree process from the restricted-support growing-degree law,
-in accordance with the distribution thresholds in Bharadwaj--Rodgers \cite{BR}.  The
-first theorem is a two-colour correlation law at one fixed period.
+in accordance with the distribution thresholds in Bharadwaj--Rodgers \cite{BR}.  The first theorem is a two-colour correlation law at one fixed period. A failure would show that distinct exact-period components are entangled, with the splitting fields of two factors $F_{n,j}$ sharing Frobenius information that survives conditioning on the fixed finite local valuation state.
 
 \begin{conjecture}[Complexity-uniform primitive valuation process for dynatomic values]\label{s19}
 For the critical exact-period polynomial $\Psi_n(c)$, remove its canonical greatest
-common divisor in $\Q[c]$ with the earlier critical-orbit product and denote the result
+common divisor in $\Q[c]$ with the earlier critical-orbit product $\prod_{m<n}f_c^m(0)$, in the notation of Conjecture~\ref{s18}, and denote the result
 by $\Psi_n^{\mathrm{new}}$.  Define the logarithmic arithmetic complexity
 \[
  \mathfrak H_n=
@@ -3728,7 +3686,7 @@ Degree alone does not control a growing polynomial family.  The controlling rang
 coefficient height, discriminant, and resultants, while the infinite-product conclusion
 is supported by an explicit uniform squarefull-tail assertion.  The local process still
 retains every bad-prime and collision state and remains level dependent, as primitive
-hits at a fixed prime occur by bounded time modulo $p^k$.  For the unicritical families $x^d+c$ the resultants at the first levels are units, so the stated complexity range is nonempty there.  The nearest literature treats primitive divisors and fixed-polynomial squarefree values, not this complexity-uniform
+hits at a fixed prime occur by bounded time modulo $p^k$.  For the unicritical families $x^d+c$ the resultants at the first levels are units, so the stated complexity range is nonempty there. The first decisive theorem is the primitive valuation law with its uniform squarefull tail at one fixed level of the unicritical family $x^d+c$, giving the squarefree asymptotic for that single $\Psi_n^{\mathrm{new}}$. A failure would show that $\mathfrak H_n$ is not the right complexity gauge, with some growing-level family carrying squarefull mass or valuation correlations that degree, coefficient height, discriminant, and resultants together do not see.  The nearest literature treats primitive divisors and fixed-polynomial squarefree values, not this complexity-uniform
 adelic process \cite{Primitive,KrummDynatomic}.
 
 \begin{conjecture}[Divisor-sensitive classification of dynamical gcd height]\label{s20}
@@ -3757,8 +3715,7 @@ The obstruction is not merely a common dynamical quotient.  It is a periodic geo
 relation carrying the actual divisors measured by the gcd height.  Eventual entry is the right
 notion, since a preperiodic tail can carry the divisor relation before periodicity
 begins.  Recent work resolves several set-theoretic
-dynamical-GCD problems, while this height-theoretic divisor classification is the
-additional boundary \cite{YangZhong}.  Failure would point to a new source of
+dynamical-GCD problems, while this height-theoretic divisor classification is the additional boundary \cite{YangZhong}. The first theorem is the positive-limsup direction, that eventual entry of the orbit into a divisor-compatible periodic curve $Z$ forces $\limsup h_E(F^n(P))/\max\{h(f^n(a)),h(g^n(b))\}>0$.  Failure would point to a new source of
 macroscopic Diophantine proximity outside invariant geometry.
 
 \section{Programme V: adelic factorization and sieve flow}
@@ -3785,8 +3742,7 @@ process pushes forward functorially.
 Chebotarev contributes $|C|/|G|$, divisibility by a polynomial value size-biases by the
 number of fixed roots, and Burnside's lemma normalizes the result.  Bharadwaj--Rodgers
 supply the unmarked factor-process framework \cite{BR}.  Simultaneous Galois marking,
-conditional independence, and functorial pushforward are the new content.  It connects Galois
-theory to probabilistic factorization directly.
+conditional independence, and functorial pushforward are the new content.  It connects Galois theory to probabilistic factorization directly. The first theorem is the mark law for the largest prime factor of one irreducible quadratic $f$, the two-class case where the size bias $\operatorname{fix}(C)$ already separates the marked law from the plain Chebotarev weight $|C|/|G|$. A failure would show that divisibility size-biases Frobenius by more than the fixed-root count, a coupling between factor masses $u$ and Galois marks that survives conditioning on the finite local valuation state.
 
 \begin{conjecture}[Three-scale factorization of polynomial values]\label{s22}
 Let $f\in\Z[x]$ be irreducible, sample $n\in[N,2N]$, choose
@@ -3817,8 +3773,7 @@ projections of one residual process, and no additional cross-scale coupling surv
 Raw small--large independence is false because small factors consume mass.  This
 conjecture identifies the complete conservation-corrected product structure and adds the
 mesoscopic scale that is absent from a two-scale statement.  It would justify, in one
-limit theorem, the local sieve model, the scale-invariant factor process, and the
-macroscopic partition.
+limit theorem, the local sieve model, the scale-invariant factor process, and the macroscopic partition. The first decisive theorem is the conservation-corrected joint law at one fixed prime $p$ and one normalized size band, where the only surviving dependence is the residual-mass constraint. A failure would show a cross-scale coupling between the small-prime valuation field and the residual process beyond the single residual-mass constraint, so smooth-part consumption would not exhaust the dependence between the sieve scale and the factor process.
 
 \begin{conjecture}[Adelic Gibbs gluing for reducible polynomial values]\label{s23}
 Let $f=\prod_{i=1}^s g_i$ be squarefree with irreducible components, sample
@@ -3846,8 +3801,7 @@ coupling survives after this adelic--archimedean mixture.
 \paragraph{Significance.}
 A scalar Euler factor cannot specify a point process.  This statement gives the full
 local-to-global gluing rule and includes the archimedean variable that can couple
-component sizes.  It is functorial under multiplying, splitting, or regrouping
-components.  A persistent medium-prime or archimedean coupling after the stated mixture
+component sizes.  It is functorial under multiplying, splitting, or regrouping components. The first theorem is the case of two linear components, where $Z_p(\mathbf z)$ is computable in closed form and the mixture over $t$ and $\bigotimes_p\nu_p$ already yields the full two-colour gluing law.  A persistent medium-prime or archimedean coupling after the stated mixture
 would identify a new nonadelic invariant.
 
 \begin{conjecture}[Full multivariate adelic saddle law for joint smoothness]\label{s24}
@@ -3907,8 +3861,7 @@ replaced by a scalar Euler correction at the marginal saddle.
 The statement is calibrated to the cumulative smoothness probability.  It combines exact higher $p$-adic valuations, moving
 archimedean sizes, the joint saddle displacement, Perron amplitudes, mixed curvature, and
 possible lattice effects.  Even one-polynomial smooth-value asymptotics are difficult
-\cite{MartinSmooth,Mine}.  A complete multivariate adelic saddle law would be a major new
-local--global bridge.
+\cite{MartinSmooth,Mine}.  A complete multivariate adelic saddle law would be a major new local--global bridge. A failure would show a joint smoothness dependence not produced by the exact $p$-adic partition functions and the moving archimedean sizes, an arithmetic coupling among the $f_i$ outside the saddle displacement, the Hessian $H_t$, and the lattice correction.
 
 \begin{conjecture}[Buchstab--Bateman--Horn component flow]\label{s25}
 Let $f\in\Z[x]$ be primitive, irreducible, and admissible ($\rho_f(p)<p$ for every prime $p$), and sample
@@ -4068,7 +4021,7 @@ Matom\"aki--Radziwi\l\l--Tao~\cite{MRT15} constructed a $1$-bounded multiplicati
 function that pretends to be $n^{it_k}$ for different parameters $t_k$
 on different scales, refuting the original fixed-parameter Elliott
 conjecture, and the corrected conjecture must allow the comparison
-parameter to vary with the scale $X$.  For the unimodular completely multiplicative $f_j$ of the present statement the fixed-parameter form survives, and by a rigidity argument rather than by monotonicity alone.  If $\chi n^{it_j}$ and $\chi n^{it_{j+1}}$ are within bounded truncated distance of $f_j$ at scales $X_j\le X_{j+1}$, monotonicity places both within bounded distance of $f_j$ at the common scale $X_j$, the triangle inequality places them within bounded distance of each other, and the Mertens-scale growth of $\sum_{p\le X}(1-\cos(\delta\log p))/p$ then forces $|t_{j+1}-t_j|=O(1/\log X_j)$.  The increments are summable, the parameters converge, and monotonicity converts boundedness along the scales into finiteness of the full distance at the limit parameter.  Unimodularity at the primes is what the argument uses: values of modulus less than one can suppress the Mertens mass of earlier prime ranges, which is exactly the room the scale-switching construction occupies.
+parameter to vary with the scale $X$.  For the unimodular completely multiplicative $f_j$ of the present statement the fixed-parameter form survives, and by a rigidity argument rather than by monotonicity alone.  Fix a member $f_j$ of the system, a primitive Dirichlet character $\chi$, and scales $X_k\le X_{k+1}$, the scale index $k$ being unrelated to the function index $j$. If $\chi n^{is_k}$ and $\chi n^{is_{k+1}}$ are within bounded truncated distance of $f_j$ at the scales $X_k$ and $X_{k+1}$ respectively, monotonicity of the truncated distance in the scale places both within bounded distance of $f_j$ at the common scale $X_k$, the triangle inequality places them within bounded distance of each other, and the growth in $X$ of $\sum_{p\le X}(1-\cos(\delta\log p))/p$ for fixed $\delta\ne0$ then forces $|s_{k+1}-s_k|=O(1/\log X_k)$. After passing to a geometrically growing subsequence of the scales, $\log X_{k+1}\ge2\log X_k$ say, which monotonicity permits without weakening the conclusion, the increments are summable, the parameters converge, and monotonicity converts boundedness along the scales into finiteness of the full distance at the limit parameter. Unimodularity at the primes is consumed at the triangle-inequality step: the passage through the middle function $f_j$ rests on the identity $\chi n^{is_k}\,\overline{\chi n^{is_{k+1}}}=(\chi n^{is_k}\,\bar f_j)(f_j\,\overline{\chi n^{is_{k+1}}})$, valid at the primes exactly when $|f_j(p)|=1$, and for values of modulus less than one the two comparisons decouple on the primes where the modulus drops, which is exactly the room the scale-switching construction occupies.
 \end{remark}
 
 \begin{remark}\label{t1:badprimes}
@@ -4114,7 +4067,7 @@ Euclidean Steinitz problem at the scale $O(\sqrt d)$: there $F\equiv0$,
 and ordering the vectors by their thresholds turns the display into
 the assertion that some permutation $\pi$ has all prefix sums bounded,
 $\max_{k\le m}\|\sum_{i\le k}v_{\pi(i)}\|_2\le C\sqrt d$.
-Grinberg--Sevastyanov~\cite{GS80} proved the bound $d$ in every norm, the best
+Grinberg--Sevast'yanov~\cite{GS80} proved the bound $d$ in every norm, the best
 known Euclidean bound is Banaszczyk's~\cite{Ban98,Ban12} $O(\sqrt{d+\log m})$, and so
 already in this special case the conjecture asserts the removal of the
 logarithmic term uniformly in $m$.  For the general threshold form,
@@ -4129,12 +4082,7 @@ $a_i(t)=t$, so that at $t=1/2$ every coordinate of $G(1/2)-F(1/2)$
 equals $\pm1/2$ whatever the thresholds, giving
 $\|G(1/2)-F(1/2)\|_2=\sqrt d/2$.  No decisive theorem exists: the
 first would be any $m$-uniform bound $C(d)$ for the threshold form,
-even with a $d$-dependence far worse than $\sqrt d$.  A falsification
-honesty note: the statement has content only at large $d$, since any
-bounded range of dimensions is absorbed into $C$, so small-$d$
-computer searches cannot test it, and the failure mode is an infinite
-family of monotone paths, with $d\to\infty$, every threshold rounding
-of which has discrepancy $\omega(\sqrt d)$.
+even with a $d$-dependence far worse than $\sqrt d$.  A falsification honesty note: since even the existence of a finite bound at each fixed $d$ is open, the conjecture can fail in two ways, at fixed dimension, through paths with $d$ fixed and $m\to\infty$ whose best threshold roundings have unbounded discrepancy, or asymptotically, through an infinite family of monotone paths with $d\to\infty$ every threshold rounding of which has discrepancy $\omega(\sqrt d)$. Small-$d$ computer searches at bounded $m$ cannot decide either failure mode.
 
 \section{Entropy dimension of random-free graphons}
 
@@ -4197,8 +4145,7 @@ order two, so $H(S_Z(X))\ge-\log C_Z$, and convexity of $-\log$ gives
 $\E_Z H(S_Z(X))\ge-\log\E_Z C_Z$.  For independent uniform $X$ and $Y$
 the tests are independent uniform points, two rows agree at a test with
 probability $1-d(X,Y)$, and Fubini gives the exact identity
-$\E_Z C_Z=\E_{X,Y}(1-d(X,Y))^{k}$.  Since $(1-u)^k\le\e^{-ku}$ and the
-upper mass bound gives $\rho(B(x,r))\le C_W r^s$, a dyadic shell
+$\E_Z C_Z=\E_{X,Y}(1-d(X,Y))^{k}$.  Since $(1-u)^k\le\e^{-ku}$ and the upper mass bound gives $\rho(B(x,r))\le Cr^s$, a dyadic shell
 decomposition yields, uniformly in $x$,
 \[
 \int\e^{-k\,d(x,y)}\,\dd\rho(y)
@@ -4212,19 +4159,13 @@ $H(G(n,W))\ge(n-k)(s\log k-O_W(1))=s\,n\log n-O_W(n\log\log n)$.
 
 For the upper bound, let $\delta\in(0,\tfrac12)$.  The lower mass bound
 makes the balls of radius $\delta/2$ around a maximal
-$\delta$-separated set disjoint, each of mass at least
-$c_W(\delta/2)^s$, so the row space admits a Borel partition into
+$\delta$-separated set disjoint, each of mass at least $c(\delta/2)^s$, so the row space admits a Borel partition into
 $N_\delta=O_W(\delta^{-s})$ cells of diameter at most $2\delta$.  Let
 $Q_i$ be the cell of the $i$th latent row.  Subadditivity and
 conditioning give
 $H(G(n,W))\le n\log N_\delta+\binom n2\,\E_{(a,b)}h(p_{ab})$, where
 $(a,b)$ is the cell pair of two independent rows, $p_{ab}$ is the
-conditional edge probability, and $h$ is the binary entropy.  For a
-$\{0,1\}$-valued $W$, two independent rows $X,X'$ in the cell $a$ and a
-uniform point $Y$ with row in the cell $b$ satisfy
-$p_{ab}(1-p_{ab})\le\Pp(W(X,Y)\ne W(X',Y))$, and averaging over $b$
-with its mass removes the cell restriction, so
-$\E_{(a,b)}[p_{ab}(1-p_{ab})]\le\E_a\E_{X,X'\in a}\,d(X,X')\le2\delta$.
+conditional edge probability, and $h$ is the binary entropy.  For a $\{0,1\}$-valued $W$, draw independent latent points $X,X'$ with rows in the cell $a$ and independent latent points $Y,Y'$ with rows in the cell $b$, so that $W(X,Y)$ and $W(X',Y')$ are independent indicators of mean $p_{ab}$ and $p_{ab}(1-p_{ab})=\tfrac12\Pp(W(X,Y)\ne W(X',Y'))$, while the union bound gives $\Pp(W(X,Y)\ne W(X',Y'))\le\Pp(W(X,Y)\ne W(X',Y))+\Pp(W(X',Y)\ne W(X',Y'))$. Averaging each term over the opposite cell with its mass removes that cell restriction, so $\E_{(a,b)}[p_{ab}(1-p_{ab})]\le\tfrac12\bigl(\E_a\E_{X,X'\in a}\,d(X,X')+\E_b\E_{Y,Y'\in b}\,d(Y,Y')\bigr)\le2\delta$.
 The bound $h(p)\le\varphi(p(1-p))$ with the concave increasing
 $\varphi(u)=2u(1+\log(1/u))$ and Jensen give
 $\E_{(a,b)}h(p_{ab})\le\varphi(2\delta)=O(\delta\log(1/\delta))$.
@@ -4260,7 +4201,7 @@ $H(G(n,W))=o(n^2)$, and every subquadratic growth order occurs for
 suitable random-free graphons, so no hypothesis short of a
 metric-measure condition on the row space can pin the coefficient of
 $n\log n$, and Ahlfors regularity is exactly the condition that does.
-The decisive theorem half-exists: the limit law is provable from regularity by the collision-entropy and quantization bounds of \cref{t3:limit}, so the first theorem for the conjecture proper is the linear error term for one explicit self-similar threshold graphon of noninteger $s$, together with a proof of clause (i).  The failure mode is a genuinely growing correction: an Ahlfors regular random-free graphon whose entropy exceeds $s\,n\log n+C\,n$ for every $C$ would show that the resolution-$1/n$ coding loss is intrinsic rather than an artifact of the two-scale method.
+The decisive theorem half-exists: the limit law is provable from regularity by the collision-entropy and quantization bounds of \cref{t3:limit}, so the first theorem for the conjecture proper is the linear error term for one explicit self-similar threshold graphon of noninteger $s$, together with a proof of clause (i).  The failure mode is a genuinely growing correction: an Ahlfors regular random-free graphon whose entropy exceeds $s\,n\log n+C\,n$ for every $C$ would show that the resolution-$1/n$ coding loss is intrinsic rather than an artefact of the two-scale method.
 
 \section{A Hessian principle for isolated microcanonical graph phases}
 
@@ -4310,7 +4251,7 @@ equal to $1$ on a product of two vertex intervals exactly when the
 corresponding pair is an edge, and put
 $\mathbf t(G)=\mathbf t(U_G)$ and $\widehat p(G)=p(U_G)$.
 
-Assume the following regularity hypotheses.
+Fix $0<\eta<1$ and assume the following regularity hypotheses.
 
 \emph{(H1)} The supremum of $\mathcal S(U)$ over
 $\mathbf t(U)=\mathbf a$ is attained at a unique coloured graphon
@@ -4340,8 +4281,7 @@ the conditioning set
 $\{G:\|\mathbf t(G)-\mathbf a\|_\infty\le n^{-1-\eta}\}$ over graphs
 $G$ on $[N_n]$ with the pinned colour classes is nonempty.
 
-Fix $0<\eta<1$, let $G_n$ be uniform on the conditioning set of (H6),
-let $\widehat p_n=\widehat p(G_n)$, and let $\Pi_T$ be orthogonal
+Let $G_n$ be uniform on the conditioning set of (H6), let $\widehat p_n=\widehat p(G_n)$, and let $\Pi_T$ be orthogonal
 projection of $\R^D$ onto $T$.
 
 \begin{conjecture}[Hessian principle for an isolated microcanonical phase]\label{t4}
@@ -4367,8 +4307,7 @@ after projection by $\Pi_T$ and centring at $\E\,\widehat p_n$.  The
 nearest literature boundary is the Chatterjee--Varadhan~\cite{CV11} large
 deviation principle, which supplies the $n^2$ normalization and the
 variational description of conditioned dense graphs, together with the
-multipodal structure theory of Kenyon--Radin--Ren--Sadun~\cite{KRRS17} and
-Neeman--Radin--Sadun~\cite{NRS23}, which makes hypotheses (H1)--(H4) verifiable in
+multipodal structure theory of Kenyon--Radin--Ren--Sadun~\cite{KRRS17} and Neeman--Radin--Sadun~\cite{NRS23} (constrained entropy maximizers are step-function graphons with finitely many blocks), which makes hypotheses (H1)--(H4) verifiable in
 concrete constrained ensembles.  A scale audit disposes of one
 suspect: a single edge toggle moves each coordinate of
 $\mathbf t(G)$ by $O(n^{-2})$, so the lattice of attainable constraint
@@ -4380,11 +4319,10 @@ oscillation.  Nonemptiness (H6) is a genuine hypothesis and may fail
 along subsequences of $n$ for arithmetic reasons, in which case the
 statement is asserted only along the subsequence where it holds.  No
 decisive theorem exists at this generality: the natural first one is
-the case $q=1$ with the edge-triangle constraint pair in a region
-where the entropy maximizer is bipodal and (H1)--(H5) have been
+the case $q=1$ with the edge-triangle constraint pair in a region where the entropy maximizer is bipodal, a two-block step function, and (H1)--(H5) have been
 verified.  The failure mode is an isolated nondegenerate phase whose
 tangent fluctuations are non-Gaussian or live at a different scale,
-which would necessarily come from a failure of Laplace-ratio control.  The conjectural content is exactly that (H1)--(H6) already force this local regularity: a $z$-dependent subexponential prefactor in the microcanonical counts would leave every hypothesis intact while tilting the limit away from $N_T(0,A^{-1})$, and the conjecture asserts that isolated nondegenerate phases exclude it.
+which would necessarily come from a failure of Laplace-ratio control.  The conjectural content is exactly that (H1)--(H6) already force this local regularity: a subexponential prefactor in the microcanonical counts varying across the conditioning window would leave every hypothesis intact while tilting the limit away from $N_T(0,A^{-1})$, and the conjecture asserts that isolated nondegenerate phases exclude it.
 
 \section{Sharp stability of entropy idempotence on finite abelian groups}
 
@@ -4462,13 +4400,11 @@ under self-convolution.  No decisive theorem exists: the natural
 first one is precisely that $\Z/p\Z$ specialization with some constant.  The defect also has the exact form $H(\mu*\mu)-H(\mu)=\E_Y D_{\mathrm{KL}}(\tau_Y\mu\,\|\,\mu*\mu)$, with $\tau_y$ translation by $y$, so a small defect makes typical support-translates of $\mu$ close to $\mu*\mu$ in relative entropy, and Pinsker's inequality converts that closeness to total variation: the route to a universal constant is to upgrade approximate invariance under many translations to proximity to a coset uniform.  The failure mode is a sequence $\mu_n$ with
 $\Delta(\mu_n)\to0$ whose coset distance is much larger than
 $\sqrt{\Delta(\mu_n)}$, and the natural hunting ground is measures
-straddling several subgroup scales inside groups with rich subgroup lattices, a family that computational search through $\Z/2^{8}\Z$ leaves below the Gaussian ratio.  The assertion has three layers of decreasing confidence: the existence of some universal constant, the sharp value $2/\log2$, and the classification of near-extremizers as the discretized Gaussians at intermediate scale.
+straddling several subgroup scales inside groups with rich subgroup lattices, a family for which computational search through $\Z/2^{8}\Z$ finds no ratio $\|\mu-u_{a+H}\|_{\mathrm{TV}}^2/\Delta(\mu)$ above the discretized-Gaussian value $2/\log2$.  The assertion has three layers of decreasing confidence: the existence of some universal constant, the sharp value $2/\log2$, and the classification of near-extremizers as the discretized Gaussians at intermediate scale.
 
 \section{Stationary convolution-entropy rigidity}
 
-Let $K$ be a finite abelian group and $X=K^{\Z}$ with coordinatewise
-addition and the left shift $\sigma$.  Let $\mu$ be a
-$\sigma$-invariant ergodic Borel probability measure on $X$, and write
+Let $K$ be a finite abelian group and $\Omega=K^{\Z}$ with coordinatewise addition and the left shift $\sigma$. Let $\mu$ be a $\sigma$-invariant ergodic Borel probability measure on $\Omega$, and write
 $h_\sigma(\mu)$ for its Kolmogorov--Sinai entropy.  Define the
 translational stabilizer
 \[
@@ -4508,8 +4444,7 @@ Suppose $h_\sigma((\pi_\mu)_*\mu)=0$.  Assume the following two
 ingredients.
 
 \emph{(a)} The Abramov--Rokhlin entropy addition formula holds for the
-Haar-fibred compact group extension
-$\pi_\mu:(X,\mu,\sigma)\to(X/H_\mu,(\pi_\mu)_*\mu,\sigma)$ and for the
+Haar-fibred compact group extension $\pi_\mu:(\Omega,\mu,\sigma)\to(\Omega/H_\mu,(\pi_\mu)_*\mu,\sigma)$ and for the
 corresponding extension of $\mu*\mu$, so that each total entropy
 splits as the quotient entropy plus the common Haar fibre entropy,
 the conditional measures of $\mu$ and of $\mu*\mu$ over the quotient
@@ -4544,8 +4479,7 @@ mixing two-state Markov chains would be the first.  The failure-mode
 honesty note is this: the natural counterexample hunting ground is
 the Ornstein--Weiss~\cite{OW75} bilaterally deterministic processes, positive
 entropy processes whose distant past and distant future jointly
-determine the whole trajectory, together with $T,T^{-1}$-type
-constructions, and no search has yet probed either family, so the negation of the conjecture has an unexplored natural habitat.  The gap the rigidity must close is quantitative: equality of entropy rates asserts only that the block mutual information $I(X_{1:n}+Y_{1:n};Y_{1:n})$ is $o(n)$, not that it is bounded, so sublinear information spread through arbitrarily long-range structure is the resource a counterexample would exploit.  The natural staircase of evidence runs from independent letters through Markov and mixing processes to completely positive entropy, and a proof for mixing two-state Markov chains would already test whether the stabilizer is the only equality mechanism.
+determine the whole trajectory, together with $T,T^{-1}$-type constructions (skew products driven by a random walk, in the style of Kalikow), and no search has yet probed either family, so the negation of the conjecture has an unexplored natural habitat.  The gap the rigidity must close is quantitative: equality of entropy rates asserts only that the block mutual information $I(X_{1:n}+Y_{1:n};Y_{1:n})$ is $o(n)$, not that it is bounded, so sublinear information spread through arbitrarily long-range structure is the resource a counterexample would exploit.  The natural staircase of evidence runs from independent letters through Markov and mixing processes to completely positive entropy.
 
 \section{Stress tests and independent recomputation}\label{sec:audit}
 
@@ -4573,7 +4507,7 @@ falsifiable-by-instance statement was pushed at least a decade past its
 original bound: exception hunts across $(10^8,10^9]$ for
 Conjectures~\ref{c15}, \ref{c14}, \ref{c17}, \ref{c13}; the uniformity
 of Conjecture~\ref{c16} stressed on $d\le6000$; the statistical laws
-re-tested at $4\cdot10^9$ (Conjectures~\ref{c21}, \ref{c25},
+re-tested at $4\times10^9$ (Conjectures~\ref{c21}, \ref{c25},
 \ref{c18}, \ref{c19}, and~\ref{c20}, and the quintuplet calibration
 count reported with Conjecture~\ref{c16}); the recovery clause of
 Conjecture~\ref{c22} tested on fresh moduli $q\in(3000,6000]$.  No
@@ -4704,7 +4638,7 @@ Acta Arith.\ 148 (2011), no.~2, 153--187; arXiv:0805.4682.
 
 \bibitem{OSHP} T.~Oliveira e Silva, S.~Herzog, and S.~Pardi,
 \emph{Empirical verification of the even Goldbach conjecture and
-computation of prime gaps up to $4\cdot10^{18}$},
+computation of prime gaps up to $4\times10^{18}$},
 Math.\ Comp.\ 83 (2014), no.~288, 2033--2060.
 DOI: 10.1090/S0025-5718-2013-02787-1.
 

@@ -153,7 +153,7 @@ and
 \[
 T(x)\;=\;\frac1{2\log^2x}
 \sum_{\substack{q\le\sqrt x\\ q^2-2\ \mathrm{prime}}}
-\log q\,\log(q^2-2),
+\log q\,\log(q^2-2).
 \]
 Then:
 \emph{(i)} [drift law, at drift-scale normalization] the clause
@@ -302,15 +302,14 @@ $(3,5,7)$, so no overlap term exists) and
 \[
 G(H)\;=\;\sum_{1\le h\le H}\Bigl(1-\frac hH\Bigr)\bigl(R(h)-1\bigr),
 \]
-the derived identity is
+the derived identity (clause \emph{(i)}) is
 \[
 \frac{\operatorname{Var}_t\,\pi_2(t;H)}{\mathbb E_t\,\pi_2(t;H)}
 \;=\;1+\frac{\SG(2)\,\bigl(2G(H)-1\bigr)}{\log^2x}
 +o\!\Bigl(\frac1{\log^2 x}\Bigr):
 \]
 with $p=\SG(2)/\log^2x$ the per-site intensity, the variance is
-$Hp(1-p)+2p^2HG(H)$, so $\operatorname{Var}/\mathbb E=1-p+2pG(H)$
----the Bernoulli diagonal term $-p=-\SG(2)/\log^2x$ is of exactly
+$Hp(1-p)+2p^2HG(H)$, so $\operatorname{Var}/\mathbb E=1-p+2pG(H)$---the Bernoulli diagonal term $-p=-\SG(2)/\log^2x$ is of exactly
 the order of the claimed error and cannot be dropped (it is the same
 diagonal that, in the single-prime case, merges into
 Montgomery--Soundararajan's constant $\gamma+\log2\pi-1$).  With
@@ -322,8 +321,7 @@ Montgomery--Soundararajan's reduction of the prime-count variance to
 $\sum_{h\le H}\SG(h)(H-h)$ \cite{MS}.  Clause (i) is a
 \emph{conditional proposition}, not an independent conjecture: given
 quantitative Hardy--Littlewood for $4$-tuples, the reduction
-follows.  The conjectural clause is (ii): $-G(H)/\log H$ diverges
----the pinned average grows strictly faster than the single-prime
+follows.  The conjectural clause is (ii): $-G(H)/\log H$ diverges---the pinned average grows strictly faster than the single-prime
 secondary term $\tfrac12(\log H+\gamma+\log2\pi-1)$, so pair counts
 in windows are more sub-Poisson than prime counts---with the caveat that
 data to $H=3000$ cannot distinguish divergence from a pure
@@ -378,11 +376,11 @@ dyadic mean.
 \begin{conjecture}[The Goldbach lane race; apparently new]\label{c25}
 For $n\equiv2\pmod4$ let $R_1(n)$, $R_3(n)$ be the ordered Goldbach
 representation counts in the lanes $p\equiv q\equiv1$ and
-$p\equiv q\equiv3\pmod4$ (Conjecture~\ref{c15}), and
+$p\equiv q\equiv3\pmod4$ (the lane convention of the Martin benchmark recorded at Conjecture~\ref{c15}), and
 $D(n)=R_3(n)-R_1(n)$.  Prime-square terms $n=q^2+p$ ($q$ odd prime)
 land \emph{exclusively} in the $(1,1)$ lane, since
 $q^2\equiv1\pmod4$ and then $n-q^2\equiv1\pmod4$ automatically.
-Consequently the $(3,3)$ lane leads on average: with
+Consequently the $(3,3)$ lane leads on average. Define
 \[
 D_{\mathrm{sys}}(n)\;=\;\frac{2}{\bar\ell(n)}
 \sum_{\substack{q \text{ odd prime},\ q\le\sqrt n\\ n-q^2 \text{ prime}}}
@@ -438,8 +436,7 @@ n-p$, so $n-p$ is
 composite except in the diagonal case $n=2p$, which would otherwise
 distort the hazard at one atypical point), and
 time-change by the expected-arrivals clock
-$U(n)=\SG(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$.  Then:
-The ensemble is fixed first, since $U(n)$ is deterministic at each
+$U(n)=\SG(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$.  The ensemble is fixed first, since $U(n)$ is deterministic at each
 $n$ and an expectation therefore needs a declared measure: for a scale
 $X$,
 \[
@@ -449,7 +446,7 @@ $X$,
 \qquad
 \Theta_G(X)=\bigl(1-\mathbb E_XU\bigr)\log X.
 \]
-\emph{(i)} [limit law] under $\mathbb E_X$-sampling,
+Then: \emph{(i)} [limit law] under $\mathbb E_X$-sampling,
 $U\Rightarrow\mathrm{Exp}(1)$ as $X\to\infty$;
 \emph{(ii)} [canonical ordering deficit]
 $\Theta_G(X)\to\Theta_G>0$---the Goldbach sibling of the
@@ -505,8 +502,7 @@ exact factorization persists to $300$.
 the Wieferich ledger; single-base heuristic previously stated
 \cite{CDP}, the vertical multibase law apparently new]\label{c23}
 With $q_p(a)=(a^{p-1}-1)/p\bmod p$ (defined for primes $p\nmid a$;
-all clauses below range over such $p$ only) and $q_p=q_p(2)$, five
-clauses:
+all clauses below range over such $p$ only) and $q_p=q_p(2)$, clauses \emph{(0)}--\emph{(v)}, stated multibase group first:
 \emph{(0)} [structure, classical] $q_p(ab)\equiv q_p(a)+q_p(b)
 \pmod p$ (the Eisenstein--Lerch homomorphism; verified exactly on
 every tested prime), so for multiplicatively \emph{dependent} bases
@@ -517,7 +513,7 @@ multiplicatively \emph{independent} bases the vector equidistributes
 on the full torus as $p$ varies---the \emph{vertical} joint law,
 complementing the fixed-$p$, varying-base statistics of
 Ostafe--Shparlinski and Cobeli--Zaharescu---with correlations
-vanishing and the same LIL calibration as (i);
+vanishing and the same LIL calibration as (i) below;
 \emph{(v)} [simultaneous Wieferich] the expected count of $p\le x$
 with $q_p(2)=q_p(3)=0$ has convergent sum $\sum1/p^2$: at most
 finitely many simultaneous Wieferich primes exist (the single-base
@@ -800,7 +796,7 @@ limit; so the moments of
 $C(d)$ over even $d\le D$ converge, as $D\to\infty$, to
 \emph{derived} Euler products; in particular
 \[
-\frac1{\#}\sum_{2\mid d\le D}C(d)\to\bar C=2.7456\ldots,
+\frac1{\#\{2\mid d\le D\}}\sum_{2\mid d\le D}C(d)\to\bar C=2.7456\ldots,
 \qquad
 \operatorname{sd}\bigl(C(d)\bigr)\to1.6840\ldots,
 \]
@@ -913,8 +909,7 @@ ensemble: for a scale $X$, let
 $\mathbb E_X$ average over odd $n\in(X,2X]$ of the given residue
 class mod $8$ with weight proportional to $1/n$ (the logarithmic
 sampling measure, as at Conjectures~\ref{c15} and~\ref{c25}).
-Define, per class, the \emph{clean-minus-contaminated} difference
-with explicit sign: $D(n)=R_{\mathrm o}-R_{\mathrm e}$ for
+Define, per class, with $R_{\mathrm o}(n)$ and $R_{\mathrm e}(n)$ the numbers of representations $n=p+2k^2$ with $k$ odd and $k$ even respectively, the \emph{clean-minus-contaminated} difference with explicit sign: $D(n)=R_{\mathrm o}-R_{\mathrm e}$ for
 $n\equiv1\pmod 8$ (even lane contaminated),
 $D(n)=R_{\mathrm e}-R_{\mathrm o}$ for $n\equiv3\pmod 8$, and
 $D(n)=R_{\mathrm e}-R_{\mathrm o}$ (sign immaterial) on the null
@@ -1098,7 +1093,7 @@ $\omega=1$ identically.  Then:
 $\mathbb E_a[\omega(p)]=3\cdot\frac{p-1}{3p}+\frac1p=1$ exactly at
 every $p$, so the derived mean of $C(a)$ is exactly $1$---the cubic
 analogue of the Korevaar--te Riele mean-value-one theorem for linear
-prime-pair constants (arXiv:0806.1667), here a one-line computation
+prime-pair constants, here a one-line computation
 at each finite level; passing the mean through the infinite product
 needs more than almost-sure convergence, and the needed ingredient is
 on hand: the convergent
@@ -1122,11 +1117,7 @@ law;
 \begin{conjecture}[Conjecture F as a family; the core is previously
 stated, \cite{HL1923}, cf.~\cite{JW}]\label{c24}
 For odd $A$ let $Q_A(N)=\#\{n\le N:\ n^2+n+A \text{ prime}\}$ and
-$C(A)=C(x^2+x+A)$.  Then, for every fixed $B>0$,
-$Q_A(N)=C(A)\,I_A(N)\,(1+o(1))$ uniformly over odd
-$1\le A\le(\log N)^B$, with the residual field obeying the analogue
-of Conjecture~\ref{c16}(ii), kernel derived and probability space
-specified: for $t$ uniform on $[N,2N]$ and window length $H\le
+$C(A)=C(x^2+x+A)$.  Then: \emph{(i)} for every fixed $B>0$, $Q_A(N)=C(A)\,I_A(N)\,(1+o(1))$ uniformly over odd $1\le A\le(\log N)^B$; \emph{(ii)} [window field] the residual field obeys the analogue of Conjecture~\ref{c16}(ii), kernel derived and probability space specified: for $t$ uniform on $[N,2N]$ and window length $H\le
 N^{o(1)}$, let
 $Q_A(t;H)=\#\{t<n\le t+H:\ n^2+n+A \text{ prime}\}$ (mean
 ${\asymp}H/2\log N$, which sets the regime).  Two members share the
@@ -1227,9 +1218,7 @@ three conditions do hold, the configuration being $(23,25,29)$, but
 its start $23\equiv3\pmod5$ lies outside the triplet start classes
 $\{1,2\}$, so the single term is harmless).  Triplet starts lie in classes $n\equiv1,2\pmod 5$ (single bounded exception $(5,7,11)$, start $\equiv0$), and the surviving configuration has
 start $q^2-2\equiv2$: class $2$ is contaminated and class $1$ leads,
-in the drift-scale form of Conjecture~\ref{c21}(i) (a normalization
-at the noise scale, $\M_x((D-T_3)/\sqrt{\pi_3})$, would be vacuous
-for the coefficient, exactly as at the pair races):
+in the drift-scale form of Conjecture~\ref{c21}(i):
 \[
 \M_x\!\left(
 \frac{\bigl(\pi_3(t;5,1)-\pi_3(t;5,2)\bigr)\log^3t}{\sqrt t}\right)
@@ -1242,8 +1231,7 @@ T_3(x)=\frac1{\log^3x}\!\!
 ($c_3$ exists and is the Bateman--Horn constant of the triple
 $(q,\,q^2-2,\,q^2+4)$, since the census sum is $\sim c_3\sqrt x$;
 convergence of the logarithmic mean at this normalization is the
-same Rubinstein--Sarnak-type structure hypothesis as at
-Conjecture~\ref{c21}(i)), with drift $\asymp\sqrt x/\log^3x$, one logarithm weaker than the pair races, and drift-to-noise $\asymp\log^{-3/2}x$ against their $\log^{-1}$, a scale the calculus itself predicts and the
+same Rubinstein--Sarnak-type structure hypothesis as at Conjecture~\ref{c21}(i); a normalization at the noise scale, $\M_x\bigl((D-T_3)/\sqrt{\pi_3}\bigr)$ with $D$ the class difference displayed above and $\pi_3$ the total triplet count to $t$, would be vacuous for the coefficient, exactly as at the pair races), with drift $\asymp\sqrt x/\log^3x$, one logarithm weaker than the pair races, and drift-to-noise $\asymp\log^{-3/2}x$ against their $\log^{-1}$, a scale the calculus itself predicts and the
 verification must respect.  The mechanism clause and the averaging
 clause are asserted separately, as at Conjecture~\ref{c21}(i).
 \end{conjecture}
@@ -1270,8 +1258,7 @@ q\log(q^2+6)$, and $c_A,c_B$ their drift-scale limits
 ($c_A=\lim T_A\log^2x/\sqrt x$, the Bateman--Horn constant of
 $(q,q^2-6)$, likewise $c_B$ for $(q,q^2+6)$), the predicted drift
 vector, in the drift-scale limiting-log-mean sense of
-Conjecture~\ref{c21}(i) (an $\M_x$-over-$\sqrt\pi$ normalization would
-be coefficient-blind), is:
+Conjecture~\ref{c21}(i) (an $\M_x$-over-$\sqrt\pi$ normalization would be coefficient-blind), is, writing $\pi(a)$ for the number of sexy starts up to $t$ in class $a$ of the modulus in question:
 mod 5: $\M_x\bigl((\pi(2)-\pi(3))\log^2t/\sqrt t\bigr)\to c_A$,
 $\M_x\bigl((\pi(2)-\pi(1))\log^2t/\sqrt t\bigr)\to c_B$ (class $2$
 \emph{clean}); mod 8:
@@ -1306,15 +1293,11 @@ matters;
 $L_p$ simultaneously prime;
 \emph{(iii)} [calibration clause, quantitative] the
 naive joint accounting---probability
-$(\e^{\gamma}\log p/(p\log\phi))^2$ per index---assigns the
-catalogued
-index
-$p=148091$ (OEIS A080327; \emph{both} $F_p$ and $L_p$ are
+$(\e^{\gamma}\log p/(p\log\phi))^2$ per index---assigns prior mass about $1.4\times10^{-2}$ to the whole index range beyond $10^4$, in which the catalogued index $p=148091$ falls (OEIS A080327; \emph{both} $F_p$ and $L_p$ are
 \emph{probable} primes---numbers of roughly $30{,}950$ digits, with
 Lucas numbers proved prime only up to index $56003$---so everything
 recorded here is conditional on both probable-prime classifications,
-for which no Baillie--PSW pseudoprime is known: no unconditional
-refutation is claimed from uncertified numbers) prior mass about $1.4\times10^{-2}$ beyond $10^4$.  That rare-event datum is recorded
+for which no Baillie--PSW pseudoprime is known: no unconditional refutation is claimed from uncertified numbers). That rare-event datum is recorded
 descriptively, with no significance claim attached to it: the model
 was examined after the event was known, and no test protocol was
 fixed in advance.  A single surprising event is
@@ -1359,8 +1342,7 @@ variance itself is $\asymp\log N$), \emph{and}---since pairwise
 control alone cannot preclude higher-order dependence---the
 higher-cumulant condition
 $\kappa_r(F_+-F_-)=o\bigl((\log N)^{r/2}\bigr)$ for each fixed
-$r\ge3$, the method-of-moments sufficient condition.  Neither is
-imported from an independence model; whether they hold for the
+$r\ge3$, the method-of-moments sufficient condition.  None of the three is imported from an independence model; whether they hold for the
 arithmetic dependence across
 factorial indices is the open
 component of this clause.
@@ -1511,8 +1493,7 @@ Fix admissible motifs $H_1,\ldots,H_m$ and put
  \E_x\exp\!\left(\sum_{i=1}^m z_iY_{H_i}(x,L)\right).
 \]
 For every fixed total degree $R$, the degree-$\le R$ Taylor polynomial of
-$\log\mathcal Z_{X,L}$ has a uniform asymptotic expansion indexed by connected exact-
-overlap diagrams of at most $R$ translated motifs.  A diagram whose coincidence hypergraph connects the $r$ translated sets
+$\log\mathcal Z_{X,L}$ has a uniform asymptotic expansion indexed by connected exact-overlap diagrams of at most $R$ translated motifs.  A diagram whose coincidence hypergraph connects the $r$ translated sets
 $H_{i_1}+t_1,\ldots,H_{i_r}+t_r$ contributes, at the leading order of its stratum,
 \[
  W_\tau(L;\mathbf t)\,
@@ -1541,11 +1522,7 @@ Fix a finite motif family $H_1,\ldots,H_m$.  Apply the degree-two specialization
 $s_1\succ s_2\succ\cdots$ (lexicographically in powers of $L$, $\log X$, and the
 renormalized disjoint scales).  In the mesoscopic range scales sharing the same total
 power of $L$ and of logarithms differ only by powers of $\theta=\log L/\log X$ and
-merge into a single stratum whose limiting form is polynomial in $\theta$.  The
-filtration, the graded convergence, and the eigenvalue asymptotics below are asserted
-for every fixed $\theta\in(\eps,1-\eps)$, with each $A_\nu=A_\nu(\theta)$
-nondegenerate for every such $\theta$.  Recursively subtract the earlier strata and let $A_\nu$
-be the limiting covariance form at scale $s_\nu$, and put
+merge into a single stratum whose limiting form is polynomial in $\theta$.  The filtration, the graded convergence, and the eigenvalue asymptotics below are asserted for every fixed $\theta\in(\eps,1-\eps)$. Recursively subtract the earlier strata and let $A_\nu=A_\nu(\theta)$ be the limiting covariance form at scale $s_\nu$, asserted nondegenerate for every such $\theta$, and put
 \[
  \mathcal W_\nu=\bigcap_{\mu<\nu}\ker A_\mu.
 \]
@@ -1659,7 +1636,7 @@ The set $\mathcal T_H$ is symmetric under $t\mapsto-t$, and the cluster-start fr
 counts, for each occurrence, only whether it has an overlapping predecessor, so the sum
 is restricted to $t<0$ and equals half the symmetric sum over $\mathcal T_H$.
 If no admissible overlap exists, $\theta_X(H)=1+o((\log X)^{-M})$ for every fixed
-$M$.  Higher corrections are the connected Ursell sums of anchored polymers ordered by
+$M$.  Higher corrections are the connected Ursell sums (the signed connected sums of cluster-expansion theory) of anchored polymers ordered by
 $d_H(A)$.  These finite-$X$ Gibbs expansions are projectively consistent and
 subcritical, and after division by the low-zero intensity the cluster-start process is
 Poisson to each fixed order of this triangular expansion.
@@ -1692,7 +1669,7 @@ class $a$ and put
  \delta_{\Li(p)/(q-1)}.
 \]
 The probability space chooses $q$ uniformly among primes in $[Q,2Q]$ and then chooses
-$a$ uniformly from $\Fq_q^\times$.  Write $e(x)=\e^{2\pi ix}$.
+$a$ uniformly from $\Fq_q^\times$.
 
 \begin{conjecture}[Connected first-arrival functional]\label{s6}
 Let $w^{\mathrm c}_{r,Q}$ be the connected factorial-cumulant measure of the random point
@@ -1779,8 +1756,7 @@ terminal cluster-start process is Poisson with directing measure
 \]
 At finite modulus the cluster-start thinning enters through the terminal extremal
 index $\theta_{\mathrm{occ}}(q)$, the analogue for the last classes of the
-cluster-start fraction $\theta_X(H)$ of \cref{s4}, together with the terminal
-connected-polymer decorations of \cref{s6}.  Both corrections enter at the first
+cluster-start fraction $\theta_X(H)$ of \cref{s4}, together with the terminal connected decorations supplied by the hierarchy of \cref{s6}.  Both corrections enter at the first
 nonzero connected scale and vanish in the successive limit, so
 $\theta_{\mathrm{occ}}(q)\to1$ and the limiting directing measure carries no
 cluster factor.
@@ -1876,7 +1852,7 @@ For $p\nmid a$, write
 \]
 For a generating tuple $g=(g_1,\ldots,g_s)$, let $R(g)$ be its multiplicative
 relation lattice and let $\T_g\subset(\R/\Z)^s$ be the identity component of its
-annihilator.  Its dimension is the saturated multiplicative rank.
+annihilator.  Its dimension is the saturated multiplicative rank. Write $e(x)=\e^{2\pi ix}$.
 
 \begin{conjecture}[Kummer--Haar law on relation tori]\label{s11}
 Let $\Gamma\le\Q^\times$ be finitely generated and torsion-free, saturated modulo torsion (if $x^n\in\Gamma\cdot\{\pm1\}$ for some $n\ge1$ then $x\in\Gamma\cdot\{\pm1\}$), and let
@@ -2029,8 +2005,7 @@ For a parameter family $\mathcal F(B)$ put
 \]
 
 Assume the generic arboreal image is open, exceptional parameters have density zero,
-Artin holomorphy and GRH hold at the levels considered, and the family is in the
-large-sieve range of \cref{s17}.  Then the actual empirical resolution depth, defined by
+Artin holomorphy and GRH hold at the levels considered, and the family is in the large-sieve range of \cref{s17} below.  Then the actual empirical resolution depth, defined by
 the same total-variation threshold with prime Frobenius samples, differs from
 $n^*_{\mathcal F}(B,X;\eta)$ by $O_{\mathcal F,\eta}(1)$.
 
@@ -2053,9 +2028,7 @@ subgroup changes only the bounded shift.
 
 \begin{conjecture}[Arboreal family large sieve and cumulant independence]\label{s17}
 Let $\mathcal F\to\mathbb A^1$ be a generically finite-index arboreal family.  For each
-level $n$ and irreducible representation $\rho$ of the generic quotient $G_n$, let
-$\mathcal V_{n,\rho}$ be the associated middle-extension sheaf on the good parameter
-locus.  Define the geometric conductor budgets
+level $n$ and irreducible representation $\rho$ of the generic quotient $G_n$, let $\mathcal V_{n,\rho}$ be the associated middle-extension sheaf on the good parameter locus (the canonical extension of the corresponding local system across the bad parameters).  Define the geometric conductor budgets
 \[
  \mathfrak C_{n,r}=
  \sum_{\rho_1,\ldots,\rho_r}
@@ -2064,7 +2037,7 @@ locus.  Define the geometric conductor budgets
  \qquad \mathfrak C_n=\mathfrak C_{n,1},
 \]
 where the external tensor product is taken on the CRT parameter space for distinct
-primes, and the conductor includes rank, singularities, tame drop, and Swan terms.
+primes, and the conductor includes rank, the number of singular points, and the tame-drop and Swan terms (the tame and wild ramification invariants at those points).
 
 \emph{Square-root tier.}  For every $\eps>0$ and all complex coefficients
 $\alpha_{p,\rho}$,
@@ -2115,7 +2088,7 @@ full-process claim is made at growing degree without level-one distribution.
 
 \begin{conjecture}[Complexity-uniform primitive valuation process for dynatomic values]\label{s19}
 For the critical exact-period polynomial $\Psi_n(c)$, remove its canonical greatest
-common divisor in $\Q[c]$ with the earlier critical-orbit product and denote the result
+common divisor in $\Q[c]$ with the earlier critical-orbit product $\prod_{m<n}f_c^m(0)$, in the notation of Conjecture~\ref{s18}, and denote the result
 by $\Psi_n^{\mathrm{new}}$.  Define the logarithmic arithmetic complexity
 \[
  \mathfrak H_n=
@@ -2540,7 +2513,7 @@ equal to $1$ on a product of two vertex intervals exactly when the
 corresponding pair is an edge, and put
 $\mathbf t(G)=\mathbf t(U_G)$ and $\widehat p(G)=p(U_G)$.
 
-Assume the following regularity hypotheses.
+Fix $0<\eta<1$ and assume the following regularity hypotheses.
 
 \emph{(H1)} The supremum of $\mathcal S(U)$ over
 $\mathbf t(U)=\mathbf a$ is attained at a unique coloured graphon
@@ -2570,8 +2543,7 @@ the conditioning set
 $\{G:\|\mathbf t(G)-\mathbf a\|_\infty\le n^{-1-\eta}\}$ over graphs
 $G$ on $[N_n]$ with the pinned colour classes is nonempty.
 
-Fix $0<\eta<1$, let $G_n$ be uniform on the conditioning set of (H6),
-let $\widehat p_n=\widehat p(G_n)$, and let $\Pi_T$ be orthogonal
+Let $G_n$ be uniform on the conditioning set of (H6), let $\widehat p_n=\widehat p(G_n)$, and let $\Pi_T$ be orthogonal
 projection of $\R^D$ onto $T$.
 
 \begin{conjecture}[Hessian principle for an isolated microcanonical phase]\label{t4}
@@ -2628,9 +2600,7 @@ vanishes exactly on the proposed extremizers.
 
 \section{Stationary convolution-entropy rigidity}
 
-Let $K$ be a finite abelian group and $X=K^{\Z}$ with coordinatewise
-addition and the left shift $\sigma$.  Let $\mu$ be a
-$\sigma$-invariant ergodic Borel probability measure on $X$, and write
+Let $K$ be a finite abelian group and $\Omega=K^{\Z}$ with coordinatewise addition and the left shift $\sigma$. Let $\mu$ be a $\sigma$-invariant ergodic Borel probability measure on $\Omega$, and write
 $h_\sigma(\mu)$ for its Kolmogorov--Sinai entropy.  Define the
 translational stabilizer
 \[
@@ -2670,8 +2640,7 @@ Suppose $h_\sigma((\pi_\mu)_*\mu)=0$.  Assume the following two
 ingredients.
 
 \emph{(a)} The Abramov--Rokhlin entropy addition formula holds for the
-Haar-fibred compact group extension
-$\pi_\mu:(X,\mu,\sigma)\to(X/H_\mu,(\pi_\mu)_*\mu,\sigma)$ and for the
+Haar-fibred compact group extension $\pi_\mu:(\Omega,\mu,\sigma)\to(\Omega/H_\mu,(\pi_\mu)_*\mu,\sigma)$ and for the
 corresponding extension of $\mu*\mu$, so that each total entropy
 splits as the quotient entropy plus the common Haar fibre entropy,
 the conditional measures of $\mu$ and of $\mu*\mu$ over the quotient
@@ -2744,7 +2713,7 @@ Acta Arith.\ 148 (2011), no.~2, 153--187; arXiv:0805.4682.
 
 \bibitem{OSHP} T.~Oliveira e Silva, S.~Herzog, and S.~Pardi,
 \emph{Empirical verification of the even Goldbach conjecture and
-computation of prime gaps up to $4\cdot10^{18}$},
+computation of prime gaps up to $4\times10^{18}$},
 Math.\ Comp.\ 83 (2014), no.~288, 2033--2060.
 DOI: 10.1090/S0025-5718-2013-02787-1.
 
