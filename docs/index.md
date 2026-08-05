@@ -137,17 +137,17 @@ title: Fifty-six conjectures in mathematics
 
 We state fifty-six conjectures in three parts. The twenty-five conjectures of Part I are each derived from the local–global random model of the primes: Cramér’s model corrected by Hardy–Littlewood singular series, with Bateman–Horn as the organizing framework and Borel–Cantelli accounting for sparse events. Each statement is calibrated to the strongest form the heuristic supports. Every computable constant is computed from its definition, with local admissibility checked for every constant computed; every statement was tested against exact counts (probable-prime counts, so labelled, where the integers involved exceed the deterministic certification range), with success measured by the *shape* of agreement (predicted constant, square-root residuals, no drift) rather than by the size of the range searched. The contributions include: a prime-power contamination calculus for pattern races—twin races modulo $$5$$ and $$8$$ driven by the pairs $$(q^2-2,q^2)$$, cousin, sexy-pair, and triplet predictions derived from the calculus before testing, a Goldbach lane race with a verified internal null lane, a Stern-representation lane race whose null classes are provable by direct congruence, and an algebraic null control; the measured sub-diffusivity of balanced races (universal negative step correlations tied to the Lemke Oliver–Soundararajan repulsion); canonical ordering deficits for least primes in progressions and for least Goldbach summands; derived covariance kernels for moving-window residual fields, with the diagonal deficit reduced to a pinned singular-series average whose growth already exceeds the single-prime Montgomery–Soundararajan term; distribution laws for the constants of the quadratic-pair and cubic-shift families, with exact mean-value lemmas; an entanglement-aware local-global law for $$n^2+2^n$$ with an exact-rational CRT factorization; a boundary trichotomy for polynomial ladders; a multibase subtorus law for Fermat quotients; and singular-series waiting-time refinements for first prime gaps. Every statement was checked against the literature by an independent search, with novelty labelled conservatively: statements already known in essence are attributed and kept *inside* the conjecture whose content they calibrate, since those benchmarks are what make the derived constants credible. Every falsifiable-by-instance statement was then stress-tested computationally well beyond its original range, and every constant was recomputed independently from its definition. Part II adds twenty-five structural conjectures in five programmes—connected prime-pattern fields, arithmetic first-arrival fields and class groups, finite logarithms and algebraic tori, arboreal arithmetic dynamics, and adelic factorization processes—each introducing a canonical operator, process, invariant, classification, or phase boundary, with its mechanism, nearest literature boundary, first decisive theorem, and failure mode. Part III adds six conjectures across fields: a relative pretentious inverse principle for polynomial arguments, a threshold purification law for monotone vector paths, an entropy–dimension law for random-free graphons, a Hessian principle for microcanonical graph phases, a sharp stability law for entropy idempotence on finite abelian groups, and a convolution-entropy rigidity for stationary processes.
 
-## 1. Introduction
+## Introduction
 
 This collection states fifty-six conjectures in three parts. Part I (Conjectures 1--25) is a single sustained experiment: the primes, beyond their local structure, are modelled as a random set of density $$1/\log n$$, and the model is pushed to its sharpest consequences. Part II (Conjectures 26--50) leaves the single model for five structural programmes—connected prime-pattern fields, arithmetic first-arrival fields and class groups, finite logarithms and algebraic tori, arboreal dynamics, and adelic factorization—each contributing one canonical object and its laws. Part III (Conjectures 51--56) leaves number theory itself, carrying the same discipline into multiplicative number theory's pretentious frontier, discrepancy theory, graph limits, additive information theory, and ergodic theory.
 
 One standard governs all three parts. A good conjecture is not merely a statement that has resisted counterexample: it is a determinate proposition about a canonical object, with a stated mechanism, and with enough exposed structure to be refuted in pieces. Concretely, every statement here is asked to (i) survive every congruence and size obstruction; (ii) come with a quantitative form whose constants are derived, not fitted; (iii) demand exactly the fluctuations its mechanism earns and no fewer (the Mertens conjecture died of demanding fewer); (iv) sit inside a known hierarchy where one exists (for Part I, Hardy--Littlewood $$k$$-tuples $$\subset$$ Schinzel's Hypothesis H $$\subset$$ Bateman--Horn), so that failure would propagate; and (v) expose instance-falsifiable content—congruences, null lanes, exact identities, derived constants—so that computation can refute the derivation even where the asymptotic itself lies beyond finite refutation. Numerical range is the least important column in the ledger: most deep phenomena drift at the rate $$\log\log x$$, and $$\log\log 10^{18}\approx 3.7$$, so verification “to $$10^{18}$$” is weak evidence by itself. What persuades is the *shape* of the agreement—a count that tracks a derived constant through several decades with residuals that look like noise.
 
-Part I is presented in three sections: the principal conjectures (numbers 1--9), family laws and second-order refinements (numbers 10--17), and instances and structural companions (numbers 18--25). The material they draw on—Bateman--Horn systems, barely-divergent sparse sequences, representation problems with Borel--Cantelli accounting, and statistical laws of the prime sequence—runs through all three. Section 6 reports the stress tests and the independent recomputation of every constant.
+Part I is presented in three sections: the principal conjectures (numbers 1--9), family laws and second-order refinements (numbers 10--17), and instances and structural companions (numbers 18--25). The material they draw on—Bateman--Horn systems, barely-divergent sparse sequences, representation problems with Borel--Cantelli accounting, and statistical laws of the prime sequence—runs through all three. The stress-tests section reports the independent recomputation of every constant.
 
 One structural lesson organizes several of the statements below. A probability model integrates over density, and is therefore blind to algebraic families of density zero; the admissibility clause, checked at every prime for every system, is what repairs that blindness. The cubes inside the representation problem $$n=p+k^3$$ (Theorem 1) are the sharpest instance: they obstruct the problem outright while contributing nothing to any Borel--Cantelli sum taken over all $$n$$. This is the classical lesson of admissibility, and it is why the statements below separate what is provable by congruence or factorization from what a probabilistic accounting supplies. Parts II and III inherit the same separation in a different key: each statement names its canonical object and averaging law, identifies its source, states a first decisive theorem where one exists, and records an honest failure mode.
 
-Three checks stand behind every statement, and §6 reports their outcomes for Part I. First, an independent literature search at neighbourhood depth—defining objects, derived sequences, OEIS comments where relevant, and the abstracts and bodies of near-neighbour papers, read rather than skimmed from search summaries—establishes what is already known. Where a statement exists in essence it is attributed and labelled: some verbatim (Dubner's twin-sum conjecture, the Stern list for $$p+2k^2$$, Caldwell--Gallot's $$\mathrm{e}^{\gamma}\log N$$ laws), one with an exact constant catalogued as an OEIS entry (A188596), and the rest attributed accordingly. No such statement occupies a slot on its own; each is retained *inside* the slot whose claimed content it calibrates, restated in our uniform framework and re-verified at our bounds, and where a statement strengthens a named open problem the containment is stated as its headline. Second, every falsifiable-by-instance statement was verified against exact counts and then re-tested well past its original bound, the computation being designed as an attempt at refutation rather than at confirmation. Third, constants and counts were recomputed from the definitions alone by independent implementations sharing no code with the primary computation. Our novelty policy throughout is conservative: where priority is uncertain we attribute rather than claim.
+Three checks stand behind every statement, and the stress-tests section reports their outcomes for Part I. First, an independent literature search at neighbourhood depth—defining objects, derived sequences, OEIS comments where relevant, and the abstracts and bodies of near-neighbour papers, read rather than skimmed from search summaries—establishes what is already known. Where a statement exists in essence it is attributed and labelled: some verbatim (Dubner's twin-sum conjecture, the Stern list for $$p+2k^2$$, Caldwell--Gallot's $$\mathrm{e}^{\gamma}\log N$$ laws), one with an exact constant catalogued as an OEIS entry (A188596), and the rest attributed accordingly. No such statement occupies a slot on its own; each is retained *inside* the slot whose claimed content it calibrates, restated in our uniform framework and re-verified at our bounds, and where a statement strengthens a named open problem the containment is stated as its headline. Second, every falsifiable-by-instance statement was verified against exact counts and then re-tested well past its original bound, the computation being designed as an attempt at refutation rather than at confirmation. Third, constants and counts were recomputed from the definitions alone by independent implementations sharing no code with the primary computation. Our novelty policy throughout is conservative: where priority is uncertain we attribute rather than claim.
 
 ### Taxonomy: our contribution and its calibration layer
 
@@ -161,7 +161,7 @@ All counts below are exact (sieves; deterministic Miller–Rabin for $$n<3.3\tim
 
 Primality certification is stratified, and every count inherits the stratum of the integers it involves. Primality of every integer below $$3.3\times10^{24}$$ is decided *deterministically*, by fixed-base Miller–Rabin over a witness set verified for that range. For larger integers the classification is made by the Baillie–PSW test, and is a *probable-prime* classification, not a proof: no Baillie–PSW pseudoprime is known—and none exists below $$2^{64}$$, where the test is therefore deterministic—but their nonexistence is unproved. Consequently every count involving such integers is a probable-prime count, and is labelled as one wherever it appears. The computations affected are the factorial scans of Conjectures 21 and 2 ($$n!\pm1$$ for $$n$$ beyond about $$26$$), the $$n^2+2^n$$ scan of Conjecture 6 beyond $$n\approx80$$, the quartic values of the cyclotomic chain of Conjecture 24 beyond $$p\approx2\times10^6$$, and the Fibonacci–Lucas values of Conjecture 20 at all but the smallest indices. Every other count below—sieve censuses, race counts, window fields, and the inputs to every constant—lies entirely inside the deterministic range.
 
-## 2. Notation
+## Notation
 
 $$p,q$$ denote primes; $$\gamma$$ is Euler’s constant, $$\mathrm{e}^{\gamma}=1.781072\ldots$$; $$\varphi$$ is Euler’s totient; $$\phi=(1+\sqrt5)/2$$; $$F_n$$ the Fibonacci numbers; $$p\#$$ the primorial. For irreducible $$f_1,\dots,f_k\in\mathbb Z[x]$$ with positive leading coefficients, the Bateman–Horn singular series is
 
@@ -187,7 +187,7 @@ Admissibility ($$\omega(p)<p$$ for all $$p$$) is checked for every constant comp
 
 **How to read the fifty-six.** The count is a numbering convention, not a claim of fifty independent mechanisms. The contamination calculus is one operator, stated with the twin races at Conjecture 1 and projected onto the Goldbach (Conjecture 4), Stern (12), triplet (18) and sexy-pair (19) patterns, together with the provably null pattern of Conjecture 14 as its control, and those six statements stand or fall largely together. Several conjectures pair a proved classification with a Bateman–Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration, with the tagging convention above separating the layers and the novelty labels marking what is claimed as new. Part II is five programmes, each contributing one central object and its laws. Depth and independence therefore vary by design across the fifty-six, and the summary's ordering, not the raw count, carries the priority claim.
 
-## 3. Principal conjectures
+## Principal conjectures
 
 The twin-race statement is split into its provable algebraic core and its conjectural clauses, stated through the logarithmic-mean functional $$\mathcal{M}_x$$ of the notation section.
 
@@ -441,7 +441,7 @@ with constants $$c_k,d_k$$ in principle derivable from the LOS correlation serie
 
 The repulsion constants $$\rho_1,\rho_2$$ are pattern-independent across our four races—a universality the LOS correlation series should predict quantitatively, and the derivation programme stated here—and the suppressed maxima are the first (to our knowledge) direct measurement of race sub-diffusivity, an effect invisible to endpoint statistics. (The twin-gap record benchmark—$$G_t(x)\asymp\log^3x$$ with working constant $$1/(2C_2)$$, inside Kourbatov’s extreme-value framework [15]—is included as an attributed calibration benchmark: records to $$4\cdot10^9$$ wander in $$[0.41,0.56]\log^3x$$, approaching from below on a $$\log\log$$ clock, largest observed twin-to-twin gap $$5292$$ after the twin at $$2{,}466{,}641{,}069$$; the Cramér–Granville fragility of such constants [17] is why the constant was always flagged as first-order.)
 
-## 4. Family laws and second-order refinements
+## Family laws and second-order refinements
 
 **Conjecture 10** *(Uniform quadratic de Polignac; family law apparently unstated, the $$d=2$$ instance previously stated, cf. OEIS A080149, [32]).*
 
@@ -622,7 +622,7 @@ the four constants computed exactly per $$n$$ from the coincidence pattern of th
 
 Dubner’s paper already contains the integral kernel (his quotient $$\mu_4$$) and the qualitative basis conjecture; the content claimed here is the orientation-resolved singular series and its $$n$$-profile. Two exact identities compress the four orientations: the substitution $$t\mapsto n-t$$ exchanges the two summand roles, forcing $$\mathfrak{S}_4^{(\mathrm{lu})}(n)=\mathfrak{S}_4^{(\mathrm{ul})}(n)$$ identically (each of the $$(\mathrm{ll})$$ and $$(\mathrm{uu})$$ systems being self-dual under it), and the affine substitution $$t\mapsto t+2$$ gives $$\mathfrak{S}_4^{(\mathrm{uu})}(n)=\mathfrak{S}_4^{(\mathrm{ll})}(n-4)$$. So only one function of $$n$$ per symmetry class is free, and the profile is really two-dimensional; determining the average of $$\sum_o\mathfrak{S}_4^{(o)}(n)$$ over $$n$$ in closed form is a registered identity-hunting programme. Verified on $$150$$ log-sampled $$n\le10^8$$: the profile *shape* is confirmed at log-log correlation $$0.9993$$ across two decades, while the *level* runs at $$0.87$$ of prediction on $$[10^6,10^7)$$ and $$0.81$$ on $$[10^7,10^8)$$—a systematic deficit of second-order size ($${\approx}3.4/\log n$$ at the top range, the same order as the $$18$$–$$28\%$$ finite-height Poisson deficit of Conjecture 13), which we flag as the open component here rather than absorb into a fitted constant: either the $$4$$-tuple second-order correction accounts for it, or the orientation model needs repair, and the two are distinguishable at $$10^{10}$$. The *direction* of the trend is itself the anomaly: a genuine $$1-c/\log n$$ correction shrinks as $$n$$ grows, so a ratio moving *away* from $$1$$ across the decades indicates either a different error shape or a normalization problem, and settling which is part of what the open component must resolve. (The attributed benchmark stands inside the statement: every even $$n\ge4210$$ is a sum of two twin members, with the conjectured complete list of $$35$$ exceptions (OEIS A007534)—verified to $$10^8$$, re-swept to $$10^9$$, independently re-verified by a different algorithm, the same $$35$$ exceptions each time.)
 
-## 5. Instances and structural companions
+## Instances and structural companions
 
 **Conjecture 18** *(Contamination in prime triplets; apparently new).*
 
@@ -1418,18 +1418,13 @@ $$
 
 then there exist primitive Dirichlet characters $$\chi_1,\ldots,\chi_m$$ and real numbers $$t_1,\ldots,t_m$$ such that the following three conditions hold simultaneously:
 
-1.  $$\mathbb D_{P_j}\bigl(f_j,\chi_j(n)n^{it_j}\bigr)<\infty$$ for every $$1\le j\le m$$,
+*(i)* $$\mathbb D_{P_j}\bigl(f_j,\chi_j(n)n^{it_j}\bigr)<\infty$$ for every $$1\le j\le m$$,
 
-2.  $$\displaystyle\sum_{j=1}^m t_j\deg P_j=0$$,
+*(ii)* $$\displaystyle\sum_{j=1}^m t_j\deg P_j=0$$,
 
-3.  for some common multiple $$q$$ of the conductors of $$\chi_1,\ldots,\chi_m$$,
-
-    $$
+*(iii)* for some common multiple $$q$$ of the conductors of $$\chi_1,\ldots,\chi_m$$, $$
 \frac1q\sum_{a\bmod q}\prod_{j=1}^m\chi_j(P_j(a))\ne0,
-    $$
-
-    the characters being extended by $$0$$ on nonunits as above.
-
+    $$ the characters being extended by $$0$$ on nonunits as above.
 *Significance.* The mechanism is that a persistent logarithmic correlation should have exactly two sources: an archimedean resonance carried by the factors $$n^{it_j}$$ and a finite local resonance carried by the characters $$\chi_j$$. The balance condition (ii) is forced by the expansion $$P_j(n)^{it_j}=c_j^{it_j}n^{it_j\deg P_j}(1+o(1))$$, with $$c_j$$ the leading coefficient, because logarithmic averaging annihilates any nonzero total power of $$n$$, and (iii) asserts that the finite-modulus resonances are jointly compatible, so that the model correlation does not vanish identically for local reasons. Packaging the conclusion as one existential block matters: the characters and archimedean parameters cannot be chosen independently for each $$j$$, and it is the joint system (i)–(iii) that reproduces the correlation. The decisive-theorem ledger for the linear case is as follows. For linear polynomials the two-point case is Tao’s logarithmically averaged two-point Elliott theorem [75]. The odd-order cases are the theorems of Tao–Teräväinen, and the shape of the conclusion here, one existential block coupling characters, archimedean parameters, and a nonvanishing local average, is the template of their structure theorem for logarithmically averaged correlations [76]. The general even-order linear case is precisely the logarithmically averaged Elliott conjecture. All of the novelty of the present statement therefore sits at $$\max_j\deg P_j\ge2$$, where even the logarithmic mean value of $$f(n^2+1)$$ for a single nonpretentious completely multiplicative $$f$$ is open, and a logarithmic mean value theorem for $$f(n^2+1)$$ with a conclusion of the stated relative-pretentious type would be the first decisive theorem. The failure mode is a system of functions nonpretentious in every relative metric whose logarithmic correlation has positive limsup, which would reveal a correlation mechanism beyond the archimedean and finite local resonances.
 
 *Remark.* The restriction to completely multiplicative $$f_j$$ is not cosmetic. For $$1$$-bounded multiplicative functions that are not completely multiplicative, the fixed-parameter form of the conclusion is false: Matomäki–Radziwiłł–Tao[71] constructed a $$1$$-bounded multiplicative function that pretends to be $$n^{it_k}$$ for different parameters $$t_k$$ on different scales, refuting the original fixed-parameter Elliott conjecture, and the corrected conjecture must allow the comparison parameter to vary with the scale $$X$$. Complete multiplicativity restores the fixed-parameter form because the truncated distance $$\mathbb D_{P_j}(f_j,\chi(n)n^{it};X)$$ is monotone nondecreasing in $$X$$: smallness of the truncations at every scale then forces a single parameter pair that works uniformly, and the scale-switching pretence underlying the counterexample is unavailable.
@@ -1447,17 +1442,13 @@ $$
 A threshold rounding of $$F$$ is a choice of $$\tau_1,\ldots,\tau_m\in(0,1]$$ together with the pure path
 
 $$
-
 G(t)=\sum_{i:\ \tau_i\le t}v_i .
-
 $$
 
 **Monotone threshold purification of vector paths (Conjecture 52).** There exists a universal constant $$C<\infty$$ such that for every $$d,m\ge1$$, every $$(v_i)_{i\le m}$$, and every monotone activation schedule $$(a_i)_{i\le m}$$ as above, some threshold rounding satisfies
 
 $$
-
 \sup_{0\le t\le1}\|G(t)-F(t)\|_2\le C\sqrt d .
-
 $$
 
 *Significance.* The headline attribution comes first. The special case $$a_i(t)=t$$ for all $$i$$ with $$\sum_iv_i=0$$ is exactly the open prefix-sum form of the Euclidean Steinitz problem at the scale $$O(\sqrt d)$$: there $$F\equiv0$$, and ordering the vectors by their thresholds turns the display into the assertion that some permutation $$\pi$$ has all prefix sums bounded, $$\max_{k\le m}\|\sum_{i\le k}v_{\pi(i)}\|_2\le C\sqrt d$$. Grinberg–Sevastyanov[65] proved the bound $$d$$ in every norm, the best known Euclidean bound is Banaszczyk’s[61, 62] $$O(\sqrt{d+\log m})$$, and so already in this special case the conjecture asserts the removal of the logarithmic term uniformly in $$m$$. For the general threshold form, even the existence of any bound $$C(d)$$ depending on $$d$$ alone and uniform in $$m$$ appears to be open. The mechanism is that $$F$$ is a monotone trajectory in the zonotope generated by the $$v_i$$, the set of sums $$\sum_i\lambda_iv_i$$ with $$\lambda_i\in[0,1]$$, and the conjecture asserts that every monotone zonotope path admits an integral shadow at the optimal Euclidean discrepancy scale. The order $$\sqrt d$$ is verified sharp: take $$m=d$$, $$v_i=e_i$$ the standard basis, and $$a_i(t)=t$$, so that at $$t=1/2$$ every coordinate of $$G(1/2)-F(1/2)$$ equals $$\pm1/2$$ whatever the thresholds, giving $$\|G(1/2)-F(1/2)\|_2=\sqrt d/2$$. No decisive theorem exists: the first would be any $$m$$-uniform bound $$C(d)$$ for the threshold form, even with a $$d$$-dependence far worse than $$\sqrt d$$. A falsification honesty note: the statement has content only at large $$d$$, since any bounded range of dimensions is absorbed into $$C$$, so small-$$d$$ computer searches cannot test it, and the failure mode is an infinite family of monotone paths, with $$d\to\infty$$, every threshold rounding of which has discrepancy $$\omega(\sqrt d)$$.
@@ -1467,26 +1458,22 @@ $$
 A graphon is a symmetric measurable function $$W:[0,1]^2\to[0,1]$$, and $$W$$ is random-free if it takes values in $$\{0,1\}$$ almost everywhere. Define the row pseudometric
 
 $$
-
 d_W(x,y)=\int_0^1\vert W(x,z)-W(y,z)\vert \,\mathrm dz .
-
 $$
 
 Identifying points at zero distance and completing yields a metric-measure space $$(\Omega_W,d_W,\rho_W)$$, the row space, where $$\rho_W$$ is the pushforward of Lebesgue measure. The row space is Ahlfors $$s$$-regular if it is compact and there exist $$c,C,r_0>0$$ such that
 
 $$
-
 cr^s\le\rho_W(B(x,r))\le Cr^s
-
 $$
 
 for every $$x\in\operatorname{supp}\rho_W$$ and every $$0<r<r_0$$. Let $$G(n,W)$$ be the random labelled graph on $$[n]=\{1,\ldots,n\}$$ obtained from independent uniform $$U_1,\ldots,U_n$$ on $$[0,1]$$ by declaring $$ij$$ an edge exactly when $$W(U_i,U_j)=1$$, and let $$H(G(n,W))$$ be its Shannon entropy with natural logarithms.
 
 **Entropy dimension of random-free graphons (Conjecture 53).** 
 
-1.  [nonvacuity] For every $$s\in(0,2]$$ there exists a random-free graphon whose row space is Ahlfors $$s$$-regular.
+*(i)* [nonvacuity] For every $$s\in(0,2]$$ there exists a random-free graphon whose row space is Ahlfors $$s$$-regular.
 
-2.  [entropy-dimension law] If the row space of a random-free graphon $$W$$ is Ahlfors $$s$$-regular for some $$s>0$$, then $$\lim_{n\to\infty}H(G(n,W))/(n\log n)=s$$.
+*(ii)* [entropy-dimension law] If the row space of a random-free graphon $$W$$ is Ahlfors $$s$$-regular for some $$s>0$$, then $$\lim_{n\to\infty}H(G(n,W))/(n\log n)=s$$.
 *Remark.* The refined assertion $$H(G(n,W))=s\,n\log n+O_W(n)$$ is a strictly stronger open refinement of clause (ii), and nothing in the mechanism below reaches it. The type-coding mechanism by itself yields only $$H(G(n,W))=s\,n\log n+O_W(n\log\log n)$$: encoding a latent type for each vertex at metric resolution $$1/n$$ costs about $$s\log n$$ nats per vertex and predicts all but on the order of $$n$$ of the edges, but recording which edges are mispredicted costs order $$n\log n$$ if done naively, since each such edge must be located by a pair of labels. A two-scale argument, which first codes coarse types and then corrects within coarse classes, lowers the correction cost to $$O(n\log\log n)$$ and stops there.
 
 *Significance.* The mechanism is metric distinguishability of rows: two row types at $$d_W$$-distance $$\varepsilon$$ disagree on an $$\varepsilon$$-fraction of potential neighbours and become statistically distinguishable against $$n$$ sampled vertices at a scale comparable to $$1/n$$, an Ahlfors $$s$$-regular row space has about $$n^s$$ distinguishable types at that scale, and the latent type of each of the $$n$$ labelled vertices then carries $$s\log n+O(1)$$ nats. Clause (i) certifies that the hypothesis class is nonvacuous at every fractional $$s$$: it is expected to be provable by Cantor-type threshold constructions, in which $$W$$ is the indicator of a threshold event read along a self-similar Cantor set, and it is included so that clause (ii) quantifies over a genuinely rich family. The nearest literature boundary is Hatami–Norine[66]: a graphon is random-free exactly when $$H(G(n,W))=o(n^2)$$, and every subquadratic growth order occurs for suitable random-free graphons, so no hypothesis short of a metric-measure condition on the row space can pin the coefficient of $$n\log n$$, and Ahlfors regularity is exactly the condition that does. No decisive theorem exists: the first would be a proof of clause (i) together with the verification of clause (ii) for one explicit self-similar threshold graphon of noninteger $$s$$. The failure mode is concentrated in the lower bound, since the coding upper bound follows from the mechanism of the refined form above: an Ahlfors regular random-free graphon whose sampled neighbourhoods distinguish types less efficiently than the metric suggests would drive the coefficient below $$s$$, or destroy convergence altogether.
@@ -1535,17 +1522,17 @@ The finite graphs are coloured with pinned classes. For each $$n$$ set $$n_a=\lf
 
 Assume the following regularity hypotheses.
 
-1.  The supremum of $$\mathcal S(U)$$ over $$\mathbf t(U)=\mathbf a$$ is attained at a unique coloured graphon $$U_*$$, up to measure-preserving maps preserving each colour class.
+*(H1)* The supremum of $$\mathcal S(U)$$ over $$\mathbf t(U)=\mathbf a$$ is attained at a unique coloured graphon $$U_*$$, up to measure-preserving maps preserving each colour class.
 
-2.  Writing $$p_*=p(U_*)$$, the feasible block-average set $$\{p(U):\mathbf t(U)=\mathbf a\}$$ is, near $$p_*$$, a $$C^3$$ embedded manifold $$M\subset\mathbb R^D$$.
+*(H2)* Writing $$p_*=p(U_*)$$, the feasible block-average set $$\{p(U):\mathbf t(U)=\mathbf a\}$$ is, near $$p_*$$, a $$C^3$$ embedded manifold $$M\subset\mathbb R^D$$.
 
-3.  The restriction $$\Psi_{\mathbf a}\vert _M$$ is $$C^3$$ near $$p_*$$ and has there a unique local maximum.
+*(H3)* The restriction $$\Psi_{\mathbf a}\vert _M$$ is $$C^3$$ near $$p_*$$ and has there a unique local maximum.
 
-4.  The quadratic form $$A=-D^2_M\Psi_{\mathbf a}(p_*)$$ is positive definite on the tangent space $$T=T_{p_*}M$$.
+*(H4)* The quadratic form $$A=-D^2_M\Psi_{\mathbf a}(p_*)$$ is positive definite on the tangent space $$T=T_{p_*}M$$.
 
-5.  [transversally Lipschitz constraint correspondence] There exist $$\delta_0>0$$ and $$L<\infty$$ such that every coloured graphon $$U$$ with $$\|p(U)-p_*\|\le\delta_0$$ and $$\|\mathbf t(U)-\mathbf a\|_\infty=\delta\le\delta_0$$ satisfies $$\operatorname{dist}(p(U),M)\le L\delta$$. In particular the conditioning window below confines $$\widehat p_n$$, on the event $$\|\widehat p_n-p_*\|\le\delta_0$$, to an $$o(n^{-1})$$ thickening of $$M$$.
+*(H5)* [transversally Lipschitz constraint correspondence] There exist $$\delta_0>0$$ and $$L<\infty$$ such that every coloured graphon $$U$$ with $$\|p(U)-p_*\|\le\delta_0$$ and $$\|\mathbf t(U)-\mathbf a\|_\infty=\delta\le\delta_0$$ satisfies $$\operatorname{dist}(p(U),M)\le L\delta$$. In particular the conditioning window below confines $$\widehat p_n$$, on the event $$\|\widehat p_n-p_*\|\le\delta_0$$, to an $$o(n^{-1})$$ thickening of $$M$$.
 
-6.  [nonemptiness] For every sufficiently large $$n$$ the conditioning set $$\{G:\|\mathbf t(G)-\mathbf a\|_\infty\le n^{-1-\eta}\}$$ over graphs $$G$$ on $$[N_n]$$ with the pinned colour classes is nonempty.
+*(H6)* [nonemptiness] For every sufficiently large $$n$$ the conditioning set $$\{G:\|\mathbf t(G)-\mathbf a\|_\infty\le n^{-1-\eta}\}$$ over graphs $$G$$ on $$[N_n]$$ with the pinned colour classes is nonempty.
 
 Fix $$0<\eta<1$$, let $$G_n$$ be uniform on the conditioning set of (H6), let $$\widehat p_n=\widehat p(G_n)$$, and let $$\Pi_T$$ be orthogonal projection of $$\mathbb R^D$$ onto $$T$$.
 
@@ -1626,15 +1613,15 @@ $$
 
 *Proposition (Easy direction, conditional).* Suppose $$h_\sigma((\pi_\mu)_*\mu)=0$$. Assume the following two ingredients.
 
-1.  The Abramov–Rokhlin entropy addition formula holds for the Haar-fibred compact group extension $$\pi_\mu:(X,\mu,\sigma)\to(X/H_\mu,(\pi_\mu)_*\mu,\sigma)$$ and for the corresponding extension of $$\mu*\mu$$, so that each total entropy splits as the quotient entropy plus the common Haar fibre entropy, the conditional measures of $$\mu$$ and of $$\mu*\mu$$ over the quotient being Haar measures on cosets of $$H_\mu$$.
+*(a)* The Abramov–Rokhlin entropy addition formula holds for the Haar-fibred compact group extension $$\pi_\mu:(X,\mu,\sigma)\to(X/H_\mu,(\pi_\mu)_*\mu,\sigma)$$ and for the corresponding extension of $$\mu*\mu$$, so that each total entropy splits as the quotient entropy plus the common Haar fibre entropy, the conditional measures of $$\mu$$ and of $$\mu*\mu$$ over the quotient being Haar measures on cosets of $$H_\mu$$.
 
-2.  The entropy of a factor of an independent joining is bounded by the sum of the entropies of the factors, so that $$(\pi_\mu)_*(\mu*\mu)=((\pi_\mu)_*\mu)*((\pi_\mu)_*\mu)$$ has entropy at most $$2h_\sigma((\pi_\mu)_*\mu)=0$$.
+*(b)* The entropy of a factor of an independent joining is bounded by the sum of the entropies of the factors, so that $$(\pi_\mu)_*(\mu*\mu)=((\pi_\mu)_*\mu)*((\pi_\mu)_*\mu)$$ has entropy at most $$2h_\sigma((\pi_\mu)_*\mu)=0$$.
 
 Then $$h_\sigma(\mu*\mu)=h_\sigma(\mu)$$.
 
 *Significance.* The mechanism is the stationary analogue of entropy idempotence on a finite group: equality of entropy under independent self-convolution should force all positive entropy to be Haar-type randomness along a translation-invariant subgroup process, modulo a quotient that may retain arbitrarily rich zero-entropy dynamics such as rotations, substitutions, or Toeplitz systems. The easy direction is recorded above as a conditional proposition with its two ingredients named, the Abramov–Rokhlin formula for Haar-fibred compact group extensions and the factor-of-joining entropy bound, and the difficult direction is the rigidity claim that no other equality mechanism exists. The nearest literature boundary consists of Kułaga-Przymus–Lemańczyk[69] on the entropy of products of independent stationary processes and Lindenstrauss–Meiri–Peres[70] on the entropy of convolutions, neither of which decides the binary question of the binary specialization above. No decisive theorem appears to be on record even for Markov processes, and strict XOR entropy gain for mixing two-state Markov chains would be the first. The failure-mode honesty note is this: the natural counterexample hunting ground is the Ornstein–Weiss[73] bilaterally deterministic processes, positive entropy processes whose distant past and distant future jointly determine the whole trajectory, together with $$T,T^{-1}$$-type constructions, and no search has yet probed either family, so the negation of the conjecture has an unexplored natural habitat.
 
-## 6. Stress tests and independent recomputation
+## Stress tests and independent recomputation
 
 Each statement was tested three ways: against the literature, against computation well beyond its original range, and against an independent reimplementation.
 
@@ -1648,7 +1635,7 @@ Each statement was also verified at production scale: the Conjecture 10 profile 
 
 One methodological conclusion is worth recording. The mathematical failure modes in this subject are not statistical but *algebraic*: factorizations and congruence collapses living on density-zero or positive-density-but-structured subsequences—the cubes obstructing $$n=p+k^3$$ (Theorem 1), the composite-$$k$$ factorization of $$D_k$$ (Conjecture 23(i)), the $$k=4$$ parity branch of Conjecture 25, the inadmissible naive chain of Conjecture 24. Probabilistic sanity checks, however extensive, integrate over density and cannot see such families; only structural tests—testing a claimed exception census on special subsequences, for instance—find them. A verification that only re-runs an existing count at a larger bound is blind to every one of them.
 
-## 7. An open question
+## An open question
 
 **Question 1.**
 
