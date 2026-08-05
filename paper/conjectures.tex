@@ -4195,24 +4195,74 @@ H(G(n,W))=s\,n\log n+O_W(n) .
 
 \end{conjecture}
 
+\begin{proposition}[Entropy-dimension limit law]\label{t3:limit}
+If the row space of a random-free graphon $W$ is Ahlfors $s$-regular
+for some $s>0$, then
+\[
+H(G(n,W))=s\,n\log n+O_W(n\log\log n),
+\]
+and in particular $\lim_{n\to\infty}H(G(n,W))/(n\log n)=s$.
+\end{proposition}
+
+\begin{proof}
+Write $d=d_W$ and $\rho=\rho_W$, and use natural logarithms.  For the
+lower bound, set $k=\lfloor n/\log n\rfloor$, fix the labelling, and
+designate the last $k$ vertices as tests, with latent points
+$Z=(Z_1,\ldots,Z_k)$ and remaining latent points $X_1,\ldots,X_{n-k}$.
+The cross matrix $M=(W(X_i,Z_j))_{i,j}$ is a function of the labelled
+graph, and conditioning cannot increase entropy, so
+$H(G(n,W))\ge H(M)\ge H(M\mid Z)$.  Conditionally on $Z$ the signature
+rows $S_Z(X_i)=(W(X_i,Z_1),\ldots,W(X_i,Z_k))$ are independent with a
+common law, whence $H(M\mid Z)=(n-k)\,\E_Z H(S_Z(X))$ with $X$ an
+independent uniform point.  Let $C_Z$ be the collision probability of
+the signature law.  Shannon entropy dominates the R\'enyi entropy of
+order two, so $H(S_Z(X))\ge-\log C_Z$, and convexity of $-\log$ gives
+$\E_Z H(S_Z(X))\ge-\log\E_Z C_Z$.  For independent uniform $X$ and $Y$
+the tests are independent uniform points, two rows agree at a test with
+probability $1-d(X,Y)$, and Fubini gives the exact identity
+$\E_Z C_Z=\E_{X,Y}(1-d(X,Y))^{k}$.  Since $(1-u)^k\le\e^{-ku}$ and the
+upper mass bound gives $\rho(B(x,r))\le C_W r^s$, a dyadic shell
+decomposition yields, uniformly in $x$,
+\[
+\int\e^{-k\,d(x,y)}\,\dd\rho(y)
+\le\rho\bigl(B(x,1/k)\bigr)
++\sum_{m\ge0}\e^{-2^{m}}\rho\bigl(B(x,2^{m+1}/k)\bigr)
+=O_W(k^{-s}).
+\]
+Hence $\E_Z C_Z=O_W(k^{-s})$, so
+$\E_Z H(S_Z(X))\ge s\log k-O_W(1)$ and
+$H(G(n,W))\ge(n-k)(s\log k-O_W(1))=s\,n\log n-O_W(n\log\log n)$.
+
+For the upper bound, let $\delta\in(0,\tfrac12)$.  The lower mass bound
+makes the balls of radius $\delta/2$ around a maximal
+$\delta$-separated set disjoint, each of mass at least
+$c_W(\delta/2)^s$, so the row space admits a Borel partition into
+$N_\delta=O_W(\delta^{-s})$ cells of diameter at most $2\delta$.  Let
+$Q_i$ be the cell of the $i$th latent row.  Subadditivity and
+conditioning give
+$H(G(n,W))\le n\log N_\delta+\binom n2\,\E_{(a,b)}h(p_{ab})$, where
+$(a,b)$ is the cell pair of two independent rows, $p_{ab}$ is the
+conditional edge probability, and $h$ is the binary entropy.  For a
+$\{0,1\}$-valued $W$, two independent rows $X,X'$ in the cell $a$ and a
+uniform point $Y$ with row in the cell $b$ satisfy
+$p_{ab}(1-p_{ab})\le\Pp(W(X,Y)\ne W(X',Y))$, and averaging over $b$
+with its mass removes the cell restriction, so
+$\E_{(a,b)}[p_{ab}(1-p_{ab})]\le\E_a\E_{X,X'\in a}\,d(X,X')\le2\delta$.
+The bound $h(p)\le\varphi(p(1-p))$ with the concave increasing
+$\varphi(u)=2u(1+\log(1/u))$ and Jensen give
+$\E_{(a,b)}h(p_{ab})\le\varphi(2\delta)=O(\delta\log(1/\delta))$.
+Therefore
+$H(G(n,W))\le s\,n\log(1/\delta)+O_W(n)+O(n^2\delta\log(1/\delta))$,
+and the choice $\delta=(n\log^2n)^{-1}$ gives
+$H(G(n,W))\le s\,n\log n+O_W(n\log\log n)$.
+\end{proof}
+
 \begin{remark}\label{t3:refined}
-The limit law $\lim_{n\to\infty}H(G(n,W))/(n\log n)=s$ is provable from
-Ahlfors regularity alone, with error $O(n\log\log n)$ on both sides, and
-is therefore not part of the conjecture.  For the lower bound, take
-$k=\lfloor n/\log n\rfloor$ test vertices: conditionally on their latent
-positions the remaining rows are independent signatures, Shannon
-entropy dominates collision entropy, and the exact identity
-$\E_Z C_Z=\iint(1-d_W(x,y))^k\,d\rho\,d\rho\ll k^{-s}$, from upper
-regularity, gives $H(G(n,W))\ge s\,n\log n-O(n\log\log n)$.  For the
-upper bound, quantize the row space into $O(\delta^{-s})$ cells of
-diameter $O(\delta)$, code the cell labels, and code the edges
-conditionally: the mass-weighted cell-pair variance is $O(\delta)$, the
-conditional edge entropy is $O(n^2\delta\log(1/\delta))$, and
-$\delta=(n\log^2n)^{-1}$ gives $H(G(n,W))\le s\,n\log n+O(n\log\log n)$.
-The conjecture is the refinement of the error to $O_W(n)$, which lies
-beyond both bounds: locating the mispredicted edges of a
-resolution-$1/n$ code costs order $n\log n$ naively, and the two-scale
-correction stops at $O(n\log\log n)$.
+The conjecture is the refinement of the error term of \cref{t3:limit}
+to $O_W(n)$, which lies beyond both bounds of the proof: locating the
+mispredicted edges of a resolution-$1/n$ code costs order $n\log n$ if
+done naively, and the two-scale correction that codes coarse types
+first stops at $O(n\log\log n)$.
 \end{remark}
 
 \paragraph{Significance.}
@@ -4233,7 +4283,7 @@ $H(G(n,W))=o(n^2)$, and every subquadratic growth order occurs for
 suitable random-free graphons, so no hypothesis short of a
 metric-measure condition on the row space can pin the coefficient of
 $n\log n$, and Ahlfors regularity is exactly the condition that does.
-The decisive theorem half-exists: the limit law is provable from regularity by the collision-entropy and quantization bounds of \cref{t3:refined}, so the first theorem for the conjecture proper is the linear error term for one explicit self-similar threshold graphon of noninteger $s$, together with a proof of clause (i).  The failure mode is a genuinely growing correction: an Ahlfors regular random-free graphon whose entropy exceeds $s\,n\log n+C\,n$ for every $C$ would show that the resolution-$1/n$ coding loss is intrinsic rather than an artifact of the two-scale method.
+The decisive theorem half-exists: the limit law is provable from regularity by the collision-entropy and quantization bounds of \cref{t3:limit}, so the first theorem for the conjecture proper is the linear error term for one explicit self-similar threshold graphon of noninteger $s$, together with a proof of clause (i).  The failure mode is a genuinely growing correction: an Ahlfors regular random-free graphon whose entropy exceeds $s\,n\log n+C\,n$ for every $C$ would show that the resolution-$1/n$ coding loss is intrinsic rather than an artifact of the two-scale method.
 
 \section{A Hessian principle for isolated microcanonical graph phases}
 
