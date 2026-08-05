@@ -4187,26 +4187,32 @@ Shannon entropy with natural logarithms.
 \emph{(i)} \textup{[nonvacuity]}  For every $s\in(0,2]$ there exists a
 random-free graphon whose row space is Ahlfors $s$-regular.
 
-\emph{(ii)} \textup{[entropy-dimension law]}  If the row space of a
+\emph{(ii)} \textup{[refined entropy-dimension law]}  If the row space of a
 random-free graphon $W$ is Ahlfors $s$-regular for some $s>0$, then
 \[
-\lim_{n\to\infty}\frac{H(G(n,W))}{n\log n}=s .
+H(G(n,W))=s\,n\log n+O_W(n) .
 \]
 
 \end{conjecture}
 
 \begin{remark}\label{t3:refined}
-The refined assertion $H(G(n,W))=s\,n\log n+O_W(n)$ is a strictly
-stronger open refinement of clause (ii), and nothing in the mechanism
-below reaches it.  The type-coding mechanism by itself yields only
-$H(G(n,W))=s\,n\log n+O_W(n\log\log n)$: encoding a latent type for
-each vertex at metric resolution $1/n$ costs about $s\log n$ nats per
-vertex and predicts all but on the order of $n$ of the edges, but
-recording which edges are mispredicted costs order $n\log n$ if done
-naively, since each such edge must be located by a pair of labels.  A
-two-scale argument, which first codes coarse types and then corrects
-within coarse classes, lowers the correction cost to
-$O(n\log\log n)$ and stops there.
+The limit law $\lim_{n\to\infty}H(G(n,W))/(n\log n)=s$ is provable from
+Ahlfors regularity alone, with error $O(n\log\log n)$ on both sides, and
+is therefore not part of the conjecture.  For the lower bound, take
+$k=\lfloor n/\log n\rfloor$ test vertices: conditionally on their latent
+positions the remaining rows are independent signatures, Shannon
+entropy dominates collision entropy, and the exact identity
+$\E_Z C_Z=\iint(1-d_W(x,y))^k\,d\rho\,d\rho\ll k^{-s}$, from upper
+regularity, gives $H(G(n,W))\ge s\,n\log n-O(n\log\log n)$.  For the
+upper bound, quantize the row space into $O(\delta^{-s})$ cells of
+diameter $O(\delta)$, code the cell labels, and code the edges
+conditionally: the mass-weighted cell-pair variance is $O(\delta)$, the
+conditional edge entropy is $O(n^2\delta\log(1/\delta))$, and
+$\delta=(n\log^2n)^{-1}$ gives $H(G(n,W))\le s\,n\log n+O(n\log\log n)$.
+The conjecture is the refinement of the error to $O_W(n)$, which lies
+beyond both bounds: locating the mispredicted edges of a
+resolution-$1/n$ code costs order $n\log n$ naively, and the two-scale
+correction stops at $O(n\log\log n)$.
 \end{remark}
 
 \paragraph{Significance.}
@@ -4227,14 +4233,7 @@ $H(G(n,W))=o(n^2)$, and every subquadratic growth order occurs for
 suitable random-free graphons, so no hypothesis short of a
 metric-measure condition on the row space can pin the coefficient of
 $n\log n$, and Ahlfors regularity is exactly the condition that does.
-No decisive theorem exists: the first would be a proof of clause (i)
-together with the verification of clause (ii) for one explicit
-self-similar threshold graphon of noninteger $s$.  The failure mode is
-concentrated in the lower bound, since the coding upper bound follows
-from the mechanism of \cref{t3:refined}: an Ahlfors regular
-random-free graphon whose sampled neighbourhoods distinguish types
-less efficiently than the metric suggests would drive the coefficient
-below $s$, or destroy convergence altogether.
+The decisive theorem half-exists: the limit law is provable from regularity by the collision-entropy and quantization bounds of \cref{t3:refined}, so the first theorem for the conjecture proper is the linear error term for one explicit self-similar threshold graphon of noninteger $s$, together with a proof of clause (i).  The failure mode is a genuinely growing correction: an Ahlfors regular random-free graphon whose entropy exceeds $s\,n\log n+C\,n$ for every $C$ would show that the resolution-$1/n$ coding loss is intrinsic rather than an artifact of the two-scale method.
 
 \section{A Hessian principle for isolated microcanonical graph phases}
 
@@ -4358,7 +4357,7 @@ the case $q=1$ with the edge-triangle constraint pair in a region
 where the entropy maximizer is bipodal and (H1)--(H5) have been
 verified.  The failure mode is an isolated nondegenerate phase whose
 tangent fluctuations are non-Gaussian or live at a different scale,
-which would necessarily come from a failure of Laplace-ratio control.
+which would necessarily come from a failure of Laplace-ratio control.  The conjectural content is exactly that (H1)--(H6) already force this local regularity: a $z$-dependent subexponential prefactor in the microcanonical counts would leave every hypothesis intact while tilting the limit away from $N_T(0,A^{-1})$, and the conjecture asserts that isolated nondegenerate phases exclude it.
 
 \section{Sharp stability of entropy idempotence on finite abelian groups}
 
@@ -4436,7 +4435,7 @@ under self-convolution.  No decisive theorem exists: the natural
 first one is precisely that $\Z/p\Z$ specialization with some constant.  The defect also has the exact form $H(\mu*\mu)-H(\mu)=\E_Y D_{\mathrm{KL}}(\tau_Y\mu\,\|\,\mu*\mu)$, with $\tau_y$ translation by $y$, so a small defect makes typical support-translates of $\mu$ close to $\mu*\mu$ in relative entropy, and Pinsker's inequality converts that closeness to total variation: the route to a universal constant is to upgrade approximate invariance under many translations to proximity to a coset uniform.  The failure mode is a sequence $\mu_n$ with
 $\Delta(\mu_n)\to0$ whose coset distance is much larger than
 $\sqrt{\Delta(\mu_n)}$, and the natural hunting ground is measures
-straddling several subgroup scales inside groups with rich subgroup lattices, a family that computational search through $\Z/2^{8}\Z$ leaves below the Gaussian ratio.
+straddling several subgroup scales inside groups with rich subgroup lattices, a family that computational search through $\Z/2^{8}\Z$ leaves below the Gaussian ratio.  The assertion has three layers of decreasing confidence: the existence of some universal constant, the sharp value $2/\log2$, and the classification of near-extremizers as the discretized Gaussians at intermediate scale.
 
 \section{Stationary convolution-entropy rigidity}
 
@@ -4519,7 +4518,7 @@ honesty note is this: the natural counterexample hunting ground is
 the Ornstein--Weiss~\cite{OW75} bilaterally deterministic processes, positive
 entropy processes whose distant past and distant future jointly
 determine the whole trajectory, together with $T,T^{-1}$-type
-constructions, and no search has yet probed either family, so the negation of the conjecture has an unexplored natural habitat.  The gap the rigidity must close is quantitative: equality of entropy rates asserts only that the block mutual information $I(X_{1:n}+Y_{1:n};Y_{1:n})$ is $o(n)$, not that it is bounded, so sublinear information spread through arbitrarily long-range structure is the resource a counterexample would exploit.
+constructions, and no search has yet probed either family, so the negation of the conjecture has an unexplored natural habitat.  The gap the rigidity must close is quantitative: equality of entropy rates asserts only that the block mutual information $I(X_{1:n}+Y_{1:n};Y_{1:n})$ is $o(n)$, not that it is bounded, so sublinear information spread through arbitrarily long-range structure is the resource a counterexample would exploit.  The natural staircase of evidence runs from independent letters through Markov and mixing processes to completely positive entropy, and a proof for mixing two-state Markov chains would already test whether the stabilizer is the only equality mechanism.
 
 \section{Stress tests and independent recomputation}\label{sec:audit}
 
