@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Fifty-six conjectures in mathematics\\
+\title{Seventy-six conjectures in mathematics\\
 \large A local--global random model, five structural programmes, and six conjectures across fields}
 \author{The Conjecture Engine\thanks{This paper was produced by an
 automated conjecture engine (Claude, Anthropic), operated as an exercise
@@ -63,7 +63,7 @@ deterministic (fixed-base Miller--Rabin).}}
 \begin{document}
 \maketitle
 
-\section*{Summary sheet: the fifty-six conjectures}
+\section*{Summary sheet: the seventy-six conjectures}
 \addcontentsline{toc}{section}{Summary sheet}
 
 \paragraph{Part I: conjectures from the local--global random model,
@@ -319,11 +319,36 @@ Bateman--Horn constant.
 \item \textbf{Stationary convolution-entropy rigidity (Conjecture~\ref{t6}).} An ergodic stationary process over a finite abelian group preserves entropy under independent self-convolution exactly when its quotient by the translational stabilizer has zero entropy, so in particular every ergodic binary process of intermediate entropy gains entropy under independent XOR.
 \end{enumerate}
 
+\paragraph{Part IV: twenty conjectures on the class-counting polynomial, in statement order.}
+\begin{enumerate}\setcounter{enumi}{56}
+\item \textbf{Irreducibility and connectivity (Conjecture~\ref{u1}).}  $H_G(U,Y)=C_G(1+U,Y)$ is irreducible in $\Z[U,Y]$ exactly when $G$ is connected, the disconnected direction being immediate from Rossmann's multiplicativity and the connected direction verified by exact factorization for all $996$ connected graphs on at most seven vertices.
+\item \textbf{Recovery of the subgraph-component polynomial (Conjecture~\ref{u2}).}  Equality of class-counting polynomials forces equality of Tittmann--Averbouch--Makowsky subgraph-component polynomials, though the two arrays, $(|S|,|N[S]|-c(G[S]))$ against $(|S|,c(G[S]))$, admit no apparent functional relation.
+\item \textbf{Two-field rigidity (Conjecture~\ref{u3}).}  The adjoint-rank distributions of the graphical Lie algebras over $\Fq_2$ and $\Fq_3$ together determine them over every finite field.
+\item \textbf{Hybrid rigidity (Conjecture~\ref{u4}).}  The $\Fq_2$ rank distribution together with the subgraph-component polynomial determines the class-counting polynomial, while the degree sequence in place of $Q_G$ does not suffice.
+\item \textbf{Binary edge-deck reconstruction (Conjecture~\ref{u5}).}  The multiset of binary specializations $C_{G-e}(2,Y)$ over the edges determines a graph with at least four edges up to isomorphism, a statement in the orbit of the edge reconstruction conjecture and the high-risk member of the part.
+\item \textbf{Bipartite binary rigidity (Conjecture~\ref{u6}).}  Within bipartite graphs the single specialization $C_G(2,Y)$ determines $C_G$.
+\item \textbf{Connected-pseudoforest binary rigidity (Conjecture~\ref{u7}).}  The same one-field rigidity holds for trees and connected unicyclic graphs, and connectedness is essential, the implication failing for disconnected pseudoforests.
+\item \textbf{Chordal binary rigidity (Conjecture~\ref{u8}).}  The same one-field rigidity holds within chordal graphs.
+\item \textbf{Recovery of the domination number (Conjecture~\ref{u9}).}  Equality of class-counting polynomials forces equality of domination numbers, a statement strictly between Rossmann's connected-domination theorem and the false total-domination analogue.
+\item \textbf{Recovery of the independent domination number (Conjecture~\ref{u10}).}  Equality of class-counting polynomials forces equality of independent domination numbers.
+\item \textbf{Global double log-concavity (Conjecture~\ref{u11}).}  For every graph the coefficient sequence $a$ of $f_G(1+Z)$ is log-concave and remains log-concave after one application of $L(a)_i=a_i^2-a_{i-1}a_{i+1}$, the third iterate of $L$ failing for a thirteen-vertex graph.
+\item \textbf{Strict log-concavity for connected graphs (Conjecture~\ref{u12}).}  For connected graphs with at least one edge the inequality $a_i^2>a_{i-1}a_{i+1}$ is strict at every interior position of the support.
+\item \textbf{Strict second-order log-concavity (Conjecture~\ref{u13}).}  Under the same hypotheses $L(a)$ is strictly log-concave at every interior position of its support.
+\item \textbf{Rank-slice strict log-concavity (Conjecture~\ref{u14}).}  For connected graphs every non-monomial rank slice $[Y^r]F_G(1+Z,Y)$ has strictly log-concave coefficients at interior positions, the second-order strengthening of the slice statement failing for an eight-vertex graph.
+\item \textbf{Interval support at fixed rank (Conjecture~\ref{u15}).}  The support sizes attaining a fixed rank form an interval of integers, while the transposed statement, attainable ranks at fixed support size, is false.
+\item \textbf{Coefficientwise tree extremality (Conjecture~\ref{u16}).}  Among $n$-vertex trees the shifted polynomial $f_T(1+Z)$ is sandwiched coefficientwise between path and star, with equality only at the extremes.
+\item \textbf{Star rank-majorization (Conjecture~\ref{u17}).}  For $n\ge5$ and every prime power $q$ the decreasingly ordered adjoint-rank distribution of the star majorizes that of every $n$-vertex tree, the hypothesis being sharp since the star fails to majorize the path at $(n,q)=(4,2)$.
+\item \textbf{Tree rank-variance extremality (Conjecture~\ref{u18}).}  For $n\ge4$ and every prime power the variance of $\rank(\operatorname{ad}_x)$ over a uniformly random element is uniquely minimized by the path and uniquely maximized by the star among $n$-vertex trees.
+\item \textbf{Leaf-count rigidity (Conjecture~\ref{u19}).}  Equality in the lemma's bound $s(T)\ge n-\ell(T)+2$ holds exactly for paths and stars.
+\item \textbf{Diameter rigidity (Conjecture~\ref{u20}).}  Equality in the lemma's bound $s(T)\ge\operatorname{diam}(T)+1$ holds exactly for paths and stars.
+\end{enumerate}
+
+
 
 
 
 \begin{abstract}
-We state fifty-six conjectures in three parts.  The twenty-five conjectures of Part~I are each derived from the
+We state seventy-six conjectures in four parts.  The twenty-five conjectures of Part~I are each derived from the
 local--global random model of the primes:
 Cram\'er's model corrected by Hardy--Littlewood singular series, with
 Bateman--Horn as the organizing framework and Borel--Cantelli accounting
@@ -366,14 +391,14 @@ finite logarithms and algebraic tori, arboreal arithmetic dynamics, and
 adelic factorization processes---each introducing a canonical operator,
 process, invariant, classification, or phase boundary, with its mechanism,
 nearest literature boundary, first decisive theorem, and failure mode.
-  Part~III adds six conjectures across fields: a relative pretentious inverse principle for polynomial arguments, a threshold purification law for monotone vector paths, an entropy--dimension law for random-free graphons, a Hessian principle for microcanonical graph phases, a sharp stability law for entropy idempotence on finite abelian groups, and a convolution-entropy rigidity for stationary processes.
+  Part~III adds six conjectures across fields: a relative pretentious inverse principle for polynomial arguments, a threshold purification law for monotone vector paths, an entropy--dimension law for random-free graphons, a Hessian principle for microcanonical graph phases, a sharp stability law for entropy idempotence on finite abelian groups, and a convolution-entropy rigidity for stationary processes.  Part~IV (Conjectures~57--76) adds twenty conjectures on a single further object, Rossmann's class-counting polynomial of graphical Lie algebras: rigidity and reconstruction laws for the polynomial and its binary specialization, recovery of the subgraph-component polynomial and of domination invariants, a strict log-concavity ladder with proven failure boundaries, and extremal laws for trees, each tested exhaustively at small order, on adversarial random holdouts, and at every known collision class of the polynomial.
 \end{abstract}
 
 \tableofcontents
 
 \section{Introduction}
 
-This collection states fifty-six conjectures in three parts.  Part~I
+This collection states seventy-six conjectures in four parts.  Part~I
 (Conjectures 1--25) is a single sustained experiment: the primes, beyond
 their local structure, are modelled as a random set of density
 $1/\log n$, and the model is pushed to its sharpest consequences.
@@ -498,7 +523,7 @@ One tagging convention runs through every statement below: clauses
 marked [theorem] or ``elementary'' are proved; clauses marked
 ``conditional proposition'' follow from the hypotheses stated with
 them; the remaining clauses are conjectures; and open questions are
-labelled as such and are not counted among the fifty-six conjectures.
+labelled as such and are not counted among the seventy-six conjectures.
 
 \subsection*{Computational-check standards}
 
@@ -623,7 +648,7 @@ Novelty labels, from the independent literature search: \textbf{(a)} previously 
 \textbf{(b)} classical family, quantified instance apparently unstated.
 
 \medskip
-\noindent\textbf{How to read the fifty-six.}  The count is a numbering convention, not a claim of fifty independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several conjectures pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Depth and independence therefore vary by design across the fifty-six, and the summary sheet's ordering, not the raw count, carries the priority claim.
+\noindent\textbf{How to read the seventy-six.}  The count is a numbering convention, not a claim of fifty independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several conjectures pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Part~IV is one polynomial invariant carrying three programmes, and its twenty statements stand or fall in blocks rather than singly.  Depth and independence therefore vary by design across the seventy-six, and the summary sheet's ordering, not the raw count, carries the priority claim.
 
 \part{Conjectures from a local--global random model}
 
@@ -4504,6 +4529,232 @@ the Ornstein--Weiss~\cite{OW75} bilaterally deterministic processes, positive
 entropy processes whose distant past and distant future jointly
 determine the whole trajectory, together with $T,T^{-1}$-type constructions (skew products driven by a random walk, in the style of Kalikow), and no search has yet probed either family, so the negation of the conjecture has an unexplored natural habitat.  The gap the rigidity must close is quantitative: equality of entropy rates asserts only that the block mutual information $I(X_{1:n}+Y_{1:n};Y_{1:n})$ is $o(n)$, not that it is bounded, so sublinear information spread through arbitrarily long-range structure is the resource a counterexample would exploit.  The natural staircase of evidence runs from independent letters through Markov and mixing processes to completely positive entropy.
 
+\part{The class-counting polynomial of graphical Lie algebras}
+
+The twenty conjectures below concern a single canonical object, the class-counting polynomial of a finite graph, approached through the two-step nilpotent Lie algebras that realize it as a rank generating function.  They form three programmes.  A rigidity and reconstruction programme (Conjectures~\ref{u1} to~\ref{u10}) asserts that coarse specializations of the polynomial already determine it and that the polynomial in turn determines classical invariants.  A log-concavity programme (Conjectures~\ref{u11} to~\ref{u15}) locates the exact strength of positivity that the coefficient arrays support, with the boundary calibrated by explicit counterexamples one level higher.  A tree extremal programme (Conjectures~\ref{u16} to~\ref{u20}) places the path and the star at the two ends of every ordering the polynomial induces on trees.  The proved layer is separated from the conjectural one: the rank formula (Proposition~\ref{u:rank}) and the two lower bounds on the number of rank values in a tree (Lemma~\ref{u:sbounds}) are theorems with full proofs, and every conjecture is stated against that floor.  Each statement is held to the standard of the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.
+
+For a finite simple graph $G$ on vertex set $V(G)$ with edge set $E(G)$ and a field $F$, the \emph{graphical Lie algebra} $L_G(F)$ is the two-step nilpotent Lie algebra over $F$ with basis $\{v_i:i\in V(G)\}$ together with the central basis $\{z_e:e\in E(G)\}$, the bracket being $[v_a,v_b]=z_{ab}$ for each edge $\{a,b\}$ with $a<b$, $[v_b,v_a]=-z_{ab}$, and all other brackets of basis vectors zero.  For $S\subseteq V(G)$ write $N_G[S]$ for the closed neighbourhood of $S$, the set of vertices lying in $S$ or adjacent to it, and $c(G[S])$ for the number of connected components of the induced subgraph $G[S]$, and set
+\[
+\rho_G(S)=\bigl|N_G[S]\bigr|-c(G[S]),\qquad\rho_G(\emptyset)=0 .
+\]
+
+\begin{proposition}[Rank formula]\label{u:rank}
+Let $G$ be a graph on $n$ vertices, let $F$ be a field, and let $x\in L_G(F)$ have vertex part supported on $S$, all coordinates $x_i$ with $i\in S$ being nonzero.  Then
+\[
+\rank(\operatorname{ad}_x)=\rho_G(S),
+\]
+independently of the field and of the nonzero values.
+\end{proposition}
+
+\begin{proof}
+The map $\operatorname{ad}_x$ kills the centre and sends $v_j$ to $\sum_{i\in S,\,i\sim j}\pm x_iz_{ij}$, so $\rank(\operatorname{ad}_x)$ is the rank of the linear map $y\mapsto[x,y]$ on the vertex space, whose coefficient at $z_{ab}$ is $x_ay_b-x_by_a$.  A vector $y$ lies in the kernel if and only if $x_ay_b=x_by_a$ for every edge $\{a,b\}$.  If both endpoints lie in $S$ this forces the ratio $y_i/x_i$ to be constant along edges of $G[S]$, one free parameter per connected component of $G[S]$.  If exactly one endpoint $a$ lies in $S$ it forces $y_b=0$, for every $b\in N(S)\setminus S$.  Edges with neither endpoint in $S$ impose nothing, so $y_j$ is free for every $j$ outside $N[S]$.  Hence $\dim\ker=(n-|N[S]|)+c(G[S])$, and the rank is $|N[S]|-c(G[S])$.
+\end{proof}
+
+The formula was verified before it was proved: on eighteen thousand random pairs of a graph and an element, the rank of $\operatorname{ad}_x$ computed by direct linear algebra over $\Fq_2$, $\Fq_3$, and $\Fq_5$ agreed with $\rho_G(S)$ in every case, and the proof above was written only afterwards.
+
+The \emph{class-counting polynomial} of $G$ is
+\[
+C_G(X,Y)=\sum_{S\subseteq V(G)}(X-1)^{|S|}\,Y^{\rho_G(S)} .
+\]
+The polynomial is Rossmann's~\cite{Ros22}: he introduced it, proved that its specializations enumerate the conjugacy classes of graphical groups over $\Fq_q$ by size, proved the multiplicativity $C_{G\sqcup H}=C_G\,C_H$ over disjoint unions, and showed that the cardinalities of the connected dominating sets of $G$ can be read off from it.  Set
+\[
+H_G(U,Y)=C_G(1+U,Y),\qquad
+F_G(X,Y)=X^{|E(G)|}\,C_G(X,X^{-1}Y),\qquad
+f_G(X)=F_G(X,1),
+\]
+so that the coefficient of $U^kY^r$ in $H_G$ counts the sets $S$ with $|S|=k$ and $\rho_G(S)=r$.  At $X=q$ the polynomial records the distribution of $\rank(\operatorname{ad}_x)$ over $L_G(\Fq_q)$, by Proposition~\ref{u:rank}.  The \emph{subgraph-component polynomial} of Tittmann--Averbouch--Makowsky~\cite{TAM11} is
+\[
+Q_G(U,W)=\sum_{S\subseteq V(G)}U^{|S|}\,W^{c(G[S])} .
+\]
+For a tree $T$ on $n$ vertices let $s(T)$ be the number of distinct values taken by $\rho_T$, let $\ell(T)$ be the number of leaves, and let $\operatorname{diam}(T)$ be the diameter.
+
+\begin{lemma}[Two lower bounds on the number of rank values]\label{u:sbounds}
+For every tree $T$ on $n\ge2$ vertices,
+\[
+s(T)\ge n-\ell(T)+2
+\qquad\text{and}\qquad
+s(T)\ge\operatorname{diam}(T)+1 .
+\]
+\end{lemma}
+
+\begin{proof}
+For the first bound, when $n=2$ the values $0$ and $1$ occur.  For $n\ge3$ the internal vertices, those that are not leaves, induce a subtree with $m=n-\ell(T)\ge1$ vertices.  Order them $v_1,\ldots,v_m$ by breadth-first search from an internal root, so that every prefix $S_j=\{v_1,\ldots,v_j\}$ is connected and $\rho(S_j)=|N[S_j]|-1$.  Each $v_{j+1}$ has degree at least two in $T$ and its parent lies in the prefix, so it has a neighbour $c$ on the far side, whose only neighbour inside $N[S_j]$ could be $v_{j+1}$ itself, which is not in $S_j$.  Hence $c$ lies in $N[S_{j+1}]$ but not in $N[S_j]$, the sizes strictly increase, and the chain realizes $m$ distinct values, all at least $\deg(v_1)\ge2$.  Together with $\rho(\emptyset)=0$ and the value $1$ at a single leaf this gives at least $m+2=n-\ell(T)+2$ values.  For the second bound take a diametral path $v_0,v_1,\ldots,v_d$ with $d=\operatorname{diam}(T)$, whose endpoint $v_0$ is a leaf.  For the prefixes $S_j=\{v_0,\ldots,v_{j-1}\}$ with $1\le j\le d$, the vertex $v_{j+1}$ witnesses strict growth of $|N[S_j]|$ as long as it exists, since a tree has no edge from $v_{j+1}$ back into $\{v_0,\ldots,v_{j-1}\}$.  The chain realizes $d$ distinct values starting from $\rho(S_1)=1$, and $\rho(\emptyset)=0$ gives $d+1$ in total.
+\end{proof}
+
+\section{Rigidity and reconstruction}
+
+\begin{conjecture}[Irreducibility and connectivity]\label{u1}
+For every graph $G$ with at least one vertex, $H_G(U,Y)$ is irreducible in $\Z[U,Y]$ if and only if $G$ is connected.
+\end{conjecture}
+
+\paragraph{Significance.}
+Rossmann's multiplicativity~\cite{Ros22} makes the disconnected direction immediate, each factor being nonconstant since $H_{K_1}=1+U$, so the content is the connected direction.  The mechanism is that a factorization of $H_G$ would express the joint array of $(|S|,\rho_G(S))$ over all vertex subsets as a product of two smaller arrays, which is exactly what a separation of $G$ into two vertex-disjoint parts produces, and the conjecture asserts that no other source of such a product structure exists: connectivity of the graph should be readable as algebraic indecomposability of the polynomial.  The nearest literature boundary is the multiplicativity theorem itself, which supplies one direction and gives the statement its shape.  The verification is exact rather than probabilistic: all $996$ connected graphs on at most seven vertices have irreducible $H_G$, by exact factorization over $\Z$.  A first decisive theorem would be irreducibility of $H_{P_n}$ for the paths, a one-parameter family at the bottom of the connectivity hierarchy.  The failure mode is a connected graph whose polynomial factors, which would reveal a product structure in the rank array not induced by any decomposition of the graph and would make the polynomial blind to connectivity in the strongest possible way.
+
+
+\begin{conjecture}[Recovery of the subgraph-component polynomial]\label{u2}
+For all graphs $G$ and $H$, $C_G=C_H$ implies $Q_G=Q_H$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The two polynomials record transverse marginals of the induced-subgraph structure: $C_G$ records the joint distribution of $(|S|,\,|N_G[S]|-c(G[S]))$ over all vertex subsets and $Q_G$ the joint distribution of $(|S|,\,c(G[S]))$, and no functional relation between the two arrays is apparent, so the mechanism must be rigidity of the pairs of arrays that actually arise from graphs.  The nearest literature boundary pairs the two sources: the class-counting polynomial and its enumerative theorems are Rossmann's~\cite{Ros22}, the subgraph-component polynomial is Tittmann--Averbouch--Makowsky's~\cite{TAM11}, and no bridge between them is on record.  The polynomial $C_G$ does not determine the graph, and every known collision class was tested: the $119$ collision classes among the $1252$ graphs on at most seven vertices, a randomized eight-vertex corpus, the unique collision class among all $3159$ trees on fourteen vertices (there is none through thirteen, and the class was refound independently by exhaustive search), and the first unicyclic collision at ten vertices.  In every class $Q_G$ agrees, as do the domination invariants of Conjectures~\ref{u9} and~\ref{u10}.  A first decisive theorem would be a derivation of $Q_T$ from $C_T$ for trees.  The failure mode is a $C$-collision pair with distinct $Q$, which would show that the closed-neighbourhood array and the component array are genuinely independent invariants and would break the entire recovery programme at its first joint.
+
+
+\begin{conjecture}[Two-field rigidity]\label{u3}
+If $C_G(2,Y)=C_H(2,Y)$ and $C_G(3,Y)=C_H(3,Y)$, then $C_G=C_H$.  Equivalently, the adjoint-rank distributions of the graphical Lie algebras over $\Fq_2$ and $\Fq_3$ determine them over every finite field.
+\end{conjecture}
+
+\paragraph{Significance.}
+The two hypotheses are the unweighted and the $2^{|S|}$-weighted rank statistics, $C_G(2,Y)=\sum_SY^{\rho_G(S)}$ and $C_G(3,Y)=\sum_S2^{|S|}Y^{\rho_G(S)}$, and recovering a nonnegative integer array from these two evaluations is impossible for general arrays, so the mechanism is rigidity of the arrays that graphs realize rather than linear algebra.  The equivalence with the finite-field form is Proposition~\ref{u:rank}, and the nearest literature boundary is Rossmann's enumeration theorem~\cite{Ros22}, through which the conjecture reads: two conjugacy-class censuses, over $\Fq_2$ and $\Fq_3$, determine the census over every finite field.  The verification is exhaustive on at most seven vertices and covers six thousand random eight-vertex graphs.  A first decisive theorem would be two-field rigidity for trees.  The failure mode is a pair of graphs agreeing over $\Fq_2$ and $\Fq_3$ yet separated over some larger field, which would reveal genuinely field-dependent information in the adjoint-rank distribution and would locate it at a specific weight $(q-1)^{|S|}$.
+
+
+\begin{conjecture}[Hybrid rigidity]\label{u4}
+If $C_G(2,Y)=C_H(2,Y)$ and $Q_G=Q_H$, then $C_G=C_H$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The mechanism is complementarity of marginals: the binary specialization carries the rank distribution and $Q_G$ carries the joint size-and-component array, and the conjecture asserts that these two projections of the induced-subgraph data jointly pin the full class-counting polynomial.  The pairing is calibrated against a cheaper substitute, since $C_G(2,Y)$ together with the degree sequence does not determine $C_G$, so the component information in $Q_G$ is doing work that no degree data can do.  The nearest literature boundary is again the pair Rossmann~\cite{Ros22} and Tittmann--Averbouch--Makowsky~\cite{TAM11}, whose polynomials the hypothesis mixes.  The verification is exhaustive on at most seven vertices.  A first decisive theorem would be the tree case.  The failure mode is a pair agreeing in both hypotheses but not in $C$, which would show that the joint array holds correlation information invisible to this pair of its natural projections.
+
+
+\begin{conjecture}[Binary edge-deck reconstruction]\label{u5}
+For graphs $G$ and $H$ with at least four edges each, if the multisets $\{C_{G-e}(2,Y):e\in E(G)\}$ and $\{C_{H-e}(2,Y):e\in E(H)\}$ coincide, then $G$ and $H$ are isomorphic.
+\end{conjecture}
+
+\paragraph{Significance.}
+This is the high-risk member of the part, in the orbit of the edge reconstruction conjecture, for which Bondy--Hemminger~\cite{BH77} is the survey.  Each card here retains only the binary rank distribution of an edge-deleted subgraph rather than its isomorphism type, so the deck is a drastic coarsening of the classical edge deck, and the mechanism is that rank distributions vary so tightly under single-edge deletion that the multiset of shadows should already separate graphs.  The nearest literature boundary is the reconstruction literature surveyed in~\cite{BH77}, against which the present statement trades weaker cards for the same conclusion.  The verification is exhaustive on at most seven vertices among graphs with at least four edges.  A first decisive theorem would be reconstruction of trees from the binary deck.  The failure mode is a nonisomorphic pair with equal binary decks, which would measure exactly how much the rank distribution forgets under edge deletion, and a counterexample here would be the least surprising in the part, which is why the statement is flagged as its stress point.
+
+\begin{conjecture}[Bipartite binary rigidity]\label{u6}
+For bipartite graphs $G$ and $H$, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
+\end{conjecture}
+
+\paragraph{Significance.}
+A single specialization cannot determine the polynomial in general, since the implication already fails inside the disconnected pseudoforests (see Conjecture~\ref{u7}), so the mechanism is that a hereditary class restriction removes the room in which the unweighted rank distribution and the size-weighted array can decouple.  The nearest literature boundary is Rossmann's specialization theorem~\cite{Ros22}, which gives the hypothesis its meaning as the $\Fq_2$ census.  The verification is a six-thousand-graph random holdout of bipartite graphs on nine to twelve vertices, spanning $2747$ distinct binary specializations, with no violation.  A first decisive theorem would be the tree case, shared with Conjecture~\ref{u7}.  The failure mode is a bipartite pair with equal binary specialization and distinct $C$, which would locate the boundary of one-field rigidity strictly inside the bipartite world and would redirect the class-restriction programme towards sparser families.
+
+
+\begin{conjecture}[Connected-pseudoforest binary rigidity]\label{u7}
+For $G$ and $H$ each a tree or a connected unicyclic graph, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
+\end{conjecture}
+
+\begin{remark}\label{u7:conn}
+Connectedness is essential: the implication fails for disconnected pseudoforests.
+\end{remark}
+
+\paragraph{Significance.}
+The mechanism is that on connected graphs with at most one cycle the binary rank distribution should already saturate the polynomial, and the remark pins where the mechanism stops, since dropping connectedness admits counterexamples among pseudoforests.  The nearest literature boundary is the multiplicativity theorem of Rossmann~\cite{Ros22}, which is exactly the tool that builds the disconnected counterexamples and so marks the statement's edge.  The verification is a six-thousand-graph random holdout of trees and connected unicyclic graphs on ten to thirteen vertices, spanning $3192$ distinct binary specializations, together with all unicyclic graphs on ten vertices, spanning $656$ binary classes.  A first decisive theorem would be the tree case alone.  The failure mode is a connected pair inside the class with equal binary specialization and distinct $C$, which would show that even one cycle leaves enough freedom to decouple the two arrays and would push the true rigidity class down to trees.
+
+
+\begin{conjecture}[Chordal binary rigidity]\label{u8}
+For chordal graphs $G$ and $H$, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
+\end{conjecture}
+
+\paragraph{Significance.}
+Chordal graphs, those in which every cycle of length at least four has a chord, form the natural dense counterpart to the sparse classes of Conjectures~\ref{u6} and~\ref{u7}, and the mechanism is the same class rigidity tested against a family with unbounded clique structure rather than bounded cycle structure.  The nearest literature boundary is once more the specialization theorem~\cite{Ros22} that interprets the hypothesis over $\Fq_2$.  The verification is a six-thousand-graph random holdout of chordal graphs on nine to twelve vertices, spanning $5598$ distinct binary specializations, with no violation.  A first decisive theorem would be the case of trees, which are chordal, followed by block graphs.  The failure mode is a chordal pair separating the binary specialization from the polynomial, which would show that one-field rigidity is a sparsity phenomenon rather than a structural one, since it would then survive in Conjectures~\ref{u6} and~\ref{u7} while failing here.
+
+
+\begin{conjecture}[Recovery of the domination number]\label{u9}
+For all graphs $G$ and $H$, $C_G=C_H$ implies $\gamma(G)=\gamma(H)$.
+\end{conjecture}
+
+\paragraph{Significance.}
+A set is dominating exactly when its closed neighbourhood is the whole vertex set, and the array behind $C_G$ records $|N_G[S]|$ only through the difference $\rho_G(S)=|N_G[S]|-c(G[S])$, so the dominating sets are entangled with component counts and the mechanism is that the entanglement can be undone at the extreme where $\gamma$ lives.  The conjecture sits strictly between a theorem and a false analogue, which is the nearest literature boundary: the cardinalities of connected dominating sets are readable from the coefficients, by Rossmann~\cite{Ros22}, while the total domination number is not determined by $C_G$.  Every known collision class of $C$, the corpus recorded at Conjecture~\ref{u2}, has agreeing domination number.  A first decisive theorem would be the tree case, where the unique fourteen-vertex collision class is the only known test.  The failure mode is a collision class with distinct domination numbers, which would place $\gamma$ on the undetermined side of the boundary alongside total domination and would show that the connected-domination theorem is the exact limit of what the polynomial sees.
+
+
+\begin{conjecture}[Recovery of the independent domination number]\label{u10}
+For all graphs $G$ and $H$, $C_G=C_H$ implies $i(G)=i(H)$, where $i$ is the independent domination number, the least cardinality of a set that is simultaneously independent and dominating.
+\end{conjecture}
+
+\paragraph{Significance.}
+Independent dominating sets impose the two conditions the array treats most asymmetrically, domination through $|N_G[S]|$ and independence through $c(G[S])=|S|$, and the mechanism is that their interaction leaves a trace in the joint distribution of $(|S|,\rho_G(S))$ even though neither condition is separately readable.  The nearest literature boundary is the same theorem-versus-false-analogue frame as Conjecture~\ref{u9}: connected domination is readable~\cite{Ros22}, total domination is not determined, and $i$ is conjectured to fall on the determined side.  Every known collision class of $C$, the corpus recorded at Conjecture~\ref{u2}, has agreeing independent domination number.  A first decisive theorem would be recovery of $i$ for trees.  The failure mode is a collision class with distinct $i$, which would split the domination invariants into determined and undetermined families along a line that no present structural explanation predicts.
+
+\section{Log-concavity and support}
+
+\begin{conjecture}[Global double log-concavity]\label{u11}
+For every graph $G$ the coefficient sequence $a$ of $f_G(1+Z)$ is log-concave, and so is its transform $L(a)$ defined by $L(a)_i=a_i^2-a_{i-1}a_{i+1}$, out-of-range terms being zero.
+\end{conjecture}
+
+\paragraph{Significance.}
+The expansion point is canonical: at $X=1+Z$ the polynomial is expanded about the degenerate point $X=1$, where the weights $(X-1)^{|S|}$ vanish for every nonempty set, and $f_G$ folds the rank variable into the size variable at the same point, so the sequence $a$ is the most compressed image of the whole array.  The statement is calibrated to the strongest form the data support: log-concavity is asserted, its once-iterated form is asserted, and the calibration is exact because the third iterate of $L$ fails for a thirteen-vertex graph.  The nearest literature boundary is Rossmann's paper~\cite{Ros22}, whose theorems about this polynomial are enumerative, the specialization, multiplicativity, and dominating-set results, so the positivity layer opens a new face of the object.  The verification covers the full atlas of graphs on at most seven vertices and twenty-five hundred random graphs on eight to ten vertices.  A first decisive theorem would be log-concavity of $f_T(1+Z)$ for trees.  The failure mode is graded: a failure of the second level would compress the true boundary into the narrow band between one and three iterates, while a failure of bare log-concavity on some large graph would show that the seven-vertex atlas sits below the threshold where the array's geometry turns.
+
+
+\begin{conjecture}[Strict log-concavity for connected graphs]\label{u12}
+For connected $G$ with at least one edge, $a_i^2>a_{i-1}a_{i+1}$ at every interior position of the support of $a$, where $a$ is the coefficient sequence of $f_G(1+Z)$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The mechanism is that equality cases of log-concavity should be confined to the degenerate stratum, and in this part the degenerate stratum is disconnectedness, exactly as in Conjecture~\ref{u1}: multiplicativity~\cite{Ros22} builds the polynomials of disconnected graphs as products, and products are where interior coincidences are manufactured.  The nearest literature boundary is that same multiplicativity theorem, which marks the hypothesis as necessary in spirit.  The verification is the corpus of Conjecture~\ref{u11}, the full seven-vertex atlas and twenty-five hundred random graphs on eight to ten vertices, with strictness observed throughout the connected stratum.  A first decisive theorem would be strictness for paths and stars, the two ends of the tree order of Conjecture~\ref{u16}.  The failure mode is a connected graph with an interior equality, an exact coincidence $a_i^2=a_{i-1}a_{i+1}$, which would demand an algebraic explanation and would show that connectivity does not exhaust the sources of degeneracy.
+
+
+\begin{conjecture}[Strict second-order log-concavity]\label{u13}
+For connected $G$ with at least one edge, the transform $L(a)$ of Conjecture~\ref{u11} is strictly log-concave at every interior position of its support.
+\end{conjecture}
+
+\paragraph{Significance.}
+The statement pushes the strictness mechanism of Conjecture~\ref{u12} one level up the $L$-hierarchy, and its position is the sharpest the evidence permits, since the third iterate of $L$ fails already for a thirteen-vertex graph and the second-order slice strengthening fails for an eight-vertex graph (Conjecture~\ref{u14}), so the conjecture threads a boundary with counterexamples visible on two sides.  The nearest literature boundary is as in Conjecture~\ref{u11}: the polynomial's literature~\cite{Ros22} is enumerative and the positivity hierarchy is uncharted.  The verification is the same corpus, the full seven-vertex atlas and twenty-five hundred random graphs on eight to ten vertices.  A first decisive theorem would be second-order strictness for paths.  The failure mode is a connected graph whose $L(a)$ has an interior equality or reversal, which by the two flanking counterexamples would pin the exact rung of the hierarchy at which graphs stop being log-concave, the most informative single outcome the programme could produce.
+
+
+\begin{conjecture}[Rank-slice strict log-concavity]\label{u14}
+For connected $G$ and every attainable rank $r$, the slice $A_{G,r}(Z)=[Y^r]\,F_G(1+Z,Y)$, when it is not a monomial, has strictly log-concave coefficients at every interior position of its support.
+\end{conjecture}
+
+\paragraph{Significance.}
+The mechanism refines Conjecture~\ref{u12} from the folded sequence to each rank slice separately: the sets of a fixed rank $r$ are counted by size, and strict log-concavity asserts that each of these level sets is unimodal in the strong multiplicative sense, so that positivity holds fibrewise and not only in aggregate.  The calibration is exact here too, since the second-order strengthening of this slice statement fails for an eight-vertex graph, a counterexample reconfirmed by the independent implementation, so the slice hierarchy stops one level below the global hierarchy of Conjecture~\ref{u13}.  The nearest literature boundary is Rossmann's~\cite{Ros22} reading of the slices as class data over finite fields.  The verification is the full seven-vertex atlas and twenty-five hundred random graphs on eight to ten vertices.  A first decisive theorem would be strict log-concavity of every slice for stars.  The failure mode is a connected graph with a non-log-concave slice, which would show that aggregate log-concavity, if it survives in Conjecture~\ref{u11}, is an artefact of summation rather than a fibrewise phenomenon.
+
+
+\begin{conjecture}[Interval support at fixed rank]\label{u15}
+For every graph $G$ and every attainable rank $r$, the set $K_r(G)=\{|S|:\rho_G(S)=r\}$ is an interval of integers.
+\end{conjecture}
+
+\paragraph{Significance.}
+This is the support statement beneath the positivity statements: strict log-concavity of a slice presupposes gapless support, and the conjecture asserts gaplessness for every graph, not only connected ones.  The mechanism would be an exchange argument, passing between witnesses of the same rank whose sizes differ by one, and the direction of the statement is essential, since the transposed assertion is false: the attainable ranks at a fixed support size need not form an interval.  The interval structure, if real, is therefore a property of the size direction alone.  The nearest literature boundary is the support analysis implicit in Rossmann's connected-dominating-set theorem~\cite{Ros22}, which reads off one extreme stratum of the array.  The verification is the full seven-vertex atlas and twenty-five hundred random graphs on eight to ten vertices.  A first decisive theorem would be the interval property for trees.  The failure mode is a graph with a gapped rank level set, which would break the fibrewise programme of Conjecture~\ref{u14} at the level of supports and, given the falsity of the transposed statement, would show that neither direction of the array has interval structure.
+
+\section{Tree extremality and rigidity}
+
+\begin{conjecture}[Coefficientwise tree extremality]\label{u16}
+For every tree $T$ on $n$ vertices,
+\[
+f_{P_n}(1+Z)\ \le\ f_T(1+Z)\ \le\ f_{K_{1,n-1}}(1+Z)
+\]
+coefficientwise, with equality only for the path and the star respectively.
+\end{conjecture}
+
+\paragraph{Significance.}
+The mechanism is visible in Lemma~\ref{u:sbounds}: the rank landscape of a tree is driven by its internal vertices and its diameter, and the path and the star are the two trees that extremize both statistics simultaneously, the path with two leaves and maximal diameter, the star with maximal leaf count and diameter two.  The conjecture asserts that this extremality is not merely a matter of the range of $\rho_T$ but holds coefficient by coefficient in the shifted polynomial, the strongest ordering the object admits.  The nearest literature boundary is Rossmann's enumeration~\cite{Ros22}, which interprets each coefficientwise inequality as a family of inequalities between class censuses over every finite field at once.  The verification is exhaustive over all trees through fourteen vertices.  A first decisive theorem would be either inequality for one nontrivial family, say the star bound for caterpillars.  The failure mode is a tree escaping the sandwich at a single coefficient, which would show that the coefficientwise order on trees is not anchored at the degree extremes and would force the extremal programme to work slice by slice instead.
+
+
+\begin{conjecture}[Star rank-majorization]\label{u17}
+For every $n\ge5$ and every prime power $q$, the decreasingly ordered adjoint-rank distribution of $L_{K_{1,n-1}}(\Fq_q)$ majorizes that of $L_T(\Fq_q)$ for every $n$-vertex tree $T$.
+\end{conjecture}
+
+\begin{remark}\label{u17:sharp}
+The hypothesis $n\ge5$ cannot be dropped: at $n=4$ and $q=2$ the star fails to majorize the path.  The dual assertion, that the path is majorization-minimal among $n$-vertex trees, is false.  The failure at $(n,q)=(4,2)$ was found in the verification reported below.
+\end{remark}
+
+\paragraph{Significance.}
+Majorization compares two probability vectors through all partial sums of their decreasingly ordered entries, so the conjecture asserts that the star's adjoint-rank distribution is the most concentrated among trees uniformly across the whole partial-sum hierarchy and across every finite field at once.  The mechanism is concentration: by Proposition~\ref{u:rank} the rank of a random element is a statistic of its vertex support, and the star compresses the possible values harder than any other tree.  The remark shows the inequality system is genuinely tight, which is the honest register for a majorization claim: at $(n,q)=(4,2)$ one partial sum reverses, and the dual minimality of the path fails outright, so the surviving statement is exactly the one the data leave standing.  The nearest literature boundary is Rossmann's~\cite{Ros22} reading of these distributions as class data of graphical groups.  The verification is exhaustive for $q\in\{2,3,4,5\}$ over all trees through twelve vertices, for $q\in\{2,3\}$ at thirteen, and for $q=2$ at fourteen.  A first decisive theorem would be the fixed comparison of star against path for all $n\ge5$ and all $q$.  The failure mode is a tree and a prime power breaking one partial sum at some $n\ge5$, which would show that the small-$n$ anomaly is the visible end of a persistent phenomenon rather than a boundary effect.
+
+
+\begin{conjecture}[Tree rank-variance extremality]\label{u18}
+For every $n\ge4$ and every prime power $q$, among $n$-vertex trees the variance of $\rank(\operatorname{ad}_x)$ over uniformly random $x\in L_T(\Fq_q)$ is uniquely minimized by the path and uniquely maximized by the star.
+\end{conjecture}
+
+\paragraph{Significance.}
+The two tree orderings of this programme are not redundant: majorization compares the ordered probabilities while the variance measures the spread of the rank values themselves, and the star sits at the top of both scales, most concentrated in the sense of Conjecture~\ref{u17} and most spread in the sense of variance, with the path now appearing as the genuine minimum.  The mechanism is again Proposition~\ref{u:rank}, which makes the variance a purely combinatorial functional of the array $(|S|,\rho_T(S))$ weighted by $(q-1)^{|S|}$.  The nearest literature boundary is the enumerative frame of Rossmann~\cite{Ros22}, in which the variance is a second moment of the class census.  The verification matches Conjecture~\ref{u17}: exhaustive for $q\in\{2,3,4,5\}$ through twelve vertices, for $q\in\{2,3\}$ at thirteen, and for $q=2$ at fourteen.  A first decisive theorem would be the uniqueness of the star maximum at $q=2$.  The failure mode is a tree overtaking an extreme at some $(n,q)$, and since the statement begins at $n=4$ where the majorization statement already fails, a violation would separate the variance order from the majorization order and show that the two concentration scales genuinely diverge on trees.
+
+
+\begin{conjecture}[Leaf-count rigidity]\label{u19}
+For a tree $T$ on $n\ge2$ vertices, equality holds in the bound $s(T)\ge n-\ell(T)+2$ of Lemma~\ref{u:sbounds} exactly when $T$ is a path or a star.
+\end{conjecture}
+
+\paragraph{Significance.}
+The lemma's proof realizes $n-\ell(T)+2$ rank values along a breadth-first chain of internal vertices, and equality demands that every subset of vertices lands on one of the chain's values, so the mechanism is rigidity of the equality case: only the two extreme trees should leave no room for excess values off the chain.  The nearest literature boundary is internal, the lemma itself, whose bound the conjecture upgrades to a characterization, in the same relation as an isoperimetric equality case stands to its inequality.  The verification is exhaustive over all trees through fourteen vertices.  A first decisive theorem would be the forward half, that the path and the star do achieve equality, a concrete computation of $s$ for two explicit families.  The failure mode is a third tree achieving equality, which would show that the leaf count fails to see some genuinely different extremal shape and would refute the rigidity reading of Lemma~\ref{u:sbounds} while leaving the lemma intact.
+
+
+\begin{conjecture}[Diameter rigidity]\label{u20}
+For a tree $T$ on $n\ge2$ vertices, equality holds in the bound $s(T)\ge\operatorname{diam}(T)+1$ of Lemma~\ref{u:sbounds} exactly when $T$ is a path or a star.
+\end{conjecture}
+
+\paragraph{Significance.}
+The diametral chain of the lemma realizes $\operatorname{diam}(T)+1$ values, and equality requires the whole subset lattice to produce nothing beyond the chain, so the mechanism parallels Conjecture~\ref{u19} with the diameter replacing the internal vertex count, and the two rigidity statements pin the same extremal pair from two independent directions, each serving as a cross-check on the other.  The nearest literature boundary is again Lemma~\ref{u:sbounds} itself.  The verification is exhaustive over all trees through fourteen vertices.  A first decisive theorem would be the forward half for the path, where the diameter is $n-1$ and the claimed equality reads $s(P_n)=n$.  The failure mode is a tree of small diameter and few rank values outside the pair, which would show the diameter bound to be loose in a structured way and would decouple the two rigidity statements that the exhaustive search through fourteen vertices keeps locked together.
+
 \section{Stress tests and independent recomputation}\label{sec:audit}
 
 Each statement was tested three ways: against the literature, against
@@ -4597,6 +4848,8 @@ integrate over density and cannot see such families; only structural
 tests---testing a claimed exception census on special subsequences, for
 instance---find them.  A verification that only re-runs an existing
 count at a larger bound is blind to every one of them.
+
+\emph{Part IV.}  The Part IV verification programme follows the same standard.  The rank formula of Proposition~\ref{u:rank} was checked against direct linear algebra over $\Fq_2$, $\Fq_3$, and $\Fq_5$ on eighteen thousand random pairs of a graph and an element before the proof was written.  The irreducibility claim of Conjecture~\ref{u1} was verified by exact factorization over $\Z$ for all $996$ connected graphs on at most seven vertices.  The recovery statements of Conjectures~\ref{u2}, \ref{u9}, and~\ref{u10} were tested on every known collision class of $C_G$: the $119$ classes among the $1252$ graphs on at most seven vertices, a randomized eight-vertex corpus, the unique class among all $3159$ trees on fourteen vertices, refound independently by exhaustive search, and the first unicyclic collision at ten vertices, with $Q_G$, $\gamma$, and $i$ agreeing in every class.  The rigidity statements were scanned exhaustively on at most seven vertices, with six thousand random eight-vertex graphs added for Conjecture~\ref{u3} and the scan for Conjecture~\ref{u5} restricted to graphs with at least four edges, and the class-restricted statements were tested on six-thousand-graph random holdouts for each of Conjectures~\ref{u6}, \ref{u7}, and~\ref{u8}, spanning $2747$, $3192$, and $5598$ distinct binary specializations respectively, together with all $656$ binary classes of ten-vertex unicyclic graphs for Conjecture~\ref{u7}.  The log-concavity and support statements of Conjectures~\ref{u11} to~\ref{u15} were verified on the full atlas of graphs on at most seven vertices and twenty-five hundred random graphs on eight to ten vertices, with the eight-vertex counterexample to the second-order slice strengthening reconfirmed by the independent implementation.  The tree programme of Conjectures~\ref{u16} to~\ref{u20} was verified exhaustively over all trees through fourteen vertices, for Conjectures~\ref{u17} and~\ref{u18} with $q\in\{2,3,4,5\}$ through twelve vertices, $q\in\{2,3\}$ at thirteen, and $q=2$ at fourteen, and the sharpness failure at $(n,q)=(4,2)$ recorded at Conjecture~\ref{u17} was found in this verification rather than assumed.
 
 \section{An open question}
 
@@ -4955,6 +5208,12 @@ The structure of logarithmically averaged correlations of
 multiplicative functions, with applications to the Chowla and
 Elliott conjectures,
 Duke Math. J. 168 (2019), no. 11, 1977--2027.
+
+\bibitem{Ros22} T. Rossmann, \emph{Enumerating conjugacy classes of graphical groups over finite fields}, Bull. Lond. Math. Soc. \textbf{54} (2022), 1923--1943.
+
+\bibitem{TAM11} P. Tittmann, I. Averbouch, and J. A. Makowsky, \emph{The enumeration of vertex induced subgraphs with respect to the number of components}, European J. Combin. \textbf{32} (2011), 954--974.
+
+\bibitem{BH77} J. A. Bondy and R. L. Hemminger, \emph{Graph reconstruction---a survey}, J. Graph Theory \textbf{1} (1977), 227--268.
 
 \end{thebibliography}
 
