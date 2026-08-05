@@ -1,0 +1,200 @@
+{
+ "part": "IV (Conjectures 57-76)",
+ "rank_formula_checks": {
+  "random_graph_element_field_triples": 18000,
+  "fields": [
+   2,
+   3,
+   5
+  ],
+  "mismatches": 0
+ },
+ "c57_irreducibility": {
+  "connected_graphs_le7": 996,
+  "reducible": 0
+ },
+ "collision_corpora": {
+  "atlas_le7_classes": 119,
+  "tree14_classes": 1,
+  "tree13_classes": 0,
+  "tree14_pair": [
+   [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     9,
+     10
+    ],
+    [
+     10,
+     11
+    ]
+   ],
+   [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     10
+    ],
+    [
+     11,
+     12
+    ]
+   ]
+  ],
+  "unicyclic10_noniso_classes": 1,
+  "Q_gamma_i_agree_on_all_classes": true
+ },
+ "c59_two_field": {
+  "atlas_exhaustive": true,
+  "random8v": 6000,
+  "violations": 0
+ },
+ "c61_edge_deck": {
+  "atlas_le7_ge4edges": "exhaustive",
+  "violations": 0
+ },
+ "binary_rigidity_holdouts": {
+  "bipartite": {
+   "n": "9-12",
+   "graphs": 6000,
+   "binary_classes": 2747,
+   "violations": 0
+  },
+  "pseudoforest": {
+   "n": "10-13",
+   "graphs": 6000,
+   "binary_classes": 3192,
+   "violations": 0
+  },
+  "chordal": {
+   "n": "9-12",
+   "graphs": 6000,
+   "binary_classes": 5598,
+   "violations": 0
+  },
+  "unicyclic10_exhaustive": {
+   "binary_classes": 656,
+   "violations": 0
+  }
+ },
+ "log_concavity": {
+  "atlas_le7": "exhaustive",
+  "random_8_10v": 2500,
+  "violations": 0,
+  "slice_second_order_counterexample_8v": true
+ },
+ "interval_support": {
+  "violations": 0
+ },
+ "trees": {
+  "exhaustive_through": 14,
+  "counts": {
+   "13": 1301,
+   "14": 3159
+  },
+  "majorization_q": {
+   "le12": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "13": [
+    2,
+    3
+   ],
+   "14": [
+    2
+   ]
+  },
+  "sharpness_n4_q2_star_fails_to_majorize_path": true,
+  "variance_extremality_holds_from_n4": true,
+  "violations": 0
+ }
+}

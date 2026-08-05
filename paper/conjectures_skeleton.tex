@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Fifty-six conjectures in mathematics}
+\title{Seventy-six conjectures in mathematics}
 \author{}
 \date{July 27, 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Fifty-six conjectures in mathematics:\\ the statements}
+\title{Seventy-six conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -2656,6 +2656,139 @@ Then $h_\sigma(\mu*\mu)=h_\sigma(\mu)$.
 
 
 
+\part{The class-counting polynomial of graphical Lie algebras}
+
+The twenty conjectures below concern a single canonical object, the class-counting polynomial of a finite graph, approached through the two-step nilpotent Lie algebras that realize it as a rank generating function.  They form three programmes.  A rigidity and reconstruction programme (Conjectures~\ref{u1} to~\ref{u10}) asserts that coarse specializations of the polynomial already determine it and that the polynomial in turn determines classical invariants.  A log-concavity programme (Conjectures~\ref{u11} to~\ref{u15}) locates the exact strength of positivity that the coefficient arrays support, with the boundary calibrated by explicit counterexamples one level higher.  A tree extremal programme (Conjectures~\ref{u16} to~\ref{u20}) places the path and the star at the two ends of every ordering the polynomial induces on trees.  The proved layer is separated from the conjectural one: the rank formula (Proposition~\ref{u:rank}) and the two lower bounds on the number of rank values in a tree (Lemma~\ref{u:sbounds}) are theorems with full proofs, and every conjecture is stated against that floor.  Each statement is held to the standard of the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.
+
+For a finite simple graph $G$ on vertex set $V(G)$ with edge set $E(G)$ and a field $F$, the \emph{graphical Lie algebra} $L_G(F)$ is the two-step nilpotent Lie algebra over $F$ with basis $\{v_i:i\in V(G)\}$ together with the central basis $\{z_e:e\in E(G)\}$, the bracket being $[v_a,v_b]=z_{ab}$ for each edge $\{a,b\}$ with $a<b$, $[v_b,v_a]=-z_{ab}$, and all other brackets of basis vectors zero.  For $S\subseteq V(G)$ write $N_G[S]$ for the closed neighbourhood of $S$, the set of vertices lying in $S$ or adjacent to it, and $c(G[S])$ for the number of connected components of the induced subgraph $G[S]$, and set
+\[
+\rho_G(S)=\bigl|N_G[S]\bigr|-c(G[S]),\qquad\rho_G(\emptyset)=0 .
+\]
+
+\begin{proposition}[Rank formula]\label{u:rank}
+Let $G$ be a graph on $n$ vertices, let $F$ be a field, and let $x\in L_G(F)$ have vertex part supported on $S$, all coordinates $x_i$ with $i\in S$ being nonzero.  Then
+\[
+\rank(\operatorname{ad}_x)=\rho_G(S),
+\]
+independently of the field and of the nonzero values.
+\end{proposition}
+
+The \emph{class-counting polynomial} of $G$ is
+\[
+C_G(X,Y)=\sum_{S\subseteq V(G)}(X-1)^{|S|}\,Y^{\rho_G(S)} .
+\]
+The polynomial is Rossmann's~\cite{Ros22}: he introduced it, proved that its specializations enumerate the conjugacy classes of graphical groups over $\Fq_q$ by size, proved the multiplicativity $C_{G\sqcup H}=C_G\,C_H$ over disjoint unions, and showed that the cardinalities of the connected dominating sets of $G$ can be read off from it.  Set
+\[
+H_G(U,Y)=C_G(1+U,Y),\qquad
+F_G(X,Y)=X^{|E(G)|}\,C_G(X,X^{-1}Y),\qquad
+f_G(X)=F_G(X,1),
+\]
+so that the coefficient of $U^kY^r$ in $H_G$ counts the sets $S$ with $|S|=k$ and $\rho_G(S)=r$.  At $X=q$ the polynomial records the distribution of $\rank(\operatorname{ad}_x)$ over $L_G(\Fq_q)$, by Proposition~\ref{u:rank}.  The \emph{subgraph-component polynomial} of Tittmann--Averbouch--Makowsky~\cite{TAM11} is
+\[
+Q_G(U,W)=\sum_{S\subseteq V(G)}U^{|S|}\,W^{c(G[S])} .
+\]
+For a tree $T$ on $n$ vertices let $s(T)$ be the number of distinct values taken by $\rho_T$, let $\ell(T)$ be the number of leaves, and let $\operatorname{diam}(T)$ be the diameter.
+
+\begin{lemma}[Two lower bounds on the number of rank values]\label{u:sbounds}
+For every tree $T$ on $n\ge2$ vertices,
+\[
+s(T)\ge n-\ell(T)+2
+\qquad\text{and}\qquad
+s(T)\ge\operatorname{diam}(T)+1 .
+\]
+\end{lemma}
+
+\section{Rigidity and reconstruction}
+
+\begin{conjecture}[Irreducibility and connectivity]\label{u1}
+For every graph $G$ with at least one vertex, $H_G(U,Y)$ is irreducible in $\Z[U,Y]$ if and only if $G$ is connected.
+\end{conjecture}
+
+\begin{conjecture}[Recovery of the subgraph-component polynomial]\label{u2}
+For all graphs $G$ and $H$, $C_G=C_H$ implies $Q_G=Q_H$.
+\end{conjecture}
+
+\begin{conjecture}[Two-field rigidity]\label{u3}
+If $C_G(2,Y)=C_H(2,Y)$ and $C_G(3,Y)=C_H(3,Y)$, then $C_G=C_H$.  Equivalently, the adjoint-rank distributions of the graphical Lie algebras over $\Fq_2$ and $\Fq_3$ determine them over every finite field.
+\end{conjecture}
+
+\begin{conjecture}[Hybrid rigidity]\label{u4}
+If $C_G(2,Y)=C_H(2,Y)$ and $Q_G=Q_H$, then $C_G=C_H$.
+\end{conjecture}
+
+\begin{conjecture}[Binary edge-deck reconstruction]\label{u5}
+For graphs $G$ and $H$ with at least four edges each, if the multisets $\{C_{G-e}(2,Y):e\in E(G)\}$ and $\{C_{H-e}(2,Y):e\in E(H)\}$ coincide, then $G$ and $H$ are isomorphic.
+\end{conjecture}
+
+\begin{conjecture}[Bipartite binary rigidity]\label{u6}
+For bipartite graphs $G$ and $H$, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
+\end{conjecture}
+
+\begin{conjecture}[Connected-pseudoforest binary rigidity]\label{u7}
+For $G$ and $H$ each a tree or a connected unicyclic graph, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
+\end{conjecture}
+
+\begin{conjecture}[Chordal binary rigidity]\label{u8}
+For chordal graphs $G$ and $H$, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
+\end{conjecture}
+
+\begin{conjecture}[Recovery of the domination number]\label{u9}
+For all graphs $G$ and $H$, $C_G=C_H$ implies $\gamma(G)=\gamma(H)$.
+\end{conjecture}
+
+\begin{conjecture}[Recovery of the independent domination number]\label{u10}
+For all graphs $G$ and $H$, $C_G=C_H$ implies $i(G)=i(H)$, where $i$ is the independent domination number, the least cardinality of a set that is simultaneously independent and dominating.
+\end{conjecture}
+
+\section{Log-concavity and support}
+
+\begin{conjecture}[Global double log-concavity]\label{u11}
+For every graph $G$ the coefficient sequence $a$ of $f_G(1+Z)$ is log-concave, and so is its transform $L(a)$ defined by $L(a)_i=a_i^2-a_{i-1}a_{i+1}$, out-of-range terms being zero.
+\end{conjecture}
+
+\begin{conjecture}[Strict log-concavity for connected graphs]\label{u12}
+For connected $G$ with at least one edge, $a_i^2>a_{i-1}a_{i+1}$ at every interior position of the support of $a$, where $a$ is the coefficient sequence of $f_G(1+Z)$.
+\end{conjecture}
+
+\begin{conjecture}[Strict second-order log-concavity]\label{u13}
+For connected $G$ with at least one edge, the transform $L(a)$ of Conjecture~\ref{u11} is strictly log-concave at every interior position of its support.
+\end{conjecture}
+
+\begin{conjecture}[Rank-slice strict log-concavity]\label{u14}
+For connected $G$ and every attainable rank $r$, the slice $A_{G,r}(Z)=[Y^r]\,F_G(1+Z,Y)$, when it is not a monomial, has strictly log-concave coefficients at every interior position of its support.
+\end{conjecture}
+
+\begin{conjecture}[Interval support at fixed rank]\label{u15}
+For every graph $G$ and every attainable rank $r$, the set $K_r(G)=\{|S|:\rho_G(S)=r\}$ is an interval of integers.
+\end{conjecture}
+
+\section{Tree extremality and rigidity}
+
+\begin{conjecture}[Coefficientwise tree extremality]\label{u16}
+For every tree $T$ on $n$ vertices,
+\[
+f_{P_n}(1+Z)\ \le\ f_T(1+Z)\ \le\ f_{K_{1,n-1}}(1+Z)
+\]
+coefficientwise, with equality only for the path and the star respectively.
+\end{conjecture}
+
+\begin{conjecture}[Star rank-majorization]\label{u17}
+For every $n\ge5$ and every prime power $q$, the decreasingly ordered adjoint-rank distribution of $L_{K_{1,n-1}}(\Fq_q)$ majorizes that of $L_T(\Fq_q)$ for every $n$-vertex tree $T$.
+\end{conjecture}
+
+\begin{conjecture}[Tree rank-variance extremality]\label{u18}
+For every $n\ge4$ and every prime power $q$, among $n$-vertex trees the variance of $\rank(\operatorname{ad}_x)$ over uniformly random $x\in L_T(\Fq_q)$ is uniquely minimized by the path and uniquely maximized by the star.
+\end{conjecture}
+
+\begin{conjecture}[Leaf-count rigidity]\label{u19}
+For a tree $T$ on $n\ge2$ vertices, equality holds in the bound $s(T)\ge n-\ell(T)+2$ of Lemma~\ref{u:sbounds} exactly when $T$ is a path or a star.
+\end{conjecture}
+
+\begin{conjecture}[Diameter rigidity]\label{u20}
+For a tree $T$ on $n\ge2$ vertices, equality holds in the bound $s(T)\ge\operatorname{diam}(T)+1$ of Lemma~\ref{u:sbounds} exactly when $T$ is a path or a star.
+\end{conjecture}
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -2824,6 +2957,10 @@ Ann. of Math. 179 (2014), 81--177, arXiv:0901.2352.
 B. Kitchens,
 Expansive dynamics on zero-dimensional groups,
 Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
+
+\bibitem{Ros22} T. Rossmann, \emph{Enumerating conjugacy classes of graphical groups over finite fields}, Bull. Lond. Math. Soc. \textbf{54} (2022), 1923--1943.
+
+\bibitem{TAM11} P. Tittmann, I. Averbouch, and J. A. Makowsky, \emph{The enumeration of vertex induced subgraphs with respect to the number of components}, European J. Combin. \textbf{32} (2011), 954--974.
 
 \end{thebibliography}
 \end{document}
