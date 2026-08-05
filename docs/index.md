@@ -12,125 +12,125 @@ title: Fifty-six conjectures in mathematics
 
 **Part I — conjectures from the local–global random model, in importance–novelty order.**
 
-1. **Prime-power contamination calculus (Conjecture 1).** For a balanced pair race $$(n,n+d)$$ mod $$m$$, the surviving prime-square orientations $$(q^2-d,q^2)$$, $$(q^2,q^2+d)$$ occupy provably computable residue classes, and the operator $$\mathcal C_{d,m}(a;x)=\sum_{o}\sum_{q}\Lambda(q^2)\Lambda(\text{prime member})$$ determines the drift vector: for twins, $$\mathcal{M}_x\bigl(D_1(t)\log^2t/\sqrt t\bigr)\to c_T=\tfrac12C(x,x^2-2)$$ (mod $$5$$) and $$\to2c_T$$ on class $$7$$ (mod $$8$$), symmetric differences $$\to0$$; in general each class deficit satisfies $$\mathcal{M}_x(\mathrm{deficit}\cdot\log^2t/\sqrt t)\to\lim\mathcal C_{d,m}(a;x)/\sqrt x$$. Convergence of these logarithmic means at drift scale is part of the conjecture (Rubinstein–Sarnak-type structure for pattern races).
+**1. Prime-power contamination calculus (Conjecture 1).** For a balanced pair race $$(n,n+d)$$ mod $$m$$, the surviving prime-square orientations $$(q^2-d,q^2)$$, $$(q^2,q^2+d)$$ occupy provably computable residue classes, and the operator $$\mathcal C_{d,m}(a;x)=\sum_{o}\sum_{q}\Lambda(q^2)\Lambda(\text{prime member})$$ determines the drift vector: for twins, $$\mathcal{M}_x\bigl(D_1(t)\log^2t/\sqrt t\bigr)\to c_T=\tfrac12C(x,x^2-2)$$ (mod $$5$$) and $$\to2c_T$$ on class $$7$$ (mod $$8$$), symmetric differences $$\to0$$; in general each class deficit satisfies $$\mathcal{M}_x(\mathrm{deficit}\cdot\log^2t/\sqrt t)\to\lim\mathcal C_{d,m}(a;x)/\sqrt x$$. Convergence of these logarithmic means at drift scale is part of the conjecture (Rubinstein–Sarnak-type structure for pattern races).
 
-2. **Pinned singular-series variance (Conjecture 2).** With $$R(h)=C_4(0,2,h,h+2)/\mathfrak{S}(2)^2$$ and $$G(H)=\sum_{h\le H}(1-h/H)(R(h)-1)$$: (i) [conditional proposition] the moving-window twin-pair count obeys $$\operatorname{Var}/\mathbb E=1+\mathfrak{S}(2)(2G(H)-1)/\log^2x +o(\log^{-2}x)$$; (ii) $$-G(H)/\log H\to\infty$$: pair counts are more sub-Poisson than prime counts.
+**2. Pinned singular-series variance (Conjecture 2).** With $$R(h)=C_4(0,2,h,h+2)/\mathfrak{S}(2)^2$$ and $$G(H)=\sum_{h\le H}(1-h/H)(R(h)-1)$$: (i) [conditional proposition] the moving-window twin-pair count obeys $$\operatorname{Var}/\mathbb E=1+\mathfrak{S}(2)(2G(H)-1)/\log^2x +o(\log^{-2}x)$$; (ii) $$-G(H)/\log H\to\infty$$: pair counts are more sub-Poisson than prime counts.
 
-3. **Least-prime ordering deficit (Conjecture 3).** With $$U(a,q)=\mathrm{Li}(p(a,q))/\varphi(q)$$: (i) $$U\Rightarrow\mathrm{Exp}(1)$$ marginally (attributed), Gumbel maximum under joint independence; (ii) the dyadic averages of $$\Theta(q)=(1-\mathbb E_a[U])\log q$$ over prime $$q\in[Q,2Q]$$ converge to a limit $$\Theta>0$$: the ordered primes fill residue classes faster than any exchangeable model, in excess of the derived discreteness and injectivity baselines.
+**3. Least-prime ordering deficit (Conjecture 3).** With $$U(a,q)=\mathrm{Li}(p(a,q))/\varphi(q)$$: (i) $$U\Rightarrow\mathrm{Exp}(1)$$ marginally (attributed), Gumbel maximum under joint independence; (ii) the dyadic averages of $$\Theta(q)=(1-\mathbb E_a[U])\log q$$ over prime $$q\in[Q,2Q]$$ converge to a limit $$\Theta>0$$: the ordered primes fill residue classes faster than any exchangeable model, in excess of the derived discreteness and injectivity baselines.
 
-4. **Goldbach lane race (Conjecture 4).** For $$n\equiv2\pmod4$$, prime squares enter ordered Goldbach representations only through the $$(1,1)$$ lane mod $$4$$, so with $$D=R_3-R_1$$ and the explicit weighted census $$D_{\mathrm{sys}}$$: $$\mathbb E_x[D-D_{\mathrm{sys}}]=o(\mathbb E_x[D_{\mathrm{sys}}])$$ under logarithmic sampling; the drift vanishes on the internal null subprogression $$n\equiv10\pmod{12}$$; the sign density of $$D$$ tends to $$\tfrac12$$.
+**4. Goldbach lane race (Conjecture 4).** For $$n\equiv2\pmod4$$, prime squares enter ordered Goldbach representations only through the $$(1,1)$$ lane mod $$4$$, so with $$D=R_3-R_1$$ and the explicit weighted census $$D_{\mathrm{sys}}$$: $$\mathbb E_x[D-D_{\mathrm{sys}}]=o(\mathbb E_x[D_{\mathrm{sys}}])$$ under logarithmic sampling; the drift vanishes on the internal null subprogression $$n\equiv10\pmod{12}$$; the sign density of $$D$$ tends to $$\tfrac12$$.
 
-5. **Least Goldbach summand (Conjecture 5).** With $$s(n)$$ the least prime $$p\nmid n$$ with $$n-p$$ prime, $$U(n)=\mathfrak{S}(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$$, and the dyadic-log ensemble $$\mathbb E_X$$: (i) $$U\Rightarrow\mathrm{Exp}(1)$$; (ii) $$\Theta_G(X)=(1-\mathbb E_XU)\log X\to\Theta_G>0$$, the Goldbach sibling of the ordering deficit.
+**5. Least Goldbach summand (Conjecture 5).** With $$s(n)$$ the least prime $$p\nmid n$$ with $$n-p$$ prime, $$U(n)=\mathfrak{S}(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$$, and the dyadic-log ensemble $$\mathbb E_X$$: (i) $$U\Rightarrow\mathrm{Exp}(1)$$; (ii) $$\Theta_G(X)=(1-\mathbb E_XU)\log X\to\Theta_G>0$$, the Goldbach sibling of the ordering deficit.
 
-6. **Polynomial–exponential entanglement (Conjecture 6).** Primes $$n^2+2^n$$ force $$n\equiv3\pmod6$$; with $$\kappa_S=3\,D_S/\prod_{p\in S}(1-1/p)$$ built from the CRT-exact survivor density $$D_S$$ over the joint period of $$S$$ and the lane bonus $$3$$ at the primes $$2$$ and $$3$$: $$\kappa_{S_z}$$ converges along the canonical exhaustion $$S_z=\{5\le p\le z\}$$ to $$\kappa$$, the counting function is $$\sim\sum_{n\equiv3(6),\,n\le N}\kappa/\log(n^2+2^n)\asymp\log N$$; whether the limit factors exactly (as observed through $$p\le19$$) is an open question.
+**6. Polynomial–exponential entanglement (Conjecture 6).** Primes $$n^2+2^n$$ force $$n\equiv3\pmod6$$; with $$\kappa_S=3\,D_S/\prod_{p\in S}(1-1/p)$$ built from the CRT-exact survivor density $$D_S$$ over the joint period of $$S$$ and the lane bonus $$3$$ at the primes $$2$$ and $$3$$: $$\kappa_{S_z}$$ converges along the canonical exhaustion $$S_z=\{5\le p\le z\}$$ to $$\kappa$$, the counting function is $$\sim\sum_{n\equiv3(6),\,n\le N}\kappa/\log(n^2+2^n)\asymp\log N$$; whether the limit factors exactly (as observed through $$p\le19$$) is an open question.
 
-7. **Multibase Fermat quotients (Conjecture 7).** For $$p\nmid a$$: the Eisenstein–Lerch homomorphism confines multiplicatively dependent bases to a rational subtorus, and (iv) for multiplicatively independent bases $$(q_p(a_1),\dots,q_p(a_r))/p$$ equidistributes on the full torus as $$p$$ varies; (v) at most finitely many simultaneous Wieferich primes; plus single-base clauses: KS-discrepancy LIL at constant $$1/\sqrt2$$, shrinking-target law $$\#\{p\le x:q_p<K\}\sim\sum\min(1,K/p)$$, Wieferich-count LIL and an almost-sure CLT at the $$du/u$$ weighting.
+**7. Multibase Fermat quotients (Conjecture 7).** For $$p\nmid a$$: the Eisenstein–Lerch homomorphism confines multiplicatively dependent bases to a rational subtorus, and (iv) for multiplicatively independent bases $$(q_p(a_1),\dots,q_p(a_r))/p$$ equidistributes on the full torus as $$p$$ varies; (v) at most finitely many simultaneous Wieferich primes; plus single-base clauses: KS-discrepancy LIL at constant $$1/\sqrt2$$, shrinking-target law $$\#\{p\le x:q_p<K\}\sim\sum\min(1,K/p)$$, Wieferich-count LIL and an almost-sure CLT at the $$du/u$$ weighting.
 
-8. **Uniform de Polignac covariance field (Conjecture 8).** $$\pi_d(x)=\mathfrak{S}(d)\mathrm{Li}_2(x)(1+o(1))$$ uniformly for even $$d\le(\log x)^A$$; the moving-window residual field has covariance $$K_3(d,d')H/\log^3x+(1/\log^4x)\sum_{\vert h\vert \le H}(H-\vert h\vert )K_4(d,d';h)$$, triple term dominant on the polylogarithmic window class, with Poisson/Gaussian regimes as finite-$$x$$ corrections to independence.
+**8. Uniform de Polignac covariance field (Conjecture 8).** $$\pi_d(x)=\mathfrak{S}(d)\mathrm{Li}_2(x)(1+o(1))$$ uniformly for even $$d\le(\log x)^A$$; the moving-window residual field has covariance $$K_3(d,d')H/\log^3x+(1/\log^4x)\sum_{\vert h\vert \le H}(H-\vert h\vert )K_4(d,d';h)$$, triple term dominant on the polylogarithmic window class, with Poisson/Gaussian regimes as finite-$$x$$ corrections to independence.
 
-9. **Race sub-diffusivity (Conjecture 9).** Balanced-race steps at event index have negative autocorrelations obeying $$\rho_k(x)=-(c_k\log\log x+d_k)/\log x\,(1+o(1))$$; under uniformity in $$k$$, tail summability, and $$\sum c_k,\sum\vert d_k\vert <\infty$$, the diffusivity is $$\sigma^2(x)=1-2(\sum c_k\log\log x+\sum d_k)/\log x\,(1+o(1))$$, those hypotheses being model-layer, not asserted asymptotically; the asymptotic diffusive-vs-rigid dichotomy is registered open, with the rigid branch selected only at Conjecture 1(i-b) for its contaminated races.
+**9. Race sub-diffusivity (Conjecture 9).** Balanced-race steps at event index have negative autocorrelations obeying $$\rho_k(x)=-(c_k\log\log x+d_k)/\log x\,(1+o(1))$$; under uniformity in $$k$$, tail summability, and $$\sum c_k,\sum\vert d_k\vert <\infty$$, the diffusivity is $$\sigma^2(x)=1-2(\sum c_k\log\log x+\sum d_k)/\log x\,(1+o(1))$$, those hypotheses being model-layer, not asserted asymptotically; the asymptotic diffusive-vs-rigid dichotomy is registered open, with the rigid branch selected only at Conjecture 1(i-b) for its contaminated races.
 
-10. **Uniform quadratic de Polignac and its constants (Conjecture 10).** $$\#\{n\le N:n^2+1,\,n^2+1+d \text{ prime}\}=C(d)I_d(N)(1+o(1))$$ uniformly for even $$d\le(\log N)^B$$; a separate power-saving rate clause; and the family law: moments of $$C(d)$$ converge to derived Euler products (mean $$2.7456\ldots$$, sd $$1.6840\ldots$$), the empirical law converging to the random product with CRT-independent local factors.
+**10. Uniform quadratic de Polignac and its constants (Conjecture 10).** $$\#\{n\le N:n^2+1,\,n^2+1+d \text{ prime}\}=C(d)I_d(N)(1+o(1))$$ uniformly for even $$d\le(\log N)^B$$; a separate power-saving rate clause; and the family law: moments of $$C(d)$$ converge to derived Euler products (mean $$2.7456\ldots$$, sd $$1.6840\ldots$$), the empirical law converging to the random product with CRT-independent local factors.
 
-11. **First occurrences of prime gaps (Conjecture 11).** On realized gaps: $$\log p(g)/\sqrt g$$ bounded between positive constants; $$\liminf=\sqrt{\mathrm{e}^{\gamma}/2}$$ conditional on the realization hypothesis; and $$\log p(g)=\sqrt g+\tfrac12\log g-\tfrac12\log\mathfrak{S}^*(g)+E_g$$ with $$\Pr[E_g\le t]\to1-\exp(-\mathrm{e}^{2(t-\mu)})$$, the min-type Gumbel at scale $$\tfrac12$$ forced by the slope-$$2$$ hazard expansion.
+**11. First occurrences of prime gaps (Conjecture 11).** On realized gaps: $$\log p(g)/\sqrt g$$ bounded between positive constants; $$\liminf=\sqrt{\mathrm{e}^{\gamma}/2}$$ conditional on the realization hypothesis; and $$\log p(g)=\sqrt g+\tfrac12\log g-\tfrac12\log\mathfrak{S}^*(g)+E_g$$ with $$\Pr[E_g\le t]\to1-\exp(-\mathrm{e}^{2(t-\mu)})$$, the min-type Gumbel at scale $$\tfrac12$$ forced by the slope-$$2$$ hazard expansion.
 
-12. **Stern lane race (Conjecture 12).** In $$n=p+2k^2$$, square contamination $$n=q^2+2k^2$$ sits in the $$k$$-even lane iff $$n\equiv1\pmod8$$, $$k$$-odd iff $$n\equiv3$$, and is impossible for $$n\equiv5,7$$ (provable null classes); on contaminated classes the clean-minus-contaminated difference obeys $$\mathbb E_X[D-D_{\mathrm{sys}}]=o(\mathbb E_X[D_{\mathrm{sys}}])$$ with the $$\Lambda(q^2)$$-weighted census $$D_{\mathrm{sys}}$$.
+**12. Stern lane race (Conjecture 12).** In $$n=p+2k^2$$, square contamination $$n=q^2+2k^2$$ sits in the $$k$$-even lane iff $$n\equiv1\pmod8$$, $$k$$-odd iff $$n\equiv3$$, and is impossible for $$n\equiv5,7$$ (provable null classes); on contaminated classes the clean-minus-contaminated difference obeys $$\mathbb E_X[D-D_{\mathrm{sys}}]=o(\mathbb E_X[D_{\mathrm{sys}}])$$ with the $$\Lambda(q^2)$$-weighted census $$D_{\mathrm{sys}}$$.
 
-13. **Microscopic variance law (Conjecture 13).** [Conditional on quantitative Hardy–Littlewood] For windows of length $$H=\lambda(\log x)^{\alpha}$$, $$\operatorname{Var}X/\mathbb EX=1-(\log H+\gamma+\log2\pi-1)/\log x +o(1/\log x)$$ uniformly in $$1\le\alpha\le A$$, with Gallagher’s Poisson law at the boundary $$\alpha=1$$.
+**13. Microscopic variance law (Conjecture 13).** [Conditional on quantitative Hardy–Littlewood] For windows of length $$H=\lambda(\log x)^{\alpha}$$, $$\operatorname{Var}X/\mathbb EX=1-(\log H+\gamma+\log2\pi-1)/\log x +o(1/\log x)$$ uniformly in $$1\le\alpha\le A$$, with Gallagher’s Poisson law at the boundary $$\alpha=1$$.
 
-14. **Null-mechanism race (Conjecture 14).** For $$(n^2+1,n^2+3)$$, square contamination is algebraically impossible (single bounded exception $$(n,q)=(1,2)$$); the race mod $$5$$ is driftless at the contamination scale, $$\mathcal{M}_x(D(t)\log^2t/\sqrt t)\to0$$—the negative control for item 1—and the logarithmic occupation of leadership tends to $$\tfrac12$$ with Gaussian fluctuations $$\sqrt{\log2/\log x}$$, conjectured directly (the event-index invariance principle is a separately falsifiable local hypothesis, which does not imply it).
+**14. Null-mechanism race (Conjecture 14).** For $$(n^2+1,n^2+3)$$, square contamination is algebraically impossible (single bounded exception $$(n,q)=(1,2)$$); the race mod $$5$$ is driftless at the contamination scale, $$\mathcal{M}_x(D(t)\log^2t/\sqrt t)\to0$$—the negative control for item 1—and the logarithmic occupation of leadership tends to $$\tfrac12$$ with Gaussian fluctuations $$\sqrt{\log2/\log x}$$, conjectured directly (the event-index invariance principle is a separately falsifiable local hypothesis, which does not imply it).
 
-15. **Cubic-shift constants (Conjecture 15).** For non-cube $$a$$, the three-state local law gives $$\mathbb E_a[\omega(p)]=1$$ exactly, so the limit law of $$C(a)$$ has mean exactly $$1$$ (an $$L^2$$-martingale argument), derived sd $$0.2762\ldots$$; counts are uniform over non-cube $$a\le(\log N)^B$$.
+**15. Cubic-shift constants (Conjecture 15).** For non-cube $$a$$, the three-state local law gives $$\mathbb E_a[\omega(p)]=1$$ exactly, so the limit law of $$C(a)$$ has mean exactly $$1$$ (an $$L^2$$-martingale argument), derived sd $$0.2762\ldots$$; counts are uniform over non-cube $$a\le(\log N)^B$$.
 
-16. **Conjecture F as a family (Conjecture 16).** $$Q_A(N)=C(A)I_A(N)(1+o(1))$$ uniformly over odd $$A\le(\log N)^B$$; same-index window covariance $$[C(A,A')-C(A)C(A')]H/4\log^2N$$ (negative for locally exclusive pairs), with the off-index pinned sum at the same $$1/4\log^2N$$ order left open.
+**16. Conjecture F as a family (Conjecture 16).** $$Q_A(N)=C(A)I_A(N)(1+o(1))$$ uniformly over odd $$A\le(\log N)^B$$; same-index window covariance $$[C(A,A')-C(A)C(A')]H/4\log^2N$$ (negative for locally exclusive pairs), with the off-index pinned sum at the same $$1/4\log^2N$$ order left open.
 
-17. **Twin-member Goldbach, orientation-resolved (Conjecture 17).** Under $$n$$-uniform Hardy–Littlewood for the four role systems, $$R_T(n)=[\sum_o\mathfrak{S}_4^{(o)}(n)]\int_5^{n-5}dt/(\log^2t\log^2(n-t)) \,(1+o(1))$$, with the exact identities $$\mathfrak{S}_4^{(\mathrm{lu})}=\mathfrak{S}_4^{(\mathrm{ul})}$$ and $$\mathfrak{S}_4^{(\mathrm{uu})}(n)=\mathfrak{S}_4^{(\mathrm{ll})}(n-4)$$.
+**17. Twin-member Goldbach, orientation-resolved (Conjecture 17).** Under $$n$$-uniform Hardy–Littlewood for the four role systems, $$R_T(n)=[\sum_o\mathfrak{S}_4^{(o)}(n)]\int_5^{n-5}dt/(\log^2t\log^2(n-t)) \,(1+o(1))$$, with the exact identities $$\mathfrak{S}_4^{(\mathrm{lu})}=\mathfrak{S}_4^{(\mathrm{ul})}$$ and $$\mathfrak{S}_4^{(\mathrm{uu})}(n)=\mathfrak{S}_4^{(\mathrm{ll})}(n-4)$$.
 
-18. **Triplet contamination (Conjecture 18).** For $$(n,n+2,n+6)$$ mod $$5$$, the unique surviving square configuration is the doubly-thinned $$(q^2-2,q^2,q^2+4)$$ (the other two configurations dying for every prime $$q>3$$), contaminating class $$2$$: $$\mathcal{M}_x\bigl((\pi_3(t;5,1)-\pi_3(t;5,2))\log^3t/\sqrt t\bigr)\to c_3$$, the Bateman–Horn constant of $$(q,q^2-2,q^2+4)$$.
+**18. Triplet contamination (Conjecture 18).** For $$(n,n+2,n+6)$$ mod $$5$$, the unique surviving square configuration is the doubly-thinned $$(q^2-2,q^2,q^2+4)$$ (the other two configurations dying for every prime $$q>3$$), contaminating class $$2$$: $$\mathcal{M}_x\bigl((\pi_3(t;5,1)-\pi_3(t;5,2))\log^3t/\sqrt t\bigr)\to c_3$$, the Bateman–Horn constant of $$(q,q^2-2,q^2+4)$$.
 
-19. **Sexy-pair contamination matrix (Conjecture 19).** For $$(n,n+6)$$ both orientations survive on complementary $$q$$-classes, feeding start classes $$3$$ and $$1$$ (mod $$5$$ and mod $$8$$) with independent constants $$c_A,c_B$$ (the $$(q,q^2\mp6)$$ Bateman–Horn constants) in the drift-scale sense; class $$2$$ (mod $$5$$) and classes $$5,7$$ (mod $$8$$) are provably clean.
+**19. Sexy-pair contamination matrix (Conjecture 19).** For $$(n,n+6)$$ both orientations survive on complementary $$q$$-classes, feeding start classes $$3$$ and $$1$$ (mod $$5$$ and mod $$8$$) with independent constants $$c_A,c_B$$ (the $$(q,q^2\mp6)$$ Bateman–Horn constants) in the drift-scale sense; class $$2$$ (mod $$5$$) and classes $$5,7$$ (mod $$8$$) are provably clean.
 
-20. **Fibonacci–Lucas twins (Conjecture 20).** The odd prime-divisor pools of $$F_p$$ and $$L_p$$ are disjoint (ranks $$p$$ vs $$2p$$; $$\gcd=2$$ iff $$3\mid p$$); only finitely many $$p$$ have both prime; the naive joint accounting assigns the catalogued index $$148091$$ prior mass about $$1.4\times10^{-2}$$ beyond $$10^4$$, recorded descriptively and conditionally on the probable-prime status of both $$F_{148091}$$ and $$L_{148091}$$, and fatal to any completeness list.
+**20. Fibonacci–Lucas twins (Conjecture 20).** The odd prime-divisor pools of $$F_p$$ and $$L_p$$ are disjoint (ranks $$p$$ vs $$2p$$; $$\gcd=2$$ iff $$3\mid p$$); only finitely many $$p$$ have both prime; the naive joint accounting assigns the catalogued index $$148091$$ prior mass about $$1.4\times10^{-2}$$ beyond $$10^4$$, recorded descriptively and conditionally on the probable-prime status of both $$F_{148091}$$ and $$L_{148091}$$, and fatal to any completeness list.
 
-21. **Factorial twins (Conjecture 21).** Window rigidity: $$n!+a$$ is composite for $$2\le\vert a\vert \le n$$ (theorem), so $$\pm1$$ are the only bounded offsets; $$n=3$$ uniqueness is attributed; the joint-fluctuation clause is a declared-model CLT for $$F_+-F_-$$ under explicit covariance and higher-cumulant hypotheses.
+**21. Factorial twins (Conjecture 21).** Window rigidity: $$n!+a$$ is composite for $$2\le\vert a\vert \le n$$ (theorem), so $$\pm1$$ are the only bounded offsets; $$n=3$$ uniqueness is attributed; the joint-fluctuation clause is a declared-model CLT for $$F_+-F_-$$ under explicit covariance and higher-cumulant hypotheses.
 
-22. **Boundary trichotomy (Conjecture 22).** For $$\deg F\ge2$$ with positive leading coefficient, $$F(m)-F(j)$$ prime forces $$m-j=1$$ outside a bounded region; for $$x^3+cx$$ the boundary lane $$3m^2-3m+1+c$$ is dead-parity for odd $$c$$, dead-$$3$$-adic for even $$c\equiv2\pmod3$$, admissible exactly for $$c\equiv0,4\pmod6$$, with uniform Bateman–Horn counts over admissible $$c\le(\log M)^B$$.
+**22. Boundary trichotomy (Conjecture 22).** For $$\deg F\ge2$$ with positive leading coefficient, $$F(m)-F(j)$$ prime forces $$m-j=1$$ outside a bounded region; for $$x^3+cx$$ the boundary lane $$3m^2-3m+1+c$$ is dead-parity for odd $$c$$, dead-$$3$$-adic for even $$c\equiv2\pmod3$$, admissible exactly for $$c\equiv0,4\pmod6$$, with uniform Bateman–Horn counts over admissible $$c\le(\log M)^B$$.
 
-23. **Power-obstruction ladder (Conjecture 23).** $$m^k=p+j^k$$ is impossible for composite $$k$$ (theorem); for prime $$k$$ it forces $$j=m-1$$ and reduces to primality of the irreducible $$D_k(m)=m^k-(m-1)^k$$, which follows Bateman–Horn uniformly over the prime-$$k$$ lanes.
+**23. Power-obstruction ladder (Conjecture 23).** $$m^k=p+j^k$$ is impossible for composite $$k$$ (theorem); for prime $$k$$ it forces $$j=m-1$$ and reduces to primality of the irreducible $$D_k(m)=m^k-(m-1)^k$$, which follows Bateman–Horn uniformly over the prime-$$k$$ lanes.
 
-24. **Alternating cyclotomic chain (Conjecture 24).** Infinitely many primes $$p$$ with $$\Phi_3(p)$$ and $$\Phi_6(\Phi_3(p))$$ prime, at the derived Bateman–Horn rate; alternation is the unique admissible continuation in the anchored construction space.
+**24. Alternating cyclotomic chain (Conjecture 24).** Infinitely many primes $$p$$ with $$\Phi_3(p)$$ and $$\Phi_6(\Phi_3(p))$$ prime, at the derived Bateman–Horn rate; alternation is the unique admissible continuation in the anchored construction space.
 
-25. **Twin cyclotomic bases (Conjecture 25).** Of the $$\varphi(k)=2$$ family, only $$k=3$$ survives ($$k=4$$ parity-dead, $$k=6$$ a translate), and $$\Phi_3(n)$$, $$\Phi_3(n+1)$$ are simultaneously prime infinitely often with the computed Bateman–Horn constant.
+**25. Twin cyclotomic bases (Conjecture 25).** Of the $$\varphi(k)=2$$ family, only $$k=3$$ survives ($$k=4$$ parity-dead, $$k=6$$ a translate), and $$\Phi_3(n)$$, $$\Phi_3(n+1)$$ are simultaneously prime infinitely often with the computed Bateman–Horn constant.
 
 
 **Part II — structural conjectures, in programme order.**
 
 
-26. **Connected motif generating functional (Conjecture 26).** A full connected diagram calculus for all joint cumulants of prime motifs.
+**26. Connected motif generating functional (Conjecture 26).** A full connected diagram calculus for all joint cumulants of prime motifs.
 
-27. **Complete overlap-renormalization filtration (Conjecture 27).** A classification of every possible covariance scale and rigid eigenspace in a finite motif family.
+**27. Complete overlap-renormalization filtration (Conjecture 27).** A classification of every possible covariance scale and rigid eigenspace in a finite motif family.
 
-28. **Regularized mesoscopic local–spectral trace formula (Conjecture 28).** Independently mollified Euler-product and multiple-zero functionals agree after named counterterms, and the limit is regularization independent.
+**28. Regularized mesoscopic local–spectral trace formula (Conjecture 28).** Independently mollified Euler-product and multiple-zero functionals agree after named counterterms, and the limit is regularization independent.
 
-29. **Anchored arithmetic polymer expansion (Conjecture 29).** Palm cluster activities are graded by the number of new prime constraints beyond one anchored motif.
+**29. Anchored arithmetic polymer expansion (Conjecture 29).** Palm cluster activities are graded by the number of new prime constraints beyond one anchored motif.
 
-30. **Topological expansion of non-Gaussianity (Conjecture 30).** The first non-Gaussian terms are graded by the homology of overlap-incidence complexes.
+**30. Topological expansion of non-Gaussianity (Conjecture 30).** The first non-Gaussian terms are graded by the homology of overlap-incidence complexes.
 
-31. **Connected first-arrival functional (Conjecture 31).** The entire least-prime point process has connected kernels obtained from same-class prime correlations.
+**31. Connected first-arrival functional (Conjecture 31).** The entire least-prime point process has connected kernels obtained from same-class prime correlations.
 
-32. **Tested Gauss-polyspectral reciprocity (Conjecture 32).** Scalar tensor observables have exact Gauss-transport identities under the random-modulus law and dual arithmetic limits.
+**32. Tested Gauss-polyspectral reciprocity (Conjecture 32).** Scalar tensor observables have exact Gauss-transport identities under the random-modulus law and dual arithmetic limits.
 
-33. **Rubinstein–Sarnak terminal chaos dichotomy (Conjecture 33).** Terminal extremes are directed by the limiting low-zero chaos measure, with an explicit self-averaging versus Cox criterion.
+**33. Rubinstein–Sarnak terminal chaos dichotomy (Conjecture 33).** Terminal extremes are directed by the limiting low-zero chaos measure, with an explicit self-averaging versus Cox criterion.
 
-34. **Nonlinear spectral response calculus (Conjecture 34).** Low-zero and exceptional-zero perturbations pass through first-arrival statistics by universal Volterra response operators.
+**34. Nonlinear spectral response calculus (Conjecture 34).** Low-zero and exceptional-zero perturbations pass through first-arrival statistics by universal Volterra response operators.
 
-35. **Local-information capacity of odd class groups (Conjecture 35).** Cohen–Lenstra independence has a sharp two-resource boundary governed by cell entropy and conductor complexity.
+**35. Local-information capacity of odd class groups (Conjecture 35).** Cohen–Lenstra independence has a sharp two-resource boundary governed by cell entropy and conductor complexity.
 
-36. **Kummer–Haar law on relation tori (Conjecture 36).** Saturated multiplicative relations give the exact horizontal support and Haar law of Fermat-quotient vectors.
+**36. Kummer–Haar law on relation tori (Conjecture 36).** Saturated multiplicative relations give the exact horizontal support and Haar law of Fermat-quotient vectors.
 
-37. **Rank-dimensional finite-logarithm large sieve (Conjecture 37).** A positive power range of frequencies obeys a large sieve whose dual dimension is saturated rank.
+**37. Rank-dimensional finite-logarithm large sieve (Conjecture 37).** A positive power range of frequencies obeys a large sieve whose dual dimension is saturated rank.
 
-38. **Mesoscopic-to-lattice shrinking-target transition (Conjecture 38).** Haar universality persists for growing targets, while bounded lattice targets acquire a separate arithmetic regulator intensity.
+**38. Mesoscopic-to-lattice shrinking-target transition (Conjecture 38).** Haar universality persists for growing targets, while bounded lattice targets acquire a separate arithmetic regulator intensity.
 
-39. **Global-lattice $$p$$-adic regulator-matrix law (Conjecture 39).** A fixed integral Galois-relation lattice controls horizontal regulator matrices and their determinantal rare events.
+**39. Global-lattice $$p$$-adic regulator-matrix law (Conjecture 39).** A fixed integral Galois-relation lattice controls horizontal regulator matrices and their determinantal rare events.
 
-40. **Functorial horizontal logarithms on tori (Conjecture 40).** A finitely generated global subgroup of a torus has a functorial matrix-valued finite-logarithm Haar law.
+**40. Functorial horizontal logarithms on tori (Conjecture 40).** A finitely generated global subgroup of a torus has a functorial matrix-valued finite-logarithm Haar law.
 
-41. **Entropy–conductor profile of arboreal resolution (Conjecture 41).** Exact class-measure entropy and Artin-conductor profiles determine observable depth and finite-index shifts.
+**41. Entropy–conductor profile of arboreal resolution (Conjecture 41).** Exact class-measure entropy and Artin-conductor profiles determine observable depth and finite-index shifts.
 
-42. **Arboreal family large sieve and cumulant independence (Conjecture 42).** Growing preimage quotients satisfy square-root trace bounds and higher connected Frobenius factorization over parameters.
+**42. Arboreal family large sieve and cumulant independence (Conjecture 42).** Growing preimage quotients satisfy square-root trace bounds and higher connected Frobenius factorization over parameters.
 
-43. **Coloured dynatomic Galois-factor process (Conjecture 43).** Exact-period components generate independent coloured, Frobenius-marked factor processes, with growing-degree support restrictions.
+**43. Coloured dynatomic Galois-factor process (Conjecture 43).** Exact-period components generate independent coloured, Frobenius-marked factor processes, with growing-degree support restrictions.
 
-44. **Complexity-uniform primitive valuation process (Conjecture 44).** The complete primitive valuation vector has an adelic product law under an explicit height–discriminant complexity regime and uniform squarefull tails.
+**44. Complexity-uniform primitive valuation process (Conjecture 44).** The complete primitive valuation vector has an adelic product law under an explicit height–discriminant complexity regime and uniform squarefull tails.
 
-45. **Divisor-sensitive dynamical gcd classification (Conjecture 45).** Positive normalized gcd height is exactly eventual entry into a periodic curve carrying a shared effective component of the two coordinate divisors.
+**45. Divisor-sensitive dynamical gcd classification (Conjecture 45).** Positive normalized gcd height is exactly eventual entry into a periodic curve carrying a shared effective component of the two coordinate divisors.
 
-46. **Frobenius-marked Poisson–Dirichlet process (Conjecture 46).** Macroscopic polynomial-value factors carry fixed-point-size-biased Galois marks.
+**46. Frobenius-marked Poisson–Dirichlet process (Conjecture 46).** Macroscopic polynomial-value factors carry fixed-point-size-biased Galois marks.
 
-47. **Three-scale polynomial factorization (Conjecture 47).** Small valuations, mesoscopic scale-invariant factors, and macroscopic marked factors form one conservation-corrected product structure.
+**47. Three-scale polynomial factorization (Conjecture 47).** Small valuations, mesoscopic scale-invariant factors, and macroscopic marked factors form one conservation-corrected product structure.
 
-48. **Adelic Gibbs gluing for reducible values (Conjecture 48).** Reducible polynomial factor processes are an archimedean–$$p$$-adic Gibbs mixture of independent component processes.
+**48. Adelic Gibbs gluing for reducible values (Conjecture 48).** Reducible polynomial factor processes are an archimedean–$$p$$-adic Gibbs mixture of independent component processes.
 
-49. **Full multivariate adelic saddle law (Conjecture 49).** Joint smoothness is governed by a complete joint Perron action, saddle displacement, and Hessian, not a scalar Euler correction.
+**49. Full multivariate adelic saddle law (Conjecture 49).** Joint smoothness is governed by a complete joint Perron action, saddle displacement, and Hessian, not a scalar Euler correction.
 
-50. **Buchstab–Bateman–Horn component flow (Conjecture 50).** Rough prime, semiprime, and higher-almost-prime polynomial values follow universal Buchstab components with Galois marks.
+**50. Buchstab–Bateman–Horn component flow (Conjecture 50).** Rough prime, semiprime, and higher-almost-prime polynomial values follow universal Buchstab components with Galois marks.
 
 
 
 **Part III — six conjectures across fields, in statement order.**
 
-51. **Relative polynomial pretentiousness inverse principle (Conjecture 51).** A persistently nonzero logarithmic correlation of completely multiplicative unimodular functions along multiplicatively independent irreducible polynomials forces one existential block of primitive characters and archimedean parameters with finite relative pretentious distances, the balance identity $$\sum_j t_j \deg P_j = 0$$, and a nonvanishing joint character average at a common modulus.
+**51. Relative polynomial pretentiousness inverse principle (Conjecture 51).** A persistently nonzero logarithmic correlation of completely multiplicative unimodular functions along multiplicatively independent irreducible polynomials forces one existential block of primitive characters and archimedean parameters with finite relative pretentious distances, the balance identity $$\sum_j t_j \deg P_j = 0$$, and a nonvanishing joint character average at a common modulus.
 
-52. **Monotone threshold purification of vector paths (Conjecture 52).** Every monotone fractional activation schedule of $$m$$ vectors of norm at most one in $$\R^d$$ admits a rounding to single irreversible activation times whose path error is $$O(\sqrt d)$$ uniformly in $$m$$, containing the open Euclidean Steinitz prefix-sum problem and asserting removal of the logarithm from Banaszczyk's $$O(\sqrt{d+łog m})$$.
+**52. Monotone threshold purification of vector paths (Conjecture 52).** Every monotone fractional activation schedule of $$m$$ vectors of norm at most one in $$\mathbb R^d$$ admits a rounding to single irreversible activation times whose path error is $$O(\sqrt d)$$ uniformly in $$m$$, containing the open Euclidean Steinitz prefix-sum problem and asserting removal of the logarithm from Banaszczyk's $$O(\sqrt{d+łog m})$$.
 
-53. **Entropy dimension of random-free graphons (Conjecture 53).** If the row space of a $$\{0,1\}$$-valued graphon is Ahlfors $$s$$-regular then $$H(G(n,W))/(nłog n)\to s$$, the hypothesis class being nonvacuous at every $$s\in(0,2]$$ by Cantor-type threshold constructions.
+**53. Entropy dimension of random-free graphons (Conjecture 53).** If the row space of a $$\{0,1\}$$-valued graphon is Ahlfors $$s$$-regular then $$H(G(n,W))/(nłog n)\to s$$, the hypothesis class being nonvacuous at every $$s\in(0,2]$$ by Cantor-type threshold constructions.
 
-54. **A Hessian principle for isolated microcanonical graph phases (Conjecture 54).** Under isolated-phase, transversally Lipschitz, and nonemptiness hypotheses, the tangent block averages of a microcanonical coloured graph ensemble fluctuate at scale $$n^{-1}$$ around their mean with centred Gaussian limit of covariance $$A^{-1}$$, the inverse of the contracted entropy Hessian.
+**54. A Hessian principle for isolated microcanonical graph phases (Conjecture 54).** Under isolated-phase, transversally Lipschitz, and nonemptiness hypotheses, the tangent block averages of a microcanonical coloured graph ensemble fluctuate at scale $$n^{-1}$$ around their mean with centred Gaussian limit of covariance $$A^{-1}$$, the inverse of the contracted entropy Hessian.
 
-55. **Sharp stability of entropy idempotence on finite abelian groups (Conjecture 55).** The squared total variation distance from a probability measure to the nearest uniform coset measure is bounded by a universal constant, conjecturally exactly $$2/łog 2$$ as pinned by discretized Gaussians on $$\Z/p\Z$$, times the convolution entropy defect $$H(\mu*\mu)-H(\mu)$$.
+**55. Sharp stability of entropy idempotence on finite abelian groups (Conjecture 55).** The squared total variation distance from a probability measure to the nearest uniform coset measure is bounded by a universal constant, conjecturally exactly $$2/łog 2$$ as pinned by discretized Gaussians on $$\mathbb Z/p\mathbb Z$$, times the convolution entropy defect $$H(\mu*\mu)-H(\mu)$$.
 
-56. **Stationary convolution-entropy rigidity (Conjecture 56).** An ergodic stationary process over a finite abelian group preserves entropy under independent self-convolution exactly when its quotient by the translational stabilizer has zero entropy, so in particular every ergodic binary process of intermediate entropy gains entropy under independent XOR.
+**56. Stationary convolution-entropy rigidity (Conjecture 56).** An ergodic stationary process over a finite abelian group preserves entropy under independent self-convolution exactly when its quotient by the translational stabilizer has zero entropy, so in particular every ergodic binary process of intermediate entropy gains entropy under independent XOR.
 
 
 ## Abstract
@@ -1484,9 +1484,9 @@ for every $$x\in\operatorname{supp}\rho_W$$ and every $$0<r<r_0$$. Let $$G(n,W)$
 
 **Entropy dimension of random-free graphons (Conjecture 53).** 
 
-1.  <span class="upright">[nonvacuity]</span> For every $$s\in(0,2]$$ there exists a random-free graphon whose row space is Ahlfors $$s$$-regular.
+1.  [nonvacuity] For every $$s\in(0,2]$$ there exists a random-free graphon whose row space is Ahlfors $$s$$-regular.
 
-2.  <span class="upright">[entropy-dimension law]</span> If the row space of a random-free graphon $$W$$ is Ahlfors $$s$$-regular for some $$s>0$$, then $$\lim_{n\to\infty}H(G(n,W))/(n\log n)=s$$.
+2.  [entropy-dimension law] If the row space of a random-free graphon $$W$$ is Ahlfors $$s$$-regular for some $$s>0$$, then $$\lim_{n\to\infty}H(G(n,W))/(n\log n)=s$$.
 *Remark.* The refined assertion $$H(G(n,W))=s\,n\log n+O_W(n)$$ is a strictly stronger open refinement of clause (ii), and nothing in the mechanism below reaches it. The type-coding mechanism by itself yields only $$H(G(n,W))=s\,n\log n+O_W(n\log\log n)$$: encoding a latent type for each vertex at metric resolution $$1/n$$ costs about $$s\log n$$ nats per vertex and predicts all but on the order of $$n$$ of the edges, but recording which edges are mispredicted costs order $$n\log n$$ if done naively, since each such edge must be located by a pair of labels. A two-scale argument, which first codes coarse types and then corrects within coarse classes, lowers the correction cost to $$O(n\log\log n)$$ and stops there.
 
 *Significance.* The mechanism is metric distinguishability of rows: two row types at $$d_W$$-distance $$\varepsilon$$ disagree on an $$\varepsilon$$-fraction of potential neighbours and become statistically distinguishable against $$n$$ sampled vertices at a scale comparable to $$1/n$$, an Ahlfors $$s$$-regular row space has about $$n^s$$ distinguishable types at that scale, and the latent type of each of the $$n$$ labelled vertices then carries $$s\log n+O(1)$$ nats. Clause (i) certifies that the hypothesis class is nonvacuous at every fractional $$s$$: it is expected to be provable by Cantor-type threshold constructions, in which $$W$$ is the indicator of a threshold event read along a self-similar Cantor set, and it is included so that clause (ii) quantifies over a genuinely rich family. The nearest literature boundary is Hatami–Norine[66]: a graphon is random-free exactly when $$H(G(n,W))=o(n^2)$$, and every subquadratic growth order occurs for suitable random-free graphons, so no hypothesis short of a metric-measure condition on the row space can pin the coefficient of $$n\log n$$, and Ahlfors regularity is exactly the condition that does. No decisive theorem exists: the first would be a proof of clause (i) together with the verification of clause (ii) for one explicit self-similar threshold graphon of noninteger $$s$$. The failure mode is concentrated in the lower bound, since the coding upper bound follows from the mechanism of the refined form above: an Ahlfors regular random-free graphon whose sampled neighbourhoods distinguish types less efficiently than the metric suggests would drive the coefficient below $$s$$, or destroy convergence altogether.
@@ -1543,13 +1543,13 @@ Assume the following regularity hypotheses.
 
 4.  The quadratic form $$A=-D^2_M\Psi_{\mathbf a}(p_*)$$ is positive definite on the tangent space $$T=T_{p_*}M$$.
 
-5.  <span class="upright">[transversally Lipschitz constraint correspondence]</span> There exist $$\delta_0>0$$ and $$L<\infty$$ such that every coloured graphon $$U$$ with $$\|p(U)-p_*\|\le\delta_0$$ and $$\|\mathbf t(U)-\mathbf a\|_\infty=\delta\le\delta_0$$ satisfies $$\operatorname{dist}(p(U),M)\le L\delta$$. In particular the conditioning window below confines $$\widehat p_n$$, on the event $$\|\widehat p_n-p_*\|\le\delta_0$$, to an $$o(n^{-1})$$ thickening of $$M$$.
+5.  [transversally Lipschitz constraint correspondence] There exist $$\delta_0>0$$ and $$L<\infty$$ such that every coloured graphon $$U$$ with $$\|p(U)-p_*\|\le\delta_0$$ and $$\|\mathbf t(U)-\mathbf a\|_\infty=\delta\le\delta_0$$ satisfies $$\operatorname{dist}(p(U),M)\le L\delta$$. In particular the conditioning window below confines $$\widehat p_n$$, on the event $$\|\widehat p_n-p_*\|\le\delta_0$$, to an $$o(n^{-1})$$ thickening of $$M$$.
 
-6.  <span class="upright">[nonemptiness]</span> For every sufficiently large $$n$$ the conditioning set $$\{G:\|\mathbf t(G)-\mathbf a\|_\infty\le n^{-1-\eta}\}$$ over graphs $$G$$ on $$[N_n]$$ with the pinned colour classes is nonempty.
+6.  [nonemptiness] For every sufficiently large $$n$$ the conditioning set $$\{G:\|\mathbf t(G)-\mathbf a\|_\infty\le n^{-1-\eta}\}$$ over graphs $$G$$ on $$[N_n]$$ with the pinned colour classes is nonempty.
 
 Fix $$0<\eta<1$$, let $$G_n$$ be uniform on the conditioning set of (H6), let $$\widehat p_n=\widehat p(G_n)$$, and let $$\Pi_T$$ be orthogonal projection of $$\mathbb R^D$$ onto $$T$$.
 
-**Hessian principle for an isolated microcanonical phase (Conjecture 54).** Under hypotheses <span class="upright">(H1)–(H6)</span>,
+**Hessian principle for an isolated microcanonical phase (Conjecture 54).** Under hypotheses (H1)–(H6),
 
 $$
 n\,\Pi_T\bigl(\widehat p_n-\mathbb E\,\widehat p_n\bigr)
@@ -2028,7 +2028,7 @@ In statistical physics one studies ensembles of systems conditioned to have pres
 
 ### Conjecture 55: Sharp stability of entropy idempotence
 
-On a finite abelian group, convolving a probability measure with itself, that is, adding two independent samples, can only increase Shannon entropy, and the increase is zero exactly for uniform measures on cosets of subgroups. The conjecture upgrades this equality case to a sharp stability estimate: the squared total variation distance from any measure to the nearest coset uniform is at most a universal constant times the entropy increase. Known entropic inverse theorems, from Tao's sumset entropy theory to the entropic polynomial Freiman--Ruzsa theorem of Gowers, Green, Manners, and Tao, conclude in Ruzsa distance, a weaker entropic notion of closeness, and neither prove nor refute the total variation form. The extremal analysis is delicate: small perturbations of a coset uniform only achieve half the conjectured ratio, and the true near-extremizers are discretized Gaussians on $$\Z/p\Z$$ at scales between one and $$p$$, whose entropy increase approaches the entropy-power constant $$\tfrac12łog2$$ while their distance to every coset approaches one, which forces the constant to be at least $$2/łog2$$ and is conjectured to be exactly sharp. On $$\Z/p\Z$$, which has no proper nontrivial subgroups, the statement becomes a discrete entropy-power inequality for spread measures.
+On a finite abelian group, convolving a probability measure with itself, that is, adding two independent samples, can only increase Shannon entropy, and the increase is zero exactly for uniform measures on cosets of subgroups. The conjecture upgrades this equality case to a sharp stability estimate: the squared total variation distance from any measure to the nearest coset uniform is at most a universal constant times the entropy increase. Known entropic inverse theorems, from Tao's sumset entropy theory to the entropic polynomial Freiman--Ruzsa theorem of Gowers, Green, Manners, and Tao, conclude in Ruzsa distance, a weaker entropic notion of closeness, and neither prove nor refute the total variation form. The extremal analysis is delicate: small perturbations of a coset uniform only achieve half the conjectured ratio, and the true near-extremizers are discretized Gaussians on $$\mathbb Z/p\mathbb Z$$ at scales between one and $$p$$, whose entropy increase approaches the entropy-power constant $$\tfrac12łog2$$ while their distance to every coset approaches one, which forces the constant to be at least $$2/łog2$$ and is conjectured to be exactly sharp. On $$\mathbb Z/p\mathbb Z$$, which has no proper nontrivial subgroups, the statement becomes a discrete entropy-power inequality for spread measures.
 
 ### Conjecture 56: Stationary convolution-entropy rigidity
 
