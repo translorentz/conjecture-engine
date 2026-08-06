@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Seventy-six conjectures in mathematics}
+\title{Ninety-six conjectures in mathematics}
 \author{}
 \date{July 27, 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Seventy-six conjectures in mathematics:\\ the statements}
+\title{Ninety-six conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -130,6 +130,8 @@ same reason, and both exclusions are part of the statements.
 
 
 \part{Conjectures from a local--global random model}
+
+\medskip\noindent\emph{Added to the deposit: 28 July 2026.}\par\medskip
 
 \section{Principal conjectures}
 
@@ -1468,6 +1470,8 @@ with $C_5=C(x^2+x+1,\,x^2+3x+3)$.
 
 \part{Structural conjectures in five programmes}
 
+\medskip\noindent\emph{Added to the deposit: 3 August 2026.}\par\medskip
+
 \section{Programme I: connected prime-pattern fields}
 
 Let $H\subset\Z$ be finite and admissible, and write
@@ -2310,6 +2314,8 @@ formula itself remains conjectural.
 
 \part{Six conjectures across fields}
 
+\medskip\noindent\emph{Added to the deposit: 4 August 2026.}\par\medskip
+
 \section{Relative polynomial pretentiousness}
 
 Let $P\in\Z[x]$ be primitive (the greatest common divisor of its
@@ -2658,6 +2664,8 @@ Then $h_\sigma(\mu*\mu)=h_\sigma(\mu)$.
 
 \part{The class-counting polynomial of graphical Lie algebras}
 
+\medskip\noindent\emph{Added to the deposit: 5 August 2026.}\par\medskip
+
 The twenty conjectures below concern a single canonical object, the class-counting polynomial of a finite graph, approached through the two-step nilpotent Lie algebras that realize it as a rank generating function.  They form three programmes.  A rigidity and reconstruction programme (Conjectures~\ref{u1} to~\ref{u10}) asserts that coarse specializations of the polynomial already determine it and that the polynomial in turn determines classical invariants.  A log-concavity programme (Conjectures~\ref{u11} to~\ref{u15}) locates the exact strength of positivity that the coefficient arrays support, with the boundary calibrated by explicit counterexamples one level higher.  A tree extremal programme (Conjectures~\ref{u16} to~\ref{u20}) places the path and the star at the two ends of every ordering the polynomial induces on trees.  The proved layer is separated from the conjectural one: the rank formula (Proposition~\ref{u:rank}) and the two lower bounds on the number of rank values in a tree (Lemma~\ref{u:sbounds}) are theorems with full proofs, and every conjecture is stated against that floor.  Each statement is held to the standard of the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.  One statement, Conjecture~\ref{u7}, has since been resolved false by an explicit seven-vertex pair recorded with the statement, and it is retained with its resolution rather than renumbered.
 
 For a finite simple graph $G$ on vertex set $V(G)$ with edge set $E(G)$ and a field $F$, the \emph{graphical Lie algebra} $L_G(F)$ is the two-step nilpotent Lie algebra over $F$ with basis $\{v_i:i\in V(G)\}$ together with the central basis $\{z_e:e\in E(G)\}$, the bracket being $[v_a,v_b]=z_{ab}$ for each edge $\{a,b\}$ with $a<b$, $[v_b,v_a]=-z_{ab}$, and all other brackets of basis vectors zero.  For $S\subseteq V(G)$ write $N_G[S]$ for the closed neighbourhood of $S$, the set of vertices lying in $S$ or adjacent to it, and $c(G[S])$ for the number of connected components of the induced subgraph $G[S]$, and set
@@ -2790,6 +2798,146 @@ For a tree $T$ on $n\ge2$ vertices, equality holds in the bound $s(T)\ge n-\ell(
 
 \begin{conjecture}[Diameter rigidity]\label{u20}
 For a tree $T$ on $n\ge2$ vertices, equality holds in the bound $s(T)\ge\operatorname{diam}(T)+1$ of Lemma~\ref{u:sbounds} exactly when $T$ is a path or a star.
+\end{conjecture}
+
+
+\part{Pattern Lie algebras of finite posets}
+
+\medskip\noindent\emph{Added to the deposit: 6 August 2026.}\par\medskip
+
+The twenty conjectures below concern the pattern Lie algebras of finite posets, approached through two rank-weight enumerators that record how the bracket contracts against an element and against a functional.  They form four programmes.  A determination programme (Conjectures~\ref{v1} to~\ref{v6}) asserts that the adjoint enumerator alone already fixes the coadjoint enumerator and a list of classical invariants.  A characteristic-and-field programme (Conjectures~\ref{v7} to~\ref{v11}) locates what in these distributions is independent of the ground field and how the field moves them when it does.  A centre-one programme (Conjectures~\ref{v12} to~\ref{v14}) studies the incidence quotient that measures the gap between the two enumerators when the centre is a line.  A Hasse-forest and unitriangular programme (Conjectures~\ref{v15} to~\ref{v20}) reads coadjoint structure off the shape of the cover graph and pins the unitriangular chain as the extremal case.  The proved layer is separated from the conjectural one: the incidence identity (Proposition~\ref{v:calib}) is a theorem with a full proof, the standard adjoint--coadjoint duality of this family, included for calibration and not claimed as new, and every conjecture is stated against that floor.  Part~V contains sixteen principal conjectures and four grand hypotheses.  The grand hypotheses, Conjectures~\ref{v3}, \ref{v5}, \ref{v9}, and~\ref{v11}, are retained for provenance and marked in their titles, each carrying in a remark the narrow tested core that its evidence actually supports rather than the universal claim its title names.
+
+For a finite poset $P$ on a set of points and a prime power $q$, the \emph{pattern Lie algebra} over $\Fq_q$ is
+\[
+L_P(\Fq_q)=\operatorname{span}\{e_{ij}:i<_Pj\}
+\]
+inside the strictly upper triangular matrices under a fixed linear extension of $P$, with the matrix-unit bracket
+\[
+[e_{ij},e_{kl}]=\delta_{jk}\,e_{il}-\delta_{li}\,e_{kj}.
+\]
+It is nilpotent, and $\dim L_P$ is the number of strict order relations of $P$.  Write $\operatorname{ad}_x(y)=[x,y]$ for the adjoint map of $x$, and for a functional $f\in L_P(\Fq_q)^*$ let $B_f(u,v)=f([u,v])$ be the alternating Kirillov form.  The two natural contractions of the bracket tensor give two rank-weight enumerators over a single finite field,
+\[
+A_{P,q}(T)=\sum_{x\in L_P(\Fq_q)}T^{\rank(\operatorname{ad}_x)},
+\qquad
+K_{P,q}(T)=\sum_{f\in L_P(\Fq_q)^*}T^{\rank(B_f)},
+\]
+the \emph{adjoint enumerator} and the \emph{Kirillov enumerator}, each a distribution over one finite field.  Write $b_A(P,q)=\max_x\rank(\operatorname{ad}_x)$ for the \emph{adjoint breadth} and $b_K(P,q)=\max_f\rank(B_f)$ for the \emph{maximal Kirillov rank}, the largest coadjoint-orbit rank.  Write $Z(L_P)$, $\operatorname{Cent}(L_P)$, and $\operatorname{Der}(L_P)$ for the centre, the centroid (the linear maps commuting with every $\operatorname{ad}_x$), and the derivation algebra, and $\gamma_i(L_P)$ for the lower central series.  Say $P$ is a \emph{Hasse forest} if the undirected Hasse cover graph of $P$ is a forest.  The chain on $n$ points gives $L=\mathrm{ut}_n(\Fq_q)$, the strictly upper triangular Lie algebra.
+
+\begin{proposition}[Incidence identity and calibration]\label{v:calib}
+Let $L=L_P(\Fq_q)$ and let
+\[
+I_L=\{(x,f)\in L\times L^*:f([x,L])=0\}
+\]
+be the incidence variety.  Then
+\[
+|I_L|=q^{\dim L}A_{L,q}(q^{-1})=q^{\dim L}K_{L,q}(q^{-1}).
+\]
+Consequently $A_{L,q}(1)=K_{L,q}(1)=q^{\dim L}$ and $A_{L,q}(q^{-1})=K_{L,q}(q^{-1})$, so $(1-T)(1-qT)$ divides $A_{L,q}(T)-K_{L,q}(T)$ in $\Z[T]$.
+\end{proposition}
+
+The identity is the standard adjoint--coadjoint duality of this family, a Knuth-type contraction of one bracket tensor, and is recorded here as calibration rather than as a new result.  For the centre-one conjectures define
+\[
+R_{P,q}(T)=\frac{K_{P,q}(T)-A_{P,q}(T)}{(1-T)(1-qT)},
+\]
+a polynomial in $\Z[T]$ by Proposition~\ref{v:calib}.
+
+\section{Determination by the adjoint enumerator}
+
+\begin{conjecture}[Adjoint--Kirillov determination]\label{v1}
+For all finite posets $P$ and $Q$ and every prime power $q$, if $A_{P,q}(T)=A_{Q,q}(T)$ then $K_{P,q}(T)=K_{Q,q}(T)$.
+\end{conjecture}
+
+\begin{conjecture}[Lower-central recovery]\label{v2}
+For every finite poset $P$ and every prime power $q$, the enumerator $A_{P,q}(T)$ determines the vector of lower-central factor dimensions $\bigl(\dim\gamma_i(L_P)/\gamma_{i+1}(L_P)\bigr)_i$.
+\end{conjecture}
+
+\begin{conjecture}[Ordinary Poincar\'e recovery, grand hypothesis]\label{v3}
+For every finite poset $P$ and every prime power $q$, the enumerator $A_{P,q}(T)$ determines the ordinary cohomological Poincar\'e polynomial $\sum_i\dim H^i(L_P,\Fq_q)\,U^i$.
+\end{conjecture}
+
+\begin{conjecture}[Derivation recovery]\label{v4}
+For every finite poset $P$ and every prime power $q$, the enumerator $A_{P,q}(T)$ determines $\dim\operatorname{Der}(L_P)$.
+\end{conjecture}
+
+\begin{conjecture}[Adjoint Poincar\'e recovery, grand hypothesis]\label{v5}
+For every finite poset $P$ and every prime power $q$, the enumerator $A_{P,q}(T)$ determines the adjoint-cohomology dimensions $\dim H^i(L_P,L_P)$ for every $i$.
+\end{conjecture}
+
+\begin{conjecture}[Centroid-dimension recovery]\label{v6}
+For every finite poset $P$ and every prime power $q$, the enumerator $A_{P,q}(T)$ determines $\dim\operatorname{Cent}(L_P)$.
+\end{conjecture}
+
+\section{Characteristic and field behaviour}
+
+\begin{conjecture}[Adjoint spectrum characteristic independence]\label{v7}
+For every finite poset $P$, the set $\{\rank(\operatorname{ad}_x):x\in L_P(\Fq_q)\}$ of attained adjoint ranks is independent of $q$.
+\end{conjecture}
+
+\begin{conjecture}[Kirillov spectrum characteristic independence]\label{v8}
+For every finite poset $P$, the set $\{\rank(B_f):f\in L_P(\Fq_q)^*\}$ of attained Kirillov ranks is independent of $q$.
+\end{conjecture}
+
+\begin{conjecture}[Two-field arithmetic rigidity, grand hypothesis]\label{v9}
+For all finite posets $P$ and $Q$, if $A_{P,2}=A_{Q,2}$ and $A_{P,3}=A_{Q,3}$ then $A_{P,q}=A_{Q,q}$ for every prime power $q$.
+\end{conjecture}
+
+\begin{conjecture}[Adjoint stochastic field monotonicity]\label{v10}
+For every finite poset $P$ and prime powers $q<q'$, the distribution of $\rank(\operatorname{ad}_x)$ for uniformly random $x\in L_P(\Fq_{q'})$ first-order stochastically dominates its distribution over $\Fq_q$.
+\end{conjecture}
+
+\begin{conjecture}[Kirillov likelihood-ratio field monotonicity, grand hypothesis]\label{v11}
+For every finite poset $P$ and prime powers $q<q'$, the normalized even-rank distribution defined by $K_{P,q'}$ dominates that defined by $K_{P,q}$ in monotone likelihood-ratio order.
+\end{conjecture}
+
+\section{Centre-one incidence quotient}
+
+\begin{conjecture}[Centre-one reverse determination]\label{v12}
+For every finite poset $P$ with $\dim Z(L_P)=1$ and every prime power $q$, the enumerator $K_{P,q}(T)$ determines $A_{P,q}(T)$.
+\end{conjecture}
+
+\begin{conjecture}[Centre-one Laplace positivity]\label{v13}
+For every finite poset $P$ with $\dim Z(L_P)=1$ and every prime power $q$, the polynomial $R_{P,q}(T)$ has nonnegative integer coefficients.
+\end{conjecture}
+
+\begin{conjecture}[Centre-one quotient shape]\label{v14}
+For every finite poset $P$ with $\dim Z(L_P)=1$ and every prime power $q$, the coefficient sequence of $R_{P,q}(T)$ has interval support and is unimodal.
+\end{conjecture}
+
+\section{Hasse-forest and unitriangular structure}
+
+\begin{conjecture}[Hasse-forest reverse determination]\label{v15}
+For every finite poset $P$ whose Hasse cover graph is a forest and every prime power $q$, the enumerator $K_{P,q}(T)$ determines $A_{P,q}(T)$.
+\end{conjecture}
+
+\begin{conjecture}[Hasse-forest coadjoint saturation]\label{v16}
+For every finite poset $P$ whose Hasse cover graph is a forest and every prime power $q$, with $b_K=b_K(P,q)$ the maximal Kirillov rank,
+\[
+\operatorname{supp}K_{P,q}=\{0,2,4,\ldots,b_K\},
+\]
+so every even rank up to $b_K$ is attained.
+\end{conjecture}
+
+\begin{conjecture}[Hasse-forest Kirillov unimodality]\label{v17}
+For every finite poset $P$ whose Hasse cover graph is a forest and every prime power $q$, the even-rank sequence $\bigl([T^{2j}]K_{P,q}(T)\bigr)_j$ is unimodal.
+\end{conjecture}
+
+\begin{conjecture}[Hasse-forest breadth--orbit bound]\label{v18}
+For every finite poset $P$ whose Hasse cover graph is a forest and every prime power $q$,
+\[
+b_K(P,q)\le 2\,b_A(P,q).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Unitriangular Kirillov strict log-concavity]\label{v19}
+For $L=\mathrm{ut}_n(\Fq_q)$ and every prime power $q$, the even-rank sequence $\bigl([T^{2j}]K_{L,q}(T)\bigr)_j$ is strictly log-concave at every nontrivial interior index.
+\end{conjecture}
+
+\begin{conjecture}[Adjoint--coadjoint incidence anticorrelation]\label{v20}
+For every nonabelian pattern Lie algebra $L=L_P$ and every prime power $q$, sampling $(x,f)$ uniformly on the incidence variety $I_L=\{(x,f):f([x,L])=0\}$ gives
+\[
+\operatorname{Cov}\bigl(\rank(\operatorname{ad}_x),\rank(B_f)\bigr)<0,
+\]
+with covariance zero exactly when $L_P$ is abelian.
 \end{conjecture}
 
 
