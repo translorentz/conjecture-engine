@@ -1,111 +1,206 @@
 {
- "part": "V (Conjectures 77-96), poset pattern Lie algebras",
- "independent_corpus": "all 87 unlabeled posets on <=5 elements, generated from scratch (counts 1,2,5,16,63 verified)",
- "fields": {
-  "F2": "all n<=5",
-  "F3": "all n<=5 (dim<=10)",
-  "F5": "dim<=6"
- },
- "cross_check_vs_bundle": "A,K enumerators identical multisets for n<=4 over F2",
- "calibration_identity": "(1-T)(1-qT) | A-K verified, 0 failures; A(1)=K(1)=q^dim",
- "results": {
-  "77_A_determines_K": {
-   "collision_classes": 64,
-   "violations": 0
+  "part": "V (Conjectures 77-96), poset pattern Lie algebras",
+  "independent_corpus": "all 87 unlabeled posets on <=5 elements, generated from scratch (counts 1,2,5,16,63 verified)",
+  "fields": {
+    "F2": "all n<=5",
+    "F3": "all n<=5 (dim<=10)",
+    "F5": "dim<=6"
   },
-  "78_A_determines_lower_central_profile": {
-   "violations": 0
+  "cross_check_vs_bundle": "A,K enumerators identical multisets for n<=4 over F2",
+  "calibration_identity": "(1-T)(1-qT) | A-K verified, 0 failures; A(1)=K(1)=q^dim",
+  "results": {
+    "77_A_determines_K": {
+      "collision_classes": 64,
+      "violations": 0
+    },
+    "78_A_determines_lower_central_profile": {
+      "violations": 0
+    },
+    "80_A_determines_dim_Der": {
+      "violations": 0
+    },
+    "82_A_determines_dim_Cent": {
+      "violations": 0,
+      "ut_n_centroid_dim": "dim Cent(ut_n) = n for n>=3 (ut_2 abelian, dim 1); corrects the prior 'scalar line' illustration. The conjecture itself (A determines dim Cent) is unaffected."
+    },
+    "83_adjoint_support_char_independent": {
+      "violations": 0
+    },
+    "84_kirillov_support_char_independent": {
+      "violations": 0
+    },
+    "85_core_A2A3_determines_A5": {
+      "three_field_collision_classes": 16,
+      "violations": 0
+    },
+    "86_adjoint_stochastic_field_dominance": {
+      "pair_tests": 221,
+      "violations": 0
+    },
+    "88_center_one_K_determines_A": {
+      "records": 43,
+      "violations": 0
+    },
+    "89_center_one_R_nonneg_integer": {
+      "records": 43,
+      "violations": 0
+    },
+    "90_center_one_R_interval_unimodal": {
+      "interval_violations": 0,
+      "unimodal_violations": 0,
+      "log_concavity_failures": 4,
+      "note": "interval support and unimodality both held throughout the n<=5 corpus, but the general unimodality claim is false: a 7-point centre-one poset (see resolved_false) gives an R with a strict interior valley. Positivity and interval support survive.",
+      "status": "resolved false"
+    },
+    "91_forest_K_determines_A": {
+      "collision_classes": 44,
+      "violations": 0
+    },
+    "92_forest_K_support_all_evens": {
+      "violations": 0
+    },
+    "93_forest_even_K_unimodal": {
+      "violations": 0
+    },
+    "94_forest_bK_le_2bA": {
+      "violations": 0,
+      "unrestricted_failures_on_nonforests": 14,
+      "note": "unrestricted bound fails, confirming the forest restriction is meaningful"
+    },
+    "95_unitriangular_even_K_strict_logconcave": {
+      "verified": [
+        "ut4/5/6 F2",
+        "ut4/5 F3",
+        "ut4 F5"
+      ],
+      "violations": 0
+    },
+    "96_incidence_covariance_negative": {
+      "nonabelian_tested": 8,
+      "violations": 0,
+      "abelian_cov_zero_confirmed": 16,
+      "note": "equality iff abelian confirmed"
+    }
   },
-  "80_A_determines_dim_Der": {
-   "violations": 0
+  "not_independently_reverified": {
+    "79_ordinary_Poincare_recovery": "cohomology (H^2,H^3) recovery not reimplemented; grand hypothesis",
+    "81_adjoint_Poincare_recovery": "adjoint cohomology recovery not reimplemented; grand hypothesis"
   },
-  "82_A_determines_dim_Cent": {
-   "violations": 0
+  "grand_hypotheses_flagged": [
+    79,
+    81,
+    85
+  ],
+  "principal_conjectures": [
+    77,
+    78,
+    80,
+    82,
+    83,
+    84,
+    86,
+    88,
+    89,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96
+  ],
+  "resolved_false": {
+    "87_kirillov_likelihood_ratio_field_monotonicity": {
+      "counterexample_poset_covers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "dim": 10,
+      "K_even_F2": [
+        128,
+        384,
+        128,
+        384
+      ],
+      "K_even_F3": [
+        2187,
+        17496,
+        4374,
+        34992
+      ],
+      "likelihood_ratio_F3_over_F2": [
+        17.086,
+        45.5625,
+        34.171875,
+        91.125
+      ],
+      "note": "monotone likelihood-ratio order fails already at q=2 vs q'=3, the ratio dipping from rank 2 to rank 4; first-order Kirillov dominance is unaffected"
+    },
+    "90_center_one_quotient_shape": {
+      "counterexample_poset_covers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "dim": 19,
+      "center_dim": 1,
+      "R_valley_degrees_8_9_10": [
+        206336,
+        198656,
+        225280
+      ],
+      "note": "R is nonnegative with interval support but not unimodal (strict interior valley); the positivity and interval support of Conjecture 89 are unaffected"
+    }
   },
-  "83_adjoint_support_char_independent": {
-   "violations": 0
-  },
-  "84_kirillov_support_char_independent": {
-   "violations": 0
-  },
-  "85_core_A2A3_determines_A5": {
-   "three_field_collision_classes": 16,
-   "violations": 0
-  },
-  "86_adjoint_stochastic_field_dominance": {
-   "pair_tests": 221,
-   "violations": 0
-  },
-  "88_center_one_K_determines_A": {
-   "records": 43,
-   "violations": 0
-  },
-  "89_center_one_R_nonneg_integer": {
-   "records": 43,
-   "violations": 0
-  },
-  "90_center_one_R_interval_unimodal": {
-   "interval_violations": 0,
-   "unimodal_violations": 0,
-   "log_concavity_failures": 4,
-   "note": "log-concavity fails, confirming unimodality is the calibrated boundary"
-  },
-  "91_forest_K_determines_A": {
-   "collision_classes": 44,
-   "violations": 0
-  },
-  "92_forest_K_support_all_evens": {
-   "violations": 0
-  },
-  "93_forest_even_K_unimodal": {
-   "violations": 0
-  },
-  "94_forest_bK_le_2bA": {
-   "violations": 0,
-   "unrestricted_failures_on_nonforests": 14,
-   "note": "unrestricted bound fails, confirming the forest restriction is meaningful"
-  },
-  "95_unitriangular_even_K_strict_logconcave": {
-   "verified": [
-    "ut4/5/6 F2",
-    "ut4/5 F3",
-    "ut4 F5"
-   ],
-   "violations": 0
-  },
-  "96_incidence_covariance_negative": {
-   "nonabelian_tested": 8,
-   "violations": 0,
-   "abelian_cov_zero_confirmed": 16,
-   "note": "equality iff abelian confirmed"
-  }
- },
- "not_independently_reverified": {
-  "79_ordinary_Poincare_recovery": "cohomology (H^2,H^3) recovery not reimplemented; grand hypothesis",
-  "81_adjoint_Poincare_recovery": "adjoint cohomology recovery not reimplemented; grand hypothesis"
- },
- "grand_hypotheses_flagged": [
-  79,
-  81,
-  85,
-  87
- ],
- "principal_conjectures": [
-  77,
-  78,
-  80,
-  82,
-  83,
-  84,
-  86,
-  88,
-  89,
-  90,
-  91,
-  92,
-  93,
-  94,
-  95,
-  96
- ]
+  "reproduction_script": "verify/v_poset_c87_c90_resolution.py"
 }
