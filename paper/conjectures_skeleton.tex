@@ -2805,7 +2805,7 @@ For a tree $T$ on $n\ge2$ vertices, equality holds in the bound $s(T)\ge\operato
 
 \medskip\noindent\emph{Added to the deposit: 6 August 2026.}\par\medskip
 
-The twenty conjectures below concern the pattern Lie algebras of finite posets, studied through two rank-weight enumerators that record how the bracket contracts against an element and against a functional.  They form four programmes.  A determination programme (Conjectures~\ref{v1} to~\ref{v6}) asserts that the adjoint enumerator alone determines the coadjoint enumerator and a list of classical invariants.  A characteristic-and-field programme (Conjectures~\ref{v7} to~\ref{v11}) identifies what in these distributions is independent of the ground field and how the field affects them when it does.  A centre-one programme (Conjectures~\ref{v12} to~\ref{v14}) studies the incidence quotient that measures the difference between the two enumerators when the centre is a line.  A Hasse-forest and unitriangular programme (Conjectures~\ref{v15} to~\ref{v20}) relates coadjoint structure to the shape of the cover graph and treats the unitriangular chain as a separate extremal case.  The proved results are kept separate from the conjectural ones: the incidence identity (Proposition~\ref{v:calib}) is a theorem with a full proof, the standard adjoint--coadjoint duality of this family, included for calibration and not claimed as new, and every conjecture is stated relative to it.  Sixteen of the twenty are supported throughout the tested corpus.  The remaining four, Conjectures~\ref{v3}, \ref{v5}, \ref{v9}, and~\ref{v11}, are stated in greater generality than the computations reach, and each carries a remark giving the restricted case its evidence covers.
+The twenty conjectures below concern the pattern Lie algebras of finite posets, studied through two rank-weight enumerators that record how the bracket contracts against an element and against a functional.  They form four programmes.  A determination programme (Conjectures~\ref{v1} to~\ref{v6}) asserts that the adjoint enumerator alone determines the coadjoint enumerator and a list of classical invariants.  A characteristic-and-field programme (Conjectures~\ref{v7} to~\ref{v11}) identifies what in these distributions is independent of the ground field and how the field affects them when it does.  A centre-one programme (Conjectures~\ref{v12} to~\ref{v14}) studies the incidence quotient that measures the difference between the two enumerators when the centre is a line.  A Hasse-forest and unitriangular programme (Conjectures~\ref{v15} to~\ref{v20}) relates coadjoint structure to the shape of the cover graph and treats the unitriangular chain as a separate extremal case.  The proved results are kept separate from the conjectural ones: the incidence identity (Proposition~\ref{v:calib}) is a theorem with a full proof, the standard adjoint--coadjoint duality of this family, included for calibration and not claimed as new, and every conjecture is stated relative to it.  Fifteen of the twenty are supported throughout the tested corpus.  Three more, Conjectures~\ref{v3}, \ref{v5}, and~\ref{v9}, are stated in greater generality than the computations reach, and each carries a remark giving the restricted case its evidence covers.  Two, Conjectures~\ref{v11} and~\ref{v14}, have since been refuted by explicit seven-point posets and are recorded as resolved false with their counterexamples.
 
 For a finite poset $P$ on a set of points and a prime power $q$, the \emph{pattern Lie algebra} over $\Fq_q$ is
 \[
@@ -2885,9 +2885,13 @@ For all finite posets $P$ and $Q$, if $A_{P,2}=A_{Q,2}$ and $A_{P,3}=A_{Q,3}$ th
 For every finite poset $P$ and prime powers $q<q'$, the distribution of $\rank(\operatorname{ad}_x)$ for uniformly random $x\in L_P(\Fq_{q'})$ first-order stochastically dominates its distribution over $\Fq_q$.
 \end{conjecture}
 
-\begin{conjecture}[Kirillov likelihood-ratio field monotonicity]\label{v11}
+\begin{conjecture}[Kirillov likelihood-ratio field monotonicity, resolved false]\label{v11}
 For every finite poset $P$ and prime powers $q<q'$, the normalized even-rank distribution defined by $K_{P,q'}$ dominates that defined by $K_{P,q}$ in monotone likelihood-ratio order.
 \end{conjecture}
+
+\begin{remark}[Resolution]
+The conjecture is false as stated: the seven-point poset with cover relations $1\prec2$, $2\prec3$, $2\prec4$, $1\prec5$, $5\prec7$, $1\prec6$, $6\prec7$ has Kirillov even-rank coefficients $128,384,128,384$ over $\Fq_2$ and $2187,17496,4374,34992$ over $\Fq_3$, whose likelihood ratio decreases from rank $2$ to rank $4$, so monotone likelihood-ratio order already fails at $q=2$, $q'=3$.  The first-order dominance of Conjecture~\ref{v10} stands.
+\end{remark}
 
 \section{Centre-one incidence quotient}
 
@@ -2899,9 +2903,13 @@ For every finite poset $P$ with $\dim Z(L_P)=1$ and every prime power $q$, the e
 For every finite poset $P$ with $\dim Z(L_P)=1$ and every prime power $q$, the polynomial $R_{P,q}(T)$ has nonnegative integer coefficients.
 \end{conjecture}
 
-\begin{conjecture}[Centre-one quotient shape]\label{v14}
+\begin{conjecture}[Centre-one quotient shape, resolved false]\label{v14}
 For every finite poset $P$ with $\dim Z(L_P)=1$ and every prime power $q$, the coefficient sequence of $R_{P,q}(T)$ has interval support and is unimodal.
 \end{conjecture}
+
+\begin{remark}[Resolution]
+The conjecture is false as stated: the seven-point poset with cover relations $1\prec2$, $2\prec3$, $2\prec4$, $3\prec6$, $4\prec5$, $5\prec6$, $6\prec7$ has a one-dimensional centre, and its incidence quotient $R_{P,2}$ has nonnegative coefficients with interval support but is not unimodal, the coefficients $206336,198656,225280$ at degrees $8,9,10$ forming a strict interior valley.  The positivity and interval support of Conjecture~\ref{v13} stand.
+\end{remark}
 
 \section{Hasse-forest and unitriangular structure}
 
