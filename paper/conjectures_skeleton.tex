@@ -438,7 +438,7 @@ n-p$, so $n-p$ is
 composite except in the diagonal case $n=2p$, which would otherwise
 distort the hazard at one atypical point), and
 time-change by the expected-arrivals clock
-$U(n)=\SG(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$.  The ensemble is fixed first, since $U(n)$ is deterministic at each
+$U(n)=\SG(n)\sum_{p\le s(n),\,p\nmid n}1/\log(n-p)$.  Here $s(n)=+\infty$ when no admissible prime exists, which among even $n$ happens only at $n=4$ and $n=6$ and conjecturally at no larger even $n$, so the law below runs over the even $n$ with $s(n)$ finite.  The ensemble is fixed first, since $U(n)$ is deterministic at each
 $n$ and an expectation therefore needs a declared measure: for a scale
 $X$,
 \[
@@ -1526,10 +1526,11 @@ Fix a finite motif family $H_1,\ldots,H_m$.  Apply the degree-two specialization
 $s_1\succ s_2\succ\cdots$ (lexicographically in powers of $L$, $\log X$, and the
 renormalized disjoint scales).  In the mesoscopic range scales sharing the same total
 power of $L$ and of logarithms differ only by powers of $\theta=\log L/\log X$ and
-merge into a single stratum whose limiting form is polynomial in $\theta$.  The filtration, the graded convergence, and the eigenvalue asymptotics below are asserted for every fixed $\theta\in(\eps,1-\eps)$. Recursively subtract the earlier strata and let $A_\nu=A_\nu(\theta)$ be the limiting covariance form at scale $s_\nu$, asserted nondegenerate for every such $\theta$, and put
+merge into a single stratum whose limiting form is polynomial in $\theta$.  The filtration, the graded convergence, and the eigenvalue asymptotics below are asserted for every fixed $\theta\in(\eps,1-\eps)$. Recursively subtract the earlier strata and let $A_\nu=A_\nu(\theta)$ be the limiting covariance form at scale $s_\nu$, and put
 \[
  \mathcal W_\nu=\bigcap_{\mu<\nu}\ker A_\mu.
 \]
+Each $A_\nu$ is asserted to induce a nondegenerate form on the graded quotient $\mathcal W_\nu/\mathcal W_{\nu+1}$ for every such $\theta$, so that $\mathcal W_{\nu+1}=\mathcal W_\nu\cap\ker A_\nu$ and the filtration does not collapse.
 For every fixed truncation of this ordered diagram expansion, the spectral projections
 of the covariance matrix converge to the associated graded spaces
 $\mathcal W_\nu/\mathcal W_{\nu+1}$, and every eigenvalue whose first nonzero term occurs
@@ -1802,10 +1803,10 @@ universal linked-cluster contraction of the full hierarchy $(K_r)_{r\ge1}$ with 
 marked perturbation insertions, and truncating the connected hierarchy at order $J$
 gives a convergent approximation as $J\to\infty$.
 
-If the input character support is $\mathcal C_Q$, the $m$th response is supported exactly
-on products of at most $m$ input characters (subject only to coincidences and the trivial
-character).  In particular the linear response preserves character rank, while the first
-new harmonics occur at quadratic order with coefficients determined by connected
+If the input character support is $\mathcal C_Q$, the $m$th response has Fourier support contained
+in the products of at most $m$ input characters, with the reverse inclusion possibly failing through cancellation or the trivial
+character.  In particular the linear response preserves character rank, while any
+new harmonics first appear at quadratic order with coefficients determined by connected
 three-point arrival correlations.
 \end{conjecture}
 
@@ -2225,7 +2226,7 @@ coupling survives after this adelic--archimedean mixture.
 \end{conjecture}
 
 \begin{conjecture}[Full multivariate adelic saddle law for joint smoothness]\label{s24}
-Let $f_1,\ldots,f_s\in\Z[x]$ be pairwise coprime and primitive, sample
+Let $f_1,\ldots,f_s\in\Z[x]$ be pairwise coprime, primitive, and jointly admissible, meaning that for every prime $p$ some residue $x$ has $p\nmid\prod_{i}f_i(x)$, sample
 $n\in[N,2N]$, and put $t=n/N$.  For complex variables $\mathbf s$ and smoothness bounds
 $\mathbf y$, define
 \[
@@ -2666,7 +2667,7 @@ Then $h_\sigma(\mu*\mu)=h_\sigma(\mu)$.
 
 \medskip\noindent\emph{Added to the deposit: 5 August 2026.}\par\medskip
 
-The twenty conjectures below concern a single canonical object, the class-counting polynomial of a finite graph, approached through the two-step nilpotent Lie algebras that realize it as a rank generating function.  They form three programmes.  A rigidity and reconstruction programme (Conjectures~\ref{u1} to~\ref{u10}) asserts that coarse specializations of the polynomial already determine it and that the polynomial in turn determines classical invariants.  A log-concavity programme (Conjectures~\ref{u11} to~\ref{u15}) locates the exact strength of positivity that the coefficient arrays support, with the boundary calibrated by explicit counterexamples one level higher.  A tree extremal programme (Conjectures~\ref{u16} to~\ref{u20}) places the path and the star at the two ends of every ordering the polynomial induces on trees.  The proved layer is separated from the conjectural one: the rank formula (Proposition~\ref{u:rank}) and the two lower bounds on the number of rank values in a tree (Lemma~\ref{u:sbounds}) are theorems with full proofs, joined by the equality cases of those bounds (Proposition~\ref{u:pathstar}) and the reduction of the star majorization to a single anti-concentration bound (Proposition~\ref{u:starmaj}), and every conjecture is stated against that floor.  Each statement is held to the standard of the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.  One statement, Conjecture~\ref{u7}, has since been resolved false by an explicit seven-vertex pair recorded with the statement, and it is retained with its resolution rather than renumbered.
+The twenty conjectures below concern a single canonical object, the class-counting polynomial of a finite graph, approached through the two-step nilpotent Lie algebras that realize it as a rank generating function.  They form three programmes.  A rigidity and reconstruction programme (Conjectures~\ref{u1} to~\ref{u10}) asserts that coarse specializations of the polynomial already determine it and that the polynomial in turn determines classical invariants.  A log-concavity programme (Conjectures~\ref{u11} to~\ref{u15}) locates the exact strength of positivity that the coefficient arrays support, with the boundary calibrated by explicit counterexamples one level higher.  A tree extremal programme (Conjectures~\ref{u16} to~\ref{u20}) places the path and the star at the two ends of every ordering the polynomial induces on trees.  The proved layer is separated from the conjectural one: the rank formula (Proposition~\ref{u:rank}) and the two lower bounds on the number of rank values in a tree (Lemma~\ref{u:sbounds}) are theorems with full proofs, joined by the equality cases of those bounds (Proposition~\ref{u:pathstar}) and the reduction of the star majorization to a single anti-concentration bound (Proposition~\ref{u:starmaj}), and every conjecture is stated against that floor.  Each statement is held to the standard of the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.  Two statements, Conjectures~\ref{u7} and~\ref{u15}, have since been resolved false by explicit counterexamples recorded with them, a seven-vertex unicyclic pair and a connected eight-vertex graph respectively, and both are retained with their resolutions rather than renumbered.
 
 For a finite simple graph $G$ on vertex set $V(G)$ with edge set $E(G)$ and a field $F$, the \emph{graphical Lie algebra} $L_G(F)$ is the two-step nilpotent Lie algebra over $F$ with basis $\{v_i:i\in V(G)\}$ together with the central basis $\{z_e:e\in E(G)\}$, the bracket being $[v_a,v_b]=z_{ab}$ for each edge $\{a,b\}$ with $a<b$, $[v_b,v_a]=-z_{ab}$, and all other brackets of basis vectors zero.  For $S\subseteq V(G)$ write $N_G[S]$ for the closed neighbourhood of $S$, the set of vertices lying in $S$ or adjacent to it, and $c(G[S])$ for the number of connected components of the induced subgraph $G[S]$, and set
 \[
@@ -2774,9 +2775,13 @@ For connected $G$ with at least one edge, the transform $L(a)$ of Conjecture~\re
 For connected $G$ and every attainable rank $r$, the slice $A_{G,r}(Z)=[Y^r]\,F_G(1+Z,Y)$, when it is not a monomial, has strictly log-concave coefficients at every interior position of its support.
 \end{conjecture}
 
-\begin{conjecture}[Interval support at fixed rank]\label{u15}
+\begin{conjecture}[Interval support at fixed rank, resolved false]\label{u15}
 For every graph $G$ and every attainable rank $r$, the set $K_r(G)=\{|S|:\rho_G(S)=r\}$ is an interval of integers.
 \end{conjecture}
+
+\begin{remark}[Resolution]
+The conjecture is false as stated: the connected eight-vertex graph with edge set $\{\{0,3\},\{0,6\},\{0,7\},\{1,4\},\{1,6\},\{1,7\},\{2,5\},\{2,6\},\{3,6\},\{3,7\},\{4,6\},\{4,7\},\{5,7\}\}$ attains rank five at support sizes $\{1,3,4,5,6\}$, skipping size two, and an exhaustive scan of all graphs on eight vertices finds exactly two such graphs, both connected, and none smaller.
+\end{remark}
 
 \section{Tree extremality and rigidity}
 
