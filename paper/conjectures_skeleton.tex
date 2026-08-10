@@ -2983,7 +2983,7 @@ For all $k\ge2$ and $n\ge1$,
 \[
 J_{k,n}=\sum_{j=1}^{k}\Omega(kn+j)-\Omega(n+1)-\sum_{j=1}^{k-1}\Omega((k-1)n+j).
 \]
-In particular $\Omega\binom{2n+2}{n+1}-\Omega\binom{2n}{n}=1+\Omega(2n+1)-\Omega(n+1)$, and for the Catalan numbers $C_n=\tfrac1{n+1}\binom{2n}{n}$, $\Omega(C_{n+1})-\Omega(C_n)=1+\Omega(2n+1)-\Omega(n+2)$.  Consequently $J_{k,n}$ is unbounded below for every $k\ge2$, and the same holds for the central multinomial jump $\Omega(M_{k,n+1})-\Omega(M_{k,n})$.
+In particular $\Omega\binom{2n+2}{n+1}-\Omega\binom{2n}{n}=1+\Omega(2n+1)-\Omega(n+1)$, and for the Catalan numbers $C_n=\tfrac1{n+1}\binom{2n}{n}$, $\Omega(C_{n+1})-\Omega(C_n)=1+\Omega(2n+1)-\Omega(n+2)$.  Consequently the central binomial jump $J_{2,n}$, the Catalan jump $\Omega(C_{n+1})-\Omega(C_n)$, and the central multinomial jump $\Omega(M_{k,n+1})-\Omega(M_{k,n})$ for every $k\ge2$ are unbounded below, while the binomial slice $J_{k,n}$ for $k\ge3$ is Conjecture~\ref{w14}.
 \end{proposition}
 
 \begin{proposition}[Short-window radical exchangeability]\label{w:radunif}
@@ -3040,9 +3040,13 @@ The density of $n$ for which $\sigma(n)/n,\sigma(n+1)/(n+1),\sigma(n+2)/(n+2)$ i
 The density of $n$ for which $\phi(n)/n,\phi(n+1)/(n+1),\phi(n+2)/(n+2)$ is monotone exists and lies in $(0.019,0.022)$.
 \end{conjecture}
 
-\begin{conjecture}[Five-term totient barrier]\label{w11}
+\begin{conjecture}[Five-term totient barrier, resolved false]\label{w11}
 No five consecutive values of $\phi(n)/n$ are strictly increasing, and no five are strictly decreasing.
 \end{conjecture}
+
+\begin{remark}[Resolution]
+The conjecture is false.  By a theorem of Martin~\cite{Martin06}, for every $k$ and every prescribed strict ordering of $\phi(n+1),\ldots,\phi(n+k)$ with successive ratios exceeding any fixed $C$, the realizing $n$ have positive lower density; taking $k=5$ and ratios exceeding $2$ forces strictly monotone runs of $\phi(n)/n$ of length five in either direction, on positive lower density.  The runs are astronomically rare, none below $4\times10^9$, whereas the abundancy analogue already fails at $n=36{,}721{,}681$.
+\end{remark}
 
 \begin{conjecture}[Primorial-stride order constant]\label{w12}
 Along primorial strides $W_y=\prod_{p\le y}p$ the abundancy order density $\mu(W_y)$ has a limit as $y\to\infty$, and $\lim_{y\to\infty}\mu(W_y)\in(0.16,0.19)$.
@@ -3159,6 +3163,10 @@ DOI: 10.1090/S0025-5718-2013-02787-1.
 \emph{Refined Goldbach conjectures with primes in progressions},
 Exp.\ Math.\ 31 (2022), 226--232; arXiv:1806.00946.
 DOI: 10.1080/10586458.2019.1596849.
+
+\bibitem{Martin06} G.~Martin,
+\emph{Simultaneous inequalities among values of the Euler $\phi$-function},
+in Analytic Number Theory: Essays in Honour of Klaus Roth, Cambridge Univ. Press, 2009; arXiv:math/0603053.
 
 \bibitem{GL} D.~A. Goldston and A.~H. Ledoan,
 \emph{Jumping champions and gaps between consecutive primes},

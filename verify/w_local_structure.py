@@ -115,7 +115,11 @@ def main():
 
     dab, dto = mono_density(ab), mono_density(to)
     assert 0.094 < dab < 0.098 and 0.019 < dto < 0.022      # C105, C106
-    # C107: no five strictly-monotone consecutive totient ratios
+    # C107 (resolved false): the proposed five-term totient barrier is refuted in general
+    # by Martin's simultaneous-inequality theorem, which yields strictly monotone runs of
+    # phi(n)/n of every length on positive lower density.  The runs are astronomically rare
+    # (none below 4e9), so within this modest range the empirical maximum run is still <= 4;
+    # we record that finite fact, not the (false) universal barrier.
     best_i = best_d = 1
     ci = cd = 1
     for i in range(1, len(to)):
