@@ -74,7 +74,7 @@ title: One hundred sixteen conjectures in mathematics
 
 **29. Anchored arithmetic polymer expansion (Conjecture 29).** Palm cluster activities are graded by the number of new prime constraints beyond one anchored motif.
 
-**30. Topological expansion of non-Gaussianity (Conjecture 30).** The first non-Gaussian terms are graded by the homology of overlap-incidence complexes.
+**30. Topological expansion of non-Gaussianity (Conjecture 30).** Each independent cycle in a connected diagram's overlap graph costs one logarithmic order, so the leading non-Gaussian odd-cumulant term is carried by the tree-like diagrams.
 
 **31. Connected first-arrival functional (Conjecture 31).** The entire least-prime point process has connected kernels obtained from same-class prime correlations.
 
