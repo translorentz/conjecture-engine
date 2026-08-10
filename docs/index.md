@@ -217,6 +217,8 @@ title: One hundred sixteen conjectures in mathematics
 
 **96. Adjoint–coadjoint incidence anticorrelation (Conjecture 96).** Sampling $$(x,f)$$ uniformly on the incidence variety gives $$\operatorname{Cov}(\operatorname{rank}(\operatorname{ad}_x),\operatorname{rank}(B_f))<0$$ for every nonabelian $$L_P$$, with covariance zero exactly in the abelian case.
 
+**Part VI — twenty conjectures on local arithmetic structure, in statement order.**
+
 **97. Local-sieve limit for polygonal compasses (Conjecture 97).** The nearest-prime direction of the polygonal numbers $$P_s$$ has a limit equal to a deep local-sieve hazard, whose primes through $$47$$ already predict the order-level bias with correlation $$0.896$$.
 
 **98. Pentagonal and pronic compasses (Conjecture 98).** The pentagonal compass is right-biased in $$(0.56,0.62)$$ and the pronic compass left-biased in $$(0.42,0.48)$$, opposite directions measured at $$0.583$$ and $$0.450$$.
