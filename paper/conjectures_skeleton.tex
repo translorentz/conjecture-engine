@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Ninety-six conjectures in mathematics}
+\title{One hundred sixteen conjectures in mathematics}
 \author{}
 \date{July 27, 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Ninety-six conjectures in mathematics:\\ the statements}
+\title{One hundred sixteen conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -2961,6 +2961,138 @@ For every nonabelian pattern Lie algebra $L=L_P$ and every prime power $q$, samp
 with covariance zero exactly when $L_P$ is abelian.
 \end{conjecture}
 
+
+\part{Local structure of primes and arithmetic functions}
+
+\medskip\noindent\emph{Added to the deposit: 10 August 2026.}\par\medskip
+
+The twenty conjectures below return to the local--global aesthetic of Part~I, but read it off objects other than residue classes of consecutive primes.  Each takes a familiar arithmetic quantity, looks at it through a local lens that ought to have looked symmetric, and takes the residual asymmetry seriously.  They form five programmes.  A compass programme (Conjectures~\ref{w1} to~\ref{w6}) measures the direction of the nearest prime to a polynomial centre and matches it to a local-sieve hazard.  A rank programme (Conjectures~\ref{w7} and~\ref{w8}) studies the order words of $\operatorname{rad}(n)/n$ on short windows.  An order programme (Conjectures~\ref{w9} to~\ref{w13}) measures how often abundancy and totient ratios move monotonically.  A shock programme (Conjectures~\ref{w14} to~\ref{w19}) tracks the prime-factor count of combinatorial sequences that drop many factors in a single step.  A boundary programme (Conjecture~\ref{w20}) reads the prime-factor anatomy of the four integers bracketing a prime gap.  The proved layer is kept separate: the factorial-ratio jump identities of Proposition~\ref{w:jump} and the short-window exchangeability of Proposition~\ref{w:radunif} are theorems with full proofs, and the conjectures are stated against them.  Six of the twenty state a bias as a numerical band rather than a derived constant, and are flagged as such where they occur, the compass and order constants of Conjectures~\ref{w2}, \ref{w3}, \ref{w4}, \ref{w9}, \ref{w10}, and~\ref{w12}.  Two, Conjectures~\ref{w6} and~\ref{w17}, extrapolate in a parameter rather than in the index and are the most exposed.
+
+For a composite integer $a$ let $p^-(a)<a<p^+(a)$ be its neighbouring primes and set $L(a)=a-p^-(a)$ and $U(a)=p^+(a)-a$.  The \emph{prime compass} of $a$ points right when $U(a)<L(a)$, left when $L(a)<U(a)$, and is tied when the two distances agree.  For a sequence $A_1<A_2<\cdots$ of composite centres write
+\[
+\theta_A(x)=\frac{\#\{n:A_n\le x,\ U(A_n)<L(A_n)\}}{\#\{n:A_n\le x,\ U(A_n)\ne L(A_n)\}}
+\]
+for the right-closer frequency among the untied centres, and $\theta_A=\lim_{x\to\infty}\theta_A(x)$ when it exists.  The polygonal numbers are $P_s(n)=\tfrac12\bigl((s-2)n^2-(s-4)n\bigr)$ for $s\ge3$, the pronic numbers are $Q(n)=n(n+1)$, and the squares are $n^2$.  For the radical $\operatorname{rad}(n)=\prod_{p\mid n}p$ write $R(n)=\operatorname{rad}(n)/n$, and for a window of length $d$ call the permutation $\pi_0\cdots\pi_{d-1}$ of $\{0,\ldots,d-1\}$ the \emph{rank word} at $n$ when $R(n+\pi_0)<\cdots<R(n+\pi_{d-1})$, counting only windows with no ties.  Write $\delta_\pi$ for the natural density of $n$ with rank word $\pi$.  For the multiplicative ratios $\sigma(n)/n$ and $\phi(n)/n$ call an adjacent triple \emph{monotone} when it is strictly increasing or strictly decreasing, and for a stride $W$ let $\mu(W)$ be the density of $n$ for which $\sigma(n)/n,\sigma(n+W)/(n+W),\sigma(n+2W)/(n+2W)$ is monotone.  Write $\Omega(m)$ for the number of prime factors of $m$ with multiplicity, and set the binomial slice $A_{k,n}=\binom{kn}{n}$, the central multinomial $M_{k,n}=(kn)!/(n!)^k$, and the Fuss--Catalan number $F_{r,n}=\tfrac1{rn+1}\binom{(r+1)n}{n}$, with single-step jump $J_{k,n}=\Omega(A_{k,n+1})-\Omega(A_{k,n})$.  Finally, for consecutive odd primes $p<q$ set
+\[
+D(p,q)=\Omega(p+1)+\Omega(q-1)-\Omega(p-1)-\Omega(q+1),
+\]
+the inward-minus-outward prime-factor balance of the four composites bracketing the gap.
+
+\begin{proposition}[Factorial-ratio jump identities]\label{w:jump}
+For all $k\ge2$ and $n\ge1$,
+\[
+J_{k,n}=\sum_{j=1}^{k}\Omega(kn+j)-\Omega(n+1)-\sum_{j=1}^{k-1}\Omega((k-1)n+j).
+\]
+In particular $\Omega\binom{2n+2}{n+1}-\Omega\binom{2n}{n}=1+\Omega(2n+1)-\Omega(n+1)$, and for the Catalan numbers $C_n=\tfrac1{n+1}\binom{2n}{n}$, $\Omega(C_{n+1})-\Omega(C_n)=1+\Omega(2n+1)-\Omega(n+2)$.  Consequently $J_{k,n}$ is unbounded below for every $k\ge2$, and the same holds for the central multinomial jump $\Omega(M_{k,n+1})-\Omega(M_{k,n})$.
+\end{proposition}
+
+\begin{proposition}[Short-window radical exchangeability]\label{w:radunif}
+For every window length $d\le4$ the strict rank-word densities of $R(n)=\operatorname{rad}(n)/n$ exist and are uniform, each equal to $1/d!$.
+\end{proposition}
+
+\section{Prime compasses at polynomial centres}
+
+\begin{conjecture}[Local-sieve limit for polygonal compasses]\label{w1}
+For every fixed $s\ge3$ the limit $\theta_s=\theta_{P_s}$ exists.  Moreover, if the nearest-prime race is replaced by the first offset on each side surviving every prime at most $y$, the resulting local compass frequency tends to $\theta_s$ as $y\to\infty$.
+\end{conjecture}
+
+\begin{conjecture}[Pentagonal and pronic compasses]\label{w2}
+The pentagonal compass satisfies $0.56<\theta_{P_5}<0.62$, while the pronic compass satisfies $0.42<\theta_Q<0.48$.
+\end{conjecture}
+
+\begin{conjecture}[Opposite polygonal orders]\label{w3}
+The $60$-gonal compass satisfies $\theta_{60}>0.58$ and the $69$-gonal compass satisfies $\theta_{69}<0.49$.
+\end{conjecture}
+
+\begin{conjecture}[Triangular and hexagonal equality]\label{w4}
+The triangular and hexagonal compass constants are equal, $\theta_{P_3}=\theta_{P_6}\in(0.52,0.56)$.
+\end{conjecture}
+
+\begin{conjecture}[Square compass by root class]\label{w5}
+For each residue $r\bmod6$ the conditional square compass $\theta_{\square,r}$ over roots $n\equiv r$ exists, with $\theta_{\square,r}<0.45$ for $r\in\{1,5\}$ and $\theta_{\square,r}>0.54$ for $r\in\{0,2,3,4\}$.
+\end{conjecture}
+
+\begin{conjecture}[Two-sided order spectrum]\label{w6}
+The polygonal compass spectrum straddles one half in the limit of many sides,
+\[
+\liminf_{s\to\infty}\theta_s<0.49<0.58<\limsup_{s\to\infty}\theta_s,
+\]
+so infinitely many polygonal orders are left-biased and infinitely many are right-biased.
+\end{conjecture}
+
+\section{Order words of the radical ratio}
+
+\begin{conjecture}[Permanent nonuniformity from length five]\label{w7}
+For every fixed window length $d\ge5$ the strict rank-word densities of $R(n)=\operatorname{rad}(n)/n$ exist, and their distribution is not uniform.
+\end{conjecture}
+
+\begin{conjecture}[Thirteen-fold rank separation]\label{w8}
+At window length five the strict densities satisfy $12<\delta_{30241}/\delta_{13240}<15$, with $30241$ in the dominant class and $13240$ in the suppressed class.
+\end{conjecture}
+
+\section{Order laws for multiplicative ratios}
+
+\begin{conjecture}[Abundancy order constant]\label{w9}
+The density of $n$ for which $\sigma(n)/n,\sigma(n+1)/(n+1),\sigma(n+2)/(n+2)$ is monotone exists and lies in $(0.094,0.098)$.
+\end{conjecture}
+
+\begin{conjecture}[Totient order constant]\label{w10}
+The density of $n$ for which $\phi(n)/n,\phi(n+1)/(n+1),\phi(n+2)/(n+2)$ is monotone exists and lies in $(0.019,0.022)$.
+\end{conjecture}
+
+\begin{conjecture}[Five-term totient barrier]\label{w11}
+No five consecutive values of $\phi(n)/n$ are strictly increasing, and no five are strictly decreasing.
+\end{conjecture}
+
+\begin{conjecture}[Primorial-stride order constant]\label{w12}
+Along primorial strides $W_y=\prod_{p\le y}p$ the abundancy order density $\mu(W_y)$ has a limit as $y\to\infty$, and $\lim_{y\to\infty}\mu(W_y)\in(0.16,0.19)$.
+\end{conjecture}
+
+\begin{conjecture}[Dyadic completion overshoot]\label{w13}
+For every even squarefree $W$ divisible by six the limit $\lim_{e\to\infty}\mu(2^eW)$ exists and exceeds $1/3$, so $\mu(2^eW)>1/3$ for all large $e$.
+\end{conjecture}
+
+\section{Prime-factor shocks in combinatorial sequences}
+
+\begin{conjecture}[Binomial-slice negative shocks]\label{w14}
+For every fixed $k\ge3$ the jump $J_{k,n}=\Omega\binom{k(n+1)}{n+1}-\Omega\binom{kn}{n}$ is unbounded below.
+\end{conjecture}
+
+\begin{conjecture}[Binomial-slice positive shocks]\label{w15}
+For every fixed $k\ge2$ the jump $J_{k,n}$ is unbounded above.
+\end{conjecture}
+
+\begin{conjecture}[Fuss--Catalan two-sided shocks]\label{w16}
+For every fixed $r\ge1$ the jump $\Omega(F_{r,n+1})-\Omega(F_{r,n})$ is unbounded both below and above.
+\end{conjecture}
+
+\begin{conjecture}[Negative shock covariance]\label{w17}
+In every fixed nontrivial binomial-slice, central-multinomial, and Fuss--Catalan family the lag-one covariance of successive jumps has a finite strictly negative limit.
+\end{conjecture}
+
+\begin{conjecture}[Dyadic multinomial slope]\label{w18}
+For every fixed $k\ge2$ the dyadic jump of the central multinomial obeys
+\[
+\frac{\Omega(M_{k,2^m})-\Omega(M_{k,2^m-1})}{m}\longrightarrow-(k-1).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Eventual sign balance]\label{w19}
+For every fixed binomial-slice and Fuss--Catalan family the positive-jump and negative-jump densities each tend to $\tfrac12$, while the zero-jump density tends to $0$.
+\end{conjecture}
+
+\section{The arithmetic anatomy of prime-gap boundaries}
+
+\begin{conjecture}[Boundary Euler sum]\label{w20}
+For each prime $\ell$ let $r$ be uniform on $\Z/\ell^a\Z$ conditioned on $r(r+g)\not\equiv0\pmod\ell$, and set
+\[
+m_{\ell,a}(g)=\mathbb E\bigl[v_\ell(r+1)+v_\ell(r+g-1)-v_\ell(r-1)-v_\ell(r+g+1)\bigr].
+\]
+Then for every fixed even $g$ occurring infinitely often as a consecutive-prime gap,
+\[
+\lim_{x\to\infty}\mathbb E\bigl[D(p,q)\mid p\le x,\ q-p=g\bigr]=\sum_\ell\lim_{a\to\infty}m_{\ell,a}(g).
+\]
+\end{conjecture}
 
 \begin{thebibliography}{99}\small
 
