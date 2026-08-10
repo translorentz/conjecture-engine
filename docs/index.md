@@ -218,24 +218,43 @@ title: One hundred sixteen conjectures in mathematics
 **96. Adjoint–coadjoint incidence anticorrelation (Conjecture 96).** Sampling $$(x,f)$$ uniformly on the incidence variety gives $$\operatorname{Cov}(\operatorname{rank}(\operatorname{ad}_x),\operatorname{rank}(B_f))<0$$ for every nonabelian $$L_P$$, with covariance zero exactly in the abelian case.
 
 **97. Local-sieve limit for polygonal compasses (Conjecture 97).** The nearest-prime direction of the polygonal numbers $$P_s$$ has a limit equal to a deep local-sieve hazard, whose primes through $$47$$ already predict the order-level bias with correlation $$0.896$$.
+
 **98. Pentagonal and pronic compasses (Conjecture 98).** The pentagonal compass is right-biased in $$(0.56,0.62)$$ and the pronic compass left-biased in $$(0.42,0.48)$$, opposite directions measured at $$0.583$$ and $$0.450$$.
+
 **99. Opposite polygonal orders (Conjecture 99).** The $$60$$-gonal compass exceeds $$0.58$$ and the $$69$$-gonal compass falls below $$0.49$$, at $$0.609$$ and $$0.468$$ with both signs replicated above $$10^9$$.
+
 **100. Triangular and hexagonal equality (Conjecture 100).** The triangular and hexagonal compass constants are equal, by $$P_6(n)=P_3(2n-1)$$, agreeing to three places at about $$0.536$$.
+
 **101. Square compass by root class (Conjecture 101).** The nearest-prime direction of $$n^2$$ splits sharply by $$n\bmod6$$, below $$0.45$$ for $$n\equiv1,5$$ and above $$0.54$$ for $$n\equiv0,2,3,4$$.
+
 **102. Two-sided order spectrum (Conjecture 102).** As the number of sides grows the polygonal compass straddles one half, so infinitely many orders are left-biased and infinitely many right-biased.
+
 **103. Permanent nonuniformity from length five (Conjecture 103).** The rank words of $$\operatorname{rad}(n)/n$$ are uniform through window length four but nonuniform for every length $$d\ge5$$, the chi-square jumping from $$0.45$$ to about $$2.1\times10^7$$.
+
 **104. Thirteen-fold rank separation (Conjecture 104).** At window length five the density ratio of the words $$30241$$ and $$13240$$ lies in $$(12,15)$$, measured at $$13.31$$ through $$10^9$$.
+
 **105. Abundancy order constant (Conjecture 105).** Adjacent triples of $$\sigma(n)/n$$ are monotone with a density in $$(0.094,0.098)$$, far below the independent value $$1/3$$, measured at $$0.0958$$.
+
 **106. Totient order constant (Conjecture 106).** Adjacent triples of $$\phi(n)/n$$ are monotone with a density in $$(0.019,0.022)$$, measured at $$0.0202$$.
+
 **107. Five-term totient barrier (Conjecture 107).** No five consecutive values of $$\phi(n)/n$$ are strictly monotone through $$4\times10^9$$, whereas the abundancy analogue is false, with an increasing five-term run at $$n=36{,}721{,}681$$.
+
 **108. Primorial-stride order constant (Conjecture 108).** Along primorial strides the abundancy order density tends to a limit in $$(0.16,0.19)$$, decreasing from $$0.202$$ at stride $$30$$ toward $$0.177$$.
+
 **109. Dyadic completion overshoot (Conjecture 109).** Raising only the dyadic exponent of an even squarefree six-divisible stride lifts the abundancy order density past $$1/3$$ and holds it there, isolated by two controls to the exponents rather than the prime support.
+
 **110. Binomial-slice negative shocks (Conjecture 110).** For every $$k\ge3$$ the single-step $$\Omega$$-jump of $$\binom{kn}{n}$$ is unbounded below, the $$k=2$$ case being proved in the jump identity.
+
 **111. Binomial-slice positive shocks (Conjecture 111).** For every $$k\ge2$$ the same jump is unbounded above, so the prime-factor count is a two-sided oscillating process.
-**112. Fuss--Catalan two-sided shocks (Conjecture 112).** For every $$r\ge1$$ the $$\Omega$$-jump of the Fuss–Catalan numbers is unbounded in both directions, extending the shock phenomenon beyond the binomial coefficient.
+
+**112. Fuss–Catalan two-sided shocks (Conjecture 112).** For every $$r\ge1$$ the $$\Omega$$-jump of the Fuss–Catalan numbers is unbounded in both directions, extending the shock phenomenon beyond the binomial coefficient.
+
 **113. Negative shock covariance (Conjecture 113).** In every fixed binomial-slice, central-multinomial, and Fuss–Catalan family successive $$\Omega$$-jumps have a strictly negative lag-one covariance, negative in all $$22$$ tested families.
+
 **114. Dyadic multinomial slope (Conjecture 114).** The dyadic $$\Omega$$-jump of the central multinomial $$M_{k,n}$$ has slope $$-(k-1)$$, sharpening the negative linear bound of the jump identity.
+
 **115. Eventual sign balance (Conjecture 115).** In each binomial-slice and Fuss–Catalan family the positive- and negative-jump densities each tend to $$\tfrac12$$, an Erdős–Kac-type balance now standing at negative fractions $$0.356$$ to $$0.435$$ and rising.
+
 **116. Boundary Euler sum (Conjecture 116).** The mean prime-factor balance of the four composites bracketing a fixed prime gap equals an explicit $$\ell$$-adic Euler sum, matched at correlation $$0.998$$ across $$39$$ gaps.
 
 ## Abstract
