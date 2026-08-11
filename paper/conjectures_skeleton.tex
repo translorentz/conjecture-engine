@@ -2966,13 +2966,13 @@ with covariance zero exactly when $L_P$ is abelian.
 
 \medskip\noindent\emph{Added to the deposit: 10 August 2026.}\par\medskip
 
-The twenty conjectures below return to the local--global aesthetic of Part~I, but read it off objects other than residue classes of consecutive primes.  Each takes a familiar arithmetic quantity, looks at it through a local lens that ought to have looked symmetric, and takes the residual asymmetry seriously.  They form five programmes.  A compass programme (Conjectures~\ref{w1} to~\ref{w6}) measures the direction of the nearest prime to a polynomial centre and matches it to a local-sieve hazard.  A rank programme (Conjectures~\ref{w7} and~\ref{w8}) studies the order words of $\operatorname{rad}(n)/n$ on short windows.  An order programme (Conjectures~\ref{w9} to~\ref{w13}) measures how often abundancy and totient ratios move monotonically.  A shock programme (Conjectures~\ref{w14} to~\ref{w19}) tracks the prime-factor count of combinatorial sequences that drop many factors in a single step.  A boundary programme (Conjecture~\ref{w20}) reads the prime-factor anatomy of the four integers bracketing a prime gap.  The proved layer is kept separate: the factorial-ratio jump identities of Proposition~\ref{w:jump} and the short-window exchangeability of Proposition~\ref{w:radunif} are theorems with full proofs, and the conjectures are stated against them.  Six of the twenty state a bias as a numerical band rather than a derived constant, and are flagged as such where they occur, the compass and order constants of Conjectures~\ref{w2}, \ref{w3}, \ref{w4}, \ref{w9}, \ref{w10}, and~\ref{w12}.  Two, Conjectures~\ref{w6} and~\ref{w17}, extrapolate in a parameter rather than in the index and are the most exposed.
+The twenty conjectures below return to the local--global aesthetic of Part~I, but read it off objects other than residue classes of consecutive primes.  Each takes a familiar arithmetic quantity, looks at it through a local lens that ought to have looked symmetric, and takes the residual asymmetry seriously.  They form five programmes.  A compass programme (Conjectures~\ref{w1} to~\ref{w6}) measures the direction of the nearest prime to a polynomial centre and matches it to a local-sieve hazard.  An order-pattern programme (Conjectures~\ref{w7} and~\ref{w8}) studies the order patterns of $\operatorname{rad}(n)/n$ on short windows.  An order programme (Conjectures~\ref{w9} to~\ref{w13}) measures how often abundancy and totient ratios move monotonically.  A shock programme (Conjectures~\ref{w14} to~\ref{w19}) tracks the prime-factor count of combinatorial sequences that drop many prime factors in a single step, a \emph{shock}.  A boundary programme (Conjecture~\ref{w20}) reads the prime-factor anatomy of the four integers bracketing a prime gap.  The proved layer is kept separate: the factorial-ratio jump identities of Proposition~\ref{w:jump} and the short-window exchangeability of Proposition~\ref{w:radunif} are theorems with full proofs, and the conjectures are stated against them.  Six of the twenty state a bias as a numerical band rather than a derived constant, and are flagged as such where they occur, the compass and order constants of Conjectures~\ref{w2}, \ref{w3}, \ref{w4}, \ref{w9}, \ref{w10}, and~\ref{w12}.  Two, Conjectures~\ref{w6} and~\ref{w17}, extrapolate in a parameter rather than in the index and are the most exposed.
 
 For a composite integer $a$ let $p^-(a)<a<p^+(a)$ be its neighbouring primes and set $L(a)=a-p^-(a)$ and $U(a)=p^+(a)-a$.  The \emph{prime compass} of $a$ points right when $U(a)<L(a)$, left when $L(a)<U(a)$, and is tied when the two distances agree.  For a sequence $A_1<A_2<\cdots$ of composite centres write
 \[
 \theta_A(x)=\frac{\#\{n:A_n\le x,\ U(A_n)<L(A_n)\}}{\#\{n:A_n\le x,\ U(A_n)\ne L(A_n)\}}
 \]
-for the right-closer frequency among the untied centres, and $\theta_A=\lim_{x\to\infty}\theta_A(x)$ when it exists.  The polygonal numbers are $P_s(n)=\tfrac12\bigl((s-2)n^2-(s-4)n\bigr)$ for $s\ge3$, the pronic numbers are $Q(n)=n(n+1)$, and the squares are $n^2$.  For the radical $\operatorname{rad}(n)=\prod_{p\mid n}p$ write $R(n)=\operatorname{rad}(n)/n$, and for a window of length $d$ call the permutation $\pi_0\cdots\pi_{d-1}$ of $\{0,\ldots,d-1\}$ the \emph{rank word} at $n$ when $R(n+\pi_0)<\cdots<R(n+\pi_{d-1})$, counting only windows with no ties.  Write $\delta_\pi$ for the natural density of $n$ with rank word $\pi$.  For the multiplicative ratios $\sigma(n)/n$ and $\phi(n)/n$ call an adjacent triple \emph{monotone} when it is strictly increasing or strictly decreasing, and for a stride $W$ let $\mu(W)$ be the density of $n$ for which $\sigma(n)/n,\sigma(n+W)/(n+W),\sigma(n+2W)/(n+2W)$ is monotone.  Write $\Omega(m)$ for the number of prime factors of $m$ with multiplicity, and set the binomial slice $A_{k,n}=\binom{kn}{n}$, the central multinomial $M_{k,n}=(kn)!/(n!)^k$, and the Fuss--Catalan number $F_{r,n}=\tfrac1{rn+1}\binom{(r+1)n}{n}$, with single-step jump $J_{k,n}=\Omega(A_{k,n+1})-\Omega(A_{k,n})$.  Finally, for consecutive odd primes $p<q$ set
+for the right-closer frequency among the untied centres, and $\theta_A=\lim_{x\to\infty}\theta_A(x)$ when it exists; we call $\theta_A$ the \emph{compass constant} of $A$.  The polygonal numbers are $P_s(n)=\tfrac12\bigl((s-2)n^2-(s-4)n\bigr)$ for $s\ge3$, the pronic numbers are $Q(n)=n(n+1)$, and the squares are $n^2$.  For the radical $\operatorname{rad}(n)=\prod_{p\mid n}p$ write $R(n)=\operatorname{rad}(n)/n$, and for a window of length $d$ call the permutation $\pi_0\cdots\pi_{d-1}$ of $\{0,\ldots,d-1\}$ the \emph{order pattern}---the ordinal pattern of the window---at $n$ when $R(n+\pi_0)<\cdots<R(n+\pi_{d-1})$, counting only windows with no ties.  Write $\delta_\pi$ for the natural density of $n$ with order pattern $\pi$.  For the abundancy index $\sigma(n)/n$ and the totient ratio $\phi(n)/n$ call an adjacent triple \emph{monotone} when it is strictly increasing or strictly decreasing, and for a stride $W$ let $\mu(W)$ be the density of $n$ for which $\sigma(n)/n,\sigma(n+W)/(n+W),\sigma(n+2W)/(n+2W)$ is monotone.  Write $\Omega(m)$ for the number of prime factors of $m$ with multiplicity, and set the binomial slice $A_{k,n}=\binom{kn}{n}$, the central multinomial $M_{k,n}=(kn)!/(n!)^k$, and the Fuss--Catalan number $F_{r,n}=\tfrac1{rn+1}\binom{(r+1)n}{n}$, with single-step jump $J_{k,n}=\Omega(A_{k,n+1})-\Omega(A_{k,n})$.  Finally, for consecutive odd primes $p<q$ set
 \[
 D(p,q)=\Omega(p+1)+\Omega(q-1)-\Omega(p-1)-\Omega(q+1),
 \]
@@ -2987,7 +2987,7 @@ In particular $\Omega\binom{2n+2}{n+1}-\Omega\binom{2n}{n}=1+\Omega(2n+1)-\Omega
 \end{proposition}
 
 \begin{proposition}[Short-window radical exchangeability]\label{w:radunif}
-For every window length $d\le4$ the strict rank-word densities of $R(n)=\operatorname{rad}(n)/n$ exist and are uniform, each equal to $1/d!$.
+For every window length $d\le4$ the strict order-pattern densities of $R(n)=\operatorname{rad}(n)/n$ exist and are uniform, each equal to $1/d!$.
 \end{proposition}
 
 \section{Prime compasses at polynomial centres}
@@ -3020,13 +3020,13 @@ The polygonal compass spectrum straddles one half in the limit of many sides,
 so infinitely many polygonal orders are left-biased and infinitely many are right-biased.
 \end{conjecture}
 
-\section{Order words of the radical ratio}
+\section{Order patterns of the radical ratio}
 
 \begin{conjecture}[Permanent nonuniformity from length five]\label{w7}
-For every fixed window length $d\ge5$ the strict rank-word densities of $R(n)=\operatorname{rad}(n)/n$ exist, and their distribution is not uniform.
+For every fixed window length $d\ge5$ the strict order-pattern densities of $R(n)=\operatorname{rad}(n)/n$ exist, and their distribution is not uniform.
 \end{conjecture}
 
-\begin{conjecture}[Thirteen-fold rank separation]\label{w8}
+\begin{conjecture}[Thirteen-fold pattern separation]\label{w8}
 At window length five the strict densities satisfy $12<\delta_{30241}/\delta_{13240}<15$, with $30241$ in the dominant class and $13240$ in the suppressed class.
 \end{conjecture}
 
