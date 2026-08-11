@@ -59,7 +59,11 @@ def main():
         assert omega_binom(2, n + 1) - omega_binom(2, n) == 1 + Om(2 * n + 1) - Om(n + 1)
     print("Prop w:jump: factorial-ratio jump identities exact (k<=8, n<60)")
 
-    # ---- radical ratio R(n)=rad(n)/n; window rank words ----
+    # ---- radical ratio R(n)=rad(n)/n; window order patterns ----
+    # Pattern densities are conditional on no ties (delta_pi normalized among untied
+    # windows, as in the paper's definitions): ties have positive density (adjacent
+    # squarefree pairs already tie at R=1), so the chi-square below uses the strict
+    # window count as its total, which is exactly the conditional normalization.
     N = 1_000_000
     rad = np.ones(N + 1, dtype=np.float64)
     isc = np.zeros(N + 1, dtype=bool)

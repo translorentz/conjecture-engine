@@ -303,10 +303,10 @@ Bateman--Horn constant.
 \paragraph{Part III: six conjectures across fields, in statement order.}
 \begin{enumerate}\setcounter{enumi}{50}
 \item \textbf{Relative polynomial pretentiousness inverse principle (Conjecture~\ref{t1}).} A persistently nonzero logarithmic correlation of completely multiplicative unimodular functions along multiplicatively independent irreducible polynomials forces one existential block of primitive characters and archimedean parameters with finite relative pretentious distances, the balance identity $\sum_j t_j \deg P_j = 0$, and a nonvanishing joint character average at a common modulus.
-\item \textbf{Monotone threshold purification of vector paths (Conjecture~\ref{t2}).} Every monotone fractional activation schedule of $m$ vectors of norm at most one in $\R^d$ admits a rounding to single irreversible activation times whose path error is $O(\sqrt d)$ uniformly in $m$, containing the open Euclidean Steinitz prefix-sum problem and asserting removal of the logarithm from Banaszczyk's $O(\sqrt{d+\log m})$.
+\item \textbf{Monotone threshold purification of vector paths (Conjecture~\ref{t2}).} Every monotone fractional activation schedule of $m$ vectors of norm at most one in $\R^d$ admits a rounding to distinct irreversible activation times whose path error is $O(\sqrt d)$ uniformly in $m$, containing the open Euclidean Steinitz prefix-sum problem and asserting removal of the logarithm from Banaszczyk's $O(\sqrt{d+\log m})$.
 \item \textbf{Entropy dimension of random-free graphons (Conjecture~\ref{t3}).} If the row space of a $\{0,1\}$-valued graphon is Ahlfors $s$-regular then $H(G(n,W))/(n\log n)\to s$, the hypothesis class being nonvacuous at every $s\in(0,2]$ by Cantor-type threshold constructions.
 \item \textbf{A Hessian principle for isolated microcanonical graph phases (Conjecture~\ref{t4}).} Under isolated-phase, transversally Lipschitz, and nonemptiness hypotheses, the tangent block averages of a microcanonical coloured graph ensemble fluctuate at scale $n^{-1}$ around their mean with centred Gaussian limit of covariance $A^{-1}$, the inverse of the contracted entropy Hessian.
-\item \textbf{Sharp stability of entropy idempotence on finite abelian groups (Conjecture~\ref{t5}).} The squared total variation distance from a probability measure to the nearest uniform coset measure is bounded by a universal constant, conjecturally exactly $2/\log 2$ as pinned by discretized Gaussians on $\Z/p\Z$, times the convolution entropy defect $H(\mu*\mu)-H(\mu)$.
+\item \textbf{Sharp stability of entropy idempotence on finite abelian groups (Conjecture~\ref{t5}).} The squared total variation distance from a probability measure to the nearest uniform coset measure is at most $2/\log 2$ times the convolution entropy defect $H(\mu*\mu)-H(\mu)$, sharply, the constant pinned by discretized Gaussians on $\Z/p\Z$; some universal constant already follows from the Green--Manners--Tao entropic inverse theorem, so the sharp constant and the extremal geometry are the content.
 \item \textbf{Stationary convolution-entropy rigidity (Conjecture~\ref{t6}).} An ergodic stationary process over a finite abelian group preserves entropy under independent self-convolution exactly when its quotient by the translational stabilizer has zero entropy, so in particular every ergodic binary process of intermediate entropy gains entropy under independent XOR.
 \end{enumerate}
 
@@ -719,8 +719,8 @@ asserts two sub-claims, labelled separately because they can fail
 independently.
 \emph{(i-a)} [mechanism] class $1$ carries the systematic surplus
 $T$: one has the decomposition $D_1(t)=T(t)+R(t)$ in which the
-remainder $R$ carries no deterministic component at the drift scale,
-so that the entire drift-scale deterministic content of $D_1$ is the
+normalized remainder $R(t)\log^2t/\sqrt t$ possesses a limiting
+logarithmic distribution with mean zero, so that the entire drift-scale deterministic content of $D_1$ is the
 contamination term and its coefficient is thereby identified.
 \emph{(i-b)} [averaging] at the drift-scale normalization the
 remainder averages away:
@@ -2125,15 +2125,18 @@ according to the logarithmic measure on $[1,N_0]$:
 \Pr[M=m]\;=\;\Bigl(\sum_{1\le m'\le N_0}\tfrac1{m'}\Bigr)^{-1}
 \frac1m,\qquad 1\le m\le N_0 .
 \]
-The hypothesis is an \emph{almost-sure invariance principle} (ASIP)
-for the induced random path $(S_{M+j}-S_M)_{0\le j\le N}$ under that
+The hypothesis is an invariance principle of ASIP type, stated in
+triangular-array form, for the induced random path $(S_{M+j}-S_M)_{0\le j\le N}$ under that
 sampling law: on a probability space carrying $M$ and a standard
 Brownian motion $B$,
 \[
 S_{M+j}-S_M\;=\;B(j)+O\bigl(N^{1/2-\delta}\bigr)
 \qquad\text{uniformly for }0\le j\le N,
 \]
-almost surely in $M$ as $N_0\to\infty$, for some $\delta>0$.  The
+with probability tending to one as $N_0\to\infty$, for some
+$\delta>0$; the sampling law of $M$ changes with $N_0$, so the
+coupling is asserted per $N_0$ with vanishing exceptional
+probability rather than almost surely on a single space.  The
 logarithmic sampling law is the same clock in which the occupation
 statement below is read, and randomizing the window start is what
 supplies the deterministic step sequence with a probability space.
@@ -3076,7 +3079,14 @@ by inserting these mollified copies into the smoothed motif covariance, applying
 same exact-overlap M\"obius
 projection as on the local side, and subtracting the explicitly specified pole,
 diagonal, trivial-zero, archimedean, and prime-power counterterms before the mollifier
-is removed.
+is removed.  In normal form: expand each inserted copy into its
+separately named summands together with the mollified zero sum and
+expand the covariance multilinearly; $Q^{\mathrm{spec}}_{ij}$ is then
+the zero--zero block of that expansion with its diagonal term removed,
+the subtracted counterterms being exactly the cross terms containing a
+pole, trivial-zero, archimedean, or prime-power summand, together with
+the diagonal term of the zero--zero block, so that two readers form
+the same object.
 
 For every sufficiently large fixed $A,B$, take
 \[
@@ -3266,8 +3276,10 @@ scale, tests supported on additive zero-sum tensors converge to contractions of 
 Fourier transforms of the arrival kernels $K_r$ from \cref{s6}.  Transporting those
 tests fibrewise by the exact Gauss matrices and only then taking the modulus average
 gives the same limits as the corresponding multiple explicit-formula correlations of
-Dirichlet $L$-function zeros.  The two descriptions determine the same continuous
-multilinear functional on the completion of the tested tensor class.
+Dirichlet $L$-function zeros.  The two descriptions agree test by test: every uniformly bounded
+fibrewise family of test tensors yields the same normalized limits
+along both routes, so the two limiting multilinear functionals
+coincide on the tested class itself, no completion being invoked.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -3647,11 +3659,10 @@ level $n$ and irreducible representation $\rho$ of the generic quotient $G_n$, l
  \mathfrak C_{n,r}=
  \sum_{\rho_1,\ldots,\rho_r}
  \left(\prod_{j=1}^r\dim\rho_j\right)^2
- \operatorname{cond}\!\left(\boxtimes_{j=1}^r\mathcal V_{n,\rho_j}\right)^2,
+ \prod_{j=1}^r\operatorname{cond}\!\left(\mathcal V_{n,\rho_j}\right)^2,
  \qquad \mathfrak C_n=\mathfrak C_{n,1},
 \]
-where the external tensor product is taken on the CRT parameter space for distinct
-primes, and the conductor includes rank, the number of singular points, and the tame-drop and Swan terms (the tame and wild ramification invariants at those points).
+where each conductor includes rank, the number of singular points, and the tame-drop and Swan terms (the tame and wild ramification invariants at those points); for $r\ge2$ the budget is attached to the product trace function on the CRT parameter set, whose factors live over distinct characteristics, so its complexity is by definition this product of local conductors rather than the conductor of an external tensor product over a single base.
 
 \emph{Square-root tier.}  For every $\eps>0$ and all complex coefficients
 $\alpha_{p,\rho}$,
@@ -3687,7 +3698,7 @@ This separates the two analytic inputs that a single-tier statement compresses i
 claim.  The square-root tier is a growing-monodromy large sieve in the spirit of
 Kowalski \cite{KowalskiSieve}.  The connected tier is the genuinely stronger
 cross-prime independence principle required for an occupancy limit.  The conductor
-budget is attached to the actual sheaves and their tensor products rather than to an undefined scalar conductor of a cover. The first theorem is the connected tier at $r=3$ for one fixed level $n$, square-root cancellation of the family-averaged third connected cumulant within the range governed by $\mathfrak C_{n,3}$.  A failure identifies either geometric
+budget is attached to the actual sheaves and their product trace functions rather than to an undefined scalar conductor of a cover. The first theorem is the connected tier at $r=3$ for one fixed level $n$, square-root cancellation of the family-averaged third connected cumulant within the range governed by $\mathfrak C_{n,3}$.  A failure identifies either geometric
 complexity missed by the sheaf conductors or arithmetic entanglement surviving all
 fixed-order trace tests.
 
@@ -3836,7 +3847,7 @@ $(v_p(f(n)))_{p\le y}$, the residual logarithmic factor process
 converges to the following conservation-corrected product object: the small valuations
 have their polynomial Kubilius law (independent exact local limit laws for the small-prime valuations), and conditional on their consumed logarithmic mass
 the residual process is a scale-invariant Poisson process of intensity $du/u$, marked by
-\cref{s21}, conditioned to have total mass one.  The small field and the unconditioned
+\cref{s21}, conditioned to have total mass one.  The convergence is in total variation for the complete valuation field, the range $\log y=o(\log N)$ being the classical Kubilius range for the field at $f(x)=x$, and in the sense of finite-dimensional distributions for the residual process jointly with the field.  The small field and the unconditioned
 residual Poisson process are asymptotically independent, and all leading dependence
 after conditioning is the single residual-mass constraint.
 
@@ -4126,7 +4137,7 @@ define the fractional path
 \[
 F(t)=\sum_{i=1}^m a_i(t)v_i.
 \]
-A threshold rounding of $F$ is a choice of
+A threshold rounding of $F$ is a choice of pairwise distinct
 $\tau_1,\ldots,\tau_m\in(0,1]$ together with the pure path
 \[
 G(t)=\sum_{i:\ \tau_i\le t}v_i .
@@ -4148,6 +4159,10 @@ Euclidean Steinitz problem at the scale $O(\sqrt d)$: there $F\equiv0$,
 and ordering the vectors by their thresholds turns the display into
 the assertion that some permutation $\pi$ has all prefix sums bounded,
 $\max_{k\le m}\|\sum_{i\le k}v_{\pi(i)}\|_2\le C\sqrt d$.
+The distinctness of the thresholds is what makes this reduction
+exact: allowing coincident thresholds would admit the rounding with
+every $\tau_i=1$, whose pure path is identically zero in this
+special case and exposes no prefix sum.
 Grinberg--Sevast'yanov~\cite{GS80} proved the bound $d$ in every norm, the best
 known Euclidean bound is Banaszczyk's~\cite{Ban98,Ban12} $O(\sqrt{d+\log m})$, and so
 already in this special case the conjecture asserts the removal of the
@@ -4422,14 +4437,15 @@ Total variation distance is
 \]
 
 \begin{conjecture}[Sharp stability of entropy idempotence]\label{t5}
-There exists a universal constant $C<\infty$ such that for every
-finite abelian group $G$ and every probability measure $\mu$ on $G$,
+For every finite abelian group $G$ and every probability measure
+$\mu$ on $G$, with entropies in natural logarithms,
 \[
 \inf_{\substack{H\le G\\a\in G}}
 \|\mu-u_{a+H}\|_{\mathrm{TV}}^2
 \le
-C\bigl(H(\mu*\mu)-H(\mu)\bigr).
+\frac{2}{\log2}\bigl(H(\mu*\mu)-H(\mu)\bigr),
 \]
+and the constant $2/\log2$ is sharp.
 \end{conjecture}
 
 \begin{remark}\label{t5:equality}
@@ -4466,22 +4482,16 @@ the entropy gain of doubling a Gaussian variance, while its total
 variation distance to every $u_{a+H}$ tends to $1$, since the only
 subgroups of $\Z/p\Z$ are trivial and full and $\mu_p$ is
 asymptotically singular to every point mass and to the uniform
-measure.  Hence $C\ge2/\log2$, and we conjecture that the sharp
-constant is exactly $2/\log2$.  The positioning against the
-literature is as follows: the known entropic inverse theorems, Tao's sumset entropy theory~\cite{Tao10} and the entropic polynomial
-Freiman--Ruzsa theorem of Gowers--Green--Manners--Tao~\cite{GGMT25}, conclude in
-Ruzsa distance, an entropic closeness of $X$ to a subgroup-uniform
-variable, not in total variation, and the total variation form over
-all finite abelian groups is neither proven nor refuted by them.  On
+measure.  Hence no constant below $2/\log2$ can serve, the sharpness half of the statement.  The positioning against the
+literature is as follows: the entropic inverse theorems of Tao's sumset entropy theory~\cite{Tao10} and the entropic polynomial Freiman--Ruzsa theorem of Gowers--Green--Manners--Tao~\cite{GGMT25} conclude in Ruzsa distance, an entropic closeness of $X$ to a subgroup-uniform variable, not in total variation; the subgroup-form inverse theorem of Green--Manners--Tao~\cite{GMT23}, supplying for small defect a finite subgroup within entropic Ruzsa distance a bounded multiple of $\Delta(\mu)$, upgrades to total variation by a Pinsker argument, and with the trivial bound in the large-defect regime this settles the existence of some finite universal constant, so the sharp value is what the statement adds.  On
 $\Z/p\Z$ there are no proper nontrivial subgroups, so the conjecture
 specializes to a discrete entropy-power-type lower bound for spread
 measures: any $\mu$ far in total variation from every point mass and
 from the uniform measure must create a definite amount of entropy
-under self-convolution.  No decisive theorem exists: the natural
-first one is precisely that $\Z/p\Z$ specialization with some constant.  The defect also has the exact form $H(\mu*\mu)-H(\mu)=\E_Y D_{\mathrm{KL}}(\tau_Y\mu\,\|\,\mu*\mu)$, with $\tau_y$ translation by $y$, so a small defect makes typical support-translates of $\mu$ close to $\mu*\mu$ in relative entropy, and Pinsker's inequality converts that closeness to total variation: the route to a universal constant is to upgrade approximate invariance under many translations to proximity to a coset uniform.  The failure mode is a sequence $\mu_n$ with
+under self-convolution.  The natural first decisive theorem is that $\Z/p\Z$ specialization with the sharp constant.  The defect also has the exact form $H(\mu*\mu)-H(\mu)=\E_Y D_{\mathrm{KL}}(\tau_Y\mu\,\|\,\mu*\mu)$, with $\tau_y$ translation by $y$, so a small defect makes typical support-translates of $\mu$ close to $\mu*\mu$ in relative entropy, and Pinsker's inequality converts that closeness to total variation: the route to a universal constant is to upgrade approximate invariance under many translations to proximity to a coset uniform.  The failure mode is a sequence $\mu_n$ with
 $\Delta(\mu_n)\to0$ whose coset distance is much larger than
 $\sqrt{\Delta(\mu_n)}$, and the natural hunting ground is measures
-straddling several subgroup scales inside groups with rich subgroup lattices, a family for which computational search through $\Z/2^{8}\Z$ finds no ratio $\|\mu-u_{a+H}\|_{\mathrm{TV}}^2/\Delta(\mu)$ above the discretized-Gaussian value $2/\log2$.  The assertion has three layers of decreasing confidence: the existence of some universal constant, the sharp value $2/\log2$, and the classification of near-extremizers as the discretized Gaussians at intermediate scale.
+straddling several subgroup scales inside groups with rich subgroup lattices, a family for which computational search through $\Z/2^{8}\Z$ finds no ratio $\|\mu-u_{a+H}\|_{\mathrm{TV}}^2/\Delta(\mu)$ above the discretized-Gaussian value $2/\log2$.  Of the original assertion's three layers, the existence of some universal constant is settled by the inverse theorem as noted, and the conjecture is the remaining two: the sharp value $2/\log2$ and the classification of near-extremizers as the discretized Gaussians at intermediate scale.
 
 \section{Stationary convolution-entropy rigidity}
 
@@ -5050,7 +5060,7 @@ For a composite integer $a$ let $p^-(a)<a<p^+(a)$ be its neighbouring primes and
 \[
 \theta_A(x)=\frac{\#\{n:A_n\le x,\ U(A_n)<L(A_n)\}}{\#\{n:A_n\le x,\ U(A_n)\ne L(A_n)\}}
 \]
-for the right-closer frequency among the untied centres, and $\theta_A=\lim_{x\to\infty}\theta_A(x)$ when it exists; we call $\theta_A$ the \emph{compass constant} of $A$.  The polygonal numbers are $P_s(n)=\tfrac12\bigl((s-2)n^2-(s-4)n\bigr)$ for $s\ge3$, the pronic numbers are $Q(n)=n(n+1)$, and the squares are $n^2$.  For the radical $\operatorname{rad}(n)=\prod_{p\mid n}p$ write $R(n)=\operatorname{rad}(n)/n$, and for a window of length $d$ call the permutation $\pi_0\cdots\pi_{d-1}$ of $\{0,\ldots,d-1\}$ the \emph{order pattern}---the ordinal pattern of the window---at $n$ when $R(n+\pi_0)<\cdots<R(n+\pi_{d-1})$, counting only windows with no ties.  Write $\delta_\pi$ for the natural density of $n$ with order pattern $\pi$.  For the abundancy index $\sigma(n)/n$ and the totient ratio $\phi(n)/n$ call an adjacent triple \emph{monotone} when it is strictly increasing or strictly decreasing, and for a stride $W$ let $\mu(W)$ be the density of $n$ for which $\sigma(n)/n,\sigma(n+W)/(n+W),\sigma(n+2W)/(n+2W)$ is monotone.  Write $\Omega(m)$ for the number of prime factors of $m$ with multiplicity, and set the binomial slice $A_{k,n}=\binom{kn}{n}$, the central multinomial $M_{k,n}=(kn)!/(n!)^k$, and the Fuss--Catalan number $F_{r,n}=\tfrac1{rn+1}\binom{(r+1)n}{n}$, with single-step jump $J_{k,n}=\Omega(A_{k,n+1})-\Omega(A_{k,n})$.  Finally, for consecutive odd primes $p<q$ set
+for the right-closer frequency among the untied centres, and $\theta_A=\lim_{x\to\infty}\theta_A(x)$ when it exists; we call $\theta_A$ the \emph{compass constant} of $A$.  The polygonal numbers are $P_s(n)=\tfrac12\bigl((s-2)n^2-(s-4)n\bigr)$ for $s\ge3$, the pronic numbers are $Q(n)=n(n+1)$, and the squares are $n^2$.  For the radical $\operatorname{rad}(n)=\prod_{p\mid n}p$ write $R(n)=\operatorname{rad}(n)/n$, and for a window of length $d$ call the permutation $\pi_0\cdots\pi_{d-1}$ of $\{0,\ldots,d-1\}$ the \emph{order pattern}---the ordinal pattern of the window---at $n$ when $R(n+\pi_0)<\cdots<R(n+\pi_{d-1})$, counting only windows with no ties.  Write $\delta_\pi$ for the density of the order pattern $\pi$ among the untied windows, the limiting ratio of the two window counts, so that $\sum_\pi\delta_\pi=1$; ties have positive density, adjacent squarefree integers already tying at $R=1$, so an unconditional normalization would be deficient.  For the abundancy index $\sigma(n)/n$ and the totient ratio $\phi(n)/n$ call an adjacent triple \emph{monotone} when it is strictly increasing or strictly decreasing, and for a stride $W$ let $\mu(W)$ be the density of $n$ for which $\sigma(n)/n,\sigma(n+W)/(n+W),\sigma(n+2W)/(n+2W)$ is monotone.  Write $\Omega(m)$ for the number of prime factors of $m$ with multiplicity, and set the binomial slice $A_{k,n}=\binom{kn}{n}$, the central multinomial $M_{k,n}=(kn)!/(n!)^k$, and the Fuss--Catalan number $F_{r,n}=\tfrac1{rn+1}\binom{(r+1)n}{n}$, with single-step jump $J_{k,n}=\Omega(A_{k,n+1})-\Omega(A_{k,n})$.  Finally, for consecutive odd primes $p<q$ set
 \[
 D(p,q)=\Omega(p+1)+\Omega(q-1)-\Omega(p-1)-\Omega(q+1),
 \]
@@ -5715,6 +5725,8 @@ Duke Math. J. 168 (2019), no. 11, 1977--2027.
 \bibitem{Del} P. Delsarte, \emph{Bilinear forms over a finite field, with applications to coding theory}, J. Combin. Theory Ser. A \textbf{25} (1978), 226--241.
 
 \bibitem{Ten} G. Tenenbaum, \emph{Introduction to Analytic and Probabilistic Number Theory}, 3rd ed., Grad. Stud. Math. \textbf{163}, Amer. Math. Soc., 2015.
+
+\bibitem{GMT23} B. Green, F. Manners, and T. Tao, \emph{Sumsets and entropy revisited}, Random Structures \& Algorithms \textbf{66} (2025); arXiv:2306.13403. DOI: 10.1002/rsa.21252.
 \end{thebibliography}
 
 \end{document}
