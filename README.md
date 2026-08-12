@@ -1,9 +1,9 @@
-# One hundred thirty-six conjectures in mathematics
+# One hundred fifty-six conjectures in mathematics
 
 This repository contains:
 
 - **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: one
-  hundred thirty-six conjectures in seven parts, each with its mechanism,
+  hundred fifty-six conjectures in eight parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -15,7 +15,11 @@ This repository contains:
   posets; Part VI (97–116) the local structure of primes and arithmetic
   functions; Part VII (117–136) the topology of four canonical geometric
   families: Calabi–Yau complete intersections, Brieskorn–Pham links,
-  moment-angle complexes, and torus mapping tori. Five conjectures
+  moment-angle complexes, and torus mapping tori; Part VIII (137–156)
+  shape laws for five enumerative arrays: Euler indices of hypersurfaces
+  in products of projective spaces, Hilbert-scheme Betti profiles,
+  cyclic-quotient age histograms, exterior torsion entropy, and
+  matroidal Hochster tables. Five conjectures
   (63, 71, 87, 90, 107) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
   theorem.
@@ -36,7 +40,7 @@ This repository contains:
   programs. `python run_all.py` regenerates every number in Part I;
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
-  (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), and `t5_*.py` (Part III),
+  (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `y_shape_laws.py` (Part VIII), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base
