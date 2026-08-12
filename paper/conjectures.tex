@@ -5994,7 +5994,7 @@ Fix a finite symmetric set $V\subset\Z\setminus\{0\}$, for example $\{\pm1\}$, a
 Over an infinite field a generic three-form attains the generic profile; the conjecture asserts that the smallest possible discrete ensembles already do so with overwhelming probability, turning the generic principal-ideal profile of~\cite{LN19} into a probabilistic law for discrete flux backgrounds and compressing the ordinary $2^n$ torus cohomology to a $3^{n/2}$-scale protected sector.  The mechanism is that the discrete cube must avoid every determinantal degeneracy locus of the wedge-rank strata, and the exponential clause is the strongest form anti-concentration supports; both the random model and the exponential clause are flagged.  A first decisive theorem would be a uniform positive lower bound on the saturation probability.  In tests on the corpus described in the stress-test section, $142$ of $144$ deposited dense trials and $71$ of $72$ independent trials hit $g_n$ for $3\le n\le11$.  A counterexample would be a law and a subsequence with failure probability bounded away from zero.
 
 \begin{conjecture}[Sparse-flux threshold at the coverage scale]\label{aa2}
-Include each coordinate triple independently with probability $p_n$ and give included triples independent bounded nonzero coefficients.  If $p_nn^2/\log n\to0$ then $\Pr[(b_k;\mathbb Q)_k=g_n]\to0$, and if $p_nn^2/\log n\to\infty$ then $\Pr[(b_k;\mathbb Q)_k=g_n]\to1$.
+Include each coordinate triple independently with probability $p_n$ and give included triples independent coefficients from a fixed finite symmetric set of nonzero integers.  If $p_nn^2/\log n\to0$ then $\Pr[(b_k;\mathbb Q)_k=g_n]\to0$, and if $p_nn^2/\log n\to\infty$ then $\Pr[(b_k;\mathbb Q)_k=g_n]\to1$.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -6008,14 +6008,14 @@ Let $\mu_n$ be the minimum support size of a $\{\pm1\}$-valued three-form on $\Z
 Between the dense ensemble of Conjecture~\ref{aa1} and the threshold of Conjecture~\ref{aa2} sits the deterministic minimum, and the conjecture pins it at linear growth with witnesses of the simplest combinatorial type, pairwise intersections at most one vertex, giving sparse flux backgrounds with generic protected topology and transparent charge combinatorics.  Explicit witnesses use $1,1,2,2,5,5,8,7$ triples for $n=3$ to $10$, the exceptional dimension $9$ being the one nonlinear support, matching the exceptional outer pair of $g_9$; a proof route is partial Steiner systems with block-decomposed rank counts.  In tests on the corpus described in the stress-test section, all eight deposited witnesses were reproduced independently, and exhaustive scans at $n=5,6$ confirmed $\mu_5=\mu_6=2$.  A counterexample would be sublinear supports or forced nonlinearity infinitely often.
 
 \begin{conjecture}[Coefficient-law universality in the sparse window]\label{aa4}
-In the critical window of Conjecture~\ref{aa2}, after excluding coefficient laws supported in a fixed nontrivial arithmetic progression, the limiting saturation probability and the limiting law of the normalized cohomology excess depend only on the random support hypergraph, not on the coefficient distribution.
+In the critical window of Conjecture~\ref{aa2}, after excluding coefficient laws whose support has a common divisor greater than one, the limiting saturation probability and the limiting law of the normalized cohomology excess depend only on the random support hypergraph, not on the coefficient distribution.
 \end{conjecture}
 
 \paragraph{Significance.}
 Thresholds located by a support process should not remember the coefficient sampler, and the conjecture asserts exactly this universality, making sparse flux-topology statistics a property of the hypergraph ensemble rather than an artifact of a particular discrete law; the arithmetic exclusion is necessary because a law concentrated in a progression can lower ranks in fixed small characteristics.  The mechanism is rank universality for structured sparse random matrices conditioned on their support.  Both the random model and the limit clause are flagged.  A first decisive theorem would be two-point universality, $\{\pm1\}$ against $\{\pm1,\pm2,\pm3\}$.  In tests on the corpus described in the stress-test section, the two deposited laws tracked each other across $960$ trials, with saturation rates $0.2125$ against $0.2125$ at $c=4$ and $0.500$ against $0.525$ at $c=6$.  A counterexample would be two admissible laws with separated limiting curves.
 
 \begin{conjecture}[Finite-field resonance power law]\label{aa5}
-Fix $n\ge5$.  There are a positive integer $\delta_n$ and a positive rational $\kappa_n$ such that, for $H$ uniform on $\Lambda^3\mathbb F_p^n$, the probability of the resonance event, that the profile $(b_k(H;\mathbb F_p))_k$ exceeds $g_n$, satisfies
+Fix $n\ge5$.  There are a positive integer $\delta_n$ and a positive rational $\kappa_n$ such that, for $H$ uniform on $\Lambda^3\mathbb F_p^n$, the probability of the resonance event $R_{n,p}$, that the profile $(b_k(H;\mathbb F_p))_k$ exceeds $g_n$ in some degree, satisfies
 \[
 \Pr(R_{n,p})=\kappa_np^{-\delta_n}+O_n\bigl(p^{-\delta_n-1/2}\bigr)
 \qquad\text{as }p\to\infty.
@@ -6070,7 +6070,7 @@ For $n\ge3$, if a merge uses an entry equal to $\max_id_i$, then $a_p(\mathbf d'
 Without any normalization the profile can fall under a general merge, since the degree drops; the conjecture isolates the directed moves, those through a maximal entry, that raise every protected coefficient simultaneously, and dimension $2$, where all profiles tie, is the equality boundary.  Together with Conjecture~\ref{aa10} this brackets how much degree normalization a raw monotonicity needs.  A first decisive theorem would be hypersurface targets, merges landing on $Y$.  In tests on the corpus described in the stress-test section, all $47{,}433$ deposited exact comparisons for $3\le n\le14$ passed, reverified independently on $13{,}724$ deduplicated tests.  A counterexample would be one maximal merge losing one coefficient.
 
 \begin{conjecture}[Real-rooted protected polynomial]\label{aa12}
-For every configuration, the polynomial $A_{\mathbf d}(y)$, with the single forced factor $y$ removed in odd complex dimension, has only simple, strictly negative real zeros.
+For every configuration, the polynomial $A_{\mathbf d}(y)$, after removing in odd complex dimension the single factor $y$ forced by $a_0=a_n=0$, has only simple, strictly negative real zeros.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -6087,14 +6087,14 @@ For every configuration and every interior triple of positive coefficients,
 Binomial normalization is the strongest classical strengthening of log-concavity, the form delivered by Hodge--Riemann packages, and the conjecture asserts it strictly for the protected profile, sharp concentration for the protected-sector distribution; it is flagged for elevated attribution risk because a geometric realization of the coefficient sequence would place it directly inside that machinery, in the manner of~\cite{AHK18}.  Conjecture~\ref{aa12} would imply the nonstrict form, but the strict inequality may admit a direct intersection-theoretic proof.  A first decisive theorem would be hypersurfaces in odd dimension.  In tests on the corpus described in the stress-test section, all $6{,}540$ deposited exact inequalities through dimension $14$ passed, the count and the outcomes reproduced independently exactly.  A counterexample would be one flat or reversed normalized triple.
 
 \begin{conjecture}[Degree-normalized Mahler growth]\label{aa14}
-For every merge, $M(A_{\mathbf d'})/D(\mathbf d')>M(A_{\mathbf d})/D(\mathbf d)$, where $M$ is the multiplicative Mahler measure.
+For every merge, $M(A_{\mathbf d'})/D(\mathbf d')>M(A_{\mathbf d})/D(\mathbf d)$, where $M$ is the multiplicative Mahler measure, the modulus of the leading coefficient times $\prod_{\rho}\max(1,|\rho|)$ over the zeros $\rho$.
 \end{conjecture}
 
 \paragraph{Significance.}
 The Mahler measure couples coefficient growth to the placement of the zeros, and the conjecture asserts that per unit degree it grows strictly under every consolidation of equations, returning the Mahler order of Conjecture~\ref{z3} on the protected polynomial in place of the graph associahedron.  Under Conjecture~\ref{aa12} the measure is a product over negative real zeros and the statement becomes a monotone integral inequality, the intended proof route.  The evidence is numerical and flagged as such.  A first decisive theorem would be merges within the hypersurface-adjacent family.  In tests on the corpus described in the stress-test section, all $4{,}267$ deposited merge tests through dimension $12$ passed, reverified independently on $1{,}083$ deduplicated tests.  A counterexample would be one merge with nonincreasing normalized measure.
 
 \begin{conjecture}[Spectral-radius growth with low-dimensional rigidity]\label{aa15}
-Let $\rho(\mathbf d)$ be the largest modulus of a zero of the reduced polynomial of Conjecture~\ref{aa12}.  If a merge uses a maximal entry, then $\rho(\mathbf d')\ge\rho(\mathbf d)$, with equality for every such merge in complex dimensions $n=2,3,5$ and strict inequality in every other dimension $n\ge4$.
+Let $\rho(\mathbf d)$ be the largest modulus of a zero of the reduced polynomial of Conjecture~\ref{aa12}, the polynomial $A_{\mathbf d}$ with its forced factor removed.  If a merge uses a maximal entry, then $\rho(\mathbf d')\ge\rho(\mathbf d)$, with equality for every such merge in complex dimensions $n=2,3,5$ and strict inequality in every other dimension $n\ge4$.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -6124,14 +6124,14 @@ In even complex dimension $n\ge4$, a merge using a maximal entry strictly increa
 As with the profile, the raw signature can fall under an arbitrary merge, and the conjecture isolates the directed moves that always raise it, giving a strictly increasing global index along maximal-merge chains from the all-quadric configuration to the hypersurface; dimension $2$ is again the equality boundary.  A first decisive theorem would combine Conjecture~\ref{aa17} with a bound on the degree drop.  In tests on the corpus described in the stress-test section, all $80{,}294$ deposited exact tests through dimension $26$ passed, reverified independently on $23{,}284$ deduplicated tests.  A counterexample would be one maximal merge lowering the signature.
 
 \begin{conjecture}[The quadric ratio law with limit $27$]\label{aa19}
-For even $n$ let $Q_n=S(2,\ldots,2)$ with $n+1$ quadrics.  Then $R_n=Q_{n+2}/Q_n$ is strictly increasing in $n$, $R_n<27$, and
+For even $n$ let $\Sigma_n=S(Q)$ for the all-quadric configuration of $n+1$ quadric equations in complex dimension $n$.  Then $R_n=\Sigma_{n+2}/\Sigma_n$ is strictly increasing in $n$, $R_n<27$, and
 \[
 R_n\to27,\qquad 27-R_n\sim\frac{27}{n}.
 \]
 \end{conjecture}
 
 \paragraph{Significance.}
-The all-quadric ladder is conjectured to grow by an asymptotic factor of exactly $27$ every two dimensions, with a clean first-order correction, a sharp asymptotic fingerprint that calls for the dominant singularity of the generating function of $Q_n$; the statement carries a limit clause beyond any finite check and an attribution flag, since singularity analysis is classical once the generating function is extracted.  A first decisive theorem would be the limit alone.  In tests on the corpus described in the stress-test section, all $29$ deposited exact ratio comparisons through $n=60$ passed, reproduced independently with $R_{58}=26.55045876$ and gap $0.44954124$ against $27/60=0.45$.  A counterexample would be a ratio at least $27$, a decrease, or a different correction rate.
+The all-quadric ladder is conjectured to grow by an asymptotic factor of exactly $27$ every two dimensions, with a clean first-order correction, a sharp asymptotic fingerprint that calls for the dominant singularity of the generating function of $\Sigma_n$; the statement carries a limit clause beyond any finite check and an attribution flag, since singularity analysis is classical once the generating function is extracted.  A first decisive theorem would be the limit alone.  In tests on the corpus described in the stress-test section, all $29$ deposited exact ratio comparisons through $n=60$ passed, reproduced independently with $R_{58}=26.55045876$ and gap $0.44954124$ against $27/60=0.45$.  A counterexample would be a ratio at least $27$, a decrease, or a different correction rate.
 
 \begin{conjecture}[Dimension-wise signature gcd law]\label{aa20}
 Let the gcd range over all Calabi--Yau complete-intersection multidegrees in even complex dimension $n$.  Then
