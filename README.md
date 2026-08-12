@@ -28,7 +28,8 @@ This repository contains:
   Calabi–Yau complete intersections. Five conjectures
   (63, 71, 87, 90, 107) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
-  theorem.
+  theorem. One conjecture (195) has since been proved and is
+  recorded in place as resolved true, with its proof.
 - **`paper/conjectures_blind.pdf`** (`conjectures_blind.tex`) — the
   anonymous version of the paper.
 - **`paper/conjectures_skeleton.pdf`** (`conjectures_skeleton.tex`) — the
