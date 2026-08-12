@@ -3602,12 +3602,20 @@ Every merge in even complex dimension satisfies $S(\mathbf d')/D(\mathbf d')>S(\
 In even complex dimension $n\ge4$, a merge using a maximal entry strictly increases $S$.
 \end{conjecture}
 
-\begin{conjecture}[The quadric ratio law with limit $27$]\label{aa19}
+\begin{conjecture}[The quadric ratio law with limit $27$, resolved true]\label{aa19}
 For even $n$ let $\Sigma_n=S(Q)$ for the all-quadric configuration of $n+1$ quadric equations in complex dimension $n$.  Then $R_n=\Sigma_{n+2}/\Sigma_n$ is strictly increasing in $n$, $R_n<27$, and
 \[
 R_n\to27,\qquad 27-R_n\sim\frac{27}{n}.
 \]
 \end{conjecture}
+
+\begin{proposition}[Resolution of the quadric ratio law]\label{aa:quad}
+Conjecture~\ref{aa19} holds in full.  With $a_m=\Sigma_{2m}$ and $a_0=2$, the generating function $A(w)=\sum_{m\ge0}a_mw^m$ is algebraic,
+\[
+A(w)=\frac{2}{(1+y)(1-3y)},\qquad 4w=y(1-y)^2,\quad y(0)=0,
+\]
+and the coefficients satisfy $D_ma_{m+2}=(M_m-D_m)a_{m+1}+M_ma_m$ with $D_m=(m+2)(2m+3)(14m+9)$ and $M_m=6(3m+2)(3m+4)(14m+23)$.
+\end{proposition}
 
 \begin{conjecture}[Dimension-wise signature gcd law]\label{aa20}
 Let the gcd range over all Calabi--Yau complete-intersection multidegrees in even complex dimension $n$.  Then
