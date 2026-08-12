@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{One hundred sixteen conjectures in mathematics}
+\title{One hundred thirty-six conjectures in mathematics}
 \author{}
 \date{July 27, 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{One hundred sixteen conjectures in mathematics:\\ the statements}
+\title{One hundred thirty-six conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -3110,6 +3110,156 @@ Then for every fixed even $g$ occurring infinitely often as a consecutive-prime 
 \]
 \end{conjecture}
 
+\part{Topological invariants of geometric families}
+
+\medskip\noindent\emph{Added to the deposit: 12 August 2026.}\par\medskip
+
+The twenty conjectures below leave arithmetic for algebraic topology while keeping the same discipline.  Each takes a canonical family of spaces, computes an exact classical invariant across the whole family, and takes the resulting shape law seriously.  They form four programmes.  A Calabi--Yau programme (Conjectures~\ref{x1} to~\ref{x5}) studies the Euler indices of smooth complete intersections in projective space, ending in an exact dimension-wise gcd law.  A link programme (Conjectures~\ref{x6} to~\ref{x10}) studies the middle Betti numbers of Brieskorn--Pham links under degree caps and common scaling.  A moment-angle programme (Conjectures~\ref{x11} to~\ref{x15}) studies the Hochster strands of flag moment-angle complexes, their support, shape, and zero locations.  A monodromy programme (Conjectures~\ref{x16} to~\ref{x20}) studies torus mapping tori with signed-permutation monodromy over the signed-orbit calibration proved below.  The calibration layer is classical and exact: the Chern-class formula for complete intersections, the Milnor--Orlik formula for Brieskorn links, Hochster's formula for bigraded Betti numbers, and the Wang sequence for mapping tori.  Six adversarial controls are retained in place, each refuting a tempting strengthening.  Two of the twenty, the limit clause of Conjecture~\ref{x1} and Conjecture~\ref{x19}, assert limits beyond any finite check and are flagged as the most exposed; two more, Conjectures~\ref{x4} and~\ref{x8}, are flagged for elevated attribution risk, lying close to classical methods.
+
+For $n\ge2$ and a multidegree $\mathbf d=(d_1,\ldots,d_r)$ with every $d_i\ge2$ and $\sum_id_i=n+r+1$, let $X^{(n)}_{\mathbf d}\subset\mathbf{CP}^{n+r}$ be a smooth complete intersection of multidegree $\mathbf d$, a Calabi--Yau $n$-fold, with Euler characteristic computed exactly by $c(TX)=(1+H)^{n+r+1}/\prod_i(1+d_iH)$ and $\chi=\bigl(\prod_id_i\bigr)[H^n]\,c(TX)$; write $E_n(\mathbf d)=(-1)^n\chi(X^{(n)}_{\mathbf d})$, $D(\mathbf d)=\prod_id_i$, and let the \emph{merge} $M_{ij}\mathbf d$ replace $d_i,d_j$ by $d_i+d_j-1$, preserving both $n$ and the Calabi--Yau condition.  Write $Q_n=E_n(2,\ldots,2)$ for the all-quadric configuration of $n+1$ quadrics.  For $\mathbf a=(a_1,\ldots,a_N)$ with $a_i\ge2$, let $L(\mathbf a)$ be the Brieskorn--Pham link $\{z_1^{a_1}+\cdots+z_N^{a_N}=0\}\cap S^{2N-1}$, of real dimension $2N-3$, with middle Betti number $\beta(\mathbf a)=b_{N-2}(L(\mathbf a);\mathbf Q)$ given exactly by the Milnor--Orlik formula~\cite{MO70}
+\[
+\beta(\mathbf a)=(-1)^N+\sum_{\varnothing\ne J\subseteq[N]}(-1)^{N-|J|}\frac{\prod_{j\in J}a_j}{\operatorname{lcm}_{j\in J}a_j},
+\]
+the \emph{Fano} tuples being those with $\sum_i1/a_i>1$, with cap $A=\max_ia_i$ and scale sequence $\beta_{\mathbf a}(k)=\beta(ka_1,\ldots,ka_N)$.  For a finite simple graph $G$ on $m$ vertices with clique complex $K=\operatorname{Cl}(G)$, define the Hochster strands
+\[
+h_{r,s}(G)=\sum_{\substack{I\subseteq V(G)\\|I|=s}}\dim_{\mathbf F_2}\widetilde H_r(K_I;\mathbf F_2),
+\qquad
+H_{G,r}(z)=\sum_sh_{r,s}(G)\,z^s,
+\]
+the bigraded Betti sectors of the Stanley--Reisner ring and of the moment-angle complex $\mathcal Z_K$ by Hochster's formula~\cite{Hoch77,BP15}.  Finally, for a signed permutation matrix $A\in SL(d,\Z)$ let $M_A$ be the mapping torus of the induced automorphism of the torus $T^d$, set $f_k(A)=\dim_{\mathbf Q}\ker(\wedge^kA-I)$, so that the Wang sequence gives $b_k(M_A;\mathbf Q)=f_k(A)+f_{k-1}(A)$~\cite{Mil68}, and let $\tau(A)=\sum_kd\bigl(\operatorname{Tor}H_k(M_A;\Z)\bigr)$ count minimal torsion generators.
+
+\begin{proposition}[Signed-orbit calibration]\label{x:orbit}
+Let $A$ be a signed permutation matrix on $\Z^d$.  Then $\wedge^kA$ permutes the wedge basis up to sign, and every orbit of the induced permutation of $k$-subsets carries a holonomy sign, the product of the signs collected around one period.  If $p_k$ and $n_k$ are the numbers of positive and negative orbits at level $k$, then
+\[
+f_k(A)=p_k,\qquad
+\operatorname{coker}(\wedge^kA-I)\cong\Z^{\,p_k}\oplus(\Z/2)^{\,n_k},
+\]
+and consequently $b_k(M_A;\mathbf Q)=p_k+p_{k-1}$, $\operatorname{Tor}H_k(M_A;\Z)\cong(\Z/2)^{\,n_k}$, and $\tau(A)=\sum_kn_k$, while $\sum_kb_k(M_A;\mathbf Q)=2\sum_kp_k$.
+\end{proposition}
+
+\section{Euler indices of Calabi--Yau complete intersections}
+
+\begin{conjecture}[Quadric-ladder ratio law]\label{x1}
+For every $n\ge5$,
+\[
+\frac{Q_{n+1}}{Q_n}<8,
+\qquad
+\frac{Q_{n+2}}{Q_{n+1}}>\frac{Q_{n+1}}{Q_n},
+\qquad\text{and}\qquad
+\lim_{n\to\infty}\frac{Q_{n+1}}{Q_n}=8.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Normalized merge monotonicity]\label{x2}
+For every $n\ge3$, every multidegree $\mathbf d$ with $r\ge2$, and every pair $i\ne j$,
+\[
+\frac{E_n(M_{ij}\mathbf d)}{D(M_{ij}\mathbf d)}>\frac{E_n(\mathbf d)}{D(\mathbf d)}.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Maximal-degree merge monotonicity]\label{x3}
+For every $n\ge3$ and every $\mathbf d$ with $r\ge2$, if $d_i=\max_jd_j$ then $E_n(M_{ik}\mathbf d)>E_n(\mathbf d)$ for every $k\ne i$.
+\end{conjecture}
+
+\begin{conjecture}[Extremal multidegrees]\label{x4}
+For every $n\ge3$ and every multidegree $\mathbf d$,
+\[
+E_n(\underbrace{2,\ldots,2}_{n+1})\le E_n(\mathbf d)\le E_n(n+2),
+\]
+with equality only at the all-quadric and hypersurface configurations.
+\end{conjecture}
+
+\begin{conjecture}[Dimension-wise Euler gcd law]\label{x5}
+Let $g_n$ be the greatest common divisor of $\chi(X^{(n)}_{\mathbf d})$ over all multidegrees at dimension $n$.  Then
+\[
+g_n=\frac{24}{\gcd(24,n)}\times
+\begin{cases}
+2,&n\equiv0,2\pmod8,\\
+1,&\text{otherwise}.
+\end{cases}
+\]
+\end{conjecture}
+
+\section{Middle Betti numbers of Brieskorn--Pham links}
+
+\begin{conjecture}[Five-link cap extremum]\label{x6}
+For $N=4$ and every cap $A\ge9$, every sorted Fano tuple $\mathbf a$ with $\max_ia_i=A$ satisfies $b_2(L(\mathbf a))\le A-1$, with equality only for $\mathbf a=(2,2,A,A)$.
+\end{conjecture}
+
+\begin{conjecture}[Seven-link cap extremum]\label{x7}
+For $N=5$ and every cap $A\ge13$, every sorted Fano tuple with $\max_ia_i=A$ satisfies $b_3(L(\mathbf a))\le(A-1)(A-2)$, with equality only for $(2,2,A,A,A)$.
+\end{conjecture}
+
+\begin{conjecture}[Connected gcd-graph positivity]\label{x8}
+For $N=4$, if the graph on $\{1,2,3,4\}$ joining $i\sim j$ when $\gcd(a_i,a_j)>1$ is connected, then $b_2(L(\mathbf a))\ge1$.
+\end{conjecture}
+
+\begin{conjecture}[Common-scale monotonicity]\label{x9}
+For every $N\ge4$ and every base tuple $\mathbf a$, the scale sequence satisfies $\beta_{\mathbf a}(k+1)\ge\beta_{\mathbf a}(k)$ for every $k\ge1$.
+\end{conjecture}
+
+\begin{conjecture}[Scale convexity and log-concavity]\label{x10}
+For every $N\ge4$ and every base tuple, the scale sequence is simultaneously discretely convex and log-concave:
+\[
+\beta_{\mathbf a}(k+1)-2\beta_{\mathbf a}(k)+\beta_{\mathbf a}(k-1)\ge0,
+\qquad
+\beta_{\mathbf a}(k)^2\ge\beta_{\mathbf a}(k-1)\,\beta_{\mathbf a}(k+1).
+\]
+\end{conjecture}
+
+\section{Hochster strands of flag moment-angle complexes}
+
+\begin{conjecture}[Hochster interval support]\label{x11}
+For every finite simple graph $G$ and every $r\ge0$, the support $\{s:h_{r,s}(G)>0\}$ is an interval of integers.
+\end{conjecture}
+
+\begin{conjecture}[Hochster-strand log-concavity]\label{x12}
+For every $G$, $r$, and $s$,
+\[
+h_{r,s}(G)^2\ge h_{r,s-1}(G)\,h_{r,s+1}(G).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Strand Hurwitz stability]\label{x13}
+For every $G$ and $r$ with $H_{G,r}$ nonconstant, every zero of $H_{G,r}(z)/z^{\min\operatorname{supp}}$ satisfies $\operatorname{Re}z<0$.
+\end{conjecture}
+
+\begin{conjecture}[Cycle extremality at connectivity two]\label{x14}
+If $G$ is $2$-vertex-connected on $m\ge4$ vertices, then $h_{0,s}(G)\le h_{0,s}(C_m)$ for every $s$, with equality in every coefficient only for the cycle $C_m$.
+\end{conjecture}
+
+\begin{conjecture}[Strict component-strand log-concavity]\label{x15}
+For every connected noncomplete graph, every triple of positive consecutive component-strand coefficients is strictly log-concave: $h_{0,s}^2>h_{0,s-1}h_{0,s+1}$.
+\end{conjecture}
+
+\section{Torus mapping tori with signed monodromy}
+
+\begin{conjecture}[Parity-strand unimodality]\label{x16}
+For every orientation-preserving signed permutation $A$, the sequences $(f_0(A),f_2(A),f_4(A),\ldots)$ and $(f_1(A),f_3(A),f_5(A),\ldots)$ are unimodal.
+\end{conjecture}
+
+\begin{conjecture}[Mapping-torus Betti unimodality]\label{x17}
+For every orientation-preserving signed permutation $A$ in dimension $d$, the Betti sequence $(b_0(M_A),\ldots,b_{d+1}(M_A))$ is unimodal.
+\end{conjecture}
+
+\begin{conjecture}[Sparse-cycle minimizer structure]\label{x18}
+For every $d\ge8$, some minimizer of the total Betti number $\sum_kb_k(M_A;\mathbf Q)$ over orientation-preserving signed permutations has no positive signed cycle when $d$ is even, exactly one when $d$ is odd, and pairwise distinct negative-cycle lengths.
+\end{conjecture}
+
+\begin{conjecture}[Square-root-two compression exponent]\label{x19}
+Let $M_d$ be the minimum of $\sum_kb_k(M_A;\mathbf Q)$ over orientation-preserving signed permutations in dimension $d$.  Then $M_d^{1/d}\to\sqrt2$ as $d\to\infty$.
+\end{conjecture}
+
+\begin{conjecture}[Torsion budget inequality]\label{x20}
+For every signed permutation $A\in SL(d,\Z)$,
+\[
+\tau(A)\le\sum_kb_k(M_A;\mathbf Q),
+\qquad\text{equivalently}\qquad
+\sum_kn_k\le2\sum_kp_k
+\]
+in the orbit counts of Proposition~\ref{x:orbit}.
+\end{conjecture}
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -3179,6 +3329,20 @@ DOI: 10.1080/10586458.2019.1596849.
 \bibitem{Martin06} G.~Martin,
 \emph{Simultaneous inequalities among values of the Euler $\phi$-function},
 in Analytic Number Theory: Essays in Honour of Klaus Roth, Cambridge Univ. Press, 2009; arXiv:math/0603053.
+
+\bibitem{MO70} J. Milnor and P. Orlik, \emph{Isolated singularities defined by weighted homogeneous polynomials}, Topology \textbf{9} (1970), 385--393.
+
+\bibitem{Hoch77} M. Hochster, \emph{Cohen--Macaulay rings, combinatorics, and simplicial complexes}, in Ring Theory II (Proc. Second Oklahoma Conf.), Lecture Notes in Pure and Appl. Math. 26, Dekker, New York, 1977, 171--223.
+
+\bibitem{BP15} V. M. Buchstaber and T. E. Panov, \emph{Toric Topology}, Math. Surveys Monogr. \textbf{204}, Amer. Math. Soc., 2015.
+
+\bibitem{BG08} C. P. Boyer and K. Galicki, \emph{Sasakian Geometry}, Oxford Mathematical Monographs, Oxford Univ. Press, 2008.
+
+\bibitem{BMvK16} C. P. Boyer, L. Macarini, and O. van Koert, \emph{Brieskorn manifolds, positive Sasakian geometry, and contact topology}, Forum Math. \textbf{28} (2016); arXiv:1506.08672. DOI: 10.1515/forum-2015-0142.
+
+\bibitem{He21} Y.-H. He, \emph{The Calabi--Yau Landscape: From Geometry, to Physics, to Machine Learning}, Lecture Notes in Math. \textbf{2293}, Springer, 2021; arXiv:1812.02893.
+
+\bibitem{Mil68} J. Milnor, \emph{Infinite cyclic coverings}, in Conference on the Topology of Manifolds (Michigan State Univ., 1967), Prindle, Weber \& Schmidt, Boston, 1968, 115--133.
 
 \bibitem{GL} D.~A. Goldston and A.~H. Ledoan,
 \emph{Jumping champions and gaps between consecutive primes},

@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{One hundred sixteen conjectures in mathematics\\
+\title{One hundred thirty-six conjectures in mathematics\\
 \large A local--global random model, five structural programmes, and six conjectures across fields}
 \author{The Conjecture Engine\thanks{This paper was produced by an
 automated conjecture engine (Claude, Anthropic), operated as an exercise
@@ -63,7 +63,7 @@ deterministic (fixed-base Miller--Rabin).}}
 \begin{document}
 \maketitle
 
-\section*{Summary sheet: the one hundred sixteen conjectures}
+\section*{Summary sheet: the one hundred thirty-six conjectures}
 \addcontentsline{toc}{section}{Summary sheet}
 
 \paragraph{Part I: conjectures from the local--global random model,
@@ -391,6 +391,30 @@ Bateman--Horn constant.
 \item \textbf{Boundary Euler sum (Conjecture~\ref{w20}).}  The mean prime-factor balance of the four composites bracketing a fixed prime gap equals an explicit $\ell$-adic Euler sum, matched at correlation $0.998$ across $39$ gaps.
 \end{enumerate}
 
+\paragraph{Part VII: twenty conjectures on topological invariants of geometric families, in statement order.}
+\begin{enumerate}\setcounter{enumi}{116}
+\item \textbf{Quadric-ladder ratio law (Conjecture~\ref{x1}).}  The all-quadric Calabi--Yau Euler indices satisfy $Q_{n+1}/Q_n<8$ with strictly increasing ratios for $n\ge5$, tending to $8$; exact through $n=200$, with the limit clause flagged.
+\item \textbf{Normalized merge monotonicity (Conjecture~\ref{x2}).}  The degree-normalized Euler index $E_n/D$ strictly increases under every degree merge, while the raw version fails at $E_4(2,2,4)=1632>1476=E_4(3,4)$, the retained control.
+\item \textbf{Maximal-degree merge monotonicity (Conjecture~\ref{x3}).}  Every merge involving a largest degree strictly increases the unnormalized index $E_n$, in all $377{,}356$ tested merges through dimension $30$.
+\item \textbf{Extremal multidegrees (Conjecture~\ref{x4}).}  The all-quadric and hypersurface configurations are the unique Euler extremes at every dimension, flagged for elevated attribution risk as likely accessible by coefficient inequalities.
+\item \textbf{Dimension-wise Euler gcd law (Conjecture~\ref{x5}).}  The gcd of Calabi--Yau complete-intersection Euler characteristics at dimension $n$ equals $24/\gcd(24,n)$, doubled exactly when $n\equiv0,2\pmod8$, verified in every dimension $2$ to $30$.
+\item \textbf{Five-link cap extremum (Conjecture~\ref{x6}).}  Among Fano Brieskorn $4$-tuples with cap $A\ge9$ the middle Betti number is at most $A-1$, with equality only at $(2,2,A,A)$, exact through cap $50$.
+\item \textbf{Seven-link cap extremum (Conjecture~\ref{x7}).}  For $5$-tuples with cap $A\ge13$ the bound is $(A-1)(A-2)$, uniquely at $(2,2,A,A,A)$, the transition at $A=12$ peaking at $222$.
+\item \textbf{Connected gcd-graph positivity (Conjecture~\ref{x8}).}  A connected gcd graph on a Brieskorn $4$-tuple forces positive middle homology, a dimension-specific law false at $N=5$, flagged for elevated attribution risk.
+\item \textbf{Common-scale monotonicity (Conjecture~\ref{x9}).}  Scaling all exponents of a Brieskorn tuple by a common factor never decreases the middle Betti number, across $52{,}593$ tuples at scales through $10$.
+\item \textbf{Scale convexity and log-concavity (Conjecture~\ref{x10}).}  The same scale sequences are simultaneously discretely convex and log-concave, an unusually rigid coexistence with no violation in the corpus.
+\item \textbf{Hochster interval support (Conjecture~\ref{x11}).}  Every aggregated Hochster strand of a flag moment-angle complex has gapless support, though the ordinary Betti sequence of $K_{2,3}$ is not even unimodal.
+\item \textbf{Hochster-strand log-concavity (Conjecture~\ref{x12}).}  Every strand sequence is log-concave in the subset size, while ultra-log-concavity fails at a connected seven-vertex graph, the retained boundary.
+\item \textbf{Strand Hurwitz stability (Conjecture~\ref{x13}).}  After removing the monomial factor, every strand polynomial has all zeros in the open left half-plane, verified by exact Routh--Hurwitz tests on $50{,}045$ polynomials; real-rootedness is false at four vertices.
+\item \textbf{Cycle extremality at connectivity two (Conjecture~\ref{x14}).}  Among $2$-connected graphs the cycle dominates every component-strand coefficient, with coefficientwise equality only for the cycle itself.
+\item \textbf{Strict component-strand log-concavity (Conjecture~\ref{x15}).}  On connected noncomplete graphs the component-strand log-concavity is everywhere strict on positive triples.
+\item \textbf{Parity-strand unimodality (Conjecture~\ref{x16}).}  The even and odd exterior-invariant profiles of every orientation-preserving signed permutation are unimodal, log-concavity failing at dimension $10$.
+\item \textbf{Mapping-torus Betti unimodality (Conjecture~\ref{x17}).}  The full Betti sequence of the associated torus mapping torus is unimodal, log-concavity failing already at $-I_4$ with $(1,1,6,6,1,1)$.
+\item \textbf{Sparse-cycle minimizer structure (Conjecture~\ref{x18}).}  Some total-Betti minimizer in every dimension $d\ge8$ uses pairwise distinct negative cycles and at most the parity-forced positive cycle, as at $(5,7)$ for $d=12$.
+\item \textbf{Square-root-two compression exponent (Conjecture~\ref{x19}).}  The minimal total Betti number satisfies $M_d^{1/d}\to\sqrt2$, a flagged limit claim; the finite formula $2^{\lfloor(d+3)/2\rfloor}$ fails at $d=12$ with $160$ against $128$.
+\item \textbf{Torsion budget inequality (Conjecture~\ref{x20}).}  The $2$-primary torsion generators of these mapping tori never outnumber the total rational Betti number, equivalently negative orbits are at most twice the positive orbits, with equality attained $109$ times through dimension $12$.
+\end{enumerate}
+
 
 
 
@@ -398,7 +422,7 @@ Bateman--Horn constant.
 
 
 \begin{abstract}
-We state one hundred sixteen conjectures in six parts.  The twenty-five conjectures of Part~I are each derived from the
+We state one hundred thirty-six conjectures in seven parts.  The twenty-five conjectures of Part~I are each derived from the
 local--global random model of the primes:
 Cram\'er's model corrected by Hardy--Littlewood singular series, with
 Bateman--Horn as the organizing framework and Borel--Cantelli accounting
@@ -441,14 +465,14 @@ finite logarithms and algebraic tori, arboreal arithmetic dynamics, and
 adelic factorization processes---each introducing a canonical operator,
 process, invariant, classification, or phase boundary, with its mechanism,
 nearest literature boundary, first decisive theorem, and failure mode.
-  Part~III adds six conjectures across fields: a relative pretentious inverse principle for polynomial arguments, a threshold purification law for monotone vector paths, an entropy--dimension law for random-free graphons, a Hessian principle for microcanonical graph phases, a sharp stability law for entropy idempotence on finite abelian groups, and a convolution-entropy rigidity for stationary processes.  Part~IV (Conjectures~57--76) adds twenty conjectures on a single further object, Rossmann's class-counting polynomial of graphical Lie algebras: rigidity and reconstruction laws for the polynomial and its binary specialization, recovery of the subgraph-component polynomial and of domination invariants, a strict log-concavity ladder with proven failure boundaries, and extremal laws for trees, each tested exhaustively at small order, on adversarial random holdouts, and at every known collision class of the polynomial.  Two of the twenty, the pseudoforest one-field rigidity claim and the interval-support claim, have since been refuted, by an explicit seven-vertex pair and a connected eight-vertex graph, and are recorded as resolved false with their counterexamples.  Part~V (Conjectures~77--96) adds a second algebraic family, the nilpotent pattern Lie algebras of finite posets, and studies two rank-weight enumerators of the bracket tensor, the adjoint and the Kirillov enumerators: determination of structural and coadjoint invariants by the adjoint enumerator, characteristic and field-monotonicity behaviour, a positive unimodal centre-one incidence quotient, and reverse determination, saturation, and a breadth bound for Hasse-forest posets, fifteen of them supported throughout the tested corpus, three stated in greater generality than the computations reach, and two since refuted by explicit seven-point posets and recorded as resolved false, all reverified on an independently generated poset corpus over a proved calibration identity.  Part~VI (Conjectures~97--116) returns to the local--global aesthetic of Part~I on new objects: prime compasses at polynomial centres matched to local-sieve hazards, order patterns of the radical ratio uniform through length four and nonuniform beyond, order constants of abundancy and totient ratios, unbounded prime-factor shocks in combinatorial sequences resting on three proved identities, and a local--global Euler sum for the prime-factor anatomy of prime-gap boundaries, one of the twenty since resolved false by a theorem of Martin and six stated as measured bands rather than derived constants.
+  Part~III adds six conjectures across fields: a relative pretentious inverse principle for polynomial arguments, a threshold purification law for monotone vector paths, an entropy--dimension law for random-free graphons, a Hessian principle for microcanonical graph phases, a sharp stability law for entropy idempotence on finite abelian groups, and a convolution-entropy rigidity for stationary processes.  Part~IV (Conjectures~57--76) adds twenty conjectures on a single further object, Rossmann's class-counting polynomial of graphical Lie algebras: rigidity and reconstruction laws for the polynomial and its binary specialization, recovery of the subgraph-component polynomial and of domination invariants, a strict log-concavity ladder with proven failure boundaries, and extremal laws for trees, each tested exhaustively at small order, on adversarial random holdouts, and at every known collision class of the polynomial.  Two of the twenty, the pseudoforest one-field rigidity claim and the interval-support claim, have since been refuted, by an explicit seven-vertex pair and a connected eight-vertex graph, and are recorded as resolved false with their counterexamples.  Part~V (Conjectures~77--96) adds a second algebraic family, the nilpotent pattern Lie algebras of finite posets, and studies two rank-weight enumerators of the bracket tensor, the adjoint and the Kirillov enumerators: determination of structural and coadjoint invariants by the adjoint enumerator, characteristic and field-monotonicity behaviour, a positive unimodal centre-one incidence quotient, and reverse determination, saturation, and a breadth bound for Hasse-forest posets, fifteen of them supported throughout the tested corpus, three stated in greater generality than the computations reach, and two since refuted by explicit seven-point posets and recorded as resolved false, all reverified on an independently generated poset corpus over a proved calibration identity.  Part~VI (Conjectures~97--116) returns to the local--global aesthetic of Part~I on new objects: prime compasses at polynomial centres matched to local-sieve hazards, order patterns of the radical ratio uniform through length four and nonuniform beyond, order constants of abundancy and totient ratios, unbounded prime-factor shocks in combinatorial sequences resting on three proved identities, and a local--global Euler sum for the prime-factor anatomy of prime-gap boundaries, one of the twenty since resolved false by a theorem of Martin and six stated as measured bands rather than derived constants.  Part~VII (Conjectures~117--136) crosses into algebraic topology on four canonical geometric families: Euler indices of Calabi--Yau complete intersections ending in an exact dimension-wise gcd law, middle Betti numbers of Brieskorn--Pham links under degree caps and common scaling, Hochster strands of flag moment-angle complexes with interval, log-concavity, and Hurwitz-stability shape laws, and torus mapping tori with signed monodromy over a proved signed-orbit calibration, two of the twenty asserting limits beyond the tested range and two flagged for elevated attribution risk.
 \end{abstract}
 
 \tableofcontents
 
 \section{Introduction}
 
-This collection states one hundred sixteen conjectures in six parts.  Part~I
+This collection states one hundred thirty-six conjectures in seven parts.  Part~I
 (Conjectures 1--25) is a single sustained experiment: the primes, beyond
 their local structure, are modelled as a random set of density
 $1/\log n$, and the model is pushed to its sharpest consequences.
@@ -459,9 +483,9 @@ dynamics, and adelic factorization---each contributing one canonical
 object and its laws.  Part~III (Conjectures 51--56) leaves number theory
 itself, carrying the same discipline into multiplicative number theory's
 pretentious frontier, discrepancy theory, graph limits, additive
-information theory, and ergodic theory.  Part~IV (Conjectures~57--76) turns to a single object on the algebraic side, the class-counting polynomial of graphical Lie algebras, and states for it a rigidity and reconstruction programme, a log-concavity programme, and a tree extremal programme, with the proved layer, an exact rank formula and two lower bounds for trees, separated from the twenty conjectural laws.  Part~V (Conjectures~77--96) turns to a second algebraic family, the nilpotent pattern Lie algebras of finite posets, whose adjoint and Kirillov rank enumerators carry a determination programme, a characteristic-and-field programme, a centre-one positivity programme, and a Hasse-forest programme over a proved calibration identity, three of the twenty being stated in greater generality than the computations reach and flagged as such, and two since resolved false with explicit counterexamples.  Part~VI (Conjectures~97--116) returns to the local--global aesthetic of Part~I, reading it off prime compasses at polynomial centres, order patterns of the radical ratio, order constants of multiplicative ratios, prime-factor shocks in combinatorial sequences, and the arithmetic anatomy of prime-gap boundaries, over a proved layer of factorial-ratio jump identities and short-window exchangeability, one of the twenty since resolved false by a theorem of Martin.
+information theory, and ergodic theory.  Part~IV (Conjectures~57--76) turns to a single object on the algebraic side, the class-counting polynomial of graphical Lie algebras, and states for it a rigidity and reconstruction programme, a log-concavity programme, and a tree extremal programme, with the proved layer, an exact rank formula and two lower bounds for trees, separated from the twenty conjectural laws.  Part~V (Conjectures~77--96) turns to a second algebraic family, the nilpotent pattern Lie algebras of finite posets, whose adjoint and Kirillov rank enumerators carry a determination programme, a characteristic-and-field programme, a centre-one positivity programme, and a Hasse-forest programme over a proved calibration identity, three of the twenty being stated in greater generality than the computations reach and flagged as such, and two since resolved false with explicit counterexamples.  Part~VI (Conjectures~97--116) returns to the local--global aesthetic of Part~I, reading it off prime compasses at polynomial centres, order patterns of the radical ratio, order constants of multiplicative ratios, prime-factor shocks in combinatorial sequences, and the arithmetic anatomy of prime-gap boundaries, over a proved layer of factorial-ratio jump identities and short-window exchangeability, one of the twenty since resolved false by a theorem of Martin.  Part~VII (Conjectures~117--136) crosses into algebraic topology, reading exact classical calibrations, the Chern-class formula, the Milnor--Orlik formula, Hochster's formula, and the Wang sequence, across four canonical families of spaces, over a proved signed-orbit calibration for torus mapping tori.
 
-One standard governs all six parts.  A good conjecture is not merely a
+One standard governs all seven parts.  A good conjecture is not merely a
 statement that has resisted counterexample: it is a determinate
 proposition about a canonical object, with a stated mechanism, and with
 enough exposed structure to be refuted in pieces.  Concretely, every
@@ -572,7 +596,7 @@ One tagging convention runs through every statement below: clauses
 marked [theorem] or ``elementary'' are proved; clauses marked
 ``conditional proposition'' follow from the hypotheses stated with
 them; the remaining clauses are conjectures; and open questions are
-labelled as such and are not counted among the one hundred sixteen conjectures.
+labelled as such and are not counted among the one hundred thirty-six conjectures.
 
 \subsection*{Computational-check standards}
 
@@ -697,7 +721,7 @@ Novelty labels, from the independent literature search: \textbf{(a)} previously 
 \textbf{(b)} classical family, quantified instance apparently unstated.
 
 \medskip
-\noindent\textbf{How to read the one hundred sixteen.}  The count is a numbering convention, not a claim of one hundred sixteen independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several conjectures pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Part~IV is one polynomial invariant carrying three programmes, and its twenty statements stand or fall in blocks rather than singly, with two, Conjectures~\ref{u7} and~\ref{u15}, already fallen and recorded as resolved false.  Part~V is two rank enumerators of one bracket tensor, fifteen conjectures supported throughout the tested corpus, three stated in greater generality than the computations reach, and two resolved false with explicit counterexamples, flagged in place.  Part~VI is five local-structure programmes in the aesthetic of Part~I over a proved layer of jump identities and short-window exchangeability, six of its twenty stating a bias as a measured band, two extrapolating in a parameter rather than the index, and one since resolved false.  Depth and independence therefore vary by design across the one hundred sixteen, and the summary sheet's ordering, not the raw count, carries the priority claim.
+\noindent\textbf{How to read the one hundred thirty-six.}  The count is a numbering convention, not a claim of one hundred thirty-six independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several conjectures pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Part~IV is one polynomial invariant carrying three programmes, and its twenty statements stand or fall in blocks rather than singly, with two, Conjectures~\ref{u7} and~\ref{u15}, already fallen and recorded as resolved false.  Part~V is two rank enumerators of one bracket tensor, fifteen conjectures supported throughout the tested corpus, three stated in greater generality than the computations reach, and two resolved false with explicit counterexamples, flagged in place.  Part~VI is five local-structure programmes in the aesthetic of Part~I over a proved layer of jump identities and short-window exchangeability, six of its twenty stating a bias as a measured band, two extrapolating in a parameter rather than the index, and one since resolved false.  Part~VII is four topological programmes over classical calibration identities and one proved signed-orbit calibration, two of its twenty asserting limits rather than finite laws and two flagged as attribution risks.  Depth and independence therefore vary by design across the one hundred thirty-six, and the summary sheet's ordering, not the raw count, carries the priority claim.
 
 \part{Conjectures from a local--global random model}
 
@@ -5277,6 +5301,220 @@ Then for every fixed even $g$ occurring infinitely often as a consecutive-prime 
 \paragraph{Significance.}
 The prime-factor balance of the four composites bracketing a gap oscillates strongly with the gap, and the conjecture is a local--global law identifying its mean with an explicit Euler sum of $\ell$-adic expectations, the random variable being the factor anatomy of the neighbours rather than a residue transition of the prime endpoints.  The mechanism is elementary at the small primes: for $g\equiv2\pmod6$ both inward neighbours are forced multiples of three, for $g\equiv4\pmod6$ both outward neighbours are, and when $6\mid g$ the three-adic contribution cancels, with the higher primes superimposing smaller waves.  The nearest related result is the Hardy--Littlewood correlation heuristic for tuples inside a gap~\cite{HL1923}, sharing the calculus's aesthetic of the Lemke Oliver--Soundararajan biases~\cite{LOS} while measuring a different object.  A first decisive theorem would be the law for $g=2$ from a Hardy--Littlewood model with the consecutive-gap exclusion built in.  In tests on the corpus described in the stress-test section, truncating the sum at $\ell=47$ gave correlation $0.998$ and root-mean-square error $0.24$ across the $39$ gaps with at least $500$ samples.  A counterexample would be a well-sampled gap whose mean disagreed with the truncated Euler sum beyond the truncation error.
 
+\part{Topological invariants of geometric families}
+
+\medskip\noindent\emph{Added to the deposit: 12 August 2026.}\par\medskip
+
+The twenty conjectures below leave arithmetic for algebraic topology while keeping the same discipline.  Each takes a canonical family of spaces, computes an exact classical invariant across the whole family, and takes the resulting shape law seriously.  They form four programmes.  A Calabi--Yau programme (Conjectures~\ref{x1} to~\ref{x5}) studies the Euler indices of smooth complete intersections in projective space, ending in an exact dimension-wise gcd law.  A link programme (Conjectures~\ref{x6} to~\ref{x10}) studies the middle Betti numbers of Brieskorn--Pham links under degree caps and common scaling.  A moment-angle programme (Conjectures~\ref{x11} to~\ref{x15}) studies the Hochster strands of flag moment-angle complexes, their support, shape, and zero locations.  A monodromy programme (Conjectures~\ref{x16} to~\ref{x20}) studies torus mapping tori with signed-permutation monodromy over the signed-orbit calibration proved below.  The calibration layer is classical and exact: the Chern-class formula for complete intersections, the Milnor--Orlik formula for Brieskorn links, Hochster's formula for bigraded Betti numbers, and the Wang sequence for mapping tori.  Six adversarial controls are retained in place, each refuting a tempting strengthening.  Two of the twenty, the limit clause of Conjecture~\ref{x1} and Conjecture~\ref{x19}, assert limits beyond any finite check and are flagged as the most exposed; two more, Conjectures~\ref{x4} and~\ref{x8}, are flagged for elevated attribution risk, lying close to classical methods.
+
+For $n\ge2$ and a multidegree $\mathbf d=(d_1,\ldots,d_r)$ with every $d_i\ge2$ and $\sum_id_i=n+r+1$, let $X^{(n)}_{\mathbf d}\subset\mathbf{CP}^{n+r}$ be a smooth complete intersection of multidegree $\mathbf d$, a Calabi--Yau $n$-fold, with Euler characteristic computed exactly by $c(TX)=(1+H)^{n+r+1}/\prod_i(1+d_iH)$ and $\chi=\bigl(\prod_id_i\bigr)[H^n]\,c(TX)$; write $E_n(\mathbf d)=(-1)^n\chi(X^{(n)}_{\mathbf d})$, $D(\mathbf d)=\prod_id_i$, and let the \emph{merge} $M_{ij}\mathbf d$ replace $d_i,d_j$ by $d_i+d_j-1$, preserving both $n$ and the Calabi--Yau condition.  Write $Q_n=E_n(2,\ldots,2)$ for the all-quadric configuration of $n+1$ quadrics.  For $\mathbf a=(a_1,\ldots,a_N)$ with $a_i\ge2$, let $L(\mathbf a)$ be the Brieskorn--Pham link $\{z_1^{a_1}+\cdots+z_N^{a_N}=0\}\cap S^{2N-1}$, of real dimension $2N-3$, with middle Betti number $\beta(\mathbf a)=b_{N-2}(L(\mathbf a);\mathbf Q)$ given exactly by the Milnor--Orlik formula~\cite{MO70}
+\[
+\beta(\mathbf a)=(-1)^N+\sum_{\varnothing\ne J\subseteq[N]}(-1)^{N-|J|}\frac{\prod_{j\in J}a_j}{\operatorname{lcm}_{j\in J}a_j},
+\]
+the \emph{Fano} tuples being those with $\sum_i1/a_i>1$, with cap $A=\max_ia_i$ and scale sequence $\beta_{\mathbf a}(k)=\beta(ka_1,\ldots,ka_N)$.  For a finite simple graph $G$ on $m$ vertices with clique complex $K=\operatorname{Cl}(G)$, define the Hochster strands
+\[
+h_{r,s}(G)=\sum_{\substack{I\subseteq V(G)\\|I|=s}}\dim_{\mathbf F_2}\widetilde H_r(K_I;\mathbf F_2),
+\qquad
+H_{G,r}(z)=\sum_sh_{r,s}(G)\,z^s,
+\]
+the bigraded Betti sectors of the Stanley--Reisner ring and of the moment-angle complex $\mathcal Z_K$ by Hochster's formula~\cite{Hoch77,BP15}.  Finally, for a signed permutation matrix $A\in SL(d,\Z)$ let $M_A$ be the mapping torus of the induced automorphism of the torus $T^d$, set $f_k(A)=\dim_{\mathbf Q}\ker(\wedge^kA-I)$, so that the Wang sequence gives $b_k(M_A;\mathbf Q)=f_k(A)+f_{k-1}(A)$~\cite{Mil68}, and let $\tau(A)=\sum_kd\bigl(\operatorname{Tor}H_k(M_A;\Z)\bigr)$ count minimal torsion generators.
+
+\begin{proposition}[Signed-orbit calibration]\label{x:orbit}
+Let $A$ be a signed permutation matrix on $\Z^d$.  Then $\wedge^kA$ permutes the wedge basis up to sign, and every orbit of the induced permutation of $k$-subsets carries a holonomy sign, the product of the signs collected around one period.  If $p_k$ and $n_k$ are the numbers of positive and negative orbits at level $k$, then
+\[
+f_k(A)=p_k,\qquad
+\operatorname{coker}(\wedge^kA-I)\cong\Z^{\,p_k}\oplus(\Z/2)^{\,n_k},
+\]
+and consequently $b_k(M_A;\mathbf Q)=p_k+p_{k-1}$, $\operatorname{Tor}H_k(M_A;\Z)\cong(\Z/2)^{\,n_k}$, and $\tau(A)=\sum_kn_k$, while $\sum_kb_k(M_A;\mathbf Q)=2\sum_kp_k$.
+\end{proposition}
+
+\begin{proof}
+On the wedge basis $e_S$, $S$ a $k$-subset, $\wedge^kA$ acts by $e_S\mapsto\pm e_{\sigma(S)}$ with $\sigma$ the induced permutation, so $\wedge^kA-I$ is block-diagonal over the orbits of $\sigma$.  On an orbit of length $L$, successive substitutions $e_i\mapsto\pm e_i$ absorb all but one sign into the basis; such changes alter individual signs but preserve their product around the orbit, the holonomy $\varepsilon$, which is therefore invariant.  The block becomes $C_\varepsilon-I$ with $C_\varepsilon$ the cyclic shift carrying a single sign $\varepsilon$ on its closing edge.  Eliminating $x_{i+1}=x_i$ along the open edges reduces the block to the single relation $(1-\varepsilon)x=0$, so its cokernel is $\Z$ and its rational kernel one-dimensional when $\varepsilon=+1$, and its cokernel is $\Z/2$ and its rational kernel zero when $\varepsilon=-1$.  Summing over orbits gives $f_k=p_k$ and the displayed cokernel.  The Wang sequence of the fibration $T^d\to M_A\to S^1$ reads $0\to\operatorname{coker}(\wedge^kA-I)\to H_k(M_A;\Z)\to\ker(\wedge^{k-1}A-I)\to0$, and the kernel is free, so the sequence splits, giving $b_k=p_k+p_{k-1}$ and $\operatorname{Tor}H_k\cong(\Z/2)^{n_k}$.  The two sums follow by telescoping.
+\end{proof}
+
+\section{Euler indices of Calabi--Yau complete intersections}
+
+\begin{conjecture}[Quadric-ladder ratio law]\label{x1}
+For every $n\ge5$,
+\[
+\frac{Q_{n+1}}{Q_n}<8,
+\qquad
+\frac{Q_{n+2}}{Q_{n+1}}>\frac{Q_{n+1}}{Q_n},
+\qquad\text{and}\qquad
+\lim_{n\to\infty}\frac{Q_{n+1}}{Q_n}=8.
+\]
+\end{conjecture}
+
+\paragraph{Significance.}
+The all-quadric configuration is the maximal-codimension endpoint of the family, and the conjecture asserts that its Euler index grows with a definite exponential ratio approached monotonically from below, a rare closed growth law for a topological index across Calabi--Yau dimension.  The small-dimensional boundary is genuine: the ratios run $24,128,960,6912$ at $n=2$ to $5$, rising to $7.5$ and dipping to $7.2$ before the monotone regime sets in.  The limit clause extrapolates beyond any finite check and is flagged accordingly.  The nearest related result is the exact Chern-class evaluation itself, surveyed with the complete-intersection landscape in~\cite{He21}.  A first decisive theorem would be the strict bound $Q_{n+1}/Q_n<8$ from the coefficient recursion.  In tests on the corpus described in the stress-test section, all finite clauses held exactly through $n=200$, the ratio reaching $7.9337$ by $n=60$.  A counterexample would be a ratio at least $8$ or a convexity break beyond $n=5$.
+
+\begin{conjecture}[Normalized merge monotonicity]\label{x2}
+For every $n\ge3$, every multidegree $\mathbf d$ with $r\ge2$, and every pair $i\ne j$,
+\[
+\frac{E_n(M_{ij}\mathbf d)}{D(M_{ij}\mathbf d)}>\frac{E_n(\mathbf d)}{D(\mathbf d)}.
+\]
+\end{conjecture}
+
+\paragraph{Significance.}
+A merge lowers the codimension by one at fixed dimension, and the conjecture asserts that the degree-normalized Euler index strictly increases along every merge path from the all-quadric floor to the hypersurface ceiling, so the normalized index is a strict order on the merge poset.  The normalization is essential and calibrated: the raw strengthening is false, since $E_4(2,2,4)=1632>1476=E_4(3,4)$ although $(2,2,4)\mapsto(3,4)$ is a merge, and this counterexample is retained.  The nearest related result is the complete-intersection Euler data of~\cite{He21}.  A first decisive theorem would be the two-equation case $r=2$.  In tests on the corpus described in the stress-test section, all $1{,}568{,}731$ merges through dimension $30$ satisfied the strict inequality, reverified independently through dimension $18$.  A counterexample would be one merge with a nonincreasing normalized index.
+
+\begin{conjecture}[Maximal-degree merge monotonicity]\label{x3}
+For every $n\ge3$ and every $\mathbf d$ with $r\ge2$, if $d_i=\max_jd_j$ then $E_n(M_{ik}\mathbf d)>E_n(\mathbf d)$ for every $k\ne i$.
+\end{conjecture}
+
+\paragraph{Significance.}
+Raw merges can lower the Euler index, but the conjecture isolates the direction that survives: merging any degree into a largest degree always raises the unnormalized index, so the failure of raw monotonicity is confined to merges among small degrees.  The retained counterexample of Conjecture~\ref{x2} merges the two smallest degrees, and the conjecture asserts that this is the only kind of failure.  The nearest related result is again the Euler census of~\cite{He21}.  A first decisive theorem would be the hypersurface-forming merges, where the target is a single degree.  In tests on the corpus described in the stress-test section, all $377{,}356$ maximal-degree merges through dimension $30$ increased the index strictly.  A counterexample would be a maximal-degree merge that fails to increase $E_n$.
+
+\begin{conjecture}[Extremal multidegrees]\label{x4}
+For every $n\ge3$ and every multidegree $\mathbf d$,
+\[
+E_n(\underbrace{2,\ldots,2}_{n+1})\le E_n(\mathbf d)\le E_n(n+2),
+\]
+with equality only at the all-quadric and hypersurface configurations.
+\end{conjecture}
+
+\paragraph{Significance.}
+The statement pins the two ends of the family as the unique extremes of the Euler index at every dimension, turning the visually extreme configurations into a precise rigidity claim.  It is flagged for elevated attribution risk: the bounds are likely accessible by elementary coefficient inequalities, and the retained content is the equality rigidity together with its calibrating role for Conjectures~\ref{x2} and~\ref{x3}, whose merge order it bounds.  The nearest related result is the complete-intersection census of~\cite{He21}.  A first decisive theorem would be either inequality with its equality case.  In tests on the corpus described in the stress-test section, all $35{,}467$ configurations through dimension $30$ obeyed both bounds with equality only at the endpoints.  A counterexample would be an interior configuration matching an extreme.
+
+\begin{conjecture}[Dimension-wise Euler gcd law]\label{x5}
+Let $g_n$ be the greatest common divisor of $\chi(X^{(n)}_{\mathbf d})$ over all multidegrees at dimension $n$.  Then
+\[
+g_n=\frac{24}{\gcd(24,n)}\times
+\begin{cases}
+2,&n\equiv0,2\pmod8,\\
+1,&\text{otherwise}.
+\end{cases}
+\]
+\end{conjecture}
+
+\paragraph{Significance.}
+The conjecture gives a closed dimension-wise arithmetic law for the whole family, and the mod-$8$ doubling is the surprise: the natural guess $24/\gcd(24,n)$ misses exactly the residues $0$ and $2$ modulo $8$, where every Euler characteristic in the family carries one further factor of two.  At $n=2$ the law reproduces $\chi=24$ for every Calabi--Yau complete-intersection surface, the K3 case.  The mechanism should be a congruence for the coefficient family, and a proof programme runs through the image of these complete intersections in complex cobordism against Todd-genus and elliptic-genus congruences.  The nearest related result is the divisibility role of Euler numbers in quotient constructions surveyed in~\cite{He21}.  A first decisive theorem would be the divisibility half, that the displayed integer divides every $\chi$ at dimension $n$.  In tests on the corpus described in the stress-test section, the formula matched the exact gcd in every dimension $2$ to $30$, reverified independently through dimension $26$.  A counterexample would be a dimension whose gcd differs.
+
+\section{Middle Betti numbers of Brieskorn--Pham links}
+
+\begin{conjecture}[Five-link cap extremum]\label{x6}
+For $N=4$ and every cap $A\ge9$, every sorted Fano tuple $\mathbf a$ with $\max_ia_i=A$ satisfies $b_2(L(\mathbf a))\le A-1$, with equality only for $\mathbf a=(2,2,A,A)$.
+\end{conjecture}
+
+\paragraph{Significance.}
+Among five-dimensional Fano Brieskorn links with a fixed largest exponent, the conjecture identifies the exact maximal middle Betti number and its unique maximizer, a linear cap law with a rigidity clause.  The threshold is genuine: at $A=3$ the tuple $(3,3,3,3)$ has $b_2=6$, defeating the eventual formula, so the linear branch begins only after the low-cap oscillation dies out.  The nearest related results are the Milnor--Orlik computation~\cite{MO70} and the role of these links in positive Sasakian geometry~\cite{BG08,BMvK16}.  A first decisive theorem would be the bound for tuples containing two entries equal to $2$.  In tests on the corpus described in the stress-test section, the bound and its rigidity held for every sorted Fano $4$-tuple at every exact cap through $50$, reverified independently through $25$.  A counterexample would be a tuple beating the cap or a second maximizer.
+
+\begin{conjecture}[Seven-link cap extremum]\label{x7}
+For $N=5$ and every cap $A\ge13$, every sorted Fano tuple with $\max_ia_i=A$ satisfies $b_3(L(\mathbf a))\le(A-1)(A-2)$, with equality only for $(2,2,A,A,A)$.
+\end{conjecture}
+
+\paragraph{Significance.}
+One dimension up, the cap law becomes quadratic with the analogous unique maximizer, and the pair of statements suggests a general polynomial cap law in the link dimension.  The transition is sharper than at five dimensions: at $A=12$ the maximizer is $(2,3,12,12,12)$ with $b_3=222$, well above the eventual $(A-1)(A-2)$, so the stable branch begins only at $A=13$.  The nearest related results are again~\cite{MO70,BG08}.  A first decisive theorem would be the asymptotic order $b_3\ll A^2$ under the Fano condition.  In tests on the corpus described in the stress-test section, the complete exact-cap census through $A=40$ found no exception, the transition at $A=12$ reverified independently.  A counterexample would be a tuple above the quadratic cap or a second maximizer at some cap.
+
+\begin{conjecture}[Connected gcd-graph positivity]\label{x8}
+For $N=4$, if the graph on $\{1,2,3,4\}$ joining $i\sim j$ when $\gcd(a_i,a_j)>1$ is connected, then $b_2(L(\mathbf a))\ge1$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The conjecture reads rational middle homology off an arithmetic graph: pairwise entanglement of the exponents, propagated along a connected graph, forces the five-dimensional link to carry homology.  It is dimension-specific and calibrated: the five-tuple $(2,2,2,2,2)$ has a connected gcd graph and vanishing middle Betti number, so no naive extension to all $N$ holds.  It is flagged for elevated attribution risk, lying close to the classical graph-theoretic criteria for Brieskorn homology spheres~\cite{MO70,BG08}, and a proof or an attribution should be short once the four-variable inclusion-exclusion is organized by connected graph type.  A first decisive theorem would be the case of a gcd-path.  In tests on the corpus described in the stress-test section, all $137{,}440$ connected tuples with entries at most $60$ had $b_2\ge1$, reverified independently through entries at most $40$.  A counterexample would be a connected tuple with vanishing middle homology.
+
+\begin{conjecture}[Common-scale monotonicity]\label{x9}
+For every $N\ge4$ and every base tuple $\mathbf a$, the scale sequence satisfies $\beta_{\mathbf a}(k+1)\ge\beta_{\mathbf a}(k)$ for every $k\ge1$.
+\end{conjecture}
+
+\paragraph{Significance.}
+Scaling every exponent by a common factor multiplies the ambient weights without changing their ratios, and the conjecture asserts that the middle Betti number can only grow along this ray.  The scale formula is an alternating polynomial in $k$, so monotonicity is not coefficientwise obvious and encodes a positivity of the finite differences of the Milnor--Orlik sum.  The nearest related result is the formula itself~\cite{MO70}.  A first decisive theorem would be monotonicity for tuples of equal entries, where the polynomial is explicit.  In tests on the corpus described in the stress-test section, all $52{,}593$ base tuples of lengths $4$ to $6$ were monotone at every scale through $10$, reverified independently on random tuples through scale $11$.  A counterexample would be one base tuple with a descending scale step.
+
+\begin{conjecture}[Scale convexity and log-concavity]\label{x10}
+For every $N\ge4$ and every base tuple, the scale sequence is simultaneously discretely convex and log-concave:
+\[
+\beta_{\mathbf a}(k+1)-2\beta_{\mathbf a}(k)+\beta_{\mathbf a}(k-1)\ge0,
+\qquad
+\beta_{\mathbf a}(k)^2\ge\beta_{\mathbf a}(k-1)\,\beta_{\mathbf a}(k+1).
+\]
+\end{conjecture}
+
+\paragraph{Significance.}
+The coexistence is unusually rigid: convexity says the absolute increments grow, log-concavity says their relative growth slows, and together they confine the scale sequence to a narrow polynomial-like corridor.  A proof might come from total positivity of the Milnor--Orlik polynomial after finite differencing, or from a representation as a positive mixture, and either route would explain Conjecture~\ref{x9} as a corollary.  The nearest related result is~\cite{MO70}.  A first decisive theorem would be either inequality for equal-entry tuples.  In tests on the corpus described in the stress-test section, both inequalities held across the entire scale corpus of Conjecture~\ref{x9}.  A counterexample would be a base tuple violating either inequality at some scale.
+
+\section{Hochster strands of flag moment-angle complexes}
+
+\begin{conjecture}[Hochster interval support]\label{x11}
+For every finite simple graph $G$ and every $r\ge0$, the support $\{s:h_{r,s}(G)>0\}$ is an interval of integers.
+\end{conjecture}
+
+\paragraph{Significance.}
+Adding a vertex can kill the homology of an individual induced subcomplex, so no monotone mechanism forces gapless support; the conjecture asserts that aggregation over all vertex subsets nevertheless removes every gap in every homological degree.  The sector grading is genuinely finer than the ordinary one: for $G=K_{2,3}$ the ordinary moment-angle Betti sequence is $(1,0,0,4,2,0,3,2,0,0,0)$, not unimodal, while every strand support in the corpus is an interval.  The nearest related results are Hochster's formula and the bigraded theory of moment-angle complexes~\cite{Hoch77,BP15}.  A first decisive theorem would be interval support for the component strand $r=0$.  In tests on the corpus described in the stress-test section, all $50{,}454$ strands over $34{,}867$ graphs had interval support, reverified independently on an exhaustive labeled corpus through five vertices and random holdouts at six and seven.  A counterexample would be one graph, one degree, and one internal zero.
+
+\begin{conjecture}[Hochster-strand log-concavity]\label{x12}
+For every $G$, $r$, and $s$,
+\[
+h_{r,s}(G)^2\ge h_{r,s-1}(G)\,h_{r,s+1}(G).
+\]
+\end{conjecture}
+
+\paragraph{Significance.}
+The strand sequences are conjectured log-concave in the subset size, a shape law for aggregated homology ranks across all induced subcomplexes.  The strengthening that would place it in the Lorentzian-polynomial orbit is false and retained: ultra-log-concavity, normalized by binomial coefficients, already fails for a connected seven-vertex graph whose component strand is $(10,19,14,5,1)$ at sizes two through six.  Ordinary log-concavity is thus the calibrated boundary.  The nearest related results are~\cite{Hoch77,BP15}.  A first decisive theorem would be log-concavity of the component strand for trees.  In tests on the corpus described in the stress-test section, no failure appeared in $50{,}454$ strand sequences, reverified independently through five vertices exhaustively.  A counterexample would be one graph and one degree with a convex triple.
+
+\begin{conjecture}[Strand Hurwitz stability]\label{x13}
+For every $G$ and $r$ with $H_{G,r}$ nonconstant, every zero of $H_{G,r}(z)/z^{\min\operatorname{supp}}$ satisfies $\operatorname{Re}z<0$.
+\end{conjecture}
+
+\paragraph{Significance.}
+Real-rootedness, the strongest classical shape property, is already false at four vertices: the empty graph has component polynomial $6+8z+3z^2$ after removing the monomial factor, with nonreal zeros.  Those zeros nevertheless lie in the open left half-plane, and the conjecture asserts that this Hurwitz stability is the correct universal zero law for all Hochster strands, strictly between log-concavity and real-rootedness.  The nearest related results are the bigraded computations of~\cite{BP15}.  A first decisive theorem would be stability for the empty graphs, whose strand polynomials have closed form.  In tests on the corpus described in the stress-test section, all $50{,}045$ nonconstant strand polynomials passed exact Routh--Hurwitz tests with integer determinants, reverified independently with an exact fraction-free implementation.  A counterexample would be one strand polynomial with a zero in the closed right half-plane.
+
+\begin{conjecture}[Cycle extremality at connectivity two]\label{x14}
+If $G$ is $2$-vertex-connected on $m\ge4$ vertices, then $h_{0,s}(G)\le h_{0,s}(C_m)$ for every $s$, with equality in every coefficient only for the cycle $C_m$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The component strand measures aggregate disconnection of induced subgraphs, and the cycle, the sparsest $2$-connected topology, is conjectured to disconnect the most, coefficient by coefficient, among all $2$-connected graphs of its order.  Every added chord can only help induced subgraphs stay connected, which is the mechanism, but the coefficientwise uniformity across all $s$ is the content.  The nearest related results are~\cite{Hoch77,BP15}.  A first decisive theorem would be the top coefficient, the number of disconnecting vertex pairs.  In tests on the corpus described in the stress-test section, all $12{,}185$ two-connected graphs through ten vertices obeyed the domination, reverified independently on all $11{,}616$ two-connected labeled graphs through six vertices.  A counterexample would be a $2$-connected graph beating the cycle in one coefficient.
+
+\begin{conjecture}[Strict component-strand log-concavity]\label{x15}
+For every connected noncomplete graph, every triple of positive consecutive component-strand coefficients is strictly log-concave: $h_{0,s}^2>h_{0,s-1}h_{0,s+1}$.
+\end{conjecture}
+
+\paragraph{Significance.}
+On the component strand of connected noncomplete graphs the log-concavity of Conjecture~\ref{x12} is conjectured to be everywhere strict, so equality cases concentrate entirely in higher strands or degenerate graphs; complete graphs are excluded because their reduced component strand vanishes identically.  Strictness pins the shape law against the boundary and makes every near-equality a finite certificate worth retaining.  The nearest related results are~\cite{Hoch77,BP15}.  A first decisive theorem would be strictness for paths.  In tests on the corpus described in the stress-test section, no equality occurred among positive triples across the corpus, reverified independently through five vertices exhaustively.  A counterexample would be one connected noncomplete graph with an exactly geometric triple.
+
+\section{Torus mapping tori with signed monodromy}
+
+\begin{conjecture}[Parity-strand unimodality]\label{x16}
+For every orientation-preserving signed permutation $A$, the sequences $(f_0(A),f_2(A),f_4(A),\ldots)$ and $(f_1(A),f_3(A),f_5(A),\ldots)$ are unimodal.
+\end{conjecture}
+
+\paragraph{Significance.}
+By Proposition~\ref{x:orbit} the invariants $f_k$ count positive orbits of the signed action on $k$-subsets, and the conjecture asserts that each parity class of this orbit-count profile rises and falls once.  Log-concavity is too strong and the failure is retained: at $d=10$ the type with one positive $8$-cycle and one positive $2$-cycle has even strand $(1,5,26,26,5,1)$, where $5^2<1\cdot26$.  Unimodality is thus the calibrated boundary.  The nearest related result is the Wang calibration~\cite{Mil68} through Proposition~\ref{x:orbit}.  A first decisive theorem would be unimodality for a single signed cycle.  In tests on the corpus described in the stress-test section, all $57{,}758$ orientation-preserving signed cycle types through dimension $21$ passed, reverified independently through dimension $11$.  A counterexample would be a type with a two-peaked parity strand.
+
+\begin{conjecture}[Mapping-torus Betti unimodality]\label{x17}
+For every orientation-preserving signed permutation $A$ in dimension $d$, the Betti sequence $(b_0(M_A),\ldots,b_{d+1}(M_A))$ is unimodal.
+\end{conjecture}
+
+\paragraph{Significance.}
+Poincar\'e duality makes the Betti sequence symmetric but not unimodal, so the claim is a genuine constraint on the exterior invariant profile, obtained from Conjecture~\ref{x16}'s strands through the Wang sum $b_k=f_k+f_{k-1}$.  Log-concavity fails already at $A=-I_4$, whose Betti sequence is $(1,1,6,6,1,1)$, and the failure is retained, so unimodality is again the calibrated boundary.  The nearest related result is~\cite{Mil68} with Proposition~\ref{x:orbit}.  A first decisive theorem would be the reduction of Conjecture~\ref{x17} to Conjecture~\ref{x16} by a two-strand interleaving argument.  In tests on the corpus described in the stress-test section, every type through dimension $21$ passed, reverified independently through dimension $11$.  A counterexample would be a type with a two-peaked Betti sequence.
+
+\begin{conjecture}[Sparse-cycle minimizer structure]\label{x18}
+For every $d\ge8$, some minimizer of the total Betti number $\sum_kb_k(M_A;\mathbf Q)$ over orientation-preserving signed permutations has no positive signed cycle when $d$ is even, exactly one when $d$ is odd, and pairwise distinct negative-cycle lengths.
+\end{conjecture}
+
+\paragraph{Significance.}
+Total cohomology is minimized by destroying invariant vectors, and the conjecture asserts the structure of an optimal destroyer: negative cycles of pairwise distinct lengths, with at most the parity-forced positive cycle.  Repeated cycle lengths create coincident eigenvalue charges and hence extra zero-sum relations, which is the mechanism.  The observed minimizing negative partitions include $(5,7)$ at $d=12$, $(5,6,7)$ at $d=18$, and $(5,7,8)$ at $d=20$.  The nearest related result is Proposition~\ref{x:orbit}, which turns the question into orbit counting.  A first decisive theorem would be that repeating a negative-cycle length never decreases the total below the distinct-length optimum.  In tests on the corpus described in the stress-test section, every exact minimum through dimension $21$ had the stated form, reverified independently through dimension $12$.  A counterexample would be a dimension whose every minimizer violates the pattern.
+
+\begin{conjecture}[Square-root-two compression exponent]\label{x19}
+Let $M_d$ be the minimum of $\sum_kb_k(M_A;\mathbf Q)$ over orientation-preserving signed permutations in dimension $d$.  Then $M_d^{1/d}\to\sqrt2$ as $d\to\infty$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The conjecture fixes the exponential compression rate of the minimal total cohomology of this finite monodromy sector, and it is flagged as the most exposed statement of the part: it asserts a limit beyond any finite check, and the finite roots approach it non-monotonically.  The tempting finite law is false and retained: $M_d=2^{\lfloor(d+3)/2\rfloor}$ holds through $d=11$ and fails at $d=12$, where the true minimum is $160$, attained by negative cycles of lengths $7$ and $5$, not $128$.  The diagnostic $(\log M_d-(d/2)\log2)/\sqrt d$ stays below $0.42$ for $8\le d\le21$, consistent with a subexponential correction.  The nearest related result is Proposition~\ref{x:orbit}.  A first decisive theorem would be the lower bound $M_d\ge2^{d/2}$ up to subexponential factors.  A counterexample would be a divergent or different limit.
+
+\begin{conjecture}[Torsion budget inequality]\label{x20}
+For every signed permutation $A\in SL(d,\Z)$,
+\[
+\tau(A)\le\sum_kb_k(M_A;\mathbf Q),
+\qquad\text{equivalently}\qquad
+\sum_kn_k\le2\sum_kp_k
+\]
+in the orbit counts of Proposition~\ref{x:orbit}.
+\end{conjecture}
+
+\paragraph{Significance.}
+By Proposition~\ref{x:orbit} the integral torsion of these mapping tori is elementary $2$-primary with one generator per negative orbit, so the conjecture is a purely combinatorial inequality: negative orbits of the signed action on the full exterior algebra never outnumber twice the positive orbits.  It is not a universal-coefficient generality, and equality is attained repeatedly, at $109$ of the $1{,}580$ deposited signed types through dimension $12$, so the inequality is sharp and a proof likely needs an explicit two-to-one map from negative to positive orbits.  The nearest related result is Proposition~\ref{x:orbit}.  A first decisive theorem would be the inequality for a single signed cycle, where both sides are divisor sums.  In tests on the corpus described in the stress-test section, every type through dimension $12$ passed, reverified independently with the equality cases recounted.  A counterexample would be a type with torsion exceeding the rational budget.
+
 \section{Stress tests and independent recomputation}\label{sec:audit}
 
 Each statement was tested three ways: against the literature, against
@@ -5376,6 +5614,8 @@ count at a larger bound is blind to every one of them.
 \emph{Part V.}  The Part V verification programme follows the same standard, on an independently generated corpus of all $87$ unlabelled posets on at most five points, over $\Fq_2$ and $\Fq_3$ fully and $\Fq_5$ to dimension six, cross-checked against the deposited enumerators.  The calibration identity of Proposition~\ref{v:calib} held with no exception.  The determination statements were tested on every adjoint-collision class: the adjoint-to-Kirillov determination of Conjecture~\ref{v1} held across $64$ classes, and the lower-central factor vector, $\dim\operatorname{Der}$, and $\dim\operatorname{Cent}$ of Conjectures~\ref{v2}, \ref{v4}, and~\ref{v6} were constant on every class.  The characteristic statements of Conjectures~\ref{v7} and~\ref{v8} were confirmed by agreement of the attained adjoint-rank and Kirillov-rank sets across $\Fq_2$, $\Fq_3$, and $\Fq_5$ in every case, the two-field rigidity of Conjecture~\ref{v9} forced equality at $q=5$ across $16$ three-field collision classes, and the adjoint field monotonicity of Conjecture~\ref{v10} held as first-order dominance in all $221$ field-pair tests while its likelihood-ratio strengthening failed.  The centre-one statements were tested on all $43$ centre-one records, where the Kirillov enumerator determined the adjoint enumerator, $R_{P,q}$ had nonnegative integer coefficients, and $R_{P,q}$ had interval support and was unimodal throughout this corpus, with log-concavity failing four times.  The unimodality was subsequently refuted by a seven-point poset outside the corpus, and Conjecture~\ref{v14} is recorded as resolved false.  The forest statements were tested on the forest class, where the Kirillov enumerator determined the adjoint enumerator across $44$ forest-collision classes, the Kirillov support filled every even rank up to $b_K$, the even-rank sequence was unimodal, and the bound $b_K\le 2b_A$ held everywhere while the unrestricted bound failed fourteen times off the forest class.  The unitriangular strict log-concavity of Conjecture~\ref{v19} was confirmed for $\mathrm{ut}_4$, $\mathrm{ut}_5$, and $\mathrm{ut}_6$ over $\Fq_2$, for $\mathrm{ut}_4$ and $\mathrm{ut}_5$ over $\Fq_3$, and for $\mathrm{ut}_4$ over $\Fq_5$, and the incidence anticorrelation of Conjecture~\ref{v20} gave negative covariance on every nonabelian poset and exactly zero on all sixteen abelian ones.  Two statements were not independently recomputed: the cohomology recoveries of Conjectures~\ref{v3} and~\ref{v5} rest on the deposited computation of $H^2$ and $H^3$ (ordinary) and $H^1$, $H^2$, and $H^3$ (adjoint), our reverification having not recomputed Lie-algebra cohomology.  Three statements, Conjectures~\ref{v3}, \ref{v5}, and~\ref{v9}, are supported only by the restricted tests recorded with each, and their general forms should not be read as carrying evidence comparable to the other conjectures.  Two further statements, Conjectures~\ref{v11} and~\ref{v14}, are false as stated and are recorded as resolved false with the seven-point counterexamples given in their resolutions.
 
 \emph{Part VI.}  The Part VI verification programme follows the same standard, on an arithmetic cache of every integer through $20{,}000{,}000$ with segmented exact scans and an odd-only prime-neighbour sieve to $4\times10^9$, cross-checked by an independent deterministic Miller--Rabin implementation sharing no code with the primary scans.  The compass frequencies of Conjectures~\ref{w1} to~\ref{w6} were measured over the polygonal centres through $4\times10^9$, the local-sieve model of Conjecture~\ref{w1} correlating with the order-level bias at $0.896$ across $3\le s\le100$ and every promoted direction replicated on a holdout above $10^9$.  The radical order-pattern laws of Conjectures~\ref{w7} and~\ref{w8} were computed exactly through $10^9$, the chi-square against uniformity rising from $0.45$ at length four to about $2.1\times10^7$ at length five and the pattern ratio settling at $13.31$, with the length-four and length-five cell counts reproduced by a second implementation.  The order constants of Conjectures~\ref{w9} to~\ref{w13} were measured over $2\times10^7$ triples across seven disjoint blocks, and the five-term totient barrier of Conjecture~\ref{w11}, since resolved false by Martin's theorem, showed no run below $4\times10^9$ in an exact segmented scan, while its abundancy analogue fell within the same scan to an increasing five-term run at $n=36{,}721{,}681$.  The shock statements of Conjectures~\ref{w14} to~\ref{w19} were checked over millions of steps per family against the exact jump identities of Proposition~\ref{w:jump}, the lag-one covariances negative in all $22$ tested families.  The boundary law of Conjecture~\ref{w20} matched its truncated Euler sum at correlation $0.998$ across the $39$ gaps with at least $500$ samples, with block-level correlations from $0.986$ to $0.997$.  Six of the twenty state a bias as a numerical band rather than a derived constant, and Conjectures~\ref{w6} and~\ref{w17} extrapolate in a parameter rather than the index, so their general forms should be read with the caution their flags record.
+
+\emph{Part VII.}  The Part VII verification programme rests on exact integer computation throughout: truncated integer power series for the Chern-class evaluation, gcd--lcm inclusion-exclusion for the Milnor--Orlik formula, $\mathbf F_2$ Gaussian elimination for induced clique-complex homology with exact fraction-free Routh--Hurwitz determinants, and signed-orbit counting for the exterior actions, every calibration reproduced by a second implementation sharing no code with the primary scans, which recovered the quintic $-200$, the K3 value $24$, the Poincar\'e-sphere $0$, the empty-graph strand $6z^2+8z^3+3z^4$, and the $-I_4$ profile $(1,0,6,0,1)$.  The Euler laws of Conjectures~\ref{x1} to~\ref{x5} were tested on the complete configuration census through dimension $30$, the merges numbering $1{,}568{,}731$, the ladder exact through $n=200$, and the gcd law reverified independently through dimension $26$.  The cap extrema of Conjectures~\ref{x6} and~\ref{x7} are complete exact-cap censuses through caps $50$ and $40$ with the $A=12$ transition value $222$ reverified, and the scale laws of Conjectures~\ref{x9} and~\ref{x10} cover $52{,}593$ tuples at scales through $10$, with independent random rechecks one scale beyond.  The strand laws of Conjectures~\ref{x11} to~\ref{x15} were tested on $34{,}867$ graphs, exhaustive over labeled graphs through six vertices with $250$ deterministic holdouts at each order seven to ten, giving $50{,}454$ strands, and reverified independently on an exhaustive labeled corpus through five vertices.  The monodromy laws of Conjectures~\ref{x16} to~\ref{x20} cover all $57{,}758$ orientation-preserving signed cycle types through dimension $21$, with every type through dimension $11$ and the minimum $160$ at dimension $12$ reverified independently against Proposition~\ref{x:orbit}.  Six adversarial controls are retained in place, each refuting a tempting strengthening.  Two of the twenty, the limit clause of Conjecture~\ref{x1} and Conjecture~\ref{x19}, assert limits beyond any finite check, and Conjectures~\ref{x4} and~\ref{x8} are flagged for elevated attribution risk, so those statements should be read with the caution their flags record.
 
 \section{An open question}
 
@@ -5755,6 +5995,20 @@ Duke Math. J. 168 (2019), no. 11, 1977--2027.
 \bibitem{Ten} G. Tenenbaum, \emph{Introduction to Analytic and Probabilistic Number Theory}, 3rd ed., Grad. Stud. Math. \textbf{163}, Amer. Math. Soc., 2015.
 
 \bibitem{GMT23} B. Green, F. Manners, and T. Tao, \emph{Sumsets and entropy revisited}, Random Structures \& Algorithms \textbf{66} (2025); arXiv:2306.13403. DOI: 10.1002/rsa.21252.
+
+\bibitem{MO70} J. Milnor and P. Orlik, \emph{Isolated singularities defined by weighted homogeneous polynomials}, Topology \textbf{9} (1970), 385--393.
+
+\bibitem{Hoch77} M. Hochster, \emph{Cohen--Macaulay rings, combinatorics, and simplicial complexes}, in Ring Theory II (Proc. Second Oklahoma Conf.), Lecture Notes in Pure and Appl. Math. 26, Dekker, New York, 1977, 171--223.
+
+\bibitem{BP15} V. M. Buchstaber and T. E. Panov, \emph{Toric Topology}, Math. Surveys Monogr. \textbf{204}, Amer. Math. Soc., 2015.
+
+\bibitem{BG08} C. P. Boyer and K. Galicki, \emph{Sasakian Geometry}, Oxford Mathematical Monographs, Oxford Univ. Press, 2008.
+
+\bibitem{BMvK16} C. P. Boyer, L. Macarini, and O. van Koert, \emph{Brieskorn manifolds, positive Sasakian geometry, and contact topology}, Forum Math. \textbf{28} (2016); arXiv:1506.08672. DOI: 10.1515/forum-2015-0142.
+
+\bibitem{He21} Y.-H. He, \emph{The Calabi--Yau Landscape: From Geometry, to Physics, to Machine Learning}, Lecture Notes in Math. \textbf{2293}, Springer, 2021; arXiv:1812.02893.
+
+\bibitem{Mil68} J. Milnor, \emph{Infinite cyclic coverings}, in Conference on the Topology of Manifolds (Michigan State Univ., 1967), Prindle, Weber \& Schmidt, Boston, 1968, 115--133.
 \end{thebibliography}
 
 \end{document}
