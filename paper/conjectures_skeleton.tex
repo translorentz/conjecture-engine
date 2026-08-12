@@ -149,7 +149,7 @@ $q$, $q^2-2\equiv7\pmod8$.  (Two bounded exceptions: at $q=5$ the term $(23,25)$
 \setcounter{conjecture}{0}%
 \begin{conjecture}[Twin races modulo 5 and 8, and the prime-power
 contamination calculus; apparently new]\label{c21}
-Twin starts $p>5$ lie in classes $p\equiv1,2,4\pmod5$.  Let
+Twin starts $p>5$ lie in classes $p\equiv1,2,4\pmod5$; write $\pi_t(x;m,a)$ for the number of twin starts at most $x$ in the class $a$ modulo $m$.  Let
 $D_1(x)=\pi_t(x;5,1)-\tfrac12\bigl(\pi_t(x;5,2)+\pi_t(x;5,4)\bigr)$
 and
 \[
@@ -1676,7 +1676,7 @@ regime of Kuperberg's singular-series sums.
 
 \section{Programme II: arithmetic first-arrival fields and class groups}
 
-For a prime modulus $q$ and $a\in\Fq_q^\times$, let $p(q,a)$ be the least prime in the
+For a prime modulus $q$ and $a\in\Fq_q^\times$, let $p(q,a)$ (argument order reversed from Part~I's $p(a,q)$) be the least prime in the
 class $a$ and put
 \[
  T_q(a)=\frac{\Li(p(q,a))}{q-1},\qquad
@@ -2762,7 +2762,7 @@ For chordal graphs $G$ and $H$, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
 \end{conjecture}
 
 \begin{conjecture}[Recovery of the domination number]\label{u9}
-For all graphs $G$ and $H$, $C_G=C_H$ implies $\gamma(G)=\gamma(H)$.
+For all graphs $G$ and $H$, $C_G=C_H$ implies $\gamma(G)=\gamma(H)$, where $\gamma$ is the domination number.
 \end{conjecture}
 
 \begin{conjecture}[Recovery of the independent domination number]\label{u10}
@@ -3083,7 +3083,7 @@ For every fixed $r\ge1$ the jump $\Omega(F_{r,n+1})-\Omega(F_{r,n})$ is unbounde
 \end{conjecture}
 
 \begin{conjecture}[Negative shock covariance]\label{w17}
-In every fixed nontrivial binomial-slice, central-multinomial, and Fuss--Catalan family the lag-one covariance of successive jumps has a finite strictly negative limit.
+In every fixed binomial-slice ($k\ge2$), central-multinomial ($k\ge2$), and Fuss--Catalan ($r\ge1$) family the lag-one covariance of successive jumps has a finite strictly negative limit.
 \end{conjecture}
 
 \begin{conjecture}[Dyadic multinomial slope]\label{w18}
@@ -3126,7 +3126,7 @@ h_{r,s}(G)=\sum_{\substack{I\subseteq V(G)\\|I|=s}}\dim_{\mathbf F_2}\widetilde 
 \qquad
 H_{G,r}(z)=\sum_sh_{r,s}(G)\,z^s,
 \]
-the bigraded Betti sectors of the Stanley--Reisner ring and of the moment-angle complex $\mathcal Z_K$ by Hochster's formula~\cite{Hoch77,BP15}.  Finally, for a signed permutation matrix $A\in SL(d,\Z)$ let $M_A$ be the mapping torus of the induced automorphism of the torus $T^d$, set $f_k(A)=\dim_{\mathbf Q}\ker(\wedge^kA-I)$, so that the Wang sequence gives $b_k(M_A;\mathbf Q)=f_k(A)+f_{k-1}(A)$~\cite{Wang49,Mil68}, and let $\tau(A)=\sum_kd\bigl(\operatorname{Tor}H_k(M_A;\Z)\bigr)$ count minimal torsion generators.
+the bigraded Betti sectors of the Stanley--Reisner ring and of the moment-angle complex $\mathcal Z_K$ by Hochster's formula~\cite{Hoch77,BP15}.  Finally, for a signed permutation matrix $A\in SL(d,\Z)$ let $M_A$ be the mapping torus of the induced automorphism of the torus $T^d$, set $f_k(A)=\dim_{\mathbf Q}\ker(\wedge^kA-I)$, so that the Wang sequence gives $b_k(M_A;\mathbf Q)=f_k(A)+f_{k-1}(A)$~\cite{Wang49,Mil68}, and let $\tau(A)=\sum_kd\bigl(\operatorname{Tor}H_k(M_A;\Z)\bigr)$ count minimal torsion generators.  The cap $A$ of the link programme and the matrix $A$ of the monodromy programme are unrelated symbols, each local to its own sections.
 
 \begin{proposition}[Signed-orbit calibration]\label{x:orbit}
 Let $A$ be a signed permutation matrix on $\Z^d$.  Then $\wedge^kA$ permutes the wedge basis up to sign, and every orbit of the induced permutation of $k$-subsets carries a holonomy sign, the product of the signs collected around one period.  If $p_k$ and $n_k$ are the numbers of positive and negative orbits at level $k$, then
@@ -3221,7 +3221,7 @@ h_{r,s}(G)^2\ge h_{r,s-1}(G)\,h_{r,s+1}(G).
 \end{conjecture}
 
 \begin{conjecture}[Strand Hurwitz stability]\label{x13}
-For every $G$ and $r$ with $H_{G,r}$ nonconstant, every zero of $H_{G,r}(z)/z^{\min\operatorname{supp}}$ satisfies $\operatorname{Re}z<0$.
+For every $G$ and $r$ with $H_{G,r}$ nonconstant, every zero of $H_{G,r}(z)/z^{\min\operatorname{supp}}$, the strand polynomial divided by its lowest monomial, satisfies $\operatorname{Re}z<0$.
 \end{conjecture}
 
 \begin{conjecture}[Cycle extremality at connectivity two]\label{x14}
@@ -3279,7 +3279,7 @@ away from exterior resonances $h_k$ is the exponential growth rate of $|\det(\we
 \[
 H_{c,s}(M)=\sum_{\substack{A\subseteq E,\ |A|=s\\|A|-r(A)=c}}\beta(A),
 \]
-the aggregated multigraded Betti numbers of the Stanley--Reisner ring by Hochster's formula~\cite{Hoch77}, graded by restriction size and nullity, with strand polynomials as in Part~VII.
+the aggregated multigraded Betti numbers of the Stanley--Reisner ring by Hochster's formula~\cite{Hoch77}, graded by restriction size and nullity, with strand polynomial $\sum_sH_{c,s}(M)z^s$ at each fixed nullity $c$.  The profile $h_b(n,k)$ and the spectral functional $h_k(x)$ are unrelated symbols, each local to its own programme.
 
 \begin{proposition}[Profile moment identities]\label{y:mom}
 For every $b\ge1$ and $n\ge1$, the probability measure on $\{0,\ldots,2n\}$ proportional to $h_b(n,\cdot)$ has mean exactly $n$ and variance exactly $2n/(b+2)$.
@@ -3394,7 +3394,7 @@ Both diagonal directions are log-concave: $H_{c,s}^2\ge H_{c-1,s-1}H_{c+1,s+1}$ 
 \end{conjecture}
 
 \begin{conjecture}[Hurwitz stability of nullity strands]\label{y20}
-For every simple binary matroid and every nonconstant nullity strand, every zero of the strand polynomial, after removing its leading monomial, has strictly negative real part.
+For every simple binary matroid and every nonconstant nullity strand, every zero of the strand polynomial $\sum_sH_{c,s}(M)\,z^{s-s_{\min}}$, with $s_{\min}$ the least size in its support, has strictly negative real part.
 \end{conjecture}
 
 \begin{thebibliography}{99}\small
@@ -3485,13 +3485,13 @@ in Analytic Number Theory: Essays in Honour of Klaus Roth (W. W. L. Chen, W. T. 
 
 \bibitem{Go90} L. G\"ottsche, \emph{The Betti numbers of the Hilbert scheme of points on a smooth projective surface}, Math. Ann. \textbf{286} (1990), 193--207.
 
-\bibitem{Zhou25} N. H. Zhou, \emph{Unimodality and certain bivariate formal Laurent series}, European J. Combin. (2025); arXiv:2408.04433.
+\bibitem{Zhou25} N. H. Zhou, \emph{Unimodality and certain bivariate formal Laurent series}, European J. Combin. \textbf{128} (2025), Paper No. 104170; arXiv:2408.04433.
 
-\bibitem{MZR15} J. Manschot and J. M. Zapata Rol\'on, \emph{The asymptotic profile of $\chi_y$-genera of Hilbert schemes of points on K3 surfaces}, Commun. Number Theory Phys. \textbf{9} (2015); arXiv:1411.1093.
+\bibitem{MZR15} J. Manschot and J. M. Zapata Rol\'on, \emph{The asymptotic profile of $\chi_y$-genera of Hilbert schemes of points on K3 surfaces}, Commun. Number Theory Phys. \textbf{9} (2015), no. 2, 413--435; arXiv:1411.1093.
 
 \bibitem{Reid02} M. Reid, \emph{La correspondance de McKay}, S\'eminaire Bourbaki 1999/2000, Exp. 867, Ast\'erisque \textbf{276} (2002), 53--72; arXiv:math/9911165.
 
-\bibitem{BV13} N. Bergeron and A. Venkatesh, \emph{The asymptotic growth of torsion homology for arithmetic groups}, J. Inst. Math. Jussieu \textbf{12} (2013), 391--447; arXiv:1004.1083.
+\bibitem{BV13} N. Bergeron and A. Venkatesh, \emph{The asymptotic growth of torsion homology for arithmetic groups}, J. Inst. Math. Jussieu \textbf{12} (2013), no. 2, 391--447; arXiv:1004.1083.
 
 \bibitem{AHK18} K. Adiprasito, J. Huh, and E. Katz, \emph{Hodge theory for combinatorial geometries}, Ann. of Math. (2) \textbf{188} (2018), 381--452; arXiv:1511.02888.
 
@@ -3499,7 +3499,7 @@ in Analytic Number Theory: Essays in Honour of Klaus Roth (W. W. L. Chen, W. T. 
 
 \bibitem{BLP10} M. Baake, E. Lau, and V. Paskunas, \emph{A note on the dynamical zeta function of general toral endomorphisms}, Monatsh. Math. \textbf{161} (2010), 33--42; arXiv:0810.1855.
 
-\bibitem{Bjo92} A. Bj\"orner, \emph{The homology and shellability of matroids and geometric lattices}, in Matroid Applications, Encyclopedia Math. Appl. 40, Cambridge Univ. Press, 1992, 226--283.
+\bibitem{Bjo92} A. Bj\"orner, \emph{Homology and shellability of matroids and geometric lattices}, in Matroid Applications (N. White, ed.), Encyclopedia Math. Appl. 40, Cambridge Univ. Press, 1992, 226--283.
 
 \bibitem{GL} D.~A. Goldston and A.~H. Ledoan,
 \emph{Jumping champions and gaps between consecutive primes},
