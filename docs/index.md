@@ -2533,7 +2533,7 @@ $$
 h_b(n,k)^2>h_b(n,k-1)\,h_b(n,k+1).
 $$
 
-*Significance.* The Betti profile of Göttsche's product is conjectured strictly log-concave in the cohomological degree, upgrading the known strict unimodality [98] to a multiplicative curvature condition; at $$b=22$$ the statement covers every $$\operatorname{Hilb}^n(\mathrm{K3})$$. Ultra-log-concavity is deliberately not asserted, matching the calibration pattern of the strand programmes. The nearest related results are Göttsche's formula [97] and the unimodality theorem [98]. A first decisive theorem would be the middle three degrees for large $$n$$ from the asymptotic profile. In tests on the corpus described in the stress-test section, $$179{,}200$$ exact Turán inequalities passed for $$3\le b\le30$$ and $$n\le80$$, reverified independently for $$b\le12$$, $$n\le40$$. A counterexample would be one nonpositive Turán determinant.
+*Significance.* The Betti profile of Göttsche's product is conjectured strictly log-concave in the cohomological degree, a multiplicative curvature condition strictly above the unimodality that the bivariate strict-unimodality machinery of [98] supplies for products of this type; at $$b=22$$ the statement covers every $$\operatorname{Hilb}^n(\mathrm{K3})$$. Ultra-log-concavity is deliberately not asserted, matching the calibration pattern of the strand programmes. The nearest related results are Göttsche's formula [97] and the bivariate unimodality criterion of [98], stated there for Laurent-series products rather than for these profiles. A first decisive theorem would be the middle three degrees for large $$n$$ from the asymptotic profile. In tests on the corpus described in the stress-test section, $$179{,}200$$ exact Turán inequalities passed for $$3\le b\le30$$ and $$n\le80$$, reverified independently for $$b\le12$$, $$n\le40$$. A counterexample would be one nonpositive Turán determinant.
 
 **Conjecture 142** *(Cohomology-seed total positivity)*. For every $$b\ge1$$, $$n\ge1$$, and $$0\le k<n$$,
 
@@ -2577,7 +2577,7 @@ $$
 h_k(x)^2\ge h_{k-1}(x)\,h_{k+1}(x).
 $$
 
-*Significance.* The torsion growth rates of a hyperbolic toral mapping torus, read across the exterior degree, form a log-concave profile: a Hodge-shaped inequality for a piecewise-linear functional of subset sums rather than for an intersection form. The nearest related results are the torsion-growth framework of [101] and the toral determinant calculus of [104], which compute the rates without ordering them. A first decisive theorem would be $$d=4$$, where a finite chamber decomposition suffices. In tests on the corpus described in the stress-test section, all $$81{,}000$$ inequalities on $$16{,}200$$ random zero-sum spectra through $$d=12$$ passed, with an exact integer audit alongside, reverified independently on $$3{,}000$$ random spectra and the full integer corpus of Conjecture 150. A counterexample would be one convex triple of rates.
+*Significance.* The torsion growth rates of a hyperbolic toral mapping torus, read across the exterior degree, form a log-concave profile: a Hodge-shaped inequality for a piecewise-linear functional of subset sums rather than for an intersection form. The nearest related results are the torsion-growth programme of [101], whose setting is arithmetic groups rather than mapping tori, and the toral determinant calculus of [104], which computes the rates without ordering them. A first decisive theorem would be $$d=4$$, where a finite chamber decomposition suffices. In tests on the corpus described in the stress-test section, all $$81{,}000$$ inequalities on $$16{,}200$$ random zero-sum spectra through $$d=12$$ passed, with an exact integer audit alongside, reverified independently on $$3{,}000$$ random spectra and the full integer corpus of Conjecture 150. A counterexample would be one convex triple of rates.
 
 **Conjecture 150** *(Equality rigidity)*. If an interior equality $$h_k(x)^2=h_{k-1}(x)h_{k+1}(x)$$ occurs, then the multiset $$\{x_1,\ldots,x_d\}$$ has exactly two distinct values.
 
@@ -2828,14 +2828,14 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 95. J. Milnor, *Infinite cyclic coverings*, in Conference on the Topology of Manifolds (Michigan State Univ., 1967), Prindle, Weber & Schmidt, 1968, 115–133.
 96. H. C. Wang, *The homology groups of the fibre bundles over a sphere*, Duke Math. J. 16 (1949), 33–38.
 97. L. Göttsche, *The Betti numbers of the Hilbert scheme of points on a smooth projective surface*, Math. Ann. 286 (1990), 193–207.
-98. N. H. Zhou, *Unimodality and certain bivariate formal Laurent series*, European J. Combin. (2025); arXiv:2408.04433.
-99. J. Manschot and J. M. Zapata Rolón, *The asymptotic profile of $$\chi_y$$-genera of Hilbert schemes of points on K3 surfaces*, Commun. Number Theory Phys. 9 (2015); arXiv:1411.1093.
+98. N. H. Zhou, *Unimodality and certain bivariate formal Laurent series*, European J. Combin. 128 (2025), Paper No. 104170; arXiv:2408.04433.
+99. J. Manschot and J. M. Zapata Rolón, *The asymptotic profile of $$\chi_y$$-genera of Hilbert schemes of points on K3 surfaces*, Commun. Number Theory Phys. 9 (2015), no. 2, 413–435; arXiv:1411.1093.
 100. M. Reid, *La correspondance de McKay*, Séminaire Bourbaki 1999/2000, Exp. 867, Astérisque 276 (2002), 53–72; arXiv:math/9911165.
-101. N. Bergeron and A. Venkatesh, *The asymptotic growth of torsion homology for arithmetic groups*, J. Inst. Math. Jussieu 12 (2013), 391–447; arXiv:1004.1083.
+101. N. Bergeron and A. Venkatesh, *The asymptotic growth of torsion homology for arithmetic groups*, J. Inst. Math. Jussieu 12 (2013), no. 2, 391–447; arXiv:1004.1083.
 102. K. Adiprasito, J. Huh, and E. Katz, *Hodge theory for combinatorial geometries*, Ann. of Math. (2) 188 (2018), 381–452; arXiv:1511.02888.
 103. L. B. Anderson, F. Apruzzi, X. Gao, J. Gray, and S.-J. Lee, *A new construction of Calabi–Yau manifolds: generalized CICYs*, Nuclear Phys. B 906 (2016), 441–496; arXiv:1507.03235.
 104. M. Baake, E. Lau, and V. Paskunas, *A note on the dynamical zeta function of general toral endomorphisms*, Monatsh. Math. 161 (2010), 33–42; arXiv:0810.1855.
-105. A. Björner, *The homology and shellability of matroids and geometric lattices*, in Matroid Applications, Encyclopedia Math. Appl. 40, Cambridge Univ. Press, 1992, 226–283.
+105. A. Björner, *Homology and shellability of matroids and geometric lattices*, in Matroid Applications (N. White, ed.), Encyclopedia Math. Appl. 40, Cambridge Univ. Press, 1992, 226–283.
 
 ## Explanations
 
@@ -3401,7 +3401,7 @@ Split two different factors of the same ambient product, separately and then tog
 
 ### Conjecture 141: Strict Betti log-concavity
 
-Göttsche's product formula gives the Betti numbers of Hilbert schemes of points on a surface, and for the K3 surface these are the state-count profiles appearing in string-theoretic charge counting. Their strict unimodality is a recent theorem; the conjecture upgrades it to strict log-concavity, a multiplicative curvature condition, for every cohomology seed of size at least three. All 179,200 exact Turán inequalities through eighty points passed.
+Göttsche's product formula gives the Betti numbers of Hilbert schemes of points on a surface, and for the K3 surface these are the state-count profiles appearing in string-theoretic charge counting. Unimodality of such profiles follows from recent bivariate strict-unimodality machinery; the conjecture upgrades the shape law to strict log-concavity, a multiplicative curvature condition, for every cohomology seed of size at least three. All 179,200 exact Turán inequalities through eighty points passed.
 
 ### Conjecture 142: Cohomology-seed total positivity
 
