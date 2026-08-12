@@ -1,9 +1,9 @@
-# One hundred fifty-six conjectures in mathematics
+# One hundred seventy-six conjectures in mathematics
 
 This repository contains:
 
 - **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: one
-  hundred fifty-six conjectures in eight parts, each with its mechanism,
+  hundred seventy-six conjectures in nine parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -19,7 +19,10 @@ This repository contains:
   shape laws for five enumerative arrays: Euler indices of hypersurfaces
   in products of projective spaces, Hilbert-scheme Betti profiles,
   cyclic-quotient age histograms, exterior torsion entropy, and
-  matroidal Hochster tables. Five conjectures
+  matroidal Hochster tables; Part IX (157–176) spectra and filtrations
+  of combinatorial geometries: graph-associahedron h-polynomials,
+  age-filtered McKay complexes, lens-space sine-torsion sectors, and
+  boundary-determinant entropy of simplicial spheres. Five conjectures
   (63, 71, 87, 90, 107) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
   theorem.
@@ -40,7 +43,8 @@ This repository contains:
   programs. `python run_all.py` regenerates every number in Part I;
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
-  (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `y_shape_laws.py` (Part VIII), and `t5_*.py` (Part III),
+  (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `y_shape_laws.py` (Part VIII),
+  `z_spectra_filtrations.py` (Part IX), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base
