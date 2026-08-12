@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{One hundred seventy-six conjectures in mathematics}
+\title{One hundred ninety-six conjectures in mathematics}
 \author{}
 \date{July 27, 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{One hundred seventy-six conjectures in mathematics:\\ the statements}
+\title{One hundred ninety-six conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -3505,6 +3505,122 @@ If $K'$ is obtained from $K$ by stellar subdivision of a facet, then $E_k(K')>E_
 With $\delta_k=E_k(K')-E_k(K)$ as in Conjecture~\ref{z19}, $\delta_k^2\ge\delta_{k-1}\delta_{k+1}$ for $2\le k\le d-1$.
 \end{conjecture}
 
+\part{Flux cohomology and protected index laws}
+
+\medskip\noindent\emph{Added to the deposit: 12 August 2026.}\par\medskip
+
+The twenty conjectures below carry the collection into string-geometric index theory.  They form three programmes.  A flux programme (Conjectures~\ref{aa1} to~\ref{aa8}) studies the cohomology of wedge multiplication by an integral three-form on a torus, the invariant-forms model of $H$-twisted cohomology, through saturation laws for random flux, sparse witnesses, and an arithmetic torsion staircase for the complete flux.  A profile programme (Conjectures~\ref{aa9} to~\ref{aa15}) studies the signed $\chi_y$-coefficient profile of projective Calabi--Yau complete intersections along the merge order of Part~VII, extending the Euler monotonicity of Conjecture~\ref{x2} to every protected coefficient, with root, log-concavity, and Mahler laws.  A signature programme (Conjectures~\ref{aa16} to~\ref{aa20}) does the same for the Hirzebruch signature, ending in a quadric ratio law with limit $27$ and a dimension-wise gcd law that is the signature sibling of Conjecture~\ref{x5}.  The calibration layer is exact where the objects are: finite-field cohomology, Smith normal forms, $\chi_y$-coefficients, signatures, merge inequalities, ratios, and gcds are integer or rational computations, while characteristic-zero ranks beyond dimension nine are dual-prime proxies and the root, Mahler, and radius laws of Conjectures~\ref{aa12}, \ref{aa14}, and~\ref{aa15} are audited spectrally in floating point and flagged as such.  Two retained controls mark calibrated boundaries, a falsified all-prime torsion precursor and a falsified elementary-torsion strengthening.  Conjectures~\ref{aa1}, \ref{aa2}, \ref{aa4}, and~\ref{aa8} are stated in a random model and Conjecture~\ref{aa5} is stated in greater generality than the computations reach, the part's most exposed statement; Conjectures~\ref{aa8}, \ref{aa13}, and~\ref{aa19} carry elevated attribution risk, sitting closest to classical machinery; and Conjecture~\ref{aa14} returns the Mahler order of Conjecture~\ref{z3} on a different polynomial.
+
+For $n\ge3$ and a commutative ring $R$ let $E_n(R)=\Lambda^{*}R^n$, and for an integral three-form $H\in\Lambda^3\Z^n$ let $d_H$ be wedge multiplication by $H$, a differential because $H$ has odd degree; write $b_k(H;R)$ for the dimensions of the cohomology of $(E_n(R),d_H)$, $B(H;R)=\sum_kb_k(H;R)$, and $t_p(H)$ for the number of $p$-primary cyclic summands of the integral cohomology.  This complex is the invariant-forms model of $H$-twisted cohomology~\cite{Cav04}, whose K-theoretic refinement classifies Ramond--Ramond charges in a topologically nontrivial B-field~\cite{BM00}.  The \emph{generic target} $g_n$ is the cohomology profile of a generic principal ideal generated in degree three~\cite{LN19}: for $n=2m$ it is $(3^{m-1},2\cdot3^{m-1},3^{m-1})$ in degrees $m-1,m,m+1$; for $n\equiv3\pmod4$ it is $3^{(n-1)/2}$ in each of the two middle degrees; for $n\equiv1\pmod4$ it has inner pair $3^{(n-1)/2}$ and outer pair $1$, except that the outer pair is $3$ at $n=9$; its total is $G_n$.  The \emph{complete flux} is $H_\Delta=\sum_{i<j<k}e_i\wedge e_j\wedge e_k$, and the target totals are $F_n=\binom{n+1}{(n+1)/2}$ for odd $n$, $F_n=2\binom{n}{n/2}$ for even $n$, and $P_n=2^{n-1}+2^{(n-1)/2}$ for odd $n$, $P_n=2(2^{n-2}+2^{(n-2)/2})$ for even $n$.  On the geometric side, $X^n_{\mathbf d}\subset\mathbb{CP}^{n+r}$ is the Calabi--Yau complete intersection of multidegree $\mathbf d=(d_1,\ldots,d_r)$, $d_i\ge2$, $\sum_id_i=n+r+1$, with degree $D(\mathbf d)=\prod_id_i$; merging replaces $d_i,d_j$ by $d_i+d_j-1$, preserving dimension and the Calabi--Yau condition, exactly as in Part~VII.  Writing $\chi_y=\sum_p\chi^py^p$ for the Hirzebruch genus~\cite{Hir66}, put $a_p(\mathbf d)=(-1)^{n-p}\chi^p(X^n_{\mathbf d})$ and $A_{\mathbf d}(y)=\sum_pa_p(\mathbf d)y^p$, a palindromic integer polynomial with nonnegative coefficients throughout the tested range; for even $n$ put $S(\mathbf d)=(-1)^{n/2}\sigma(X^n_{\mathbf d})$.  Let $Q=(2,\ldots,2)$ be the all-quadric and $Y=(n+2)$ the hypersurface configuration.
+
+\begin{proposition}[Coefficient and parity calibrations]\label{aa:uct}
+For every $H\in\Lambda^3\Z^n$ and every prime $p$, $B(H;\mathbb F_p)=B(H;\mathbb Q)+2t_p(H)$.  If every coefficient of $H$ is odd, then the complexes of $H$ and of $H_\Delta$ over $\mathbf F_2$ coincide, so $B(H;\mathbb F_2)=B(H_\Delta;\mathbb F_2)$.
+\end{proposition}
+
+\section{Integral flux complexes on tori}
+
+\begin{conjecture}[Dense discrete flux saturation]\label{aa1}
+Fix a finite symmetric set $V\subset\Z\setminus\{0\}$, for example $\{\pm1\}$, and let every coefficient of $H_n\in\Lambda^3\Z^n$ be independent and uniform on $V$.  Then $\Pr[(b_k(H_n;\mathbb Q))_k=g_n]\to1$, and the failure probability decays exponentially in $n$.
+\end{conjecture}
+
+\begin{conjecture}[Sparse-flux threshold at the coverage scale]\label{aa2}
+Include each coordinate triple independently with probability $p_n$ and give included triples independent bounded nonzero coefficients.  If $p_nn^2/\log n\to0$ then $\Pr[(b_k;\mathbb Q)_k=g_n]\to0$, and if $p_nn^2/\log n\to\infty$ then $\Pr[(b_k;\mathbb Q)_k=g_n]\to1$.
+\end{conjecture}
+
+\begin{conjecture}[Linear-complexity sparse witnesses]\label{aa3}
+Let $\mu_n$ be the minimum support size of a $\{\pm1\}$-valued three-form on $\Z^n$ with rational profile $g_n$.  Then $\mu_n=\Theta(n)$, and for all sufficiently large $n$ a saturating support of at most $n+C$ triples can be chosen to form a linear $3$-uniform hypergraph, for an absolute constant $C$.
+\end{conjecture}
+
+\begin{conjecture}[Coefficient-law universality in the sparse window]\label{aa4}
+In the critical window of Conjecture~\ref{aa2}, after excluding coefficient laws supported in a fixed nontrivial arithmetic progression, the limiting saturation probability and the limiting law of the normalized cohomology excess depend only on the random support hypergraph, not on the coefficient distribution.
+\end{conjecture}
+
+\begin{conjecture}[Finite-field resonance power law]\label{aa5}
+Fix $n\ge5$.  There are a positive integer $\delta_n$ and a positive rational $\kappa_n$ such that, for $H$ uniform on $\Lambda^3\mathbb F_p^n$, the probability of the resonance event, that the profile $(b_k(H;\mathbb F_p))_k$ exceeds $g_n$, satisfies
+\[
+\Pr(R_{n,p})=\kappa_np^{-\delta_n}+O_n\bigl(p^{-\delta_n-1/2}\bigr)
+\qquad\text{as }p\to\infty.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Central-binomial law for the complete flux]\label{aa6}
+For every $n\ge4$, $B(H_\Delta;\mathbb Q)=F_n$ and $B(H_\Delta;\mathbb F_2)=P_n$.
+\end{conjecture}
+
+\begin{conjecture}[Prime torsion staircase for the complete flux]\label{aa7}
+For every prime $p$, the integral cohomology of $(E_n(\Z),d_{H_\Delta})$ has no $p$-primary torsion for $n\le4p-2$ and exactly one $p$-primary cyclic summand, isomorphic to $\Z/p$, at $n=4p-1$.  Moreover, for every $n$ the $2$-primary subgroup is elementary abelian of rank $t_2(H_\Delta)=(P_n-F_n)/2$.
+\end{conjecture}
+
+\begin{conjecture}[Parity-locked torsion count for sign flux]\label{aa8}
+For dense $\{\pm1\}$ flux as in Conjecture~\ref{aa1}, conditional on the rational profile equalling $g_n$, the number of $2$-primary cyclic summands is exactly $t_2(H_n)=(P_n-G_n)/2$; unconditionally, this count holds with probability tending to one.
+\end{conjecture}
+
+\section{Protected profiles of complete intersections}
+
+\begin{conjecture}[Coefficientwise endpoint extremality]\label{aa9}
+For $n\ge3$ and every interior index $1\le p\le n-1$, $a_p(Q)\le a_p(\mathbf d)\le a_p(Y)$, and equality across all interior indices holds only for the endpoint configuration itself.  Dimension $2$ is the equality calibration: every configuration has the K3 profile $(2,20,2)$.
+\end{conjecture}
+
+\begin{conjecture}[Degree-normalized merge monotonicity]\label{aa10}
+If $\mathbf d'$ is obtained from $\mathbf d$ by merging two entries, then $a_p(\mathbf d')/D(\mathbf d')>a_p(\mathbf d)/D(\mathbf d)$ for every $1\le p\le n-1$.
+\end{conjecture}
+
+\begin{conjecture}[Maximal-degree raw monotonicity]\label{aa11}
+For $n\ge3$, if a merge uses an entry equal to $\max_id_i$, then $a_p(\mathbf d')>a_p(\mathbf d)$ for every $1\le p\le n-1$.
+\end{conjecture}
+
+\begin{conjecture}[Real-rooted protected polynomial]\label{aa12}
+For every configuration, the polynomial $A_{\mathbf d}(y)$, with the single forced factor $y$ removed in odd complex dimension, has only simple, strictly negative real zeros.
+\end{conjecture}
+
+\begin{conjecture}[Strict ultra-log-concavity]\label{aa13}
+For every configuration and every interior triple of positive coefficients,
+\[
+\bigl(a_p/\tbinom np\bigr)^2>\bigl(a_{p-1}/\tbinom n{p-1}\bigr)\bigl(a_{p+1}/\tbinom n{p+1}\bigr).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Degree-normalized Mahler growth]\label{aa14}
+For every merge, $M(A_{\mathbf d'})/D(\mathbf d')>M(A_{\mathbf d})/D(\mathbf d)$, where $M$ is the multiplicative Mahler measure.
+\end{conjecture}
+
+\begin{conjecture}[Spectral-radius growth with low-dimensional rigidity]\label{aa15}
+Let $\rho(\mathbf d)$ be the largest modulus of a zero of the reduced polynomial of Conjecture~\ref{aa12}.  If a merge uses a maximal entry, then $\rho(\mathbf d')\ge\rho(\mathbf d)$, with equality for every such merge in complex dimensions $n=2,3,5$ and strict inequality in every other dimension $n\ge4$.
+\end{conjecture}
+
+\section{Signature laws for complete intersections}
+
+\begin{conjecture}[Signature endpoint extremality]\label{aa16}
+In every even complex dimension $n\ge4$, $S(Q)\le S(\mathbf d)\le S(Y)$, with equality only at the corresponding endpoint.  Dimension $2$ is the calibration: every configuration is a K3 surface with $S=16$.
+\end{conjecture}
+
+\begin{conjecture}[Degree-normalized signature monotonicity]\label{aa17}
+Every merge in even complex dimension satisfies $S(\mathbf d')/D(\mathbf d')>S(\mathbf d)/D(\mathbf d)$.
+\end{conjecture}
+
+\begin{conjecture}[Maximal-degree signature monotonicity]\label{aa18}
+In even complex dimension $n\ge4$, a merge using a maximal entry strictly increases $S$.
+\end{conjecture}
+
+\begin{conjecture}[The quadric ratio law with limit $27$]\label{aa19}
+For even $n$ let $Q_n=S(2,\ldots,2)$ with $n+1$ quadrics.  Then $R_n=Q_{n+2}/Q_n$ is strictly increasing in $n$, $R_n<27$, and
+\[
+R_n\to27,\qquad 27-R_n\sim\frac{27}{n}.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Dimension-wise signature gcd law]\label{aa20}
+Let the gcd range over all Calabi--Yau complete-intersection multidegrees in even complex dimension $n$.  Then
+\[
+\gcd_{\mathbf d}S(\mathbf d)=
+\begin{cases}
+2,&n\equiv0\pmod4,\\
+2^{\max(4,\,1+\nu_2(n+2))},&n\equiv2\pmod4,
+\end{cases}
+\]
+where $\nu_2$ is the $2$-adic valuation.
+\end{conjecture}
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -3620,6 +3736,14 @@ in Analytic Number Theory: Essays in Honour of Klaus Roth (W. W. L. Chen, W. T. 
 \bibitem{BV10} V. M. Buchstaber and V. Volodin, \emph{Upper and lower bound theorems for graph-associahedra}, arXiv:1005.1631.
 
 \bibitem{Ais12} N. Aisbett, \emph{Inequalities between gamma-polynomials of graph-associahedra}, Electron. J. Combin. \textbf{19}(2) (2012), \#P36; arXiv:1202.0038.
+
+\bibitem{Cav04} G. R. Cavalcanti, \emph{New aspects of the $dd^c$-lemma}, D.Phil. thesis, University of Oxford, 2004; arXiv:math/0501406.
+
+\bibitem{BM00} P. Bouwknegt and V. Mathai, \emph{D-branes, B-fields and twisted K-theory}, J. High Energy Phys. \textbf{03} (2000) 007; arXiv:hep-th/0002023.
+
+\bibitem{LN19} S. Lundqvist and L. Nicklasson, \emph{On generic principal ideals in the exterior algebra}, J. Pure Appl. Algebra \textbf{223} (2019), 2615--2634; arXiv:1803.03563.
+
+\bibitem{Hir66} F. Hirzebruch, \emph{Topological Methods in Algebraic Geometry}, third ed., Grundlehren Math. Wiss. \textbf{131}, Springer, 1966.
 
 \bibitem{GL} D.~A. Goldston and A.~H. Ledoan,
 \emph{Jumping champions and gaps between consecutive primes},
