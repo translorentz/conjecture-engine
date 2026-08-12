@@ -6,7 +6,7 @@ title: One hundred thirty-six conjectures in mathematics
 
 # One hundred thirty-six conjectures in mathematics
 
-*July 27, 2026*
+*First deposited 27 July 2026; last updated 12 August 2026.*
 
 ## Summary of the conjectures
 
