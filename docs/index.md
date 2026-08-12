@@ -2264,7 +2264,7 @@ h_{r,s}(G)=\sum_{\substack{I\subseteq V(G)\\|I|=s}}\dim_{\mathbf F_2}\widetilde 
 H_{G,r}(z)=\sum_sh_{r,s}(G)\,z^s,
 $$
 
-the bigraded Betti sectors of the Stanley–Reisner ring and of the moment-angle complex $$\mathcal Z_K$$ by Hochster's formula [90, 91]. Finally, for a signed permutation matrix $$A\in SL(d,\mathbb Z)$$ let $$M_A$$ be the mapping torus of the induced automorphism of the torus $$T^d$$, set $$f_k(A)=\dim_{\mathbf Q}\ker(\wedge^kA-I)$$, so that the Wang sequence gives $$b_k(M_A;\mathbf Q)=f_k(A)+f_{k-1}(A)$$ [95], and let $$\tau(A)=\sum_kd\bigl(\operatorname{Tor}H_k(M_A;\mathbb Z)\bigr)$$ count minimal torsion generators.
+the bigraded Betti sectors of the Stanley–Reisner ring and of the moment-angle complex $$\mathcal Z_K$$ by Hochster's formula [90, 91]. Finally, for a signed permutation matrix $$A\in SL(d,\mathbb Z)$$ let $$M_A$$ be the mapping torus of the induced automorphism of the torus $$T^d$$, set $$f_k(A)=\dim_{\mathbf Q}\ker(\wedge^kA-I)$$, so that the Wang sequence gives $$b_k(M_A;\mathbf Q)=f_k(A)+f_{k-1}(A)$$ [95, 96], and let $$\tau(A)=\sum_kd\bigl(\operatorname{Tor}H_k(M_A;\mathbb Z)\bigr)$$ count minimal torsion generators.
 
 *Proposition (signed-orbit calibration).* Let $$A$$ be a signed permutation matrix on $$\mathbb Z^d$$. Then $$\wedge^kA$$ permutes the wedge basis up to sign, and every orbit of the induced permutation of $$k$$-subsets carries a holonomy sign, the product of the signs collected around one period. If $$p_k$$ and $$n_k$$ are the numbers of positive and negative orbits at level $$k$$, then
 
@@ -2609,15 +2609,16 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 
 85. P. Delsarte, *Bilinear forms over a finite field, with applications to coding theory*, J. Combin. Theory Ser. A 25 (1978), 226–241.
 86. G. Tenenbaum, *Introduction to Analytic and Probabilistic Number Theory*, 3rd ed., Grad. Stud. Math. 163, Amer. Math. Soc., 2015.
-87. G. Martin, *Simultaneous inequalities among values of the Euler $$\phi$$-function*, in Analytic Number Theory: Essays in Honour of Klaus Roth, Cambridge Univ. Press, 2009; arXiv:math/0603053.
-88. B. Green, F. Manners, and T. Tao, *Sumsets and entropy revisited*, Random Structures & Algorithms 66 (2025); arXiv:2306.13403. DOI: 10.1002/rsa.21252.
+87. G. Martin, *Simultaneous inequalities among values of the Euler $$\phi$$-function*, in Analytic Number Theory: Essays in Honour of Klaus Roth (W. W. L. Chen, W. T. Gowers, H. Halberstam, W. M. Schmidt, and R. C. Vaughan, eds.), Cambridge Univ. Press, 2009; arXiv:math/0603053.
+88. B. Green, F. Manners, and T. Tao, *Sumsets and entropy revisited*, Random Structures & Algorithms 66 (2025), e21252; arXiv:2306.13403. DOI: 10.1002/rsa.21252.
 89. J. Milnor and P. Orlik, *Isolated singularities defined by weighted homogeneous polynomials*, Topology 9 (1970), 385–393.
 90. M. Hochster, *Cohen–Macaulay rings, combinatorics, and simplicial complexes*, in Ring Theory II (Proc. Second Oklahoma Conf.), Lecture Notes in Pure and Appl. Math. 26, Dekker, 1977, 171–223.
 91. V. M. Buchstaber and T. E. Panov, *Toric Topology*, Math. Surveys Monogr. 204, Amer. Math. Soc., 2015.
 92. C. P. Boyer and K. Galicki, *Sasakian Geometry*, Oxford Mathematical Monographs, Oxford Univ. Press, 2008.
-93. C. P. Boyer, L. Macarini, and O. van Koert, *Brieskorn manifolds, positive Sasakian geometry, and contact topology*, Forum Math. 28 (2016); arXiv:1506.08672. DOI: 10.1515/forum-2015-0142.
+93. C. P. Boyer, L. Macarini, and O. van Koert, *Brieskorn manifolds, positive Sasakian geometry, and contact topology*, Forum Math. 28 (2016), no. 5, 943–965; arXiv:1506.08672. DOI: 10.1515/forum-2015-0142.
 94. Y.-H. He, *The Calabi–Yau Landscape: From Geometry, to Physics, to Machine Learning*, Lecture Notes in Math. 2293, Springer, 2021; arXiv:1812.02893.
 95. J. Milnor, *Infinite cyclic coverings*, in Conference on the Topology of Manifolds (Michigan State Univ., 1967), Prindle, Weber & Schmidt, 1968, 115–133.
+96. H. C. Wang, *The homology groups of the fibre bundles over a sphere*, Duke Math. J. 16 (1949), 33–38.
 
 ## Explanations
 
