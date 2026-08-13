@@ -197,6 +197,64 @@ def check_saddle_and_monotonicity():
     print(f"blocks: Lambda_d closed forms and {len(blocks)}-block monotonicity sample: OK")
 
 
+
+
+def check_open_question_structure():
+    """Verify the exact structure recorded in the open-question remark."""
+    import math
+    import sympy as sp
+    from math import tan, pi
+    # Riccati identity, numeric, d=2..8
+    for d in range(2, 9):
+        for th in (0.13, 0.31, 0.52):
+            yv = math.tan(th) ** 2
+            C = math.tan(d * th) / math.tan(th)
+            h = 1e-7
+            th2 = math.atan(math.sqrt(yv + h))
+            C2 = math.tan(d * th2) / math.tan(th2)
+            Cp = (C2 - C) / h
+            res = 2 * yv * (1 + yv) * Cp - (d * yv * C * C - (1 + yv) * C + d)
+            assert abs(res) < 1e-3 * max(1.0, abs(d * yv * C * C)), (d, th)
+    # Stieltjes continued fraction, depth d-1, symbolic series match d=2..8
+    w = sp.symbols("w")
+    for d in (2, 4, 6, 8):
+        cf = sp.Integer(0)
+        for j in range(d - 1, 0, -1):
+            cf = sp.Rational(d * d - j * j, 4 * j * j - 1) * w / (1 - cf)
+        cf = sp.cancel(1 / (1 - cf))
+        target = C_d_series(d, 12)
+        ser = sp.series(cf, w, 0, 12).removeO()
+        for k in range(12):
+            c = target[k]
+            assert sp.Rational(c.numerator, c.denominator) / d == ser.coeff(w, k), (d, k)
+    # b^{(2)}: log-convex through n=38; shifted Hankel order 3 negative, unshifted order 9
+    a = [2, 16]
+    for m in range(40):
+        D = (m + 2) * (2 * m + 3) * (14 * m + 9)
+        M = 6 * (3 * m + 2) * (3 * m + 4) * (14 * m + 23)
+        a.append(((M - D) * a[-1] + M * a[-2]) // D)
+    b = [a[n] // 2 ** (2 * n + 1) for n in range(40)]
+    assert all(a[n] % 2 ** (2 * n + 1) == 0 for n in range(40))
+    assert all(b[n - 1] * b[n + 1] > b[n] ** 2 for n in range(1, 39))
+    h3 = sp.Matrix(3, 3, lambda i, j: b[i + j + 1]).det()
+    h9 = sp.Matrix(9, 9, lambda i, j: b[i + j]).det()
+    h8 = sp.Matrix(8, 8, lambda i, j: b[i + j]).det()
+    assert h3 < 0 and h9 < 0 and h8 > 0
+    # critical-point PGF: P_d(1)=1 and mean (d-1)/2, d=4,6
+    for d in (4, 6):
+        r = tan(pi / (2 * (d + 1))) ** 2
+        Cs = [float(c) for c in C_d_series(d, 100)]
+        Pd = [r * Cs[k] * r ** k for k in range(101)]
+        assert abs(sum(Pd) - 1) < 1e-8
+        assert abs(sum(k * Pd[k] for k in range(101)) - (d - 1) / 2) < 1e-7
+        Yd = [0.0] * 101
+        for k in range(101):
+            Yd[k] = (1 + r) * Pd[k] - (r * Yd[k - 1] if k else 0)
+        assert all(c > -1e-10 for c in Yd)
+    print("open-question structure: Riccati, continued fraction, Hankel boundary, "
+          "log-convexity, critical-point PGFs: OK")
+
+
 if __name__ == "__main__":
     import time
     t0 = time.time()
@@ -207,4 +265,8 @@ if __name__ == "__main__":
         print("sympy unavailable; symbolic certification skipped")
     check_extraction_battery()
     check_saddle_and_monotonicity()
+    try:
+        check_open_question_structure()
+    except ImportError:
+        print("sympy unavailable; open-question structure checks skipped")
     print(f"done in {time.time()-t0:.1f}s")
