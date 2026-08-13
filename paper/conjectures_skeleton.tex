@@ -3139,7 +3139,7 @@ and consequently $b_k(M_A;\mathbf Q)=p_k+p_{k-1}$, $\operatorname{Tor}H_k(M_A;\Z
 
 \section{Euler indices of Calabi--Yau complete intersections}
 
-\begin{conjecture}[Quadric-ladder ratio law]\label{x1}
+\begin{conjecture}[Quadric-ladder ratio law, resolved true]\label{x1}
 For every $n\ge5$,
 \[
 \frac{Q_{n+1}}{Q_n}<8,
@@ -3149,6 +3149,14 @@ For every $n\ge5$,
 \lim_{n\to\infty}\frac{Q_{n+1}}{Q_n}=8.
 \]
 \end{conjecture}
+
+\begin{proposition}[Resolution of the quadric-ladder ratio law]\label{x:qladder}
+Conjecture~\ref{x1} holds in full, with the sharpening $8-Q_{n+1}/Q_n\sim4/n$.  The generating function $A(z)=\sum_{n\ge0}Q_nz^n$, with $Q_0=2$ and $Q_1=0$, is algebraic,
+\[
+A=\frac{2(1-y)^3}{1-3y},\qquad z=\frac{y(1-2y)}{2(1-y)^2},\quad y(0)=0,
+\]
+and the coefficients satisfy $(n+1)(n+2)Q_{n+2}=(n+1)(7n+9)Q_{n+1}+4(n+2)(2n+3)Q_n$.
+\end{proposition}
 
 \begin{conjecture}[Normalized merge monotonicity]\label{x2}
 For every $n\ge3$, every multidegree $\mathbf d$ with $r\ge2$, and every pair $i\ne j$,
@@ -3617,6 +3625,24 @@ A(w)=\frac{2}{(1+y)(1-3y)},\qquad 4w=y(1-y)^2,\quad y(0)=0,
 and the coefficients satisfy $D_ma_{m+2}=(M_m-D_m)a_{m+1}+M_ma_m$ with $D_m=(m+2)(2m+3)(14m+9)$ and $M_m=6(3m+2)(3m+4)(14m+23)$.
 \end{proposition}
 
+\begin{proposition}[Block ladders and their saddle constants]\label{aa:blocks}
+Let $B=(d_1,\ldots,d_s)$ be a multidegree block with $A=\sum_j(d_j-1)$ odd, and for $m\ge0$ let $S_m(B)$ be the sign-normalized signature of the $(2m+1)$-fold repetition of $B$, a Calabi--Yau complete intersection of complex dimension $n_m=A(2m+1)-1$.  Then
+\[
+S_m(B)=[y^{Am+(A-1)/2}]\,\frac{C_B(y)^{2m+1}}{1+y},
+\qquad
+C_B(y)=\prod_{j=1}^s\frac{\tan(d_j\arctan\sqrt y)}{\sqrt y},
+\]
+where each factor equals $\sum_j(-1)^j\binom{d}{2j+1}y^j\big/\sum_j(-1)^j\binom{d}{2j}y^j$, a rational function, so the generating function $\sum_mS_m(B)w^m$ is algebraic.  The series $C_B$ has nonnegative aperiodic coefficients; there is a unique $y_{*}>0$ below the first pole of $C_B$ with $y_{*}C_B'(y_{*})/C_B(y_{*})=A/2$, and with $\Lambda_B=C_B(y_{*})^2/y_{*}^A$,
+\[
+\frac{S_{m+1}(B)}{S_m(B)}=\Lambda_B\Bigl(1-\frac1{2m}+O(m^{-2})\Bigr),
+\]
+so the ratios are eventually strictly increasing with limit $\Lambda_B$, and $\Lambda_B-S_{m+1}/S_m\sim\Lambda_BA/n_m$.  For the equal-degree block $B=(d)$ with $d$ even, $y_{*}=\tan^2\tfrac{\pi}{2(d+1)}$ and
+\[
+\Lambda_d=\cot^{2(d+1)}\Bigl(\frac{\pi}{2(d+1)}\Bigr),
+\]
+so $\Lambda_2=27$ recovers Proposition~\ref{aa:quad}; and for the Euler ladders with $r$ equations of equal degree $d$, the analogous saddle sits at $t_{*}=1/(d+1)$ and the ratio limit is $d^{\,d+1}$, recovering the limit $8=2^3$ of Proposition~\ref{x:qladder} at $d=2$.
+\end{proposition}
+
 \begin{conjecture}[Dimension-wise signature gcd law]\label{aa20}
 Let the gcd range over all Calabi--Yau complete-intersection multidegrees in even complex dimension $n$.  Then
 \[
@@ -3752,6 +3778,8 @@ in Analytic Number Theory: Essays in Honour of Klaus Roth (W. W. L. Chen, W. T. 
 \bibitem{LN19} S. Lundqvist and L. Nicklasson, \emph{On generic principal ideals in the exterior algebra}, J. Pure Appl. Algebra \textbf{223} (2019), 2615--2634; arXiv:1803.03563.
 
 \bibitem{Hir66} F. Hirzebruch, \emph{Topological Methods in Algebraic Geometry}, third ed., Grundlehren Math. Wiss. \textbf{131}, Springer, 1966.
+
+\bibitem{FS09} P. Flajolet and R. Sedgewick, \emph{Analytic Combinatorics}, Cambridge Univ. Press, 2009.
 
 \bibitem{GL} D.~A. Goldston and A.~H. Ledoan,
 \emph{Jumping champions and gaps between consecutive primes},
