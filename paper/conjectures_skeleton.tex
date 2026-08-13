@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{One hundred ninety-six conjectures in mathematics}
+\title{Two hundred sixteen conjectures in mathematics}
 \author{}
 \date{July 27, 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{One hundred ninety-six conjectures in mathematics:\\ the statements}
+\title{Two hundred sixteen conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -3655,6 +3655,114 @@ Let the gcd range over all Calabi--Yau complete-intersection multidegrees in eve
 where $\nu_2$ is the $2$-adic valuation.
 \end{conjecture}
 
+\part{Spectral entropies and multibase carry fields}
+
+\medskip\noindent\emph{Added to the deposit: 13 August 2026.}\par\medskip
+
+The twenty conjectures below pair a spectral programme on graphs with a return to the integers.  An entropy programme (Conjectures~\ref{ab1} to~\ref{ab5}) reads the R\'enyi entropies of the trace-normalized graph Laplacian, the density-matrix reading of a graph introduced in~\cite{BGS06}, across tree and unicyclic operations, asserting that a small family of local moves is entropy-monotone at every order at once.  A metric programme (Conjectures~\ref{ab6} to~\ref{ab11}) poses the same functionals for the distance signless Laplacian of~\cite{AH13}, an object whose spectral theory is extensively surveyed in~\cite{RGW26} but whose normalized entropy appears unstudied.  A carry programme (Conjectures~\ref{ab12} to~\ref{ab20}) returns to the local--global aesthetic of Part~I on a new object: the carry fields $V_p(n)=v_p\binom{2n}{n}$ at distinct primes, finite-state functionals of the base-$p$ digits by Kummer's theorem, for which complete cross-base decoupling is conjectured at Gaussian, local, modular, large-deviation, and cumulant resolution.  The calibration layer is proved where it can be: the degree identity at R\'enyi order two with its tree and leaf-move corollaries and the complete-graph majorization law form Proposition~\ref{ab:deg}, and the exact single-base carry-chain law forms Proposition~\ref{ab:carry}.  The adversarial controls marking the genuine boundaries of the entropy windows are retained in place.  The spectral scans are floating-point eigensolver audits and are flagged as such, with the smallest margins near $10^{-4}$; the carry statements are limit laws beyond any finite check and are flagged as such, with Conjecture~\ref{ab20}, the transducer principle, the part's most exposed statement; and Conjectures~\ref{ab1} and~\ref{ab12} carry elevated attribution risk, sitting closest to~\cite{DHL17} and~\cite{Drm01}.
+
+For a finite graph $G$ with $m\ge1$ edges, let $L(G)$ be the combinatorial Laplacian and $\rho_L(G)=L(G)/(2m)$ its trace normalization, a density matrix whose eigenvalues $p_1,\ldots,p_n$ are nonnegative with unit sum; for $\alpha>0$, $\alpha\ne1$, the R\'enyi entropy is $H^L_\alpha(G)=(1-\alpha)^{-1}\log\sum_ip_i^\alpha$, with the Shannon limit $H^L_1=-\sum_ip_i\log p_i$ at $\alpha=1$ and min-entropy $H^L_\infty=-\log\max_ip_i$ at $\alpha=\infty$, zero eigenvalues contributing nothing.  For a connected $G$, let $\mathcal D$ be the distance matrix, $t(v)$ the transmission $\sum_ud(u,v)$, $W(G)=\tfrac12\sum_vt(v)$ the Wiener index, and $Q_D(G)=\operatorname{diag}(t)+\mathcal D$ the distance signless Laplacian~\cite{AH13}, positive semidefinite with trace $2W$; write $H^Q_\alpha$ for the R\'enyi entropy of $Q_D/(2W)$.  On the arithmetic side, for an odd prime $p$ put $V_p(n)=v_p\binom{2n}{n}$, by Kummer's theorem the number of carries in the base-$p$ addition of $n+n$, a bounded-output finite-state functional of the digits that is not $p$-additive, since each output depends on the incoming carry state; $\mu_p(N)$ and $\sigma^2_p(N)$ denote the mean and variance of $V_p$ over uniform $n<N$.
+
+\begin{proposition}[Degree and majorization calibrations]\label{ab:deg}
+(i) For every graph with $m$ edges and degrees $d_i$, $H^L_2(G)=-\log\bigl((2m+\sum_id_i^2)/(2m)^2\bigr)$; consequently, among trees of a fixed order the path uniquely maximizes $H^L_2$, and if a leaf $x$ adjacent to $u$ is moved to a neighbour $v$ of $u$ with $d(v)\ge d(u)$, then $H^L_2$ strictly decreases.  (ii) For every connected $n$-vertex graph $G$ and every $\alpha>0$, $H^Q_\alpha(G)\le H^Q_\alpha(K_n)$.
+\end{proposition}
+
+\begin{proposition}[Single-base carry-chain law]\label{ab:carry}
+For uniform base-$p$ digits, the carry sequence in the addition $n+n$ is a two-state Markov chain with $P(0\to1)=(p-1)/(2p)$, $P(1\to1)=(p+1)/(2p)$, stationary carry probability $\tfrac12$, and second eigenvalue $1/p$; the stationary variance per digit is $(p+1)/(4(p-1))$; and over the exact block $0\le n<p^k$,
+\[
+\mathbb EV_p=\frac k2-\frac{1-p^{-k}}{2(p-1)}.
+\]
+\end{proposition}
+
+\section{R\'enyi entropies of the Laplacian density matrix}
+
+\begin{conjecture}[All-order path maximality]\label{ab1}
+For every $n\ge3$, every $n$-vertex tree $T\ne P_n$, and every $\alpha>0$, $H^L_\alpha(T)<H^L_\alpha(P_n)$.
+\end{conjecture}
+
+\begin{conjecture}[Leaf-pair closure law]\label{ab2}
+Let $T$ be a tree on at least three vertices and $u,v$ distinct leaves.  Then $H^L_\alpha(T+uv)>H^L_\alpha(T)$ for every $\alpha>0$.
+\end{conjecture}
+
+\begin{conjecture}[Edge-subdivision law]\label{ab3}
+If $T'$ is obtained by subdividing one edge of a tree $T$, then $H^L_\alpha(T')>H^L_\alpha(T)$ for every $\alpha>0$.
+\end{conjecture}
+
+\begin{conjecture}[Leaf-compression window]\label{ab4}
+Let $x$ be a leaf adjacent to $u$ in a tree $T$, let $v\ne x$ be a neighbour of $u$ with $d(v)\ge d(u)$, and let $T'$ be the tree with $xu$ deleted and $xv$ added.  If $T'\not\cong T$, then $H^L_\alpha(T')<H^L_\alpha(T)$ for all $1/2\le\alpha\le2$.
+\end{conjecture}
+
+\begin{conjecture}[Unicyclic endpoint law]\label{ab5}
+Among connected unicyclic graphs on $n\ge4$ vertices, for every finite $\alpha>0$, the graph $S_n^+$ obtained from the star by joining two leaves uniquely minimizes $H^L_\alpha$ and the cycle $C_n$ uniquely maximizes it.
+\end{conjecture}
+
+\section{Entropy of the distance signless Laplacian}
+
+\begin{conjecture}[Tree one-vertex extension law]\label{ab6}
+For every tree $T$ and every $\alpha>0$, attaching a pendant vertex anywhere, or subdividing any edge once, strictly increases $H^Q_\alpha$.
+\end{conjecture}
+
+\begin{conjecture}[Low-order extension law]\label{ab7}
+For every connected graph $G$ and every $0<\alpha\le2$, pendant attachment and single edge subdivision strictly increase $H^Q_\alpha$.
+\end{conjecture}
+
+\begin{conjecture}[Star maximality]\label{ab8}
+For every $n\ge3$, every $n$-vertex tree $T\ne K_{1,n-1}$, and every $\alpha>0$, $H^Q_\alpha(T)<H^Q_\alpha(K_{1,n-1})$.
+\end{conjecture}
+
+\begin{conjecture}[Bipartite path minimality at the Shannon order]\label{ab9}
+Among connected bipartite graphs on $n$ vertices, $P_n$ uniquely minimizes $H^Q_1$.
+\end{conjecture}
+
+\begin{conjecture}[Balanced-biclique window maximality]\label{ab10}
+Among connected bipartite graphs on $n$ vertices, for every $1\le\alpha\le2$, $H^Q_\alpha(G)\le H^Q_\alpha(K_{\lfloor n/2\rfloor,\lceil n/2\rceil})$, with equality only for the balanced complete bipartite graph.
+\end{conjecture}
+
+\begin{conjecture}[Unicyclic cycle maximality above the Shannon order]\label{ab11}
+Among connected unicyclic graphs on $n\ge4$ vertices, $C_n$ uniquely maximizes $H^Q_\alpha$ for every $\alpha\ge1$.
+\end{conjecture}
+
+\section{Multibase carry fields}
+
+\begin{conjecture}[Cross-prime carry central limit law]\label{ab12}
+Fix distinct odd primes $p_1,\ldots,p_r$.  For $n$ uniform on $\{0,\ldots,N-1\}$, the vector with coordinates $(V_{p_i}(n)-\mu_{p_i}(N))/\sigma_{p_i}(N)$ converges in distribution to a standard $r$-dimensional Gaussian, with $\mu_p(N)=\tfrac12\log_pN+O_p(1)$ and $\sigma_p^2(N)=\tfrac{p+1}{4(p-1)}\log_pN+O_p(1)$.
+\end{conjecture}
+
+\begin{conjecture}[Bounded cross-prime covariance]\label{ab13}
+For distinct odd primes $p\ne q$, $\operatorname{Cov}_{n<N}(V_p(n),V_q(n))=O_{p,q}(1)$, so the correlation is $O_{p,q}(1/\log N)$.
+\end{conjecture}
+
+\begin{conjecture}[Cross-prime local limit factorization]\label{ab14}
+Fix distinct odd primes $p_1,\ldots,p_r$.  Uniformly for integers $k_i$ with $|k_i-\mu_{p_i}(N)|=O(\sqrt{\log N})$,
+\[
+\Pr\bigl(V_{p_i}(n)=k_i\ \forall i\bigr)=(1+o(1))\prod_i\frac{1}{\sqrt{2\pi\sigma^2_{p_i}(N)}}\exp\Bigl(-\frac{(k_i-\mu_{p_i}(N))^2}{2\sigma^2_{p_i}(N)}\Bigr).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Modular equidistribution of carry vectors]\label{ab15}
+For distinct odd primes $p_i$ and fixed moduli $m_i\ge2$, the vector $(V_{p_1}(n)\bmod m_1,\ldots,V_{p_r}(n)\bmod m_r)$ equidistributes on $\prod_i\Z/m_i\Z$ as $n$ ranges uniformly below $N\to\infty$.
+\end{conjecture}
+
+\begin{conjecture}[Additive large deviations]\label{ab16}
+Let $I_p$ be the large-deviation rate function per base-$p$ digit of the carry fraction of the chain of Proposition~\ref{ab:carry}.  For fixed distinct odd primes, the vector $(V_{p_i}(n)/\log_{p_i}N)_i$ satisfies a large-deviation principle at speed $\log N$ with rate $J(x)=\sum_iI_{p_i}(x_i)/\log p_i$ throughout the interior of the attainable region.
+\end{conjecture}
+
+\begin{conjecture}[Bounded mixed cumulants]\label{ab17}
+For fixed distinct odd primes, every fixed joint cumulant of total order at least three involving at least two distinct primes remains $O(1)$ as $N\to\infty$.
+\end{conjecture}
+
+\begin{conjecture}[Fixed-multiplier carry vectors]\label{ab18}
+Fix an integer $a\ge2$ and distinct primes $p_1,\ldots,p_r$ with $\operatorname{Var}_{n<N}v_{p_i}\binom{an}{n}\to\infty$.  Then the standardized vector of these valuations converges to a standard Gaussian vector.
+\end{conjecture}
+
+\begin{conjecture}[Balanced factorial-ratio vectors]\label{ab19}
+Let $R(n)=\prod_j(a_jn)!\big/\prod_k(b_kn)!$ be integer-valued with $\sum_ja_j=\sum_kb_k$.  For distinct primes $p_i$ with $\operatorname{Var}_{n<N}v_{p_i}(R(n))\sim c_{p_i}\log N$, $c_{p_i}>0$, the standardized vector $(v_{p_i}(R(n)))_i$ converges to a standard Gaussian vector.
+\end{conjecture}
+
+\begin{conjecture}[Multibase transducer principle]\label{ab20}
+Let $q_1,\ldots,q_r\ge2$ be pairwise multiplicatively independent bases and let $F_i(n)$ be the total output of a deterministic finite-state transducer reading the base-$q_i$ digits of $n$, with bounded transition outputs, such that (i) under independent uniform digits the accessible state chain is irreducible and aperiodic, (ii) $\operatorname{Var}_{n<N}F_i(n)\sim c_i\log N$ with $c_i>0$, and (iii) no two of the centred functionals factor, up to a bounded coboundary, through a common nonconstant eventually periodic function of $n$.  Then the standardized vector $(F_i(n))_i$ converges to a standard Gaussian vector, and every fixed mixed cumulant involving at least two bases is $O(1)$.
+\end{conjecture}
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -3780,6 +3888,26 @@ in Analytic Number Theory: Essays in Honour of Klaus Roth (W. W. L. Chen, W. T. 
 \bibitem{Hir66} F. Hirzebruch, \emph{Topological Methods in Algebraic Geometry}, third ed., Grundlehren Math. Wiss. \textbf{131}, Springer, 1966.
 
 \bibitem{FS09} P. Flajolet and R. Sedgewick, \emph{Analytic Combinatorics}, Cambridge Univ. Press, 2009.
+
+\bibitem{BGS06} S. L. Braunstein, S. Ghosh, and S. Severini, \emph{The Laplacian of a graph as a density matrix: a basic combinatorial approach to separability of mixed states}, Ann. Comb. \textbf{10} (2006), 291--317; arXiv:quant-ph/0406165.
+
+\bibitem{AH13} M. Aouchiche and P. Hansen, \emph{Two Laplacians for the distance matrix of a graph}, Linear Algebra Appl. \textbf{439} (2013), 21--33.
+
+\bibitem{RGW26} B. A. Rather, H. A. Ganie, and J. Wang, \emph{Distance signless Laplacian spectra of graphs: a survey}, Discrete Appl. Math. \textbf{384} (2026), 41--138.
+
+\bibitem{DHL17} M. Dairyko, L. Hogben, J. C.-H. Lin, J. Lockhart, D. Roberson, S. Severini, and M. Young, \emph{Note on von Neumann and R\'enyi entropies of a graph}, Linear Algebra Appl. \textbf{521} (2017), 240--253; arXiv:1609.00420.
+
+\bibitem{Drm01} M. Drmota, \emph{The joint distribution of $q$-additive functions}, Acta Arith. \textbf{100} (2001), 17--39.
+
+\bibitem{Csi13} P. Csikv\'ari, \emph{On a poset of trees II}, J. Graph Theory \textbf{74} (2013), 81--103.
+
+\bibitem{FW19} D. Fan and G. Wang, \emph{Some graft transformations and their applications on distance (signless) Laplacian spectra of graphs}, arXiv:1907.02851 (2019).
+
+\bibitem{Hol97} J. M. Holte, \emph{Asymptotic prime-power divisibility of binomial, generalized binomial, and multinomial coefficients}, Trans. Amer. Math. Soc. \textbf{349} (1997), 3837--3873.
+
+\bibitem{CMS22} E. Croot, H. Mousavi, and M. Schmidt, \emph{On a conjecture of Graham on the $p$-divisibility of central binomial coefficients}, Mathematika \textbf{70} (2024), no.~3, e12249; arXiv:2201.11274.
+
+\bibitem{DK19} M. Drmota and C. Krattenthaler, \emph{A joint central limit theorem for the sum-of-digits function, and asymptotic divisibility of Catalan-like sequences}, Proc. Amer. Math. Soc. \textbf{147} (2019), 4123--4133; arXiv:1803.02178.
 
 \bibitem{GL} D.~A. Goldston and A.~H. Ledoan,
 \emph{Jumping champions and gaps between consecutive primes},

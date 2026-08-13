@@ -1,9 +1,9 @@
-# One hundred ninety-six conjectures in mathematics
+# Two hundred sixteen conjectures in mathematics
 
 This repository contains:
 
-- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: one
-  hundred ninety-six conjectures in ten parts, each with its mechanism,
+- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: two
+  hundred sixteen conjectures in eleven parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -25,7 +25,11 @@ This repository contains:
   boundary-determinant entropy of simplicial spheres; Part X (177–196)
   flux cohomology and protected index laws: torus flux complexes with a
   prime torsion staircase, and chi_y-profile and signature laws for
-  Calabi–Yau complete intersections. Five conjectures
+  Calabi–Yau complete intersections; Part XI (197–216) spectral
+  entropies and multibase carry fields: all-order Rényi entropy laws for
+  the Laplacian and distance signless Laplacian density matrices of
+  graphs, and cross-prime decoupling laws for the carry fields of
+  central binomial coefficients. Five conjectures
   (63, 71, 87, 90, 107) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
   theorem. Two conjectures (117 and 195) have since been proved and are
@@ -48,7 +52,7 @@ This repository contains:
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
   (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `y_shape_laws.py` (Part VIII),
-  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), and `t5_*.py` (Part III),
+  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base
