@@ -3409,7 +3409,7 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 120. M. Dairyko, L. Hogben, J. C.-H. Lin, J. Lockhart, D. Roberson, S. Severini, and M. Young, *Note on von Neumann and Rényi entropies of a graph*, Linear Algebra Appl. 521 (2017), 240–253; arXiv:1609.00420.
 121. M. Drmota, *The joint distribution of $$q$$-additive functions*, Acta Arith. 100 (2001), 17–39.
 122. P. Csikvári, *On a poset of trees II*, J. Graph Theory 74 (2013), 81–103.
-123. D. Fan and G. Wang, *Some graft transformations and their applications on distance (signless) Laplacian spectra of graphs*, Indian J. Pure Appl. Math. 52 (2021), 459–466; arXiv:1907.02851.
+123. D. Fan and G. Wang, *Some graft transformations and their applications on distance (signless) Laplacian spectra of graphs*, arXiv:1907.02851 (2019).
 124. J. M. Holte, *Asymptotic prime-power divisibility of binomial, generalized binomial, and multinomial coefficients*, Trans. Amer. Math. Soc. 349 (1997), 3837–3873.
 125. E. Croot, H. Mousavi, and M. Schmidt, *On a conjecture of Graham on the $$p$$-divisibility of central binomial coefficients*, Mathematika 70 (2024), no. 3, e12249; arXiv:2201.11274.
 126. M. Drmota and C. Krattenthaler, *A joint central limit theorem for the sum-of-digits function, and asymptotic divisibility of Catalan-like sequences*, Proc. Amer. Math. Soc. 147 (2019), 4123–4133; arXiv:1803.02178.
