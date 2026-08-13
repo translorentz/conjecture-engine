@@ -261,7 +261,7 @@ title: One hundred ninety-six conjectures in mathematics
 
 **Part VII — twenty conjectures on topological invariants of geometric families, in statement order.**
 
-**117. Quadric-ladder ratio law (Conjecture 117).** The all-quadric Calabi–Yau Euler indices satisfy $$Q_{n+1}/Q_n<8$$ with strictly increasing ratios for $$n\ge5$$, tending to $$8$$; since resolved true, all three clauses proved with the sharpening $$8-Q_{n+1}/Q_n\sim4/n$$, the limit $$8=2^3$$ being the $$d=2$$ member of the Euler family $$d^{\,d+1}$$.
+**117. Quadric-ladder ratio law (Conjecture 117, resolved true).** The all-quadric Calabi–Yau Euler indices satisfy $$Q_{n+1}/Q_n<8$$ with strictly increasing ratios for $$n\ge5$$, tending to $$8$$; since resolved true, all three clauses proved with the sharpening $$8-Q_{n+1}/Q_n\sim4/n$$, the limit $$8=2^3$$ being the $$d=2$$ member of the Euler family $$d^{\,d+1}$$.
 
 **118. Normalized merge monotonicity (Conjecture 118).** The degree-normalized Euler index $$E_n/D$$ strictly increases under every degree merge, while the raw version fails at $$E_4(2,2,4)=1632>1476=E_4(3,4)$$, the retained control.
 
@@ -423,7 +423,7 @@ title: One hundred ninety-six conjectures in mathematics
 
 **194. Maximal-degree signature monotonicity (Conjecture 194).** Merges through a maximal degree strictly raise the signature itself, in $$80{,}294$$ exact tests.
 
-**195. The quadric ratio law with limit 27 (Conjecture 195).** Successive all-quadric signatures grow by strictly increasing ratios below $$27$$ converging to $$27$$ with correction $$27/n$$, exact through $$n=60$$ where $$R_{58}=26.55045876$$; since resolved true, all three clauses proved from an algebraic generating function whose mechanism extends to every repeated block, identifying $$27$$ as $$\cot^6(\pi/6)$$.
+**195. The quadric ratio law with limit 27 (Conjecture 195, resolved true).** Successive all-quadric signatures grow by strictly increasing ratios below $$27$$ converging to $$27$$ with correction $$27/n$$, exact through $$n=60$$ where $$R_{58}=26.55045876$$; since resolved true, all three clauses proved from an algebraic generating function whose mechanism extends to every repeated block, identifying $$27$$ as $$\cot^6(\pi/6)$$.
 
 **196. Dimension-wise signature gcd law (Conjecture 196).** The gcd of all signatures in even dimension $$n$$ is $$2$$ for $$n\equiv0\pmod4$$ and $$2^{\max(4,1+\nu_2(n+2))}$$ for $$n\equiv2\pmod4$$, the spike $$32$$ at $$n=14$$ confirmed, the signature sibling of Conjecture 121's Euler gcd law.
 
