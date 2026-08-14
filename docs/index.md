@@ -3642,8 +3642,8 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 134. L. Gavalakis, M. K. Goh, and I. Kontoyiannis, *Entropy lower bounds and sum-product phenomena*, arXiv:2604.20233 (2026).
 135. L. Gavalakis and I. Kontoyiannis, *Conditions for equality and stability in Shannon's and Tao's entropy power inequalities*, arXiv:2509.14021 (2025).
 136. L. Gavalakis, I. Kontoyiannis, and M. Madiman, *The entropic doubling constant and robustness of Gaussian codebooks for additive-noise channels*, IEEE Trans. Inform. Theory 70 (2024); arXiv:2403.07209.
-137. L. Gavalakis, *Approximate discrete entropy monotonicity for log-concave sums*, arXiv:2210.06624 (2022).
-138. M. Fradelizi, L. Gavalakis, and M. Rapaport, *On the monotonicity of discrete entropy for log-concave random vectors on $$\mathbb Z^d$$*, arXiv:2401.15462 (2024).
+137. L. Gavalakis, *Approximate discrete entropy monotonicity for log-concave sums*, Combin. Probab. Comput. 33 (2024), 196–209; arXiv:2210.06624.
+138. M. Fradelizi, L. Gavalakis, and M. Rapaport, *On the monotonicity of discrete entropy for log-concave random vectors on $$\mathbb Z^d$$*, Discrete Comput. Geom., to appear; arXiv:2401.15462.
 139. R. Castellano and P. Sekatski, *On the entropy growth of sums of iid discrete random variables*, arXiv:2508.05348 (2025).
 140. H. Hatami and S. Norine, *The entropy of random-free graphons and properties*, Combin. Probab. Comput. 22 (2013), 517–526; arXiv:1205.3529.
 141. Y. Issartel, *On the estimation of network complexity: dimension of graphons*, J. Mach. Learn. Res. 22 (2021); arXiv:1909.02900.
