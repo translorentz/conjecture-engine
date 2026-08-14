@@ -3540,13 +3540,13 @@ Let $\mu_n$ be the minimum support size of a $\{\pm1\}$-valued three-form on $\Z
 \end{conjecture}
 
 \begin{conjecture}[Coefficient-law universality in the sparse window]\label{aa4}
-In the critical window of Conjecture~\ref{aa2}, after excluding coefficient laws whose support has a common divisor greater than one, the limiting saturation probability and the limiting law of the normalized cohomology excess depend only on the random support hypergraph, not on the coefficient distribution.
+Fix $c>0$ and let the support be sampled at $p=c\log n/n^2$ as in Conjecture~\ref{aa2}.  For every finite symmetric coefficient set $V\subset\Z\setminus\{0\}$, the limiting saturation probability and the limiting joint law of the excess vector $(b_k(H;\mathbb Q)-g_{n,k})_k$ depend only on $c$ and the random support hypergraph, not on $V$.
 \end{conjecture}
 
 \begin{conjecture}[Finite-field resonance power law]\label{aa5}
-Fix $n\ge5$.  There are a positive integer $\delta_n$ and a positive rational $\kappa_n$ such that, for $H$ uniform on $\Lambda^3\mathbb F_p^n$, the probability of the resonance event $R_{n,p}$, that the profile $(b_k(H;\mathbb F_p))_k$ exceeds $g_n$ in some degree, satisfies
+Fix $n\ge5$.  There are a positive integer $\delta_n$, a modulus $M_n$, and nonnegative rationals $\kappa_{n,a}$ indexed by the classes $a\in(\Z/M_n\Z)^{\times}$, positive for at least one class, such that, for $H$ uniform on $\Lambda^3\mathbb F_p^n$, the probability of the resonance event $R_{n,p}$, that the profile $(b_k(H;\mathbb F_p))_k$ exceeds $g_n$ in some degree, satisfies
 \[
-\Pr(R_{n,p})=\kappa_np^{-\delta_n}+O_n\bigl(p^{-\delta_n-1/2}\bigr)
+\Pr(R_{n,p})=\kappa_{n,p\bmod M_n}\,p^{-\delta_n}+O_n\bigl(p^{-\delta_n-1/2}\bigr)
 \qquad\text{as }p\to\infty.
 \]
 \end{conjecture}
@@ -3661,10 +3661,10 @@ where $\nu_2$ is the $2$-adic valuation.
 
 The twenty conjectures below pair a spectral programme on graphs with a return to the integers.  An entropy programme (Conjectures~\ref{ab1} to~\ref{ab5}) reads the R\'enyi entropies of the trace-normalized graph Laplacian, the density-matrix reading of a graph introduced in~\cite{BGS06}, across tree and unicyclic operations, asserting that a small family of local moves is entropy-monotone at every order at once.  A metric programme (Conjectures~\ref{ab6} to~\ref{ab11}) poses the same functionals for the distance signless Laplacian of~\cite{AH13}, an object whose spectral theory is extensively surveyed in~\cite{RGW26} but whose normalized entropy appears unstudied.  A carry programme (Conjectures~\ref{ab12} to~\ref{ab20}) returns to the local--global aesthetic of Part~I on a new object: the carry fields $V_p(n)=v_p\binom{2n}{n}$ at distinct primes, finite-state functionals of the base-$p$ digits by Kummer's theorem, for which complete cross-base decoupling is conjectured at Gaussian, local, modular, large-deviation, and cumulant resolution.  The calibration layer is proved where it can be: the degree identity at R\'enyi order two with its tree and leaf-move corollaries and the complete-graph majorization law form Proposition~\ref{ab:deg}, and the exact single-base carry-chain law forms Proposition~\ref{ab:carry}.  The adversarial controls marking the genuine boundaries of the entropy windows are retained in place.  The spectral scans are floating-point eigensolver audits and are flagged as such, with the smallest margins near $10^{-4}$; the carry statements are limit laws beyond any finite check and are flagged as such, with Conjecture~\ref{ab20}, the transducer principle, the part's most exposed statement; and Conjectures~\ref{ab1} and~\ref{ab12} carry elevated attribution risk, sitting closest to~\cite{DHL17} and~\cite{Drm01}.
 
-For a finite graph $G$ with $m\ge1$ edges, let $L(G)$ be the combinatorial Laplacian and $\rho_L(G)=L(G)/(2m)$ its trace normalization, a density matrix whose eigenvalues $p_1,\ldots,p_n$ are nonnegative with unit sum; for $\alpha>0$, $\alpha\ne1$, the R\'enyi entropy is $H^L_\alpha(G)=(1-\alpha)^{-1}\log\sum_ip_i^\alpha$, with the Shannon limit $H^L_1=-\sum_ip_i\log p_i$ at $\alpha=1$ and min-entropy $H^L_\infty=-\log\max_ip_i$ at $\alpha=\infty$, zero eigenvalues contributing nothing.  For a connected $G$, let $\mathcal D$ be the distance matrix, $t(v)$ the transmission $\sum_ud(u,v)$, $W(G)=\tfrac12\sum_vt(v)$ the Wiener index, and $Q_D(G)=\operatorname{diag}(t)+\mathcal D$ the distance signless Laplacian~\cite{AH13}, positive semidefinite with trace $2W$; write $H^Q_\alpha$ for the R\'enyi entropy of $Q_D/(2W)$.  On the arithmetic side, for an odd prime $p$ put $V_p(n)=v_p\binom{2n}{n}$, by Kummer's theorem the number of carries in the base-$p$ addition of $n+n$, a bounded-output finite-state functional of the digits that is not $p$-additive, since each output depends on the incoming carry state; $\mu_p(N)$ and $\sigma^2_p(N)$ denote the mean and variance of $V_p$ over uniform $n<N$.
+For a finite graph $G$ with $m\ge1$ edges, let $L(G)$ be the combinatorial Laplacian and $\rho_L(G)=L(G)/(2m)$ its trace normalization, a density matrix whose eigenvalues $p_1,\ldots,p_n$ are nonnegative with unit sum; for $\alpha>0$, $\alpha\ne1$, the R\'enyi entropy is $H^L_\alpha(G)=(1-\alpha)^{-1}\log\sum_ip_i^\alpha$, with the Shannon limit $H^L_1=-\sum_ip_i\log p_i$ at $\alpha=1$ and min-entropy $H^L_\infty=-\log\max_ip_i$ at $\alpha=\infty$, zero eigenvalues contributing nothing.  For a connected $G$, let $\mathcal D$ be the distance matrix, $t(v)$ the transmission $\sum_ud(u,v)$, $W(G)=\tfrac12\sum_vt(v)$ the Wiener index, and $Q_D(G)=\operatorname{diag}(t)+\mathcal D$ the distance signless Laplacian~\cite{AH13}, positive definite for connected graphs on at least three vertices by the identity $x^{T}Q_Dx=\sum_{i<j}d(i,j)(x_i+x_j)^2$, with trace $2W$; write $H^Q_\alpha$ for the R\'enyi entropy of $Q_D/(2W)$.  On the arithmetic side, for an odd prime $p$ put $V_p(n)=v_p\binom{2n}{n}$, by Kummer's theorem the number of carries in the base-$p$ addition of $n+n$, a bounded-output finite-state functional of the digits that is not $p$-additive, since each output depends on the incoming carry state; $\mu_p(N)$ and $\sigma^2_p(N)$ denote the mean and variance of $V_p$ over uniform $n<N$.
 
 \begin{proposition}[Degree and majorization calibrations]\label{ab:deg}
-(i) For every graph with $m$ edges and degrees $d_i$, $H^L_2(G)=-\log\bigl((2m+\sum_id_i^2)/(2m)^2\bigr)$; consequently, among trees of a fixed order the path uniquely maximizes $H^L_2$, and if a leaf $x$ adjacent to $u$ is moved to a neighbour $v$ of $u$ with $d(v)\ge d(u)$, then $H^L_2$ strictly decreases.  (ii) For every connected $n$-vertex graph $G$ and every $\alpha>0$, $H^Q_\alpha(G)\le H^Q_\alpha(K_n)$.
+(i) For every graph with $m$ edges and degrees $d_i$, $H^L_2(G)=-\log\bigl((2m+\sum_id_i^2)/(2m)^2\bigr)$; consequently, among trees of a fixed order the path uniquely maximizes $H^L_2$, and if a leaf $x$ adjacent to $u$ is moved to a neighbour $v$ of $u$ with $d(v)\ge d(u)$, then $H^L_2$ strictly decreases.  (ii) For every connected $n$-vertex graph $G$ and every $\alpha>0$, $H^Q_\alpha(G)\le H^Q_\alpha(K_n)$.  (iii) For a tree $T$ on $n\ge3$ vertices, joining two leaves or subdividing one edge strictly increases $H^L_2$, and each move also strictly increases $H^L_\alpha$ for all sufficiently small $\alpha>0$; and among trees of a fixed order the path uniquely maximizes $H^L_\infty$.
 \end{proposition}
 
 \begin{proposition}[Single-base carry-chain law]\label{ab:carry}
@@ -3719,7 +3719,7 @@ Among connected bipartite graphs on $n$ vertices, for every $1\le\alpha\le2$, $H
 \end{conjecture}
 
 \begin{conjecture}[Unicyclic cycle maximality above the Shannon order]\label{ab11}
-Among connected unicyclic graphs on $n\ge4$ vertices, $C_n$ uniquely maximizes $H^Q_\alpha$ for every $\alpha\ge1$.
+Among connected unicyclic graphs on $n\ge4$ vertices, $C_n$ uniquely maximizes $H^Q_\alpha$ for every $\alpha\ge1$, including $\alpha=\infty$.
 \end{conjecture}
 
 \section{Multibase carry fields}
@@ -3733,7 +3733,7 @@ For distinct odd primes $p\ne q$, $\operatorname{Cov}_{n<N}(V_p(n),V_q(n))=O_{p,
 \end{conjecture}
 
 \begin{conjecture}[Cross-prime local limit factorization]\label{ab14}
-Fix distinct odd primes $p_1,\ldots,p_r$.  Uniformly for integers $k_i$ with $|k_i-\mu_{p_i}(N)|=O(\sqrt{\log N})$,
+Fix distinct odd primes $p_1,\ldots,p_r$.  For every fixed $C$, uniformly for integers $k_i$ with $|k_i-\mu_{p_i}(N)|\le C\sqrt{\log N}$,
 \[
 \Pr\bigl(V_{p_i}(n)=k_i\ \forall i\bigr)=(1+o(1))\prod_i\frac{1}{\sqrt{2\pi\sigma^2_{p_i}(N)}}\exp\Bigl(-\frac{(k_i-\mu_{p_i}(N))^2}{2\sigma^2_{p_i}(N)}\Bigr).
 \]
@@ -3752,7 +3752,7 @@ For fixed distinct odd primes, every fixed joint cumulant of total order at leas
 \end{conjecture}
 
 \begin{conjecture}[Fixed-multiplier carry vectors]\label{ab18}
-Fix an integer $a\ge2$ and distinct primes $p_1,\ldots,p_r$ with $\operatorname{Var}_{n<N}v_{p_i}\binom{an}{n}\to\infty$.  Then the standardized vector of these valuations converges to a standard Gaussian vector.
+Fix an integer $a\ge2$ and distinct primes $p_1,\ldots,p_r$ such that $\operatorname{Var}_{n<N}v_{p_i}\binom{an}{n}\to\infty$ and the accessible carry-state chain of each base-$p_i$ addition automaton is irreducible and aperiodic under independent uniform digits.  Then the standardized vector of these valuations converges to a standard Gaussian vector.
 \end{conjecture}
 
 \begin{conjecture}[Balanced factorial-ratio vectors]\label{ab19}
@@ -3760,7 +3760,7 @@ Let $R(n)=\prod_j(a_jn)!\big/\prod_k(b_kn)!$ be integer-valued with $\sum_ja_j=\
 \end{conjecture}
 
 \begin{conjecture}[Multibase transducer principle]\label{ab20}
-Let $q_1,\ldots,q_r\ge2$ be pairwise multiplicatively independent bases and let $F_i(n)$ be the total output of a deterministic finite-state transducer reading the base-$q_i$ digits of $n$, with bounded transition outputs, such that (i) under independent uniform digits the accessible state chain is irreducible and aperiodic, (ii) $\operatorname{Var}_{n<N}F_i(n)\sim c_i\log N$ with $c_i>0$, and (iii) no two of the centred functionals factor, up to a bounded coboundary, through a common nonconstant eventually periodic function of $n$.  Then the standardized vector $(F_i(n))_i$ converges to a standard Gaussian vector, and every fixed mixed cumulant involving at least two bases is $O(1)$.
+Let $q_1,\ldots,q_r\ge2$ be jointly multiplicatively independent bases, meaning $\prod_iq_i^{a_i}=1$ with integer exponents only when every $a_i=0$, and let $F_i(n)$ be the total output of a deterministic finite-state transducer reading the base-$q_i$ digits of $n$, with bounded transition outputs, such that (i) under independent uniform digits the accessible state chain is irreducible and aperiodic, (ii) $\operatorname{Var}_{n<N}F_i(n)\sim c_i\log N$ with $c_i>0$, and (iii) no two of the centred functionals factor, up to a bounded coboundary, through a common nonconstant eventually periodic function of $n$.  Then the standardized vector $(F_i(n))_i$ converges to a standard Gaussian vector, and every fixed mixed cumulant involving at least two bases is $O(1)$.
 \end{conjecture}
 
 \part{Subdivision spectra, spanning-tree correlation, and information dimension}
