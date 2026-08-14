@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Two hundred sixteen conjectures in mathematics}
+\title{Two hundred thirty-six conjectures in mathematics}
 \author{}
 \date{July 27, 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Two hundred sixteen conjectures in mathematics:\\ the statements}
+\title{Two hundred thirty-six conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -3763,6 +3763,169 @@ Let $R(n)=\prod_j(a_jn)!\big/\prod_k(b_kn)!$ be integer-valued with $\sum_ja_j=\
 Let $q_1,\ldots,q_r\ge2$ be pairwise multiplicatively independent bases and let $F_i(n)$ be the total output of a deterministic finite-state transducer reading the base-$q_i$ digits of $n$, with bounded transition outputs, such that (i) under independent uniform digits the accessible state chain is irreducible and aperiodic, (ii) $\operatorname{Var}_{n<N}F_i(n)\sim c_i\log N$ with $c_i>0$, and (iii) no two of the centred functionals factor, up to a bounded coboundary, through a common nonconstant eventually periodic function of $n$.  Then the standardized vector $(F_i(n))_i$ converges to a standard Gaussian vector, and every fixed mixed cumulant involving at least two bases is $O(1)$.
 \end{conjecture}
 
+\part{Subdivision spectra, spanning-tree correlation, and information dimension}
+
+\medskip\noindent\emph{Added to the deposit: 14 August 2026.}\par\medskip
+
+The twenty conjectures below run four programmes at the common interface of spectral theory and information.  A subdivision programme (Conjectures~\ref{ac1} to~\ref{ac5}) asks what weak spectral universality under barycentric refinement, proved at the graph level and in every Hodge degree by Knill~\cite{Kn15a} and for top-dimensional Laplacians of general inclusion-uniform rules by M\"arte~\cite{Mar22}, does \emph{not} see: exponentially rare high eigenvalues, organized by a factorial hierarchy of critical moment exponents.  A spanning-tree programme (Conjectures~\ref{ac6} to~\ref{ac10}) introduces the total correlation of the uniform-spanning-tree edge process, an invariant assembled from Kirchhoff marginals and the matrix-tree theorem in the tradition of transfer impedances~\cite{BP93}, and conjectures its extremal graphs, led by a mesoscopic core-periphery shape principle at scale $\sqrt{n/\log n}$.  A cyclic-entropy programme (Conjectures~\ref{ac11} to~\ref{ac15}) starts beyond the prime-field entropy-doubling floor proved this year by Gavalakis, Goh, and Kontoyiannis~\cite{GGK26} and conjectures the full inverse theory: localization at near-equality, Gaussian rigidity, a heat-kernel crossover profile at the wrap scale, and uniform many-summand monotonicity.  A graphon programme (Conjectures~\ref{ac16} to~\ref{ac20}) conjectures that the Shannon entropy of a sampled random-free graph, known to be subquadratic of essentially arbitrary growth~\cite{HN13}, is governed at scale $n\log n$ exactly by the information dimension of the latent row space.  The calibration layer is proved where it can be: block additivity and the exact cycle law for the tree invariant form Proposition~\ref{ac:ust}, and the threshold-graphon entropy bound that anchors the second-order programme forms Proposition~\ref{ac:threshold}.  The adversarial controls marking genuine boundaries are retained in place: the bipartite crossover at seventeen vertices in Conjecture~\ref{ac7}, the separated-bump doubling penalty in Conjecture~\ref{ac11}, the onset of pre-wrap failures in Conjecture~\ref{ac15}, and the threshold graphon itself as the permanent negative control of Conjecture~\ref{ac18}.  All graph and spectral scans are floating-point audits and are flagged as such.  Three statements carry elevated exposure or attribution risk and are flagged where they occur: Conjecture~\ref{ac4}, whose large-deviation law has no direct numerical support at reachable depth and is the part's most exposed statement; Conjecture~\ref{ac3}, which interpolates two published theorems~\cite{Mar22,Kn15a} and is flagged as an attribution risk; and Conjecture~\ref{ac14}, whose integer-lattice analogue is a recent theorem~\cite{CS25}, so that only the modular content is new.
+
+Throughout, $\operatorname{sd}^mK$ denotes the $m$-fold barycentric subdivision of a finite pure $d$-dimensional simplicial complex $K$, realized as the order complex of the face poset; $\Delta_k$ is the unweighted Hodge Laplacian on $k$-simplices, $f_k$ the number of $k$-simplices, and for the graph Laplacian $L_m$ of the $1$-skeleton, $M_\alpha(m)=\operatorname{Tr}(L_m^\alpha)/|V(\operatorname{sd}^mK)|$; we write $A_d=(d+1)!$, $B_{d,0}=d!$, and $B_{d,k}=(d-k+1)!$ for $1\le k<d$.  For a connected simple graph $G$, $\tau(G)$ is the number of spanning trees, $T$ a uniform spanning tree, and $R_e$ the unit-conductance effective resistance across $e$, so that $\Pr(e\in T)=R_e$ by Kirchhoff's theorem; with $h(x)=-x\log x-(1-x)\log(1-x)$, the \emph{spanning-tree correlation} is
+\[
+\mathcal C(G)=\sum_{e\in E(G)}h(R_e)-\log\tau(G),
+\]
+the total correlation of the edge-indicator vector of $T$, nonnegative and zero exactly on trees, since $H(T)=\log\tau(G)$; $S_{n,r}=K_r\vee\overline{K}_{n-r}$ denotes the complete split graph.  On the cyclic side, laws $\mu_p$ on $\mathbb Z/p\mathbb Z$ with $p$ prime are called \emph{mesoscopic} when $H(\mu_p)\to\infty$ and $\log p-H(\mu_p)\to\infty$; convolution powers are written $\mu_p^{*m}$.  A graphon $W$ is \emph{random-free} when it is $\{0,1\}$-valued almost everywhere; $G(n,W)$ is the sampled graph on $n$ vertices, $d_W(x,y)=\int_0^1|W(x,u)-W(y,u)|\,du$ the neighborhood distance, and $(\Omega_W,d_W,\rho)$ the \emph{purified row space}, the completion of the quotient of $[0,1]$ by $d_W$-null pairs carrying the pushforward of Lebesgue measure.  The measure $\rho$ satisfies a \emph{uniform local doubling bound} when there are $C$ and $\varepsilon_0>0$ with $\rho(B(x,2\varepsilon))\le C\rho(B(x,\varepsilon))$ for all $x$ in the support and $\varepsilon\le\varepsilon_0$, and is \emph{exact-dimensional of dimension} $s$ when $\log\rho(B(x,\varepsilon))/\log\varepsilon\to s$ for $\rho$-almost every $x$.
+
+\begin{proposition}[Block additivity and the cycle law]\label{ac:ust}
+(i) $\mathcal C$ is additive over the blocks of a connected graph, and bridges contribute zero.  (ii) $\mathcal C(C_n)=(n-1)\log\frac n{n-1}$, strictly increasing in $n$; consequently, subdividing an edge that lies on exactly one cycle strictly increases $\mathcal C$.
+\end{proposition}
+
+\begin{proof}
+(i) A subgraph is a spanning tree of $G$ exactly when its intersection with every block is a spanning tree of that block, so the uniform spanning tree is an independent product across blocks and $\log\tau(G)=\sum_B\log\tau(B)$; each edge lies in exactly one block, so the marginal sum also splits, and a bridge has $R_e=1$, contributing $h(1)=0$ and a factor $1$ to $\tau$.  (ii) In $C_n$ every edge has $R_e=(n-1)/n$ and $\tau=n$, so
+$\mathcal C(C_n)=n\,h\!\left(\tfrac{n-1}n\right)-\log n=(n-1)\log\tfrac n{n-1}$,
+which equals $\log\bigl(1+\tfrac1{n-1}\bigr)^{\,n-1}$ and is strictly increasing because $(1+1/x)^x$ is.  An edge lying on exactly one cycle has a cycle $C_\ell$ as its block; subdivision replaces that block by $C_{\ell+1}$ and changes nothing else, so $\mathcal C$ increases by $\mathcal C(C_{\ell+1})-\mathcal C(C_\ell)>0$.
+\end{proof}
+
+\begin{proposition}[Threshold-graphon entropy bound]\label{ac:threshold}
+For the random-free graphon $W(x,y)=\mathbf 1\{x+y\ge1\}$, every realization of $G(n,W)$ is a threshold graph, the law of $G(n,W)$ is supported on at most $n!\,2^{\,n-1}$ labeled graphs, and hence
+\[
+H(G(n,W))\le n\log n-(1-\log2)\,n+O(\log n),
+\]
+although the purified row space is $[0,1]$ with the metric $|x-y|$ and Lebesgue measure, whose scale-$1/n$ quantization entropy is $\log n$ per point with vanishing linear correction.
+\end{proposition}
+
+\begin{proof}
+Sample $x_1,\ldots,x_n$ uniformly, and set $y_i=|x_i-\tfrac12|$ and $s_i=\mathbf 1\{x_i>\tfrac12\}$.  Almost surely the $y_i$ are distinct, and $x_i+x_j\ge1$ holds exactly when $s_i=s_j=1$, or the signs differ and the plus-signed vertex has the larger $y$.  Adding vertices in increasing order of $y$, each new vertex is adjacent to all earlier ones when its sign is plus and to none when its sign is minus: a creation sequence, so the realization is a threshold graph, and the labeled graph is a function of the $y$-ordering and the signs.  The sign of the first vertex added affects no edge, so at most $n!\,2^{\,n-1}$ labeled graphs occur, and
+$H\le\log n!+(n-1)\log2=n\log n-(1-\log2)n+O(\log n)$.
+The row space assertion is immediate: rows of $W$ are indicators of intervals $[1-x,1]$, so $d_W(x,y)=|x-y|$ and $\rho$ is Lebesgue measure, whose $1/n$-quantization entropy is $\log n+o(1)$ per point.
+\end{proof}
+
+\section{Spectral tails of barycentric subdivision}
+
+\begin{conjecture}[Critical moment exponent for barycentric vertex Laplacians]\label{ac1}
+Let $K$ be a finite pure $d$-dimensional simplicial complex, $d\ge2$, with at least one $d$-simplex.  For every $\alpha>0$,
+\[
+\lim_{m\to\infty}\frac1m\log M_\alpha(m)=\max\{0,\ \alpha\log d!-\log(d+1)!\},
+\]
+and at the critical order $\alpha_c(d)=\log(d+1)!/\log d!$ the moment $M_{\alpha_c}(m)$ grows linearly in $m$ up to constants depending on $K$.
+\end{conjecture}
+
+\begin{conjecture}[Hodge incidence-tail hierarchy]\label{ac2}
+For $0\le k\le d$ and the Hodge Laplacians $\Delta_k$ on $\operatorname{sd}^mK$, the empirical $\alpha$-moments of $\Delta_k$ stay bounded for $\alpha<\alpha_c(d,k)=\log(d+1)!/\log B_{d,k}$, grow polynomially at $\alpha_c(d,k)$, and grow at exponential rate $\alpha\log B_{d,k}-\log(d+1)!$ above it; for $k=d$ all moments stay bounded.
+\end{conjecture}
+
+\begin{conjecture}[All-degree inclusion-uniform universality]\label{ac3}
+For every nontrivial inclusion-uniform subdivision rule $\operatorname{div}$ on pure $d$-complexes and every $0\le k\le d$, the empirical spectral measure of $\Delta_k(\operatorname{div}^mK)$ converges weakly to a limit law depending only on the rule, $d$, and $k$, and not on $K$, apart from asymptotically negligible homological zero modes.
+\end{conjecture}
+
+\begin{conjecture}[Spectral-tail large deviations from simplex age]\label{ac4}
+Fix $0\le k<d$ and $0<\theta<1$, and let $N_{m,k}(\theta)$ count eigenvalues of $\Delta_k(\operatorname{sd}^mK)$ that are at least $B_{d,k}^{\,\theta m}$.  Then
+\[
+\lim_{m\to\infty}\frac1m\log\frac{N_{m,k}(\theta)}{f_k(\operatorname{sd}^mK)}=-\theta\log(d+1)!,
+\]
+uniformly for $\theta$ in compact subintervals of $(0,1)$; for $k=d$ there is no exponential tail.
+\end{conjecture}
+
+\begin{conjecture}[Finite-state renormalization for barycentric Hodge limits]\label{ac5}
+For each $d\ge2$ there exist an integer $N(d)$, a rational map $R_d$ on $\mathbb C^{N(d)}$, and rational functions $\Phi_{d,k}$, $0\le k\le d$, such that the Schur complement of one barycentric refinement onto a generating set of $N(d)$ boundary Green functions is exactly $R_d$, the iteration of $R_d$ has a unique attracting fixed point on the relevant domain, and the Stieltjes transforms of all limiting Hodge laws $\nu_{d,k}$ are the $\Phi_{d,k}$ of that fixed point; for $d=1$ the scheme reduces to the known quadratic spectral decimation.  The claim fails if the minimal rank of an exact boundary Schur-complement closure grows without bound under refinement.
+\end{conjecture}
+
+\section{Total correlation of uniform spanning trees}
+
+\begin{conjecture}[Complete-split extremality]\label{ac6}
+Among connected $n$-vertex graphs, $\mathcal C(G)$ is maximized by a complete split graph $S_{n,r}$ for some $r=r_n$, and
+\[
+r_n\sim\sqrt{\frac n{\log n}},\qquad \max_G\,\mathcal C(G)=n-(1+o(1))\sqrt{n\log n}.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Triangle-free bipartite extremality]\label{ac7}
+Among connected triangle-free $n$-vertex graphs, $\mathcal C$ is maximized by a complete bipartite graph $K_{r,n-r}$ with $r$ maximizing the exact bipartite formula; the maximizing $r$ satisfies $r\sim\sqrt{n/\log n}$ and the maximum is $n-(1+o(1))\sqrt{n\log n}$.
+\end{conjecture}
+
+\begin{conjecture}[Cycle minimum for bridgeless dependence]\label{ac8}
+Every bridgeless connected $n$-vertex simple graph satisfies $\mathcal C(G)\ge\mathcal C(C_n)=(n-1)\log\frac n{n-1}$, with equality only for $C_n$.
+\end{conjecture}
+
+\begin{conjecture}[Core-periphery stability at the ceiling]\label{ac9}
+If connected graphs $G_n$ satisfy $\mathcal C(G_n)=n-(1+o(1))\sqrt{n\log n}$, then there are vertex sets $A_n$ with $|A_n|=(1+o(1))\sqrt{n/\log n}$ such that all but $o(n|A_n|)$ of the pairs between $A_n$ and its complement are edges, while the complement spans $o(n|A_n|)$ edges.  No structure is asserted for $G_n[A_n]$.
+\end{conjecture}
+
+\begin{conjecture}[Complete-multipartite reduction]\label{ac10}
+Among complete multipartite graphs on $n$ vertices, $\mathcal C$ is maximized by one part of size $n-r$ together with $r$ singleton parts, that is, by the complete split graph $S_{n,r}$ for the optimal $r$.
+\end{conjecture}
+
+\section{Prime-cyclic entropy power and the wrap transition}
+
+\begin{conjecture}[Localization of near-minimizers on prime cycles]\label{ac11}
+Let $p\to\infty$ through primes and let $\mu_p$ be mesoscopic laws on $\mathbb Z/p\mathbb Z$ with
+\[
+H(\mu_p*\mu_p)-H(\mu_p)\to\tfrac12\log2.
+\]
+Then there are affine automorphisms $\phi_p$ of $\mathbb Z/p\mathbb Z$ and cyclic intervals $I_p$ of length $o(p)$ with $(\phi_p)_*\mu_p(I_p)\to1$.
+\end{conjecture}
+
+\begin{conjecture}[Gaussian rigidity after localization]\label{ac12}
+Under the conclusion of Conjecture~\ref{ac11}, choose centered integer lifts $X_p$ with variances $\sigma_p^2\to\infty$ and assume a uniform standardized $(2+\delta)$-moment bound.  If the doubling gain tends to $\tfrac12\log2$, then $(X_p-\mathbb EX_p)/\sigma_p\Rightarrow N(0,1)$ and $H(X_p)-\tfrac12\log(2\pi e\sigma_p^2)\to0$.
+\end{conjecture}
+
+\begin{conjecture}[Heat-kernel wrap crossover]\label{ac13}
+Let $\mu_p$ have centered span-one integer lifts with variances $\sigma_p^2$ and characteristic functions obeying $|\mathbb E\,e^{i\theta(X_p-\mathbb EX_p)}|\le e^{-c\theta^2\sigma_p^2}$ for $|\theta|\le\pi$ and a constant $c>0$ independent of $p$, and let $\sigma_p=o(p)$, $m_p\to\infty$, $m_p\sigma_p^2/p^2\to t\in(0,\infty)$.  With $\theta_t$ the unit-circle heat kernel with Fourier coefficients $e^{-2\pi^2tj^2}$ and $q_{p,t}$ its discretization, $q_{p,t}(x)\propto\theta_t(x/p)$,
+\[
+\|\mu_p^{*m_p}-q_{p,t}\|_{\mathrm{TV}}\to0,\qquad
+\log p-H(\mu_p^{*m_p})\to\int_0^1\theta_t(u)\log\theta_t(u)\,du.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Fixed-$m$ entropy-power law on prime cycles]\label{ac14}
+For every fixed integer $m\ge2$ and every mesoscopic sequence $\mu_p$,
+\[
+\liminf_{p\to\infty}\bigl[H(\mu_p^{*m})-H(\mu_p)\bigr]\ge\tfrac12\log m,
+\]
+and asymptotic equality under the hypotheses of Conjecture~\ref{ac12} forces the same Gaussian limit.
+\end{conjecture}
+
+\begin{conjecture}[Uniform pre-wrap entropy monotonicity]\label{ac15}
+Let $\mu_p$, after an affine automorphism, have integer log-concave lifts with variances $\sigma_p^2$ and $H(\mu_p)\to\infty$, and let $M_p\to\infty$ satisfy $\log M_p=o(H(\mu_p))$ and $M_p\sigma_p^2/p^2\to0$.  Then, uniformly for $1\le m\le M_p$,
+\[
+H(\mu_p^{*(m+1)})-H(\mu_p^{*m})\ \ge\ \tfrac12\log\frac{m+1}m-o(1/m).
+\]
+\end{conjecture}
+
+\section{Information dimension of random-free graphons}
+
+\begin{conjecture}[Exact-dimensional entropy identity]\label{ac16}
+Let $W$ be random-free with purified row space $(\Omega_W,d_W,\rho)$.  If $\rho$ is exact-dimensional of finite dimension $s$ and satisfies a uniform local doubling bound, then
+\[
+\frac{H(G(n,W))}{n\log n}\longrightarrow s.
+\]
+\end{conjecture}
+
+\begin{conjecture}[$L^1$ multifractal average-dimension law]\label{ac17}
+For random-free $W$, define $D_\varepsilon(x)=\log(1/\rho(B(x,\varepsilon)))/\log(1/\varepsilon)$ on the purified row space.  If $\rho$ satisfies a uniform local doubling bound and $D_\varepsilon\to d(\cdot)$ in $L^1(\rho)$, then
+\[
+\frac{H(G(n,W))}{n\log n}\longrightarrow\int d(x)\,d\rho(x).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Second-order graph entropy constant]\label{ac18}
+If the purified row space of a random-free graphon is a compact $s$-dimensional $C^2$ metric manifold, boundary allowed, and $\rho$ has a positive $C^1$ density in local charts, then
+\[
+\kappa(W)=\lim_{n\to\infty}\frac{H(G(n,W))-sn\log n}{n}
+\]
+exists and is finite.
+\end{conjecture}
+
+\begin{conjecture}[Equipartition for random-free samples]\label{ac19}
+Under the hypotheses of Conjecture~\ref{ac16}, let $G_n\sim G(n,W)$ and $I_n=-\log\Pr(G_n)$.  Then $I_n/(n\log n)\to s$ in probability.
+\end{conjecture}
+
+\begin{conjecture}[Sparse-observation dimension law]\label{ac20}
+Reveal each potential edge of $G(n,W)$ independently with probability $q_n$, condition on the mask, and let $O_n$ be the revealed bits.  Under the hypotheses of Conjecture~\ref{ac17}, if $nq_n\to\infty$, then
+\[
+\frac{H(O_n\mid\text{mask})}{n\log(nq_n)}\longrightarrow\int d(x)\,d\rho(x).
+\]
+\end{conjecture}
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -3908,6 +4071,42 @@ in Analytic Number Theory: Essays in Honour of Klaus Roth (W. W. L. Chen, W. T. 
 \bibitem{CMS22} E. Croot, H. Mousavi, and M. Schmidt, \emph{On a conjecture of Graham on the $p$-divisibility of central binomial coefficients}, Mathematika \textbf{70} (2024), no.~3, e12249; arXiv:2201.11274.
 
 \bibitem{DK19} M. Drmota and C. Krattenthaler, \emph{A joint central limit theorem for the sum-of-digits function, and asymptotic divisibility of Catalan-like sequences}, Proc. Amer. Math. Soc. \textbf{147} (2019), 4123--4133; arXiv:1803.02178.
+
+\bibitem{Kn15a} O. Knill, \emph{The graph spectrum of barycentric refinements}, arXiv:1508.02027 (2015).
+
+\bibitem{Kn15b} O. Knill, \emph{Universality for barycentric subdivision}, arXiv:1509.06092 (2015).
+
+\bibitem{Mar22} J. M\"arte, \emph{Universal limit theorem for spectra of iterated inclusion-uniform subdivisions}, arXiv:2212.03006 (2022).
+
+\bibitem{Kn26} O. Knill, \emph{Block Jacobi matrices, barycentric limits and manifolds}, arXiv:2601.10815 (2026).
+
+\bibitem{BP93} R. Burton and R. Pemantle, \emph{Local characteristics, entropy and limit theorems for spanning trees and domino tilings via transfer-impedances}, Ann. Probab. \textbf{21} (1993), 1329--1371.
+
+\bibitem{Mes20} A. M\'esz\'aros, \emph{Limiting entropy of determinantal processes}, Ann. Probab. \textbf{48} (2020), 2615--2643; arXiv:1905.11459.
+
+\bibitem{MWW21} M. Madiman, L. Wang, and J. O. Woo, \emph{Entropy inequalities for sums in prime cyclic groups}, SIAM J. Discrete Math. \textbf{35} (2021), 1628--1649; arXiv:1710.00812.
+
+\bibitem{GGK26} L. Gavalakis, M. K. Goh, and I. Kontoyiannis, \emph{Entropy lower bounds and sum-product phenomena}, arXiv:2604.20233 (2026).
+
+\bibitem{GK25} L. Gavalakis and I. Kontoyiannis, \emph{Conditions for equality and stability in Shannon's and Tao's entropy power inequalities}, arXiv:2509.14021 (2025).
+
+\bibitem{GKM24} L. Gavalakis, I. Kontoyiannis, and M. Madiman, \emph{The entropic doubling constant and robustness of Gaussian codebooks for additive-noise channels}, IEEE Trans. Inform. Theory \textbf{70} (2024); arXiv:2403.07209.
+
+\bibitem{Gav23} L. Gavalakis, \emph{Approximate discrete entropy monotonicity for log-concave sums}, arXiv:2210.06624 (2022).
+
+\bibitem{FGR24} M. Fradelizi, L. Gavalakis, and M. Rapaport, \emph{On the monotonicity of discrete entropy for log-concave random vectors on $\mathbb Z^d$}, arXiv:2401.15462 (2024).
+
+\bibitem{CS25} R. Castellano and P. Sekatski, \emph{On the entropy growth of sums of iid discrete random variables}, arXiv:2508.05348 (2025).
+
+\bibitem{HN13} H. Hatami and S. Norine, \emph{The entropy of random-free graphons and properties}, Combin. Probab. Comput. \textbf{22} (2013), 517--526; arXiv:1205.3529.
+
+\bibitem{Iss21} Y. Issartel, \emph{On the estimation of network complexity: dimension of graphons}, J. Mach. Learn. Res. \textbf{22} (2021); arXiv:1909.02900.
+
+\bibitem{SO23} A. Skeja and S. C. Olhede, \emph{Entropy of exchangeable random graphs}, arXiv:2302.01856 (2023).
+
+\bibitem{Spi20} S. Spiro, \emph{Counting labeled threshold graphs with Eulerian numbers}, Australas. J. Combin. \textbf{77} (2020), 249--255; arXiv:1909.06518.
+
+\bibitem{DA12} K. Doku-Amponsah, \emph{Asymptotic equipartition properties for simple hierarchical and networked structures}, ESAIM Probab. Stat. \textbf{16} (2012), 114--138.
 
 \bibitem{GL} D.~A. Goldston and A.~H. Ledoan,
 \emph{Jumping champions and gaps between consecutive primes},
