@@ -3800,18 +3800,18 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 150. J. Monnee, T. Weigand, and M. Wiesner, *Physics and geometry of complex structure limits in type IIB Calabi–Yau compactifications*, J. High Energy Phys. 03 (2026), 063; arXiv:2509.07056.
 151. A. Bayer and E. Macrì, *The unreasonable effectiveness of wall-crossing in algebraic geometry*, Proc. Int. Cong. Math. 2022, Vol. 3, 2172–2195; arXiv:2201.03654.
 152. S. Feyzbakhsh, N. Koseki, Z. Liu, and N. Rekuski, *Stability conditions on Calabi–Yau threefolds via Brill–Noether theory of curves*, arXiv:2509.24990 (2025).
-153. M. Jardim and A. Maciocia, *Walls and asymptotics for Bridgeland stability conditions on 3-folds*, arXiv:1907.12578 (2019).
+153. M. Jardim and A. Maciocia, *Walls and asymptotics for Bridgeland stability conditions on 3-folds*, Épijournal Géom. Algébrique 6 (2022), Art. 22; arXiv:1907.12578.
 154. B. Bakker, B. Klingler, and J. Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*, J. Amer. Math. Soc. 33 (2020), 917–939; arXiv:1810.04801.
-155. Y. Li, *Diameter bounds for degenerating Calabi–Yau metrics*, J. Differential Geom. 127 (2024); arXiv:2006.13068.
+155. Y. Li and V. Tosatti, *Diameter bounds for degenerating Calabi–Yau metrics*, J. Differential Geom. 127 (2024), 603–614; arXiv:2006.13068.
 156. S. Sun and R. Zhang, *Complex structure degenerations and collapsing of Calabi–Yau metrics*, arXiv:1906.03368 (2019).
 157. P. Berglund, T. Hübsch, V. Jejjala, V. Mirjanić, and C. Mishra, *Balanced metrics know about SYZ*, arXiv:2607.25733 (2026).
-158. M.-T. Chuan, *Existence of Hermitian–Yang–Mills metrics under conifold transitions*, Comm. Anal. Geom. 20 (2012), 677–750; arXiv:1012.3107.
+158. M.-T. Chuan, *Existence of Hermitian–Yang–Mills metrics under conifold transitions*, Comm. Anal. Geom. 20 (2012), 677–749; arXiv:1012.3107.
 159. L. B. Anderson, V. Braun, R. L. Karp, and B. A. Ovrut, *Numerical Hermitian Yang–Mills connections and vector bundle stability in heterotic theories*, J. High Energy Phys. 06 (2010), 107; arXiv:1004.4399.
 160. H.-D. Cao, X. Sun, S.-T. Yau, and Y. Zhang, *The Hermitian–Yang–Mills iteration on stable bundles*, arXiv:2606.20307 (2026).
 161. A. Ashmore, *Eigenvalues and eigenforms on Calabi–Yau threefolds*, J. Geom. Phys. 195 (2024), 105028; arXiv:2011.13929.
 162. A. Ashmore, Y.-H. He, E. Heyes, and B. A. Ovrut, *Numerical spectra of the Laplacian for line bundles on Calabi–Yau hypersurfaces*, J. High Energy Phys. 07 (2023), 164; arXiv:2305.08901.
-163. G. Butbaia, D. Mayorga Peña, J. Tan, P. Berglund, T. Hübsch, V. Jejjala, and C. Mishra, *Physical Yukawa couplings in heterotic string compactifications*, arXiv:2401.15078 (2024).
-164. A. Constantin, K. Fraser-Taliente, T. R. Harvey, A. Lukas, and B. Ovrut, *Computation of quark masses from string theory*, arXiv:2402.01615 (2024).
+163. G. Butbaia, D. Mayorga Peña, J. Tan, P. Berglund, T. Hübsch, V. Jejjala, and C. Mishra, *Physical Yukawa couplings in heterotic string compactifications*, Adv. Theor. Math. Phys. 28 (2024), 2783–2822; arXiv:2401.15078.
+164. A. Constantin, K. Fraser-Taliente, T. R. Harvey, A. Lukas, and B. Ovrut, *Computation of quark masses from string theory*, Nucl. Phys. B 1010 (2025), 116778; arXiv:2402.01615.
 165. A. Ashmore and F. Ruehle, *Moduli-dependent KK towers and the swampland distance conjecture on the quintic Calabi–Yau manifold*, Phys. Rev. D 103 (2021), 106028; arXiv:2103.07472.
 166. H. Ahmed and F. Ruehle, *Level crossings, attractor points and complex multiplication*, J. High Energy Phys. 06 (2023), 164; arXiv:2304.00027.
 167. J. Cao, *Asymptotics of small eigenvalues on degenerations of Kähler manifolds*, arXiv:2605.08023 (2026).
