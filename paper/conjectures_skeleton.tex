@@ -3544,9 +3544,9 @@ Fix $c>0$ and let the support be sampled at $p=c\log n/n^2$ as in Conjecture~\re
 \end{conjecture}
 
 \begin{conjecture}[Finite-field resonance power law]\label{aa5}
-Fix $n\ge5$.  There are a positive integer $\delta_n$, a modulus $M_n$, and nonnegative rationals $\kappa_{n,a}$ indexed by the classes $a\in(\Z/M_n\Z)^{\times}$, positive for at least one class, such that, for $H$ uniform on $\Lambda^3\mathbb F_p^n$, the probability of the resonance event $R_{n,p}$, that the profile $(b_k(H;\mathbb F_p))_k$ exceeds $g_n$ in some degree, satisfies
+Fix $n\ge5$.  There are a positive integer $\delta_n$, a finite Galois extension $K_n/\Q$, and nonnegative rationals $\kappa_{n,\sigma}$ indexed by the Frobenius conjugacy classes $\sigma$ of $K_n/\Q$, positive for at least one class, such that, for $H$ uniform on $\Lambda^3\mathbb F_p^n$, the probability of the resonance event $R_{n,p}$, that the profile $(b_k(H;\mathbb F_p))_k$ exceeds $g_n$ in some degree, satisfies
 \[
-\Pr(R_{n,p})=\kappa_{n,p\bmod M_n}\,p^{-\delta_n}+O_n\bigl(p^{-\delta_n-1/2}\bigr)
+\Pr(R_{n,p})=\kappa_{n,\mathrm{Frob}_p}\,p^{-\delta_n}+O_n\bigl(p^{-\delta_n-1/2}\bigr)
 \qquad\text{as }p\to\infty.
 \]
 \end{conjecture}
@@ -3710,7 +3710,7 @@ For every connected graph $G$ and every $0<\alpha\le2$, pendant attachment and s
 For every $n\ge3$, every $n$-vertex tree $T\ne K_{1,n-1}$, and every $\alpha>0$, $H^Q_\alpha(T)<H^Q_\alpha(K_{1,n-1})$.
 \end{conjecture}
 
-\begin{conjecture}[Bipartite path minimality at the Shannon order]\label{ab9}
+\begin{conjecture}[Bipartite path minimality at the Shannon order, resolved false]\label{ab9}
 Among connected bipartite graphs on $n$ vertices, $P_n$ uniquely minimizes $H^Q_1$.
 \end{conjecture}
 
@@ -3868,7 +3868,7 @@ Then there are affine automorphisms $\phi_p$ of $\mathbb Z/p\mathbb Z$ and cycli
 Under the conclusion of Conjecture~\ref{ac11}, choose centered integer lifts $X_p$ with variances $\sigma_p^2\to\infty$ and assume a uniform standardized $(2+\delta)$-moment bound.  If the doubling gain tends to $\tfrac12\log2$, then $(X_p-\mathbb EX_p)/\sigma_p\Rightarrow N(0,1)$ and $H(X_p)-\tfrac12\log(2\pi e\sigma_p^2)\to0$.
 \end{conjecture}
 
-\begin{conjecture}[Heat-kernel wrap crossover]\label{ac13}
+\begin{conjecture}[Heat-kernel wrap crossover, resolved false]\label{ac13}
 Let $\mu_p$ have centered span-one integer lifts with variances $\sigma_p^2$ and characteristic functions obeying $|\mathbb E\,e^{i\theta(X_p-\mathbb EX_p)}|\le e^{-c\theta^2\sigma_p^2}$ for $|\theta|\le\pi$ and a constant $c>0$ independent of $p$, and let $\sigma_p=o(p)$, $m_p\to\infty$, $m_p\sigma_p^2/p^2\to t\in(0,\infty)$.  With $\theta_t$ the unit-circle heat kernel with Fourier coefficients $e^{-2\pi^2tj^2}$ and $q_{p,t}$ its discretization, $q_{p,t}(x)\propto\theta_t(x/p)$,
 \[
 \|\mu_p^{*m_p}-q_{p,t}\|_{\mathrm{TV}}\to0,\qquad
@@ -3952,8 +3952,16 @@ Fix an odd $r\ge3$ and a finite symmetric $V\subset\Z\setminus\{0\}$ with $\gcd(
 Fix odd $r\ge3$, include each coordinate $r$-subset independently with probability $p_n$, and give included monomials independent coefficients from a fixed finite symmetric nonzero set.  Along $r$-essential dimensions, $p_nn^{r-1}/\log n\to0$ implies saturation probability tending to zero, and $p_nn^{r-1}/\log n\to\infty$ implies saturation probability tending to one.
 \end{conjecture}
 
+\begin{proposition}[Shifted torsion duality]\label{ad:dual}
+For every prime $p$ and all $n,k$, $t_{p,k}(n)=t_{p,n+3-k}(n)$.
+\end{proposition}
+
+\begin{proof}
+Write $u_k=b_k(H_\Delta;\mathbb F_p)-b_k(H_\Delta;\mathbb Q)$.  Since $d_{H_\Delta}$ raises degree by three, the universal coefficient theorem, applied to each residue class modulo three as an ordinary complex, gives $u_k=t_{p,k}(n)+t_{p,k+3}(n)$.  The perfect pairing $\Lambda^k\times\Lambda^{n-k}\to\Lambda^n\cong\Z$ intertwines $d_{H_\Delta}$ with its own transpose up to sign, since $H_\Delta\wedge\alpha\wedge\beta=\pm\,\alpha\wedge H_\Delta\wedge\beta$, so over every field $b_k=b_{n-k}$ and hence $u_k=u_{n-k}$.  Setting $s_k=t_{p,n+3-k}(n)$, the identity in degree $n-k$ reads $s_k+s_{k+3}=u_k=t_{p,k}(n)+t_{p,k+3}(n)$; both sequences vanish for $k\le2$, since no differential enters below degree three, and beyond degree $n$, so induction in steps of three gives $t_{p,k}(n)=s_k$.
+\end{proof}
+
 \begin{conjecture}[Torsion shape law for the complete flux]\label{ad3}
-For every prime $p$ and every $n$, the positive support of $k\mapsto t_{p,k}(n)$ is an interval, the multiplicities satisfy the shifted duality $t_{p,k}(n)=t_{p,n+3-k}(n)$, and every interior positive triple is strictly log-concave.
+For every prime $p$ and every $n$, the positive support of $k\mapsto t_{p,k}(n)$ is an interval and every interior positive triple is strictly log-concave.
 \end{conjecture}
 
 \begin{conjecture}[Post-onset torsion persistence]\label{ad4}
