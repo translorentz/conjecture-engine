@@ -38,8 +38,8 @@ This repository contains:
   (237–255) flux torsion shape laws, quantum merge monotonicity for
   mirror maps and Gopakumar–Vafa invariants, Bridgeland wall and
   sharp-constant laws, and effective convergence certificates for
-  Calabi–Yau metrics, connections, spectra, and Yukawa couplings. Five conjectures
-  (63, 71, 87, 90, 107) have since been refuted and are recorded in
+  Calabi–Yau metrics, connections, spectra, and Yukawa couplings. Seven conjectures
+  (63, 71, 87, 90, 107, 205, 229) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
   theorem. Two conjectures (117 and 195) have since been proved and are
   recorded in place as resolved true, with their proofs.
