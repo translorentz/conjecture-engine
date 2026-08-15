@@ -1,9 +1,9 @@
-# Two hundred thirty-six conjectures in mathematics
+# Two hundred fifty-five conjectures in mathematics
 
 This repository contains:
 
 - **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: two
-  hundred thirty-six conjectures in twelve parts, each with its mechanism,
+  hundred fifty-five conjectures in thirteen parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -34,7 +34,11 @@ This repository contains:
   factorial moment thresholds for barycentric refinement tails, the
   extremal theory of a spanning-tree total-correlation invariant, the
   inverse theory of the prime-field entropy-doubling floor, and
-  dimension identities for random-free graphon entropy. Five conjectures
+  dimension identities for random-free graphon entropy; Part XIII
+  (237–255) flux torsion shape laws, quantum merge monotonicity for
+  mirror maps and Gopakumar–Vafa invariants, Bridgeland wall and
+  sharp-constant laws, and effective convergence certificates for
+  Calabi–Yau metrics, connections, spectra, and Yukawa couplings. Five conjectures
   (63, 71, 87, 90, 107) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
   theorem. Two conjectures (117 and 195) have since been proved and are
@@ -57,7 +61,7 @@ This repository contains:
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
   (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `y_shape_laws.py` (Part VIII),
-  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), and `t5_*.py` (Part III),
+  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base
