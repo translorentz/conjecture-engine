@@ -3794,7 +3794,7 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 144. K. Doku-Amponsah, *Asymptotic equipartition properties for simple hierarchical and networked structures*, ESAIM Probab. Stat. 16 (2012), 114–138.
 145. F. Lin and M. Miller Eismeier, *Monopoles, twisted integral homology, and Hirsch algebras*, Geom. Topol. 28 (2024), 3697–3778; arXiv:2108.00984.
 146. D. Kraines, *Massey higher products*, Trans. Amer. Math. Soc. 124 (1966), 431–449.
-147. S. Hosono, A. Klemm, S. Theisen, and S.-T. Yau, *Mirror symmetry, mirror map and applications to complete intersection Calabi–Yau spaces*, Nucl. Phys. B 433 (1995), 501–552; arXiv:hep-th/9406055.
+147. S. Hosono, A. Klemm, S. Theisen, and S.-T. Yau, *Mirror symmetry, mirror map and applications to complete intersection Calabi–Yau spaces*, Nucl. Phys. B 433 (1995), 501; arXiv:hep-th/9406055.
 148. A. Zinger, *The genus 0 Gromov–Witten invariants of projective complete intersections*, Geom. Topol. 18 (2014), 1035–1114; arXiv:1106.1633.
 149. B. Hassfeld, J. Monnee, T. Weigand, and M. Wiesner, *Emergent strings in type IIB Calabi–Yau compactifications*, J. High Energy Phys. 01 (2026), 140; arXiv:2504.01066.
 150. J. Monnee, T. Weigand, and M. Wiesner, *Physics and geometry of complex structure limits in type IIB Calabi–Yau compactifications*, J. High Energy Phys. 03 (2026), 063; arXiv:2509.07056.
