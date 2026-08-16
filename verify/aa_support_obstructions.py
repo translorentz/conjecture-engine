@@ -17,7 +17,10 @@ Checks, from scratch and in exact arithmetic:
       {012,013,024,034} on five coordinates is coefficient-sensitive, the two
       profiles are separated exactly by the vanishing of a Pfaffian, and the
       probability of the degenerate branch depends on the coefficient set;
-  (4) that this control is subcritical in the window p = c log n / n^2.
+  (4) that this control, as a fixed circuit, is subcritical in the window; and
+  (5) that the criterion is nevertheless vacuous for a typical support in that
+      window, since |S| = Theta(n log n) exceeds the n columns of A -- so the
+      argument localizes the mechanism but does not prove Conjecture 180.
 
 Run:  python3 aa_support_obstructions.py
 """
@@ -209,12 +212,28 @@ def main():
         z = sum(1 for cf in itertools.product(V, repeat=4) if pf(list(cf)) == 0)
         print(f"    V = {lab:12s}: Pr[degenerate branch] = {z}/{len(V)**4}")
 
-    print("(4) subcriticality of coefficient-sensitive configurations")
+    print("(4) subcriticality of a FIXED coefficient-sensitive circuit")
     cov = Counter(i for t in supp5 for i in t)
     ok &= all(v % 2 == 0 for v in cov.values())
     print(f"    the control covers every coordinate evenly: {dict(sorted(cov.items()))}")
     print(f"    |V| = {len(cov)} <= 3|S|/2 = {3*len(supp5)/2}; expected copies at "
           f"p = c log n / n^2 are ~ n^({len(cov)-2*len(supp5)}) (log n)^{len(supp5)} -> 0")
+
+    print("(5) but the criterion is VACUOUS in the window: |S| exceeds n there")
+    from math import log
+    print(f"    {'n':>7} {'c':>5} {'E|S| = C(n,3)p':>16} {'E|S| > n':>9}")
+    exceeds = True
+    for c in (1.0, 4.0):
+        for n in (100, 1000, 10000, 100000):
+            ES = comb(n, 3) * c * log(n) / n ** 2
+            if n >= 1000:
+                exceeds &= ES > n
+            print(f"    {n:>7} {c:>5} {ES:>16.1f} {'yes' if ES > n else 'no':>9}")
+    ok &= exceeds
+    print("    rank_F2(A) <= n, so rank_F2(A) = |S| is impossible once |S| > n;")
+    print("    dim ker(A^T) >= |S| - n = Theta(n log n), so even circuits are forced.")
+    print("    The fixed-circuit bound in (4) therefore localizes the mechanism but")
+    print("    cannot be summed over the >= 2^(|S|-n) circuits a typical support carries.")
 
     print()
     print("ALL CHECKS PASSED" if ok else "FAILURES ABOVE")
