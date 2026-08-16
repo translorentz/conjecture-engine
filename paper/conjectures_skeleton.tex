@@ -3546,8 +3546,8 @@ Fix $c>0$ and let the support be sampled at $p=c\log n/n^2$ as in Conjecture~\re
 \begin{proposition}[Support obstructions and coefficient rescaling]\label{aa:support}
 Let $H\in\Lambda^3\Z^n$ have support $S$, let $u$ be the number of coordinates lying in no triple of $S$, and let $A$ be the $|S|\times n$ incidence matrix of $S$.
 (i) The Betti polynomial of $(E_n(\mathbb Q),d_H)$ is $(1+t)^{u}$ times that of the form read in the used coordinates, and $H$ attains the generic profile only if $g_n=(1+t)^{u}g_{n-u}$; for the deposited profile this forces $u\le1$, with $u=1$ possible only when $n\equiv0\pmod4$.
-(ii) Consequently $\mu_n\ge(n-1)/3$, and if $p_nn^2/\log n\to0$ then the saturation probability of Conjecture~\ref{aa2} tends to zero.
-(iii) If $\operatorname{rank}_{\mathbf F_2}A=|S|$ then the rational profile of $H$ depends only on $S$ and not on the coefficients.  Coefficient dependence therefore requires a nonempty $S'\subseteq S$ covering every coordinate an even number of times, and then $|V(S')|\le\tfrac32|S'|$.
+(ii) Consequently $\mu_n\ge\lceil(n-1)/3\rceil$, and if $p_nn^2/\log n\to0$ then the saturation probability of Conjecture~\ref{aa2} tends to zero.
+(iii) If $\operatorname{rank}_{\mathbf F_2}A=|S|$ then the rational profile of $H$ depends only on $S$ and not on the coefficients.  Coefficient dependence therefore requires a nonempty $S'\subseteq S$ covering every coordinate an even number of times, and then $|S'|$ is even, $|S'|\ge4$, and $|V(S')|\le\tfrac32|S'|$.  Since $A$ has $n$ columns the criterion requires $|S|\le n$, so it is vacuous in the window of Conjecture~\ref{aa4}, where $|S|=\Theta(n\log n)$ and the left kernel of $A$ has dimension at least $|S|-n$.
 \end{proposition}
 
 \begin{conjecture}[Finite-field resonance power law]\label{aa5}
