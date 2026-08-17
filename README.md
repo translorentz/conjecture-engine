@@ -41,7 +41,7 @@ This repository contains:
   Calabi–Yau metrics, connections, spectra, and Yukawa couplings. Twelve conjectures
   (63, 71, 87, 90, 107, 153, 154, 155, 156, 183, 205, 229) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
-  theorem. Six conjectures (117, 151, 152, 182, 195, and 240) have since been proved
+  theorem. Seven conjectures (117, 118, 151, 152, 182, 195, and 240) have since been proved
   and are recorded in place as resolved true, with their proofs.
 - **`paper/conjectures_blind.pdf`** (`conjectures_blind.tex`) — the
   anonymous version of the paper.

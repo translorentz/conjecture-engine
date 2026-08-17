@@ -286,6 +286,10 @@ Cc, _, _ = mckay_profiles(11, (1, 1, 5, 5, 5, 5))
 print("control C08 (11;1,1,5^4):", Cc)
 
 # ============ Programme III: sine-torsion sectors ============
+def sector_nonempty(p, d, m):
+    return d <= m * p <= d * (p - 1)
+
+
 def sector_data(p, d, s_list):
     w = [2 * sin(pi * j / p) for j in range(1, p)]
     out = {}
@@ -323,14 +327,20 @@ for (p, d) in [(7, 4), (11, 4), (11, 5), (13, 5), (13, 6)]:
     # Z(s)_m = Wd[mp]/Cd[mp]
     for s in (1.0, 0.5):
         W, Cn = data[s]
+        for m in range(d):
+            assert (Cn[m] > 0) == sector_nonempty(p, d, m)
         Z = [W[m] / Cn[m] if Cn[m] else 0 for m in range(d)]
         for m in range(2, d - 1):
+            if not all(sector_nonempty(p, d, q) for q in (m - 1, m, m + 1)):
+                continue
             n11 += 1
             if not Z[m] ** 2 > Z[m - 1] * Z[m + 1]: c11b += 1
     for s in (-0.5, -1.0):
         W, Cn = data[s]
         Z = [W[m] / Cn[m] if Cn[m] else 0 for m in range(d)]
         for m in range(2, d - 1):
+            if not all(sector_nonempty(p, d, q) for q in (m - 1, m, m + 1)):
+                continue
             n15 += 1
             if not Z[m] ** 2 < Z[m - 1] * Z[m + 1]: c15b += 1
     # C12: Phi via derivative = E[H] -> use log-weighted convolution
@@ -349,8 +359,11 @@ for (p, d) in [(7, 4), (11, 4), (11, 5), (13, 5), (13, 6)]:
         Csum, Ccnt = ns, nc
     Phi = [Csum[m * p] / Ccnt[m * p] if m * p < len(Ccnt) and Ccnt[m * p] else 0 for m in range(d)]
     for m in range(2, d - 1):
+        if not all(sector_nonempty(p, d, q) for q in (m - 1, m, m + 1)):
+            continue
         n12 += 1
         if not 2 * Phi[m] > Phi[m - 1] + Phi[m + 1]: c12b += 1
+assert not sector_nonempty(5, 11, 2)
 print(f"III: C11 fails {c11b}/{n11}; C12 fails {c12b}/{n12}; C15 fails {c15b}/{n15}")
 # negative control at (11,4,-2): central curvature positive (log-convexity fails)
 data = sector_data(11, 4, [-2.0])
