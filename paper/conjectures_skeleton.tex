@@ -1363,15 +1363,6 @@ full exceptional set is $\sim x^{1/3}$ follows only when combined with
 Conjecture~\ref{c13}(i), and is conjectural.)
 \end{theorem}
 
-\begin{proof}
-$k^3-j^3=(k-j)(k^2+kj+j^2)$; for $1\le j\le k-2$ both factors exceed
-$1$, so the difference is composite.  The only candidate is $j=k-1$,
-giving $3k^2-3k+1$.  Since $3k^2-3k+1$ is composite for a density-one
-set of $k$ (all but $O(K/\log K)$ of $k\le K$, by an upper-bound sieve
-of Brun or Selberg type applied to the quadratic's prime values), all
-but a vanishing proportion of cubes are unrepresentable.
-\end{proof}
-
 \setcounter{conjecture}{21}%
 \begin{conjecture}[The boundary trichotomy for polynomial ladders; the
 divisibility principle is classical and its cubic case is
@@ -3800,12 +3791,6 @@ the total correlation of the edge-indicator vector of $T$, nonnegative and zero 
 (i) $\mathcal C$ is additive over the blocks of a connected graph, and bridges contribute zero.  (ii) $\mathcal C(C_n)=(n-1)\log\frac n{n-1}$, strictly increasing in $n$; consequently, subdividing an edge that lies on exactly one cycle strictly increases $\mathcal C$.
 \end{proposition}
 
-\begin{proof}
-(i) A subgraph is a spanning tree of $G$ exactly when its intersection with every block is a spanning tree of that block, so the uniform spanning tree is an independent product across blocks and $\log\tau(G)=\sum_B\log\tau(B)$; each edge lies in exactly one block, so the marginal sum also splits, and a bridge has $R_e=1$, contributing $h(1)=0$ and a factor $1$ to $\tau$.  (ii) In $C_n$ every edge has $R_e=(n-1)/n$ and $\tau=n$, so
-$\mathcal C(C_n)=n\,h\!\left(\tfrac{n-1}n\right)-\log n=(n-1)\log\tfrac n{n-1}$,
-which equals $\log\bigl(1+\tfrac1{n-1}\bigr)^{\,n-1}$ and is strictly increasing because $(1+1/x)^x$ is.  An edge lying on exactly one cycle has a cycle $C_\ell$ as its block; subdivision replaces that block by $C_{\ell+1}$ and changes nothing else, so $\mathcal C$ increases by $\mathcal C(C_{\ell+1})-\mathcal C(C_\ell)>0$.
-\end{proof}
-
 \begin{proposition}[Threshold-graphon entropy bound]\label{ac:threshold}
 For the random-free graphon $W(x,y)=\mathbf 1\{x+y\ge1\}$, every realization of $G(n,W)$ is a threshold graph, the law of $G(n,W)$ is supported on at most $n!\,2^{\,n-1}$ labeled graphs, and hence
 \[
@@ -3813,12 +3798,6 @@ H(G(n,W))\le n\log n-(1-\log2)\,n+O(\log n),
 \]
 although the purified row space is $[0,1]$ with the metric $|x-y|$ and Lebesgue measure, whose scale-$1/n$ quantization entropy is $\log n$ per point with vanishing linear correction.
 \end{proposition}
-
-\begin{proof}
-Sample $x_1,\ldots,x_n$ uniformly, and set $y_i=|x_i-\tfrac12|$ and $s_i=\mathbf 1\{x_i>\tfrac12\}$.  Almost surely the $y_i$ are distinct, and $x_i+x_j\ge1$ holds exactly when $s_i=s_j=1$, or the signs differ and the plus-signed vertex has the larger $y$.  Adding vertices in increasing order of $y$, each new vertex is adjacent to all earlier ones when its sign is plus and to none when its sign is minus: a creation sequence, so the realization is a threshold graph, and the labeled graph is a function of the $y$-ordering and the signs.  The sign of the first vertex added affects no edge, so at most $n!\,2^{\,n-1}$ labeled graphs occur, and
-$H\le\log n!+(n-1)\log2=n\log n-(1-\log2)n+O(\log n)$.
-The row space assertion is immediate: rows of $W$ are indicators of intervals $[1-x,1]$, so $d_W(x,y)=|x-y|$ and $\rho$ is Lebesgue measure, whose $1/n$-quantization entropy is $\log n+o(1)$ per point.
-\end{proof}
 
 \section{Spectral tails of barycentric subdivision}
 
@@ -3959,10 +3938,6 @@ Throughout, the flux notation of Part~X is retained: $E_n(R)=\Lambda^{*}R^n$, an
 (i) Under every merge $d_i,d_j\mapsto d_i+d_j-1$, the degree $D$ strictly decreases and the scale $\Lambda$ strictly increases; in particular the algebraic conifold point $z_c=\Lambda^{-1}$ strictly decreases.  (ii) For a complete-intersection Calabi--Yau threefold of multidegree $\mathbf d$ in $\mathbb{CP}^{k-1}$, $k=\sum_id_i$, one has $c_2(X)\cdot H=\tfrac12\bigl(\sum_id_i^2-k\bigr)D$, so the ratios $\operatorname{td}_2(X)\cdot H/H^3$ for the five threefold configurations $(5)$, $(4,2)$, $(3,3)$, $(3,2,2)$, $(2,2,2,2)$ are $5/6$, $7/12$, $1/2$, $5/12$, $1/3$.
 \end{proposition}
 
-\begin{proof}
-(i) $d_id_j-(d_i+d_j-1)=(d_i-1)(d_j-1)>0$ gives the degree drop.  For $\Lambda$, the function $g(x)=x\log x$ is strictly convex with $g(1)=0$, and the pair $(d_i+d_j-1,\,1)$ has the same sum as $(d_i,d_j)$ with a strictly larger maximum, so majorization gives $g(d_i+d_j-1)>g(d_i)+g(d_j)$, which is $\log\Lambda'>\log\Lambda$.  (ii) From $c(TX)=(1+h)^k\prod_i(1+d_ih)^{-1}$, the degree-one term vanishes by the Calabi--Yau condition $\sum_id_i=k$, and the degree-two term is $\tfrac12(\sum_id_i^2-k)h^2$; multiplying by $H=h$ and integrating against the class of $X$, of degree $D$, gives the displayed value, and $\operatorname{td}_2=c_2/12$ with $H^3=D$ gives the five ratios $50/60$, $56/96$, $54/108$, $60/144$, $64/192$.
-\end{proof}
-
 \section{Odd flux and torsion shapes}
 
 \begin{conjecture}[Odd-degree discrete saturation]\label{ad1}
@@ -3980,10 +3955,6 @@ Fix an odd $r\ge3$ and an $r$-essential dimension $n$.  If $p_nn^{r-1}/\log n\to
 \begin{proposition}[Shifted torsion duality]\label{ad:dual}
 For every prime $p$ and all $n,k$, $t_{p,k}(n)=t_{p,n+3-k}(n)$.
 \end{proposition}
-
-\begin{proof}
-Write $u_k=b_k(H_\Delta;\mathbb F_p)-b_k(H_\Delta;\mathbb Q)$.  Since $d_{H_\Delta}$ raises degree by three, the universal coefficient theorem, applied to each residue class modulo three as an ordinary complex, gives $u_k=t_{p,k}(n)+t_{p,k+3}(n)$.  The perfect pairing $\Lambda^k\times\Lambda^{n-k}\to\Lambda^n\cong\Z$ intertwines $d_{H_\Delta}$ with its own transpose up to sign, since $H_\Delta\wedge\alpha\wedge\beta=\pm\,\alpha\wedge H_\Delta\wedge\beta$, so over every field $b_k=b_{n-k}$ and hence $u_k=u_{n-k}$.  Setting $s_k=t_{p,n+3-k}(n)$, the identity in degree $n-k$ reads $s_k+s_{k+3}=u_k=t_{p,k}(n)+t_{p,k+3}(n)$; both sequences vanish for $k\le2$, since no differential enters below degree three, and beyond degree $n$, so induction in steps of three gives $t_{p,k}(n)=s_k$.
-\end{proof}
 
 \begin{conjecture}[Torsion shape law for the complete flux]\label{ad3}
 For every prime $p$ and every $n$, every interior positive triple of $k\mapsto t_{p,k}(n)$ is strictly log-concave.
