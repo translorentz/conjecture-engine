@@ -42,10 +42,31 @@ def E(n, degs):
     return (-1) ** n * euler_ci(n, degs)
 
 
+def multiply_truncated(left, right, degree):
+    out = [0] * (degree + 1)
+    for i, a in enumerate(left):
+        for j, b in enumerate(right):
+            if i + j <= degree:
+                out[i + j] += a * b
+    return out
+
+
+def normalized_merge_increment(n, shifted, i, j):
+    """Coefficient formula for the normalized Euler increment in C118."""
+    degree = n - 2
+    a, b = shifted[i], shifted[j]
+    series = [(-1) ** k * (k + 1) for k in range(degree + 1)]
+    ratios = [a, b, a + b]
+    ratios.extend(shifted[k] for k in range(len(shifted)) if k not in (i, j))
+    for ratio in ratios:
+        series = multiply_truncated(series, [ratio ** k for k in range(degree + 1)], degree)
+    return a * b * series[degree]
+
+
 def main():
     assert euler_ci(3, (5,)) == -200 and euler_ci(2, (4,)) == 24
     assert euler_ci(3, (2, 2, 2, 2)) == -128
-    # C117 finite clauses through n=40; C118/119/120 merges through n=12; C121 gcd law
+    # C117 finite clauses through n=40, C118/119/120 merges through n=18, and C121 gcd law
     Q = {n: E(n, tuple([2] * (n + 1))) for n in range(2, 41)}
     for n in range(5, 39):
         assert Q[n + 1] * Q[n + 1] > 0 and Fraction(Q[n + 1], Q[n]) < 8
@@ -54,7 +75,17 @@ def main():
         configs = [tuple(e + 1 for e in p) for p in partitions(n + 1)]
         g = reduce(gcd, (abs(euler_ci(n, d)) for d in configs))
         assert g == 24 // gcd(24, n) * (2 if n % 8 in (0, 2) else 1), n   # C121
-        if n < 3 or n > 12:
+        if n == 2:
+            vals = {d: E(n, d) for d in configs}
+            for d in configs:
+                for i, j in combinations(range(len(d)), 2):
+                    m = tuple(sorted([d[k] for k in range(len(d)) if k not in (i, j)]
+                                     + [d[i] + d[j] - 1], reverse=True))
+                    increment = Fraction(vals[m], prod(m)) - Fraction(vals[d], prod(d))
+                    shifted = tuple(x - 1 for x in d)
+                    assert increment == normalized_merge_increment(n, shifted, i, j)
+                    assert increment > 0
+        if n < 3 or n > 18:
             continue
         vals = {d: E(n, d) for d in configs}
         assert min(vals.values()) == vals[tuple([2] * (n + 1))]           # C120
@@ -66,10 +97,17 @@ def main():
             for i, j in combinations(range(len(d)), 2):
                 m = tuple(sorted([d[k] for k in range(len(d)) if k not in (i, j)]
                                  + [d[i] + d[j] - 1], reverse=True))
-                assert Fraction(vals[m], prod(m)) > Fraction(vals[d], prod(d))  # C118
+                increment = Fraction(vals[m], prod(m)) - Fraction(vals[d], prod(d))
+                shifted = tuple(x - 1 for x in d)
+                assert increment == normalized_merge_increment(n, shifted, i, j)
+                assert increment > 0                                            # C118, resolved true
                 if dm in (d[i], d[j]):
                     assert vals[m] > vals[d]                              # C119
-    print("C117-C121: ladder, merges (n<=12), extremes, gcd law (n<=20) all pass")
+    for c in range(1, 30):
+        for degree in range(40):
+            paired = Fraction(c ** (degree + 1) + (-1) ** degree, c + 1)
+            assert paired.denominator == 1 and paired >= 0
+    print("C117-C121: ladder, exact merge identity (n<=18), extremes, gcd law all pass")
 
     # ---- Program B calibration: Milnor-Orlik ----
     def beta(a):

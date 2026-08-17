@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Part VI (Conjectures 97-116) independent reproduction, from scratch.
 
-Reproduces the four proved propositions and a representative finite sample of the twenty
+Reproduces the five proved propositions and a representative finite sample of the twenty
 conjectures, with implementations sharing no code with the deposited scans.  Ranges are kept
 modest so the script runs in seconds.  The deposited evidence reaches much further.
 """
@@ -58,6 +58,21 @@ def main():
     for n in range(1, 60):
         assert omega_binom(2, n + 1) - omega_binom(2, n) == 1 + Om(2 * n + 1) - Om(n + 1)
     print("Prop w:jump: factorial-ratio jump identities exact (k<=8, n<60)")
+
+    # ---- Proposition w:trihex: exact finite-sieve equivalence ----
+    for modulus in range(1, 2001):
+        all_counts = [0] * modulus
+        odd_counts = [0] * modulus
+        for n in range(2 * modulus):
+            residue = n * (n + 1) // 2 % modulus
+            all_counts[residue] += 1
+            if n % 2:
+                odd_counts[residue] += 1
+            mate = (-n - 1) % (2 * modulus)
+            assert (n - mate) % 2 == 1
+            assert (n * (n + 1) // 2 - mate * (mate + 1) // 2) % modulus == 0
+        assert all_counts == [2 * count for count in odd_counts]
+    print("Prop w:trihex: triangular and hexagonal residue laws agree (moduli <=2000)")
 
     # ---- Proposition w:k2slope: finite exact regression for its jump formula ----
     k2_values = []
