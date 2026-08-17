@@ -39,7 +39,7 @@
 
 \title{Two hundred fifty-five conjectures in mathematics}
 \author{}
-\date{July 27, 2026}
+\date{27 July 2026}
 
 
 \providecommand{\Z}{\mathbb Z}
@@ -773,7 +773,8 @@ unstated, the $d=2$ instance previously stated, cf.\ OEIS A080149,
 \cite{Carella}]\label{c1}
 For even $d\ge2$ let
 $\pi^{\mathrm q}_d(N)=\#\{n\le N:\ n^2+1,\ n^2+1+d \text{ both
-prime}\}$ and $C(d)=C(x^2+1,\,x^2+1+d)$.  Then:
+prime}\}$ and $C(d)=C(x^2+1,\,x^2+1+d)$, with $I_d(N)$ the integral
+$I(N)$ of this pair.  Then:
 \emph{(i)} [uniform family law] for every fixed $B>0$,
 $\pi^{\mathrm q}_d(N)=C(d)\,I_d(N)(1+o(1))$ uniformly over even
 $d\le(\log N)^{B}$;
@@ -3558,6 +3559,10 @@ Fix $n\ge5$.  There are a positive integer $\delta_n$, a finite Galois extension
 \]
 \end{conjecture}
 
+\begin{proposition}[Conditional Lang--Weil resonance law]\label{aa:langweil}
+Fix $n\ge5$ and suppose that the displayed $g_n$ is the characteristic-zero profile on the Zariski-open locus of maximal wedge ranks.  Then the conclusion of Conjecture~\ref{aa5} holds for every sufficiently large prime of good reduction.  More precisely, $\delta_n$ is the codimension of the largest geometric component of the resonance scheme, and $\kappa_{n,\mathrm{Frob}_p}$ is the number of its largest geometric components fixed by Frobenius.
+\end{proposition}
+
 \begin{conjecture}[Central-binomial law for the complete flux, resolved true]\label{aa6}
 For every $n\ge4$, $B(H_\Delta;\mathbb Q)=F_n$ and $B(H_\Delta;\mathbb F_2)=P_n$.
 \end{conjecture}
@@ -4025,13 +4030,16 @@ For a Picard-rank-one complete-intersection Calabi--Yau threefold covered by the
 \end{conjecture}
 
 \begin{conjecture}[Tame wall atlas]\label{ad12}
-For $X$ as in Conjecture~\ref{ad10} and compact $K$, the union $W_Q$ of numerical walls for all primitive charges with $\|v\|\le Q$ is definable in $\mathbb R_{\mathrm{an},\exp}$ with format bounded by $Q^{C}$ for some $C=C(X,K)$; consequently $K\setminus W_Q$ has $O(Q^{C})$ strata and chambers.
+For $X$ as in Conjecture~\ref{ad10} and compact $K$, fix a finite effective $\mathbb R_{\mathrm{an},\exp}$ presentation of the central charge and the numerical wall equations.  Let formula format record length, quantifier depth, polynomial degree and logarithmic coefficient height in that presentation.  There is $C=C(X,K)$ such that the union $W_Q$ of numerical walls for primitive charges with $\|v\|\le Q$ has a defining formula of format at most $Q^C$, and $K\setminus W_Q$ has a compatible definable stratification into $O(Q^C)$ strata and chambers.
 \end{conjecture}
 
 \section{Effective geometry of Calabi--Yau families}
 
+\paragraph{Gauge convention.}
+Two positive gauges $\delta$ and $\delta'$ on the smooth locus of a fixed compact semialgebraic chart are \emph{power-equivalent} if, after truncation to $(0,1]$, there are positive constants $c,C,a,b$ with $c\delta^a\le\delta'\le C\delta^b$.  Every polynomial estimate below is understood up to this equivalence.  The gauge $\delta_{\mathrm{alg}}$ is represented by a truncated norm of generators of the reduced discriminant ideal.  For a family of bundle pairs, $\delta_{\mathrm{pair}}$ is represented by the minimum of $\delta_{\mathrm{alg}}$ and a fixed positive stability margin that vanishes exactly on the chosen chamber boundary.
+
 \begin{conjecture}[Polynomial conditioning of Ricci-flat metrics]\label{ad13}
-For a projective polarized Calabi--Yau family over a compact semialgebraic chart, with $\delta_{\mathrm{alg}}$ the truncated norm of generators of the reduced discriminant ideal, the volume-normalized Ricci-flat metrics satisfy, for every derivative order $\ell$, bounds $\|\nabla^\ell\mathrm{Rm}\|_\infty\le C_\ell\,\delta_{\mathrm{alg}}^{-A_\ell}$, with diameter bounded by $C\delta_{\mathrm{alg}}^{-A}$ and, in the noncollapsing case, injectivity radius bounded below by $C^{-1}\delta_{\mathrm{alg}}^{A}$, the same polynomial form holding for the regularity scale in collapsing strata away from the canonical collapsing set.
+For a projective polarised Calabi--Yau family over a compact semialgebraic chart, with $\delta_{\mathrm{alg}}$ the truncated norm of generators of the reduced discriminant ideal, the volume-normalised Ricci-flat metrics satisfy, for every derivative order $\ell$, bounds $\|\nabla^\ell\mathrm{Rm}\|_\infty\le C_\ell\,\delta_{\mathrm{alg}}^{-A_\ell}$, with diameter bounded by $C\delta_{\mathrm{alg}}^{-A}$ and, in the noncollapsing case, injectivity radius bounded below by $C^{-1}\delta_{\mathrm{alg}}^{A}$, the same polynomial form holding for the regularity scale in collapsing strata away from the canonical collapsing set.
 \end{conjecture}
 
 \begin{conjecture}[Discriminant-effective balanced convergence]\label{ad14}
@@ -4039,7 +4047,7 @@ In the setting of Conjecture~\ref{ad13}, the level-$k$ balanced metrics satisfy 
 \end{conjecture}
 
 \begin{conjecture}[Discriminant-effective Hermitian--Yang--Mills convergence]\label{ad15}
-For an algebraic family of polarized Calabi--Yau threefolds with slope-stable bundles on a constant-stability chamber, with $\delta_{\mathrm{pair}}$ measuring algebraic distance to the combined geometric and stability boundary, the level-$k$ balanced-bundle approximations converge to the Hermitian--Yang--Mills connection in Coulomb gauge with $\|A_{s,k}-A_s\|_{C^\ell}\le C_\ell\,\delta_{\mathrm{pair}}^{-A_\ell}k^{-1}$ whenever $k\ge C_\ell\,\delta_{\mathrm{pair}}^{-B_\ell}$.
+For an algebraic family of polarised Calabi--Yau threefolds with slope-stable bundles on a constant-stability chamber, with $\delta_{\mathrm{pair}}$ as in the gauge convention, the level-$k$ balanced-bundle approximations converge to the Hermitian--Yang--Mills connection in Coulomb gauge with $\|A_{s,k}-A_s\|_{C^\ell}\le C_\ell\,\delta_{\mathrm{pair}}^{-A_\ell}k^{-1}$ whenever $k\ge C_\ell\,\delta_{\mathrm{pair}}^{-B_\ell}$.
 \end{conjecture}
 
 \begin{conjecture}[Polynomial matter spectral gap]\label{ad16}
@@ -4047,7 +4055,7 @@ In the setting of Conjecture~\ref{ad15}, for a representation and form degree wi
 \end{conjecture}
 
 \begin{conjecture}[Certified heterotic Yukawa convergence]\label{ad17}
-Under Conjectures~\ref{ad13} to~\ref{ad16}, the level-$k$ physical heterotic Yukawa couplings satisfy $|Y^{(k)}_{abc}/Y_{abc}-1|\le C\,\delta_{\mathrm{pair}}^{-A}\delta_Y^{-A}k^{-1}$ for $k\ge C\delta_{\mathrm{pair}}^{-B}\delta_Y^{-B}$, where $\delta_Y$ is an algebraic gauge of distance to the zero locus of the corresponding holomorphic coupling, and an absolute error bound of the same form holds with no $\delta_Y$ factor.
+Under Conjectures~\ref{ad13} to~\ref{ad16}, the level-$k$ physical heterotic Yukawa couplings satisfy $|Y^{(k)}_{abc}/Y_{abc}-1|\le C\,\delta_{\mathrm{pair}}^{-A}\delta_Y^{-A}k^{-1}$ for $k\ge C\delta_{\mathrm{pair}}^{-B}\delta_Y^{-B}$, where $\delta_Y$ is the power-equivalence class of a truncated algebraic gauge for the zero locus of the corresponding holomorphic coupling.  An absolute error bound of the same form holds with no $\delta_Y$ factor.
 \end{conjecture}
 
 \section{Degenerations and towers}
@@ -4057,7 +4065,11 @@ For a semistable one-parameter Calabi--Yau threefold degeneration of type II, II
 \end{conjecture}
 
 \begin{conjecture}[LMHS-controlled Laplace towers]\label{ad19}
-For a semistable one-parameter polarized Calabi--Yau degeneration at infinite Weil--Petersson distance, with volume-normalized Ricci-flat metrics, the vanishing scalar Laplace spectrum decomposes into finitely many tower types, each with a rational exponent $\alpha_a$ determined by the integral limiting mixed Hodge structure together with the dual-intersection and essential-skeleton data, such that $e^{2\alpha_ad_{\mathrm{WP}}(t)}\lambda_{a,j}(t)$ converges for each fixed $j$ to the $j$-th eigenvalue of a canonical weighted Laplace operator on the collapsed base geometry, and every sufficiently small eigenvalue belongs to some tower.
+For a semistable one-parameter polarised Calabi--Yau degeneration at infinite Weil--Petersson distance, fix a normalisation of $d_{\mathrm{WP}}$ and volume-normalise the Ricci-flat metrics.  The vanishing scalar Laplace spectrum admits a finite partition into tower types $a$ with rational exponents $\alpha_a$ such that:
+(i) the list of exponents depends only on the isomorphism class of the integral limiting mixed Hodge structure and the combinatorial dual-intersection and essential-skeleton data.
+(ii) For every tower and every fixed $j$, the quantity $e^{2\alpha_ad_{\mathrm{WP}}(t)}\lambda_{a,j}(t)$ converges to the $j$-th eigenvalue of a canonical weighted Laplace operator on the collapsed base geometry.
+(iii) every eigenvalue sequence tending to zero belongs eventually to one of these towers.
+The limiting operator may depend on the canonical metric data of the collapsed base and is not asserted to be determined by the limiting mixed Hodge structure alone.
 \end{conjecture}
 
 \begin{thebibliography}{99}\small
