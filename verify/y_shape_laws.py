@@ -7,8 +7,9 @@ anticanonical hypersurfaces in products of projective spaces, Goettsche's produc
 age histograms, the exterior subset-sum functionals, and F_2 homology of matroid
 independence complexes -- sharing no code with the deposited scans, and re-tests a
 representative finite sample of the twenty conjectures together with the moment
-identities of the proved proposition.  Ranges are modest so the script runs in
-about a minute; the deposited evidence reaches much further.
+identities of the proved proposition and exact graphic counterexample regressions.
+Ranges are modest so the script runs in about a minute.  The deposited evidence
+reaches much further.
 """
 from fractions import Fraction
 from itertools import combinations, product
@@ -394,6 +395,50 @@ def hurwitz_stable(coeffs):
         if not nxt: break
         rows.append(nxt)
     return all(r[0] > 0 for r in rows) and len(rows) == n + 1
+
+def graphic_vectors(vertex_count, edges):
+    """Reduced binary incidence columns for the cycle matroid of a graph."""
+    last = vertex_count - 1
+    return [((1 << u) if u != last else 0) ^ ((1 << v) if v != last else 0)
+            for u, v in edges]
+
+def is_k_vertex_connected(vertex_count, edges, k):
+    adjacency = [set() for _ in range(vertex_count)]
+    for u, v in edges:
+        adjacency[u].add(v)
+        adjacency[v].add(u)
+    for removed_count in range(k):
+        for removed_tuple in combinations(range(vertex_count), removed_count):
+            removed = set(removed_tuple)
+            remaining = [v for v in range(vertex_count) if v not in removed]
+            seen = {remaining[0]}
+            frontier = [remaining[0]]
+            while frontier:
+                u = frontier.pop()
+                for v in adjacency[u] - removed - seen:
+                    seen.add(v)
+                    frontier.append(v)
+            if len(seen) != len(remaining):
+                return False
+    return True
+
+# Exact counterexample regressions for the four resolved matroid statements.
+k33_edges = [(u, v) for u in range(3) for v in range(3, 6)]
+assert is_k_vertex_connected(6, k33_edges, 3)
+k33 = hochster_table(graphic_vectors(6, k33_edges))
+assert (k33[(1, 4)], k33.get((1, 5), 0), k33[(1, 6)]) == (9, 0, 6)
+assert sorted(s for c, s in k33 if c == 1) == [4, 6]
+assert k33.get((1, 5), 0) ** 2 < k33[(1, 4)] * k33[(1, 6)]
+assert not hurwitz_stable([9, 0, 6])
+print("y17/y18/y20 exact certificate: M(K3,3) has nullity-one strand 9,0,6")
+
+rhombus_edges = [(0, 3), (0, 4), (0, 5), (1, 3), (1, 4),
+                 (2, 3), (2, 4), (2, 6), (3, 4), (5, 6)]
+assert is_k_vertex_connected(7, rhombus_edges, 2)
+rhombus = hochster_table(graphic_vectors(7, rhombus_edges))
+assert (rhombus[(1, 5)], rhombus[(2, 6)], rhombus[(3, 7)]) == (2, 2, 3)
+assert rhombus[(2, 6)] ** 2 < rhombus[(1, 5)] * rhombus[(3, 7)]
+print("y19 exact certificate: H(1,5)=2, H(2,6)=2, H(3,7)=3")
 
 rng = random.Random(13)
 c17bad = c18bad = c19bad = c20bad = 0; mats = 0; strands = 0

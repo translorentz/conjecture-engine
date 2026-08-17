@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Part VI (Conjectures 97-116) independent reproduction, from scratch.
 
-Reproduces the two proved propositions and a representative finite sample of the twenty
+Reproduces the four proved propositions and a representative finite sample of the twenty
 conjectures, with implementations sharing no code with the deposited scans.  Ranges are kept
-modest so the script runs in seconds; the deposited evidence reaches much further.
+modest so the script runs in seconds.  The deposited evidence reaches much further.
 """
 from itertools import combinations, permutations
 from collections import defaultdict
@@ -58,6 +58,16 @@ def main():
     for n in range(1, 60):
         assert omega_binom(2, n + 1) - omega_binom(2, n) == 1 + Om(2 * n + 1) - Om(n + 1)
     print("Prop w:jump: factorial-ratio jump identities exact (k<=8, n<60)")
+
+    # ---- Proposition w:k2slope: finite exact regression for its jump formula ----
+    k2_values = []
+    for m in range(2, 17):
+        n = 2 ** m - 1
+        direct = omega_binom(2, n + 1) - omega_binom(2, n)
+        formula = 1 - m + Om(2 ** (m + 1) - 1)
+        assert direct == formula, (m, direct, formula)
+        k2_values.append(direct)
+    print(f"Prop w:k2slope: exact dyadic jump formula checked for 2<=m<=16, last jump {k2_values[-1]}")
 
     # ---- radical ratio R(n)=rad(n)/n; window order patterns ----
     # Pattern densities are conditional on no ties (delta_pi normalized among untied

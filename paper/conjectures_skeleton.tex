@@ -2970,7 +2970,7 @@ with covariance zero exactly when $L_P$ is abelian.
 
 \medskip\noindent\emph{Added to the deposit: 10 August 2026.}\par\medskip
 
-The twenty conjectures below return to the local--global aesthetic of Part~I, but read it off objects other than residue classes of consecutive primes.  Each takes a familiar arithmetic quantity, looks at it through a local lens that ought to have looked symmetric, and takes the residual asymmetry seriously.  They form five programmes.  A compass programme (Conjectures~\ref{w1} to~\ref{w6}) measures the direction of the nearest prime to a polynomial centre and matches it to a local-sieve hazard.  An order-pattern programme (Conjectures~\ref{w7} and~\ref{w8}) studies the order patterns of $\operatorname{rad}(n)/n$ on short windows.  An order programme (Conjectures~\ref{w9} to~\ref{w13}) measures how often abundancy and totient ratios move monotonically.  A shock programme (Conjectures~\ref{w14} to~\ref{w19}) tracks the prime-factor count of combinatorial sequences that drop many prime factors in a single step, a \emph{shock}.  A boundary programme (Conjecture~\ref{w20}) reads the prime-factor anatomy of the four integers bracketing a prime gap.  The proved layer is kept separate: the factorial-ratio jump identities of Proposition~\ref{w:jump} and the short-window exchangeability of Proposition~\ref{w:radunif} are theorems with full proofs, and the conjectures are stated against them.  Six of the twenty state a bias as a numerical band rather than a derived constant, and are flagged as such where they occur, the compass and order constants of Conjectures~\ref{w2}, \ref{w3}, \ref{w4}, \ref{w9}, \ref{w10}, and~\ref{w12}.  Two, Conjectures~\ref{w6} and~\ref{w17}, extrapolate in a parameter rather than in the index and are the most exposed.
+The twenty conjectures below return to the local--global aesthetic of Part~I, but read it off objects other than residue classes of consecutive primes.  Each takes a familiar arithmetic quantity, looks at it through a local lens that ought to have looked symmetric, and takes the residual asymmetry seriously.  They form five programmes.  A compass programme (Conjectures~\ref{w1} to~\ref{w6}) measures the direction of the nearest prime to a polynomial centre and matches it to a local-sieve hazard.  An order-pattern programme (Conjectures~\ref{w7} and~\ref{w8}) studies the order patterns of $\operatorname{rad}(n)/n$ on short windows.  An order programme (Conjectures~\ref{w9} to~\ref{w13}) measures how often abundancy and totient ratios move monotonically.  A shock programme (Conjectures~\ref{w14} to~\ref{w19}) tracks the prime-factor count of combinatorial sequences that drop many prime factors in a single step, a \emph{shock}.  A boundary programme (Conjecture~\ref{w20}) reads the prime-factor anatomy of the four integers bracketing a prime gap.  The proved layer is kept separate.  Proposition~\ref{w:jump} gives the factorial-ratio jump identities, Proposition~\ref{w:radunif} gives short-window exchangeability, Proposition~\ref{w:raddens} proves that every fixed radical-pattern density exists, and Proposition~\ref{w:k2slope} proves the $k=2$ case of the dyadic multinomial slope.  Six of the twenty state a bias as a numerical band rather than a derived constant, and are flagged as such where they occur, the compass and order constants of Conjectures~\ref{w2}, \ref{w3}, \ref{w4}, \ref{w9}, \ref{w10}, and~\ref{w12}.  Two, Conjectures~\ref{w6} and~\ref{w17}, extrapolate in a parameter rather than in the index and are the most exposed.
 
 For a composite integer $a$ let $p^-(a)<a<p^+(a)$ be its neighbouring primes and set $L(a)=a-p^-(a)$ and $U(a)=p^+(a)-a$.  The \emph{prime compass} of $a$ points right when $U(a)<L(a)$, left when $L(a)<U(a)$, and is tied when the two distances agree.  For a sequence $A_1<A_2<\cdots$ of composite centres write
 \[
@@ -2992,6 +2992,10 @@ In particular $\Omega\binom{2n+2}{n+1}-\Omega\binom{2n}{n}=1+\Omega(2n+1)-\Omega
 
 \begin{proposition}[Short-window radical exchangeability]\label{w:radunif}
 For every window length $d\le4$ the strict order-pattern densities of $R(n)=\operatorname{rad}(n)/n$ exist and are uniform, each equal to $1/d!$.
+\end{proposition}
+
+\begin{proposition}[Existence of radical-pattern densities]\label{w:raddens}
+For every fixed window length $d$, each unconditional strict order-pattern count for $R(n)=\operatorname{rad}(n)/n$ has a natural density.  The untied windows have positive density.  Consequently every conditional density $\delta_\pi$ exists.
 \end{proposition}
 
 \section{Prime compasses at polynomial centres}
@@ -3084,6 +3088,10 @@ For every fixed $k\ge2$ the dyadic jump of the central multinomial obeys
 \frac{\Omega(M_{k,2^m})-\Omega(M_{k,2^m-1})}{m}\longrightarrow-(k-1).
 \]
 \end{conjecture}
+
+\begin{proposition}[The dyadic multinomial slope for $k=2$]\label{w:k2slope}
+The conclusion of Conjecture~\ref{w18} holds for $k=2$.
+\end{proposition}
 
 \begin{conjecture}[Eventual sign balance]\label{w19}
 For every fixed binomial-slice and Fuss--Catalan family the positive-jump and negative-jump densities each tend to $\tfrac12$, while the zero-jump density tends to $0$.
@@ -3264,7 +3272,7 @@ in the orbit counts of Proposition~\ref{x:orbit}.
 
 \medskip\noindent\emph{Added to the deposit: 12 August 2026.}\par\medskip
 
-The twenty conjectures below continue the topological turn of Part~VII with a second discipline: take a classical enumerative invariant of a geometric family, compute it exactly across the family, and conjecture the shape of the resulting array.  They form five programmes.  A hypersurface programme (Conjectures~\ref{y1} to~\ref{y4}) studies the Euler indices of anticanonical hypersurfaces in products of projective spaces under an order dual to Part~VII's: where Part~VII merged defining equations at fixed ambient, these statements split ambient factors at fixed dimension.  A Hilbert-scheme programme (Conjectures~\ref{y5} to~\ref{y8}) studies the Betti profiles of G\"ottsche's product over a proved pair of exact moment identities.  An orbifold programme (Conjectures~\ref{y9} to~\ref{y12}) studies the twisted-sector age histograms of cyclic Calabi--Yau quotients.  An entropy programme (Conjectures~\ref{y13} to~\ref{y16}) studies the exterior torsion-entropy profile of hyperbolic toral automorphisms.  A matroid programme (Conjectures~\ref{y17} to~\ref{y20}) lifts the Hochster strand laws of Part~VII from graphs to simple binary matroids.  The calibration layer is exact throughout: the Chern-class evaluation, G\"ottsche's product, the age grading of the McKay correspondence, the eigenvalue evaluation of torsion growth rates, and Hochster's formula.  Retained controls again mark every calibrated boundary.  The limit clauses of Conjectures~\ref{y3} and~\ref{y7} assert limits beyond any finite check and are flagged; Conjectures~\ref{y10} to~\ref{y12} are random-model statements resting on Monte Carlo evidence and are flagged as such, with Conjectures~\ref{y10} and~\ref{y11} likely within reach of classical equidistribution machinery; Conjecture~\ref{y9} carries elevated attribution risk.
+The twenty conjectures below continue the topological turn of Part~VII with a second discipline: take a classical enumerative invariant of a geometric family, compute it exactly across the family, and conjecture the shape of the resulting array.  They form five programmes.  A hypersurface programme (Conjectures~\ref{y1} to~\ref{y4}) studies the Euler indices of anticanonical hypersurfaces in products of projective spaces under an order dual to Part~VII's: where Part~VII merged defining equations at fixed ambient, these statements split ambient factors at fixed dimension.  A Hilbert-scheme programme (Conjectures~\ref{y5} to~\ref{y8}) studies the Betti profiles of G\"ottsche's product over a proved pair of exact moment identities.  An orbifold programme (Conjectures~\ref{y9} to~\ref{y12}) studies the twisted-sector age histograms of cyclic Calabi--Yau quotients.  An entropy programme (Conjectures~\ref{y13} to~\ref{y16}) studies the exterior torsion-entropy profile of hyperbolic toral automorphisms.  A matroid programme (Conjectures~\ref{y17} to~\ref{y20}) lifts the Hochster strand laws of Part~VII from graphs to simple binary matroids.  The calibration layer is exact throughout: the Chern-class evaluation, G\"ottsche's product, the age grading of the McKay correspondence, the eigenvalue evaluation of torsion growth rates, and Hochster's formula.  Retained controls again mark every calibrated boundary.  The limit clauses of Conjectures~\ref{y3} and~\ref{y7} assert limits beyond any finite check and are flagged; Conjectures~\ref{y10} to~\ref{y12} are random-model statements resting on Monte Carlo evidence and are flagged as such, with Conjectures~\ref{y10} and~\ref{y11} likely within reach of classical equidistribution machinery; Conjecture~\ref{y9} carries elevated attribution risk.  Since deposit, Conjectures~\ref{y15} and~\ref{y16} have been proved by convexity, while Conjectures~\ref{y17} to~\ref{y20} have been refuted by two explicit graphic matroids.
 
 For a partition $\lambda=(\lambda_1,\ldots,\lambda_r)$ of $d+1$ let $A_\lambda=\prod_i\mathbf{CP}^{\lambda_i}$ and let $X_\lambda\in|{-K_{A_\lambda}}|$ be a smooth anticanonical hypersurface, a Calabi--Yau $d$-fold; its Euler characteristic is evaluated exactly from $c(TA_\lambda)=\prod_i(1+H_i)^{\lambda_i+1}$ and $[X_\lambda]=\sum_i(\lambda_i+1)H_i$, and we write $E_d(\lambda)=(-1)^d\chi(X_\lambda)$.  A \emph{split} $S_{m,a}\lambda$ replaces one part $m$ by $a$ and $m-a$; a \emph{dominance move} transfers one unit from a smaller positive part to a weakly larger part.  For $b\ge1$ define $h_b(n,k)$ by
 \[
@@ -3367,7 +3375,7 @@ h_k(x)^2\ge h_{k-1}(x)\,h_{k+1}(x).
 If an interior equality $h_k(x)^2=h_{k-1}(x)h_{k+1}(x)$ occurs, then the multiset $\{x_1,\ldots,x_d\}$ has exactly two distinct values.
 \end{conjecture}
 
-\begin{conjecture}[Sharp binomial upper envelope]\label{y15}
+\begin{conjecture}[Sharp binomial upper envelope, resolved true]\label{y15}
 For every zero-sum spectrum and every $1\le k\le d-1$,
 \[
 h_k(x)\le\binom{d-2}{k-1}h_1(x),
@@ -3375,27 +3383,74 @@ h_k(x)\le\binom{d-2}{k-1}h_1(x),
 with equality in every degree for spectra proportional to $(1,0,\ldots,0,-1)$.
 \end{conjecture}
 
-\begin{conjecture}[Two-level lower envelope]\label{y16}
+\begin{proposition}[Resolution of the sharp binomial upper envelope]\label{y:upper}
+Conjecture~\ref{y15} holds in full.
+\end{proposition}
+
+\begin{conjecture}[Two-level lower envelope, resolved true]\label{y16}
 Normalize $h_1(x)=1$.  For every $d$ and $k$, the minimum of $h_k$ over zero-sum spectra is attained by a two-level spectrum $x^{p,q}$ with $p$ entries $1/p$, $q$ entries $-1/q$, and $d-p-q$ zeros.
 \end{conjecture}
 
+\begin{proposition}[Resolution of the two-level lower envelope]\label{y:lower}
+Conjecture~\ref{y16} holds in full.
+\end{proposition}
+
 \section{Matroidal Hochster tables}
 
-\begin{conjecture}[Nullity-strand interval support]\label{y17}
+\begin{conjecture}[Nullity-strand interval support, resolved false]\label{y17}
 For every simple binary matroid $M$ and every nullity $c$, the support $\{s:H_{c,s}(M)>0\}$ is an interval of integers.
 \end{conjecture}
 
-\begin{conjecture}[Row-and-column log-concavity]\label{y18}
+\begin{proposition}[A graphic nullity-strand certificate]\label{y:k33}
+Let $M=M(K_{3,3})$ be the cycle matroid of the complete bipartite graph.  Then
+\[
+H_{1,4}(M)=9,\qquad H_{1,5}(M)=0,\qquad H_{1,6}(M)=6.
+\]
+The matroid $M$ is simple, binary, and $3$-connected.
+\end{proposition}
+
+\begin{remark}[Resolution]\label{y17:res}
+Conjecture~\ref{y17} is false.  Proposition~\ref{y:k33} gives nullity-one support $\{4,6\}$, with an internal gap at size five.
+\end{remark}
+
+\begin{conjecture}[Row-and-column log-concavity, resolved false]\label{y18}
 Both coordinate directions of the table are log-concave: $H_{c,s}^2\ge H_{c,s-1}H_{c,s+1}$ and $H_{c,s}^2\ge H_{c-1,s}H_{c+1,s}$.
 \end{conjecture}
 
-\begin{conjecture}[Nearest-rhombus log-concavity]\label{y19}
+\begin{remark}[Resolution]\label{y18:res}
+Conjecture~\ref{y18} is false.  For the matroid of Proposition~\ref{y:k33}, the horizontal inequality at $(c,s)=(1,5)$ reads $0^2\ge9\cdot6$.
+\end{remark}
+
+\begin{conjecture}[Nearest-rhombus log-concavity, resolved false]\label{y19}
 Both diagonal directions are log-concave: $H_{c,s}^2\ge H_{c-1,s-1}H_{c+1,s+1}$ and $H_{c,s}^2\ge H_{c-1,s+1}H_{c+1,s-1}$.
 \end{conjecture}
 
-\begin{conjecture}[Hurwitz stability of nullity strands]\label{y20}
+\begin{proposition}[A graphic rhombus certificate]\label{y:rhombus}
+Let $G$ have vertex set $\{0,\ldots,6\}$ and edge set
+\[
+\{03,04,05,13,14,23,24,26,34,56\},
+\]
+where $ij$ denotes the edge $\{i,j\}$.  For its cycle matroid $M(G)$,
+\[
+H_{1,5}=2,\qquad H_{2,6}=2,\qquad H_{3,7}=3.
+\]
+The graph $G$ is simple and $2$-connected.
+\end{proposition}
+
+\begin{remark}[Resolution]\label{y19:res}
+Conjecture~\ref{y19} is false.  Proposition~\ref{y:rhombus} gives
+\[
+H_{2,6}^2=4<6=H_{1,5}H_{3,7}.
+\]
+\end{remark}
+
+\begin{conjecture}[Hurwitz stability of nullity strands, resolved false]\label{y20}
 For every simple binary matroid and every nonconstant nullity strand, every zero of the strand polynomial $\sum_sH_{c,s}(M)\,z^{s-s_{\min}}$, with $s_{\min}$ the least size in its support, has strictly negative real part.
 \end{conjecture}
+
+\begin{remark}[Resolution]\label{y20:res}
+Conjecture~\ref{y20} is false.  The nullity-one polynomial of Proposition~\ref{y:k33}, after removing its lowest monomial, is $9+6z^2$.  Its zeros are $\pm i\sqrt{3/2}$ and have real part zero.
+\end{remark}
 
 \part{Spectra and filtrations of combinatorial geometries}
 
