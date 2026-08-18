@@ -4411,13 +4411,15 @@ The factor-count jump has a small positive mean but a variance that broadens wit
 
 Around a prime gap sit four composite integers, the two inward neighbours facing the gap and the two outward neighbours facing away, and their prime-factor counts balance in a way that oscillates strongly with the gap. The conjecture is a local–global law: the mean of this balance over primes with a fixed gap equals an explicit Euler sum of $$\ell$$-adic expectations. The mechanism is elementary at the small primes, where the gap's residue modulo six forces which pair of neighbours carries the factors of three, and truncating the sum at the prime $$47$$ already matches the data at correlation $$0.998$$.
 
-### Conjecture 117: Quadric-ladder ratio law
+### Conjecture 117: Quadric-ladder ratio law (resolved true)
 
 Intersecting $$n+1$$ quadric hypersurfaces in projective space produces a Calabi–Yau manifold of complex dimension $$n$$, the maximal-codimension member of its family, and its Euler characteristic can be computed exactly at every dimension. The conjecture asserts that the resulting integer ladder grows with a definite exponential rhythm: each ratio of consecutive terms stays below eight, the ratios themselves increase, and they approach eight in the limit. The opening of the ladder is genuinely irregular, rising and dipping before the monotone regime sets in at dimension five. Since deposit the conjecture has been proved: the ladder's generating function is algebraic, giving an exact three-term recurrence and an interval induction that pins each ratio between $$8-4/(n+1)$$ and $$8-4/(n+2)$$ from dimension five onward — all three clauses, sharpened by the exact first correction $$4/n$$. The limit eight is itself the first member of a family: with all defining equations of degree $$d$$, the Euler ratios tend to $$d^{d+1}$$.
 
-### Conjecture 118: Normalized merge monotonicity
+### Conjecture 118: Normalized merge monotonicity (resolved true)
 
 Two defining equations of degrees $$d_i$$ and $$d_j$$ can be merged into one of degree $$d_i+d_j-1$$, lowering the codimension while preserving the dimension and the Calabi–Yau condition. Dividing the Euler index by the product of the degrees gives a normalized index, and the conjecture asserts that every merge strictly increases it, so the normalized index orders the whole family along merge paths from the all-quadric floor to the hypersurface ceiling. The normalization is essential: the raw index can fall under a merge, with $$E_4(2,2,4)=1632>1476=E_4(3,4)$$ the retained counterexample, and over 1.5 million exact merges obeyed the normalized inequality.
+
+**Resolution.** The conjecture is now a theorem. Writing the normalized index as the degree-$$n$$ coefficient of an explicit rational generating function, a merge changes that function by a factor whose power-series coefficients are all nonnegative and whose degree-$$(n-2)$$ coefficient is strictly positive, so every merge strictly raises the normalized index.
 
 ### Conjecture 119: Maximal-degree merge monotonicity
 
@@ -4729,7 +4731,7 @@ The signature per unit degree strictly increases under every equation merge — 
 
 Merging through a maximal degree strictly raises the signature itself, no normalization needed, giving a strictly increasing global index along merge chains from the all-quadric presentation to the hypersurface. All 80,294 exact tests passed.
 
-### Conjecture 195: The quadric ratio law with limit 27
+### Conjecture 195: The quadric ratio law with limit 27 (resolved true)
 
 Following the all-quadric configurations up through the even dimensions, each signature is conjectured to exceed its predecessor by a strictly increasing ratio that stays below 27 and converges to 27, with first-order correction exactly $$27/n$$. The exact ratios through dimension sixty confirm the pattern — the last is 26.55045876, whose gap 0.44954124 sits against $$27/60=0.45$$. The constant calls for the dominant singularity of a generating function, classical machinery once the function is found — and exactly that machinery has since resolved the conjecture: the ladder's generating function turns out to be algebraic, $$A(w)=2/((1+y)(1-3y))$$ with $$4w=y(1-y)^2$$, yielding an exact three-term recurrence whose ratio dynamics interlace a rational sequence below 27 and force every clause, including the $$27/n$$ rate. The constant itself is explained: $$27=\cot^6(\pi/6)$$ is the first member of the trigonometric family $$\Lambda_d=\cot^{2(d+1)}(\pi/(2(d+1)))$$ that governs every equal-degree signature ladder.
 
