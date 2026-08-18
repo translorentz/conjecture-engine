@@ -55,7 +55,7 @@ This repository contains:
   programs. `python run_all.py` regenerates every number in Part I;
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
-  (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `y_shape_laws.py` (Part VIII),
+  (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `wx_shock_landau.py` (the shock forcing and Landau-floor resolutions of Parts VI--VII), `y_shape_laws.py` (Part VIII),
   `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
