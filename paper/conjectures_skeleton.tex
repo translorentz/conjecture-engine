@@ -2671,7 +2671,7 @@ Then $h_\sigma(\mu*\mu)=h_\sigma(\mu)$.
 
 \medskip\noindent\emph{Added to the deposit: 5 August 2026.}\par\medskip
 
-The twenty conjectures below concern a single canonical object, the class-counting polynomial of a finite graph, approached through the two-step nilpotent Lie algebras that realize it as a rank generating function.  They form three programmes.  A rigidity and reconstruction programme (Conjectures~\ref{u1} to~\ref{u10}) asserts that coarse specializations of the polynomial already determine it and that the polynomial in turn determines classical invariants.  A log-concavity programme (Conjectures~\ref{u11} to~\ref{u15}) locates the exact strength of positivity that the coefficient arrays support, with the boundary calibrated by explicit counterexamples one level higher.  A tree extremal programme (Conjectures~\ref{u16} to~\ref{u20}) places the path and the star at the two ends of every ordering the polynomial induces on trees.  The proved layer is separated from the conjectural one: the rank formula (Proposition~\ref{u:rank}) and the two lower bounds on the number of rank values in a tree (Lemma~\ref{u:sbounds}) are theorems with full proofs, joined by the equality cases of those bounds (Proposition~\ref{u:pathstar}) and the reduction of the star majorization to a single anti-concentration bound (Proposition~\ref{u:starmaj}), and every conjecture is stated against that floor.  Each statement is held to the standard of the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.  Two statements, Conjectures~\ref{u7} and~\ref{u15}, have since been resolved false by explicit counterexamples recorded with them, a seven-vertex unicyclic pair and a connected eight-vertex graph respectively, and both are retained with their resolutions rather than renumbered.
+The twenty conjectures below concern a single canonical object, the class-counting polynomial of a finite graph, approached through the two-step nilpotent Lie algebras that realize it as a rank generating function.  They form three programmes.  A rigidity and reconstruction programme (Conjectures~\ref{u1} to~\ref{u10}) asserts that coarse specializations of the polynomial already determine it and that the polynomial in turn determines classical invariants.  A log-concavity programme (Conjectures~\ref{u11} to~\ref{u15}) locates the exact strength of positivity that the coefficient arrays support, with the boundary calibrated by explicit counterexamples one level higher.  A tree extremal programme (Conjectures~\ref{u16} to~\ref{u20}) places the path and the star at the two ends of every ordering the polynomial induces on trees.  The proved layer is separated from the conjectural one: the rank formula (Proposition~\ref{u:rank}) and the two lower bounds on the number of rank values in a tree (Lemma~\ref{u:sbounds}) are theorems with full proofs, joined by the attainment of those bounds by the path and the star (Proposition~\ref{u:pathstar}) and the reduction of the star majorization to a single anti-concentration bound (Proposition~\ref{u:starmaj}), and every conjecture is stated against that floor.  Each statement is held to the standard of the rest of the collection: a canonical object, a stated mechanism, the nearest literature boundary, a first decisive theorem where one exists, and an honest failure mode.  Two statements, Conjectures~\ref{u7} and~\ref{u15}, have since been resolved false by explicit counterexamples recorded with them, a seven-vertex unicyclic pair and a connected eight-vertex graph respectively, and both are retained with their resolutions rather than renumbered.
 
 For a finite simple graph $G$ on vertex set $V(G)$ with edge set $E(G)$ and a field $F$, the \emph{graphical Lie algebra} $L_G(F)$ is the two-step nilpotent Lie algebra over $F$ with basis $\{v_i:i\in V(G)\}$ together with the central basis $\{z_e:e\in E(G)\}$, the bracket being $[v_a,v_b]=z_{ab}$ for each edge $\{a,b\}$ with $a<b$, $[v_b,v_a]=-z_{ab}$, and all other brackets of basis vectors zero.  For $S\subseteq V(G)$ write $N_G[S]$ for the closed neighbourhood of $S$, the set of vertices lying in $S$ or adjacent to it, and $c(G[S])$ for the number of connected components of the induced subgraph $G[S]$, and set
 \[
@@ -2711,7 +2711,7 @@ s(T)\ge\operatorname{diam}(T)+1 .
 \]
 \end{lemma}
 
-\begin{proposition}[Equality cases of the bounds: path and star]\label{u:pathstar}
+\begin{proposition}[Attainment of the bounds: path and star]\label{u:pathstar}
 The path $P_n$ has $s(P_n)=n$ for every $n\ge2$, and the star $K_{1,n-1}$ has $s(K_{1,n-1})=3$ for every $n\ge3$.  Both trees attain equality in each bound of Lemma~\ref{u:sbounds}.
 \end{proposition}
 
@@ -2987,7 +2987,7 @@ For all $k\ge2$ and $n\ge1$,
 \[
 J_{k,n}=\sum_{j=1}^{k}\Omega(kn+j)-\Omega(n+1)-\sum_{j=1}^{k-1}\Omega((k-1)n+j).
 \]
-In particular $\Omega\binom{2n+2}{n+1}-\Omega\binom{2n}{n}=1+\Omega(2n+1)-\Omega(n+1)$, and for the Catalan numbers $C_n=\tfrac1{n+1}\binom{2n}{n}$, $\Omega(C_{n+1})-\Omega(C_n)=1+\Omega(2n+1)-\Omega(n+2)$.  Consequently the central binomial jump $J_{2,n}$, the Catalan jump $\Omega(C_{n+1})-\Omega(C_n)$, and the central multinomial jump $\Omega(M_{k,n+1})-\Omega(M_{k,n})$ for every $k\ge2$ are unbounded below, while the binomial slice $J_{k,n}$ for $k\ge3$ is Conjecture~\ref{w14}.
+In particular $\Omega\binom{2n+2}{n+1}-\Omega\binom{2n}{n}=1+\Omega(2n+1)-\Omega(n+1)$, and for the Catalan numbers $C_n=\tfrac1{n+1}\binom{2n}{n}$, $\Omega(C_{n+1})-\Omega(C_n)=1+\Omega(2n+1)-\Omega(n+2)$.  Consequently the central binomial jump $J_{2,n}$, the Catalan jump $\Omega(C_{n+1})-\Omega(C_n)$, and the central multinomial jump $\Omega(M_{k,n+1})-\Omega(M_{k,n})$ for every $k\ge2$ are unbounded below, while the binomial slice $J_{k,n}$ for $k\ge3$ is settled by the forcing construction of Proposition~\ref{w:shock}.
 \end{proposition}
 
 \begin{proposition}[Short-window radical exchangeability]\label{w:radunif}
@@ -3075,17 +3075,21 @@ For every even squarefree $W$ divisible by six the limit $\lim_{e\to\infty}\mu(2
 
 \section{Prime-factor shocks in combinatorial sequences}
 
-\begin{conjecture}[Binomial-slice negative shocks]\label{w14}
+\begin{conjecture}[Binomial-slice negative shocks, resolved true]\label{w14}
 For every fixed $k\ge3$ the jump $J_{k,n}=\Omega\binom{k(n+1)}{n+1}-\Omega\binom{kn}{n}$ is unbounded below.
 \end{conjecture}
 
-\begin{conjecture}[Binomial-slice positive shocks]\label{w15}
+\begin{conjecture}[Binomial-slice positive shocks, resolved true]\label{w15}
 For every fixed $k\ge2$ the jump $J_{k,n}$ is unbounded above.
 \end{conjecture}
 
-\begin{conjecture}[Fuss--Catalan two-sided shocks]\label{w16}
+\begin{conjecture}[Fuss--Catalan two-sided shocks, resolved true]\label{w16}
 For every fixed $r\ge1$ the jump $\Omega(F_{r,n+1})-\Omega(F_{r,n})$ is unbounded both below and above.
 \end{conjecture}
+
+\begin{proposition}[Two-sided shock forcing]\label{w:shock}
+For every fixed $k\ge2$ the jump $J_{k,n}$ is unbounded below and unbounded above, and for every fixed $r\ge1$ the Fuss--Catalan jump $\Omega(F_{r,n+1})-\Omega(F_{r,n})$ is unbounded below and unbounded above.  In particular Conjectures~\ref{w14}, \ref{w15}, and~\ref{w16} are true.
+\end{proposition}
 
 \begin{conjecture}[Negative shock covariance]\label{w17}
 In every fixed binomial-slice ($k\ge2$), central-multinomial ($k\ge2$), and Fuss--Catalan ($r\ge1$) family the lag-one covariance of successive jumps has a finite strictly negative limit.
@@ -3102,7 +3106,7 @@ For every fixed $k\ge2$ the dyadic jump of the central multinomial obeys
 The conclusion of Conjecture~\ref{w18} holds for $k=2$.
 \end{proposition}
 
-\begin{conjecture}[Eventual sign balance]\label{w19}
+\begin{conjecture}[Eventual sign balance, resolved true]\label{w19}
 For every fixed binomial-slice and Fuss--Catalan family the positive-jump and negative-jump densities each tend to $\tfrac12$, while the zero-jump density tends to $0$.
 \end{conjecture}
 
@@ -3274,9 +3278,21 @@ For every orientation-preserving signed permutation $A$ in dimension $d$, the Be
 For every $d\ge8$, some minimizer of the total Betti number $\sum_kb_k(M_A;\mathbf Q)$ over orientation-preserving signed permutations has no positive signed cycle when $d$ is even, exactly one when $d$ is odd, and pairwise distinct negative-cycle lengths.
 \end{conjecture}
 
-\begin{conjecture}[Square-root-two compression exponent]\label{x19}
+\begin{conjecture}[Square-root-two compression exponent, resolved false]\label{x19}
 Let $M_d$ be the minimum of $\sum_kb_k(M_A;\mathbf Q)$ over orientation-preserving signed permutations in dimension $d$.  Then $M_d^{1/d}\to\sqrt2$ as $d\to\infty$.
 \end{conjecture}
+
+\begin{proposition}[Landau floor for the minimal total cohomology]\label{x:landau}
+For every signed permutation $A$ on $\Z^d$,
+\[
+\sum_kb_k(M_A;\mathbf Q)\;\ge\;\frac{2^{d+1}}{\operatorname{ord}(A)}\;\ge\;\frac{2^{d}}{g(d)},
+\]
+where $g(d)$ is Landau's function, the maximal order of a permutation of $d$ letters.  Consequently $2^d/g(d)\le M_d\le2^{d+1}$, and since $\log g(d)\sim\sqrt{d\log d}$, the minimal total cohomology satisfies $M_d^{1/d}\to2$.
+\end{proposition}
+
+\begin{remark}[Resolution]\label{x19:res}
+The conjecture is false: by Proposition~\ref{x:landau} the compression exponent is $2$, not $\sqrt2$, with the whole deviation from $2^{d+1}$ confined to a subexponential factor at most $2g(d)$.  The finite scans could not separate the two laws, because $\log_2g(d)\approx d/2$ throughout the tested range---$\log_2g(21)\approx9.7$ against $d/2=10.5$---so the floor $2^d/g(d)$ is numerically indistinguishable from $2^{d/2}$ there, and the square-root fit was a finite-size illusion.  The observed minima respect the floor with room to spare, $M_{12}=160$ against $2^{12}/g(12)=68$, and the surviving question is the exact order of the subexponential correction $\log_2(2^{d+1}/M_d)$, now pinned between $0$ and $\log_2(2g(d))=O(\sqrt{d\log d}\,)$.  The torsion budget of Conjecture~\ref{x20} is untouched: it is consistent with the true growth, and no incompatibility remains once the exponent is corrected.
+\end{remark}
 
 \begin{conjecture}[Torsion budget inequality]\label{x20}
 For every signed permutation $A\in SL(d,\Z)$,
