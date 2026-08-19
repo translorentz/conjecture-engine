@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Two hundred fifty-five conjectures in mathematics}
+\title{Two hundred seventy conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Two hundred fifty-five conjectures in mathematics:\\ the statements}
+\title{Two hundred seventy conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -4155,6 +4155,96 @@ For a semistable one-parameter polarised Calabi--Yau degeneration at infinite We
 The limiting operator may depend on the canonical metric data of the collapsed base and is not asserted to be determined by the limiting mixed Hodge structure alone.
 \end{conjecture}
 
+\part{Convexity, defect, and dispersion laws for projective invariants}
+
+\medskip\noindent\emph{Added to the deposit: 19 August 2026.}\par\medskip
+
+The fifteen conjectures below take three of the oldest invariants of projective algebraic geometry, the middle cohomology of a complete intersection, the graded Betti table of an embedded surface, and the Hodge decomposition of a hypersurface, and conjecture the discrete shape of each as its defining degrees move.  They form three programmes.  A convexity programme (Conjectures~\ref{ae1} to~\ref{ae6}) studies the degree-normalized primitive middle Betti number of smooth complete intersections on the full multidegree lattice, asserting a coherent discrete-convexity package: coordinate monotonicity and convexity, supermodular absolute interaction with log-submodular relative interaction, Schur-convexity at fixed degree sum, and a strict decrease under every codimension-raising split that preserves the adjunction coefficient.  A syzygy programme (Conjectures~\ref{ae7} to~\ref{ae11}) studies the two nontrivial rows of the Betti tables of $\mathbf P^1\times\mathbf P^1$ under Segre--Veronese embeddings, replacing global shape claims by a controlled-defect law: the nonlinear row is strictly log-concave, while the linear row can fail log-concavity at most once, only past its mode, only where the nonlinear row is already present, and only within one step of that row's mode.  A dispersion programme (Conjectures~\ref{ae12} to~\ref{ae15}) studies the normalized primitive Hodge profiles of smooth hypersurfaces as the degree grows, asserting that the known drift toward the Eulerian profile is monotone in four canonical stochastic orders: likelihood-ratio flattening, central-window escape, convex-order spread, and total-variation distance.  The proved layer is three calibrations: Proposition~\ref{ae:curve} proves all six convexity laws for curves from the exact formula $B=\sum_id_i-c-2+2/D$, Proposition~\ref{ae:strand} pins the two syzygy rows to the Hilbert series by an exact antidiagonal identity, and Proposition~\ref{ae:surface} proves all four dispersion laws for surfaces from an explicit rational function of the degree; in addition, for odd $n$ the Calabi--Yau slice of Conjecture~\ref{ae6} is already a corollary of the merge monotonicity of Proposition~\ref{x:merge}.  Two negative controls are retained in place: the unnormalized primitive Betti number fails Schur-convexity and has no split direction already for curves and surfaces, and coordinatewise monotone convergence to the Eulerian limit fails at dimension twelve, so the normalization of the convexity programme and the total-variation formulation of the dispersion programme are both forced.  Conjectures~\ref{ae7} to~\ref{ae11} rest on the thirteen complete published tables, the entire deposited corpus, and are flagged for that small evidence base; Conjecture~\ref{ae7} sits closest to the published unimodality conjecture of~\cite{BCEGLY22} and carries the part's attribution flag; Conjectures~\ref{ae12} to~\ref{ae15} assert laws at every degree and dimension beyond any finite check and are flagged as such, and the Eulerian limit itself is exact in the abelian setting of~\cite{LS25} and asymptotic in the toric setting of~\cite{DK86}, so only the monotone interpolation is claimed as new.
+
+For a smooth complex complete intersection $X^n(\mathbf d)\subset\mathbf P^{n+c}$ of dimension $n\ge1$, codimension $c\ge1$, and multidegree $\mathbf d=(d_1,\ldots,d_c)$ with every $d_i\ge2$, write $D(\mathbf d)=\prod_id_i$; the Lefschetz theorem confines the new topology to the middle degree, and the primitive middle Betti number is $b_n^{\mathrm{prim}}=(-1)^n(\chi(X)-(n+1))$ with $\chi$ evaluated exactly by the Chern-class formula $\chi=D\,[H^n](1+H)^{n+c+1}/\prod_i(1+d_iH)$~\cite{GL02,CO74}.  The invariant of the convexity programme is the \emph{degree-normalized primitive complexity} $B_{n,c}(\mathbf d)=b_n^{\mathrm{prim}}/D(\mathbf d)$, and $e_i$ denotes a coordinate step in the multidegree lattice.  For the Segre--Veronese embedding of $\mathbf P^1\times\mathbf P^1$ by $\mathcal O(a,b)$ with $a,b\ge2$, in characteristic zero, the graded Betti numbers $\beta_{p,p+q}(a,b)$ of the homogeneous coordinate ring vanish outside $q=0,1,2$; write $\Delta^{(q)}_p=\beta_{p,p+q}^2-\beta_{p-1,p-1+q}\beta_{p+1,p+1+q}$ for the log-concavity determinant at an interior index of the $q$th row, call $p$ a \emph{defect} of the row when $\Delta^{(q)}_p<0$, and let $m_q$ be the least index at which the row attains its maximum.  For a smooth hypersurface $X^n_d\subset\mathbf P^{n+1}$ with $n\ge2$, $d\ge3$, the primitive Hodge numbers are $h_p(n,d)=[t^{(p+1)d-(n+2)}](1+t+\cdots+t^{d-2})^{n+2}$ by Griffiths' formula~\cite{Gri69}; write $\pi_{n,d}$ for the normalized profile $h_p/\sum_jh_j$ on $\{0,\ldots,n\}$, symmetric about $n/2$, and $\varepsilon_n(p)=A(n+1,p)/(n+1)!$ for the Eulerian profile, with $A$ the Eulerian numbers.  A profile $P$ precedes $Q$ in \emph{convex order} when $\mathbf E\varphi(P)\le\mathbf E\varphi(Q)$ for every convex $\varphi$, and $\|P-Q\|_{\mathrm{TV}}=\tfrac12\sum_p|P(p)-Q(p)|$.
+
+\begin{proposition}[Curve calibration for the convexity programme]\label{ae:curve}
+For $n=1$ one has $B_{1,c}(\mathbf d)=\sum_id_i-c-2+2/D$, and all six laws of Conjectures~\ref{ae1} to~\ref{ae6} hold strictly for curves.
+\end{proposition}
+
+\begin{proposition}[Antidiagonal calibration for the syzygy programme]\label{ae:strand}
+Let $N+1=(a+1)(b+1)$ and $c_j=[t^j](1-t)^{N+1}\sum_{k\ge0}(ka+1)(kb+1)t^k$.  Then $\beta_{j-1,j}(a,b)-\beta_{j-2,j}(a,b)=(-1)^{j-1}c_j$ for every $j\ge2$, the resolution has length $N-2$, and $\beta_{N-2,N}=(a-1)(b-1)$.
+\end{proposition}
+
+\begin{proposition}[Surface calibration for the dispersion programme]\label{ae:surface}
+For $n=2$ set $x(d)=\pi_{2,d}(0)=\frac{(d-2)(d-3)}{6(d^2-3d+3)}$.  Then $x(d)$ is strictly increasing in $d\ge3$ with $x(d)<\tfrac16$ and $x(d)\to\tfrac16$, and consequently all four laws of Conjectures~\ref{ae12} to~\ref{ae15} hold for surfaces, strictly for $d\ge4$.
+\end{proposition}
+
+\section{Normalized primitive cohomology of complete intersections}
+
+\begin{conjecture}[Coordinate monotonicity of normalized complexity]\label{ae1}
+For every $n\ge1$, $c\ge1$, every $\mathbf d\in\mathbf Z_{\ge2}^c$, and every coordinate $i$, $B_{n,c}(\mathbf d+e_i)>B_{n,c}(\mathbf d)$.
+\end{conjecture}
+
+\begin{conjecture}[Strict discrete convexity in each degree]\label{ae2}
+Under the same hypotheses, $B_{n,c}(\mathbf d+2e_i)-2B_{n,c}(\mathbf d+e_i)+B_{n,c}(\mathbf d)>0$.
+\end{conjecture}
+
+\begin{conjecture}[Additive supermodularity across degrees]\label{ae3}
+For $i\ne j$, $B(\mathbf d+e_i+e_j)-B(\mathbf d+e_i)-B(\mathbf d+e_j)+B(\mathbf d)>0$.
+\end{conjecture}
+
+\begin{conjecture}[Strict log-submodularity]\label{ae4}
+Whenever the four values are positive, $B(\mathbf d+e_i+e_j)\,B(\mathbf d)<B(\mathbf d+e_i)\,B(\mathbf d+e_j)$.
+\end{conjecture}
+
+\begin{conjecture}[Schur-convexity at fixed degree sum]\label{ae5}
+If $\mathbf d$ majorizes $\mathbf d'$ in $\mathbf Z_{\ge2}^c$ with equal coordinate sums, then $B_{n,c}(\mathbf d)\ge B_{n,c}(\mathbf d')$, strictly unless the vectors agree up to permutation.
+\end{conjecture}
+
+\begin{conjecture}[Adjunction-preserving splits decrease complexity]\label{ae6}
+For $d_i=d\ge3$ and $a,b\ge2$ with $a+b=d+1$, replacing the degree $d$ by the pair $(a,b)$ gives $B_{n,c+1}(\ldots,a,b,\ldots)<B_{n,c}(\ldots,d,\ldots)$.
+\end{conjecture}
+
+\section{Controlled defects in Segre--Veronese syzygies}
+
+\begin{conjecture}[Strict log-concavity of the nonlinear row]\label{ae7}
+For every $a,b\ge2$ and every interior index $p$ of the positive support of the $q=2$ row, $\Delta^{(2)}_p>0$.
+\end{conjecture}
+
+\begin{conjecture}[The linear row is log-concave through its mode]\label{ae8}
+For every $a,b\ge2$ and every interior index $p\le m_1$ of the $q=1$ row, $\Delta^{(1)}_p>0$.
+\end{conjecture}
+
+\begin{conjecture}[At most one defect in the linear row]\label{ae9}
+For every $a,b\ge2$, the set $\{p:\Delta^{(1)}_p<0\}$ has at most one element.
+\end{conjecture}
+
+\begin{conjecture}[Defects occur only inside the nonlinear overlap]\label{ae10}
+For every $a,b\ge2$, if $\Delta^{(1)}_p<0$ then $\beta_{p,p+2}(a,b)>0$.
+\end{conjecture}
+
+\begin{conjecture}[Defect-mode locking]\label{ae11}
+For every $a,b\ge2$, if the linear row has a defect at $p_{*}$ then $p_{*}\in\{m_2,m_2+1\}$.
+\end{conjecture}
+
+\section{Monotone dispersion of hypersurface Hodge profiles}
+
+\begin{conjecture}[Likelihood-ratio flattening in the degree]\label{ae12}
+For every $n\ge2$, $d\ge3$, and $0\le p<q\le\lfloor n/2\rfloor$, $h_p(n,d+1)\,h_q(n,d)\ge h_p(n,d)\,h_q(n,d+1)$.
+\end{conjecture}
+
+\begin{conjecture}[Central-window escape]\label{ae13}
+For every $n\ge2$, $d\ge3$, and $1\le k\le\lfloor n/2\rfloor$, $\sum_{p=k}^{n-k}\pi_{n,d+1}(p)\le\sum_{p=k}^{n-k}\pi_{n,d}(p)$.
+\end{conjecture}
+
+\begin{conjecture}[Convex-order dispersion]\label{ae14}
+For every $n\ge2$ and $d\ge3$, the profile $\pi_{n,d}$ precedes $\pi_{n,d+1}$ in convex order.
+\end{conjecture}
+
+\begin{conjecture}[Monotone total-variation convergence to the Eulerian profile]\label{ae15}
+For every $n\ge2$ and $d\ge3$, $\|\pi_{n,d+1}-\varepsilon_n\|_{\mathrm{TV}}\le\|\pi_{n,d}-\varepsilon_n\|_{\mathrm{TV}}$, with equality only at $(n,d)=(3,3)$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The normalized profiles drift toward the Eulerian distribution, exactly the law of descents of a random permutation of $n+1$ letters; the conjecture upgrades that drift to monotone convergence in total variation from the first degree onward, a finite-degree error principle that one verified threshold would convert into bounds at every larger degree.  Convergence alone forces no monotonicity, and the coordinatewise strengthening is false, a retained control: at $n=12$ the $p=5$ mass crosses its Eulerian limit between degrees six and seven and overshoots, so the cancellation across positions asserted here is the genuine content.  The Eulerian limit is exact for hypersurfaces in abelian varieties~\cite{LS25}, asymptotic in the toric setting~\cite{DK86}, and feeds effective arithmetic applications~\cite{Ji24}; only the monotone interpolation is claimed.  A first decisive theorem would be a one-crossing law between $\pi_{n,d}$ and $\varepsilon_n$.  In tests on the corpus described in the stress-test section, the distance never increased across $1{,}682$ grid and $2{,}730$ extension transitions, the sole equality being the cubic--quartic threefold coincidence.  A counterexample would be a degree step moving the profile away from the Eulerian law.
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -4493,6 +4583,28 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{Ros22} T. Rossmann, \emph{Enumerating conjugacy classes of graphical groups over finite fields}, Bull. Lond. Math. Soc. \textbf{54} (2022), 1923--1943.
 
 \bibitem{TAM11} P. Tittmann, I. Averbouch, and J. A. Makowsky, \emph{The enumeration of vertex induced subgraphs with respect to the number of components}, European J. Combin. \textbf{32} (2011), 954--974.
+
+\bibitem{GL02} S.~R.~Ghorpade and G.~Lachaud, \'Etale cohomology, Lefschetz theorems and number of points of singular varieties over finite fields, Mosc. Math. J. 2 (2002), 589--631.
+
+\bibitem{CO74} B.-Y.~Chen and K.~Ogiue, Some implications of the Euler--Poincar\'e characteristic for complete intersection manifolds, Proc. Amer. Math. Soc. 44 (1974), 1--8.
+
+\bibitem{CO75} B.-Y.~Chen and K.~Ogiue, Complete intersection manifolds with extremal Euler--Poincar\'e characteristics, Proc. Amer. Math. Soc. 50 (1975), 121--126.
+
+\bibitem{Gri69} P.~A.~Griffiths, On the periods of certain rational integrals I, II, Ann. of Math. (2) 90 (1969), 460--541.
+
+\bibitem{DK86} V.~I.~Danilov and A.~G.~Khovanskii, Newton polyhedra and an algorithm for computing Hodge--Deligne numbers, Izv. Akad. Nauk SSSR Ser. Mat. 50 (1986), 925--945.
+
+\bibitem{LS25} B.~Lawrence and W.~Sawin, The Shafarevich conjecture for hypersurfaces in abelian varieties, Ann. of Math. (2) 202 (2025), 857--1000.
+
+\bibitem{Ji24} C.~Ji, Effectivity for bounds on points of good reduction in the moduli space of hypersurfaces, arXiv:2401.04981 (2024).
+
+\bibitem{BCEGLY22} J.~Bruce, D.~Corey, D.~Erman, S.~Goldstein, R.~P.~Laudone, and J.~Yang, Syzygies of $\mathbf P^1\times\mathbf P^1$: data and conjectures, J. Algebra 593 (2022), 589--621.
+
+\bibitem{Lem21} A.~Lemmens, On syzygies of Segre embeddings of $\mathbf P^1\times\mathbf P^1$, Comm. Algebra 49 (2021), 1235--1254.
+
+\bibitem{EEL15} L.~Ein, D.~Erman, and R.~Lazarsfeld, Asymptotics of random Betti tables, J. Reine Angew. Math. 702 (2015), 55--75.
+
+\bibitem{Park25} J.~Park, Asymptotic nonvanishing of syzygies of algebraic varieties, Math. Ann. 392 (2025), 751--779.
 
 \end{thebibliography}
 \end{document}
