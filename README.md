@@ -38,10 +38,11 @@ This repository contains:
   (237–255) flux torsion shape laws, quantum merge monotonicity for
   mirror maps and Gopakumar–Vafa invariants, Bridgeland wall and
   sharp-constant laws, and effective convergence certificates for
-  Calabi–Yau metrics, connections, spectra, and Yukawa couplings. Twelve conjectures
-  (63, 71, 87, 90, 107, 153, 154, 155, 156, 183, 205, 229) have since been refuted and are recorded in
+  Calabi–Yau metrics, connections, spectra, and Yukawa couplings. Thirteen conjectures
+  (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
-  theorem. Seven conjectures (117, 118, 151, 152, 182, 195, and 240) have since been proved
+  theorem. Twelve conjectures (110, 111, 112, 115, 117, 118, 125,
+  151, 152, 182, 195, and 240) have since been proved
   and are recorded in place as resolved true, with their proofs.
 - **`paper/conjectures_blind.pdf`** (`conjectures_blind.tex`) — the
   anonymous version of the paper.
@@ -55,7 +56,7 @@ This repository contains:
   programs. `python run_all.py` regenerates every number in Part I;
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
-  (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `wx_shock_landau.py` (the shock forcing and Landau-floor resolutions of Parts VI--VII), `y_shape_laws.py` (Part VIII),
+  (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `wx_shock_landau.py` and `ehrhart_cov_gamma.py` (the shock forcing, Landau-floor, Ehrhart-scaling, covariance, and coverage resolutions of Parts VI--VII and IX--X), `y_shape_laws.py` (Part VIII),
   `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
