@@ -1,9 +1,9 @@
-# Two hundred eighty-five conjectures in mathematics
+# Two hundred ninety-four conjectures in mathematics
 
 This repository contains:
 
 - **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: two
-  hundred eighty-five conjectures in fifteen parts, each with its mechanism,
+  hundred ninety-four conjectures in sixteen parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -48,7 +48,14 @@ This repository contains:
   walk counts and radial moments against bridge log-convexity,
   likelihood-ratio and coupling growth in the length, quadrant-dependence
   signs for spans, radius, atmosphere, and contacts, and phase and
-  dimension laws for the interacting and nonbacktracking ensembles.
+  dimension laws for the interacting and nonbacktracking ensembles;
+  Part XVI (286–294) budgeted irreversibility and the spectral geometry
+  of relaxation: a winding-skewness amplification law for driven rings,
+  the recruitment, convexity, oscillation, and cheapest-exceptional-point
+  architecture of the entropy-production-budgeted gap frontier of linear
+  diffusions, its transfer to coherently accelerated Lindblad dynamics
+  with a Lie-algebraic saturation criterion, and the collapse of robust
+  Mpemba preparation basins at Liouvillian exceptional points.
   Thirteen conjectures
   (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
@@ -68,7 +75,7 @@ This repository contains:
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
   (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `wx_shock_landau.py` and `ehrhart_cov_gamma.py` (the shock forcing, Landau-floor, Ehrhart-scaling, covariance, and coverage resolutions of Parts VI--VII and IX--X), `y_shape_laws.py` (Part VIII),
-  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), `ae_projective_laws.py` (Part XIV), `af_saw_laws.py` (Part XV), and `t5_*.py` (Part III),
+  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), `ae_projective_laws.py` (Part XIV), `af_saw_laws.py` (Part XV), `ag_noneq_laws.py` (Part XVI), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base

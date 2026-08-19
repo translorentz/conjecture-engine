@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Two hundred eighty-five conjectures in mathematics}
+\title{Two hundred ninety-five conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Two hundred eighty-five conjectures in mathematics:\\ the statements}
+\title{Two hundred ninety-five conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -4348,6 +4348,92 @@ For every $n\ge2$, every real $q>0$, and every $d\ge2$, $\mathbf E_{U_n^{(d+1)}}
 \end{conjecture}
 
 
+\part{Budgeted irreversibility and the spectral geometry of relaxation}
+
+\medskip\noindent\emph{Added to the deposit: 19 August 2026.}\par\medskip
+
+The nine conjectures below concern a single organizing question of non-equilibrium dynamics: when a relaxation process is allowed only a finite budget of irreversibility, how is that budget spectrally allocated?  They form four programmes.  A current-fluctuation law (Conjecture~\ref{ag1}) asserts that a reversible shortcut added to a driven ring at fixed activity strictly amplifies the standardized skewness of the winding current, against the mixing intuition, sharpening the cumulant inequalities of~\cite{WB22,Pta22} into a monotonicity law.  A frontier programme (Conjectures~\ref{ag2} to~\ref{ag6}) studies the linear diffusion $\dd X_t=-(S+A)X_t\,\dd t+\sqrt{2S}\,\dd W_t$ with fixed Gaussian steady state, whose entropy-production rate is the exact quadratic $\Sigma(A)=\operatorname{tr}(A^\top S^{-1}A)$~\cite{GL19}, and conjectures the complete architecture of the budgeted-gap frontier: nested mode recruitment ordered by the reversible spectrum, piecewise-convex arcs with downward marginal-gain resets, exact two-mode support at small budget, a rank-two extremizer for the oscillation frequency, and a pairwise formula for the cheapest exceptional point, the thermodynamic analogue of the nearest-defective-matrix problem~\cite{ABBO11}; the unlimited endpoint is the theorem of Leli\`evre, Nier, and Pavliotis~\cite{LNP13}, and the spectral-perturbation bound of~\cite{KOI24} and the dissipation--coherence decomposition of~\cite{NKI26} bound the same objects, so Conjecture~\ref{ag5} carries an attribution flag against the latter work.  A coherent-acceleration programme (Conjectures~\ref{ag7} and~\ref{ag8}) transfers the frontier architecture to primitive Lindblad dynamics with detailed balance, where a stationary Hamiltonian is a skew perturbation in the GNS geometry~\cite{Alicki76} and coherent gap enhancement is the theorem of Li and Lu~\cite{LiLu24}: sequential operator-mode recruitment under the commutator-accessibility constraint, and saturation of the classical envelope exactly on $\mathfrak{su}(2)$-closed mode systems.  A preparation-geometry programme (Conjectures~\ref{ag9} and~\ref{ag9}) turns from rates to eigenvector geometry in the anomalous-relaxation setting of the Markovian Mpemba effect~\cite{LR17,KRHV19}: the maximal number of slow modes simultaneously cancellable by unitary preparation should equal the maximal rank of a tangent overlap map, and the measure of preparations that robustly cancel the slow mode should collapse in inverse proportion to the biorthogonal condition number as a Liouvillian exceptional point is approached, quantifying the antagonism between exceptional-point acceleration~\cite{ZXW25,CTH24} and robustness~\cite{MP26}.  The proved layer is three calibrations: Proposition~\ref{ag:pair} solves the two-mode frontier in closed form, identifies the second-slowest mode as the unique best infinitesimal partner of the slowest, and gives the exact pair costs used throughout; Proposition~\ref{ag:env} proves that the classical frontier is an upper envelope for every coherently driven detailed-balance Lindbladian and that the unital qubit attains it exactly; and Proposition~\ref{ag:basin} proves the basin-collapse law exactly in the qubit model, with the sphere prefactor equal to one.  Four negative findings are retained as controls, and they shape the part: the Markov analogues of the exceptional-point frontier laws were tested at optimizer level and discarded, since on a three-state ring the budgeted-gap frontier reaches its supremum only on the unidirectional boundary at infinite entropy production, on rings of four and five states the slow pair's real part continues to improve past the exceptional point rather than pinning, on the four-state instance the slow sector turns complex strictly before the frontier's plateau, and the fixed-trace pinning that motivated those claims is an artifact of three-state spectra; gap optimizers generically sit at defective matrices~\cite{BLO01} and at exceptional points of Liouvillians~\cite{ZWG23}, so only the budgeted, structure-revealing refinements below are claimed as new; and a proposed resonance criterion for entangling coherent acceleration was tested in exact second-order arithmetic and discarded, since in every nondegenerate product instance the best local Hamiltonian already attains the full optimum, the commutator structure forcing every entangling transition out of a simple product slow mode to carry a strictly larger spectral denominator than its local counterpart, while the claimed advantage appears only through slow-mode degeneracies outside the criterion's own hypotheses; and a proposed capacity principle equating the number of slow modes simultaneously cancellable by unitary preparation with the maximal rank of the tangent overlap map was refuted on a generic qutrit instance, where the slow coordinate's range over the fixed-spectrum orbit omits zero entirely, the spectral offset between the stationary state and the orbit dominating the orbit's fluctuation, so feasibility of Mpemba preparation on an orbit is an affine range condition invisible to the tangent geometry, constructive steering protocols~\cite{GMS26} notwithstanding, and Conjecture~\ref{ag9} carries that condition as an explicit hypothesis.  Conjectures~\ref{ag2}, \ref{ag3}, \ref{ag7}, and~\ref{ag8} assert laws for every dimension beyond any finite check and are flagged as such.
+
+For a continuous-time generator $Q$ on a finite connected graph with stationary law $\pi$, the activity is $\kappa=\sum_i\pi_i\sum_{j\ne i}q_{ij}$ and the entropy-production rate is $\sigma=\tfrac12\sum_{i\ne j}(\pi_iq_{ij}-\pi_jq_{ji})\log(\pi_iq_{ij}/\pi_jq_{ji})$.  On the homogeneous $N$-ring with affinity $F$, rates $e^{\pm F/(2N)}$, the winding current $J_t$ has long-time cumulant rates $c_m$ obtained from the tilted generator, and $S_3=|c_3|/c_2^{3/2}$ is its standardized skewness.  For the linear diffusion above, $S=S^\top>0$ is diagonal with simple spectrum $s_1<\cdots<s_n$ after an orthogonal change of basis, $A^\top=-A$, the stationary covariance is the identity, $r(A)=\min_j\operatorname{Re}\lambda_j(S+A)$, $\Omega(A)=\max_j|\operatorname{Im}\lambda_j(S+A)|$, and the frontier is $r_*(\Sigma)=\sup\{r(A):\Sigma(A)\le\Sigma\}$ with $\Sigma(A)=\sum_{i<j}a_{ij}^2(1/s_i+1/s_j)$; since the real parts sum to $\operatorname{tr} S$, always $r(A)\le\bar s=\operatorname{tr} S/n$, and $\bar s$ is attained at finite budget~\cite{LNP13}.  A mode $i$ is \emph{active} for $A$ when the $i$th row of $A$ is nonzero.  For a primitive Lindblad dissipator $\mathcal D$ in detailed balance with respect to $\rho_*$, the operator $K=-\mathcal D$ is positive self-adjoint in the GNS inner product with eigenmodes $KF_j=s_jF_j$ on the traceless sector, a stationary Hamiltonian ($[H,\rho_*]=0$) acts as the skew-adjoint $\mathcal A_H=-i[H,\cdot\,]$ with matrix elements $a_{jk}(H)$ and coherent budget $\Sigma_H=\sum_{j<k}|a_{jk}(H)|^2(1/s_j+1/s_k)$, and $r_{\mathrm{OU}}$ denotes the frontier of the diagonal spectrum $\{s_j\}$.  For a density matrix $\rho_0$ with simple spectrum, $\mathcal O_{\rho_0}$ is its unitary orbit, the left Liouvillian eigenmodes $\ell_1,\ell_2,\ldots$ are ordered from slow to fast and split into real functionals, $T_\rho:K\mapsto(\langle\ell_\alpha,i[K,\rho]\rangle)_\alpha$ is the tangent overlap map with real rank $\operatorname{rank}T_\rho$, and for a family $\mathcal L(h)$ with simple slow eigenvalue the biorthogonal condition number is $\kappa_{\mathrm{eig}}(h)=\|\ell_1(h)\|\,\|r_1(h)\|$ under $\langle\ell_1,r_1\rangle=1$; the $\eps$-robust basin on an orbit $\mathcal O$ is $\mathcal B_\eps(h)=\{\rho\in\mathcal O:|\langle\ell_1(h),\rho-\rho_*\rangle|\le\eps\}$ with the invariant orbit measure $\mu_\mathcal O$.
+
+\begin{proposition}[Pair calibration for the frontier programme]\label{ag:pair}
+(i) A perturbation supported on the pair $(i,j)$ leaves $\operatorname{span}\{e_i,e_j\}$ invariant with eigenvalues $\tfrac{s_i+s_j}2\pm\sqrt{(\tfrac{s_j-s_i}2)^2-a_{ij}^2}$; the block reaches its exceptional point at cost $\Sigma_{ij}^{\mathrm{EP}}=\tfrac{(s_j-s_i)^2}4(1/s_i+1/s_j)$ and generates frequency $\Omega_{ij}(\Sigma)=(\Sigma/(1/s_i+1/s_j)-(\tfrac{s_j-s_i}2)^2)_+^{1/2}$ at cost $\Sigma$.  (ii) The small-budget rate gain of coupling the slowest mode to mode $j$ is $\gamma_{1j}=s_1s_j/((s_j-s_1)(s_j+s_1))$ per unit entropy production, strictly decreasing in $s_j$: the second-slowest mode is the unique best infinitesimal partner.  (iii) For $n=2$ the frontier is
+\[
+r_*(\Sigma)=\frac{s_1+s_2}2-\sqrt{\Bigl(\frac{s_2-s_1}2\Bigr)^2-\frac{\Sigma}{1/s_1+1/s_2}}
+\quad(\Sigma\le\Sigma_{12}^{\mathrm{EP}}),\qquad r_*(\Sigma)=\bar s\quad(\Sigma\ge\Sigma_{12}^{\mathrm{EP}}),
+\]
+continuous, strictly increasing and strictly convex on the arc, with marginal gain diverging at the threshold and resetting to zero beyond it; all laws of Conjectures~\ref{ag2} to~\ref{ag6} hold for $n=2$.
+\end{proposition}
+
+\begin{proposition}[Envelope calibration for the coherent programme]\label{ag:env}
+(i) For every primitive detailed-balance dissipator with traceless-sector spectrum $\{s_j\}$ and every stationary Hamiltonian $H$,
+\[
+\operatorname{gap}(-\mathcal D-\mathcal A_H)\ \le\ r_{\mathrm{OU}}(\Sigma_H).
+\]
+(ii) For the unital qubit dissipator with Bloch decay rates $(s_1,s_2,s_3)$ and $H=\tfrac12\,h\cdot\sigma$, the traceless Liouvillian spectrum equals $-\operatorname{spec}(S+A(h))$ with $A(h)$ the cross-product matrix of $h$, every $3\times3$ skew matrix is realized, and the envelope is attained exactly.
+\end{proposition}
+
+\begin{proposition}[Basin calibration for the preparation programme]\label{ag:basin}
+Let $\mu$ be the uniform measure on the unit sphere of Bloch vectors and let the slow left functional of the family $B(h)=S+A(h)$, $S=\operatorname{diag}(s_1,s_2,s_3)$, $A(h)$ the rotation block $a_{12}=-h$, be normalized by $\langle\ell_1,r_1\rangle=1$ with $\|r_1\|=1$, so $\kappa_{\mathrm{eig}}(h)=\|\ell_1(h)\|$.  Then for every $0<\eps\le\kappa_{\mathrm{eig}}(h)$ and every $h$ below the exceptional point $h_c=(s_2-s_1)/2$,
+\[
+\mu\{x:|\langle\ell_1(h),x\rangle|\le\eps\}=\frac{\eps}{\kappa_{\mathrm{eig}}(h)},
+\]
+exactly, and $\kappa_{\mathrm{eig}}(h)=\sqrt{h_c/2}\,(h_c-h)^{-1/2}(1+o(1))$ as $h\uparrow h_c$, so the basin measure collapses at the exact rate $\eps\sqrt{2(h_c-h)/h_c}$.
+\end{proposition}
+
+\section{A current-fluctuation law for equilibrium shortcuts}
+
+\begin{conjecture}[Reversible shortcuts amplify winding skewness]\label{ag1}
+For every even $N\ge4$ and affinity $F\ne0$, add to the homogeneous driven $N$-ring a reversible antipodal chord of strength $g$ carrying no winding increment, rescaling all rates to keep the activity fixed.  Then the standardized skewness $S_3(g)$ of the long-time winding current is strictly increasing in $g\ge0$.
+\end{conjecture}
+
+\section{The finite-budget frontier of linear diffusions}
+
+\begin{conjecture}[Sequential spectral recruitment]\label{ag2}
+For every diagonal $S$ with simple spectrum there are thresholds $0=\Sigma_0<\Sigma_1\le\Sigma_2\le\cdots$ and a choice of maximizer $A(\Sigma)$ of the frontier at every budget whose active-mode set is $\{1,\ldots,m\}$ with $m$ nondecreasing in $\Sigma$: no mode is recruited before every slower mode.
+\end{conjecture}
+
+\begin{conjecture}[Convex arcs with marginal-gain resets]\label{ag3}
+For simple $S$ the frontier $r_*(\Sigma)$ is continuous and piecewise real-analytic; on each maximal interval with constant active set it is convex; the one-sided marginal gain jumps only downward at arc boundaries; and $r_*$ reaches the ceiling $\bar s$ at a finite budget and is constant beyond.
+\end{conjecture}
+
+\begin{conjecture}[Finite two-mode radius]\label{ag4}
+For simple $S$ there exists $\Sigma_1>0$ such that for every $0<\Sigma<\Sigma_1$, every global maximizer of the frontier, up to sign and rotations inside exact degeneracies, is supported on the two slowest modes; $\Sigma_1$ is the first budget at which the two-mode branch collides or loses optimality to a branch containing mode three.
+\end{conjecture}
+
+\begin{conjecture}[Rank-two oscillation extremizer]\label{ag5}
+For every diagonal $S>0$ and budget $\Sigma$,
+\[
+\sup_{\Sigma(A)\le\Sigma}\Omega(A)=\max_{i<j}\ \Omega_{ij}(\Sigma),
+\]
+with $\Omega_{ij}$ the pair formula of Proposition~\ref{ag:pair}(i): no coupling of three or more modes generates a larger spectral frequency than the best single rotation block.
+\end{conjecture}
+
+\begin{conjecture}[Cheapest exceptional point is a pair]\label{ag6}
+For simple $S$, the infimum of $\Sigma(A)$ over antisymmetric $A$ making $S+A$ defective equals $\min_{i<j}\Sigma_{ij}^{\mathrm{EP}}$, attained by the single block of Proposition~\ref{ag:pair}(i) on a minimizing pair.
+\end{conjecture}
+
+\section{Coherent acceleration of dissipative quantum dynamics}
+
+\begin{conjecture}[Recruitment under commutator accessibility]\label{ag7}
+For a primitive detailed-balance dissipator with simple traceless spectrum, every small-budget maximizer of $\operatorname{gap}(-\mathcal D-\mathcal A_H)$ over stationary Hamiltonians of coherent budget $\Sigma_H$ concentrates, as $\Sigma_H\to0$, on the accessible direction maximizing the restricted quotient $\sum_{j>1}|a_{1j}(H)|^2/(s_j-s_1)$ over $\Sigma_H$, coupling the slowest dissipative eigenmode to a single dominant partner; and there is a maximizing selection whose active dissipative modes are nested and nondecreasing in the budget, with changes only at spectral collisions or accessibility branch crossings.
+\end{conjecture}
+
+\begin{conjecture}[Envelope saturation is Lie-algebraic]\label{ag8}
+For a primitive detailed-balance Lindbladian, the envelope of Proposition~\ref{ag:env} is attained on a nontrivial budget interval if and only if the dissipative eigenmodes active in the classical optimizer close under commutation into a direct sum of three-dimensional $\mathfrak{su}(2)$-type modules together with spectators, so that the unrestricted skew optimizer is realized by a Hamiltonian commutator.
+\end{conjecture}
+
+\section{The geometry of anomalous relaxation}
+
+\begin{conjecture}[Exceptional points collapse robust Mpemba basins]\label{ag9}
+Let $\mathcal L(h)$ approach a second-order exceptional point $h_c$ in its slow sector from the diagonalizable side, and suppose the slow functional vanishes transversally at some point of the fixed smooth orbit $\mathcal O$ for every $h$ near $h_c$.  Then there are constants $0<c<C$ with
+\[
+c\,\frac{\eps}{\kappa_{\mathrm{eig}}(h)}\ \le\ \mu_\mathcal O(\mathcal B_\eps(h))\ \le\ C\,\frac{\eps}{\kappa_{\mathrm{eig}}(h)}
+\]
+for all sufficiently small $\eps$ and all $h$ near $h_c$: the measure of preparations that robustly cancel the slow mode collapses in exact inverse proportion to the biorthogonal condition number.
+\end{conjecture}
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -4722,5 +4808,22 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{BOS01} M.~Baiesi, E.~Orlandini, and A.~L. Stella, Peculiar scaling of self-avoiding walk contacts, Phys. Rev. Lett. 87 (2001) 070602.
 \bibitem{BGJ20} N.~R. Beaton, A.~J. Guttmann, and I.~Jensen, Two-dimensional interacting self-avoiding walks: new estimates for critical temperatures and exponents, J. Phys. A 53 (2020) 165002.
 \bibitem{FvdH13} R.~Fitzner and R.~van der Hofstad, Non-backtracking random walk, J. Stat. Phys. 150 (2013) 264--284.
+\bibitem{LNP13} T.~Leli\`evre, F.~Nier, and G.~A. Pavliotis, Optimal non-reversible linear drift for the convergence to equilibrium of a diffusion, J. Stat. Phys. 152 (2013) 237--274.
+\bibitem{GL19} C.~Godr\`eche and J.~M. Luck, Characterising the nonequilibrium stationary states of Ornstein--Uhlenbeck processes, J. Phys. A 52 (2019) 035002.
+\bibitem{KOI24} A.~Kolchinsky, N.~Ohga, and S.~Ito, Thermodynamic bound on spectral perturbations, with applications to oscillations and relaxation dynamics, Phys. Rev. Research 6 (2024) 013082.
+\bibitem{NKI26} R.~Nagayama, A.~Kolchinsky, and S.~Ito, Oscillatory-nonnormal decomposition of dissipation in Ornstein--Uhlenbeck processes, arXiv:2606.07263 (2026).
+\bibitem{ZWG23} Y.-L. Zhou, X.-D. Yu, C.-W. Wu, X.-Q. Li, J.~Zhang, W.~Li, and P.-X. Chen, Accelerating relaxation through Liouvillian exceptional point, Phys. Rev. Research 5 (2023) 043036.
+\bibitem{BLO01} J.~V. Burke, A.~S. Lewis, and M.~L. Overton, Optimizing matrix stability, Proc. Amer. Math. Soc. 129 (2001) 1635--1642.
+\bibitem{ABBO11} R.~Alam, S.~Bora, R.~Byers, and M.~L. Overton, Characterization and construction of the nearest defective matrix via coalescence of pseudospectral components, Linear Algebra Appl. 435 (2011) 494--513.
+\bibitem{WB22} T.~Wampler and A.~C. Barato, Skewness and kurtosis in stochastic thermodynamics, J. Phys. A 55 (2022) 014002.
+\bibitem{Pta22} K.~Ptaszy\'nski, Bounds on skewness and kurtosis of steady state currents, Phys. Rev. E 106 (2022) 024119.
+\bibitem{LiLu24} B.~Li and J.~Lu, Quantum space-time Poincar\'e inequality for Lindblad dynamics, arXiv:2406.09115 (2024).
+\bibitem{Alicki76} R.~Alicki, On the detailed balance condition for non-Hamiltonian systems, Rep. Math. Phys. 10 (1976) 249--258.
+\bibitem{LR17} Z.~Lu and O.~Raz, Nonequilibrium thermodynamics of the Markovian Mpemba effect and its inverse, Proc. Natl. Acad. Sci. USA 114 (2017) 5083--5088.
+\bibitem{KRHV19} I.~Klich, O.~Raz, O.~Hirschberg, and M.~Vucelja, Mpemba index and anomalous relaxation, Phys. Rev. X 9 (2019) 021060.
+\bibitem{ZXW25} J.~Zhang, G.~Xia, C.-W. Wu, T.~Chen, Q.~Zhang, Y.~Xie, W.-B. Su, W.~Wu, C.-W. Qiu, P.-X. Chen, W.~Li, H.~Jing, and Y.-L. Zhou, Observation of quantum strong Mpemba effect, Nature Commun. 16 (2025) 301.
+\bibitem{CTH24} A.~K. Chatterjee, S.~Takada, and H.~Hayakawa, Multiple quantum Mpemba effect: exceptional points and oscillations, Phys. Rev. A 110 (2024) 022213.
+\bibitem{MP26} M.~Mackinnon and M.~Paternostro, Robustness of the quantum Mpemba effect against state-preparation errors, New J. Phys. 28 (2026) 044507.
+\bibitem{GMS26} Y.~Hong, L.~Xu, W.~Zhang, J.~Ren, and J.~Wang, Geometric mode steering of the quantum Mpemba effect, arXiv:2607.14501 (2026).
 \end{thebibliography}
 \end{document}
