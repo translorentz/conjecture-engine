@@ -4574,7 +4574,7 @@ Determine $$\Theta(q)$$ of Conjecture 3: derive, from the Hardy–Littlewood cor
 77. T. Rossmann, *Enumerating conjugacy classes of graphical groups over finite fields*, Bull. Lond. Math. Soc. 54 (2022), 1923–1943.
 78. P. Tittmann, I. Averbouch, and J. A. Makowsky, *The enumeration of vertex induced subgraphs with respect to the number of components*, European J. Combin. 32 (2011), 954–974.
 79. J. A. Bondy and R. L. Hemminger, *Graph reconstruction—a survey*, J. Graph Theory 1 (1977), 227–268.
-80. A. Cameron, V. E. Coll, Jr., N. Mayers, and N. Russoniello, *The breadth of Lie poset algebras*, Linear Multilinear Algebra 71 (2023), no. 16.
+80. A. Cameron, V. E. Coll, Jr., N. Mayers, and N. Russoniello, *The breadth of Lie poset algebras*, Linear Multilinear Algebra 71 (2023), 2565–2584.
 81. V. E. Coll, Jr. and N. Mayers, *The index of Lie poset algebras*, J. Combin. Theory Ser. A 177 (2021), 105324.
 82. L. Lampret and A. Vavpetič, *(Co)homology of poset Lie algebras*, arXiv:1504.07743 (2015).
 83. Z. Halasi and P. P. Pálfy, *The number of conjugacy classes in pattern groups is not a polynomial function*, J. Group Theory 14 (2011), no. 6, 841–854.
