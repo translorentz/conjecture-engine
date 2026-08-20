@@ -4384,7 +4384,7 @@ exactly, and $\kappa_{\mathrm{eig}}(h)=\sqrt{h_c/2}\,(h_c-h)^{-1/2}(1+o(1))$ as 
 \section{A current-fluctuation law for equilibrium shortcuts}
 
 \begin{conjecture}[Reversible shortcuts amplify winding skewness]\label{ag1}
-For every even $N\ge4$ and affinity $F>0$, add to the homogeneous driven $N$-ring a reversible antipodal chord of strength $g$ carrying no winding increment, rescaling all rates to keep the activity fixed.  Then the standardized skewness $S_3(g)$ of the long-time winding current is strictly increasing in $g\ge0$.
+For every even $N\ge4$ and affinity $F\ne0$, add to the homogeneous driven $N$-ring a reversible antipodal chord of strength $g$ carrying no winding increment, rescaling all rates to keep the activity fixed.  Then the standardized skewness $S_3(g)$ of the long-time winding current is strictly increasing in $g\ge0$.
 \end{conjecture}
 
 \section{The finite-budget frontier of linear diffusions}
@@ -4426,7 +4426,7 @@ For a primitive detailed-balance Lindbladian, the envelope of Proposition~\ref{a
 \section{The geometry of anomalous relaxation}
 
 \begin{conjecture}[Exceptional points collapse robust Mpemba basins]\label{ag9}
-Let $\mathcal L(h)$ approach a second-order exceptional point $h_c$ in its slow sector from the diagonalizable side, and suppose the slow functional vanishes transversally on the fixed smooth orbit $\mathcal O$, uniformly near the exceptional point: the tangential gradient of the unit-normalized slow functional is bounded above and below by positive constants along its zero set on $\mathcal O$, and that zero set is nonempty with hypersurface measure bounded below, uniformly for $h$ near $h_c$.  Then there are constants $0<c<C$ with
+Let $\mathcal L(h)$ approach a second-order exceptional point $h_c$ in its slow sector from the diagonalizable side, normalize the slow eigenvectors by $\|r_1\|=1$ and $\langle\ell_1,r_1\rangle=1$ so that $\kappa_{\mathrm{eig}}(h)=\|\ell_1(h)\|$ and the basin $\mathcal B_\eps(h)=\{\rho\in\mathcal O:|\langle\ell_1(h),\rho-\rho_*\rangle|\le\eps\}$ is fixed in scale, and suppose the slow functional vanishes transversally on the fixed smooth orbit $\mathcal O$, uniformly near the exceptional point: the tangential gradient of the unit-normalized slow functional is bounded above and below by positive constants along its zero set on $\mathcal O$, and that zero set is nonempty with hypersurface measure bounded below, uniformly for $h$ near $h_c$.  Then there are constants $0<c<C$ with
 \[
 c\,\frac{\eps}{\kappa_{\mathrm{eig}}(h)}\ \le\ \mu_\mathcal O(\mathcal B_\eps(h))\ \le\ C\,\frac{\eps}{\kappa_{\mathrm{eig}}(h)}
 \]
@@ -4517,7 +4517,7 @@ with $U$ the radial quantile function and $d_B$ the bottleneck distance.
 \end{conjecture}
 
 \begin{conjecture}[A leakage trichotomy for hidden extremes]\label{ah8}
-Let $X=R_0W_0+R_1W_1$ with independent components: $R_0$ regularly varying with index $\alpha_0$, $R_1$ with index $\alpha_1>\alpha_0$, and angular laws $W_0\sim H_0$, $W_1\sim H_1$ supported on compact sets $M_0$, $M_1$ separated in the simplex, $H_1$ as in Conjecture~\ref{ah7}.  Remove the angular neighborhood $N_{\delta_n}(M_0)$, rerank the surviving radii, and let $L_n$ be the ratio of the primary to the hidden mechanism's contribution to the surviving exceedance intensity at the hidden threshold.  Let $\Lambda_n$ be the expected number of surviving leaked primary exceedances in the reranked top-$k_n$ sample.  Then: if $\Lambda_n\to0$, the persistence diagrams of the surviving angular sample recover those of $M_1$ at the rate of Conjecture~\ref{ah7}; if $\Lambda_n\to\infty$ and the leaked primary support is topologically distinct, they do not; and for $\Lambda_n\to\lambda\in(0,\infty)$ the surviving leaked primaries are asymptotically Poisson-$\lambda$ and the probability of recovery within any fixed bottleneck tolerance below the hidden feature scale converges to a limit $p(\lambda)$, nonincreasing in $\lambda$, with $0<p(\lambda)<1$, so feature detection switches on the leaked-count scale $\Lambda_n\asymp1$, that is $L_n\asymp1/k_n$.
+Let $X=R_0W_0+R_1W_1$ with independent components: $R_0$ regularly varying with index $\alpha_0$, $R_1$ with index $\alpha_1>\alpha_0$, and angular laws $W_0\sim H_0$, $W_1\sim H_1$ supported on compact sets $M_0$, $M_1$ separated in the simplex, $H_1$ as in Conjecture~\ref{ah7}.  Remove the angular neighborhood $N_{\delta_n}(M_0)$, rerank the surviving radii, and let $L_n$ be the ratio of the primary to the hidden mechanism's contribution to the surviving exceedance intensity at the hidden threshold.  Let $\Lambda_n$ be the expected number of surviving leaked primary exceedances in the reranked top-$k_n$ sample.  Then: if $\Lambda_n\to0$, the persistence diagrams of the surviving angular sample recover those of $M_1$ at the rate of Conjecture~\ref{ah7}; if $\Lambda_n\to\infty$ and the leaked support $M_{\mathrm{leak}}$ is persistence-separated from $M_1$, meaning $d_B(\mathrm{Dgm}_q(M_1\cup M_{\mathrm{leak}}),\mathrm{Dgm}_q(M_1))\ge c_0>0$, they do not; and for $\Lambda_n\to\lambda\in(0,\infty)$ the surviving leaked primaries are asymptotically Poisson-$\lambda$ and the probability of recovery within any fixed bottleneck tolerance below the hidden feature scale converges to a limit $p(\lambda)\in(0,1)$, so feature detection switches on the leaked-count scale $\Lambda_n\asymp1$, that is $L_n\asymp1/k_n$.
 \end{conjecture}
 
 \section{Tail tomography and its stability}
@@ -4639,7 +4639,7 @@ and on the complementary event the empirical $W_2$ Fr\'echet mean is unique, its
 \section{A phase calculus for Mapper}
 
 \begin{conjecture}[Stable survival tomography of Reeb graphs]\label{ai6}
-Let $(G,f)$ be a tame Reeb graph whose $r$ degree-one persistence bars have lengths (spans) $\ell_1,\ldots,\ell_r$ and pairwise critical-value separation at least $\gamma>0$, and let $S_G(h)=\E_U\,\beta_1(M_{h,U})$ be the phase-averaged Betti curve at overlap $\alpha$.  Then (a) $S_G(h)=\sum_jF_\alpha(\ell_j/h)$ for every $h<\gamma$, with the kernel of Proposition~\ref{ai:map}; and (b) the inversion is stable: if two tame Reeb graphs with $\gamma$-separated features have curves with $\lVert S_G-S_{G'}\rVert_{L^2(\dd h/h)}\le\eta$, then the span multisets are within bottleneck distance $C(\gamma,\alpha,r)\,\eta$ of each other.
+Let $(G,f)$ be a tame Reeb graph whose $r$ degree-one extended-persistence bars have lengths (spans) $\ell_1,\ldots,\ell_r$ and pairwise critical-value separation at least $\gamma>0$, and let $S_G(h)=\E_U\,\beta_1(M_{h,U})$ be the phase-averaged Betti curve at overlap $\alpha$.  Then (a) $S_G(h)=\sum_jF_\alpha(\ell_j/h)$ for every $h<\gamma$, with the kernel of Proposition~\ref{ai:map}; and (b) the inversion is stable: if two tame Reeb graphs with $\gamma$-separated features have curves with $\lVert S_G-S_{G'}\rVert_{L^2((0,\gamma),\,\dd h/h)}\le\eta$, then the equal-cardinality span multisets are within bottleneck distance $C(\gamma,\alpha,r)\,\eta$ of each other.
 \end{conjecture}
 
 \begin{conjecture}[The dither law survives discretization]\label{ai7}
@@ -4648,13 +4648,13 @@ For a Reeb graph discretized at filter mesh $\eta=o(h)$, or sampled densely enou
 \E\widehat c-c=O(\eta),\qquad
 \operatorname{Var}(\widehat c)=\frac{s^2}{12}+O(s\eta+\eta^2),
 \]
-uniformly over phases, with constants depending only on the local branch geometry.
+uniformly over admissible discretizations, with constants depending only on the local branch geometry.
 \end{conjecture}
 
 \section{Rectangle tomography}
 
 \begin{conjecture}[Three-direction stability and random-slope observability]\label{ai8}
-Fix a box, a maximum count $m$, and $\delta>0$, and consider rectangle-decomposable modules whose corner coordinates, side lengths, and pairwise separations are at least $\delta$, and whose corners stay at distance at least $\delta$ from the coincidence loci of $v_1,v_2,v_3$, the configurations at which two rectangles cut a common fiber-interval endpoint along some $v_j$.  (a) For generic fixed positive-slope directions $v_1,v_2,v_3$, the invariant $d_3(M,N)=\max_j\sup_{L\parallel v_j}d_B(\mathrm{Dgm}(M_L),\mathrm{Dgm}(N_L))$ is locally bi-Lipschitz equivalent to the minimal corner displacement $d_{\mathrm{rect}}$, with constants polynomial in $m$ and $1/\delta$.  (b) The weighted direction profile $g(\theta)$ of the matching distance between two such modules is Lipschitz on compact slope ranges with constant polynomial in $m$, the box size, $1/\delta$, and the slope margin, so its near-maximal set has measure bounded below and $K$ uniformly random slopes recover a $(1-\eps)$-approximation of the matching distance with failure probability exponentially small in $K$.
+Fix a box, a maximum count $m$, and $\delta>0$, and consider rectangle-decomposable modules whose corner coordinates, side lengths, and pairwise separations are at least $\delta$, and whose corners stay at distance at least $\delta$ from the coincidence loci of $v_1,v_2,v_3$, the configurations at which two rectangles cut a common fiber-interval endpoint along some $v_j$.  (a) For generic fixed positive-slope directions $v_1,v_2,v_3$, the invariant $d_3(M,N)=\max_j\sup_{L\parallel v_j}d_B(\mathrm{Dgm}(M_L),\mathrm{Dgm}(N_L))$ is locally bi-Lipschitz equivalent to the minimal corner displacement $d_{\mathrm{rect}}$, with constants polynomial in $m$ and $1/\delta$.  (b) The weighted direction profile $g(\theta)$ of the matching distance between two such modules is Lipschitz relative to its own maximum on compact slope ranges, $\operatorname{Lip}g\le C\lVert g\rVert_\infty$ with $C$ polynomial in $m$, the box size, $1/\delta$, and the slope margin, so its near-maximal set has measure bounded below and $K$ uniformly random slopes recover a $(1-\eps)$-approximation of the matching distance with failure probability exponentially small in $K$.
 \end{conjecture}
 
 \section{Finite summaries and dynamic complexity}
