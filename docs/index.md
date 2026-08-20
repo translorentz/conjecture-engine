@@ -10,6 +10,8 @@ title: Three hundred nineteen conjectures in mathematics
 
 *First deposited 27 July 2026. Last updated 17 August 2026.*
 
+*Companion collection: [Twelve promise-class conjectures for many-electron approximation](promise.html) — a separate, conditional collection held to a deliberately weaker and clearly labelled standard of evidence.*
+
 ## Summary of the conjectures
 
 **Part I — conjectures from the local–global random model, in importance–novelty order.**

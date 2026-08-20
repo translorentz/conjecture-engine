@@ -87,6 +87,16 @@ This repository contains:
 - **[Web version](https://translorentz.github.io/conjecture-engine/)** — the
   paper as a browsable page (`docs/`), with plain-language explanations
   of every conjecture.
+- **`paper/conjectures_promise.pdf`** (`conjectures_promise.tex`) — a
+  companion collection of twelve *conditional, promise-class* conjectures
+  for certified polynomial-time many-electron ground-state approximation.
+  It is kept separate, and held to a deliberately weaker and clearly
+  labelled standard of evidence: each is conditioned on an explicit
+  structural promise class, and its checks (`verify/promise_lemmas.py`,
+  and the browsable [companion page](https://translorentz.github.io/conjecture-engine/promise.html))
+  verify only the shared sub-lemmas and small-instance mechanisms, never
+  the conjectural laws themselves. This keeps the main collection's
+  "every claim verified" standard intact.
 - **`engine/`, `verify/`, `adversarial/`, `run_all.py`** — the verification
   programs. `python run_all.py` regenerates every number in Part I;
   machine-readable outputs are in `results/`. The later parts have their
