@@ -76,8 +76,8 @@ This repository contains:
   Thirteen conjectures
   (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
-  theorem. Twelve conjectures (110, 111, 112, 115, 117, 118, 125,
-  151, 152, 182, 195, and 240) have since been proved
+  theorem. Thirteen conjectures (110, 111, 112, 115, 117, 118, 125,
+  151, 152, 182, 195, 240, and 298) have since been proved
   and are recorded in place as resolved true, with their proofs.
 - **`paper/conjectures_blind.pdf`** (`conjectures_blind.tex`) — the
   anonymous version of the paper.

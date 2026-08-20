@@ -88,6 +88,32 @@ for N in (4, 6, 8, 10):
 chk("ag1 winding skewness strictly increasing (exact cumulants, N<=10)",
     ok1 and minratio > 1, f"min ratio {minratio:.7f}")
 
+
+# ag1 control: affinity reversal is exact antisymmetry psi(-F,z)=psi(F,-z),
+# so S3(-F,g)=-S3(F,g) and the two-sided F!=0 version is false (F>0 repair).
+def ring_lead(N, F, g, z):
+    L = np.zeros((N, N), dtype=complex)
+    for i in range(N):
+        j = (i + 1) % N
+        L[j, i] += math.exp(F / 2) * np.exp(z / N)
+        L[i, j] += math.exp(-F / 2) * np.exp(-z / N)
+    L[N // 2, 0] += g
+    L[0, N // 2] += g
+    for i in range(N):
+        L[i, i] -= L[:, i].sum()
+    ev = eigvals(L)
+    return ev[np.argmax(ev.real)]
+
+
+ok_anti = True
+for N in (4, 6, 8):
+    for F in (0.7, 2.0):
+        for g in (0.0, 0.5, 2.0):
+            for z in (0.05, 0.3, 1.1):
+                ok_anti &= abs(ring_lead(N, F, g, z) - ring_lead(N, -F, g, -z)) < 1e-9
+chk("ag1 control: affinity reversal antisymmetry psi(-F,z)=psi(F,-z) (F>0 repair)",
+    ok_anti, "every odd winding cumulant odd in F")
+
 # ------------------------------------------------ OU frontier machinery
 def pairs(n):
     return [(i, j) for i in range(n) for j in range(i + 1, n)]
