@@ -89,8 +89,10 @@ chk("ag1 winding skewness strictly increasing (exact cumulants, N<=10)",
     ok1 and minratio > 1, f"min ratio {minratio:.7f}")
 
 
-# ag1 control: affinity reversal is exact antisymmetry psi(-F,z)=psi(F,-z),
-# so S3(-F,g)=-S3(F,g) and the two-sided F!=0 version is false (F>0 repair).
+# ag1 symmetry: affinity reversal is exact antisymmetry psi(-F,z)=psi(F,-z),
+# so the SIGNED third cumulant is odd in F while c_2 is even; the standardized
+# skewness S_3=|c_3|/c_2^{3/2} is therefore EVEN in F and the law is symmetric
+# under affinity reversal (stated for F!=0; positive-affinity tests cover both).
 def ring_lead(N, F, g, z):
     L = np.zeros((N, N), dtype=complex)
     for i in range(N):
