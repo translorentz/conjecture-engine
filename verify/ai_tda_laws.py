@@ -421,6 +421,22 @@ for _ in range(60):
 check("ai11: unique reconstruction from 4m moments at m=2", len(sols) == 1,
       f"{len(sols)} solution(s)")
 
+# ai:sum(iii): generic determinacy from 6m-2 aggregate moments via the signed
+# measure A_D'' = sum(delta_b - 2 delta_c + delta_d) and Prony reconstruction.
+bars2 = [(0.3, 1.1), (0.55, 2.0)]  # (b,d)
+nodes, wts = [], []
+for b, d in bars2:
+    nodes += [b, (b + d) / 2.0, d]
+    wts += [1.0, -2.0, 1.0]
+mu = np.array([sum(w * x ** k for w, x in zip(wts, nodes)) for k in range(12)])
+s = 6  # 3m atoms at m=2; 2s = 12 signed-measure moments = M_0..M_9 (6m-2=10)
+H = np.array([[mu[i + j] for j in range(s)] for i in range(s)])
+coef = np.linalg.solve(H, -np.array([mu[s + i] for i in range(s)]))
+roots = np.sort(np.roots(np.concatenate(([1.0], coef[::-1]))).real)
+check("ai:sum iii: 6m-2 aggregate moments determine the diagram (Prony)",
+      np.allclose(roots, np.sort(nodes), atol=1e-6),
+      f"max node error {np.max(np.abs(roots - np.sort(nodes))):.1e}")
+
 print("== Conjecture ai12 (vineyard events)")
 
 
