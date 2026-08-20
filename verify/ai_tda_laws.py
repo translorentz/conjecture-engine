@@ -182,6 +182,22 @@ for h in (0.2, 0.12):
           abs(est.mean() - c) < 1e-4 and abs(est.var() / (s * s / 12) - 1) < 0.01,
           f"bias {est.mean()-c:+.1e} var ratio {est.var()/(s*s/12):.4f}")
 
+
+# ai6 control: a span above the separation saturates F_alpha=1 throughout the
+# observed window h in (0,gamma), so its length leaves no trace on S_G -- the
+# span bound l_j < gamma is necessary for stable inversion (b).
+def Falpha(ell, h, al):
+    x = ell / h
+    return min(1.0, max(0.0, (x - 1.0) / (1.0 - al)))
+alpha = 0.3
+gamma = 1.0
+hs = np.linspace(1e-3, gamma, 500, endpoint=False)
+big = [max(abs(Falpha(3.0, h, alpha) - Falpha(4.0, h, alpha)) for h in hs)]  # spans>gamma
+small_kinks_inside = all(ell < gamma and ell / (2 - alpha) < gamma for ell in (0.6, 0.9))
+check("ai6 control: spans above the separation are unresolvable on (0,gamma)",
+      big[0] == 0.0 and small_kinks_inside,
+      "curves for spans 3 vs 4 coincide on (0,1); spans<gamma keep both kinks inside")
+
 print("== Proposition ai:rect and Conjecture ai8 (rectangle tomography)")
 
 
