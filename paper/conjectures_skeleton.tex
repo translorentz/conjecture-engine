@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred seven conjectures in mathematics}
+\title{Three hundred nineteen conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred seven conjectures in mathematics:\\ the statements}
+\title{Three hundred nineteen conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -4558,6 +4558,124 @@ In a smooth Hall family $\bar F_\lambda(x)=x^{-\alpha}[1+c(\lambda)x^{-\beta}+d(
 \end{conjecture}
 
 
+\part{Extremal, randomized, and inverse laws for persistent topology}
+
+\medskip\noindent\emph{Added to the deposit: 20 August 2026.}\par\medskip
+
+The twelve conjectures below concern a single organizing question of topological data analysis: which parts of a persistence computation are laws rather than artifacts, sharp constants instead of worst-case bounds, invertible summaries instead of lossy signatures, and calibrated randomness instead of parameter sensitivity.  They form five programmes.  An extremal-and-sampling programme (Conjectures~\ref{ai1} to~\ref{ai3}) concerns degree-one Vietoris--Rips persistence: a circle isoperimetry asserting that among $n$ points on a Euclidean circle the regular polygon uniquely maximizes the multiplicative persistence ratio, the chordal, every-$n$, ratio-level refinement of the geodesic persistence-set extremality of G\'omez and M\'emoli~\cite{GoM24}; a saturation law asserting that the classical factor two of Vietoris--Rips stability~\cite{CSO14} is asymptotically attained by greedy landmarking of smooth convex curves; and a two-sided Johnson--Lindenstrauss threshold~\cite{JL84,LN17} for the simultaneous preservation of the loop ratios of orthogonal hexagonal channels under Gaussian projection, whose upper half is known in substance~\cite{Lot19,MKG24} and whose lower half would be the first matching bound for a topological statistic.  A statistical programme (Conjectures~\ref{ai4} and~\ref{ai5}) makes the geometry of Wasserstein means of diagrams~\cite{MMH11,TMMH14} quantitative: an optional feature of prevalence $q$ appears in the mean at exactly $q$ times its conditional persistence up to exponentially small matching leakage, sharpening the shrinkage phenomenon visible in the probabilistic Fr\'echet means of~\cite{MTB15} and the grouping calculus of~\cite{CaM24}, and empirical means use the intended latent grouping up to $CNm\,e^{-c\gamma^2/\sigma^2}$.  A Mapper programme (Conjectures~\ref{ai6} and~\ref{ai7}) builds on an exact phase calculus proved here: randomizing the phase of a uniform one-dimensional cover~\cite{CO18} makes the survival probability of an isolated Reeb cycle the universal piecewise-linear function $F_\alpha(\ell/h)$ with an explicit kernel, the phase-averaged Betti curve of a chain of cycles is exactly additive with the spans recoverable from its kinks, and the dithered midpoint estimator of a branch critical value is exactly unbiased with the quantization variance $s^2/12$ of~\cite{Sch64}; the conjectures transfer this calculus to general tame Reeb graphs with a stable inversion, and to discretized and sampled Mapper with mesh-order corrections.  A tomography programme (Conjecture~\ref{ai8}) concerns rectangle-decomposable two-parameter modules~\cite{BL23}, for which the fibered barcode over all lines is a complete invariant~\cite{BLO22}: a proposition proved here sharpens completeness to a single generic direction with the line parameterization retained, the deposited three-direction claim being recorded as calibration, and the conjecture asserts the quantitative sequel, that three fixed generic directions give a locally bi-Lipschitz invariant with polynomially controlled constant and that the direction profile of the matching distance is never needle-like, so uniformly random slopes see near-maximal discrepancy; it carries attribution flags against the local metric equivalence of Vipond~\cite{Vip20}, proved with a universal constant over all lines, and the Lipschitz foliation bounds of~\cite{CDFFL13} behind deterministic approximation schemes~\cite{KN20,BHLMS23}.  A finite-summary programme (Conjectures~\ref{ai9} to~\ref{ai12}) asks how small a complete or faithful summary can be: a restricted-isometry law for random Fourier sketches~\cite{RR07} of the persistence-weighted Gaussian kernel~\cite{KFH16}, bi-Lipschitz to the Wasserstein metric on separated bounded-cardinality classes, which the known non-embeddability theorems~\cite{CB19,BW20} do not forbid because they require collisions or unbounded cardinality, with restricted-class embeddings known in spirit~\cite{MV24}; a Whitney-count law~\cite{Whi44} asserting that $4m+1$ generic evaluations of the Gaussian persistence surface, whose continuum injectivity is known~\cite{CHLP22} while grid images are not injective~\cite{AEK17}, form a complete invariant of $m$-point diagrams; a moment law asserting that the first $4m$ moments of the aggregate landscape~\cite{Bub15} determine a generic $m$-bar diagram, a compressed instance of the finite algebraic coordinate systems of~\cite{ACC16,Kal19}; and an average-case kinetic law asserting that random affine motion of $n$ planar points produces only $O(n^2\log n)$ expected changes of the degree-one persistence pairing, far below the quartic worst-case count that vineyard algorithms~\cite{CEM06,DH21,Hic22,GM26} are built to survive.  The proved layer is three calibrations.  Proposition~\ref{ai:map} proves the exact survival law with kernel $F_\alpha(x)=\min(1,\max(0,(x-1)/(1-\alpha)))$, the exact additivity and kink inversion of the phase-averaged Betti curve for chains of isolated cycles, and the exact dither law for branch critical values.  Proposition~\ref{ai:rect} proves that one generic direction of the parameterized fiber field determines a generic rectangle-decomposable module, by tracking the interval pairs of the fiber barcodes through the parallel family and reading each rectangle off the envelope of its track.  Proposition~\ref{ai:sum} proves the exact closed form of the aggregate-landscape moments and the one-bar case of the moment law, a single bar being determined by its first two moments.  Three negative findings are retained as controls, and they shape the part.  The unrestricted planar version of the extremality claim is refuted: a six-point perturbation search found planar configurations whose multiplicative loop persistence exceeds the regular hexagon's by the factor $1.052$, exact to the arithmetic of the boundary-matrix reduction, so the circle hypothesis of Conjecture~\ref{ai1} is essential and is recorded with the refuting instance; this failure of unrestricted extremality appears to be undocumented.  The deposited three-direction tomography claim is true but not sharp, one direction sufficing by Proposition~\ref{ai:rect}, and is recorded as calibration.  A deposited majority-threshold claim for barycenter features, that an optional feature appears in the mean exactly when its prevalence exceeds one half, is refuted by the flat grouping algebra itself, the mean feature shrinking continuously with prevalence instead, and Conjecture~\ref{ai4} carries the corrected law.  Conjectures~\ref{ai2} to~\ref{ai5}, \ref{ai6}, \ref{ai7}, and~\ref{ai9} to~\ref{ai12} assert asymptotic or every-instance laws beyond any finite check and are flagged as such; Conjecture~\ref{ai1} carries an attribution flag against~\cite{GoM24}, and Conjecture~\ref{ai8} carries attribution flags against~\cite{Vip20} and~\cite{CDFFL13}.
+
+For a finite metric space $X$, the Vietoris--Rips complex at scale $r$ has as simplices the subsets of diameter at most $r$; homology is over the two-element field, computed here by boundary-matrix reduction of the full two-skeleton, which suffices in degree one.  For a degree-one bar $(b,d)$ with $b>0$ the multiplicative persistence is $d/b$, and $\Pi_1^\times(X)$ is its maximum over bars, set to one if none exists; $d_B$ and $W_2$ are the bottleneck and two-Wasserstein distances with diagonal matching.  For a regular $n$-gon inscribed in the unit circle the dominant degree-one bar has $b_n=2\sin(\pi/n)$ and $d_n=2\sin(\lceil n/3\rceil\pi/n)$~\cite{ACJS18,AdAd17}, so $\Pi_1^\times=\sin(\lceil n/3\rceil\pi/n)/\sin(\pi/n)$, reproduced exactly by the present implementation for $n\le12$.  A uniform one-dimensional Mapper cover has interval length $h$, overlap fraction $\alpha\in(0,1)$, step $s=h(1-\alpha)$, intervals $[ks-U,\,ks-U+h]$, and uniformly random phase $U$ on $[0,s)$; the Mapper graph is the simple nerve of the connected components of the interval preimages, and an isolated cycle of a tame Reeb graph is a pair of arcs joining two branch points whose filter values differ by the span $\ell$, with all other critical values farther than the cover scale.  A rectangle-decomposable module is a finite direct sum of interval modules supported on axis-parallel rectangles; for a positive-slope direction $v$, the fiber field assigns to each line parallel to $v$, indexed by its transverse intercept $\tau$, the multiset of parameter intervals cut by the rectangles, and endpoints are generic when the finitely many coincidence conditions among side coordinates and crossing values fail.  The Gaussian persistence surface of a diagram $D$ is $\rho_D(z)=\sum_{p\in D}\operatorname{pers}(p)\exp(-\lVert z-p\rVert^2/2\sigma^2)$; the aggregate landscape is $A_D(t)=\sum_i\max\{0,\min(t-b_i,d_i-t)\}$ with moments $M_r(D)=\int t^rA_D(t)\,\dd t$; and for points moving affinely in the plane, a vineyard event is a time at which the multiset of (birth edge, death triangle) pairs of the degree-one reduction changes.
+
+\begin{proposition}[Phase calculus for one-dimensional Mapper]\label{ai:map}
+Fix $\alpha\in(0,1)$ and the uniform random phase.  (i) For an isolated cycle of span $\ell$,
+\[
+\Pr\bigl(\beta_1(M_{h,U})=1\bigr)=F_\alpha(\ell/h),\qquad
+F_\alpha(x)=\min\Bigl(1,\max\Bigl(0,\frac{x-1}{1-\alpha}\Bigr)\Bigr),
+\]
+and $\beta_1=0$ otherwise: the survival probability is a universal piecewise-linear function of $\ell/h$, zero for $h\ge\ell$ and one for $h\le\ell/(2-\alpha)$.  (ii) For a series chain of isolated cycles with spans $\ell_1,\ldots,\ell_r$, the phase-averaged Betti curve satisfies $S(h)=\E_U\,\beta_1(M_{h,U})=\sum_jF_\alpha(\ell_j/h)$ exactly for every $h>0$, and the multiset $\{\ell_j\}$ is recovered from $S$: its kinks in $h$ occur exactly at the points $\ell_j$ and $\ell_j/(2-\alpha)$, and descending induction on the largest kink identifies every span with multiplicity.  (iii) For an isolated branch critical value $c$, the midpoint estimator $\widehat c(U)=L(U)-s/2$, with $L(U)$ the lower endpoint of the first interval whose preimage has the post-branch component count, satisfies $\widehat c-c\sim\mathrm{Unif}(0,s]-s/2$, so $\E\widehat c=c$ exactly and $\operatorname{Var}\widehat c=s^2/12$.
+\end{proposition}
+
+\begin{proposition}[One direction determines a rectangle module]\label{ai:rect}
+Let $M=\bigoplus_{i=1}^m\mathbf k_{R_i}$ be rectangle-decomposable with generic endpoints, and fix any direction $v$ of positive slope.  Then the fiber field of $M$ along $v$, with the line parameterization retained, determines the multiset $\{R_1,\ldots,R_m\}$.
+\end{proposition}
+
+\begin{proposition}[Moment calibration for aggregate landscapes]\label{ai:sum}
+Write bar $i$ as center $c_i=(b_i+d_i)/2$ and half-width $a_i=(d_i-b_i)/2$.  (i) For every $r\ge0$,
+\[
+M_r(D)=\sum_{i=1}^m\;\sum_{\substack{0\le j\le r\\ j\ \mathrm{even}}}\binom rj c_i^{\,r-j}\,\frac{2a_i^{\,j+2}}{(j+1)(j+2)}.
+\]
+(ii) For $m=1$, the first two moments determine the bar: $M_0=a^2$ and $M_1=c\,a^2$, so $a=\sqrt{M_0}$ and $c=M_1/M_0$; in particular the first $4m$ moments of Conjecture~\ref{ai11} suffice at $m=1$ with two to spare.
+\end{proposition}
+
+\section{Extremal and sampling laws for Vietoris--Rips persistence}
+
+\begin{conjecture}[Circle isoperimetry for multiplicative persistence]\label{ai1}
+For every $n\ge4$ and every set $X$ of $n$ distinct points on the Euclidean unit circle,
+\[
+\Pi_1^\times(X)\ \le\ \frac{\sin(\lceil n/3\rceil\pi/n)}{\sin(\pi/n)},
+\]
+with equality exactly for the regular $n$-gon, up to isometries of the circle.
+\end{conjecture}
+
+\begin{conjecture}[Saturation of the stability factor two]\label{ai2}
+Let $\Gamma\subset\R^2$ be a $C^3$ strictly convex closed curve, let $L_m$ be the first $m$ points of a farthest-point sampling of $\Gamma$ from a generic seed, and let $\rho_m=d_H(L_m,\Gamma)$.  Then
+\[
+\lim_{m\to\infty}\frac{d_B\bigl(\mathrm{Dgm}_1(L_m),\mathrm{Dgm}_1(\Gamma)\bigr)}{\rho_m}=2.
+\]
+\end{conjecture}
+
+\begin{conjecture}[A two-sided projection threshold for loop ratios]\label{ai3}
+For $q\ge2$ let $H_1,\ldots,H_q$ be regular hexagons in mutually orthogonal coordinate two-planes of $\R^{2q}$, let $A$ be an $m\times2q$ Gaussian matrix with independent $N(0,1/m)$ entries, and for fixed small $\eps>0$ let $\mathcal E_{q,m,\eps}$ be the event that every channel ratio $\Pi_1^\times(AH_j)/\Pi_1^\times(H_j)$ lies within $\eps$ of one.  Then there are constants $0<c<C$ with
+\[
+m\le c\,\eps^{-2}\log q\implies\Pr(\mathcal E_{q,m,\eps})\to0,
+\qquad
+m\ge C\,\eps^{-2}\log q\implies\Pr(\mathcal E_{q,m,\eps})\to1,
+\]
+as $q\to\infty$.
+\end{conjecture}
+
+\section{The statistical geometry of diagram means}
+
+\begin{conjecture}[Prevalence shrinkage with exponential leakage]\label{ai4}
+Let random diagrams consist of a background diagram plus, with probability $q$, one signal point, the signal cluster separated from the background and the diagonal by a matching margin $\gamma$, with conditional perturbations centered subgaussian of scale $\sigma\ll\gamma$.  Then the population $W_2$ Fr\'echet mean has a unique signal point whose diagonal coordinate satisfies $\bar U=\E[U\mid\text{present}]+O(e^{-c\gamma^2/\sigma^2})$ and whose distance to the diagonal satisfies
+\[
+\bar V=q\,\E[V\mid\text{present}]+O\bigl(e^{-c\gamma^2/\sigma^2}\bigr),
+\]
+uniformly over bounded separated model classes.
+\end{conjecture}
+
+\begin{conjecture}[Exponential stability of latent groupings]\label{ai5}
+Let $D_1,\ldots,D_N$ be independent diagrams from a latent model with $m$ feature clusters, matching margin $\gamma$ between clusters and to the diagonal, subgaussian scale $\sigma$, and prevalences bounded away from zero.  Then
+\[
+\Pr\{\text{some optimal mean grouping differs from the latent grouping}\}\le CNm\,e^{-c\gamma^2/\sigma^2},
+\]
+and on the complementary event the empirical $W_2$ Fr\'echet mean is unique, its coordinates obey the flat projection formulas, and featurewise central-limit behavior holds at rate $N^{-1/2}$.
+\end{conjecture}
+
+\section{A phase calculus for Mapper}
+
+\begin{conjecture}[Stable survival tomography of Reeb graphs]\label{ai6}
+Let $(G,f)$ be a tame Reeb graph whose degree-one features have spans $\ell_1,\ldots,\ell_r$ and pairwise critical-value separation at least $\gamma>0$, and let $S_G(h)=\E_U\,\beta_1(M_{h,U})$ be the phase-averaged Betti curve at overlap $\alpha$.  Then (a) $S_G(h)=\sum_jF_\alpha(\ell_j/h)$ for every $h<\gamma$, with the kernel of Proposition~\ref{ai:map}; and (b) the inversion is stable: if two tame Reeb graphs with $\gamma$-separated features have curves with $\lVert S_G-S_{G'}\rVert_{L^2(\dd h/h)}\le\eta$, then the span multisets are within bottleneck distance $C(\gamma,\alpha,r)\,\eta$ of each other.
+\end{conjecture}
+
+\begin{conjecture}[The dither law survives discretization]\label{ai7}
+For a Reeb graph discretized at filter mesh $\eta=o(h)$, or sampled densely enough that its Mapper is that of the underlying graph, the midpoint estimator of an isolated branch critical value satisfies
+\[
+\E\widehat c-c=O(\eta),\qquad
+\operatorname{Var}(\widehat c)=\frac{s^2}{12}+O(s\eta+\eta^2),
+\]
+uniformly over phases, with constants depending only on the local branch geometry.
+\end{conjecture}
+
+\section{Rectangle tomography}
+
+\begin{conjecture}[Three-direction stability and random-slope observability]\label{ai8}
+Fix a box, a maximum count $m$, and $\delta>0$, and consider rectangle-decomposable modules whose corner coordinates, side lengths, and pairwise separations are at least $\delta$.  (a) For generic fixed positive-slope directions $v_1,v_2,v_3$, the invariant $d_3(M,N)=\max_j\sup_{L\parallel v_j}d_B(\mathrm{Dgm}(M_L),\mathrm{Dgm}(N_L))$ is locally bi-Lipschitz equivalent to the minimal corner displacement $d_{\mathrm{rect}}$, with constants polynomial in $m$ and $1/\delta$.  (b) The weighted direction profile $g(\theta)$ of the matching distance between two such modules is Lipschitz on compact slope ranges with constant polynomial in $m$, the box size, $1/\delta$, and the slope margin, so its near-maximal set has measure bounded below and $K$ uniformly random slopes recover a $(1-\eps)$-approximation of the matching distance with failure probability exponentially small in $K$.
+\end{conjecture}
+
+\section{Finite summaries and dynamic complexity}
+
+\begin{conjecture}[A restricted isometry for persistence sketches]\label{ai9}
+On the class of diagrams with at most $m$ points, persistence and pairwise separation at least $\delta$, in a box of diameter $R$, let $\Phi_M$ be the random Fourier sketch of the persistence-weighted Gaussian embedding at bandwidth comparable to $\delta^{-1}$ with $M$ frequencies.  Then there are class constants $0<c_0<C_0$, polynomial in $m,R,1/\delta$, such that with probability $1-\eta$,
+\[
+c_0(1-\eps)\,W_2(D,E)\le\lVert\Phi_M(D)-\Phi_M(E)\rVert_2\le C_0(1+\eps)\,W_2(D,E)
+\]
+for all $D,E$ in the class, provided $M\ge C\eps^{-2}m\log(mR/(\delta\eta))$.
+\end{conjecture}
+
+\begin{conjecture}[Whitney-count evaluations of persistence surfaces]\label{ai10}
+Fix $\sigma>0$ and the class of diagrams with exactly $m$ points, pairwise $\delta$-separated and $\delta$-far from the diagonal, in a compact box.  Choose $q\ge4m+1$ evaluation points independently from any distribution with positive density on a neighborhood of the box.  Then, almost surely in the evaluations, the map $D\mapsto(\rho_D(z_1),\ldots,\rho_D(z_q))$ is injective on the class, and locally bi-Lipschitz off the discriminant.
+\end{conjecture}
+
+\begin{conjecture}[Aggregate-landscape moment determinacy]\label{ai11}
+For a Zariski-open, full-measure set of $m$-bar diagrams, the first $4m$ moments $M_0,\ldots,M_{4m-1}$ of the aggregate landscape determine the diagram uniquely up to bar permutation.
+\end{conjecture}
+
+\begin{conjecture}[Near-quadratic vineyard complexity in the mean]\label{ai12}
+Let $n$ planar points move affinely, $x_i(t)=a_i+tv_i$ on $[0,1]$, with $a_i,v_i$ independent standard Gaussians, and let $N_1(n)$ be the number of times the degree-one Vietoris--Rips persistence pairing changes.  Then $\E N_1(n)=O(n^2\log n)$, and $N_1(n)=O(n^2\log^2n)$ with probability $1-n^{-c}$.
+\end{conjecture}
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -4974,5 +5092,40 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{BZ21} A.~B\"ucher and C.~Zhou, A horse race between the block maxima method and the peak-over-threshold approach, Statist. Sci. 36 (2021) 360--378.
 \bibitem{Hall82} P.~Hall, On some simple estimates of an exponent of regular variation, J. R. Stat. Soc. Ser. B 44 (1982) 37--42.
 \bibitem{CK15} A.~Carpentier and A.~K.~H. Kim, Adaptive and minimax optimal estimation of the tail coefficient, Statist. Sinica 25 (2015) 1133--1144.
+\bibitem{AdAd17} M.~Adamaszek and H.~Adams, The Vietoris--Rips complexes of a circle, Pacific J. Math. 290 (2017) 1--40.
+\bibitem{ACJS18} H.~Adams, S.~Chowdhury, A.~Q. Jaffe, and B.~Sibanda, Vietoris--Rips complexes of regular polygons, arXiv:1807.10971 (2018).
+\bibitem{GoM24} M.~G\'omez and F.~M\'emoli, Curvature sets over persistence diagrams, Discrete Comput. Geom. 72 (2024) 91--180.
+\bibitem{CSO14} F.~Chazal, V.~de Silva, and S.~Oudot, Persistence stability for geometric complexes, Geom. Dedicata 173 (2014) 193--214.
+\bibitem{JL84} W.~B. Johnson and J.~Lindenstrauss, Extensions of Lipschitz mappings into a Hilbert space, Contemp. Math. 26 (1984) 189--206.
+\bibitem{LN17} K.~G. Larsen and J.~Nelson, Optimality of the Johnson--Lindenstrauss lemma, in Proc. 58th IEEE Symp. Found. Comput. Sci. (2017) 633--638.
+\bibitem{Lot19} M.~Lotz, Persistent homology for low-complexity models, Proc. R. Soc. A 475 (2019) 20190081.
+\bibitem{MKG24} N.~H. May, B.~Krishnamoorthy, and P.~Gambill, A normalized bottleneck distance on persistence diagrams and homology preservation under dimension reduction, La Matematica 3 (2024) 1486--1509.
+\bibitem{MMH11} Y.~Mileyko, S.~Mukherjee, and J.~Harer, Probability measures on the space of persistence diagrams, Inverse Problems 27 (2011) 124007.
+\bibitem{TMMH14} K.~Turner, Y.~Mileyko, S.~Mukherjee, and J.~Harer, Fr\'echet means for distributions of persistence diagrams, Discrete Comput. Geom. 52 (2014) 44--70.
+\bibitem{MTB15} E.~Munch, K.~Turner, P.~Bendich, S.~Mukherjee, J.~Mattingly, and J.~Harer, Probabilistic Fr\'echet means for time varying persistence diagrams, Electron. J. Stat. 9 (2015) 1173--1204.
+\bibitem{CaM24} Y.~Cao and A.~Monod, A geometric condition for uniqueness of Fr\'echet means of persistence diagrams, Comput. Geom. 128 (2024) 102162.
+\bibitem{CO18} M.~Carri\`ere and S.~Oudot, Structure and stability of the one-dimensional Mapper, Found. Comput. Math. 18 (2018) 1333--1396.
+\bibitem{Sch64} L.~Schuchman, Dither signals and their effect on quantization noise, IEEE Trans. Commun. Technol. 12 (1964) 162--165.
+\bibitem{BL23} M.~B. Botnan and M.~Lesnick, An introduction to multiparameter persistence, in Representations of Algebras and Related Structures, EMS Press, Berlin (2023) 77--150.
+\bibitem{BLO22} M.~B. Botnan, V.~Lebovici, and S.~Oudot, On rectangle-decomposable 2-parameter persistence modules, Discrete Comput. Geom. 68 (2022) 1078--1101.
+\bibitem{Vip20} O.~Vipond, Local equivalence of metrics for multiparameter persistence modules, arXiv:2004.11926 (2020).
+\bibitem{CDFFL13} A.~Cerri, B.~Di Fabio, M.~Ferri, P.~Frosini, and C.~Landi, Betti numbers in multidimensional persistent homology are stable functions, Math. Methods Appl. Sci. 36 (2013) 1543--1557.
+\bibitem{KN20} M.~Kerber and A.~Nigmetov, Efficient approximation of the matching distance for 2-parameter persistence, in Proc. 36th Symp. Comput. Geom., LIPIcs 164 (2020) 53:1--53:16.
+\bibitem{BHLMS23} R.~Brooks, C.~Hacker, C.~Landi, B.~I. Mahler, and E.~R. Stephenson, Switch points of bi-persistence matching distance, arXiv:2312.02955 (2023).
+\bibitem{RR07} A.~Rahimi and B.~Recht, Random features for large-scale kernel machines, in Advances in Neural Information Processing Systems 20 (2007).
+\bibitem{KFH16} G.~Kusano, K.~Fukumizu, and Y.~Hiraoka, Persistence weighted Gaussian kernel for topological data analysis, in Proc. 33rd Int. Conf. Machine Learning, PMLR 48 (2016) 2004--2013.
+\bibitem{CB19} M.~Carri\`ere and U.~Bauer, On the metric distortion of embedding persistence diagrams into separable Hilbert spaces, in Proc. 35th Symp. Comput. Geom., LIPIcs 129 (2019) 21:1--21:15.
+\bibitem{BW20} P.~Bubenik and A.~Wagner, Embeddings of persistence diagrams into Hilbert spaces, J. Appl. Comput. Topol. 4 (2020) 339--351.
+\bibitem{MV24} A.~Mitra and \v Z.~Virk, Geometric embeddings of spaces of persistence diagrams with explicit distortions, arXiv:2401.05298 (2024).
+\bibitem{Whi44} H.~Whitney, The self-intersections of a smooth $n$-manifold in $2n$-space, Ann. of Math. 45 (1944) 220--246.
+\bibitem{CHLP22} Y.-M. Chung, M.~Hull, A.~Lawson, and N.~Pritchard, Gaussian persistence curves, arXiv:2205.11353 (2022).
+\bibitem{AEK17} H.~Adams, T.~Emerson, M.~Kirby, R.~Neville, C.~Peterson, P.~Shipman, S.~Chepushtanova, E.~Hanson, F.~Motta, and L.~Ziegelmeier, Persistence images: a stable vector representation of persistent homology, J. Mach. Learn. Res. 18 (2017) 1--35.
+\bibitem{Bub15} P.~Bubenik, Statistical topological data analysis using persistence landscapes, J. Mach. Learn. Res. 16 (2015) 77--102.
+\bibitem{ACC16} A.~Adcock, E.~Carlsson, and G.~Carlsson, The ring of algebraic functions on persistence bar codes, Homology Homotopy Appl. 18 (2016) 381--402.
+\bibitem{Kal19} S.~Kali\v snik, Tropical coordinates on the space of persistence barcodes, Found. Comput. Math. 19 (2019) 101--129.
+\bibitem{CEM06} D.~Cohen-Steiner, H.~Edelsbrunner, and D.~Morozov, Vines and vineyards by updating persistence in linear time, in Proc. 22nd Symp. Comput. Geom. (2006) 119--126.
+\bibitem{DH21} T.~K. Dey and T.~Hou, Updating barcodes and representatives for zigzag persistence, arXiv:2112.02352 (2021).
+\bibitem{Hic22} A.~Hickok, Persistence diagram bundles: a multidimensional generalization of vineyards, arXiv:2210.05124 (2022).
+\bibitem{GM26} B.~Giunti and E.~Munch, Canopies: a generalization of vines and vineyards for parameterized persistence, arXiv:2606.23859 (2026).
 \end{thebibliography}
 \end{document}
