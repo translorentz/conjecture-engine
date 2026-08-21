@@ -255,7 +255,7 @@ title: Three hundred nineteen conjectures in mathematics
 
 **112. Fuss–Catalan two-sided shocks (Conjecture 112, resolved true).** For every $$r\ge1$$ the $$\Omega$$-jump of the Fuss–Catalan numbers is unbounded in both directions, extending the shock phenomenon beyond the binomial coefficient; the forcing construction proves both directions.
 
-**113. Negative shock covariance (Conjecture 113).** In every fixed binomial-slice, central-multinomial, and Fuss–Catalan family successive $$\Omega$$-jumps have a strictly negative lag-one covariance, negative in all $$22$$ tested families; the prime-truncated central-binomial covariance is now exactly $$-\tfrac53$$ at every cutoff, the predicted limit for that family.
+**113. Negative shock covariance (Conjecture 113).** In every fixed binomial-slice, central-multinomial, and Fuss–Catalan family successive $$\Omega$$-jumps have a strictly negative lag-one covariance, negative in all $$22$$ tested families; the prime-truncated central-binomial covariance is now exactly $$-\tfrac53$$ at every cutoff, the predicted limit for that family. Existence, finiteness, and rationality of the covariance limit are now proved in every family, the signed affine forms of each jump cancelling all but finitely many primes; only the uniform negativity stays conjectural.
 
 **114. Dyadic multinomial slope (Conjecture 114).** The dyadic $$\Omega$$-jump of the central multinomial $$M_{k,n}$$ is conjectured to have slope $$-(k-1)$$. The case $$k=2$$ is now proved by separating the cyclotomic factors of $$2^{m+1}-1$$ into small and large orders.
 
@@ -285,9 +285,9 @@ title: Three hundred nineteen conjectures in mathematics
 
 **126. Scale convexity and log-concavity (Conjecture 126).** The same scale sequences are simultaneously discretely convex and log-concave; the convexity clause is now proved by the Ehrhart model, and the log-concavity clause survives an exact stress of $$24{,}950{,}000$$ inequalities.
 
-**127. Hochster interval support (Conjecture 127).** Every aggregated Hochster strand of a flag moment-angle complex has gapless support, though the ordinary Betti sequence of $$K_{2,3}$$ is not even unimodal.
+**127. Hochster interval support (Conjecture 127).** Every aggregated Hochster strand of a flag moment-angle complex has gapless support, though the ordinary Betti sequence of $$K_{2,3}$$ is not even unimodal. Over $$\mathbf F_2$$ this is the Stanley–Reisner form of Whieldon's gaplessness conjecture for edge-ideal strands; Abedelfatah–Nevo disproved the field version for higher strands, but $$2$$-torsion can only fill a support gap, never open one, so the $$\mathbf F_2$$ statement survives their construction.
 
-**128. Hochster-strand log-concavity (Conjecture 128).** Every strand sequence is log-concave in the subset size, while ultra-log-concavity fails at a connected seven-vertex graph, the retained boundary.
+**128. Hochster-strand log-concavity (Conjecture 128).** Every strand sequence is log-concave in the subset size, while ultra-log-concavity fails at a connected seven-vertex graph, the retained boundary. As with Conjecture 127 the statement is over $$\mathbf F_2$$, where the field counterexample to gaplessness does not apply.
 
 **129. Strand Hurwitz stability (Conjecture 129).** After removing the monomial factor, every strand polynomial has all zeros in the open left half-plane, verified by exact Routh–Hurwitz tests on $$50{,}045$$ polynomials; real-rootedness is false at four vertices.
 
