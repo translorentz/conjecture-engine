@@ -555,9 +555,9 @@ title: Three hundred nineteen conjectures in mathematics
 
 **255. LMHS-controlled Laplace towers (Conjecture 255).** The vanishing Ricci-flat Laplace spectrum has finitely many exhaustive towers. Their rational exponents come from the integral limiting mixed Hodge structure and skeleton combinatorics, while the limiting operators may retain metric data.
 
-**256. Coordinate monotonicity of normalized complexity (Conjecture 256).** The degree-normalized primitive middle Betti number of a smooth complete intersection strictly increases in every defining degree, growth beyond the trivial multiplicative degree scale.
+**256. Coordinate monotonicity of normalized complexity (Conjecture 256).** The degree-normalized primitive middle Betti number of a smooth complete intersection strictly increases in every defining degree, growth beyond the trivial multiplicative degree scale. The hypersurface case in every dimension is now proved from a closed form.
 
-**257. Strict discrete convexity in each degree (Conjecture 257).** Each one-variable restriction of the normalized complexity to the degree lattice is strictly convex, so marginal topological growth accelerates.
+**257. Strict discrete convexity in each degree (Conjecture 257).** Each one-variable restriction of the normalized complexity to the degree lattice is strictly convex, so marginal topological growth accelerates. The hypersurface case in every dimension is now proved from the same closed form.
 
 **258. Additive supermodularity across degrees (Conjecture 258).** Raising one degree strictly increases the absolute marginal value of raising another: distinct defining equations reinforce.
 
@@ -613,7 +613,7 @@ title: Three hundred nineteen conjectures in mathematics
 
 **284. Survival monotone in dimension (Conjecture 284).** The probability that a nonbacktracking walk is self-avoiding rises strictly with dimension at every length, proved through length seven in closed form.
 
-**285. Radial moments monotone in dimension (Conjecture 285).** Every positive endpoint moment falls strictly as the dimension rises, the stochastic-order strengthening being false and retained as a control.
+**285. Radial moments monotone in dimension (Conjecture 285).** Every positive endpoint moment falls strictly as the dimension rises, the stochastic-order strengthening being false and retained as a control. The length-two case is now proved for every dimension and every positive order.
 
 **286. Reversible shortcuts amplify winding skewness (Conjecture 286).** A zero-affinity chord added to a driven ring at fixed activity strictly increases the standardized third cumulant of the winding current, against the mixing intuition.
 
@@ -669,7 +669,7 @@ title: Three hundred nineteen conjectures in mathematics
 
 **312. Exponential stability of latent groupings (Conjecture 312).** The probability that any optimal mean grouping betrays the latent grouping is at most $$CNm\,e^{-c\gamma^2/\sigma^2}$$, and off this event the empirical Fréchet mean is unique, obeys the flat projection formulas, and satisfies featurewise central-limit behavior.
 
-**313. Stable survival tomography of Reeb graphs (Conjecture 313).** Below the separation scale, the phase-averaged Betti curve of a tame Reeb graph is the exact sum of universal kernels $$F_\alpha(\ell_j/h)$$ over its spans, and the kink inversion recovering the span spectrum is quantitatively stable.
+**313. Stable survival tomography of Reeb graphs (Conjecture 313).** Below the separation scale, the phase-averaged Betti curve of a tame Reeb graph is the exact sum of universal kernels $$F_\alpha(\ell_j/h)$$ over its spans, and the kink inversion recovering the span spectrum is quantitatively stable away from the collision stratum. The deposited linear stability is refuted at coalescing spans, where two-cycle multisets $$\{\ell,\ell\}$$ and $$\{\ell-\delta,\ell+\delta\}$$ give $$L^2$$ distance of order $$\delta^{3/2}$$ against span bottleneck $$\delta$$; the repaired clause requires span separation, near-collisions admitting only a Hölder-$$2/3$$ inverse.
 
 **314. The dither law survives discretization (Conjecture 314).** Random cover phase makes the Mapper midpoint estimator of a branch critical value exactly unbiased with the dithered-quantizer variance $$s^2/12$$, and discretization at mesh $$\eta$$ perturbs bias and variance by mesh-order corrections only.
 
