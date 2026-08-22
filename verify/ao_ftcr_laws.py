@@ -43,48 +43,54 @@ def edges(L):
     return rates.max(), rates.min()
 
 def check_invariants_and_endpoints():
-    rng = np.random.default_rng(1); worst_stat = 0; endpoint_ok = True
+    rng = np.random.default_rng(1); worst_stat = 0.0; worst_over = 0.0
     for _ in range(200):
         n = int(rng.integers(4, 8)); pi, T, J = make_ftcr(n, rng)
         h0, g0 = edges(Lgen(pi, T, J, 0.0))
+        scale = max(abs(h0), 1.0)
         for al in np.linspace(0, 1, 21):
             L = Lgen(pi, T, J, al)
             worst_stat = max(worst_stat, np.max(np.abs(pi@L)))
             h, g = edges(L)
-            if h > h0 + 1e-9 or g < g0 - 1e-9:  # endpoint bounds (roundoff tol)
-                pass  # h(alpha)<=h(0), g(alpha)>=g(0) may be tight; small slack ok
+            # endpoint bounds h(alpha)<=h(0), g(alpha)>=g(0); relative overshoot
+            worst_over = max(worst_over, (h - h0)/scale, (g0 - g)/scale)
     assert worst_stat < 1e-12, f"stationarity drift {worst_stat}"
-    return worst_stat
+    assert worst_over < 1e-8, f"endpoint bound violated, overshoot {worst_over}"
+    return worst_stat, worst_over
+
+def _hmp(pi, T, J, a, n):
+    M = mp.zeros(n, n)
+    for i in range(n):
+        s = mp.mpf(0)
+        for j in range(n):
+            if i != j:
+                v = (mp.mpf(T[i, j]) + mp.mpf(a)*mp.mpf(J[i, j]))/(2*mp.mpf(pi[i]))
+                M[i, j] = v; s += v
+        M[i, i] = -s
+    ev = mp.eig(M, left=False, right=False); mg = [abs(e) for e in ev]
+    i0 = mg.index(min(mg))
+    return max(-mp.re(ev[t]) for t in range(len(ev)) if t != i0)
 
 def find_s1_counterexample():
-    rng = np.random.default_rng(7); best = (0, None)
+    # Prop ao:basic asserts a bidirected SIX-state ray whose fast edge h(alpha)
+    # strictly increases by more than 0.6, verified to 40 digits.  We search
+    # six-state rays and stop at the first whose 40-digit-confirmed interior
+    # increase exceeds 0.6, matching the stated proposition.
+    rng = np.random.default_rng(1); n = 6
     al = np.linspace(0, 1, 101)
-    for _ in range(400):
-        n = int(rng.integers(5, 7)); pi, T, J = make_ftcr(n, rng)
-        hs = np.array([edges(Lgen(pi, T, J, a))[0] for a in al])
-        inc = np.max(np.diff(hs))
-        if inc > best[0]:
-            best = (inc, (n, pi, T, J, int(np.argmax(np.diff(hs)))))
-    inc, (n, pi, T, J, k) = best
-    # high-precision confirm across the worst interval
     mp.mp.dps = 40
-    def hmp(a):
-        M = mp.zeros(n, n)
-        for i in range(n):
-            s = mp.mpf(0)
-            for j in range(n):
-                if i != j:
-                    v = (mp.mpf(T[i, j]) + mp.mpf(a)*mp.mpf(J[i, j]))/(2*mp.mpf(pi[i]))
-                    M[i, j] = v; s += v
-            M[i, i] = -s
-        ev = mp.eig(M, left=False, right=False); mg = [abs(e) for e in ev]
-        i0 = mg.index(min(mg))
-        return max(-mp.re(ev[t]) for t in range(len(ev)) if t != i0)
-    grid = np.linspace(al[max(0, k-1)], al[min(100, k+2)], 13)
-    vals = [float(hmp(a)) for a in grid]
-    maxinc = max(vals[i+1]-vals[i] for i in range(len(vals)-1))
-    assert maxinc > 1e-3, "no high-precision fast-edge increase found"
-    return n, maxinc
+    for _ in range(4000):
+        pi, T, J = make_ftcr(n, rng)
+        hs = np.array([edges(Lgen(pi, T, J, a))[0] for a in al])
+        d = np.diff(hs); k = int(np.argmax(d))
+        if d[k] < 0.7:                      # coarse screen with margin above 0.6
+            continue
+        grid = np.linspace(al[max(0, k-1)], al[min(100, k+2)], 15)
+        vals = [float(_hmp(pi, T, J, a, n)) for a in grid]
+        maxinc = max(vals[i+1]-vals[i] for i in range(len(vals)-1))
+        if maxinc > 0.6:
+            return n, maxinc
+    raise AssertionError("no six-state ray with >0.6 fast-edge increase found")
 
 # --- exact augmented (site, visited-set) chain ---
 def augmented(pi, T, J, alpha):
@@ -154,8 +160,9 @@ def check_E3_cycle():
     return True
 
 if __name__ == "__main__":
-    ws = check_invariants_and_endpoints()
-    print(f"invariants: pi stationary to {ws:.1e}; endpoint bounds h(a)<=h(0), g(a)>=g(0) hold")
+    ws, over = check_invariants_and_endpoints()
+    print(f"invariants: pi stationary to {ws:.1e}; endpoint bounds h(a)<=h(0), g(a)>=g(0) hold "
+          f"(max relative overshoot {over:.1e})")
     n, inc = find_s1_counterexample()
     print(f"refuted companion S1: n={n} ray with fast edge rising by {inc:.3f} at 40-digit precision "
           "(whole-ray fast-edge monotonicity FALSE; endpoint bound only)")
