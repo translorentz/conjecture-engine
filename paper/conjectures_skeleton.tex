@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred nineteen conjectures in mathematics}
+\title{Three hundred thirty-four conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred nineteen conjectures in mathematics:\\ the statements}
+\title{Three hundred thirty-four conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -4696,6 +4696,112 @@ Let $n$ planar points move affinely, $x_i(t)=a_i+tv_i$ on $[0,1]$, with $a_i,v_i
 \end{conjecture}
 
 
+\part{Temporal irreversibility and spectral selection in nonequilibrium dynamics}
+
+\medskip\noindent\emph{Added to the deposit: 22 August 2026.}\par\medskip
+
+The fifteen conjectures below study how much of the thermodynamic arrow of time survives when a stationary nonequilibrium process is observed only through two time points.  For an irreducible continuous-time Markov chain the complete trajectory over an interval of length $t$ carries a path-space entropy production $\sigma t$; reducing the trajectory to its endpoints keeps only the \emph{lag irreversibility} $L(t)$, the Kullback--Leibler divergence between the stationary two-time law and its time reverse, and data processing gives $0\le L(t)\le\sigma t$.  The organizing object is the \emph{temporal sampling efficiency} $\eta(t)=L(t)/(\sigma t)\in[0,1]$, the fraction of dissipation still visible at lag $t$.  The conjectures form three programmes.  A temporal-and-spectral programme (Conjectures~\ref{aj1} to~\ref{aj7}) asserts monotone loss of efficiency, spectral bounds on the temporal support and the integrated budget of the arrow of time, an irreversibility-specific relaxation exponent that doubles the slowest dissipative mode, its generic coincidence with the ordinary spectral gap together with an exceptional invisible-slow-mode phenomenon, and the discrete mode selection performed by deterministic coarse-graining.  A unicyclic-and-winding programme (Conjectures~\ref{aj8} to~\ref{aj12}) sharpens these on a single driven cycle, where endpoint sampling loses exactly the integer winding number, giving a strict efficiency law, an amplitude cap, a weak-affinity wrapped-Brownian scaling limit, a ballistic winding-aliasing horizon, and a single P\'eclet crossover unifying the two.  A Gaussian programme (Conjectures~\ref{aj13} to~\ref{aj15}) transfers the peak-horizon, integrated-budget, and mode-doubling laws to multivariate Ornstein--Uhlenbeck processes, where every quantity is an explicit function of the drift and diffusion matrices.  The proved layer is Proposition~\ref{aj:basic}: the endpoint data-processing bounds, the short-time expansion $L(t)=\sigma t+O(t^2)$ giving $\eta(t)\to1$, and the exact Gaussian lag-KL formula.  Conjectures~\ref{aj4}, \ref{aj6}, \ref{aj7}, and~\ref{aj15} assert long-time exponential laws beyond any finite check and are flagged as such; Conjectures~\ref{aj10} to~\ref{aj12} are scaling-limit statements and are flagged; Conjecture~\ref{aj5} is a genericity statement carrying its own exceptional set.  The central observable is the lag irreversibility of Merino Negrete, Maldonado, and Salgado-Garc\'ia~\cite{MMS23}, and the closest spectral precedent is the finite-time cross-correlation asymmetry of Van Vu, Vo, and Saito~\cite{VVS24}; the normalization by path entropy production, the temporal horizons and integrated budgets, the doubled irreversibility exponent and its coarse-grained selection, and the winding scaling laws are what is proposed as new.  Since deposit, Conjecture~\ref{aj9}, the sharp unicyclic amplitude cap $\sup_t\gamma L(t)/\sigma\le\tfrac12$, has been resolved false by Proposition~\ref{aj:c9}: an explicit near-decomposable seven-state ring reaches $0.643>\tfrac12$, so the constant $\tfrac12$ is not universal.
+
+Let $X_t$ be an irreducible continuous-time Markov chain on $\{1,\ldots,n\}$ with row generator $Q=(q_{ij})$, stationary law $\pi>0$, and bidirected support ($q_{ij}>0\Leftrightarrow q_{ji}>0$), so the steady-state entropy production is finite.  Write $P_t=e^{tQ}$, the stationary endpoint law $F_t(i,j)=\pi_iP_t(i,j)$, its time reverse $F_t^\top$, the lag irreversibility
+\[
+L(t)=D_{\mathrm{KL}}(F_t\Vert F_t^\top)=\sum_{i,j}F_t(i,j)\log\frac{F_t(i,j)}{F_t(j,i)},
+\]
+and the entropy-production rate $\sigma=\sum_{i\neq j}\pi_iq_{ij}\log(\pi_iq_{ij}/\pi_jq_{ji})$, so that $\eta(t)=L(t)/(\sigma t)$.  Let $q^*_{ij}=\pi_jq_{ji}/\pi_i$ be the reversed generator, $\bar Q=(Q+Q^*)/2$ the additive reversibilization, $\gamma=\lambda_2(-\bar Q)>0$ its reversible $L^2(\pi)$ spectral gap, and $g=\min\{-\Re\lambda:\lambda\in\operatorname{spec}(Q)\setminus\{0\}\}$ the ordinary spectral-abscissa gap.  Write $A_t=F_t-F_t^\top=\Pi e^{tQ}-e^{tQ^\top}\Pi$ with $\Pi=\operatorname{diag}(\pi)$, and let $\alpha_{\mathrm{irr}}$ be the smallest $-\Re\lambda>0$ over generator eigenmodes whose coefficient in $A_t$ is nonzero (on generalized eigenspaces for Jordan blocks, the polynomial factors not affecting the rate).  For a deterministic map $f:\{1,\ldots,n\}\to\{1,\ldots,m\}$ let $F_t^f(a,b)=\sum_{f(i)=a,\,f(j)=b}F_t(i,j)$, $L_f(t)=D_{\mathrm{KL}}(F_t^f\Vert(F_t^f)^\top)$, and $\alpha_{\mathrm{irr}}(f)$ the smallest such rate surviving the block summation.  For the homogeneous $N$-cycle with clockwise/counterclockwise rates $p_N=e^{A/(2N)}$, $q_N=e^{-A/(2N)}$ and time $t_N=N^2\tau/(p_N+q_N)$, the wrapped Gaussian on $x\in[0,1)$ is $w_{A,\tau}(x)=\sum_{k\in\Z}(2\pi\tau)^{-1/2}\exp[-(x+k-A\tau/2)^2/(2\tau)]$, with reverse $w_{-A,\tau}$; at fixed edge affinity $a\neq0$ write $p=e^{a/2}$, $q=e^{-a/2}$, $v=p-q$, the P\'eclet number $\mathrm{Pe}=N(p-q)/(p+q)$, and $t_c(N,\cdot)=\inf\{t:\eta_N(t)\le c\}$.  For the Ornstein--Uhlenbeck process $dX_t=AX_t\,dt+\sqrt{2D}\,dW_t$ with $A$ Hurwitz and $D\succ0$, the stationary covariance solves $AC+CA^\top+2D=0$, the two-time law is Gaussian with cross-covariance $Ce^{A^\top t}$, $L_{\mathrm{OU}}(t)$ is the KL divergence to its block-swapped reverse, $\sigma_{\mathrm{OU}}=\operatorname{tr}[(A+DC^{-1})^\top D^{-1}(A+DC^{-1})C]$, $g_A=\min_\lambda(-\Re\lambda(A))$, $H(t)=e^{At}C-Ce^{A^\top t}$, and $\alpha_H$ the slowest exponential rate in $H(t)$.
+
+\begin{proposition}[Endpoint bounds, short-time efficiency, and the Gaussian lag KL]\label{aj:basic}
+For every chain in the stated class, $0\le L(t)\le\sigma t$, and as $t\downarrow0$ single-jump paths dominate, giving $L(t)=\sigma t+O(t^2)$ and $\eta(t)\to1$; as $t\to\infty$, $F_t\to\pi\otimes\pi$ and $L(t)\to0$.  For the Ornstein--Uhlenbeck process the two-time covariance and its block swap have equal determinants, so
+\[
+L_{\mathrm{OU}}(t)=\tfrac12\bigl[\operatorname{tr}(\Sigma_t^{R\,-1}\Sigma_t)-2d\bigr].
+\]
+\end{proposition}
+
+\section{Temporal irreversibility and spectral selection}
+
+\begin{conjecture}[Temporal sampling-efficiency monotonicity]\label{aj1}
+For every finite irreducible bidirected chain with $\sigma>0$, the efficiency $\eta(t)=L(t)/(\sigma t)$ is non-increasing on $(0,\infty)$, and strictly decreasing for a generic nonequilibrium chain.
+\end{conjecture}
+
+\begin{conjecture}[Two-gap-time location bound]\label{aj2}
+If $t_*$ is any global maximizer of $L(t)$, then $\gamma t_*\le2$.
+\end{conjecture}
+
+\begin{conjecture}[Spectral integrated-budget bound]\label{aj3}
+For every chain in the class, $\displaystyle\int_0^\infty L(t)\,dt\le\frac{2\sigma}{\gamma^2}$.
+\end{conjecture}
+
+\begin{conjecture}[Irreversibility-gap doubling law]\label{aj4}
+The long-time envelope of lag KL decays at twice the slowest irreversible rate:
+\[
+\liminf_{t\to\infty}-\frac1{2t}\log L(t)=\alpha_{\mathrm{irr}},
+\]
+and generically $L(t)=t^{m}e^{-2\alpha_{\mathrm{irr}}t}[c(t)+o(1)]$ with $m\ge0$ a Jordan multiplicity and $c$ bounded, nonnegative, and not identically zero.
+\end{conjecture}
+
+\begin{conjecture}[Generic equality of spectral and irreversibility gaps]\label{aj5}
+Fix a strongly connected bidirected graph and vary its positive rates.  Outside a measure-zero analytic exceptional set, and excluding detailed balance, $\alpha_{\mathrm{irr}}=g$; strict inequality $\alpha_{\mathrm{irr}}>g$ occurs exactly when every mode at real-part gap $g$ contributes zero to $A_t$.
+\end{conjecture}
+
+\begin{conjecture}[Coarse-grained irreversibility mode-selection law]\label{aj6}
+For every deterministic partition with $L_f\not\equiv0$,
+\[
+\liminf_{t\to\infty}-\frac1{2t}\log L_f(t)=\alpha_{\mathrm{irr}}(f).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Hidden-mode exponential separation]\label{aj7}
+If $\alpha_{\mathrm{irr}}(f)>\alpha_{\mathrm{irr}}$, then $\liminf_{t\to\infty}-\tfrac1{2t}\log[L_f(t)/L(t)]=\alpha_{\mathrm{irr}}(f)-\alpha_{\mathrm{irr}}$; if the two exponents coincide with nonzero leading coefficients, $L_f(t)/L(t)$ approaches a nonzero bounded envelope.
+\end{conjecture}
+
+\section{Unicyclic networks and winding aliasing}
+
+\begin{conjecture}[Unicyclic strict monotonicity]\label{aj8}
+For every finite bidirected unicyclic chain with nonzero total cycle affinity, $\eta'(t)<0$ for all $t>0$.
+\end{conjecture}
+
+\begin{conjecture}[Sharp unicyclic spectral-amplitude cap, resolved false]\label{aj9}
+For every nonequilibrium unicyclic chain, $\displaystyle\sup_{t>0}\frac{\gamma L(t)}{\sigma}\le\frac12$.
+\end{conjecture}
+
+\begin{proposition}[A near-decomposable amplitude-cap counterexample]\label{aj:c9}
+There is a bidirected seven-state ring, with one weak edge three orders of magnitude below the others, whose reversible gap $\gamma$, entropy-production rate $\sigma$, and maximal lag irreversibility satisfy $\gamma\sup_tL(t)/\sigma=0.643$ to three places.  Hence the sharp cap $\tfrac12$ of Conjecture~\ref{aj9} fails.
+\end{proposition}
+
+\begin{conjecture}[Wrapped-Brownian irreversibility limit]\label{aj10}
+For each fixed $A\neq0$ and $\tau>0$,
+\[
+\eta_N(t_N)\longrightarrow\mathcal E(A,\tau):=\frac2{A^2\tau}\int_0^1w_{A,\tau}(x)\log\frac{w_{A,\tau}(x)}{w_{-A,\tau}(x)}\,dx,
+\]
+locally uniformly on compacta of $(A,\tau)\in(\R\setminus\{0\})\times(0,\infty)$.
+\end{conjecture}
+
+\begin{conjecture}[Ballistic winding-aliasing horizon]\label{aj11}
+For fixed edge affinity $a\neq0$ and level $c\in(0,1)$ there is a finite positive $u_c(a)$ with $|v|\,t_c(N,a)/N\to u_c(a)$ as $N\to\infty$, so fixed-bias endpoint irreversibility is lost on the ballistic winding timescale $N/|v|$, not the diffusive mixing timescale.
+\end{conjecture}
+
+\begin{conjecture}[Diffusive-to-ballistic irreversibility crossover]\label{aj12}
+For every fixed $c\in(0,1)$ there is a universal function $\Phi_c$ with $t_c=\tfrac{N^2}{p+q}\Phi_c(\mathrm{Pe})[1+o(1)]$ in the joint large-$N$ scaling, where $\Phi_c(z)\to\Phi_c(0)\in(0,\infty)$ as $z\to0$ and $\Phi_c(z)\sim u_c/|z|$ as $|z|\to\infty$, so Conjectures~\ref{aj10} and~\ref{aj11} are its weak- and strong-drift limits.
+\end{conjecture}
+
+\section{Nonequilibrium Ornstein--Uhlenbeck dynamics}
+
+\begin{conjecture}[OU one-relaxation-time peak horizon]\label{aj13}
+If $\sigma_{\mathrm{OU}}>0$ and $t_*$ is a global maximizer of $L_{\mathrm{OU}}(t)$, then $g_At_*\le1$.
+\end{conjecture}
+
+\begin{conjecture}[OU spectral-area bound]\label{aj14}
+For every stable nonequilibrium OU process, $\displaystyle\int_0^\infty L_{\mathrm{OU}}(t)\,dt\le\frac{\sigma_{\mathrm{OU}}}{g_A^2}$.
+\end{conjecture}
+
+\begin{conjecture}[OU antisymmetric-covariance doubling law]\label{aj15}
+For every stable OU process with $\sigma_{\mathrm{OU}}>0$,
+\[
+\liminf_{t\to\infty}-\frac1{2t}\log L_{\mathrm{OU}}(t)=\alpha_H,
+\]
+so the long-time Gaussian arrow of time decays at twice the slowest time-antisymmetric covariance mode.
+\end{conjecture}
+
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -5147,5 +5253,21 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{DH21} T.~K. Dey and T.~Hou, Updating barcodes and representatives for zigzag persistence, arXiv:2112.02352 (2021).
 \bibitem{Hic22} A.~Hickok, Persistence diagram bundles: a multidimensional generalization of vineyards, arXiv:2210.05124 (2022).
 \bibitem{GM26} B.~Giunti and E.~Munch, Canopies: a generalization of vines and vineyards for parameterized persistence, arXiv:2606.23859 (2026).
+
+\bibitem{MMS23} N.~Merino Negrete, C.~Maldonado, and R.~Salgado-Garc\'ia, \emph{Sorting ECGs by lag irreversibility}, Physica D \textbf{459} (2023) 134022; arXiv:2307.15998.
+
+\bibitem{LP23} S.~Liang and S.~Pigolotti, \emph{Thermodynamic bounds on time-reversal asymmetry}, Phys. Rev. E \textbf{108} (2023) L062101. DOI: 10.1103/PhysRevE.108.L062101.
+
+\bibitem{VVS24} T.~Van Vu, V.~T. Vo, and K.~Saito, \emph{Dissipation, quantum coherence, and asymmetry of finite-time cross-correlations}, Phys. Rev. Research \textbf{6} (2024) 013273. DOI: 10.1103/PhysRevResearch.6.013273.
+
+\bibitem{Auc19} A.~Auconi, A.~Giansanti, and E.~Klipp, \emph{Information thermodynamics for time series of signal-response models}, Entropy \textbf{21} (2019) 177. DOI: 10.3390/e21020177.
+
+\bibitem{vdMeer22} J.~van der Meer, B.~Ertel, and U.~Seifert, \emph{Thermodynamic inference in partially accessible Markov networks: a unifying perspective from transition-based waiting time distributions}, Phys. Rev. X \textbf{12} (2022) 031025. DOI: 10.1103/PhysRevX.12.031025.
+
+\bibitem{Deg23} J.~Deg\"unther, J.~van der Meer, and U.~Seifert, \emph{Fluctuating entropy production on the coarse-grained level: inference and localization of irreversibility}, arXiv:2309.07665 (2023).
+
+\bibitem{Sei26} U.~Seifert, \emph{Universal bounds on entropy production from fluctuating coarse-grained trajectories}, Nature Reviews Physics (2026); article s42254-026-00954-5.
+
+\bibitem{ACMM13} K.~Avrachenkov, L.~Cottatellucci, L.~Maggi, and Y.-H. Mao, \emph{Maximum entropy mixing time of circulant Markov processes}, Statist. Probab. Lett. \textbf{83} (2013) 768--773. DOI: 10.1016/j.spl.2012.11.022.
 \end{thebibliography}
 \end{document}

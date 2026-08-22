@@ -1,8 +1,8 @@
-# Three hundred nineteen conjectures in mathematics
+# Three hundred thirty-four conjectures in mathematics
 
 This repository contains:
 
-- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: three hundred nineteen conjectures in eighteen parts, each with its mechanism,
+- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: three hundred thirty-four conjectures in nineteen parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -74,7 +74,7 @@ This repository contains:
   summaries, and a near-quadratic average-case law for vineyard
   events.
   Thirteen conjectures
-  (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229) have since been refuted and are recorded in
+  (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229, 328) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
   theorem. Thirteen conjectures (110, 111, 112, 115, 117, 118, 125,
   151, 152, 182, 195, 240, and 298) have since been proved
