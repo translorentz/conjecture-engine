@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred sixty-four conjectures in mathematics}
+\title{Three hundred seventy-nine conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred sixty-four conjectures in mathematics:\\ the statements}
+\title{Three hundred seventy-nine conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -5002,6 +5002,92 @@ Let \(\kappa\in(8/3,4)\cup(4,8)\) with \(\gamma=\sqrt\kappa\) for \(\kappa<4\) a
 \end{conjecture}
 
 
+\part{Hydrodynamic limits of interacting particle systems}
+
+\medskip\noindent\emph{Added to the deposit: 22 August 2026.}\par\medskip
+
+The fifteen conjectures below propose hydrodynamic scaling limits for interacting particle systems whose microscopic rules carry a new structural ingredient: an endogenous local jump index, refreshed or fatigued environments, non-Markovian renewal clocks, singular reaction surfaces, finite crossing budgets, shared common noise, odd multi-species transport, and moving or storing membranes.  They fall in five groups (Conjectures~\ref{an1} to~\ref{an3}, \ref{an4} to~\ref{an6}, \ref{an7} to~\ref{an9}, \ref{an10} to~\ref{an12}, and~\ref{an13} to~\ref{an15}).  Each states a microscopic model, the conjectured limiting equation, its conserved quantities, the critical scaling that makes the new mechanism survive, and a route to disproof.  These are scaling-limit statements about continuum PDE or SPDE, beyond any finite computation, and every one is flagged as such; the diagnostics test event-count scalings, conservation, reduced linearizations, or exact ODE reductions, never the limit theorem.  The proved layer is Proposition~\ref{an:reductions}: exact mass conservation of the limiting equations, the fatigue mobility-budget identity, the perturbative self-arrest residual, and the critical event-count exponents.  Four statements carry explicit high-overlap priority flags, since a closely related continuum object or one-particle input appeared in 2025--2026 work: the Markov-switching Robin equation of Colantoni~\cite{Colantoni26} (Conjecture~\ref{an10}), the scalar vorticity/odd-diffusion exclusion of De Carlo, Gabrielli, and Gon\c calves~\cite{DeCarloGabrielliGoncalves25} (Conjecture~\ref{an11}), the critical-percolation random-walk scaling limit of Dankovic, Markering, Miller, and Yuan~\cite{DankovicMMY26} (Conjecture~\ref{an13}), and the finite-reservoir Wentzell theorem of Franco, Franco, and Gon\c calves~\cite{FrancoFrancoGoncalves26} (Conjecture~\ref{an15}); for these the novel content is the exact microscopic derivation and the specific interior/two-sided/multi-species structure, not the limiting object itself.
+
+Throughout, $\eta$ is an exclusion configuration on the discrete torus $\mathbb T_N$ or on $\mathbb R$, $\rho$ the limiting density, and time is diffusively scaled unless stated otherwise.  Objects specific to a single conjecture are defined in its statement.
+
+\begin{proposition}[Conservation, mobility budget, self-arrest residual, and critical counts]\label{an:reductions}
+{\rm(i)} Each limiting equation displayed below conserves the relevant total mass (for multi-species models, each color mass): integrating the gain--loss or divergence form and interchanging dummy variables cancels the flux.  {\rm(ii)} For the fatigue ODE $\dot a=c(1-a)^p$ with $c=2\rho(1-\rho)>0$, the conductance reaches zero in finite time iff $p<1$, with $t_{\rm hit}=1/(c(1-p))$, while the integrated mobility $\int_0^\infty(1-a)^p\,dt=1/c$ is finite for every $p$.  {\rm(iii)} For the occupation-deepened trap system linearized about $\rho=\bar\rho$ with $b=0$, the first-order perturbation solves $\partial_tv=e^{-a\bar\rho t}\Delta v$, so $v(t)=e^{\tau(t)\Delta}v_0$ with $\tau(t)=(1-e^{-a\bar\rho t})/(a\bar\rho)$ and $v_\infty=e^{\Delta/(a\bar\rho)}v_0$, generally nonzero.  {\rm(iv)} A codimension-one reaction surface at generator rate $N^\theta$ contributes at order $N^{\theta-1}$, critical at $\theta=1$; and a membrane of step $N^a$, move rate $N^{-b}$, and slow conductance $\alpha/N$ has order-one Brownian motion, healing length, and slow activity per dwell simultaneously iff $b=2a$ and $a=\tfrac12$.
+\end{proposition}
+
+\section{Density-adaptive and refreshed exclusion hydrodynamics}
+
+\begin{conjecture}[Density-adaptive L\'evy exclusion]\label{an1}
+On $\mathbb T_N$ let $r_x^N(\eta)$ be the mean occupation in a block of radius $\ell_N$ with $\ell_N\to\infty$, $\ell_N/N\to0$, and $\log N/\sqrt{\ell_N}\to0$, and let $\alpha:[0,1]\to[\alpha_-,\alpha_+]\subset(0,2)$ be $C^1$.  A particle at $x$ jumps to a vacant $y$ at rate $N^{\alpha(r_x^N)}c(\alpha(r_x^N))|y-x|_N^{-1-\alpha(r_x^N)}$.  For smooth profiles bounded away from $0,1$ the empirical density converges to the conservative variable-order gain--loss equation
+\[
+\partial_t\rho(u)=\mathrm{PV}\!\int_{\mathbb T}\bigl[K_{\alpha(\rho(v))}(u-v)\rho(v)(1-\rho(u))-K_{\alpha(\rho(u))}(v-u)\rho(u)(1-\rho(v))\bigr]\,dv.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Refreshing heavy traps: crossover trichotomy]\label{an2}
+Start from a reversible heavy-trap exclusion model with static anomalous clock $\theta_N$ and index $\beta\in(0,1)$, refresh each trap at rate $q_N$ independently of the particles, and set $\lambda_N=q_N\theta_N$.  If $\lambda_N\to0$ the static fractional-kinetics limit persists; if $\lambda_N\to\lambda\in(0,\infty)$ the hydrodynamics is governed by a model-dependent renewal/Bernstein symbol $\psi_\lambda(s)$ with $\psi_0(s)=cs^\beta$ and $\psi_\lambda(s)\sim m_\lambda s$ as $s\downarrow0$; if $\lambda_N\to\infty$ the limit is ordinary diffusion after effective-diffusivity renormalization.
+\end{conjecture}
+
+\begin{conjecture}[Critical sparse shortcuts add a teleportation operator]\label{an3}
+Let nearest-neighbor SSEP run on $\mathbb T_N$ at rate $N^2$, and add $M_N$ macroscopic shortcut edges ringing at rate $\kappa$, with $M_N/N\to\lambda/2$ and endpoint-pair measure converging to uniform.  The empirical density converges to $\partial_t\rho=D\partial_{uu}\rho+\kappa\lambda(\bar\rho-\rho)$, with $\bar\rho=\int_{\mathbb T}\rho$; for a nonuniform endpoint kernel the nonlocal term becomes the corresponding conservative jump operator.
+\end{conjecture}
+
+\section{Renewal exclusion, fatigue, and boundary memory}
+
+\begin{conjecture}[Crowding-renormalized successful-reset renewal exclusion]\label{an4}
+Let a particle of age $a$ attempt jumps with hazard $\beta/(a+a_0)$, $0<\beta<1$, resetting its age only after a successful jump.  In dimension $d\ge2$, linearizing about a homogeneous equilibrium $\rho_*$, on the clock $t_{N,*}=N^{2/\gamma(\rho_*)}$ with $\gamma(\rho_*)=\beta(1-\rho_*)$ the density perturbation converges to the fractional diffusion $\partial_t^{\gamma(\rho_*)}u=D(\rho_*)\Delta u$; a genuinely nonconstant profile admits no single global polynomial clock, requiring a variable-order-in-time renewal kernel.
+\end{conjecture}
+
+\begin{conjecture}[Activity-fatigued conductances]\label{an5}
+Attach damage $a_b(t)\in[0,1]$ to each bond with symmetric rate $N^2(1-a_b)^p$, damage growing so that macroscopically $\partial_ta=2g(a)\rho(1-\rho)$, $g(a)=(1-a)^p$.  The coupled hydrodynamic limit is $\partial_t\rho=\partial_u(g(a)\partial_u\rho)$, $\partial_ta=2g(a)\rho(1-\rho)$, with finite-time loss of ellipticity at $p<1$ but finite integrated mobility for every $p$, so some smooth nonconstant data retain nonconstant long-time limits.
+\end{conjecture}
+
+\begin{conjecture}[Common heavy-tailed boundary clock: random Stieltjes boundary law]\label{an6}
+Let a single heavy-tailed renewal process control all left-boundary updates, scaled so that $N^{-1}R_N(N^2t)\Rightarrow\kappa_LE_t^L$ with $E^L$ an inverse-$\gamma$-stable clock, and analogously on the right.  The bulk solves $\partial_t\rho=\partial_{uu}\rho$, but the boundary fluxes are singular random Stieltjes measures: in weak form $d\langle\rho_t,G\rangle=\langle\rho_t,G''\rangle dt+\kappa_LG(0)[\alpha-\rho_t(0)]dE_t^L+\kappa_RG(1)[\beta_R-\rho_t(1)]dE_t^R$, remaining random after averaging over the clocks.
+\end{conjecture}
+
+\section{Catalysts, mixed clocks, and crossing budgets}
+
+\begin{conjecture}[Codimension-one nonlinear catalyst transmission law]\label{an7}
+Let $\Sigma_N$ approximate a smooth hypersurface $\Sigma\subset\mathbb T^d$ with bulk SSEP at rate $N^2$ and catalyst birth/death flips at generator rate $N^\theta$ with reaction $R(r)=b(r)(1-r)-d(r)r$.  The critical exponent is $\theta=1$, at which $\partial_t\rho=\Delta\rho$ off $\Sigma$ with continuous trace and derivative jump $[\partial_n\rho]_\Sigma=-R(\rho|_\Sigma)$; for $\theta<1$ the catalyst disappears and for $\theta>1$ a stable zero of $R$ pins the trace.
+\end{conjecture}
+
+\begin{conjecture}[Mixed-clock two-species Maxwell--Stefan hydrodynamics]\label{an8}
+Let species A use exponential attempt clocks and species B use i.i.d.\ heavy-tailed attempt clocks of index $\gamma\in(0,1)$, reset after every attempt.  Observed on time $N^{2/\gamma}$ with A's microscopic rate $N^{2-2/\gamma}$, both species stay hydrodynamically visible, and around a homogeneous composition the linearized law is the mixed-order Maxwell--Stefan system $s\,\widehat{\delta a}-\delta a_0=-k^2(D_*\widehat{\delta}\,)_A$, $s^\gamma\widehat{\delta b}-s^{\gamma-1}\delta b_0=-k^2(D_*\widehat{\delta}\,)_B$ with non-diagonal exclusion cross-diffusion $D_*$.
+\end{conjecture}
+
+\begin{conjecture}[Finite crossing-budget membrane: endogenous stopping-time transition]\label{an9}
+Give a critical slow bond (microscopic rate $\alpha/N$) a budget $B_N=\lfloor\kappa N\rfloor$ of successful exchanges, after which its rate is zero forever.  With unsigned local activity $A(r_-,r_+)=r_-(1-r_+)+r_+(1-r_-)$, the normalized success count satisfies $S_N(t)/N\to\alpha\int_0^tA(\rho(s,0^-),\rho(s,0^+))\,ds$, and the density obeys the critical Robin transmission law before the exhaustion time $\tau=\inf\{t:\alpha\int_0^tA\ge\kappa\}$ and reflecting conditions after, so the PDE changes type at an endogenous stopping time.
+\end{conjecture}
+
+\section{Common noise, odd transport, and self-generated arrest}
+
+\begin{conjecture}[Telegraph-modulated critical membrane]\label{an10}
+Let a single two-state Markov chain $Z_t\in\{0,1\}$, converging on diffusive time to a finite-rate telegraph process, multiply a critical slow bond's rate, $\alpha Z_t/N$.  Conditional on $Z$, the density converges to the heat equation with time-dependent Robin coefficient $\alpha Z_t$, so the empirical density converges jointly with $Z$ to a random hydrodynamic limit; the fast-switch regime converges to the averaged Robin law.
+\end{conjecture}
+
+\begin{conjecture}[Multi-species chiral-vorticity odd cross-diffusion]\label{an11}
+Use at least two conserved colors plus vacancies, with symmetric color-vacancy exchanges and plaquette rotations at rates $c_\pm(\xi)=N^2c_0[1\pm\varepsilon\Phi(\mathcal N(\xi))]$ depending only on the rotation-invariant plaquette composition $\mathcal N(\xi)$, so grand-canonical product color measures are invariant.  The diffusive hydrodynamics is $\partial_tr_i=\nabla\cdot\sum_j[D^S_{ij}(r)\nabla r_j+D^O_{ij}(r)R\nabla r_j]$ with $R$ rotation by $\pi/2$ and a composition-dependent odd cross matrix $D^O$ that changes sign with $\varepsilon$ and affects individual density equations.
+\end{conjecture}
+
+\begin{conjecture}[Perturbative self-generated arrest]\label{an12}
+Attach trap depth $E_x(t)\ge0$ with symmetric bond rate $N^2\exp[-(E_x+E_{x+1})/2]$ and $dE_x/dt=a\eta_t(x)-bE_x$.  The finite-time limit is $\partial_t\rho=\partial_u(e^{-e}\partial_u\rho)$, $\partial_te=a\rho-be$; with $b=0$, linearizing about $\rho=\bar\rho$ gives residual $v_\infty=e^{\Delta/(a\bar\rho)}v_0$, so for small smooth mean-zero data the full nonlinear system converges to the nonconstant limit $\rho_\infty=\bar\rho+\epsilon e^{\Delta/(a\bar\rho)}v_0+O(\epsilon^2)$.
+\end{conjecture}
+
+\section{Critical geometry and moving membranes}
+
+\begin{conjecture}[Critical-percolation exclusion transfer]\label{an13}
+Let $(V_N,c_N,\mu_N)$ be the rescaled critical triangular-percolation graph sequence for which simple random walk converges quenched to the semigroup $P_t^\omega$ of CLE$_6$ Brownian motion on the limiting resistance space, with time normalization $a_N$.  Run SSEP on $V_N$ with the same conductances and time change.  If the initial color field converges to $\rho_0\mu^\omega$, then quenched $\pi_t^N\Rightarrow\rho_t\mu^\omega$ with $\rho_t=P_t^\omega\rho_0$, so exclusion produces no additional transport exponent beyond the one-particle normalization.
+\end{conjecture}
+
+\begin{conjecture}[Critically mobile slow membrane]\label{an14}
+Let a distinguished slow bond of rate $\alpha/N$ move by microscopic distance $N^a$ at rate $N^{-b}$.  At the uniquely matched scaling $a=\tfrac12$, $b=1$ (step $\sqrt N$, move rate $N^{-1}$, conductance $\alpha/N$), the membrane path converges to Brownian motion and the density converges to a nontrivial random singular-interface heat flow conditional on that Brownian path; the membrane is not annealed away, and the exact moving-Robin generator is a sub-conjecture.
+\end{conjecture}
+
+\begin{conjecture}[Interior two-sided capacitor membrane]\label{an15}
+Split a one-dimensional system into left and right SSEP bulks and an interior storage node of capacity $\lfloor\kappa N\rfloor$, conserving total mass, with side-to-storage rates of order $N$.  The limit is $\mu_t=\rho_-du+\rho_+du+m(t)\delta_0$ with heat equations in the bulks, nonlinear vertex fluxes $F_\pm(r,m)=a_\pm r(1-m/\kappa)-b_\pm(m/\kappa)(1-r)$, boundary conditions $-\partial_{n_\pm}\rho_\pm=F_\pm$, and $\dot m=F_-+F_+$, conserving $\int\rho_-+\int\rho_++m$.
+\end{conjecture}
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -5505,5 +5591,16 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{ArtemevKhromov26} A.~Artemev and D.~Khromov, \emph{WKB asymptotics for multipoint Virasoro conformal blocks and applications}, arXiv:2603.08194 (2026).
 \bibitem{MWW} J.~Miller, S.~Watson, and D.~Wilson, \emph{Extreme nesting in the conformal loop ensemble}, arXiv:1401.0217.
 \bibitem{HoldenLehmkuehler24} N.~Holden and M.~Lehmkuehler, \emph{Liouville quantum gravity weighted by conformal loop ensemble nesting statistics}, Probab. Math. Phys. \textbf{5} (2024); arXiv:2204.09905.
+\bibitem{KolokoltsovTroeva22} V.~N. Kolokoltsov and M.~S. Troeva, \emph{Fractional kinetic equations}, arXiv:2206.02138 (2022).
+\bibitem{CardosoDePaula23} P.~Cardoso, R.~de Paula, and P.~Gon\c calves, \emph{Derivation of the fractional porous medium equation from a microscopic dynamics}, Nonlinearity \textbf{36} (2023) 1840--1872; arXiv:2205.00812.
+\bibitem{SchulzKolomeiskyFrey11} J.~H.~P. Schulz, A.~B. Kolomeisky, and E.~Frey, \emph{Current reversal and exclusion processes with history-dependent random walks}, EPL \textbf{95} (2011) 30004.
+\bibitem{AlfaroMourraguiTreton24} M.~Alfaro, M.~Mourragui, and S.~Treton, \emph{Bridging bulk and surface: an interacting particle system towards the field-road diffusion model}, arXiv:2406.14093 (2024).
+\bibitem{Sasada09} M.~Sasada, \emph{Hydrodynamic limit for two-species exclusion processes}, arXiv:0910.3994 (2009).
+\bibitem{Colantoni26} F.~Colantoni, \emph{Time-dependent Robin heat equation via Markovian switching}, arXiv:2604.27901 (2026).
+\bibitem{DeCarloGabrielliGoncalves25} L.~De Carlo, D.~Gabrielli, and P.~Gon\c calves, \emph{Hydrodynamic limit of an exclusion process with vorticity}, Ann. Inst. H. Poincar\'e Probab. Statist. \textbf{61} (2025) 232--257.
+\bibitem{Kalz22} E.~Kalz et al., \emph{Collisions enhance self-diffusion in odd-diffusive systems}, Phys. Rev. Lett. \textbf{129} (2022) 090601.
+\bibitem{DankovicMMY26} I.~Dankovic, M.~Markering, J.~Miller, and Y.~Yuan, \emph{The scaling limit of random walk and the intrinsic metric on planar critical percolation}, arXiv:2604.14122 (2026).
+\bibitem{ChatterjeeCP16} R.~Chatterjee, S.~Chatterjee, and P.~Pradhan, \emph{Symmetric exclusion processes on a ring with moving defects}, Phys. Rev. E \textbf{93} (2016) 062124; arXiv:1602.02691.
+\bibitem{FrancoFrancoGoncalves26} M.~Franco, T.~Franco, and P.~Gon\c calves, \emph{Finite reservoirs lead to Wentzell boundary conditions for independent random walks and exclusion process}, arXiv:2604.02579 (2026).
 \end{thebibliography}
 \end{document}
