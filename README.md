@@ -1,9 +1,8 @@
-# Two hundred eighty-five conjectures in mathematics
+# Three hundred thirty-six conjectures in mathematics
 
 This repository contains:
 
-- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: two
-  hundred eighty-five conjectures in fifteen parts, each with its mechanism,
+- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: three hundred thirty-six conjectures in twenty parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -48,12 +47,49 @@ This repository contains:
   walk counts and radial moments against bridge log-convexity,
   likelihood-ratio and coupling growth in the length, quadrant-dependence
   signs for spans, radius, atmosphere, and contacts, and phase and
-  dimension laws for the interacting and nonbacktracking ensembles.
-  Thirteen conjectures
-  (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229) have since been refuted and are recorded in
+  dimension laws for the interacting and nonbacktracking ensembles;
+  Part XVI (286–294) budgeted irreversibility and the spectral geometry
+  of relaxation: a winding-skewness amplification law for driven rings,
+  the recruitment, convexity, oscillation, and cheapest-exceptional-point
+  architecture of the entropy-production-budgeted gap frontier of linear
+  diffusions, its transfer to coherently accelerated Lindblad dynamics
+  with a Lie-algebraic saturation criterion, and the collapse of robust
+  Mpemba preparation basins at Liouvillian exceptional points;
+  Part XVII (295–307) passes to extreme-value theory with inverse
+  problems and design laws for multivariate extremes: an isoperimetric
+  recruitment staircase, closure, elasticity, and curvature laws for the
+  Hüsler–Reiss extremal coefficient, thinning spectroscopy and occupancy
+  tomography of extremal clusters, consistency and leakage laws for the
+  persistent homology of extreme directions, stability barriers and
+  identifiability thresholds for fractional tail tomography, and
+  Poissonization, design-ladder, and adaptation-cusp laws for randomized
+  block maxima; Part XVIII (308–319) closes in topological data
+  analysis: circle isoperimetry, stability saturation, and
+  projection-threshold laws for Vietoris–Rips persistence, shrinkage
+  and grouping-stability laws for Wasserstein means of persistence
+  diagrams, a proved phase calculus for randomized Mapper with
+  survival-tomography and dither laws, rectangle tomography from
+  finitely many directions, restricted-isometry persistence sketches,
+  Whitney-count evaluations and moment determinacy for finite
+  summaries, and a near-quadratic average-case law for vineyard
+  events; Part XIX (320–334) turns to the temporal irreversibility of
+  nonequilibrium dynamics, reading a temporal sampling efficiency off
+  the lag Kullback–Leibler divergence of the two-time endpoint law:
+  monotone efficiency loss, spectral-horizon and integrated-budget
+  bounds, a doubled irreversibility exponent with its coarse-grained
+  mode selection, wrapped-Brownian and Péclet winding-aliasing laws on
+  driven cycles, and peak, budget, and doubling laws for
+  Ornstein–Uhlenbeck processes; and Part XX (335–336) closes with two
+  log-concavity laws for exactly solved objects in random conformal
+  geometry: strict log-concavity of the DOZZ Liouville structure
+  constant in the internal momentum throughout an interior charge
+  chamber, and strict log-concavity of the exact Brownian-annulus
+  modulus density in the logarithmic modulus.
+  Fourteen conjectures
+  (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229, 328) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
-  theorem. Twelve conjectures (110, 111, 112, 115, 117, 118, 125,
-  151, 152, 182, 195, and 240) have since been proved
+  theorem. Thirteen conjectures (110, 111, 112, 115, 117, 118, 125,
+  151, 152, 182, 195, 240, and 298) have since been proved
   and are recorded in place as resolved true, with their proofs.
 - **`paper/conjectures_blind.pdf`** (`conjectures_blind.tex`) — the
   anonymous version of the paper.
@@ -63,12 +99,22 @@ This repository contains:
 - **[Web version](https://translorentz.github.io/conjecture-engine/)** — the
   paper as a browsable page (`docs/`), with plain-language explanations
   of every conjecture.
+- **`paper/conjectures_promise.pdf`** (`conjectures_promise.tex`) — a
+  companion collection of twelve *conditional, promise-class* conjectures
+  for certified polynomial-time many-electron ground-state approximation.
+  It is kept separate, and held to a deliberately weaker and clearly
+  labelled standard of evidence: each is conditioned on an explicit
+  structural promise class, and its checks (`verify/promise_lemmas.py`,
+  and the browsable [companion page](https://translorentz.github.io/conjecture-engine/promise.html))
+  verify only the shared sub-lemmas and small-instance mechanisms, never
+  the conjectural laws themselves. This keeps the main collection's
+  "every claim verified" standard intact.
 - **`engine/`, `verify/`, `adversarial/`, `run_all.py`** — the verification
   programs. `python run_all.py` regenerates every number in Part I;
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
   (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `wx_shock_landau.py` and `ehrhart_cov_gamma.py` (the shock forcing, Landau-floor, Ehrhart-scaling, covariance, and coverage resolutions of Parts VI--VII and IX--X), `y_shape_laws.py` (Part VIII),
-  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), `ae_projective_laws.py` (Part XIV), `af_saw_laws.py` (Part XV), and `t5_*.py` (Part III),
+  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), `ae_projective_laws.py` (Part XIV), `af_saw_laws.py` (Part XV), `ag_noneq_laws.py` (Part XVI), `ah_evt_laws.py` (Part XVII), `ai_tda_laws.py` (Part XVIII), `aj_neq_laws.py` (Part XIX), `ak_cft_shape_laws.py` (Part XX), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base

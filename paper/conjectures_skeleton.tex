@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Two hundred eighty-five conjectures in mathematics}
+\title{Three hundred thirty-six conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Two hundred eighty-five conjectures in mathematics:\\ the statements}
+\title{Three hundred thirty-six conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -2970,7 +2970,7 @@ with covariance zero exactly when $L_P$ is abelian.
 
 \medskip\noindent\emph{Added to the deposit: 10 August 2026.}\par\medskip
 
-The twenty conjectures below return to the local--global aesthetic of Part~I, but read it off objects other than residue classes of consecutive primes.  Each takes a familiar arithmetic quantity, looks at it through a local lens that ought to have looked symmetric, and takes the residual asymmetry seriously.  They form five programmes.  A compass programme (Conjectures~\ref{w1} to~\ref{w6}) measures the direction of the nearest prime to a polynomial centre and matches it to a local-sieve hazard.  An order-pattern programme (Conjectures~\ref{w7} and~\ref{w8}) studies the order patterns of $\operatorname{rad}(n)/n$ on short windows.  An order programme (Conjectures~\ref{w9} to~\ref{w13}) measures how often abundancy and totient ratios move monotonically.  A shock programme (Conjectures~\ref{w14} to~\ref{w19}) tracks the prime-factor count of combinatorial sequences that drop many prime factors in a single step, a \emph{shock}.  A boundary programme (Conjecture~\ref{w20}) reads the prime-factor anatomy of the four integers bracketing a prime gap.  The proved layer is kept separate.  Proposition~\ref{w:jump} gives the factorial-ratio jump identities, Proposition~\ref{w:radunif} gives short-window exchangeability, Proposition~\ref{w:raddens} proves that every fixed radical-pattern density exists, Proposition~\ref{w:trihex} proves exact finite-sieve equivalence for triangular and hexagonal centres, Proposition~\ref{w:k2slope} proves the $k=2$ case of the dyadic multinomial slope, Proposition~\ref{w:shock} settles the three shock laws, Conjectures~\ref{w14} to~\ref{w16}, by an elementary forcing construction, and Proposition~\ref{w:cov53} evaluates the prime-truncated lag-one covariance of the central-binomial slice at exactly $-\tfrac53$.  Six of the twenty state a bias as a numerical band rather than a derived constant, and are flagged as such where they occur, the compass and order constants of Conjectures~\ref{w2}, \ref{w3}, \ref{w4}, \ref{w9}, \ref{w10}, and~\ref{w12}.  Two, Conjectures~\ref{w6} and~\ref{w17}, extrapolate in a parameter rather than in the index and are the most exposed.
+The twenty conjectures below return to the local--global aesthetic of Part~I, but read it off objects other than residue classes of consecutive primes.  Each takes a familiar arithmetic quantity, looks at it through a local lens that ought to have looked symmetric, and takes the residual asymmetry seriously.  They form five programmes.  A compass programme (Conjectures~\ref{w1} to~\ref{w6}) measures the direction of the nearest prime to a polynomial centre and matches it to a local-sieve hazard.  An order-pattern programme (Conjectures~\ref{w7} and~\ref{w8}) studies the order patterns of $\operatorname{rad}(n)/n$ on short windows.  An order programme (Conjectures~\ref{w9} to~\ref{w13}) measures how often abundancy and totient ratios move monotonically.  A shock programme (Conjectures~\ref{w14} to~\ref{w19}) tracks the prime-factor count of combinatorial sequences that drop many prime factors in a single step, a \emph{shock}.  A boundary programme (Conjecture~\ref{w20}) reads the prime-factor anatomy of the four integers bracketing a prime gap.  The proved layer is kept separate.  Proposition~\ref{w:jump} gives the factorial-ratio jump identities, Proposition~\ref{w:radunif} gives short-window exchangeability, Proposition~\ref{w:raddens} proves that every fixed radical-pattern density exists, Proposition~\ref{w:trihex} proves exact finite-sieve equivalence for triangular and hexagonal centres, Proposition~\ref{w:k2slope} proves the $k=2$ case of the dyadic multinomial slope, Proposition~\ref{w:shock} settles the three shock laws, Conjectures~\ref{w14} to~\ref{w16}, by an elementary forcing construction, and Proposition~\ref{w:cov53} evaluates the prime-truncated lag-one covariance of the central-binomial slice at exactly $-\tfrac53$, and Proposition~\ref{w:covexist} shows the lag-one shock covariance converges to a rational number in every family.  Six of the twenty state a bias as a numerical band rather than a derived constant, and are flagged as such where they occur, the compass and order constants of Conjectures~\ref{w2}, \ref{w3}, \ref{w4}, \ref{w9}, \ref{w10}, and~\ref{w12}.  Two, Conjectures~\ref{w6} and~\ref{w17}, extrapolate in a parameter rather than in the index and are the most exposed.
 
 For a composite integer $a$ let $p^-(a)<a<p^+(a)$ be its neighbouring primes and set $L(a)=a-p^-(a)$ and $U(a)=p^+(a)-a$.  The \emph{prime compass} of $a$ points right when $U(a)<L(a)$, left when $L(a)<U(a)$, and is tied when the two distances agree.  For a sequence $A_1<A_2<\cdots$ of composite centres write
 \[
@@ -3100,6 +3100,10 @@ For a cutoff $y\ge2$ write $\Omega_y(m)=\sum_{p\le y}v_p(m)$ and $J^{(y)}_n=1+\O
 \[
 \lim_{N\to\infty}\operatorname{Cov}\bigl(J^{(y)}_n,J^{(y)}_{n+1}\bigr)=-\tfrac53\qquad\text{for every }y\ge3.
 \]
+\end{proposition}
+
+\begin{proposition}[Existence of the shock covariance]\label{w:covexist}
+In each fixed binomial-slice ($k\ge2$), central-multinomial ($k\ge2$), and Fuss--Catalan ($r\ge1$) family, the lag-one covariance of successive $\Omega$-jumps over $n\le N$ converges as $N\to\infty$ to a rational number.
 \end{proposition}
 
 \begin{conjecture}[Dyadic multinomial slope]\label{w18}
@@ -4109,7 +4113,7 @@ Let $X$ be a Picard-rank-one Calabi--Yau threefold with a constructed component 
 \end{conjecture}
 
 \begin{conjecture}[Sharp $\Gamma$ for Brill--Noether stability]\label{ad11}
-For a Picard-rank-one complete-intersection Calabi--Yau threefold covered by the Brill--Noether construction of~\cite{FKLR25}, with $\varepsilon_*$ the supremum of $\varepsilon$ for which their condition $\mathrm{BG3}(\varepsilon)$ holds, the infimum of $\gamma$ for which $\Gamma=\gamma H^2-\operatorname{td}_2(X)$ satisfies $\Gamma$-BMT is exactly $\max\{4/(H^3\varepsilon_*),\ \operatorname{td}_2(X)\cdot H/H^3\}$.
+For a Picard-rank-one complete-intersection Calabi--Yau threefold covered by the Brill--Noether construction of~\cite{FKLR25}, with $\varepsilon_*$ the supremum of $\varepsilon$ for which their condition $\mathrm{BG3}(\varepsilon)$ holds, the infimum of $\gamma$ for which $\Gamma=\gamma H^2-\operatorname{td}_2(X)$ satisfies the $\Gamma$-twisted Bayer--Macr\`i--Toda ($\Gamma$-BMT) stability condition is exactly $\max\{4/(H^3\varepsilon_*),\ \operatorname{td}_2(X)\cdot H/H^3\}$.
 \end{conjecture}
 
 \begin{conjecture}[Tame wall atlas]\label{ad12}
@@ -4150,8 +4154,8 @@ For a semistable one-parameter Calabi--Yau threefold degeneration of type II, II
 \begin{conjecture}[LMHS-controlled Laplace towers]\label{ad19}
 For a semistable one-parameter polarised Calabi--Yau degeneration at infinite Weil--Petersson distance, fix a normalisation of $d_{\mathrm{WP}}$ and volume-normalise the Ricci-flat metrics.  The vanishing scalar Laplace spectrum admits a finite partition into tower types $a$ with rational exponents $\alpha_a$ such that:
 (i) the list of exponents depends only on the isomorphism class of the integral limiting mixed Hodge structure and the combinatorial dual-intersection and essential-skeleton data.
-(ii) For every tower and every fixed $j$, the quantity $e^{2\alpha_ad_{\mathrm{WP}}(t)}\lambda_{a,j}(t)$ converges to the $j$-th eigenvalue of a canonical weighted Laplace operator on the collapsed base geometry.
-(iii) every eigenvalue sequence tending to zero belongs eventually to one of these towers.
+(ii) for each tower there is a positive normalizer $N_a(t)=e^{2\alpha_ad_{\mathrm{WP}}(t)}\ell_a(t)$, with $\ell_a$ slowly varying in $e^{d_{\mathrm{WP}}(t)}$, such that for every fixed $j$ the quantity $N_a(t)\lambda_{a,j}(t)$ converges to the $j$-th eigenvalue of a canonical weighted Laplace operator on the collapsed base geometry.
+(iii) with eigenvalues labelled in increasing order at each parameter, every fixed-rank eigenvalue branch tending to zero belongs eventually to one of these towers.
 The limiting operator may depend on the canonical metric data of the collapsed base and is not asserted to be determined by the limiting mixed Hodge structure alone.
 \end{conjecture}
 
@@ -4159,12 +4163,16 @@ The limiting operator may depend on the canonical metric data of the collapsed b
 
 \medskip\noindent\emph{Added to the deposit: 19 August 2026.}\par\medskip
 
-The fifteen conjectures below take three of the oldest invariants of projective algebraic geometry, the middle cohomology of a complete intersection, the graded Betti table of an embedded surface, and the Hodge decomposition of a hypersurface, and conjecture the discrete shape of each as its defining degrees move.  They form three programmes.  A convexity programme (Conjectures~\ref{ae1} to~\ref{ae6}) studies the degree-normalized primitive middle Betti number of smooth complete intersections on the full multidegree lattice, asserting a coherent discrete-convexity package: coordinate monotonicity and convexity, supermodular absolute interaction with log-submodular relative interaction, Schur-convexity at fixed degree sum, and a strict decrease under every codimension-raising split that preserves the adjunction coefficient.  A syzygy programme (Conjectures~\ref{ae7} to~\ref{ae11}) studies the two nontrivial rows of the Betti tables of $\mathbf P^1\times\mathbf P^1$ under Segre--Veronese embeddings, replacing global shape claims by a controlled-defect law: the nonlinear row is strictly log-concave, while the linear row can fail log-concavity at most once, only past its mode, only where the nonlinear row is already present, and only within one step of that row's mode.  A dispersion programme (Conjectures~\ref{ae12} to~\ref{ae15}) studies the normalized primitive Hodge profiles of smooth hypersurfaces as the degree grows, asserting that the known drift toward the Eulerian profile is monotone in four canonical stochastic orders: likelihood-ratio flattening, central-window escape, convex-order spread, and total-variation distance.  The proved layer is three calibrations: Proposition~\ref{ae:curve} proves all six convexity laws for curves from the exact formula $B=\sum_id_i-c-2+2/D$, Proposition~\ref{ae:strand} pins the two syzygy rows to the Hilbert series by an exact antidiagonal identity, and Proposition~\ref{ae:surface} proves all four dispersion laws for surfaces from an explicit rational function of the degree; in addition, for odd $n$ the Calabi--Yau slice of Conjecture~\ref{ae6} is already a corollary of the merge monotonicity of Proposition~\ref{x:merge}.  Two negative controls are retained in place: the unnormalized primitive Betti number fails Schur-convexity and has no split direction already for curves and surfaces, and coordinatewise monotone convergence to the Eulerian limit fails at dimension twelve, so the normalization of the convexity programme and the total-variation formulation of the dispersion programme are both forced.  Conjectures~\ref{ae7} to~\ref{ae11} rest on the thirteen complete published tables, the entire deposited corpus, and are flagged for that small evidence base; Conjecture~\ref{ae7} sits closest to the published unimodality conjecture of~\cite{BCEGLY22} and carries the part's attribution flag; Conjectures~\ref{ae12} to~\ref{ae15} assert laws at every degree and dimension beyond any finite check and are flagged as such, and the Eulerian limit itself is exact in the abelian setting of~\cite{LS25} and asymptotic in the toric setting of~\cite{DK86}, so only the monotone interpolation is claimed as new.
+The fifteen conjectures below take three of the oldest invariants of projective algebraic geometry, the middle cohomology of a complete intersection, the graded Betti table of an embedded surface, and the Hodge decomposition of a hypersurface, and conjecture the discrete shape of each as its defining degrees move.  They form three programmes.  A convexity programme (Conjectures~\ref{ae1} to~\ref{ae6}) studies the degree-normalized primitive middle Betti number of smooth complete intersections on the full multidegree lattice, asserting a coherent discrete-convexity package: coordinate monotonicity and convexity, supermodular absolute interaction with log-submodular relative interaction, Schur-convexity at fixed degree sum, and a strict decrease under every codimension-raising split that preserves the adjunction coefficient.  A syzygy programme (Conjectures~\ref{ae7} to~\ref{ae11}) studies the two nontrivial rows of the Betti tables of $\mathbf P^1\times\mathbf P^1$ under Segre--Veronese embeddings, replacing global shape claims by a controlled-defect law: the nonlinear row is strictly log-concave, while the linear row can fail log-concavity at most once, only past its mode, only where the nonlinear row is already present, and only within one step of that row's mode.  A dispersion programme (Conjectures~\ref{ae12} to~\ref{ae15}) studies the normalized primitive Hodge profiles of smooth hypersurfaces as the degree grows, asserting that the known drift toward the Eulerian profile is monotone in four canonical stochastic orders: likelihood-ratio flattening, central-window escape, convex-order spread, and total-variation distance.  The proved layer is five propositions: Proposition~\ref{ae:curve} proves all six convexity laws for curves from the exact formula $B=\sum_id_i-c-2+2/D$, Proposition~\ref{ae:strand} pins the two syzygy rows to the Hilbert series by an exact antidiagonal identity, Proposition~\ref{ae:surface} proves all four dispersion laws for surfaces from an explicit rational function of the degree, Proposition~\ref{ae:hyper} proves the coordinate monotonicity and convexity laws of Conjectures~\ref{ae1} and~\ref{ae2} for hypersurfaces in every dimension from a closed form, and Proposition~\ref{ae:disp} derives Conjectures~\ref{ae13} and~\ref{ae14} from the likelihood-ratio flattening of Conjecture~\ref{ae12}; in addition, for odd $n$ the Calabi--Yau slice of Conjecture~\ref{ae6} is already a corollary of the merge monotonicity of Proposition~\ref{x:merge}.  Two negative controls are retained in place: the unnormalized primitive Betti number fails Schur-convexity and has no split direction already for curves and surfaces, and coordinatewise monotone convergence to the Eulerian limit fails at dimension twelve, so the normalization of the convexity programme and the total-variation formulation of the dispersion programme are both forced.  Conjectures~\ref{ae7} to~\ref{ae11} rest on the thirteen complete published tables, the entire deposited corpus, and are flagged for that small evidence base; Conjecture~\ref{ae7} sits closest to the published unimodality conjecture of~\cite{BCEGLY22} and carries the part's attribution flag; Conjectures~\ref{ae12} to~\ref{ae15} assert laws at every degree and dimension beyond any finite check and are flagged as such, and the Eulerian limit itself is exact in the abelian setting of~\cite{LS25} and asymptotic in the toric setting of~\cite{DK86}, so only the monotone interpolation is claimed as new.
 
 For a smooth complex complete intersection $X^n(\mathbf d)\subset\mathbf P^{n+c}$ of dimension $n\ge1$, codimension $c\ge1$, and multidegree $\mathbf d=(d_1,\ldots,d_c)$ with every $d_i\ge2$, write $D(\mathbf d)=\prod_id_i$; the Lefschetz theorem confines the new topology to the middle degree, and the primitive middle Betti number is $b_n^{\mathrm{prim}}=(-1)^n(\chi(X)-(n+1))$ with $\chi$ evaluated exactly by the Chern-class formula $\chi=D\,[H^n](1+H)^{n+c+1}/\prod_i(1+d_iH)$~\cite{GL02,CO74}.  The invariant of the convexity programme is the \emph{degree-normalized primitive complexity} $B_{n,c}(\mathbf d)=b_n^{\mathrm{prim}}/D(\mathbf d)$, and $e_i$ denotes a coordinate step in the multidegree lattice.  For the Segre--Veronese embedding of $\mathbf P^1\times\mathbf P^1$ by $\mathcal O(a,b)$ with $a,b\ge2$, in characteristic zero, the graded Betti numbers $\beta_{p,p+q}(a,b)$ of the homogeneous coordinate ring vanish outside $q=0,1,2$; write $\Delta^{(q)}_p=\beta_{p,p+q}^2-\beta_{p-1,p-1+q}\beta_{p+1,p+1+q}$ for the log-concavity determinant at an interior index of the $q$th row, call $p$ a \emph{defect} of the row when $\Delta^{(q)}_p<0$, and let $m_q$ be the least index at which the row attains its maximum.  For a smooth hypersurface $X^n_d\subset\mathbf P^{n+1}$ with $n\ge2$, $d\ge3$, the primitive Hodge numbers are $h_p(n,d)=[t^{(p+1)d-(n+2)}](1+t+\cdots+t^{d-2})^{n+2}$ by Griffiths' formula~\cite{Gri69}; write $\pi_{n,d}$ for the normalized profile $h_p/\sum_jh_j$ on $\{0,\ldots,n\}$, symmetric about $n/2$, and $\varepsilon_n(p)=A(n+1,p)/(n+1)!$ for the Eulerian profile, with $A$ the Eulerian numbers.  A profile $P$ precedes $Q$ in \emph{convex order} when $\mathbf E\varphi(P)\le\mathbf E\varphi(Q)$ for every convex $\varphi$, and $\|P-Q\|_{\mathrm{TV}}=\tfrac12\sum_p|P(p)-Q(p)|$.
 
 \begin{proposition}[Curve calibration for the convexity programme]\label{ae:curve}
 For $n=1$ one has $B_{1,c}(\mathbf d)=\sum_id_i-c-2+2/D$, and all six laws of Conjectures~\ref{ae1} to~\ref{ae6} hold strictly for curves.
+\end{proposition}
+
+\begin{proposition}[Hypersurface calibration for the convexity programme]\label{ae:hyper}
+For a smooth hypersurface ($c=1$) of degree $d\ge2$ in $\mathbf P^{n+1}$, write $x=d-1$; then $B_{n,1}(d)=f_n(x)$ with $f_n(x)=(x^{n+2}+(-1)^nx)/(x+1)^2$, and $f_n$ is strictly increasing and strictly convex on $x\ge1$ for every $n\ge1$.  In particular Conjectures~\ref{ae1} and~\ref{ae2} hold at codimension one in every dimension.
 \end{proposition}
 
 \begin{proposition}[Antidiagonal calibration for the syzygy programme]\label{ae:strand}
@@ -4173,6 +4181,10 @@ Let $N+1=(a+1)(b+1)$ and $c_j=[t^j](1-t)^{N+1}\sum_{k\ge0}(ka+1)(kb+1)t^k$.  The
 
 \begin{proposition}[Surface calibration for the dispersion programme]\label{ae:surface}
 For $n=2$ set $x(d)=\pi_{2,d}(0)=\frac{(d-2)(d-3)}{6(d^2-3d+3)}$.  Then $x(d)$ is strictly increasing in $d\ge3$ with $x(d)<\tfrac16$ and $x(d)\to\tfrac16$, and consequently all four laws of Conjectures~\ref{ae12} to~\ref{ae15} hold for surfaces, strictly for $d\ge4$.
+\end{proposition}
+
+\begin{proposition}[Dispersion consequences of likelihood-ratio flattening]\label{ae:disp}
+Conjecture~\ref{ae12} implies Conjectures~\ref{ae13} and~\ref{ae14}.
 \end{proposition}
 
 \section{Normalized primitive cohomology of complete intersections}
@@ -4249,7 +4261,7 @@ The normalized profiles drift toward the Eulerian distribution, exactly the law 
 
 \medskip\noindent\emph{Added to the deposit: 19 August 2026.}\par\medskip
 
-The fifteen conjectures below concern the uniform measure on $n$-step self-avoiding walks on the hypercubic lattice, the classical model whose most basic monotonicity questions, including whether the mean-square displacement grows with the length, remain open~\cite{MS93,BDGS12}.  They form four programmes.  A curvature programme (Conjectures~\ref{af1} to~\ref{af3}) asserts exact all-length curvature laws for three count sequences: the square-lattice counts $c_n$ are strictly log-concave in steps of two with curvature relaxing monotonically to zero, sharpening the ratio analysis of Hammersley's programme carried out by Guttmann and Jensen~\cite{GJ22}; every radial-moment sum $M_q(n)$ obeys the same parity log-concavity at every real order $q\ge0$; and the bridge counts $b_n$ obey the opposite law, strict log-convexity from $n=5$ onward, so that walk ratios would descend to $\mu^2$ while bridge ratios ascend to $\mu$.  A transport programme (Conjectures~\ref{af4} to~\ref{af8}) asserts stochastic-order growth in the length: likelihood-ratio growth of the bridge height and of the coordinate span, coordinatewise monotone couplings of the absolute endpoint vector and of the span vector under $n\to n+2$, and stochastic growth of the contact count; the endpoint coupling strictly implies the open mean-square-displacement monotonicity along each parity class.  A dependence programme (Conjectures~\ref{af9} to~\ref{af12}) assigns signs to four joint laws at every fixed length: the two spans are negatively quadrant dependent, radius and terminal atmosphere positively, radius and contacts negatively, and contacts and atmosphere negatively, an extension--compaction dependence structure for a measure with no known FKG-type property.  A phase-and-dimension programme (Conjectures~\ref{af13} to~\ref{af15}) states a partition-curvature trichotomy across the collapse transition whose three constants are the established predictions of~\cite{Nie82,DS87,OPB93}, and two strict cross-dimensional laws: the probability that a nonbacktracking walk is self-avoiding rises with the dimension at every fixed length, and every positive radial moment falls.  The proved layer is three calibrations: Proposition~\ref{af:extreme} proves the extreme-order regime of both moment laws from a two-walk extremal count and a spanning-axes inequality $c_n(d+1)>(1+1/d)\,c_n(d)$; Proposition~\ref{af:height} computes the top four diagonals of the bridge-height array in closed form and proves the top corner of the likelihood-ratio law at every length; and Proposition~\ref{af:nbw} computes the survival probabilities $q_{d,n}$ for $n\le7$ as explicit rational functions of $d$ and proves Conjecture~\ref{af14} there in every dimension at once.  Four negative controls are retained in place: the absolute endpoint coordinates are not negatively quadrant dependent already at $n=3$, so the span law of Conjecture~\ref{af9} is not a symmetry artifact; the full radial distributions cross between adjacent dimensions, so the moment formulation of Conjecture~\ref{af15} is forced; bridge log-convexity fails exactly at $n=2$ and $n=4$, so the threshold of Conjecture~\ref{af3} is sharp; and the finite-size roots of the curvature diagnostic of Conjecture~\ref{af13} oscillate below $n\approx12$, so that statement is asymptotic only.  Conjecture~\ref{af1} carries the part's attribution flag: its statistic and its asymptotics are explicitly Guttmann--Jensen's~\cite{GJ22}, and only the exact strict inequalities and the second-level monotonicity are proposed as new; Conjecture~\ref{af13} carries a consolidation flag, since each of its three regimes is separately the standard prediction and the new content is the uniform sequence-level formulation.
+The fifteen conjectures below concern the uniform measure on $n$-step self-avoiding walks on the hypercubic lattice, the classical model whose most basic monotonicity questions, including whether the mean-square displacement grows with the length, remain open~\cite{MS93,BDGS12}.  They form four programmes.  A curvature programme (Conjectures~\ref{af1} to~\ref{af3}) asserts exact all-length curvature laws for three count sequences: the square-lattice counts $c_n$ are strictly log-concave in steps of two with curvature relaxing monotonically to zero, sharpening the ratio analysis of Hammersley's programme carried out by Guttmann and Jensen~\cite{GJ22}; every radial-moment sum $M_q(n)$ obeys the same parity log-concavity at every real order $q\ge0$; and the bridge counts $b_n$ obey the opposite law, strict log-convexity from $n=5$ onward, so that walk ratios would descend to $\mu^2$ while bridge ratios ascend to $\mu$.  A transport programme (Conjectures~\ref{af4} to~\ref{af8}) asserts stochastic-order growth in the length: likelihood-ratio growth of the bridge height and of the coordinate span, coordinatewise monotone couplings of the absolute endpoint vector and of the span vector under $n\to n+2$, and stochastic growth of the contact count; the endpoint coupling strictly implies the open mean-square-displacement monotonicity along each parity class.  A dependence programme (Conjectures~\ref{af9} to~\ref{af12}) assigns signs to four joint laws at every fixed length: the two spans are negatively quadrant dependent, radius and terminal atmosphere positively, radius and contacts negatively, and contacts and atmosphere negatively, an extension--compaction dependence structure for a measure with no known FKG-type property.  A phase-and-dimension programme (Conjectures~\ref{af13} to~\ref{af15}) states a partition-curvature trichotomy across the collapse transition whose three constants are the established predictions of~\cite{Nie82,DS87,OPB93}, and two strict cross-dimensional laws: the probability that a nonbacktracking walk is self-avoiding rises with the dimension at every fixed length, and every positive radial moment falls.  The proved layer is three calibrations: Proposition~\ref{af:extreme} proves the extreme-order regime of both moment laws from a two-walk extremal count and a spanning-axes inequality $c_n(d+1)>(1+1/d)\,c_n(d)$; Proposition~\ref{af:height} computes the top four diagonals of the bridge-height array in closed form and proves the top corner of the likelihood-ratio law at every length; and Proposition~\ref{af:nbw} computes the survival probabilities $q_{d,n}$ for $n\le7$ as explicit rational functions of $d$ and proves Conjecture~\ref{af14} there in every dimension at once; and Proposition~\ref{af:rad2} proves Conjecture~\ref{af15} at length two for every dimension and every positive moment order.  Four negative controls are retained in place: the absolute endpoint coordinates are not negatively quadrant dependent already at $n=3$, so the span law of Conjecture~\ref{af9} is not a symmetry artifact; the full radial distributions cross between adjacent dimensions, so the moment formulation of Conjecture~\ref{af15} is forced; bridge log-convexity fails exactly at $n=2$ and $n=4$, so the threshold of Conjecture~\ref{af3} is sharp; and the finite-size roots of the curvature diagnostic of Conjecture~\ref{af13} oscillate below $n\approx12$, so that statement is asymptotic only.  Conjecture~\ref{af1} carries the part's attribution flag: its statistic and its asymptotics are explicitly Guttmann--Jensen's~\cite{GJ22}, and only the exact strict inequalities and the second-level monotonicity are proposed as new; Conjecture~\ref{af13} carries a consolidation flag, since each of its three regimes is separately the standard prediction and the new content is the uniform sequence-level formulation.
 
 An $n$-step self-avoiding walk on $\mathbf Z^d$ is a nearest-neighbour path $\omega=(\omega_0,\ldots,\omega_n)$, $\omega_0=0$, with distinct vertices; $c_n(d)$ is their number, $c_n=c_n(2)$, and $U_n$ is the uniform measure on the square-lattice walks, whose connective constant is $\mu=\lim c_n^{1/n}\approx2.63815853$.  Write $\omega_n=(X_n,Y_n)$, $R_n^2=|\omega_n|^2$, $M_q(n)=\sum_\omega|\omega_n|^q$, and let $S_x,S_y$ be the coordinate spans $\max_i x_i-\min_i x_i$ and its $y$-analogue.  The terminal atmosphere $A_n\in\{0,1,2,3\}$ is the number of unvisited neighbours of $\omega_n$; since every $(n+1)$-step walk extends a unique $n$-step walk, $\sum_\omega A_n(\omega)=c_{n+1}$, so $\mathbf E[A_n]=c_{n+1}/c_n$ exactly, the identity underlying atmospheric sampling methods~\cite{RJvR08,OP08}.  The contact count $C_n$ is the number of nonbonded nearest-neighbour pairs of visited vertices, with partition function $Z_n(u)=\sum_\omega u^{C_n(\omega)}$ for the interacting walk~\cite{BOS01,BGJ20}.  A bridge is a walk with $x_0=0$, $x_i\ge1$ for $i\ge1$, and $x_i\le x_n$ for all $i$; $b_n$ counts them, $B(n,h)$ counts those of height $x_n=h$, and $b_1,\ldots,b_{10}=1,3,7,17,41,101,251,631,1591,4029$, with $b_mb_n\le b_{m+n}$ and $b_n^{1/n}\to\mu$ by Hammersley--Welsh unfolding~\cite{HW62}.  A uniformly random $n$-step nonbacktracking walk on $\mathbf Z^d$ is self-avoiding with probability $q_{d,n}=c_n(d)/(2d(2d-1)^{n-1})$~\cite{FvdH13}.  For laws $P,Q$ on $\mathbf Z$ or $\mathbf Z^2$, $P\le_{\mathrm{st}}Q$ means $Q$ dominates $P$ on upper sets, equivalently a coupling exists with the $Q$-variable coordinatewise at least the $P$-variable; $\le_{\mathrm{lr}}$ is likelihood-ratio order, the total positivity of the two-row array; and $(X,Y)$ is positively (negatively) quadrant dependent when $\mathbf P(X\ge a,Y\ge b)$ is at least (at most) $\mathbf P(X\ge a)\mathbf P(Y\ge b)$ for all thresholds.  All finite verifications below are exact: integer enumeration, integer cross-products, and integer maximum flows for the coupling laws, with the full joint laws enumerated through $n=21$ ($c_{21}=2{,}408{,}806{,}028$ walks at the top length), bridges through $n=23$, dimensions through $d=10$, and published counts through $n=79$~\cite{Jen13}.
 
@@ -4277,6 +4289,10 @@ For all $d\ge2$,
 1-q_{d,7}=\frac{2(d-1)(32d^3-28d^2-46d+41)}{(2d-1)^6},
 \]
 and each $q_{d,n}$, $4\le n\le7$, is strictly increasing in $d$ on all of $d\ge2$; Conjecture~\ref{af14} therefore holds for $n\le7$ in every dimension.
+\end{proposition}
+
+\begin{proposition}[Radial moments at length two]\label{af:rad2}
+For $n=2$, every $d\ge2$, and every real $q>0$, $\mathbf E_{U_2^{(d)}}[|\omega_2|^q]=2^{q/2}+(2^q-2^{q/2})/(2d-1)$, strictly decreasing in $d$; in particular Conjecture~\ref{af15} holds at $n=2$.
 \end{proposition}
 
 \section{Curvature laws for counts, radial moments, and bridges}
@@ -4347,6 +4363,488 @@ For every $n\ge4$ and $d\ge2$, $q_{d+1,n}>q_{d,n}$.
 For every $n\ge2$, every real $q>0$, and every $d\ge2$, $\mathbf E_{U_n^{(d+1)}}[|\omega_n|^q]<\mathbf E_{U_n^{(d)}}[|\omega_n|^q]$.
 \end{conjecture}
 
+
+\part{Budgeted irreversibility and the spectral geometry of relaxation}
+
+\medskip\noindent\emph{Added to the deposit: 19 August 2026.}\par\medskip
+
+The nine conjectures below concern a single organizing question of non-equilibrium dynamics: when a relaxation process is allowed only a finite budget of irreversibility, how is that budget spectrally allocated?  They form four programmes.  A current-fluctuation law (Conjecture~\ref{ag1}) asserts that a reversible shortcut added to a driven ring at fixed activity strictly amplifies the standardized skewness of the winding current, against the mixing intuition, sharpening the cumulant inequalities of~\cite{WB22,Pta22} into a monotonicity law.  A frontier programme (Conjectures~\ref{ag2} to~\ref{ag6}) studies the linear diffusion $\dd X_t=-(S+A)X_t\,\dd t+\sqrt{2S}\,\dd W_t$ with fixed Gaussian steady state, whose entropy-production rate is the exact quadratic $\Sigma(A)=\operatorname{tr}(A^\top S^{-1}A)$~\cite{GL19}, and conjectures the complete architecture of the budgeted-gap frontier: nested mode recruitment ordered by the reversible spectrum, piecewise-convex arcs with downward marginal-gain resets, exact two-mode support at small budget, a rank-two extremizer for the oscillation frequency, and a pairwise formula for the cheapest exceptional point, the thermodynamic analogue of the nearest-defective-matrix problem~\cite{ABBO11}; the unlimited endpoint is the theorem of Leli\`evre, Nier, and Pavliotis~\cite{LNP13}, and the spectral-perturbation bound of~\cite{KOI24} and the dissipation--coherence decomposition of~\cite{NKI26} bound the same objects, so Conjecture~\ref{ag5} carries an attribution flag against the latter work.  A coherent-acceleration programme (Conjectures~\ref{ag7} and~\ref{ag8}) transfers the frontier architecture to primitive Lindblad dynamics with detailed balance, where a stationary Hamiltonian is a skew perturbation in the Gelfand--Naimark--Segal (GNS) geometry~\cite{Alicki76} and coherent gap enhancement is the theorem of Li and Lu~\cite{LiLu24}: sequential operator-mode recruitment under the commutator-accessibility constraint, and saturation of the classical envelope exactly on $\mathfrak{su}(2)$-closed mode systems.  A preparation-geometry programme (Conjecture~\ref{ag9}) turns from rates to eigenvector geometry in the anomalous-relaxation setting of the Markovian Mpemba effect~\cite{LR17,KRHV19}: the measure of preparations that robustly cancel the slow mode should collapse in inverse proportion to the biorthogonal condition number as a Liouvillian exceptional point is approached, quantifying the antagonism between exceptional-point acceleration~\cite{ZXW25,CTH24} and robustness~\cite{MP26}.  The proved layer is three calibrations: Proposition~\ref{ag:pair} solves the two-mode frontier in closed form, identifies the second-slowest mode as the unique best infinitesimal partner of the slowest, and gives the exact pair costs used throughout; Proposition~\ref{ag:env} proves that the classical frontier is an upper envelope for every coherently driven detailed-balance Lindbladian and that the unital qubit attains it exactly; and Proposition~\ref{ag:basin} proves the basin-collapse law exactly in the qubit model, with the sphere prefactor equal to one.  Four negative findings are retained as controls, and they shape the part: the Markov analogues of the exceptional-point frontier laws were tested at optimizer level and discarded, since on a three-state ring the budgeted-gap frontier reaches its supremum only on the unidirectional boundary at infinite entropy production, on rings of four and five states the slow pair's real part continues to improve past the exceptional point rather than pinning, on the four-state instance the slow sector turns complex strictly before the frontier's plateau, and the fixed-trace pinning that motivated those claims is an artifact of three-state spectra; gap optimizers generically sit at defective matrices~\cite{BLO01} and at exceptional points of Liouvillians~\cite{ZWG23}, so only the budgeted, structure-revealing refinements below are claimed as new; and a proposed resonance criterion for entangling coherent acceleration was tested in exact second-order arithmetic and discarded, since in every nondegenerate product instance the best local Hamiltonian already attains the full optimum, the commutator structure forcing every entangling transition out of a simple product slow mode to carry a strictly larger spectral denominator than its local counterpart, while the claimed advantage appears only through slow-mode degeneracies outside the criterion's own hypotheses; and a proposed capacity principle equating the number of slow modes simultaneously cancellable by unitary preparation with the maximal rank of the tangent overlap map was refuted on a generic qutrit instance, where the slow coordinate's range over the fixed-spectrum orbit omits zero entirely, the spectral offset between the stationary state and the orbit dominating the orbit's fluctuation, so feasibility of Mpemba preparation on an orbit is an affine range condition invisible to the tangent geometry, constructive steering protocols~\cite{GMS26} notwithstanding, and Conjecture~\ref{ag9} carries that condition as an explicit hypothesis.  Conjectures~\ref{ag2}, \ref{ag3}, \ref{ag7}, and~\ref{ag8} assert laws for every dimension beyond any finite check and are flagged as such.
+
+For a continuous-time generator $Q$ on a finite connected graph with stationary law $\pi$, the activity is $\kappa=\sum_i\pi_i\sum_{j\ne i}q_{ij}$ and the entropy-production rate is $\sigma=\tfrac12\sum_{i\ne j}(\pi_iq_{ij}-\pi_jq_{ji})\log(\pi_iq_{ij}/\pi_jq_{ji})$.  On the homogeneous $N$-ring with affinity $F$, rates $e^{\pm F/(2N)}$, the winding current $J_t$ has long-time cumulant rates $c_m$ obtained from the tilted generator, and $S_3=|c_3|/c_2^{3/2}$ is its standardized skewness.  For the linear diffusion above, $S=S^\top>0$ is diagonal with simple spectrum $s_1<\cdots<s_n$ after an orthogonal change of basis, $A^\top=-A$, the stationary covariance is the identity, $r(A)=\min_j\operatorname{Re}\lambda_j(S+A)$, $\Omega(A)=\max_j|\operatorname{Im}\lambda_j(S+A)|$, and the frontier is $r_*(\Sigma)=\sup\{r(A):\Sigma(A)\le\Sigma\}$ with $\Sigma(A)=\sum_{i<j}a_{ij}^2(1/s_i+1/s_j)$; since the real parts sum to $\operatorname{tr} S$, always $r(A)\le\bar s=\operatorname{tr} S/n$, and $\bar s$ is attained at finite budget~\cite{LNP13}.  A mode $i$ is \emph{active} for $A$ when the $i$th row of $A$ is nonzero.  For a primitive Lindblad dissipator $\mathcal D$ in detailed balance with respect to $\rho_*$, the operator $K=-\mathcal D$ is positive self-adjoint in the GNS inner product with eigenmodes $KF_j=s_jF_j$ on the traceless sector, a stationary Hamiltonian ($[H,\rho_*]=0$) acts as the skew-adjoint $\mathcal A_H=-i[H,\cdot\,]$ with matrix elements $a_{jk}(H)$ and coherent budget $\Sigma_H=\sum_{j<k}|a_{jk}(H)|^2(1/s_j+1/s_k)$, and $r_{\mathrm{OU}}$ denotes the frontier of the diagonal spectrum $\{s_j\}$.  For a density matrix $\rho_0$ with simple spectrum, $\mathcal O_{\rho_0}$ is its unitary orbit, the left Liouvillian eigenmodes $\ell_1,\ell_2,\ldots$ are ordered from slow to fast and split into real functionals, $T_\rho:K\mapsto(\langle\ell_\alpha,i[K,\rho]\rangle)_\alpha$ is the tangent overlap map with real rank $\operatorname{rank}T_\rho$, and for a family $\mathcal L(h)$ with simple slow eigenvalue the biorthogonal condition number is $\kappa_{\mathrm{eig}}(h)=\|\ell_1(h)\|\,\|r_1(h)\|$ under $\langle\ell_1,r_1\rangle=1$; the $\eps$-robust basin on an orbit $\mathcal O$ is $\mathcal B_\eps(h)=\{\rho\in\mathcal O:|\langle\ell_1(h),\rho-\rho_*\rangle|\le\eps\}$ with the invariant orbit measure $\mu_\mathcal O$.
+
+\begin{proposition}[Pair calibration for the frontier programme]\label{ag:pair}
+(i) A perturbation supported on the pair $(i,j)$ leaves $\operatorname{span}\{e_i,e_j\}$ invariant with eigenvalues $\tfrac{s_i+s_j}2\pm\sqrt{(\tfrac{s_j-s_i}2)^2-a_{ij}^2}$; the block reaches its exceptional point at cost $\Sigma_{ij}^{\mathrm{EP}}=\tfrac{(s_j-s_i)^2}4(1/s_i+1/s_j)$ and generates frequency $\Omega_{ij}(\Sigma)=(\Sigma/(1/s_i+1/s_j)-(\tfrac{s_j-s_i}2)^2)_+^{1/2}$ at cost $\Sigma$.  (ii) The small-budget rate gain of coupling the slowest mode to mode $j$ is $\gamma_{1j}=s_1s_j/((s_j-s_1)(s_j+s_1))$ per unit entropy production, strictly decreasing in $s_j$: the second-slowest mode is the unique best infinitesimal partner.  (iii) For $n=2$ the frontier is
+\[
+r_*(\Sigma)=\frac{s_1+s_2}2-\sqrt{\Bigl(\frac{s_2-s_1}2\Bigr)^2-\frac{\Sigma}{1/s_1+1/s_2}}
+\quad(\Sigma\le\Sigma_{12}^{\mathrm{EP}}),\qquad r_*(\Sigma)=\bar s\quad(\Sigma\ge\Sigma_{12}^{\mathrm{EP}}),
+\]
+continuous, strictly increasing and strictly convex on the arc, with marginal gain diverging at the threshold and resetting to zero beyond it; all laws of Conjectures~\ref{ag2} to~\ref{ag6} hold for $n=2$.
+\end{proposition}
+
+\begin{proposition}[Envelope calibration for the coherent programme]\label{ag:env}
+(i) For every primitive detailed-balance dissipator with traceless-sector spectrum $\{s_j\}$ and every stationary Hamiltonian $H$,
+\[
+\operatorname{gap}(-\mathcal D-\mathcal A_H)\ \le\ r_{\mathrm{OU}}(\Sigma_H).
+\]
+(ii) For the unital qubit dissipator with Bloch decay rates $(s_1,s_2,s_3)$ and $H=\tfrac12\,h\cdot\sigma$, the traceless Liouvillian spectrum equals $-\operatorname{spec}(S+A(h))$ with $A(h)$ the cross-product matrix of $h$, every $3\times3$ skew matrix is realized, and the envelope is attained exactly.
+\end{proposition}
+
+\begin{proposition}[Basin calibration for the preparation programme]\label{ag:basin}
+Let $\mu$ be the uniform measure on the unit sphere of Bloch vectors and let the slow left functional of the family $B(h)=S+A(h)$, $S=\operatorname{diag}(s_1,s_2,s_3)$, $A(h)$ the rotation block $a_{12}=-h$, be normalized by $\langle\ell_1,r_1\rangle=1$ with $\|r_1\|=1$, so $\kappa_{\mathrm{eig}}(h)=\|\ell_1(h)\|$.  Then for every $0<\eps\le\kappa_{\mathrm{eig}}(h)$ and every $h$ below the exceptional point $h_c=(s_2-s_1)/2$,
+\[
+\mu\{x:|\langle\ell_1(h),x\rangle|\le\eps\}=\frac{\eps}{\kappa_{\mathrm{eig}}(h)},
+\]
+exactly, and $\kappa_{\mathrm{eig}}(h)=\sqrt{h_c/2}\,(h_c-h)^{-1/2}(1+o(1))$ as $h\uparrow h_c$, so the basin measure collapses at the exact rate $\eps\sqrt{2(h_c-h)/h_c}$.
+\end{proposition}
+
+\section{A current-fluctuation law for equilibrium shortcuts}
+
+\begin{conjecture}[Reversible shortcuts amplify winding skewness]\label{ag1}
+For every even $N\ge4$ and affinity $F\ne0$, add to the homogeneous driven $N$-ring a reversible antipodal chord of strength $g$ carrying no winding increment, rescaling all rates to keep the activity fixed.  Then the standardized skewness $S_3(g)$ of the long-time winding current is strictly increasing in $g\ge0$.
+\end{conjecture}
+
+\section{The finite-budget frontier of linear diffusions}
+
+\begin{conjecture}[Sequential spectral recruitment]\label{ag2}
+For every diagonal $S$ with simple spectrum there are thresholds $0=\Sigma_0<\Sigma_1\le\Sigma_2\le\cdots$ and a choice of maximizer $A(\Sigma)$ of the frontier at every budget whose active-mode set is $\{1,\ldots,m\}$ with $m$ nondecreasing in $\Sigma$: no mode is recruited before every slower mode.
+\end{conjecture}
+
+\begin{conjecture}[Convex arcs with marginal-gain resets]\label{ag3}
+For simple $S$ the frontier $r_*(\Sigma)$ is continuous and piecewise real-analytic; on each maximal interval with constant active set it is convex; the one-sided marginal gain jumps only downward at arc boundaries; and $r_*$ reaches the ceiling $\bar s$ at a finite budget and is constant beyond.
+\end{conjecture}
+
+\begin{conjecture}[Finite two-mode radius]\label{ag4}
+For simple $S$ there exists $\Sigma_1>0$ such that for every $0<\Sigma<\Sigma_1$, every global maximizer of the frontier, up to sign and rotations inside exact degeneracies, is supported on the two slowest modes; $\Sigma_1$ is the first budget at which the two-mode branch collides or loses optimality to a branch containing mode three.
+\end{conjecture}
+
+\begin{conjecture}[Rank-two oscillation extremizer]\label{ag5}
+For every diagonal $S>0$ and budget $\Sigma$,
+\[
+\sup_{\Sigma(A)\le\Sigma}\Omega(A)=\max_{i<j}\ \Omega_{ij}(\Sigma),
+\]
+with $\Omega_{ij}$ the pair formula of Proposition~\ref{ag:pair}(i): no coupling of three or more modes generates a larger spectral frequency than the best single rotation block.
+\end{conjecture}
+
+\begin{conjecture}[Cheapest exceptional point is a pair]\label{ag6}
+For simple $S$, the infimum of $\Sigma(A)$ over antisymmetric $A$ making $S+A$ defective equals $\min_{i<j}\Sigma_{ij}^{\mathrm{EP}}$, attained by the single block of Proposition~\ref{ag:pair}(i) on a minimizing pair.
+\end{conjecture}
+
+\section{Coherent acceleration of dissipative quantum dynamics}
+
+\begin{conjecture}[Recruitment under commutator accessibility]\label{ag7}
+For a primitive detailed-balance dissipator with simple traceless spectrum, every small-budget maximizer of $\operatorname{gap}(-\mathcal D-\mathcal A_H)$ over stationary Hamiltonians of coherent budget $\Sigma_H$ concentrates, as $\Sigma_H\to0$, on the accessible direction maximizing the restricted quotient $\sum_{j>1}|a_{1j}(H)|^2/(s_j-s_1)$ over $\Sigma_H$; and there is a maximizing selection whose active dissipative modes are nested and nondecreasing in the budget, with changes only at spectral collisions or accessibility branch crossings.
+\end{conjecture}
+
+\begin{conjecture}[Envelope saturation is Lie-algebraic]\label{ag8}
+For a primitive detailed-balance Lindbladian, the envelope of Proposition~\ref{ag:env} is attained on a nontrivial budget interval if and only if the dissipative eigenmodes active in the classical optimizer close under commutation into a direct sum of three-dimensional $\mathfrak{su}(2)$-type modules together with spectators, so that the unrestricted skew optimizer is realized by a Hamiltonian commutator.
+\end{conjecture}
+
+\section{The geometry of anomalous relaxation}
+
+\begin{conjecture}[Exceptional points collapse robust Mpemba basins]\label{ag9}
+Let $\mathcal L(h)$ approach a second-order exceptional point $h_c$ in its slow sector from the diagonalizable side, normalize the slow eigenvectors by $\|r_1\|=1$ and $\langle\ell_1,r_1\rangle=1$ so that $\kappa_{\mathrm{eig}}(h)=\|\ell_1(h)\|$ and the basin $\mathcal B_\eps(h)=\{\rho\in\mathcal O:|\langle\ell_1(h),\rho-\rho_*\rangle|\le\eps\}$ is fixed in scale, and suppose the slow functional vanishes transversally on the fixed smooth orbit $\mathcal O$, uniformly near the exceptional point: the tangential gradient of the unit-normalized slow functional is bounded above and below by positive constants along its zero set on $\mathcal O$, and that zero set is nonempty with hypersurface measure bounded below, uniformly for $h$ near $h_c$.  Then there are constants $0<c<C$ with
+\[
+c\,\frac{\eps}{\kappa_{\mathrm{eig}}(h)}\ \le\ \mu_\mathcal O(\mathcal B_\eps(h))\ \le\ C\,\frac{\eps}{\kappa_{\mathrm{eig}}(h)}
+\]
+for all sufficiently small $\eps$ and all $h$ near $h_c$: the measure of preparations that robustly cancel the slow mode collapses in exact inverse proportion to the biorthogonal condition number.
+\end{conjecture}
+
+
+\part{Inverse problems and design laws for multivariate extremes}
+
+\medskip\noindent\emph{Added to the deposit: 19 August 2026.}\par\medskip
+
+The thirteen conjectures below concern a single organizing question of extreme-value theory: how much of the dependence structure of rare events can be recovered from partial, thinned, or redesigned observation, and at what cost in stability.  They form five programmes.  A geometric programme (Conjectures~\ref{ah1} to~\ref{ah4}) studies the extremal coefficient $\theta_m(\Gamma)$ of the H\"usler--Reiss family~\cite{HR89,EH20} as a functional on variogram matrices: an isoperimetric recruitment staircase at fixed total variogram energy with a proved symmetry-breaking boundary, the regular simplex maximal for three variables and at weak dependence but strictly beaten below it by configurations carrying fewer active components, a pairwise closure law at weak dependence sharpening the consistency inequalities of Schlather and Tawn~\cite{ST02} into an asymptotic equivalence, a scale-elasticity bound of one half paired with entrywise monotonicity whose conjunction yields a dimension-free sparsification law for resistance variograms, strengthening the variogram-level guarantees of~\cite{EAR26} to the extremal coefficient itself, and a positive-curvature law at complete dependence whose convex-body shadow is the Wills functional~\cite{Vit96}.  A cluster-tomography programme (Conjectures~\ref{ah5} and~\ref{ah6}) turns the missing-data results for subsampled sequences~\cite{RT00,MF04,HS08} into an inverse theory: the Bernoulli-thinning response curve should identify the entire limiting cluster-size law through its generating function, and the two-parameter systematic-plus-Bernoulli response should identify the cluster support exactly up to the equivalence generated by its modular occupancy data.  A topological programme (Conjectures~\ref{ah7} and~\ref{ah8}) makes the topology of extreme directions an inferential target: a bottleneck-consistency law for persistent homology of intermediate-order angular samples at the rate $b(U(n/k))+(\log k/k)^{1/s}$, composing the diagram-estimation rates of~\cite{CGLM15} with a finite-threshold angular bias, and a leakage trichotomy locating exactly when hidden regular variation~\cite{Res08,MR11} is topologically visible after support filtering.  A tail-tomography programme (Conjectures~\ref{ah9} and~\ref{ah10}) quantifies the inverse problem of angular reconstruction from one-sided projection tails: a severe stability barrier, no H\"older inverse on measures and only a logarithmic modulus on H\"older classes, the analytic-kernel phenomenon of moment problems~\cite{Tal87} instantiated for the fractional transforms whose injectivity dichotomy is recorded in Proposition~\ref{ah:moment} following~\cite{MN21,CT19}, and a parameter-count identifiability threshold for $s$-atomic angular measures at exactly $m=sd-1$ generic fractional projections.  A design programme (Conjectures~\ref{ah11} to~\ref{ah13}) redesigns block maxima themselves: Poissonized block sizes should remove the universal $V^2/(2n)$ finite-block correction and the corresponding $n^{-1}$ estimator bias documented in the block-maxima second-order theory~\cite{BVZ19,DF19,BZ21}, factorial-cumulant matching should extend the removal to a full ladder of orders, and exact second-order cancellation in a Hall family~\cite{Hall82} should create a cusp at which threshold adaptation, whose logarithmic penalty away from the cusp is the theorem of Carpentier and Kim~\cite{CK15}, cannot be uniformly oracle-optimal, with critical window $|c|\asymp n^{-\beta/(\alpha+4\beta)}$.  The proved layer is four calibrations.  Proposition~\ref{ah:hr} gives the exact Gaussian-orthant formula for $\theta_m$ used throughout, proves the elasticity bound in the pairwise case, and proves that every collinear configuration has vanishing second curvature, the easy direction of Conjecture~\ref{ah4}.  Proposition~\ref{ah:thin} proves the cluster-level thinning algebra: the Bernoulli response formula, the systematic random-phase formula, the identifiability of the occupancy multisets from the joint response, the recovery of the entire difference multiset from occupancy data by M\"obius inversion, and the closure of occupancy equivalence under dilation.  Proposition~\ref{ah:moment} proves the integer--fractional injectivity dichotomy for the projection transforms, with an explicit two-atom versus three-atom pair invisible at $\alpha=2$ and separated at $\alpha=3/2$.  Proposition~\ref{ah:block} proves the exact Poissonization identity for Pareto seeds and constructs, for every order $r$, finitely supported non-Poisson integer block-size laws whose factorial cumulants match the Poisson law through order $r$, with the exact probability-generating-function identity showing that the finite-block error then falls to order $n^{-r}$.  Five negative findings are retained as controls, and they shape the part.  The deposited isoperimetry claim, that the regular simplex maximizes $\theta_m$ at fixed energy for every $m$, is refuted for $m\ge4$: the width identity of Proposition~\ref{ah:hr}(iv) makes configurations with fewer active components strictly better away from weak dependence, with exact orthant-probability instances at $m=4$, scale $0.12$, and $m=5$, scale $0.35$, where the four-active configuration beats the simplex by $3.5\times10^{-3}$ and is found by unrestricted optimization, so Conjecture~\ref{ah1} keeps the simplex law at three variables and states the recruitment staircase above.  A proposed modular reconstruction claim, that the occupancy multisets over all moduli determine a finite cluster support up to translation and reflection, is refuted: the six-mark pair $\{0,1,4,10,12,17\}$ and $\{0,1,8,11,13,17\}$ of Bloom~\cite{Blo77}, the classical counterexample to Piccard's theorem on difference multisets~\cite{Pat44,BG07}, shares every occupancy multiset, by finite verification below the diameter and trivially above it, so occupancy tomography can never distinguish this pair; the repaired Conjecture~\ref{ah6} asks instead for determination within size five and for the two-member bound on equivalence classes, over the exhaustive verification that all ten occupancy collisions among the $6437$ canonical sets of size at most six through diameter eighteen and the $3312$ of size at most seven through diameter fourteen are homometric pairs, while the pair $\{0,1,3,8,10,14\}$ versus $\{0,1,7,9,11,14\}$ shows the occupancy data strictly refines the difference multiset.  The subsampling formulas themselves, the Bernoulli and systematic extremal-index responses at the cluster level, are known in substance for subsampled stationary sequences~\cite{RT00,MF04,HS08} and are therefore recorded as calibration, not conjecture; what is claimed as new in Conjectures~\ref{ah5} and~\ref{ah6} is the uniform process-level transport and the inverse-theory content.  A multiplicity observed at the identifiability threshold of Conjecture~\ref{ah10} on one random instance was exposed as an artifact of a near-coincident atom pair, ill-conditioning inflating rounding-level copies of the single true solution, and the atom-separation hypothesis of the conjecture records that boundary.  A second multiplicity is genuine and refutes global uniqueness at the counting boundary itself: at three atoms in three dimensions, two of six well-separated random instances admit a second exact interior mixture at $m=sd-1$, verified to forty-digit residuals, and both become unique one measurement higher, so the global clause of Conjecture~\ref{ah10} begins at $m=sd$ and the counting-boundary refutation is recorded in place.  Conjectures~\ref{ah1}, \ref{ah2}, \ref{ah3}, \ref{ah7}, \ref{ah8}, and~\ref{ah11} to~\ref{ah13} assert laws for every dimension or every sample size beyond any finite check and are flagged as such; Conjecture~\ref{ah3} carries an attribution flag against the sparsification guarantees of~\cite{EAR26}, and Conjecture~\ref{ah13} carries one against the adaptation lower bounds of~\cite{CK15}.  Since deposit, Conjecture~\ref{ah4} has been resolved true by Proposition~\ref{ah:curv}.
+
+A variogram matrix $\Gamma$ on $m$ sites is symmetric with zero diagonal and conditionally negative definite, so that $\Gamma_{ij}=\lVert x_i-x_j\rVert^2$ for centered points $x_1,\ldots,x_m$ in some $\R^k$; the H\"usler--Reiss max-stable vector with variogram $\Gamma$~\cite{HR89} has extremal coefficient $\theta_m(\Gamma)\in[1,m]$, the exponent function at $\mathbf 1$, with spectral representation $\theta_m(\Gamma)=\E\max_i\exp(\langle Z,x_i\rangle-\lVert x_i\rVert^2/2)$ for a standard Gaussian $Z$, pairwise coefficients $\theta_{ij}=2\Phi(\sqrt{\Gamma_{ij}}/2)$, energy $\mathcal S(\Gamma)=\sum_{i<j}\Gamma_{ij}$, and scale elasticity $\eta(t)=\dd\log\theta_m(t\Gamma)/\dd\log t$.  For a stationary regularly varying sequence whose exceedances converge to a compound-Poisson cluster process~\cite{BS09} with cluster size $N$, $\E N<\infty$, the extremal index is $\theta=1/\E N$~\cite{Lea83,OB87}, and when the limiting cluster has a finite support $S\subset\Z$, defined up to translation, the occupancy counts are $n_{m,r}(S)=|\{s\in S:s\equiv r\ (\mathrm{mod}\ m)\}|$, the occupancy data of $S$ is the family of unordered multisets $\mathcal N_m(S)=\{n_{m,0}(S),\ldots,n_{m,m-1}(S)\}$ over all $m\ge2$, two sets are occupancy equivalent when their occupancy data agree, and homometric when their difference multisets agree.  A $d$-variate regularly varying vector has angular measure $H$ on the simplex $\Delta_{d-1}$; the fractional projection transform is $(T_\alpha H)(a)=\int(a\cdot w)^\alpha\,H(\dd w)$ for directions $a\in(0,\infty)^d$; and for block maxima, $F$ lies in a max-domain with exponent function $V$ and second-order rate $A(n)$, a block of size $n$ has exceedance probability $q_n(x)=\bar F(a_nx+b_n)$, and a randomized block size $N_n$ has factorial cumulants $\kappa_r^{(F)}$ defined by $\log\E(1+u)^{N_n}=\sum_{r\ge1}\kappa_r^{(F)}u^r/r!$, so that $\log\E(1-q)^{N_n}=\sum_{r\ge1}\kappa_r^{(F)}(-q)^r/r!$ exactly.
+
+\begin{proposition}[Tilting calibration for the dependence programme]\label{ah:hr}
+(i) For every admissible $\Gamma$ realized by centered points $x_1,\ldots,x_m$,
+\[
+\theta_m(\Gamma)=\sum_{i=1}^m\Phi_{m-1}\Bigl(\bigl(\tfrac{\Gamma_{ij}}2\bigr)_{j\ne i};\,\bigl(\tfrac{\Gamma_{ij}+\Gamma_{ik}-\Gamma_{jk}}2\bigr)_{j,k\ne i}\Bigr),
+\]
+where $\Phi_{m-1}(\,\cdot\,;C)$ is the centered Gaussian orthant probability with covariance $C$.  (ii) For $m=2$ the elasticity satisfies $0\le\eta(t)\le\sup_{x>0}x\varphi(x)/(2\Phi(x))=0.1472\ldots<1/2$ for all $t>0$.  (iii) If the points $x_i$ are collinear, then with $M=\max_i\langle Z,x_i\rangle$ and $I$ the almost-surely unique argmax, $\E[M^2-\lVert x_I\rVert^2]=0$: every collinear configuration has vanishing second curvature.  (iv) For $3\le k\le m$ let the $k$-active configuration place $k$ points at the vertices of a centered regular simplex and $m-k$ points at the origin, with energy $S$.  Its Gaussian width is
+\[
+W_k(m,S)=\E\max_i\langle Z,x_i\rangle=\sqrt{\tfrac Sm}\,\frac{e_k}{\sqrt{k-1}},
+\]
+where $e_k$ is the expected maximum of $k$ independent standard Gaussians; and $e_3/\sqrt2=0.59841\ldots$ exceeds $e_4/\sqrt3=0.59431\ldots$ and $e_5/2=0.58148\ldots$, so for $m\in\{4,5\}$ the triangle configuration $k=3$ has strictly larger width than the full simplex $k=m$, and hence strictly larger $\theta_m$ at fixed energy for all sufficiently small scale.
+\end{proposition}
+
+\section{The geometry of H\"usler--Reiss dependence}
+
+\begin{conjecture}[Isoperimetry and symmetry breaking at fixed energy]\label{ah1}
+(a) For $m=3$ and every $S>0$, among all admissible variograms with energy $\mathcal S(\Gamma)=S$, the equidistant variogram $\Gamma^{\mathrm{eq}}$ with all off-diagonal entries $S/\binom m2$, realized by a regular triangle, uniquely maximizes $\theta_3(\Gamma)$, up to relabeling.  (b) For every $m\ge4$ and every $S$, the maximum of $\theta_m$ at energy $S$ is attained by a $k$-active configuration of Proposition~\ref{ah:hr}(iv), $k$ components at the vertices of a centered regular simplex and $m-k$ coincident at the centroid, for some $3\le k\le m$, uniquely up to relabeling; the maximizing $k$ is nondecreasing in $S$, equals $3$ for all sufficiently small $S$, equals $m$ for all sufficiently large $S$, and passes through every intermediate value, so the fixed-energy optimizer recruits one component at a time through a staircase of symmetry-breaking transitions.
+\end{conjecture}
+
+\begin{conjecture}[Pairwise closure at weak dependence]\label{ah2}
+Fix an admissible $\Gamma$ with strictly positive off-diagonal entries such that no three-or-higher-way Gaussian large-deviation saddle shares the exact rate of a contributing pairwise saddle.  Then, with $\delta_{ij}(t)=2-\theta_{ij}(t\Gamma)=2[1-\Phi(\sqrt{t\Gamma_{ij}}/2)]$,
+\[
+m-\theta_m(t\Gamma)\ \sim\ \sum_{i<j}\delta_{ij}(t),\qquad t\to\infty.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Scale elasticity and monotone dependence]\label{ah3}
+For every admissible nonzero $\Gamma$: (a) $0\le\eta(t)\le\tfrac12$ for all $t>0$; (b) if $\Gamma'$ is admissible and $\Gamma_{ij}\le\Gamma'_{ij}$ entrywise, then $\theta_m(\Gamma)\le\theta_m(\Gamma')$.  Consequently, if $L,\widetilde L$ are connected graph Laplacians with $(1-\eps)L\preceq\widetilde L\preceq(1+\eps)L$ on $\mathbf 1^\perp$ and $\Gamma(L)$ is the resistance variogram $\Gamma_{ij}(L)=(e_i-e_j)^\top L^\dagger(e_i-e_j)$, then
+\[
+(1+\eps)^{-1/2}\ \le\ \frac{\theta_m(\Gamma(\widetilde L))}{\theta_m(\Gamma(L))}\ \le\ (1-\eps)^{-1/2}.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Positive curvature at complete dependence, resolved true]\label{ah4}
+For centered points $x_1,\ldots,x_m$ realizing $\Gamma$, with $M=\max_i\langle Z,x_i\rangle$ and $I$ the argmax, as $t\downarrow0$,
+\[
+\theta_m(t\Gamma)=1+\sqrt t\,\E M+t\,q(\Gamma)+o(t),\qquad q(\Gamma)=\tfrac12\,\E\bigl[M^2-\lVert x_I\rVert^2\bigr],
+\]
+and $q(\Gamma)\ge0$ always, with $q(\Gamma)=0$ if and only if, after deleting non-exposed points, the convex hull of the $x_i$ is a point or a segment.
+\end{conjecture}
+
+\section{Cluster inverse problems under thinning}
+
+\begin{proposition}[Thinning calibration for the cluster programme]\label{ah:thin}
+Let the limiting cluster have size $N$ with generating function $G_N$ and, where stated, finite support $S\subset\Z$.  At the level of the limiting compound-Poisson cluster process:
+(i) independent retention with probability $p$ gives the response $\theta(p)=\theta\,(1-G_N(1-p))/p$;
+(ii) retention of one residue class modulo $m$ with uniform random phase gives $\theta^{\mathrm{sys}}_m=\theta\,\E R_m(S)$, where $R_m(S)$ is the number of occupied residues;
+(iii) the joint response $Q_{m,S}(p)=\tfrac1m\sum_{r=0}^{m-1}[1-(1-p)^{n_{m,r}(S)}]$, known for $p$ in any infinite subset of $(0,1)$, determines the occupancy multiset $\mathcal N_m(S)$;
+(iv) the occupancy data $\{\mathcal N_m(S):m\ge2\}$ determines the difference multiset of $S$;
+(v) occupancy equivalence is closed under dilation: $\mathcal N_m(tS)=\mathcal N_{m/\gcd(t,m)}(S)$ for every $t\ge1$, so $S\sim S'$ implies $tS\sim tS'$.
+\end{proposition}
+
+\begin{proposition}[Resolution of the complete-dependence curvature law]\label{ah:curv}
+Conjecture~\ref{ah4} holds in full: the displayed expansion is valid, $q(\Gamma)\ge0$ for every admissible $\Gamma$, and $q(\Gamma)=0$ if and only if the convex hull of the exposed points is a point or a segment.
+\end{proposition}
+
+\begin{conjecture}[Bernoulli-thinning spectroscopy of clusters]\label{ah5}
+Let $(X_t)$ be stationary and regularly varying, with exceedances converging to a compound-Poisson cluster process with cluster size $N$, $\E N<\infty$, and extremal index $\theta=1/\E N$, under mixing and anti-clustering conditions.  Retain each observation independently with probability $p$ and compress the time axis.  Then the retained sequence satisfies the same hypotheses with extremal index $\theta(p)=\theta\,(1-G_N(1-p))/p$, uniformly for $p$ in compact subsets of $(0,1]$; consequently the response curve $p\mapsto\theta(p)$ identifies the entire limiting cluster-size law.
+\end{conjecture}
+
+\begin{conjecture}[Occupancy tomography of cluster supports]\label{ah6}
+(a) Every finite $S\subset\Z$ with $|S|\le5$ is determined by its occupancy data up to translation and reflection.  (b) For every finite size, each occupancy-equivalence class of finite integer sets contains at most two translation--reflection classes.
+\end{conjecture}
+
+\section{The topology of extreme directions}
+
+\begin{conjecture}[Consistency of persistent angular homology]\label{ah7}
+Let $X$ be $d$-variate regularly varying whose angular law $H$ is supported on a compact $C^2$ $s$-dimensional manifold $M$ of positive reach in the open simplex, with density bounded above and below.  Let $A_{n,k}$ be the angular components of the $k=k_n$ largest radii, $k\to\infty$, $k/n\to0$, and suppose the conditional angular law beyond radius $t$ couples to $H$ with Hausdorff bias at most $b(t)\to0$.  Then for every homological degree $q$,
+\[
+d_B\bigl(\operatorname{Dgm}_q(\operatorname{VR}(A_{n,k})),\operatorname{Dgm}_q(\operatorname{VR}(M))\bigr)
+=O_p\Bigl(b(U(n/k))+\bigl(\tfrac{\log k}k\bigr)^{1/s}\Bigr),
+\]
+with $U$ the radial quantile function and $d_B$ the bottleneck distance.
+\end{conjecture}
+
+\begin{conjecture}[A leakage trichotomy for hidden extremes]\label{ah8}
+Let $X=R_0W_0+R_1W_1$ with independent components: $R_0$ regularly varying with index $\alpha_0$, $R_1$ with index $\alpha_1>\alpha_0$, and angular laws $W_0\sim H_0$, $W_1\sim H_1$ supported on compact sets $M_0$, $M_1$ separated in the simplex, $H_1$ as in Conjecture~\ref{ah7}.  Remove the angular neighborhood $N_{\delta_n}(M_0)$, rerank the surviving radii, and let $L_n$ be the ratio of the primary to the hidden mechanism's contribution to the surviving exceedance intensity at the hidden threshold.  Let $\Lambda_n$ be the expected number of surviving leaked primary exceedances in the reranked top-$k_n$ sample, and suppose the leaked support $M_{\mathrm{leak}}$ is persistence-separated from $M_1$, $d_B(\mathrm{Dgm}_q(M_1\cup M_{\mathrm{leak}}),\mathrm{Dgm}_q(M_1))\ge c_0>0$.  Then: if $\Lambda_n\to0$, the persistence diagrams of the surviving angular sample recover those of $M_1$ at the rate of Conjecture~\ref{ah7}; if $\Lambda_n\to\infty$ they do not; and for $\Lambda_n\to\lambda\in(0,\infty)$ the surviving leaked primaries are asymptotically Poisson-$\lambda$ and the probability of recovery within any fixed bottleneck tolerance below the hidden feature scale converges to a limit $p(\lambda)\in(0,1)$, so feature detection switches on the leaked-count scale $\Lambda_n\asymp1$, that is $L_n\asymp1/k_n$.
+\end{conjecture}
+
+\section{Tail tomography and its stability}
+
+\begin{proposition}[Moment calibration for the tomography programme]\label{ah:moment}
+(i) If $\alpha>0$ is not an integer, then $T_\alpha H$ restricted to any open subset of $(0,\infty)^d$ determines the finite measure $H$ on $\Delta_{d-1}$ uniquely.  (ii) If $\alpha=q\in\mathbb N_0$, then $T_qH$ depends only on the moments of $H$ of degree at most $q$, and injectivity fails; explicitly, for $d=2$, $q=2$, the measures
+\[
+H_1=\tfrac12\delta_{0.2}+\tfrac12\delta_{0.8},\qquad
+H_2=0.28125\,\delta_{0.1}+0.4375\,\delta_{0.5}+0.28125\,\delta_{0.9}
+\]
+satisfy $T_2H_1=T_2H_2$ identically while $T_{3/2}H_1\ne T_{3/2}H_2$.
+\end{proposition}
+
+\begin{conjecture}[The stability barrier of fractional tail tomography]\label{ah9}
+Fix noninteger $\alpha>0$, $0<\eta<1$, and the direction box $A_\eta=\{a:\eta\le a_i\le\eta^{-1}\}$.  (a) There exist no $C,\beta>0$ with $W_1(H_1,H_2)\le C\,\lVert T_\alpha H_1-T_\alpha H_2\rVert_{L^\infty(A_\eta)}^\beta$ for all probability measures $H_1,H_2$ on $\Delta_{d-1}$.  (b) On the class of angular densities lying in a H\"older ball $\{f:\lVert f\rVert_{C^s}\le L,\ f\ge c>0\}$, the inverse admits a logarithmic modulus of continuity: $W_1(H_1,H_2)\lesssim(\log(1/\eps))^{-\kappa_s}$ with $\eps$ the transform error, for some $\kappa_s>0$ depending on $s$, and no polynomial modulus $\eps^\beta$ is valid on the class.
+\end{conjecture}
+
+\begin{conjecture}[A parameter-count threshold for sparse tail tomography]\label{ah10}
+Let $H=\sum_{r=1}^s\pi_r\delta_{w_r}$ with distinct atoms in the open simplex $\Delta_{d-1}^\circ$, weights $\pi_r>0$ summing to one, and let $p=sd-1$ be the parameter count.  Fix noninteger $\alpha>0$ and observe $y_j=(T_\alpha H)(a_j)$ at generic positive directions $a_1,\ldots,a_m$.  Then, outside a proper real-analytic exceptional set of atom configurations and designs, and quantitatively away from atom collisions and the simplex boundary: for $m<p$ identifiability fails on a positive-dimensional fiber; for $m=p$ the Jacobian has full rank and the fiber is finite, so the mixture is locally rigid but need not be unique; and for every $m\ge sd$ the measurement vector determines $H$ globally up to permutation of atoms, with local inverse modulus controlled by atom separation and boundary distance.
+\end{conjecture}
+
+\section{Randomized block designs}
+
+\begin{proposition}[Design calibration for the block programme]\label{ah:block}
+(i) If $\bar F(x)=x^{-\alpha}$ and $N_n\sim\operatorname{Poisson}(n)$, then $\Pr(M_{N_n}/n^{1/\alpha}\le x)=e^{-x^{-\alpha}}$ exactly for every $n$.  (ii) For any block-size law, $\log\E(1-q)^{N_n}=\sum_{r\ge1}\kappa_r^{(F)}(-q)^r/r!$, so matching factorial cumulants of the Poisson law through order $r$ cancels the sampling corrections through order $q^r$.  (iii) For every $r\ge2$ there is a law $\xi$ on a finite subset of $\{0,1,2,\ldots\}$, not Poisson, whose cumulants match those of $\operatorname{Poisson}(1)$ through order $r$; the convolution $N_n=\xi_1+\cdots+\xi_n$ then has $\E N_n=n$, $\operatorname{Var}N_n=n$, $\kappa_j^{(F)}(N_n)=0$ for $2\le j\le r$, $\kappa_{r+1}^{(F)}(N_n)=O(n)$, and for the Pareto seed
+\[
+\sup_x\bigl|\Pr(M_{N_n}/n^{1/\alpha}\le x)-e^{-x^{-\alpha}}\bigr|=O(n^{-r})
+\]
+uniformly on compact $x$-sets.  For $r=3$ the law on $\{0,1,3\}$ with weights $(\tfrac13,\tfrac12,\tfrac16)$ and for $r=4$ the law on $\{0,1,2,4\}$ with weights $(\tfrac38,\tfrac13,\tfrac14,\tfrac1{24})$ are such laws.
+\end{proposition}
+
+\begin{conjecture}[Poissonized blocks remove the universal bias]\label{ah11}
+Let $F$ lie in a max-domain of attraction with a uniform second-order expansion $n\bar F(a_nx+b_n)=V(x)+A(n)B(x)+o(A(n))+o(n^{-1})$ on compact interior sets.  Then Poissonized block maxima satisfy $\log\Pr(M_{N_n}\le a_nx+b_n)=-V(x)-A(n)B(x)+o(A(n))+o(n^{-1})$, the universal $V(x)^2/(2n)$ correction of fixed blocks being absent; and for generalized-extreme-value likelihood estimation from many independent blocks, Poissonization leaves the first-order asymptotic variance unchanged while removing the universal $n^{-1}$ bias contribution, so that when $A(n)=o(n^{-1})$ the estimator bias improves from order $n^{-1}$ to the intrinsic second order.
+\end{conjecture}
+
+\begin{conjecture}[The factorial-cumulant design ladder]\label{ah12}
+Fix $r\ge2$ and let $N_n$ be an $r$-th ladder law as in Proposition~\ref{ah:block}(iii).  Then in every max-domain with the second-order expansion of Conjecture~\ref{ah11}, block maxima with exposure $N_n$ satisfy the expansion with sampling-mechanism corrections of order $O(n^{-r})$ in place of $V^2/(2n)$; and generalized-extreme-value likelihood estimation from many independent randomized blocks retains the first-order limit law and variance of deterministic blocks while its sampling-mechanism bias falls to $O(n^{-r})+o(A(n))$.
+\end{conjecture}
+
+\begin{conjecture}[An adaptation cusp at second-order cancellation]\label{ah13}
+In a smooth Hall family $\bar F_\lambda(x)=x^{-\alpha}[1+c(\lambda)x^{-\beta}+d(\lambda)x^{-2\beta}+o(x^{-2\beta})]$ with $c(\lambda_0)=0$, $c'(\lambda_0)\ne0$, $d(\lambda_0)\ne0$, the oracle threshold for Hill-type estimation moves from $k\asymp n^{2\beta/(\alpha+2\beta)}$ generically to $k\asymp n^{4\beta/(\alpha+4\beta)}$ at cancellation, the two regimes meeting at the critical window $|c(\lambda)|\asymp n^{-\beta/(\alpha+4\beta)}$; and no data-driven threshold selector is uniformly oracle-rate optimal, with the same constants, over both $|c(\lambda)|\le Cn^{-\beta/(\alpha+4\beta)}$ and $|c(\lambda)|\gg n^{-\beta/(\alpha+4\beta)}$: an adaptation penalty, at least logarithmic or a nontrivial constant, is unavoidable in the cusp.
+\end{conjecture}
+
+
+\part{Extremal, randomized, and inverse laws for persistent topology}
+
+\medskip\noindent\emph{Added to the deposit: 20 August 2026.}\par\medskip
+
+The twelve conjectures below concern a single organizing question of topological data analysis: which parts of a persistence computation are laws rather than artifacts, sharp constants instead of worst-case bounds, invertible summaries instead of lossy signatures, and calibrated randomness instead of parameter sensitivity.  They form five programmes.  An extremal-and-sampling programme (Conjectures~\ref{ai1} to~\ref{ai3}) concerns degree-one Vietoris--Rips persistence: a circle isoperimetry asserting that among $n$ points on a Euclidean circle the regular polygon uniquely maximizes the multiplicative persistence ratio, the chordal, every-$n$, ratio-level refinement of the geodesic persistence-set extremality of G\'omez and M\'emoli~\cite{GoM24}; a saturation law asserting that the classical factor two of Vietoris--Rips stability~\cite{CSO14} is asymptotically attained by greedy landmarking of smooth convex curves; and a two-sided Johnson--Lindenstrauss threshold~\cite{JL84,LN17} for the simultaneous preservation of the loop ratios of orthogonal hexagonal channels under Gaussian projection, whose upper half is known in substance~\cite{Lot19,MKG24} and whose lower half would be the first matching bound for a topological statistic.  A statistical programme (Conjectures~\ref{ai4} and~\ref{ai5}) makes the geometry of Wasserstein means of diagrams~\cite{MMH11,TMMH14} quantitative: an optional feature of prevalence $q$ appears in the mean at exactly $q$ times its conditional persistence up to exponentially small matching leakage, sharpening the shrinkage phenomenon visible in the probabilistic Fr\'echet means of~\cite{MTB15} and the grouping calculus of~\cite{CaM24}, and empirical means use the intended latent grouping up to $CNm\,e^{-c\gamma^2/\sigma^2}$.  A Mapper programme (Conjectures~\ref{ai6} and~\ref{ai7}) builds on an exact phase calculus proved here: randomizing the phase of a uniform one-dimensional cover~\cite{CO18} makes the survival probability of an isolated Reeb cycle the universal piecewise-linear function $F_\alpha(\ell/h)$ with an explicit kernel, the phase-averaged Betti curve of a chain of cycles is exactly additive with the spans recoverable from its kinks, and the dithered midpoint estimator of a branch critical value is exactly unbiased with the quantization variance $s^2/12$ of~\cite{Sch64}; the conjectures transfer this calculus to general tame Reeb graphs with a stable inversion, and to discretized and sampled Mapper with mesh-order corrections.  A tomography programme (Conjecture~\ref{ai8}) concerns rectangle-decomposable two-parameter modules~\cite{BL23}, for which the fibered barcode over all lines is a complete invariant~\cite{BLO22}: a proposition proved here sharpens completeness to a single generic direction with the line parameterization retained, the deposited three-direction claim being recorded as calibration, and the conjecture asserts the quantitative sequel, that three fixed generic directions give a locally bi-Lipschitz invariant with polynomially controlled constant and that the direction profile of the matching distance is never needle-like, so uniformly random slopes see near-maximal discrepancy; it carries attribution flags against the local metric equivalence of Vipond~\cite{Vip20}, proved with a universal constant over all lines, and the Lipschitz foliation bounds of~\cite{CDFFL13} behind deterministic approximation schemes~\cite{KN20,BHLMS23}.  A finite-summary programme (Conjectures~\ref{ai9} to~\ref{ai12}) asks how small a complete or faithful summary can be: a restricted-isometry law for random Fourier sketches~\cite{RR07} of the persistence-weighted Gaussian kernel~\cite{KFH16}, bi-Lipschitz to the Wasserstein metric on separated bounded-cardinality classes, which the known non-embeddability theorems~\cite{CB19,BW20} do not forbid because they require collisions or unbounded cardinality, with restricted-class embeddings known in spirit~\cite{MV24}; a Whitney-count law~\cite{Whi44} asserting that $4m+1$ generic evaluations of the Gaussian persistence surface, whose continuum injectivity is known~\cite{CHLP22} while grid images are not injective~\cite{AEK17}, form a complete invariant of $m$-point diagrams; a moment law asserting that the first $4m$ moments of the aggregate landscape~\cite{Bub15} determine a generic $m$-bar diagram, a compressed instance of the finite algebraic coordinate systems of~\cite{ACC16,Kal19}; and an average-case kinetic law asserting that random affine motion of $n$ planar points produces only $O(n^2\log n)$ expected changes of the degree-one persistence pairing, far below the quartic worst-case count that vineyard algorithms~\cite{CEM06,DH21,Hic22,GM26} are built to survive.  The proved layer is three calibrations.  Proposition~\ref{ai:map} proves the exact survival law with kernel $F_\alpha(x)=\min(1,\max(0,(x-1)/(1-\alpha)))$, the exact additivity and kink inversion of the phase-averaged Betti curve for chains of isolated cycles, and the exact dither law for branch critical values.  Proposition~\ref{ai:rect} proves that one generic direction of the parameterized fiber field determines a generic rectangle-decomposable module, by tracking the interval pairs of the fiber barcodes through the parallel family and reading each rectangle off the envelope of its track.  Proposition~\ref{ai:sum} proves the exact closed form of the aggregate-landscape moments and the one-bar case of the moment law, a single bar being determined by its first two moments.  Three negative findings are retained as controls, and they shape the part.  The unrestricted planar version of the extremality claim is refuted: a six-point perturbation search found planar configurations whose multiplicative loop persistence exceeds the regular hexagon's by the factor $1.052$, exact to the arithmetic of the boundary-matrix reduction, so the circle hypothesis of Conjecture~\ref{ai1} is essential and is recorded with the refuting instance; this failure of unrestricted extremality appears to be undocumented.  The deposited three-direction tomography claim is true but not sharp, one direction sufficing by Proposition~\ref{ai:rect}, and is recorded as calibration.  A deposited majority-threshold claim for barycenter features, that an optional feature appears in the mean exactly when its prevalence exceeds one half, is refuted by the flat grouping algebra itself, the mean feature shrinking continuously with prevalence instead, and Conjecture~\ref{ai4} carries the corrected law.  The deposited linear stable-inversion clause of Conjecture~\ref{ai6} is refuted at coalescing spans: the two-cycle span multisets $\{\ell,\ell\}$ and $\{\ell-\delta,\ell+\delta\}$ have bottleneck distance $\delta$, yet on the affine middle branch of the survival kernel the symmetric perturbation cancels, so the phase-averaged Betti curves differ only in $O(\delta)$-wide neighborhoods of the moving kinks and $\lVert S_G-S_{G'}\rVert_{L^2(\dd h/h)}=\Theta(\delta^{3/2})$, whence no bound $\delta\le C\eta$ can hold; the repaired clause requires the span values to be pairwise separated, near-collisions admitting only a H\"older inverse of exponent $2/3$, the constant $\eta/\delta^{3/2}\to6.51$ at $\alpha=0.3$, $\ell=0.5$ found by exact integration.  Conjectures~\ref{ai2} to~\ref{ai5}, \ref{ai6}, \ref{ai7}, and~\ref{ai9} to~\ref{ai12} assert asymptotic or every-instance laws beyond any finite check and are flagged as such; Conjecture~\ref{ai1} carries an attribution flag against~\cite{GoM24}, and Conjecture~\ref{ai8} carries attribution flags against~\cite{Vip20} and~\cite{CDFFL13}.
+
+For a finite metric space $X$, the Vietoris--Rips complex at scale $r$ has as simplices the subsets of diameter at most $r$; homology is over the two-element field, computed here by boundary-matrix reduction of the full two-skeleton, which suffices in degree one.  For a degree-one bar $(b,d)$ with $b>0$ the multiplicative persistence is $d/b$, and $\Pi_1^\times(X)$ is its maximum over bars, set to one if none exists; $d_B$ and $W_2$ are the bottleneck and two-Wasserstein distances with diagonal matching.  For a regular $n$-gon inscribed in the unit circle the dominant degree-one bar has $b_n=2\sin(\pi/n)$ and $d_n=2\sin(\lceil n/3\rceil\pi/n)$~\cite{ACJS18,AdAd17}, so $\Pi_1^\times=\sin(\lceil n/3\rceil\pi/n)/\sin(\pi/n)$, reproduced exactly by the present implementation for $n\le12$.  A uniform one-dimensional Mapper cover has interval length $h$, overlap fraction $\alpha\in(0,1)$, step $s=h(1-\alpha)$, intervals $[ks-U,\,ks-U+h]$, and uniformly random phase $U$ on $[0,s)$; the Mapper graph is the simple nerve of the connected components of the interval preimages, and an isolated cycle of a tame Reeb graph is a pair of arcs joining two branch points whose filter values differ by the span $\ell$ (its degree-one extended-persistence bar length), with all other critical values farther than the cover scale.  A rectangle-decomposable module is a finite direct sum of interval modules supported on axis-parallel rectangles; for a positive-slope direction $v$, the fiber field assigns to each line parallel to $v$, indexed by its transverse intercept $\tau$, the multiset of parameter intervals cut by the rectangles, and endpoints are generic when the finitely many coincidence conditions among side coordinates and crossing values fail.  The Gaussian persistence surface of a diagram $D$ is $\rho_D(z)=\sum_{p\in D}\operatorname{pers}(p)\exp(-\lVert z-p\rVert^2/2\sigma^2)$; the aggregate landscape is $A_D(t)=\sum_i\max\{0,\min(t-b_i,d_i-t)\}$ with moments $M_r(D)=\int t^rA_D(t)\,\dd t$; and for points moving affinely in the plane, a vineyard event is a time at which the multiset of (birth edge, death triangle) pairs of the degree-one reduction changes.
+
+\begin{proposition}[Phase calculus for one-dimensional Mapper]\label{ai:map}
+Fix $\alpha\in(0,1)$ and the uniform random phase.  (i) For an isolated cycle of span $\ell$,
+\[
+\Pr\bigl(\beta_1(M_{h,U})=1\bigr)=F_\alpha(\ell/h),\qquad
+F_\alpha(x)=\min\Bigl(1,\max\Bigl(0,\frac{x-1}{1-\alpha}\Bigr)\Bigr),
+\]
+and $\beta_1=0$ otherwise: the survival probability is a universal piecewise-linear function of $\ell/h$, zero for $h\ge\ell$ and one for $h\le\ell/(2-\alpha)$.  (ii) For a series chain of isolated cycles with spans $\ell_1,\ldots,\ell_r$, the phase-averaged Betti curve satisfies $S(h)=\E_U\,\beta_1(M_{h,U})=\sum_jF_\alpha(\ell_j/h)$ exactly for every $h>0$, and the multiset $\{\ell_j\}$ is recovered from $S$: its kinks in $h$ occur exactly at the points $\ell_j$ and $\ell_j/(2-\alpha)$, and descending induction on the largest kink identifies every span with multiplicity.  (iii) For an isolated branch critical value $c$, the midpoint estimator $\widehat c(U)=L(U)-s/2$, with $L(U)$ the lower endpoint of the first interval whose preimage has the post-branch component count, satisfies $\widehat c-c\sim\mathrm{Unif}(0,s]-s/2$, so $\E\widehat c=c$ exactly and $\operatorname{Var}\widehat c=s^2/12$.
+\end{proposition}
+
+\begin{proposition}[One direction determines a rectangle module]\label{ai:rect}
+Let $M=\bigoplus_{i=1}^m\mathbf k_{R_i}$ be rectangle-decomposable with generic endpoints, and fix any direction $v$ of positive slope.  Then the fiber field of $M$ along $v$, with the line parameterization retained, determines the multiset $\{R_1,\ldots,R_m\}$.
+\end{proposition}
+
+\begin{proposition}[Moment calibration for aggregate landscapes]\label{ai:sum}
+Write bar $i$ as center $c_i=(b_i+d_i)/2$ and half-width $a_i=(d_i-b_i)/2$.  (i) For every $r\ge0$,
+\[
+M_r(D)=\sum_{i=1}^m\;\sum_{\substack{0\le j\le r\\ j\ \mathrm{even}}}\binom rj c_i^{\,r-j}\,\frac{2a_i^{\,j+2}}{(j+1)(j+2)}.
+\]
+(ii) For $m=1$, the first two moments determine the bar: $M_0=a^2$ and $M_1=c\,a^2$, so $a=\sqrt{M_0}$ and $c=M_1/M_0$; in particular the first $4m$ moments of Conjecture~\ref{ai11} suffice at $m=1$ with two to spare.  (iii) The second distributional derivative $A_D''=\sum_i(\delta_{b_i}-2\delta_{c_i}+\delta_{d_i})$ is a signed measure with at most $3m$ atoms whose moments obey $\mu_0=\mu_1=0$ and $\mu_k=k(k-1)M_{k-2}$ for $k\ge2$; hence for a diagram with $3m$ distinct nodes the first $6m-2$ aggregate moments $M_0,\ldots,M_{6m-3}$ determine the diagram, by Prony reconstruction of the nodes from $\mu_2,\ldots,\mu_{6m-1}$ and the pairing $b_i+d_i=2c_i$ of endpoints to centers by the weights $+1$ and $-2$.
+\end{proposition}
+
+\section{Extremal and sampling laws for Vietoris--Rips persistence}
+
+\begin{conjecture}[Circle isoperimetry for multiplicative persistence]\label{ai1}
+For every $n\ge4$ and every set $X$ of $n$ distinct points on the Euclidean unit circle,
+\[
+\Pi_1^\times(X)\ \le\ \frac{\sin(\lceil n/3\rceil\pi/n)}{\sin(\pi/n)},
+\]
+with equality exactly for the regular $n$-gon, up to isometries of the circle.
+\end{conjecture}
+
+\begin{conjecture}[Saturation of the stability factor two]\label{ai2}
+Let $\Gamma\subset\R^2$ be a $C^3$ strictly convex closed curve, let $L_m$ be the first $m$ points of a farthest-point sampling of $\Gamma$ from a generic seed, and let $\rho_m=d_H(L_m,\Gamma)$.  Then
+\[
+\lim_{m\to\infty}\frac{d_B\bigl(\mathrm{Dgm}_1(L_m),\mathrm{Dgm}_1(\Gamma)\bigr)}{\rho_m}=2.
+\]
+\end{conjecture}
+
+\begin{conjecture}[A two-sided projection threshold for loop ratios]\label{ai3}
+For $q\ge2$ let $H_1,\ldots,H_q$ be regular hexagons in mutually orthogonal coordinate two-planes of $\R^{2q}$, let $A$ be an $m\times2q$ Gaussian matrix with independent $N(0,1/m)$ entries, and for fixed small $\eps>0$ let $\mathcal E_{q,m,\eps}$ be the event that every channel ratio $\Pi_1^\times(AH_j)/\Pi_1^\times(H_j)$ lies within $\eps$ of one.  Then there are constants $0<c<C$ with
+\[
+m\le c\,\eps^{-2}\log q\implies\Pr(\mathcal E_{q,m,\eps})\to0,
+\qquad
+m\ge C\,\eps^{-2}\log q\implies\Pr(\mathcal E_{q,m,\eps})\to1,
+\]
+as $q\to\infty$.
+\end{conjecture}
+
+\section{The statistical geometry of diagram means}
+
+\begin{conjecture}[Prevalence shrinkage with exponential leakage]\label{ai4}
+Let random diagrams consist of a background diagram plus, with probability $q$, one signal point, the signal cluster separated from the background and the diagonal by a matching margin $\gamma$, with conditional perturbations centered subgaussian of scale $\sigma\ll\gamma$.  Then the population $W_2$ Fr\'echet mean has a unique signal point whose diagonal coordinate satisfies $\bar U=\E[U\mid\text{present}]+O(e^{-c\gamma^2/\sigma^2})$ and whose distance to the diagonal satisfies
+\[
+\bar V=q\,\E[V\mid\text{present}]+O\bigl(e^{-c\gamma^2/\sigma^2}\bigr),
+\]
+uniformly over bounded separated model classes.
+\end{conjecture}
+
+\begin{conjecture}[Exponential stability of latent groupings]\label{ai5}
+Let $D_1,\ldots,D_N$ be independent diagrams from a latent model with $m$ feature clusters, matching margin $\gamma$ between clusters and to the diagonal, subgaussian scale $\sigma$, and prevalences bounded away from zero.  Then
+\[
+\Pr\{\text{some optimal mean grouping differs from the latent grouping}\}\le CNm\,e^{-c\gamma^2/\sigma^2},
+\]
+and on the complementary event the empirical $W_2$ Fr\'echet mean is unique, its coordinates obey the flat projection formulas, and featurewise central-limit behavior holds at rate $N^{-1/2}$.
+\end{conjecture}
+
+\section{A phase calculus for Mapper}
+
+\begin{conjecture}[Stable survival tomography of Reeb graphs]\label{ai6}
+Let $(G,f)$ be a tame Reeb graph whose $r$ degree-one extended-persistence bars have lengths (spans) $\ell_1,\ldots,\ell_r$, each below the separation ($\ell_j<\gamma$), and pairwise critical-value separation at least $\gamma>0$, and let $S_G(h)=\E_U\,\beta_1(M_{h,U})$ be the phase-averaged Betti curve at overlap $\alpha$.  Then (a) $S_G(h)=\sum_jF_\alpha(\ell_j/h)$ for every $h<\gamma$, with the kernel of Proposition~\ref{ai:map}; and (b) the inversion is stable away from the collision stratum: if two tame Reeb graphs with $\gamma$-separated features and distinct span values pairwise separated by at least $\beta>0$ have curves with $\lVert S_G-S_{G'}\rVert_{L^2((0,\gamma),\,\dd h/h)}\le\eta$, then the equal-cardinality span multisets are within bottleneck distance $C(\gamma,\alpha,r,\beta)\,\eta$ of each other; the span separation is essential, coalescing spans admitting only a H\"older inverse of exponent $2/3$.
+\end{conjecture}
+
+\begin{conjecture}[The dither law survives discretization]\label{ai7}
+For a Reeb graph discretized at filter mesh $\eta=o(h)$, or sampled densely enough that its Mapper is that of the underlying graph, the midpoint estimator of an isolated branch critical value satisfies
+\[
+\E\widehat c-c=O(\eta),\qquad
+\operatorname{Var}(\widehat c)=\frac{s^2}{12}+O(s\eta+\eta^2),
+\]
+uniformly over admissible discretizations, with constants depending only on the local branch geometry.
+\end{conjecture}
+
+\section{Rectangle tomography}
+
+\begin{conjecture}[Three-direction stability and random-slope observability]\label{ai8}
+Fix a box, a maximum count $m$, and $\delta>0$, and consider rectangle-decomposable modules whose corner coordinates, side lengths, and pairwise separations are at least $\delta$, and whose corners stay at distance at least $\delta$ from the coincidence loci of $v_1,v_2,v_3$, the configurations at which two rectangles cut a common fiber-interval endpoint along some $v_j$.  (a) For generic fixed positive-slope directions $v_1,v_2,v_3$, the invariant $d_3(M,N)=\max_j\sup_{L\parallel v_j}d_B(\mathrm{Dgm}(M_L),\mathrm{Dgm}(N_L))$ is locally bi-Lipschitz equivalent to the minimal corner displacement $d_{\mathrm{rect}}$, with constants polynomial in $m$ and $1/\delta$.  (b) The weighted direction profile $g(\theta)$ of the matching distance between two such modules is Lipschitz relative to its own maximum on compact slope ranges, $\operatorname{Lip}g\le C\lVert g\rVert_\infty$ with $C$ polynomial in $m$, the box size, $1/\delta$, and the slope margin, so its near-maximal set has measure bounded below and $K$ uniformly random slopes recover a $(1-\eps)$-approximation of the matching distance with failure probability exponentially small in $K$.
+\end{conjecture}
+
+\section{Finite summaries and dynamic complexity}
+
+\begin{conjecture}[A restricted isometry for persistence sketches]\label{ai9}
+On the class of diagrams with at most $m$ points, persistence and pairwise separation at least $\delta$, in a box of diameter $R$, let $\Phi_M$ be the random Fourier sketch of the persistence-weighted Gaussian embedding at bandwidth comparable to $\delta^{-1}$ with $M$ frequencies.  Then there are class constants $0<c_0<C_0$, polynomial in $m,R,1/\delta$, such that with probability $1-\eta$,
+\[
+c_0(1-\eps)\,W_2(D,E)\le\lVert\Phi_M(D)-\Phi_M(E)\rVert_2\le C_0(1+\eps)\,W_2(D,E)
+\]
+for all $D,E$ in the class, provided $M\ge C\eps^{-2}m\log(mR/(\delta\eta))$.
+\end{conjecture}
+
+\begin{conjecture}[Whitney-count evaluations of persistence surfaces]\label{ai10}
+Fix $\sigma>0$ and the class of diagrams with exactly $m$ points, pairwise $\delta$-separated and $\delta$-far from the diagonal, in a compact box.  Choose $q\ge4m+1$ evaluation points independently from any distribution with positive density on a neighborhood of the box.  Then, almost surely in the evaluations, the map $D\mapsto(\rho_D(z_1),\ldots,\rho_D(z_q))$ is injective on the class, and locally bi-Lipschitz off the discriminant.
+\end{conjecture}
+
+\begin{conjecture}[Aggregate-landscape moment determinacy]\label{ai11}
+For a Zariski-open, full-measure set of $m$-bar diagrams, the first $4m$ moments $M_0,\ldots,M_{4m-1}$ of the aggregate landscape determine the diagram uniquely up to bar permutation.
+\end{conjecture}
+
+\begin{conjecture}[Near-quadratic vineyard complexity in the mean]\label{ai12}
+Let $n$ planar points move affinely, $x_i(t)=a_i+tv_i$ on $[0,1]$, with $a_i,v_i$ independent standard Gaussians, and let $N_1(n)$ be the number of times the degree-one Vietoris--Rips persistence pairing changes.  Then $\E N_1(n)=O(n^2\log n)$, and $N_1(n)=O(n^2\log^2n)$ with probability $1-n^{-c}$.
+\end{conjecture}
+
+
+\part{Temporal irreversibility and spectral selection in nonequilibrium dynamics}
+
+\medskip\noindent\emph{Added to the deposit: 22 August 2026.}\par\medskip
+
+The fifteen conjectures below study how much of the thermodynamic arrow of time survives when a stationary nonequilibrium process is observed only through two time points.  For an irreducible continuous-time Markov chain the complete trajectory over an interval of length $t$ carries a path-space entropy production $\sigma t$; reducing the trajectory to its endpoints keeps only the \emph{lag irreversibility} $L(t)$, the Kullback--Leibler divergence between the stationary two-time law and its time reverse, and data processing gives $0\le L(t)\le\sigma t$.  The organizing object is the \emph{temporal sampling efficiency} $\eta(t)=L(t)/(\sigma t)\in[0,1]$, the fraction of dissipation still visible at lag $t$.  The conjectures form three programmes.  A temporal-and-spectral programme (Conjectures~\ref{aj1} to~\ref{aj7}) asserts monotone loss of efficiency, spectral bounds on the temporal support and the integrated budget of the arrow of time, an irreversibility-specific relaxation exponent that doubles the slowest dissipative mode, its generic coincidence with the ordinary spectral gap together with an exceptional invisible-slow-mode phenomenon, and the discrete mode selection performed by deterministic coarse-graining.  A unicyclic-and-winding programme (Conjectures~\ref{aj8} to~\ref{aj12}) sharpens these on a single driven cycle, where endpoint sampling loses exactly the integer winding number, giving a strict efficiency law, an amplitude cap, a weak-affinity wrapped-Brownian scaling limit, a ballistic winding-aliasing horizon, and a single P\'eclet crossover unifying the two.  A Gaussian programme (Conjectures~\ref{aj13} to~\ref{aj15}) transfers the peak-horizon, integrated-budget, and mode-doubling laws to multivariate Ornstein--Uhlenbeck processes, where every quantity is an explicit function of the drift and diffusion matrices.  The proved layer is Proposition~\ref{aj:basic}: the endpoint data-processing bounds, the short-time expansion $L(t)=\sigma t+O(t^2)$ giving $\eta(t)\to1$, and the exact Gaussian lag-KL formula.  Conjectures~\ref{aj4}, \ref{aj6}, \ref{aj7}, and~\ref{aj15} assert long-time exponential laws beyond any finite check and are flagged as such; Conjectures~\ref{aj10} to~\ref{aj12} are scaling-limit statements and are flagged; Conjecture~\ref{aj5} is a genericity statement carrying its own exceptional set.  The central observable is the lag irreversibility of Merino Negrete, Maldonado, and Salgado-Garc\'ia~\cite{MMS23}, and the closest spectral precedent is the finite-time cross-correlation asymmetry of Van Vu, Vo, and Saito~\cite{VVS24}; the normalization by path entropy production, the temporal horizons and integrated budgets, the doubled irreversibility exponent and its coarse-grained selection, and the winding scaling laws are what is proposed as new.  Since deposit, Conjecture~\ref{aj9}, the sharp unicyclic amplitude cap $\sup_t\gamma L(t)/\sigma\le\tfrac12$, has been resolved false by Proposition~\ref{aj:c9}: an explicit near-decomposable seven-state ring reaches $0.643>\tfrac12$, so the constant $\tfrac12$ is not universal.
+
+Let $X_t$ be an irreducible continuous-time Markov chain on $\{1,\ldots,n\}$ with row generator $Q=(q_{ij})$, stationary law $\pi>0$, and bidirected support ($q_{ij}>0\Leftrightarrow q_{ji}>0$), so the steady-state entropy production is finite.  Write $P_t=e^{tQ}$, the stationary endpoint law $F_t(i,j)=\pi_iP_t(i,j)$, its time reverse $F_t^\top$, the lag irreversibility
+\[
+L(t)=D_{\mathrm{KL}}(F_t\Vert F_t^\top)=\sum_{i,j}F_t(i,j)\log\frac{F_t(i,j)}{F_t(j,i)},
+\]
+and the entropy-production rate $\sigma=\sum_{i\neq j}\pi_iq_{ij}\log(\pi_iq_{ij}/\pi_jq_{ji})$, so that $\eta(t)=L(t)/(\sigma t)$.  Let $q^*_{ij}=\pi_jq_{ji}/\pi_i$ be the reversed generator, $\bar Q=(Q+Q^*)/2$ the additive reversibilization, $\gamma=\lambda_2(-\bar Q)>0$ its reversible $L^2(\pi)$ spectral gap, and $g=\min\{-\Re\lambda:\lambda\in\operatorname{spec}(Q)\setminus\{0\}\}$ the ordinary spectral-abscissa gap.  Write $A_t=F_t-F_t^\top=\Pi e^{tQ}-e^{tQ^\top}\Pi$ with $\Pi=\operatorname{diag}(\pi)$, and let $\alpha_{\mathrm{irr}}$ be the smallest $-\Re\lambda>0$ over generator eigenmodes whose coefficient in $A_t$ is nonzero (on generalized eigenspaces for Jordan blocks, the polynomial factors not affecting the rate).  For a deterministic map $f:\{1,\ldots,n\}\to\{1,\ldots,m\}$ let $F_t^f(a,b)=\sum_{f(i)=a,\,f(j)=b}F_t(i,j)$, $L_f(t)=D_{\mathrm{KL}}(F_t^f\Vert(F_t^f)^\top)$, and $\alpha_{\mathrm{irr}}(f)$ the smallest such rate surviving the block summation.  For the homogeneous $N$-cycle with clockwise/counterclockwise rates $p_N=e^{A/(2N)}$, $q_N=e^{-A/(2N)}$ and time $t_N=N^2\tau/(p_N+q_N)$, the wrapped Gaussian on $x\in[0,1)$ is $w_{A,\tau}(x)=\sum_{k\in\Z}(2\pi\tau)^{-1/2}\exp[-(x+k-A\tau/2)^2/(2\tau)]$, with reverse $w_{-A,\tau}$; at fixed edge affinity $a\neq0$ write $p=e^{a/2}$, $q=e^{-a/2}$, $v=p-q$, the P\'eclet number $\mathrm{Pe}=N(p-q)/(p+q)$, and $t_c(N,\cdot)=\inf\{t:\eta_N(t)\le c\}$.  For the Ornstein--Uhlenbeck process $dX_t=AX_t\,dt+\sqrt{2D}\,dW_t$ with $A$ Hurwitz and $D\succ0$, the stationary covariance solves $AC+CA^\top+2D=0$, the two-time law is Gaussian with cross-covariance $Ce^{A^\top t}$, $L_{\mathrm{OU}}(t)$ is the KL divergence to its block-swapped reverse, $\sigma_{\mathrm{OU}}=\operatorname{tr}[(A+DC^{-1})^\top D^{-1}(A+DC^{-1})C]$, $g_A=\min_\lambda(-\Re\lambda(A))$, $H(t)=e^{At}C-Ce^{A^\top t}$, and $\alpha_H$ the slowest exponential rate in $H(t)$.
+
+\begin{proposition}[Endpoint bounds, short-time efficiency, and the Gaussian lag KL]\label{aj:basic}
+For every chain in the stated class, $0\le L(t)\le\sigma t$, and as $t\downarrow0$ single-jump paths dominate, giving $L(t)=\sigma t+O(t^2)$ and $\eta(t)\to1$; as $t\to\infty$, $F_t\to\pi\otimes\pi$ and $L(t)\to0$.  For the Ornstein--Uhlenbeck process the two-time covariance and its block swap have equal determinants, so
+\[
+L_{\mathrm{OU}}(t)=\tfrac12\bigl[\operatorname{tr}(\Sigma_t^{R\,-1}\Sigma_t)-2d\bigr].
+\]
+\end{proposition}
+
+\section{Temporal irreversibility and spectral selection}
+
+\begin{conjecture}[Temporal sampling-efficiency monotonicity]\label{aj1}
+For every finite irreducible bidirected chain with $\sigma>0$, the efficiency $\eta(t)=L(t)/(\sigma t)$ is non-increasing on $(0,\infty)$, and strictly decreasing for a generic nonequilibrium chain.
+\end{conjecture}
+
+\begin{conjecture}[Two-gap-time location bound]\label{aj2}
+If $t_*$ is any global maximizer of $L(t)$, then $\gamma t_*\le2$.
+\end{conjecture}
+
+\begin{conjecture}[Spectral integrated-budget bound]\label{aj3}
+For every chain in the class, $\displaystyle\int_0^\infty L(t)\,dt\le\frac{2\sigma}{\gamma^2}$.
+\end{conjecture}
+
+\begin{conjecture}[Irreversibility-gap doubling law]\label{aj4}
+The long-time envelope of lag KL decays at twice the slowest irreversible rate:
+\[
+\liminf_{t\to\infty}-\frac1{2t}\log L(t)=\alpha_{\mathrm{irr}},
+\]
+and generically $L(t)=t^{m}e^{-2\alpha_{\mathrm{irr}}t}[c(t)+o(1)]$ with $m\ge0$ a Jordan multiplicity and $c$ bounded, nonnegative, and not identically zero.
+\end{conjecture}
+
+\begin{conjecture}[Generic equality of spectral and irreversibility gaps]\label{aj5}
+Fix a strongly connected bidirected graph and vary its positive rates.  Outside a measure-zero analytic exceptional set, and excluding detailed balance, $\alpha_{\mathrm{irr}}=g$; strict inequality $\alpha_{\mathrm{irr}}>g$ occurs exactly when every mode at real-part gap $g$ contributes zero to $A_t$.
+\end{conjecture}
+
+\begin{conjecture}[Coarse-grained irreversibility mode-selection law]\label{aj6}
+For every deterministic partition with $L_f\not\equiv0$,
+\[
+\liminf_{t\to\infty}-\frac1{2t}\log L_f(t)=\alpha_{\mathrm{irr}}(f).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Hidden-mode exponential separation]\label{aj7}
+If $\alpha_{\mathrm{irr}}(f)>\alpha_{\mathrm{irr}}$, then $\liminf_{t\to\infty}-\tfrac1{2t}\log[L_f(t)/L(t)]=\alpha_{\mathrm{irr}}(f)-\alpha_{\mathrm{irr}}$; if the two exponents coincide with nonzero leading coefficients, $L_f(t)/L(t)$ approaches a nonzero bounded envelope.
+\end{conjecture}
+
+\section{Unicyclic networks and winding aliasing}
+
+\begin{conjecture}[Unicyclic strict monotonicity]\label{aj8}
+For every finite bidirected unicyclic chain with nonzero total cycle affinity, $\eta'(t)<0$ for all $t>0$.
+\end{conjecture}
+
+\begin{conjecture}[Sharp unicyclic spectral-amplitude cap, resolved false]\label{aj9}
+For every nonequilibrium unicyclic chain, $\displaystyle\sup_{t>0}\frac{\gamma L(t)}{\sigma}\le\frac12$.
+\end{conjecture}
+
+\begin{proposition}[A near-decomposable amplitude-cap counterexample]\label{aj:c9}
+There is a bidirected seven-state ring, with one weak edge three orders of magnitude below the others, whose reversible gap $\gamma$, entropy-production rate $\sigma$, and maximal lag irreversibility satisfy $\gamma\sup_tL(t)/\sigma=0.643$ to three places.  Hence the sharp cap $\tfrac12$ of Conjecture~\ref{aj9} fails.
+\end{proposition}
+
+\begin{conjecture}[Wrapped-Brownian irreversibility limit]\label{aj10}
+For each fixed $A\neq0$ and $\tau>0$,
+\[
+\eta_N(t_N)\longrightarrow\mathcal E(A,\tau):=\frac2{A^2\tau}\int_0^1w_{A,\tau}(x)\log\frac{w_{A,\tau}(x)}{w_{-A,\tau}(x)}\,dx,
+\]
+locally uniformly on compacta of $(A,\tau)\in(\R\setminus\{0\})\times(0,\infty)$.
+\end{conjecture}
+
+\begin{conjecture}[Ballistic winding-aliasing horizon]\label{aj11}
+For fixed edge affinity $a\neq0$ and level $c\in(0,1)$ there is a finite positive $u_c(a)$ with $|v|\,t_c(N,a)/N\to u_c(a)$ as $N\to\infty$, so fixed-bias endpoint irreversibility is lost on the ballistic winding timescale $N/|v|$, not the diffusive mixing timescale.
+\end{conjecture}
+
+\begin{conjecture}[Diffusive-to-ballistic irreversibility crossover]\label{aj12}
+For every fixed $c\in(0,1)$ there is a universal function $\Phi_c$ with $t_c=\tfrac{N^2}{p+q}\Phi_c(\mathrm{Pe})[1+o(1)]$ in the joint large-$N$ scaling, where $\Phi_c(z)\to\Phi_c(0)\in(0,\infty)$ as $z\to0$ and $\Phi_c(z)\sim u_c/|z|$ as $|z|\to\infty$, so Conjectures~\ref{aj10} and~\ref{aj11} are its weak- and strong-drift limits.
+\end{conjecture}
+
+\section{Nonequilibrium Ornstein--Uhlenbeck dynamics}
+
+\begin{conjecture}[OU one-relaxation-time peak horizon]\label{aj13}
+If $\sigma_{\mathrm{OU}}>0$ and $t_*$ is a global maximizer of $L_{\mathrm{OU}}(t)$, then $g_At_*\le1$.
+\end{conjecture}
+
+\begin{conjecture}[OU spectral-area bound]\label{aj14}
+For every stable nonequilibrium OU process, $\displaystyle\int_0^\infty L_{\mathrm{OU}}(t)\,dt\le\frac{\sigma_{\mathrm{OU}}}{g_A^2}$.
+\end{conjecture}
+
+\begin{conjecture}[OU antisymmetric-covariance doubling law]\label{aj15}
+For every stable OU process with $\sigma_{\mathrm{OU}}>0$,
+\[
+\liminf_{t\to\infty}-\frac1{2t}\log L_{\mathrm{OU}}(t)=\alpha_H,
+\]
+so the long-time Gaussian arrow of time decays at twice the slowest time-antisymmetric covariance mode.
+\end{conjecture}
+
+
+
+\part{Log-concavity laws for exactly solved random conformal geometry}
+
+\medskip\noindent\emph{Added to the deposit: 22 August 2026.}\par\medskip
+
+The two conjectures below concern the shape of two exactly solved objects in random conformal geometry: the DOZZ three-point structure constant of Liouville conformal field theory, and the modulus law of the Brownian annulus.  Each asserts strict log-concavity of an exact special-function density along its natural spectral or scale coordinate.  Both objects are given by closed forms---the Barnes-function representation of the DOZZ constant~\cite{KRV20} and the exact modulus transform of the Brownian annulus~\cite{ARS22}---so both conjectures are exactly and finitely checkable on any grid of parameters.
+
+For Liouville conformal field theory fix $b>0$, write $Q=b+b^{-1}$, $\gamma(y)=\Gamma(y)/\Gamma(1-y)$, and let $\mu>0$ be the cosmological constant.  The Barnes function $\Upsilon_b$ is defined for $0<\Re x<Q$ by
+\[
+\log\Upsilon_b(x)=\int_0^\infty\frac{\dd t}{t}\left[\Bigl(\tfrac Q2-x\Bigr)^2e^{-t}-\frac{\sinh^2\!\bigl((\tfrac Q2-x)t/2\bigr)}{\sinh(bt/2)\,\sinh(t/2b)}\right],
+\]
+and extends to an entire function.  The DOZZ structure constant for real charges $\alpha_1,\alpha_2,\alpha_3$ with $\bar\alpha=\alpha_1+\alpha_2+\alpha_3$ is
+\[
+C_b(\alpha_1,\alpha_2,\alpha_3)=\bigl[\pi\mu\,\gamma(b^2)b^{2-2b^2}\bigr]^{(Q-\bar\alpha)/b}\,\frac{\Upsilon_b'(0)\,\prod_{i=1}^3\Upsilon_b(2\alpha_i)}{\Upsilon_b(\bar\alpha-Q)\,\prod_{i=1}^3\Upsilon_b(\bar\alpha-2\alpha_i)},
+\]
+and the principal series is parameterized by internal momentum $P\ge0$ through $\alpha=\tfrac Q2+iP$.  For an equal external charge $a$ write $M_a(P)=\bigl|C_b(a,a,\tfrac Q2+iP)\bigr|$.  For the Brownian annulus, following Ang, Remy, and Sun~\cite{ARS22}, let $\eta$ be the Dedekind eta function, and conditional on the boundary-length ratio $x>0$ let $X_\tau$ be the positive random variable with Mellin transform
+\[
+\E[X_\tau^{it}]=\frac{2\pi t}{3\sinh(2\pi t/3)}\,e^{-2\pi\tau t^2/3},\qquad t\in\R,
+\]
+and density $\rho_\tau$; the modulus $\tau>0$ then has density $p_x(\tau)\propto\eta(2i\tau)\,\rho_\tau(x)$, the constant of proportionality depending only on $x$.
+
+\begin{proposition}[Curvature reductions and boundary symmetry]\label{ak:basic}
+$\Upsilon_b$ is entire with simple zeros exactly at $-b\,\mathbb N_0-b^{-1}\mathbb N_0$ and at $Q+b\,\mathbb N_0+b^{-1}\mathbb N_0$; in particular $\Upsilon_b(Q)=0$, so $M_a(0)=0$ and the log-concavity of $M_a$ is a statement on $P>0$.  The prefactor modulus and the momentum-independent factor $|\Upsilon_b(2a)|$ are constant in $P$, so
+\[
+\frac{\dd^2}{\dd P^2}\log M_a(P)=\frac{\dd^2}{\dd P^2}\Bigl[\log|\Upsilon_b(Q+2iP)|-2\log|\Upsilon_b(\tfrac Q2+iP)|-2\log|\Upsilon_b(2a-\tfrac Q2+iP)|\Bigr].
+\]
+For the Brownian annulus, $\log p_x(e^s)=\log\eta(2ie^s)+\log\rho_{e^s}(x)+\kappa(x)$ with $\kappa$ independent of $s$, so $\dd^2\!\log p_x(e^s)/\dd s^2$ is independent of the normalization, and $p_{1/x}(\tau)=x^2p_x(\tau)$, so that curvature is invariant under $x\mapsto1/x$.
+\end{proposition}
+
+\section{Spectral and modular log-concavity}
+
+\begin{conjecture}[DOZZ spectral log-concavity]\label{ak1}
+For every $b>0$ and every real external charge $a$ with $\tfrac Q3\le a<\tfrac Q2$, the symmetric DOZZ spectral modulus is strictly log-concave in the internal momentum:
+\[
+\frac{\dd^2}{\dd P^2}\log\bigl|C_b(a,a,\tfrac Q2+iP)\bigr|<0\qquad\text{for all }P>0.
+\]
+\end{conjecture}
+
+\begin{conjecture}[Brownian-annulus modular log-concavity]\label{ak2}
+For the Brownian annulus and every boundary-length ratio $x>0$, the modulus density is log-concave in the logarithmic modulus:
+\[
+s\longmapsto\log p_x(e^s)\quad\text{is strictly concave on }\R.
+\]
+\end{conjecture}
 
 \begin{thebibliography}{99}\small
 
@@ -4722,5 +5220,100 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{BOS01} M.~Baiesi, E.~Orlandini, and A.~L. Stella, Peculiar scaling of self-avoiding walk contacts, Phys. Rev. Lett. 87 (2001) 070602.
 \bibitem{BGJ20} N.~R. Beaton, A.~J. Guttmann, and I.~Jensen, Two-dimensional interacting self-avoiding walks: new estimates for critical temperatures and exponents, J. Phys. A 53 (2020) 165002.
 \bibitem{FvdH13} R.~Fitzner and R.~van der Hofstad, Non-backtracking random walk, J. Stat. Phys. 150 (2013) 264--284.
+\bibitem{LNP13} T.~Leli\`evre, F.~Nier, and G.~A. Pavliotis, Optimal non-reversible linear drift for the convergence to equilibrium of a diffusion, J. Stat. Phys. 152 (2013) 237--274.
+\bibitem{GL19} C.~Godr\`eche and J.~M. Luck, Characterising the nonequilibrium stationary states of Ornstein--Uhlenbeck processes, J. Phys. A 52 (2019) 035002.
+\bibitem{KOI24} A.~Kolchinsky, N.~Ohga, and S.~Ito, Thermodynamic bound on spectral perturbations, with applications to oscillations and relaxation dynamics, Phys. Rev. Research 6 (2024) 013082.
+\bibitem{NKI26} R.~Nagayama, A.~Kolchinsky, and S.~Ito, Oscillatory-nonnormal decomposition of dissipation in Ornstein--Uhlenbeck processes, arXiv:2606.07263 (2026).
+\bibitem{ZWG23} Y.-L. Zhou, X.-D. Yu, C.-W. Wu, X.-Q. Li, J.~Zhang, W.~Li, and P.-X. Chen, Accelerating relaxation through Liouvillian exceptional point, Phys. Rev. Research 5 (2023) 043036.
+\bibitem{BLO01} J.~V. Burke, A.~S. Lewis, and M.~L. Overton, Optimizing matrix stability, Proc. Amer. Math. Soc. 129 (2001) 1635--1642.
+\bibitem{ABBO11} R.~Alam, S.~Bora, R.~Byers, and M.~L. Overton, Characterization and construction of the nearest defective matrix via coalescence of pseudospectral components, Linear Algebra Appl. 435 (2011) 494--513.
+\bibitem{WB22} T.~Wampler and A.~C. Barato, Skewness and kurtosis in stochastic thermodynamics, J. Phys. A 55 (2022) 014002.
+\bibitem{Pta22} K.~Ptaszy\'nski, Bounds on skewness and kurtosis of steady state currents, Phys. Rev. E 106 (2022) 024119.
+\bibitem{LiLu24} B.~Li and J.~Lu, Quantum space-time Poincar\'e inequality for Lindblad dynamics, arXiv:2406.09115 (2024).
+\bibitem{Alicki76} R.~Alicki, On the detailed balance condition for non-Hamiltonian systems, Rep. Math. Phys. 10 (1976) 249--258.
+\bibitem{LR17} Z.~Lu and O.~Raz, Nonequilibrium thermodynamics of the Markovian Mpemba effect and its inverse, Proc. Natl. Acad. Sci. USA 114 (2017) 5083--5088.
+\bibitem{KRHV19} I.~Klich, O.~Raz, O.~Hirschberg, and M.~Vucelja, Mpemba index and anomalous relaxation, Phys. Rev. X 9 (2019) 021060.
+\bibitem{ZXW25} J.~Zhang, G.~Xia, C.-W. Wu, T.~Chen, Q.~Zhang, Y.~Xie, W.-B. Su, W.~Wu, C.-W. Qiu, P.-X. Chen, W.~Li, H.~Jing, and Y.-L. Zhou, Observation of quantum strong Mpemba effect, Nature Commun. 16 (2025) 301.
+\bibitem{CTH24} A.~K. Chatterjee, S.~Takada, and H.~Hayakawa, Multiple quantum Mpemba effect: exceptional points and oscillations, Phys. Rev. A 110 (2024) 022213.
+\bibitem{MP26} M.~Mackinnon and M.~Paternostro, Robustness of the quantum Mpemba effect against state-preparation errors, New J. Phys. 28 (2026) 044507.
+\bibitem{GMS26} Y.~Hong, L.~Xu, W.~Zhang, J.~Ren, and J.~Wang, Geometric mode steering of the quantum Mpemba effect, arXiv:2607.14501 (2026).
+\bibitem{HR89} J.~H\"usler and R.-D. Reiss, Maxima of normal random vectors: between independence and complete dependence, Statist. Probab. Lett. 7 (1989) 283--286.
+\bibitem{EH20} S.~Engelke and A.~S. Hitz, Graphical models for extremes (with discussion), J. R. Stat. Soc. Ser. B 82 (2020) 871--932.
+\bibitem{ST02} M.~Schlather and J.~A. Tawn, Inequalities for the extremal coefficients of multivariate extreme value distributions, Extremes 5 (2002) 87--102.
+\bibitem{EAR26} I.~Echave-Sustaeta Rodr\'iguez, A.~Abiad, and F.~R\"ottger, Spectral sparsification of Laplacian-constrained Gaussian and H\"usler--Reiss graphical models, arXiv:2606.16681 (2026).
+\bibitem{Vit96} R.~A. Vitale, The Wills functional and Gaussian processes, Ann. Probab. 24 (1996) 2172--2178.
+\bibitem{BS09} B.~Basrak and J.~Segers, Regularly varying multivariate time series, Stochastic Process. Appl. 119 (2009) 1055--1080.
+\bibitem{Lea83} M.~R. Leadbetter, Extremes and local dependence in stationary sequences, Z. Wahrsch. Verw. Gebiete 65 (1983) 291--306.
+\bibitem{OB87} G.~L. O'Brien, Extreme values for stationary and Markov sequences, Ann. Probab. 15 (1987) 281--291.
+\bibitem{RT00} M.~E. Robinson and J.~A. Tawn, Extremal analysis of processes sampled at different frequencies, J. R. Stat. Soc. Ser. B 62 (2000) 117--135.
+\bibitem{MF04} A.~P. Martins and H.~Ferreira, The extremal index of sub-sampled processes, J. Statist. Plann. Inference 124 (2004) 145--152.
+\bibitem{HS08} A.~Hall and M.~G. Scotto, On the extremes of randomly sub-sampled time series, REVSTAT 6 (2008) 151--164.
+\bibitem{Blo77} G.~S. Bloom, A counterexample to a theorem of S. Piccard, J. Combin. Theory Ser. A 22 (1977) 378--379.
+\bibitem{Pat44} A.~L. Patterson, Ambiguities in the X-ray analysis of crystal structures, Phys. Rev. 65 (1944) 195--201.
+\bibitem{BG07} A.~Bekir and S.~W. Golomb, There are no further counterexamples to S. Piccard's theorem, IEEE Trans. Inform. Theory 53 (2007) 2864--2867.
+\bibitem{CGLM15} F.~Chazal, M.~Glisse, C.~Labru\`ere, and B.~Michel, Convergence rates for persistence diagram estimation in topological data analysis, J. Mach. Learn. Res. 16 (2015) 3603--3635.
+\bibitem{Res08} S.~I. Resnick, Multivariate regular variation on cones: application to extreme values, hidden regular variation and conditioned limit laws, Stochastics 80 (2008) 269--298.
+\bibitem{MR11} A.~Mitra and S.~I. Resnick, Hidden regular variation and detection of hidden risks, Stochastic Models 27 (2011) 591--614.
+\bibitem{MN21} I.~Molchanov and F.~Nagel, Diagonal Minkowski classes, zonoid equivalence, and stable laws, Commun. Contemp. Math. 23 (2021) 1950091.
+\bibitem{CT19} D.~Cooley and E.~Thibaud, Decompositions of dependence for high-dimensional extremes, Biometrika 106 (2019) 587--604.
+\bibitem{Tal87} G.~Talenti, Recovering a function from a finite number of moments, Inverse Problems 3 (1987) 501--517.
+\bibitem{BVZ19} A.~B\"ucher, S.~Volgushev, and N.~Zou, On second order conditions in the multivariate block maxima and peak over threshold method, J. Multivariate Anal. 173 (2019) 604--619.
+\bibitem{DF19} C.~Dombry and A.~Ferreira, Maximum likelihood estimators based on the block maxima method, Bernoulli 25 (2019) 1690--1723.
+\bibitem{BZ21} A.~B\"ucher and C.~Zhou, A horse race between the block maxima method and the peak-over-threshold approach, Statist. Sci. 36 (2021) 360--378.
+\bibitem{Hall82} P.~Hall, On some simple estimates of an exponent of regular variation, J. R. Stat. Soc. Ser. B 44 (1982) 37--42.
+\bibitem{CK15} A.~Carpentier and A.~K.~H. Kim, Adaptive and minimax optimal estimation of the tail coefficient, Statist. Sinica 25 (2015) 1133--1144.
+\bibitem{AdAd17} M.~Adamaszek and H.~Adams, The Vietoris--Rips complexes of a circle, Pacific J. Math. 290 (2017) 1--40.
+\bibitem{ACJS18} H.~Adams, S.~Chowdhury, A.~Q. Jaffe, and B.~Sibanda, Vietoris--Rips complexes of regular polygons, arXiv:1807.10971 (2018).
+\bibitem{GoM24} M.~G\'omez and F.~M\'emoli, Curvature sets over persistence diagrams, Discrete Comput. Geom. 72 (2024) 91--180.
+\bibitem{CSO14} F.~Chazal, V.~de Silva, and S.~Oudot, Persistence stability for geometric complexes, Geom. Dedicata 173 (2014) 193--214.
+\bibitem{JL84} W.~B. Johnson and J.~Lindenstrauss, Extensions of Lipschitz mappings into a Hilbert space, Contemp. Math. 26 (1984) 189--206.
+\bibitem{LN17} K.~G. Larsen and J.~Nelson, Optimality of the Johnson--Lindenstrauss lemma, in Proc. 58th IEEE Symp. Found. Comput. Sci. (2017) 633--638.
+\bibitem{Lot19} M.~Lotz, Persistent homology for low-complexity models, Proc. R. Soc. A 475 (2019) 20190081.
+\bibitem{MKG24} N.~H. May, B.~Krishnamoorthy, and P.~Gambill, A normalized bottleneck distance on persistence diagrams and homology preservation under dimension reduction, La Matematica 3 (2024) 1486--1509.
+\bibitem{MMH11} Y.~Mileyko, S.~Mukherjee, and J.~Harer, Probability measures on the space of persistence diagrams, Inverse Problems 27 (2011) 124007.
+\bibitem{TMMH14} K.~Turner, Y.~Mileyko, S.~Mukherjee, and J.~Harer, Fr\'echet means for distributions of persistence diagrams, Discrete Comput. Geom. 52 (2014) 44--70.
+\bibitem{MTB15} E.~Munch, K.~Turner, P.~Bendich, S.~Mukherjee, J.~Mattingly, and J.~Harer, Probabilistic Fr\'echet means for time varying persistence diagrams, Electron. J. Stat. 9 (2015) 1173--1204.
+\bibitem{CaM24} Y.~Cao and A.~Monod, A geometric condition for uniqueness of Fr\'echet means of persistence diagrams, Comput. Geom. 128 (2024) 102162.
+\bibitem{CO18} M.~Carri\`ere and S.~Oudot, Structure and stability of the one-dimensional Mapper, Found. Comput. Math. 18 (2018) 1333--1396.
+\bibitem{Sch64} L.~Schuchman, Dither signals and their effect on quantization noise, IEEE Trans. Commun. Technol. 12 (1964) 162--165.
+\bibitem{BL23} M.~B. Botnan and M.~Lesnick, An introduction to multiparameter persistence, in Representations of Algebras and Related Structures, EMS Press, Berlin (2023) 77--150.
+\bibitem{BLO22} M.~B. Botnan, V.~Lebovici, and S.~Oudot, On rectangle-decomposable 2-parameter persistence modules, Discrete Comput. Geom. 68 (2022) 1078--1101.
+\bibitem{Vip20} O.~Vipond, Local equivalence of metrics for multiparameter persistence modules, arXiv:2004.11926 (2020).
+\bibitem{CDFFL13} A.~Cerri, B.~Di Fabio, M.~Ferri, P.~Frosini, and C.~Landi, Betti numbers in multidimensional persistent homology are stable functions, Math. Methods Appl. Sci. 36 (2013) 1543--1557.
+\bibitem{KN20} M.~Kerber and A.~Nigmetov, Efficient approximation of the matching distance for 2-parameter persistence, in Proc. 36th Symp. Comput. Geom., LIPIcs 164 (2020) 53:1--53:16.
+\bibitem{BHLMS23} R.~Brooks, C.~Hacker, C.~Landi, B.~I. Mahler, and E.~R. Stephenson, Switch points of bi-persistence matching distance, arXiv:2312.02955 (2023).
+\bibitem{RR07} A.~Rahimi and B.~Recht, Random features for large-scale kernel machines, in Advances in Neural Information Processing Systems 20 (2007).
+\bibitem{KFH16} G.~Kusano, K.~Fukumizu, and Y.~Hiraoka, Persistence weighted Gaussian kernel for topological data analysis, in Proc. 33rd Int. Conf. Machine Learning, PMLR 48 (2016) 2004--2013.
+\bibitem{CB19} M.~Carri\`ere and U.~Bauer, On the metric distortion of embedding persistence diagrams into separable Hilbert spaces, in Proc. 35th Symp. Comput. Geom., LIPIcs 129 (2019) 21:1--21:15.
+\bibitem{BW20} P.~Bubenik and A.~Wagner, Embeddings of persistence diagrams into Hilbert spaces, J. Appl. Comput. Topol. 4 (2020) 339--351.
+\bibitem{MV24} A.~Mitra and \v Z.~Virk, Geometric embeddings of spaces of persistence diagrams with explicit distortions, arXiv:2401.05298 (2024).
+\bibitem{Whi44} H.~Whitney, The self-intersections of a smooth $n$-manifold in $2n$-space, Ann. of Math. 45 (1944) 220--246.
+\bibitem{CHLP22} Y.-M. Chung, M.~Hull, A.~Lawson, and N.~Pritchard, Gaussian persistence curves, J. Stat. Theory Pract. 20 (2026) 18.
+\bibitem{AEK17} H.~Adams, T.~Emerson, M.~Kirby, R.~Neville, C.~Peterson, P.~Shipman, S.~Chepushtanova, E.~Hanson, F.~Motta, and L.~Ziegelmeier, Persistence images: a stable vector representation of persistent homology, J. Mach. Learn. Res. 18 (2017) 1--35.
+\bibitem{Bub15} P.~Bubenik, Statistical topological data analysis using persistence landscapes, J. Mach. Learn. Res. 16 (2015) 77--102.
+\bibitem{ACC16} A.~Adcock, E.~Carlsson, and G.~Carlsson, The ring of algebraic functions on persistence bar codes, Homology Homotopy Appl. 18 (2016) 381--402.
+\bibitem{Kal19} S.~Kali\v snik, Tropical coordinates on the space of persistence barcodes, Found. Comput. Math. 19 (2019) 101--129.
+\bibitem{CEM06} D.~Cohen-Steiner, H.~Edelsbrunner, and D.~Morozov, Vines and vineyards by updating persistence in linear time, in Proc. 22nd Symp. Comput. Geom. (2006) 119--126.
+\bibitem{DH21} T.~K. Dey and T.~Hou, Updating barcodes and representatives for zigzag persistence, arXiv:2112.02352 (2021).
+\bibitem{Hic22} A.~Hickok, Persistence diagram bundles: a multidimensional generalization of vineyards, arXiv:2210.05124 (2022).
+\bibitem{GM26} B.~Giunti and E.~Munch, Canopies: a generalization of vines and vineyards for parameterized persistence, arXiv:2606.23859 (2026).
+
+\bibitem{MMS23} N.~Merino Negrete, C.~Maldonado, and R.~Salgado-Garc\'ia, \emph{Sorting ECGs by lag irreversibility}, Physica D \textbf{459} (2023) 134022; arXiv:2307.15998.
+
+\bibitem{LP23} S.~Liang and S.~Pigolotti, \emph{Thermodynamic bounds on time-reversal asymmetry}, Phys. Rev. E \textbf{108} (2023) L062101. DOI: 10.1103/PhysRevE.108.L062101.
+
+\bibitem{VVS24} T.~Van Vu, V.~T. Vo, and K.~Saito, \emph{Dissipation, quantum coherence, and asymmetry of finite-time cross-correlations}, Phys. Rev. Research \textbf{6} (2024) 013273. DOI: 10.1103/PhysRevResearch.6.013273.
+
+\bibitem{Auc19} A.~Auconi, A.~Giansanti, and E.~Klipp, \emph{Information thermodynamics for time series of signal-response models}, Entropy \textbf{21} (2019) 177. DOI: 10.3390/e21020177.
+
+\bibitem{vdMeer22} J.~van der Meer, B.~Ertel, and U.~Seifert, \emph{Thermodynamic inference in partially accessible Markov networks: a unifying perspective from transition-based waiting time distributions}, Phys. Rev. X \textbf{12} (2022) 031025. DOI: 10.1103/PhysRevX.12.031025.
+
+\bibitem{Deg23} J.~Deg\"unther, J.~van der Meer, and U.~Seifert, \emph{Fluctuating entropy production on the coarse-grained level: inference and localization of irreversibility}, arXiv:2309.07665 (2023).
+
+\bibitem{Sei26} U.~Seifert, \emph{Universal bounds on entropy production from fluctuating coarse-grained trajectories}, Nature Reviews Physics (2026); article s42254-026-00954-5.
+
+\bibitem{ACMM13} K.~Avrachenkov, L.~Cottatellucci, L.~Maggi, and Y.-H. Mao, \emph{Maximum entropy mixing time of circulant Markov processes}, Statist. Probab. Lett. \textbf{83} (2013) 768--773. DOI: 10.1016/j.spl.2012.11.022.
+\bibitem{KRV20} A.~Kupiainen, R.~Rhodes, and V.~Vargas, \emph{Integrability of Liouville theory: proof of the DOZZ formula}, Ann. of Math. (2) \textbf{191} (2020), no.~1, 81--166. arXiv:1707.08785.
+\bibitem{ARS22} M.~Ang, G.~Remy, and X.~Sun, \emph{The moduli of annuli in random conformal geometry}, arXiv:2203.12398 (2022).
 \end{thebibliography}
 \end{document}
