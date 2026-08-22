@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred seventy-nine conjectures in mathematics}
+\title{Three hundred eighty-three conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred seventy-nine conjectures in mathematics:\\ the statements}
+\title{Three hundred eighty-three conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -5088,6 +5088,47 @@ Split a one-dimensional system into left and right SSEP bulks and an interior st
 \end{conjecture}
 
 
+\part{Fixed-traffic circulation laws for nonequilibrium Markov chains}
+
+\medskip\noindent\emph{Added to the deposit: 22 August 2026.}\par\medskip
+
+The four conjectures below concern a controlled family of finite-state continuous-time Markov chains---fixed-traffic circulation rays---in which the stationary law, every undirected stationary edge traffic, and every escape rate are held fixed while an irreversible stationary circulation of strength $\alpha$ is increased.  The ray therefore varies time-reversal asymmetry without touching the equilibrium landscape or the local activity.  Two conjectures concern visited-set statistics (Conjectures~\ref{ao1}, \ref{ao3}, \ref{ao4}) and one the spectral geometry of the generator (Conjecture~\ref{ao2}).  Each is a determinate law with a stated mechanism, a nearest-literature boundary, a first decisive theorem, and a route to disproof.  The proved layer is Proposition~\ref{ao:basic}: the endpoint spectral bounds, the exact even-analytic dependence of visited-set laws on $\alpha$, and an explicit high-precision counterexample showing that the natural stronger companion---whole-ray monotonicity of the fast real spectral edge---is \emph{false}, so only the endpoint bound survives there.  Conjecture~\ref{ao2} is the highest-risk of the four and is flagged as such; its own stronger global-unimodality form is also false and is recorded as a control.  The visited-set laws are exact finite-state statements, tested here by exact augmented-chain propagation rather than trajectory sampling, but with the alternating-derivative hierarchy of Conjecture~\ref{ao1} checked only to finite order and flagged accordingly.
+
+Let the state space be $\{1,\dots,n\}$ with stationary law $\pi>0$.  For each undirected edge fix a symmetric traffic $T_{ij}=T_{ji}>0$ and an antisymmetric divergence-free current $J_{ij}=-J_{ji}$, $\sum_jJ_{ij}=0$, with $|J_{ij}|<T_{ij}$.  The circulation ray has off-diagonal rates $L_{\alpha,ij}=(T_{ij}+\alpha J_{ij})/(2\pi_i)$, $0\le\alpha\le1$, and zero row sums; then $\pi$ is stationary, the undirected traffic $q_{ij}(\alpha)+q_{ji}(\alpha)=T_{ij}$ and the escape rate $r_i=\tfrac1{2\pi_i}\sum_jT_{ij}$ are $\alpha$-independent.  Writing $H_\alpha=-D^{1/2}L_\alpha D^{-1/2}$ with $D=\operatorname{diag}(\pi)$ and restricting off the stationary mode gives $G_\alpha=K+\alpha C$ with $K=K^\ast\succ0$ and $C^\ast=-C$.  Let $h(\alpha)=\max\{\Re\lambda:\lambda\in\sigma(-L_\alpha)\setminus\{0\}\}$ and $g(\alpha)=\min\{\Re\lambda:\lambda\in\sigma(-L_\alpha)\setminus\{0\}\}$ be the fast and slow real spectral edges.  Let $V_t=\{X_s:0\le s\le t\}$ be the visited set, $w_i^{(\gamma)}=\pi_i^\gamma/\sum_j\pi_j^\gamma$ escort weights, and $U_{\gamma,t}=\sum_iw_i^{(\gamma)}\mathbf 1_{\{\tau_i>t\}}$ the unexplored escort mass, with $x=\alpha^2$.
+
+\begin{proposition}[Endpoint bounds, even dependence, and the failure of fast-edge ray monotonicity]\label{ao:basic}
+For every ray, $\Re\lambda(G_\alpha)\in[\lambda_{\min}(K),\lambda_{\max}(K)]$, so $h(\alpha)\le h(0)=\lambda_{\max}(K)$ and $g(\alpha)\ge g(0)=\lambda_{\min}(K)$.  Under a stationary start, path reversal maps the law of $L_\alpha$ to that of $L_{-\alpha}$ and fixes every visited-set statistic, so $V_t^{(\alpha)}\overset d=V_t^{(-\alpha)}$ and all finite-state visited-set probabilities are even analytic functions of $\alpha$, whence $x=\alpha^2$ is the natural variable.  The endpoint bound does \emph{not} extend to whole-ray monotonicity of the fast edge: there is a bidirected six-state ray on which $h(\alpha)$ strictly increases over an interior interval by more than $0.6$, verified to $40$ digits, so the companion statement $h(\beta)\le h(\alpha)$ for $\alpha\le\beta$ is false.
+\end{proposition}
+
+\section{Visited-set and spectral circulation laws}
+
+\begin{conjecture}[Escort unexplored-mass alternating-derivative hierarchy]\label{ao1}
+For every integer $k\ge1$, integer $r\ge0$, time $t\ge0$, and $0\le\gamma\le1$, with $x=\alpha^2$,
+\[
+(-1)^r\frac{d^r}{dx^r}\,\mathbb E_{\sqrt x}\!\bigl[U_{\gamma,t}^{\,k}\bigr]\ge0
+\]
+throughout the admissible physical interval.
+\end{conjecture}
+
+\begin{conjecture}[One-maximum principle for the slow spectral edge]\label{ao2}
+The slow real spectral edge $g(\alpha)$ has at most one strict interior local maximum on $(0,1)$.
+\end{conjecture}
+
+\begin{conjecture}[Unicyclic range stochastic acceleration]\label{ao3}
+For every bidirected chain whose undirected support is connected of cycle rank one, with $X_0\sim\pi$ and $R_t=|V_t|$: for every $m$, $t\ge0$, and $0\le\alpha\le\beta\le1$,
+\[
+\Pr_\beta(R_t\ge m)\ge\Pr_\alpha(R_t\ge m).
+\]
+\end{conjecture}
+
+\begin{conjecture}[Pure-cycle stationary-mass coverage acceleration]\label{ao4}
+For a simple-cycle support with $X_0\sim\pi$ and $M_t=\pi(V_t)$: for every $z\in[0,1]$, $t\ge0$, and $0\le\alpha\le\beta\le1$,
+\[
+\Pr_\beta(M_t\ge z)\ge\Pr_\alpha(M_t\ge z).
+\]
+\end{conjecture}
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -5602,5 +5643,9 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{DankovicMMY26} I.~Dankovic, M.~Markering, J.~Miller, and Y.~Yuan, \emph{The scaling limit of random walk and the intrinsic metric on planar critical percolation}, arXiv:2604.14122 (2026).
 \bibitem{ChatterjeeCP16} R.~Chatterjee, S.~Chatterjee, and P.~Pradhan, \emph{Symmetric exclusion processes on a ring with moving defects}, Phys. Rev. E \textbf{93} (2016) 062124; arXiv:1602.02691.
 \bibitem{FrancoFrancoGoncalves26} M.~Franco, T.~Franco, and P.~Gon\c calves, \emph{Finite reservoirs lead to Wentzell boundary conditions for independent random walks and exclusion process}, arXiv:2604.02579 (2026).
+\bibitem{ChenHwang13} T.-L. Chen and C.-R. Hwang, \emph{Accelerating reversible Markov chains}, Statist. Probab. Lett. \textbf{83} (2013) 1956--1962.
+\bibitem{ReyBelletSpiliopoulos16} L.~Rey-Bellet and K.~Spiliopoulos, \emph{Improving the convergence of reversible samplers}, J. Stat. Phys. \textbf{164} (2016) 472--494.
+\bibitem{HuangMao17} L.-J. Huang and Y.-H. Mao, \emph{On some mixing times for nonreversible finite Markov chains}, J. Appl. Probab. \textbf{54} (2017) 627--637.
+\bibitem{HuaChen22} C.-W. Hua and T.-L. Chen, \emph{On multiple acceleration of reversible Markov chain}, Statist. Probab. Lett. \textbf{189} (2022) 109559.
 \end{thebibliography}
 \end{document}
