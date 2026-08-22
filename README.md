@@ -1,8 +1,8 @@
-# Three hundred thirty-six conjectures in mathematics
+# Three hundred fifty-one conjectures in mathematics
 
 This repository contains:
 
-- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: three hundred thirty-six conjectures in twenty parts, each with its mechanism,
+- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: three hundred fifty-one conjectures in twenty-one parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -84,7 +84,20 @@ This repository contains:
   geometry: strict log-concavity of the DOZZ Liouville structure
   constant in the internal momentum throughout an interior charge
   chamber, and strict log-concavity of the exact Brownian-annulus
-  modulus density in the logarithmic modulus.
+  modulus density in the logarithmic modulus; and Part XXI (337–351)
+  turns to theoretical fluid dynamics with fifteen sharp singular-behaviour
+  laws for the incompressible Euler, Navier–Stokes, Boussinesq,
+  generalized SQG, and point-vortex systems: bulk-quantile and
+  gradient-sparsity constraints on 2D small-scale creation and a
+  vanishing-viscosity branch-selection law, a two-band spectral desert and
+  a bracket-depth universality for enhanced dissipation, Frenet-torsion and
+  stretching-coherence barriers and a weak-Lorentz Lamb regularity
+  criterion in three dimensions, a helicity-defect envelope and a
+  Diophantine rotation law, a critical-Richardson viscous log anomaly, a
+  generalized-SQG neck similarity law and a Boussinesq source-core
+  co-location, and a minimal-core point-vortex collapse principle with a
+  non-Beltramization barrier, every statement flagged as beyond any finite
+  computation.
   Fourteen conjectures
   (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229, 328) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
@@ -114,7 +127,7 @@ This repository contains:
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
   (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `wx_shock_landau.py` and `ehrhart_cov_gamma.py` (the shock forcing, Landau-floor, Ehrhart-scaling, covariance, and coverage resolutions of Parts VI--VII and IX--X), `y_shape_laws.py` (Part VIII),
-  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), `ae_projective_laws.py` (Part XIV), `af_saw_laws.py` (Part XV), `ag_noneq_laws.py` (Part XVI), `ah_evt_laws.py` (Part XVII), `ai_tda_laws.py` (Part XVIII), `aj_neq_laws.py` (Part XIX), `ak_cft_shape_laws.py` (Part XX), and `t5_*.py` (Part III),
+  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), `ae_projective_laws.py` (Part XIV), `af_saw_laws.py` (Part XV), `ag_noneq_laws.py` (Part XVI), `ah_evt_laws.py` (Part XVII), `ai_tda_laws.py` (Part XVIII), `aj_neq_laws.py` (Part XIX), `ak_cft_shape_laws.py` (Part XX), `al_fluid_laws.py` (Part XXI), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base

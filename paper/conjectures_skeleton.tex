@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred thirty-six conjectures in mathematics}
+\title{Three hundred fifty-one conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred thirty-six conjectures in mathematics:\\ the statements}
+\title{Three hundred fifty-one conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -4846,6 +4846,91 @@ s\longmapsto\log p_x(e^s)\quad\text{is strictly concave on }\R.
 \]
 \end{conjecture}
 
+\part{Bold conjectures in theoretical fluid dynamics}
+
+\medskip\noindent\emph{Added to the deposit: 22 August 2026.}\par\medskip
+
+The fifteen conjectures below are sharp, falsifiable statements about the small-scale and singular behaviour of the incompressible Euler, Navier--Stokes, Boussinesq, generalized surface quasi-geostrophic, and point-vortex systems.  They fall in six groups: two-dimensional small-scale creation (Conjectures~\ref{al1} to~\ref{al3}), enhanced dissipation and hypoelliptic mixing (Conjectures~\ref{al4} and~\ref{al5}), the geometry and regularity of three-dimensional Euler and Navier--Stokes singularities (Conjectures~\ref{al6} to~\ref{al8}), band-limited kinematics and rapid rotation (Conjectures~\ref{al9} and~\ref{al10}), stratified and active-scalar singularities (Conjectures~\ref{al11} to~\ref{al13}), and point-vortex collapse and non-Beltramization (Conjectures~\ref{al14} and~\ref{al15}).  Each is a determinate law with a stated mechanism, a nearest-literature boundary, a first decisive theorem, and a route to disproof, and each is deliberately bold: a proof or a counterexample would reorganize how one reads the corresponding small-scale or singular problem.  The proved layer is Proposition~\ref{al:anchors}: the exact three-vortex self-similar collapse anchor, the degenerate one-drift enhanced-dissipation exponent, the homogeneity-reduced generalized-SQG neck reduction, and the exact Beltrami Lamb-vector identity with Frenet dilation invariance.  These are statements about continuum solutions---blow-up signatures, vanishing-viscosity and large-bandwidth limits, and long-time or asymptotic laws---so they lie beyond any finite computation and every one is flagged as such; the accompanying diagnostics test reduced models, exact anchors, or prerequisite scalings, never the full law.  Several carry attribution flags where a sharp exponent or anchor is due to earlier work: the degenerate-shear exponent of Albritton, Beekie, and Novack~\cite{ABN22} (Conjecture~\ref{al5}), the Lorentz-endpoint boundary of Phuc~\cite{Phuc15} (Conjecture~\ref{al8}), and the self-similar three-vortex collapse of Aref~\cite{Aref10} (Conjecture~\ref{al14}); Conjecture~\ref{al11} carries the part's sharpest novelty flag, since at equal viscosity and diffusivity its critical-layer anomaly may reduce to known inviscid repeated-root asymptotics times the Kelvin diffusion factor, and only its sharp generic coefficient is claimed as new.
+
+Throughout, $u$ is a divergence-free velocity field on the flat torus or on $\mathbb R^d$, $\omega=\nabla\times u$ (the scalar curl in two dimensions) its vorticity, $S=\tfrac12(\nabla u+\nabla u^\top)$ the strain, $\xi=\omega/|\omega|$ the vorticity direction, and $\hat f(k)$ the Fourier coefficients.  Objects specific to a single conjecture are defined in its statement.
+
+\begin{proposition}[Exact anchors and reductions]\label{al:anchors}
+{\rm(i)} For three planar point vortices with circulations $\Gamma=(\Gamma_1,\Gamma_2,\Gamma_3)$ satisfying $\Gamma_1\Gamma_2+\Gamma_2\Gamma_3+\Gamma_3\Gamma_1=0$ and vanishing angular impulse, the motion is exactly self-similar with a finite-time collapse or expansion; the symmetric choice $\Gamma=(1,1,-\tfrac12)$ satisfies the collapse condition.  {\rm(ii)} For the degenerate one-drift shear generator $X_0=y^m\partial_x$, $X_1=\partial_y$ with dissipation $-\nu X_1^\ast X_1$, the enhanced-dissipation gap obeys $\operatorname{gap}(L_\nu)\asymp\nu^{m/(m+2)}$ as $\nu\downarrow0$.  {\rm(iii)} The homogeneity-reduced neck equation $\dot d=-d^{\,1-\beta}$, $0<\beta\le1$, has $d(t)=[\beta(T-t)]^{1/\beta}$, so $d(t)\sim a_\beta(T-t)^{1/\beta}$ and, under the reciprocal-curvature ansatz $\kappa_{\max}\sim b_\beta(T-t)^{-1/\beta}$, the product $d\,\kappa_{\max}$ tends to a finite nonzero constant.  {\rm(iv)} A Beltrami field ($u\times\omega\equiv0$), in particular the ABC field, has identically vanishing Lamb vector; and the dimensionless pair (total curvature, scale-invariant torsion variation) of a $C^4$ space curve is invariant under spatial dilation.
+\end{proposition}
+
+\section{Small-scale creation in two-dimensional Euler and Navier--Stokes}
+
+\begin{conjecture}[Bulk-enstrophy spectral front]\label{al1}
+Let $\omega$ be a smooth mean-zero solution of the $2$D Euler equation on $\mathbb T^2$ and, for $q\in(0,1)$, let $K_q(t)=\inf\{K\ge0:\sum_{|k|\le K}|\hat\omega(k,t)|^2\ge q\|\omega(t)\|_2^2\}$ be the radius carrying a fraction $q$ of the enstrophy.  For every $0<q<q'<1$ there are constants $C,c$ depending only on $q,q'$ such that $K_q(t)\le CK_{q'}(0)\exp(c\|\omega_0\|_\infty t)$ for all $t\ge0$.
+\end{conjecture}
+
+\begin{conjecture}[Super-exponential gradient sparsity]\label{al2}
+For $\eta\in(0,1)$ let $G_\eta(t)=\{x:|\nabla\omega(x,t)|\ge\eta\|\nabla\omega(t)\|_\infty\}$.  If a smooth $2$D Euler solution has times $t_n\to\infty$ with $\log\|\nabla\omega(t_n)\|_\infty/t_n\to\infty$, then $|G_\eta(t_n)|\to0$ for every fixed $\eta\in(0,1)$.
+\end{conjecture}
+
+\begin{conjecture}[Vanishing-viscosity global branch selection]\label{al3}
+On $\mathbb T^2$ fix mean-zero vorticity and initial palinstrophy $P(\omega_0)=P_0>0$.  For viscosity $\nu>0$ and horizon $T$ let $D_{\nu,T}=\nu\int_0^T\|\nabla\omega(t)\|_2^2\,dt$ and $M_{\nu,T}$ its supremum under the palinstrophy constraint.  Fix $\tau\in(0,\infty)$, let $\nu_j\to0$ and $T_j\sqrt{P_0}\to\tau$, and take relative near-maximizers $D_{\nu_j,T_j}(\omega_{0,j})\ge(1-\varepsilon_j)M_{\nu_j,T_j}$ with $\varepsilon_j\to0$.  With $\ell_j=\|\omega_{0,j}\|_2/\|\nabla\omega_{0,j}\|_2$ and $W_j(y)=P_0^{-1/2}\omega_{0,j}(x_j+\ell_jy)$, every concentration limit is, after torus isometries, reflection, and sign, the same nontrivial profile $W_\tau$; equivalently the normalized objectives $\Gamma$-converge at fixed $\tau$ to a variational problem with a unique maximizer modulo these symmetries.
+\end{conjecture}
+
+\section{Enhanced dissipation and hypoelliptic mixing}
+
+\begin{conjecture}[Reeb-graph spectral desert]\label{al4}
+Let $H$ be a Morse Hamiltonian on a compact surface whose regular level sets form finitely many cells with quadratic saddles, and let $L_\nu=-\nabla^\perp H\cdot\nabla+\nu\Delta$ on mean-zero scalars.  In every fixed bounded window of imaginary frequency, as $\nu\to0$ the spectrum splits into slow eigenvalues $\lambda_j(\nu)=-\nu\mu_j+o(\nu)$, where $\mu_j$ are the eigenvalues of the effective weighted diffusion on the Reeb graph of $H$, and remaining eigenvalues with $\Re\lambda\le-c_H\nu^{1/2}$; in particular no eigenvalue branch decays at a rate $\nu^\alpha$ with $\tfrac12<\alpha<1$.
+\end{conjecture}
+
+\begin{conjecture}[H\"ormander-step enhanced-dissipation universality]\label{al5}
+Consider $\partial_tf+X_0f=-\nu\sum_{j=1}^rX_j^\ast X_jf$ on a compact manifold with smooth invariant volume, $X_0$ volume-preserving, in a one-drift equiregular H\"ormander class where the missing drift directions are generated by Lie words containing exactly one $X_0$ and repeated commutators with the diffusive fields.  Let $m$ be the maximal number of diffusive commutators needed to span the tangent space.  If there is no nonconstant common first integral, then $\operatorname{gap}(L_\nu)\asymp\nu^{m/(m+2)}$ as $\nu\to0$.
+\end{conjecture}
+
+\section{Geometry and regularity of three-dimensional singularities}
+
+\begin{conjecture}[Frenet-frame completion barrier]\label{al6}
+Suppose a Type-I Euler singularity at $T$ is carried by a connected high-vorticity tube $R_t$ containing a maximum-vorticity point, with radius comparable to the length $L(t)$ of a $C^4$ central vortex-line segment $\gamma_t$ of uniform chord-arc constant and nonvanishing curvature, so that Frenet torsion $\tau$ and $\partial_s\tau$ are defined.  With $K(t)=\int\kappa\,ds$ and $\mathrm{Tor}(t)=\int L(t)|\partial_s\tau|/(1+L(t)|\tau|)\,ds$, one has $\limsup_{t\to T}[K(t)+\mathrm{Tor}(t)]=\infty$.
+\end{conjecture}
+
+\begin{conjecture}[Type-I stretching coherence]\label{al7}
+Let $\Omega(t)=\|\omega(t)\|_\infty$, $A_\lambda(t)=\{x:|\omega(x,t)|\ge\lambda\Omega(t)\}$, $\alpha=\xi\cdot S\xi$, and let $\bar\alpha_\lambda,V_\lambda$ be the $|\omega|^2$-weighted mean and standard deviation of $\alpha$ over $A_\lambda$.  If a Type-I singularity satisfies $0<c\le(T-t)\Omega(t)\le C$, then for every $\lambda$ sufficiently close to $1$ there is a sequence $t_n\to T$ with $(T-t_n)\bar\alpha_\lambda(t_n)\to1$ and $(T-t_n)V_\lambda(t_n)\to0$.
+\end{conjecture}
+
+\begin{conjecture}[Weak-Lorentz projected-Lamb regularity criterion]\label{al8}
+Let $u$ be a Leray--Hopf solution of the $3$D Navier--Stokes equations on $\mathbb R^3$, or on $\mathbb T^3$ in the Galilean frame with mean velocity zero, let $\omega=\nabla\times u$, $P$ the Leray projector, and $\Lambda=P(u\times\omega)$ the projected Lamb vector.  If $\Lambda\in L^2((0,T);L^{3/2,\infty}_x)$, then $u$ is smooth on $(0,T]$.
+\end{conjecture}
+
+\section{Band-limited kinematics and rapid rotation}
+
+\begin{conjecture}[Helicity-defect law for stretching extremals]\label{al9}
+Let $V_N$ be divergence-free mean-zero fields on $\mathbb T^3$ with Fourier support $|k|\le N$.  Fix admissible kinetic energy $K$ and enstrophy $E$, put relative helicity $\rho=H/(2\sqrt{KE})$, and let $M_N(\rho;K,E)=\sup|\int\omega\cdot S\omega|$ over $V_N$ at these constraints and helicity $\rho$.  Whenever $\rho$ and $0$ are both uniformly feasible as $N\to\infty$, $M_N(\rho;K,E)/M_N(0;K,E)\to(1-\rho^2)^{3/2}$ locally uniformly for $\rho$ in compact subsets of $(-1,1)$.
+\end{conjecture}
+
+\begin{conjecture}[Diophantine small-divisor rotation law]\label{al10}
+For $K\ge1$ let $\delta(K)$ be the minimum nonzero inertial-wave triad detuning among triads with maximal wavenumber at most $K$ on an anisotropic torus, and assume the sharp arithmetic law $\delta(K)=K^{-\tau+o(1)}$.  For fixed smooth data and $O(1)$ times let $E(\Omega,\nu)$ be the error between rotating $3$D Navier--Stokes at rotation $\Omega$ and its exact-resonant normal form in a fixed lower Sobolev norm.  In the joint regime $K_\ast=(\Omega/\nu)^{1/(\tau+2)}\to\infty$ and $\epsilon_\ast=(\Omega^2\nu^\tau)^{-1/(\tau+2)}\to0$, one has $E(\Omega,\nu)=\epsilon_\ast^{1+o(1)}$ up to Sobolev-loss, subpower, and data constants, and the $\Omega$ power cannot be uniformly improved over tori realizing the same sharp $\tau$.
+\end{conjecture}
+
+\section{Stratified and active-scalar singularities}
+
+\begin{conjecture}[Critical-Richardson viscous log anomaly]\label{al11}
+For a fixed Kelvin ray $(k,\eta)$, $k\ne0$, in the linearized equally viscous and diffusive $2$D Boussinesq system about Couette flow at Richardson number $\mathrm{Ri}=\tfrac14$, let $\hat\omega_{k,\eta}(t)$ be the vorticity amplitude along the sheared frequency $(k,\eta-kt)$.  For generic data with nonzero projection onto the repeated critical indicial mode, $\sup_{1\le t\le c(\nu k^2)^{-1/3}}|\hat\omega_{k,\eta}(t)|/(1+t)^{1/2}\sim C_{k,\eta}\log(1/\nu)$ as $\nu\to0$, with $C_{k,\eta}>0$; for every fixed $\mathrm{Ri}>\tfrac14$ the analogous normalized supremum is $O(1)$.
+\end{conjecture}
+
+\begin{conjecture}[Generalized-SQG neck-curvature similarity law]\label{al12}
+Use $u=\nabla^\perp\Lambda^{-2+\beta}\theta$ with $0<\beta\le1$.  Suppose a smooth generalized-SQG patch boundary develops a single symmetric self-similar neck singularity at $T$, with minimum opposing-boundary distance $d(t)$ and maximum curvature $\kappa_{\max}(t)$ in the same similarity core.  Then $d(t)\sim a_\beta(T-t)^{1/\beta}$, $\kappa_{\max}(t)\sim b_\beta(T-t)^{-1/\beta}$, and $d(t)\kappa_{\max}(t)\to c_\beta\in(0,\infty)$.
+\end{conjecture}
+
+\begin{conjecture}[Boussinesq source-core co-location and alignment]\label{al13}
+On $\mathbb T^2$ let $\theta^\circ=\theta-\langle\theta\rangle$, $\ell_\theta=\|\theta^\circ\|_\infty/\|\nabla\theta\|_\infty$, $A^\omega_\lambda=\{|\omega|\ge\lambda\|\omega\|_\infty\}$, and $A^\theta_\lambda=\{|\partial_x\theta|\ge\lambda\|\partial_x\theta\|_\infty\}$.  If a smooth inviscid Boussinesq solution develops an isolated finite-time singularity at $x_\ast$, then, intersecting both intense sets with a fixed ball isolating the core, for every $\lambda$ close to $1$ the distance between the localized sets divided by $\ell_\theta$ tends to zero; moreover, along a sequence in the core with distinct strain eigenvalues, $\nabla\theta$ aligns with the most compressive strain eigenvector.
+\end{conjecture}
+
+\section{Point-vortex collapse and non-Beltramization}
+
+\begin{conjecture}[Minimal-admissible point-vortex collapse core]\label{al14}
+Fix nonzero circulations for which at least one collapse-admissible subset exists---a subset being admissible if its isolated subsystem has a nontrivial self-similar finite-time collapse---and let $m_\ast$ be the least admissible cardinality.  Let $\mathcal C$ be the set of initial configurations undergoing a finite-time collision, with the resonance loci where two distinct minimal cores collapse simultaneously removed.  Then the union of collision strata whose fastest-collapsing core contains exactly $m_\ast$ vortices is relatively open and dense in $\mathcal C$, while strata with a strictly larger fastest core lie in positive-codimension substrata; and along every collision in this relatively generic set, similarity rescaling of the fastest core converges to an isolated self-similar $m_\ast$-vortex collapse with every spectator asymptotically farther than the core diameter.
+\end{conjecture}
+
+\begin{conjecture}[High-vorticity non-Beltramization barrier]\label{al15}
+On $\mathbb R^3$ with finite energy, or on $\mathbb T^3$ in the zero-mean Galilean frame, let $C_\lambda(t)$ be the connected component of $\{|\omega|\ge\lambda\Omega(t)\}$ containing a maximum-vorticity point, and $B_\lambda(t)=\int_{C_\lambda}|u\times\omega|^2/\int_{C_\lambda}|u|^2|\omega|^2$ when the denominator is nonzero.  Any Type-I Euler singularity with $0<c\le(T-t)\Omega(t)\le C$ satisfies $\limsup_{t\to T}B_\lambda(t)>0$ for every $\lambda$ sufficiently close to $1$.
+\end{conjecture}
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -5315,5 +5400,27 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{ACMM13} K.~Avrachenkov, L.~Cottatellucci, L.~Maggi, and Y.-H. Mao, \emph{Maximum entropy mixing time of circulant Markov processes}, Statist. Probab. Lett. \textbf{83} (2013) 768--773. DOI: 10.1016/j.spl.2012.11.022.
 \bibitem{KRV20} A.~Kupiainen, R.~Rhodes, and V.~Vargas, \emph{Integrability of Liouville theory: proof of the DOZZ formula}, Ann. of Math. (2) \textbf{191} (2020), no.~1, 81--166. arXiv:1707.08785.
 \bibitem{ARS22} M.~Ang, G.~Remy, and X.~Sun, \emph{The moduli of annuli in random conformal geometry}, arXiv:2203.12398 (2022).
+\bibitem{KiselevSverak14} A.~Kiselev and V.~\v Sver\'ak, \emph{Small scale creation for solutions of the incompressible two-dimensional Euler equation}, Ann. of Math. \textbf{180} (2014) 1205--1220.
+\bibitem{Denisov15} S.~A. Denisov, \emph{Double exponential growth of the vorticity gradient for the two-dimensional Euler equation}, Proc. Amer. Math. Soc. \textbf{143} (2015) 1199--1210.
+\bibitem{AyalaProtas14} D.~Ayala and B.~Protas, \emph{Maximum palinstrophy growth in 2D incompressible flows}, J. Fluid Mech. \textbf{742} (2014).
+\bibitem{AyalaDoeringSimon18} D.~Ayala, C.~R. Doering, and T.~M. Simon, \emph{Maximum palinstrophy amplification in the two-dimensional Navier--Stokes equations}, J. Fluid Mech. (2018).
+\bibitem{Matharu22} P.~Matharu, T.~Yoneda, and B.~Protas, \emph{On maximum enstrophy dissipation in 2D Navier--Stokes flows in the limit of vanishing viscosity}, Physica D (2022); arXiv:2206.03607.
+\bibitem{FreidlinWentzell93} M.~Freidlin and A.~Wentzell, \emph{Diffusion processes on graphs and the averaging principle}, Ann. Probab. (1993).
+\bibitem{Brue24} E.~Bru\`e, M.~Coti Zelati, and E.~Marconi, \emph{Enhanced dissipation for two-dimensional Hamiltonian flows}, Arch. Ration. Mech. Anal. \textbf{248} (2024) 84.
+\bibitem{ABN22} D.~Albritton, R.~Beekie, and M.~Novack, \emph{Enhanced dissipation and H\"ormander's hypoellipticity}, J. Funct. Anal. \textbf{283} (2022) 109522.
+\bibitem{Gibbon08} J.~D. Gibbon, \emph{The three-dimensional Euler equations: where do we stand?}, Physica D \textbf{237} (2008) 1894--1904.
+\bibitem{BKM84} J.~T. Beale, T.~Kato, and A.~Majda, \emph{Remarks on the breakdown of smooth solutions for the 3-D Euler equations}, Comm. Pure Appl. Math. \textbf{37} (1984) 203--214.
+\bibitem{FarhatGrujic19} A.~Farhat and Z.~Gruji\'c, \emph{Local near-Beltrami structure and depletion of the nonlinearity in the 3D Navier--Stokes flows}, J. Nonlinear Sci. \textbf{29} (2019) 803--812; arXiv:1804.08238.
+\bibitem{ChengSakellaris23} B.~Cheng and Z.~N. Sakellaris, \emph{Near-resonance approximation of rotating Navier--Stokes equations}, Nonlinearity \textbf{36} (2023) 2074--2127.
+\bibitem{YangLin18} J.~Yang and Z.~Lin, \emph{Linear inviscid damping for Couette flow in stratified fluid}, J. Math. Fluid Mech. \textbf{20} (2018) 445--472.
+\bibitem{MSHZ25} N.~Masmoudi, B.~Said-Houari, and W.~Zhao, \emph{Linear asymptotic stability for the Couette flow in stratified fluid with high Richardson's number}, J. Differential Equations \textbf{449} (2025) 113684.
+\bibitem{KiselevLuo23} A.~Kiselev and X.~Luo, \emph{On nonexistence of splash singularities for the $\alpha$-SQG patches}, J. Nonlinear Sci. \textbf{33} (2023).
+\bibitem{GancedoPatel18} F.~Gancedo and N.~Patel, \emph{On the local existence and blow-up for generalized SQG patches}, arXiv:1811.00530 (2018).
+\bibitem{Hou26gsqg} T.~Y. Hou, X.~Qin, Y.~Sire, and Y.~Wu, \emph{Self-similar blow-up profile for the one-dimensional reduction of generalized SQG with infinite energy}, arXiv:2603.11301 (2026).
+\bibitem{GrundyKay03} R.~E. Grundy and A.~Kay, \emph{The asymptotics of blow-up in inviscid Boussinesq flow and related systems}, IMA J. Appl. Math. \textbf{68} (2003) 47--81.
+\bibitem{Sarria15} A.~Sarria, \emph{Blowup in stagnation-point form solutions of the inviscid 2d Boussinesq equations}, J. Differential Equations \textbf{259} (2015) 3559--3576.
+\bibitem{Aref10} H.~Aref, \emph{Self-similar motion of three point vortices}, Phys. Fluids \textbf{22} (2010) 057104.
+\bibitem{Drivas26} T.~D. Drivas, B.~A. Khanikati, and V.~A. Khanikati, \emph{On the collapse of three point vortices on surfaces}, arXiv:2607.16490 (2026).
+\bibitem{Phuc15} N.~C. Phuc, \emph{The Navier--Stokes equations in nonendpoint borderline Lorentz spaces}, J. Math. Fluid Mech. \textbf{17} (2015) 741--760; arXiv:1407.5129.
 \end{thebibliography}
 \end{document}
