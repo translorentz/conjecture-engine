@@ -1,0 +1,467 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{cleveref}
+\crefname{conjecture}{Conjecture}{Conjectures}
+\Crefname{conjecture}{Conjecture}{Conjectures}
+
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\polylog}{\operatorname{polylog}}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\tw}{tw}
+\DeclareMathOperator{\Tr}{Tr}
+
+\title{Twelve promise-class conjectures for certified polynomial-time
+many-electron approximation\\[4pt]
+\large A companion collection to \emph{Three hundred nineteen conjectures in mathematics}}
+\author{}
+\date{Added to the companion deposit: 21 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is a companion collection to the main conjecture suite, and it is held to a
+deliberately weaker and clearly separated standard of evidence.  The main
+collection states exact, unconditional mathematical laws, each reproduced
+numerically to the stated precision.  The twelve conjectures here are of a
+different genre: each is a \emph{conditional, promise-class} statement asserting
+that, on an explicitly defined structural promise class, a certified
+bounded-error classical algorithm for a finite-basis many-electron ground-state
+problem runs in polynomial time.  None of them claims an unconditional
+polynomial-time solver for arbitrary electronic Hamiltonians, which would
+conflict with the fermionic-sign, $\mathrm{QMA}$-hardness, and
+$N$-representability barriers~\cite{R1,R2,R3}.  The computational evidence
+offered here is correspondingly weaker than in the main collection: it verifies
+the standard sub-lemmas the reasoning uses and exercises the mechanisms on small
+exactly diagonalizable proxies, and it is \emph{not} asymptotic validation of any
+of the twelve structural laws.  What each conjecture does provide is a crisp
+falsifier: an adverse scaling of one identified structural quantity refutes it.
+The value of the collection is that discipline, not a claim of proof.
+\end{abstract}
+
+\section*{Standard of evidence}
+\addcontentsline{toc}{section}{Standard of evidence}
+Three separations from the main collection are stated once, here, and hold
+throughout.
+\begin{itemize}
+\item \emph{Conditional, not exact.}  Every polynomial-time statement below is
+conditioned on an explicit promise class.  Where a step is not yet derived
+(polynomial conditioning, tractable separators, a certified polynomial-time
+structure for a nonconvex optimization, low approximation rank, and the like) it
+is stated as part of the promise rather than silently assumed.  A promise class
+that quietly encodes its own conclusion would make the corresponding conjecture
+vacuous; the falsifiers are written to expose exactly that failure.
+\item \emph{Sub-lemma verification only.}  The accompanying script
+\texttt{verify/promise\_lemmas.py} re-derives the shared lemmas of
+Section~\ref{sec:lemmas} and three auxiliary bounds, and it runs small
+exact-diagonalization proxies.  A passing check certifies an \emph{ingredient}
+of the reasoning or a mechanism on a small instance; it is never evidence that
+one of the twelve structural laws holds asymptotically.  The scripts are adapted,
+with attribution, from the source research package.
+\item \emph{Known barriers respected.}  Generic electronic structure is hard: the
+fermionic sign problem~\cite{R1}, $N$-representability is
+$\mathrm{QMA}$-complete~\cite{R2}, and interacting-electron ground states are
+computationally intractable in the worst case~\cite{R3}.  Each conjecture is a
+structural escape hatch for a restricted class, not a challenge to these results.
+\end{itemize}
+
+\section{Scope and the promise-polynomial solver}
+Fix a finite one-particle basis of size $M$ and $N$ electrons.  The Hamiltonian
+$H$ acts on the $N$-electron sector $\Lambda^N\mathbb C^M$ of dimension
+$\binom MN$.  All twelve conjectures are first stated for this finite-basis
+problem; a continuum claim additionally requires a basis promise
+$M=\poly(N,1/\eps)$ with basis error at most $\eps/3$, encouraged but not settled
+by the 2026 sparse-CI regularity analysis~\cite{R4}.  Coefficients, tolerances,
+and every promised conditioning or spectral constant are taken to have
+polynomial bit length, and every numerical primitive a conjecture invokes must be
+executable to the required accuracy in polynomial bit complexity; where this is
+not derived it is part of the promise.
+
+\begin{remark}[Promise-polynomial bounded-error solver]
+A method is \emph{promise-polynomial} for a class if, for every instance in the
+class and every $\eps>0$, it returns an energy within $\eps$ of the ground state
+together with a computable certificate of that accuracy, in time polynomial in
+$n$, $1/\eps$, and the promised constants.  Every formal conjecture below asserts
+that its named construction is promise-polynomial on its promise class.
+\end{remark}
+
+\section{Common lemmas}\label{sec:lemmas}
+These are standard and are used repeatedly; each is re-derived numerically in the
+companion script.  They are ingredients, not conclusions.
+
+\begin{lemma}[Rayleigh continuity]\label{lem:rayleigh}
+For normalized $\psi_0,\phi$, $|\langle\phi,H\phi\rangle-\langle\psi_0,H\psi_0\rangle|\le2\lVert H\rVert\,\lVert\phi-\psi_0\rVert$.
+\end{lemma}
+\begin{lemma}[Energy-to-fidelity under a gap]\label{lem:gap}
+If $H\psi_0=E_0\psi_0$ with spectral gap $\Delta$ and $\phi$ is normalized, then $\langle\phi,H\phi\rangle-E_0\ge\Delta(1-|\langle\psi_0,\phi\rangle|^2)$.
+\end{lemma}
+\begin{lemma}[Krylov row leverage]\label{lem:lev}
+If $U$ has orthonormal columns spanning a Krylov space $K$ and $\ell_I=\lVert e_I^\top U\rVert^2$, then for every unit $x\in K$ and determinant subset $S$, $\lVert Q_Sx\rVert^2\le\sum_{I\notin S}\ell_I$.
+\end{lemma}
+\begin{lemma}[Natural-orbital freezing]\label{lem:freeze}
+With exact natural occupations and defect tail $T$, the probability of at least one frozen-orbital defect is $q\le T$; the projected normalized state obeys $\lVert\phi-\psi_0\rVert\le\sqrt{2T}$ and energy error $\le2\sqrt2\,\lVert H\rVert\sqrt T$.
+\end{lemma}
+\begin{lemma}[Feshbach fixed-point perturbation]\label{lem:fesh}
+For $H=\left[\begin{smallmatrix}A&B\\B^*&D\end{smallmatrix}\right]$ and $\Sigma(E)=B(D-E)^{-1}B^*$, if a branch $f(E)=\lambda(A-\Sigma(E))$ is an $L$-contraction and $\sup_E\lVert\Sigma-\Sigma_r\rVert\le\delta$, the fixed-point energy error is $\le\delta/(1-L)$.
+\end{lemma}
+\begin{lemma}[CMI recovery]\label{lem:cmi}
+By Fawzi--Renner~\cite{R13}, a recovery channel has fidelity with $I(A:C\mid B)\ge-2\log F$, so the trace error of a single stitch is $O(\sqrt I)$ and sequential errors accumulate by contractivity and the triangle inequality.
+\end{lemma}
+\begin{lemma}[Treewidth to polynomial]\label{lem:tw}
+An algorithm of cost $\poly(n)\exp(O(t))$ is polynomial when $t=O(\log(n/\eps))$~\cite{R11}.
+\end{lemma}
+
+\section{The twelve conjectures}
+
+\begin{conjecture}[Certified Influence-Graph Coupled Cluster]\label{p1}
+On the promise class below there are fixed $c,\alpha>0$ and a polynomial-time
+procedure that, from a certified excitation-influence graph of logarithmic
+effective radius, returns a Full-CC energy within $\eps$ of the ground state
+together with a computable certificate of that accuracy.
+\end{conjecture}
+\paragraph{Promise class.}  Finite-basis, charge-neutral Hamiltonians in
+localized orbitals with $M=\poly(n)$, bounded orbital density and geometric
+degree; an isolated ground state with gap $\Delta\ge1/\poly(n)$; a single-reference
+Full-CC root $t^*$ at which the CC derivative $Df(t^*)$ is invertible with
+$\lVert Df(t^*)^{-1}\rVert\le\poly(n)$; polynomial local Lipschitz constants
+transferring amplitude error to energy error; a certified influence
+representation with polynomially many seeds and bounded effective branching after
+locality aggregation; exponentially decaying weighted excitation-influence paths;
+and a polynomial-time computable aggregate upper envelope for the omitted-path
+tail, so certification never enumerates all omitted excitations.
+\paragraph{Mechanism and first sub-lemma.}  Near a regular Full-CC root the
+analysis of Hassan--Maday--Wang~\cite{R5} controls amplitude error by
+$\lVert t_R-t^*\rVert\le2\kappa_R\rho_R$, inverse-Jacobian norm times omitted
+residual; Lemma~\ref{lem:rayleigh} then bounds the energy error.  The conjectural
+ingredient is the exponential graph-tail law together with polynomial
+conditioning on the class.
+\paragraph{Nearest literature.}  Selective coupled cluster and commutator
+screening~\cite{R6}, and residual-based Full-CC error control~\cite{R5}; the
+combination with a computable omitted-path certificate and a promise-polynomiality
+claim is the candidate-new element.
+\paragraph{Falsifier.}  A bounded-geometry gapped counterfamily whose outgoing
+influence $W_{\mathrm{out}}(R)$ decays no faster than inverse-polynomial in $R$,
+or with unavoidable super-polynomial Jacobian conditioning.
+
+\begin{conjecture}[Krylov-Leverage Closure Selected CI]\label{p2}
+On the promise class below there is $s=\poly(n,1/\eps)$ such that determinant
+selection by Krylov row-leverage followed by $O(\polylog)$ residual-closure rounds
+yields a space $V_S$ containing a normalized vector within $\eps/(4\lVert H\rVert)$
+of the ground state, in polynomial time.
+\end{conjecture}
+\paragraph{Promise class.}  A cheaply constructible reference $\phi$ with
+$|\langle\phi,\psi_0\rangle|\ge1/\poly(n)$, spectral width $\poly(n)$, and gap
+$\Delta\ge1/\poly(n)$; for $q=\polylog(n/\eps)$ the ground state lies within
+$\eps/\poly(\lVert H\rVert)$ of $K_q=\operatorname{span}\{\phi,\dots,H^{q-1}\phi\}$;
+the leverage distribution of an orthonormal basis of $K_q$ has polynomial
+effective support after Hamiltonian-neighbor closure; and every compressed Krylov
+vector and above-threshold leverage/residual row is generable from a
+polynomial-size determinant frontier without scanning the full basis.
+\paragraph{Mechanism and first sub-lemma.}  Lemma~\ref{lem:lev} makes the omitted
+leverage a rigorous uniform support bound for vectors inside $K_q$; the closure
+rounds are the conjectural ingredient.
+\paragraph{Nearest literature.}  Heat-bath, CIPSI, fast-randomized-iteration, and
+time-evolved selected CI~\cite{R7,R8,R9}; leverage-score selection from a Krylov
+space with residual closure and a two-term certificate appears new.
+\paragraph{Falsifier.}  A promise-class family whose Krylov leverage has no
+polynomial effective support, or where closure fails to reach the target space in
+polylogarithmically many rounds.
+
+\begin{conjecture}[Multiscale Entanglement-Curvature Active Spaces]\label{p3}
+On the promise class below, selecting orbitals by entropy-curvature persistence
+across variational resolutions plus a logarithmic halo yields an active space of
+size $O(\polylog(n/\eps))$ whose solver is polynomial and whose complementary
+correction has a computable polynomial-time bound completing the error to $\eps$.
+\end{conjecture}
+\paragraph{Promise class.}  Systematically improving low-cost states
+$\psi^{(0)},\dots,\psi^{(K)}$ with computable one-orbital entropies $s_i^{(k)}$;
+statically correlated orbitals occur in $O(\polylog(n/\eps))$ persistent
+multiscale curvature events while smooth dynamic correlation has bounded total
+curvature.
+\paragraph{Mechanism and first sub-lemma.}  The score
+$c_i=\sum_k w_k\,|s_i^{(k+1)}-2s_i^{(k)}+s_i^{(k-1)}|$ marks orbitals whose
+one-site entropy changes nonlinearly as resolution grows; Lemma~\ref{lem:freeze}
+supplies the occupation safeguard for near-degenerate occupations.  The
+polylogarithmic active-space bound is conjectural.
+\paragraph{Nearest literature.}  Orbital-entropy active-space selection,
+\texttt{autoCAS}~\cite{R10}; curvature/persistence of entropy across resolution as
+the selection invariant is the new element.
+\paragraph{Falsifier.}  A gapped localized family in which an extensive set of
+orbitals has small but persistent curvature whose cumulative omission gives
+$O(1)$ energy error.
+
+\begin{conjecture}[Cumulant-Treewidth Reconstruction]\label{p4}
+On the promise class below, thresholding a two-body cumulant interaction graph to
+treewidth $O(\log(n/\eps))$ while keeping the discarded-cumulant energy below
+budget yields a polynomial-time tree-decomposition solver for energy and RDMs
+within $\eps$.
+\end{conjecture}
+\paragraph{Promise class.}  Edge weights $w_{ij}=\lVert V_{ij}\rVert_*\,\lVert\Lambda_{ij}\rVert$
+from matched integral and connected-cumulant blocks; for every $\eps$ a threshold
+$\tau$ computable from certified interval-error RDMs whose discarded weight is
+$\le\eps/4$ and whose retained graph has treewidth $t=O(\log(n/\eps))$.  The cost
+of the certified interval bounds is part of the promise and may not be charged to
+a hidden oracle.
+\paragraph{Mechanism and first sub-lemma.}  Lemma~\ref{lem:tw} turns logarithmic
+treewidth into polynomial contraction; the discarded-cumulant-energy budget
+controls the truncation.
+\paragraph{Nearest literature.}  Orbital mutual-information graphs and
+tensor-network/treewidth methods; treewidth defined from thresholded 2-RDM
+cumulant blocks with an omitted-energy budget is the new element.
+\paragraph{Falsifier.}  A counterfamily for which every edge-deletion set of
+cumulative dual-weight $\le\eps$ leaves treewidth $\Omega(n^a)$.
+
+\begin{conjecture}[Feshbach Rational External-Space Compression]\label{p5}
+On the promise class below, compressing the $Q$-space self-energy
+$\Sigma(E)=B(D-E)^{-1}B^*$ by a low-degree rational/Krylov approximant and solving
+the resulting fixed point returns the ground-state energy within $\eps$ in
+polynomial time.
+\end{conjecture}
+\paragraph{Promise class.}  $P$ projects onto a polynomial reference space,
+$Q=I-P$; an interval $I\ni E_0$ with $\dist(I,\sigma(D))\ge g\ge1/\poly(n)$; a
+target branch of $A-\Sigma(E)$ isolated by $\ge1/\poly(n)$; branch Lipschitz
+constant $L<1-1/\poly(n)$; numerical coupling rank $k=\poly(n,\log(1/\eps))$; and
+rational/Krylov approximability of the $Q$-resolvent to operator error $\delta$
+using $r=\polylog(n/\eps)$ applications of $D$, with every $D$-action,
+orthogonalization, and error estimate computable in polynomial time without
+materializing $Q$.
+\paragraph{Mechanism and first sub-lemma.}  Lemma~\ref{lem:fesh} converts a
+uniform resolvent approximation error $\delta$ into effective-Hamiltonian error
+$\delta/(1-L)$; the low rational degree and coupling rank are conjectural.
+\paragraph{Nearest literature.}  Feshbach/downfolding and reduced-order Green's
+function models~\cite{R12}; a certified low-degree rational compression of the CI
+self-energy with a contraction-map root bound is the new element.
+\paragraph{Falsifier.}  A promised family where $\dist(E_0,\sigma(D))$ stays
+inverse-polynomial but the rational-approximation rank of $\Sigma$ is exponential.
+
+\begin{conjecture}[Fermionic Conditional-Mutual-Information Stitching]\label{p6}
+On the promise class below, a parity-preserving recovery-map stitching of local
+patch solutions across $A$--$B$--$C$ separators returns the ground state within
+$\eps$ in polynomial time.
+\end{conjecture}
+\paragraph{Promise class.}  Localized orbitals partitioned into $A$--$B$--$C$
+separators on a bounded-degree graph, in a parity-respecting fermionic
+representation; for every separator with buffer $b$,
+$I(A:C\mid B)_\psi\le C\exp(-\alpha b)$ up to polynomial prefactors; and a
+patch/recovery representation of tractable size, $O(b)$ orbitals or width $O(b)$,
+with each patch solve and recovery map computable to inverse-polynomial precision
+in $\exp(O(b))\poly(n)$ time.
+\paragraph{Mechanism and first sub-lemma.}  Lemma~\ref{lem:cmi} bounds a single
+stitch error by $O(\sqrt I)$ and accumulates them by contractivity; the
+constructive parity-preserving recovery on a tractable-separator class is the
+conjectural ingredient.
+\paragraph{Nearest literature.}  Quantum Markov recovery~\cite{R13}, fermionic
+Gaussian recovery maps~\cite{R14}, and the 2026 universal-CMI-decay
+results~\cite{R22}; the novelty is \emph{not} CMI decay itself but the
+constructive electronic-structure stitching algorithm and its complexity theorem.
+\paragraph{Falsifier.}  A gapped bounded-degree family with CMI bounded below by a
+constant across every logarithmic separator, or with small CMI but no
+polynomially constructible compatible parity-preserving recovery.
+
+\begin{conjecture}[Natural-Occupation Tail Certified Pruning]\label{p7}
+On the promise class below, retaining $O(\polylog(n/\eps))$ correlation orbitals
+per bounded local domain drives the occupation-defect tail $T$ below
+$(\eps/\lVert H\rVert)^2$, certifying the frozen core/virtual to energy error
+$\eps$ in polynomial time.
+\end{conjecture}
+\paragraph{Promise class.}  Exact natural occupations $n_p$; for frozen sets
+$F_0,F_1$ the defect $T=\sum_{p\in F_0}n_p+\sum_{p\in F_1}(1-n_p)$; approximate
+natural orbitals and certified occupation intervals computable in polynomial time;
+and the domain-summed $T$ is $O((\eps/\lVert H\rVert)^2)$ after retaining
+$m=O(\polylog(n/\eps))$ correlation orbitals per bounded local domain.
+\paragraph{Mechanism and first sub-lemma.}  Lemma~\ref{lem:freeze} gives $q\le T$
+and the energy bound $2\sqrt2\,\lVert H\rVert\sqrt T$; the decay of $T$ under
+polylogarithmic retention is the conjectural promise.
+\paragraph{Nearest literature.}  Natural orbitals, occupation truncation, and
+PNOs~\cite{R15}; the explicit global freezing-error certificate $q\le T$ with a
+promise-class decay stopping rule is the new element.
+\paragraph{Falsifier.}  A bounded-density gapped family for which every polynomial
+local-domain retention leaves $T=\Omega(1)$ at fixed accuracy.
+
+\begin{conjecture}[Integral-Frustration Local-Orbital Sign-Gap]\label{p8}
+On the promise class below there are fixed $c,C,\alpha$ with
+$\Delta_s(U)\le Cn^cF_k(U)+Cn^c\exp(-\alpha k)$, and a polynomial algorithm finds
+block-local $U$ with $F_k(U)\le\eps/\poly(n)$ at $k=O(\log(n/\eps))$, in whose
+basis a specified projector-QMC scheme has at worst polynomial sign penalty for
+the projection time reaching energy $\eps$.
+\end{conjecture}
+\paragraph{Promise class.}  $\Delta_s(U)=E_0(H(U))-E_0(H_{\mathrm{abs}}(U))\ge0$ for
+the sign-relaxed Hamiltonian; $U$ a product of rotations on $O(1)$-diameter
+blocks; bounded-degree integral-generated interaction graph after certified
+thresholding of an energy-negligible integral tail; $F_k(U)$ a polynomial-time
+weighted sum of frustrated signed loops of length $\le k$ in the
+\emph{integral-generated} graph, not the exponential determinant graph; and a
+certified polynomial-time structure for the continuous block-rotation optimization
+(a separable/convex factorization or another verifiable oracle), since polynomial
+parameter count alone does not make a nonconvex optimization tractable.
+\paragraph{Mechanism.}  The conjecture bridges an integral-level frustration
+certificate to the determinant sign gap and then to projector-QMC variance; the
+optimization tractability is stated as an explicit promise, not assumed from
+parameter count.
+\paragraph{Nearest literature.}  Basis rotations for sign
+mitigation~\cite{R16,R17,R18}; the integral-level loop-frustration upper
+certificate with a scaling theorem is candidate-new, and this is the highest
+collision-risk item in the collection.
+\paragraph{Falsifier.}  A promised family and rotations with $F_k(U_n)\to0$ for all
+$k=O(\log n)$ but $\Delta_s(U_n)\ge c>0$, or average sign still $\exp(-\Omega(n))$.
+
+\begin{conjecture}[M\"obius Connected-Fragment Exponential Decay]\label{p9}
+On the promise class below, the M\"obius connected increment $\Delta(S)$ of
+embedded correlated fragment energies decays exponentially in fragment diameter
+after subtraction of classical electrostatics and mean-field polarization,
+yielding a computable tail and a polynomial-time bounded-degree connected-cluster
+summation to energy $\eps$.
+\end{conjecture}
+\paragraph{Promise class.}  A bounded-degree graph of localized fragments; a
+size-consistent embedded correlated energy $E_{\mathrm{corr}}(S)$; the connected
+increment $\Delta(S)=\sum_{T\subseteq S}(-1)^{|S|-|T|}E_{\mathrm{corr}}(T)$ with
+the connected-cluster adaptation; neutrality, a gap, bounded density, $O(1)$
+spin-orbitals per fragment, and explicit subtraction of classical
+electrostatics/mean-field polarization.
+\paragraph{Mechanism.}  Second finite differences of open-cluster ground energies
+are a linked-cluster/M\"obius proxy; the conjectural ingredient is the uniform
+exponential bound on embedded increments, whose summation is controlled by
+connected bounded-degree cluster counting rather than unrestricted $n^k$
+enumeration.
+\paragraph{Nearest literature.}  The method of increments and local-correlation
+expansions~\cite{R19}; a uniform exponential bound on embedded M\"obius increments
+yielding a promise FPTAS is the new element.
+\paragraph{Falsifier.}  A neutral gapped bounded-degree family with $|\Delta(S)|$
+having only algebraic non-summable tails after the stated subtraction.
+
+\begin{conjecture}[Globally Budgeted Hierarchical Pair Natural Orbitals]\label{p10}
+On the promise class below, casting all pair ranks as one certified global
+resource-allocation problem yields, in polynomial time, a PNO truncation meeting a
+prescribed total discarded-weight budget with total energy error $\eps$, with
+strict savings over uniform thresholds on heterogeneous instances.
+\end{conjecture}
+\paragraph{Promise class.}  Ordered pair-correlation singular values
+$\sigma_{a,j}$ with tail $\tau_a(r)=\sum_{j>r}\sigma_{a,j}^2$; a computable local
+sensitivity bound $L_a$ converting pair error into total energy error; $O(n)$
+strong pairs after a distance hierarchy; polylogarithmic ranks for each target
+tail; polynomially bounded sensitivities; certified tail/sensitivity intervals;
+and a separable diminishing-returns (discrete-convex) rank-cost structure making
+the global allocation polynomially solvable.
+\paragraph{Mechanism.}  Global sorting of pair modes against a total budget
+replaces per-pair uniform thresholds; the discrete-convex allocation promise makes
+the budgeted optimization polynomial.
+\paragraph{Nearest literature.}  PNO thresholds and complete-PNO
+extrapolation~\cite{R20}; the single certified global sensitivity-weighted
+allocation with a complexity statement is the new element.
+\paragraph{Falsifier.}  A family where every computable polynomial $L_a$ must be
+exponentially loose, or where cross-pair interference invalidates any summable
+tail bound of this form.
+
+\begin{conjecture}[Multipole-Separated Cumulant-Order Bound]\label{p11}
+On the promise class below, a single additive remainder inequality couples
+far-field multipole order $p$ and connected-cumulant order $k$, so that treating
+separations $\le R$ exactly, far cells by multipoles through order $p$, and the
+correlated solver through cumulant order $k$ achieves energy error $\eps$ in
+polynomial time.
+\end{conjecture}
+\paragraph{Promise class.}  Neutral, gapped, bounded-density systems in
+$O(1)$-orbital cells of diameter $a$ on a bounded-degree near-field graph;
+bounded response moments; and exponential clustering of connected \emph{quantum}
+correlations after separating classical electrostatics.
+\paragraph{Mechanism.}  The near-field low-rank far-field split is standard; the
+conjectural ingredient is the joint remainder bounding neglected higher connected
+cumulants after multipole separation, summed by bounded-degree connected-cluster
+counting.
+\paragraph{Nearest literature.}  Fast-multipole/low-rank Coulomb methods and
+local-correlation expansions, separately; the joint far-field/cumulant remainder
+inequality is the new element.
+\paragraph{Falsifier.}  A promised family where, after classical-electrostatic
+separation, connected quantum correlations do not cluster exponentially, or the
+joint remainder is not additively controllable.
+
+\begin{conjecture}[Chordal Local $N$-Representability Dual Certificate]\label{p12}
+On the promise class below, increasing chordal bag width until the certified
+bracket closes gives a polynomial-time algorithm returning
+$E_0\in[L_b,U_b]$ with $U_b-L_b\le\eps$, where $L_b$ is the optimum of a
+principal-block $N$-representability SDP relaxation and $U_b$ any variational
+upper bound.
+\end{conjecture}
+\paragraph{Promise class.}  A weighted orbital cumulant graph with a chordal cover
+of bags $B_j$; global 1-/2-RDM variables (or overlap-consistent bag copies)
+subject only to constraints every global $N$-electron 2-RDM necessarily satisfies
+(principal-submatrix $D/Q/G$ positivity per bag, globally valid
+trace/contraction/spin identities restricted consistently, optionally principal
+$T_2$ blocks); \emph{no} fixed local particle number; every Hamiltonian objective
+coefficient represented by a constrained entry or handled by an explicit rigorous
+residual bound; treewidth $b=O(\log(n/\eps))$; and exponential local-hierarchy
+completeness, $U_b-L_b\le Cn^c\exp(-\alpha b)$.
+\paragraph{Mechanism.}  The bracket is rigorous unconditionally: every exact
+global 2-RDM restricts to feasible principal $D/Q/G$ blocks and satisfies the
+shared identities, so $L_b$ is a genuine lower bound~\cite{R21}, while $U_b$ is
+variational; with $b=O(\log(n/\eps))$ the per-bag SDP has polynomial dimension.
+The single conjectural ingredient is the exponentially closing gap on the promise
+class.
+\paragraph{Nearest literature.}  Variational 2-RDM $D/Q/G$ lower bounds~\cite{R21},
+chordal PSD completion, and fermionic RDM matrix completion~\cite{R23,R24}; the
+low-treewidth principal-block relaxation paired with a variational upper hierarchy
+and a conjectured exponentially closing certified bracket is the new element.
+\paragraph{Falsifier.}  A promised low-treewidth gapped family with
+$U_b-L_b\ge c>0$ for all $b=O(\log n)$, from a genuinely global
+$N$-representability obstruction.
+
+\section{Sub-lemma audit and sanity checks}
+The companion script re-derives Lemmas~\ref{lem:rayleigh}--\ref{lem:tw} and three
+auxiliary bounds used by Conjectures~\ref{p5}, \ref{p8}, and~\ref{p12} (block
+spectral lower bounds; determinant sign-gap nonnegativity; and the block-Gershgorin
+lower-bound proxy for the $N$-representability SDP), and it exercises each
+mechanism on a small exactly diagonalizable instance.  Every re-derived inequality
+holds to machine precision, and each proxy reproduces the qualitative mechanism it
+targets.  This certifies ingredients and mechanisms only; it is not asymptotic
+evidence for any of the twelve structural laws, and no small-instance ``mechanism
+supported'' label should be read as such.
+
+\section*{Relation to the main collection}
+\addcontentsline{toc}{section}{Relation to the main collection}
+This companion is deliberately separated from \emph{Three hundred nineteen
+conjectures in mathematics}.  That collection states exact, unconditional laws,
+each reproduced numerically to the stated precision; this one states conditional
+promise-class algorithmic laws whose actual truth is not numerically validated
+here.  The two are kept apart precisely so that the main collection's ``every
+claim verified'' standard is never diluted, and so that these conditional
+conjectures are judged on their own terms: a crisp promise class and a single
+falsifiable structural quantity apiece.
+
+\begin{thebibliography}{99}
+\bibitem{R1} M.~Troyer and U.-J. Wiese, Computational complexity and fundamental limitations to fermionic quantum Monte Carlo simulations, Phys. Rev. Lett. 94 (2005) 170201.
+\bibitem{R2} Y.-K. Liu, M.~Christandl, and F.~Verstraete, $N$-representability is QMA-complete, Phys. Rev. Lett. 98 (2007) 110503; arXiv:quant-ph/0609125.
+\bibitem{R3} N.~Schuch and F.~Verstraete, Computational complexity of interacting electrons and fundamental limitations of density functional theory, Nat. Phys. 5 (2009) 732--735; arXiv:0712.0483.
+\bibitem{R4} M.~Griebel and J.~Hamaekers, Sparse configuration interaction for the electronic Schr\"odinger equation revisited, arXiv:2606.20385 (2026).
+\bibitem{R5} M.~Hassan, Y.~Maday, and Y.~Wang, Analysis of the single reference coupled cluster method for electronic structure calculations: the full-coupled cluster equations, Numer. Math. 155 (2023) 121--173.
+\bibitem{R6} S.~Basumallick, E.~Xu, and S.~L. Ten-No, Improvement on the screening of nonlinear commutator operations in selective coupled-cluster using Lagrangian, J. Chem. Phys. 161 (2024) 184117.
+\bibitem{R7} A.~A. Holmes, N.~M. Tubman, and C.~J. Umrigar, Heat-bath configuration interaction, J. Chem. Theory Comput. 12 (2016) 3674--3680; arXiv:1606.07453.
+\bibitem{R8} S.~Greene, R.~J. Webber, J.~Weare, and T.~C. Berkelbach, Beyond walkers in stochastic quantum chemistry: reducing error using fast randomized iteration, J. Chem. Theory Comput. 15 (2019) 4834--4850.
+\bibitem{R9} T.~Weaving, A.~Mingare, A.~Ralli, and P.~V. Coveney, Selected configuration interaction using time-evolved population statistics, J. Chem. Theory Comput. 22 (2026) 4315--4328.
+\bibitem{R10} C.~J. Stein and M.~Reiher, Automated selection of active orbital spaces, J. Chem. Theory Comput. 12 (2016) 1760--1771.
+\bibitem{R11} I.~L. Markov and Y.~Shi, Simulating quantum computation by contracting tensor networks, SIAM J. Comput. 38 (2008) 963--981; arXiv:quant-ph/0511069.
+\bibitem{R12} B.~Peng, R.~Van Beeumen, D.~B. Williams-Young, K.~Kowalski, and C.~Yang, Approximate Green's function coupled cluster method employing effective dimension reduction, J. Chem. Theory Comput. 15 (2019) 3185--3196.
+\bibitem{R13} O.~Fawzi and R.~Renner, Quantum conditional mutual information and approximate Markov chains, Comm. Math. Phys. 340 (2015) 575--611; arXiv:1410.0664.
+\bibitem{R14} B.~Swingle and Y.~Wang, Recovery map for fermionic Gaussian channels, J. Math. Phys. 60 (2019) 072202; arXiv:1811.04956.
+\bibitem{R15} K.~J.~H. Giesbertz and R.~van Leeuwen, Natural occupation numbers: when do they vanish?, J. Chem. Phys. 139 (2013) 104109.
+\bibitem{R16} R.~Levy and B.~K. Clark, Mitigating the sign problem through basis rotations, Phys. Rev. Lett. 126 (2021) 216401.
+\bibitem{R17} K.~Murota and S.~Todo, Local basis transformation to mitigate negative sign problems, arXiv:2501.18069 (2025).
+\bibitem{R18} J.~S. Herz, R.~Sch\"afer, M.~G. Gonzalez, and D.~J. Luitz, Sign-optimized quantum Monte Carlo, arXiv:2607.24679 (2026).
+\bibitem{R19} B.~Paulus, The method of increments---a wavefunction-based ab-initio correlation method for solids, Phys. Rep. 428 (2006) 1--52.
+\bibitem{R20} A.~Altun, F.~Neese, and G.~Bistoni, Extrapolation to the limit of a complete pair natural orbital space in local coupled-cluster calculations, J. Chem. Theory Comput. 16 (2020) 6142--6149.
+\bibitem{R21} N.~C. Rubin and D.~A. Mazziotti, Comparison of one-dimensional and quasi-one-dimensional Hubbard models from the variational two-electron reduced-density-matrix method, Phys. Rev. B 89 (2014) 245127; arXiv:1404.5228.
+\bibitem{R22} J.~Yi, K.~Li, C.~Liu, Z.~Li, and L.~Zou, Universal decay of mutual information and conditional mutual information in gapped pure- and mixed-state quantum matter, Phys. Rev. Lett. 136 (2026) 116604.
+\bibitem{R23} G.~E. Massaccesi, O.~B. O\~na, L.~Lain, A.~Torre, J.~E. Peralta, D.~R. Alcoba, and G.~E. Scuseria, Is the matrix completion of reduced density matrices unique?, J. Phys. Chem. Lett. 17 (2026) 3430--3434.
+\bibitem{R24} L.~Peng, X.~Zhang, and G.~K.-L. Chan, Fermionic reduced density low-rank matrix completion, noise filtering, and measurement reduction in quantum simulations, J. Chem. Theory Comput. (2023); arXiv:2306.05640.
+\end{thebibliography}
+
+\end{document}
