@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred fifty-one conjectures in mathematics}
+\title{Three hundred sixty-four conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred fifty-one conjectures in mathematics:\\ the statements}
+\title{Three hundred sixty-four conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -4931,6 +4931,77 @@ On $\mathbb R^3$ with finite energy, or on $\mathbb T^3$ in the zero-mean Galile
 \end{conjecture}
 
 
+\part{Metric geometry and spectral convexity in random conformal geometry}
+
+\medskip\noindent\emph{Added to the deposit: 22 August 2026.}\par\medskip
+
+The thirteen conjectures below complete the random-conformal-geometry bundle whose two exactly solved shape members---strict log-concavity of the DOZZ structure constant and of the Brownian-annulus modulus---are Conjectures~\ref{ak1} and~\ref{ak2} of Part~XX.  They fall in three groups: the metric geometry of Liouville quantum gravity (LQG), covering geodesic stars, the radial metric residual, metric-ball volume and boundary, space-filling SLE, and distance profiles (Conjectures~\ref{am1} to~\ref{am8}); the spectral convexity of Liouville conformal field theory, covering monotone likelihood ratio and log-concavity of sphere and torus blocks and DOZZ-weighted spectral densities (Conjectures~\ref{am9} to~\ref{am12}); and quantum-area nesting in conformal loop ensembles (Conjecture~\ref{am13}).  Each is a determinate, sharp, falsifiable law with a stated mechanism, a nearest-literature boundary, and a first decisive theorem.  The metric-geometry statements are continuum-limit laws (Hausdorff dimensions, scaling exponents, mixing and functional central limit theorems) beyond any finite computation, and are flagged as such; the CFT statements are exact special-function shape properties whose descendant contributions are here tested only in the global (\(SL(2)\) or global-torus) block limit, a reduced-model check recorded as a flag and as a verification target.  The proved layer is Proposition~\ref{am:triangle}: the exact scaling triangle relating the boundary-length, roughness, and branching exponents, and the anchor reductions at the Brownian point \(\gamma=\sqrt{8/3}\).  Several statements are sharp interpolations of recognized open problems and carry attribution flags to the works whose anchors they extend.
+
+Fix \(\gamma\in(0,2)\), write \(Q=\tfrac2\gamma+\tfrac\gamma2\), let \(h\) be a Gaussian free field variant, \(\mu_h\) the \(\gamma\)-LQG area measure, and \(D_h\) the \(\gamma\)-LQG metric, with Hausdorff dimension \(d_\gamma=\dim_{\mathrm H}(\mathbb C,D_h)\) and \(\xi=\gamma/d_\gamma\); the metric obeys Weyl scaling \(D_{h+c}=e^{\xi c}D_h\) and the area obeys \(\mu_{h+c}=e^{\gamma c}\mu_h\), and \(d_{\sqrt{8/3}}=4\).  For Liouville CFT write \(b>0\), \(Q_b=b+b^{-1}\), central charge \(c=1+6Q_b^2\), principal-series weights \(\Delta(P)=\tfrac{Q_b^2}4+P^2\), sphere OPE blocks \(\mathcal F_P(z)\) and torus blocks \(\mathcal F^{\mathrm{tor}}_{a,P}(q)\) in the standard normalizations, and \(C_b\) for the DOZZ structure constant of Part~XX.  Objects specific to a single conjecture are defined in its statement.
+
+\begin{proposition}[Scaling triangle and Brownian anchors]\label{am:triangle}
+Set \(p_\gamma=d_\gamma/2\), \(H_\gamma=2/d_\gamma\), and \(\alpha_\gamma=1+2/d_\gamma\).  Then \(p_\gamma=1/H_\gamma=1/(\alpha_\gamma-1)\), so a single scalar controls the metric boundary-length dimension, the distance-profile roughness exponent, and the perimeter branching index.  At the Brownian point \(d_\gamma=4\) these are \(2,\tfrac12,\tfrac32\), the known values.  The affine star spectrum \(s_k(\gamma)=2+\tfrac{3-k}2(d_\gamma-2)\) satisfies \(s_1=d_\gamma\), \(s_3=2\) for every \(d_\gamma\), and \(s_k=5-k\) at \(d_\gamma=4\); and \(s_k\to2\) as \(d_\gamma\downarrow2\).
+\end{proposition}
+
+\section{Metric geometry of Liouville quantum gravity}
+
+\begin{conjecture}[Affine LQG geodesic-star spectrum]\label{am1}
+For a point \(z\) call \(z\) a \(k\)-star point if there are \(r>0\) and unit-speed \(D_h\)-geodesics \(\eta_1,\dots,\eta_k\) from \(z\) with disjoint interiors on \((0,r]\); let \(S_k\) be the set of such points.  With \(s_k(\gamma)=2+\tfrac{3-k}2(d_\gamma-2)\): if \(s_k(\gamma)>0\) then almost surely \(\dim_{\mathrm H}^{D_h}S_k=s_k(\gamma)\); if \(s_k(\gamma)<0\) then \(S_k=\varnothing\) almost surely; at the threshold \(s_k=0\) the set has \(D_h\)-dimension at most zero.
+\end{conjecture}
+
+\begin{conjecture}[Exponential scale-mixing of the radial metric residual]\label{am2}
+Let \(h\) be a whole-plane GFF with \(h_1(0)=0\), \(h_r(0)\) its circle average, and \(X_t=\log[e^{\xi Qt-\xi h_{e^{-t}}(0)}D_h(0,\partial B(0,e^{-t}))]\), a process stationary in \(t\) by scale covariance.  Its strong-mixing coefficient satisfies \(\alpha_X(s)\le Ce^{-cs}\), and \(\sup_t\Pr[\sup_{0\le u\le1}|X_{t+u}|>x]\le Ce^{-cx}\); consequently \(\sup_{0\le u\le T}|X_u|=O(\log T)\) almost surely and the radial log-distance process has the Brownian functional scaling limit and law of the iterated logarithm.
+\end{conjecture}
+
+\begin{conjecture}[Quantum-cone metric-ball shell functional CLT]\label{am3}
+For a rooted LQG surface let \(V(r)=\mu_h(B_{D_h}(z,r))\) and \(Y_j^{(r)}=-\log[V(re^{-(j+1)})/V(re^{-j})]\).  There is a stationary inward-scale version \((Y_j^{\mathrm{cone}})\) for the rooted \(\gamma\)-quantum-cone tangent law that is exponentially \(\alpha\)-mixing with \(\mathbb E Y_0^{\mathrm{cone}}=d_\gamma\) and finite positive asymptotic variance \(\sigma_\gamma^2\), with \(\tfrac1{\sqrt n}\sum_{j<nt}(Y_j^{\mathrm{cone}}-d_\gamma)\Rightarrow\sigma_\gamma B_t\) in \(D([0,1])\); and for any finite-volume surface rooted at a quantum-typical point, \((Y_j^{(r)})_{j\in J}\Rightarrow(Y_j^{\mathrm{cone}})_{j\in J}\) as \(r\downarrow0\).
+\end{conjecture}
+
+\begin{conjecture}[Pointwise sfSLE metric H\"older exponent]\label{am4}
+Let \(\eta\) be a whole-plane space-filling \(\mathrm{SLE}_{16/\gamma^2}\) independent of \(h\), parameterized by LQG area, \(\mu_h(\eta([s,t]))=t-s\).  For Lebesgue-almost every \(t\), almost surely \(\lim_{\varepsilon\downarrow0}\log\operatorname{diam}_{D_h}\eta([t-\varepsilon,t+\varepsilon])/\log\varepsilon=1/d_\gamma\).
+\end{conjecture}
+
+\begin{conjecture}[Stable-CSBP perimeter universality]\label{am5}
+For every \(\gamma\in(0,2)\), filled metric balls in a whole-plane or quantum-cone \(\gamma\)-LQG surface admit a canonical scalar outer-boundary length \(L_h^\gamma(r)\), measurable from the metric-measure surface, with \(L_{h+c}^\gamma(e^{\xi c}r)=e^{\gamma c/2}L_h^\gamma(r)\).  Under reverse metric-radius exploration, after the natural normalization and excursion/Doob conditioning, the perimeter process is the conditioned/time-reversed stable continuous-state branching process of index \(\alpha_\gamma=1+2/d_\gamma\).
+\end{conjecture}
+
+\begin{conjecture}[Linear confluence response]\label{am6}
+On a unit-area \(\gamma\)-LQG sphere sample \(z,x,y\) independently from \(\mu_h\).  On \(\{D_h(x,y)\le\varepsilon\}\) let \(b\) be the terminal point of the common initial segment of the geodesics from \(z\) to \(x,y\), \(\Delta=\max\{D_h(b,x),D_h(b,y)\}\), and \(C_\varepsilon=\Delta/D_h(x,y)\).  Conditioned on \(D_h(x,y)\le\varepsilon\), \(C_\varepsilon\) converges in law as \(\varepsilon\downarrow0\) to a nondegenerate \(C_\gamma\in(0,\infty)\) with finite moments in a neighbourhood of zero.
+\end{conjecture}
+
+\begin{conjecture}[Filled metric-ball outer boundary dimension]\label{am7}
+Let \(h\) be a whole-plane GFF and \(B_{D_h}^{\infty,\bullet}(0,r)\) the filled metric ball targeted at infinity.  For every deterministic \(r>0\), almost surely \(\dim_{\mathrm H}^{D_h}\partial B_{D_h}^{\infty,\bullet}(0,r)=d_\gamma/2\).
+\end{conjecture}
+
+\begin{conjecture}[Fractional-Brownian tangent of distance profiles]\label{am8}
+Let \(\mathcal D\) be a finite-boundary-length \(\gamma\)-LQG disk, \(z\) sampled from \(\mu_h\), and \(X(u)=D_h(z,\partial(u))\) the distance to the boundary point at length coordinate \(u\).  At boundary-length-almost every \(u_0\) there is \(\sigma_\gamma>0\) with \(\varepsilon^{-H_\gamma}[X(u_0+\varepsilon t)-X(u_0)]\Rightarrow\sigma_\gamma B_{H_\gamma}(t)\), \(H_\gamma=2/d_\gamma\), in local uniform topology, where \(B_H\) is two-sided fractional Brownian motion.
+\end{conjecture}
+
+\section{Spectral convexity in Liouville conformal field theory}
+
+\begin{conjecture}[Sphere spectral monotone likelihood ratio]\label{am9}
+Fix \(b>0\), four equal real external charges \(Q_b/3\le a<Q_b/2\), and \(0<z_1<z_2\le\tfrac12\).  The OPE-normalized sphere block \(\mathcal F_P(z)\) is nonzero on this domain and \(E=P^2\mapsto|\mathcal F_{\sqrt E}(z_2)|^2/|\mathcal F_{\sqrt E}(z_1)|^2\) is strictly increasing; equivalently \(\partial_E\partial_z\log|\mathcal F_{\sqrt E}(z)|^2>0\).
+\end{conjecture}
+
+\begin{conjecture}[Four-point spectral log-concavity]\label{am10}
+For \(b>0\), \(Q_b/3\le a<Q_b/2\), \(0<z\le\tfrac12\), and \(P>0\), the principal-series magnitude \(I_z(P)=|C_b(a,a,\tfrac{Q_b}2+iP)|^2|\mathcal F_P(z)|^2\) is positive and \(\tfrac{d^2}{dP^2}\log I_z(P)<0\).
+\end{conjecture}
+
+\begin{conjecture}[Torus thermal spectral monotone likelihood ratio]\label{am11}
+Fix \(b>0\) and a real external charge \(Q_b/3\le a<Q_b/2\), and use the full torus block \(\mathcal F^{\mathrm{tor}}_{a,P}(q)=q^{\Delta(P)-c/24}\mathcal H^{\mathrm{tor}}_{a,P}(q)\) with \(q=e^{-2\pi\beta}\).  For \(\beta_2>\beta_1\) the blocks are nonzero for \(P>0\) and \(E=P^2\mapsto|\mathcal F^{\mathrm{tor}}_{a,\sqrt E}(q_2)|^2/|\mathcal F^{\mathrm{tor}}_{a,\sqrt E}(q_1)|^2\) is strictly decreasing.
+\end{conjecture}
+
+\begin{conjecture}[Multipoint joint spectral log-concavity of the modulus]\label{am12}
+For \(n\ge5\), real moduli \(\mathbf z\) in a positive OPE cell, equal physical external charges \(Q_b/3\le a<Q_b/2\), and internal momenta \(\mathbf P=(P_1,\dots,P_{n-3})\) on the principal series, let \(K_{\mathbf z}(\mathbf P)\) be the standard-normalized comb sewing kernel (product of DOZZ vertices and the multipoint block) and \(\Phi_{\mathbf z}(\mathbf P)=\log|K_{\mathbf z}(\mathbf P)|\).  Then \(K_{\mathbf z}\ne0\) and \(\nabla^2_{\mathbf P}\Phi_{\mathbf z}\prec0\) for every \(P_j>0\).
+\end{conjecture}
+
+\section{Nesting in conformal loop ensembles}
+
+\begin{conjecture}[Quantum-cone nesting area-ratio functional CLT]\label{am13}
+Let \(\kappa\in(8/3,4)\cup(4,8)\) with \(\gamma=\sqrt\kappa\) for \(\kappa<4\) and \(\gamma=4/\sqrt\kappa\) for \(\kappa>4\).  For nested \(\mathrm{CLE}_\kappa\) around the marked point of the matched \(\gamma\)-quantum-cone tangent law, with \(U_n\) the successive marked components, \(A_n=\mu_h(U_n)\), and \(Y_n=-\log(A_{n+1}/A_n)\): the sequence \((Y_n)\) admits a stationary version that is exponentially \(\alpha\)-mixing with analytic scaled cumulant generating function near zero and positive asymptotic variance, so \(\tfrac1{\sqrt n}\sum_{j<nt}(Y_j-v_{\gamma,\kappa})\Rightarrow\sigma_{\gamma,\kappa}B_t\) in \(D([0,1])\); and finite-volume deep-nesting increments converge to this stationary law.
+\end{conjecture}
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -5422,5 +5493,17 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{Aref10} H.~Aref, \emph{Self-similar motion of three point vortices}, Phys. Fluids \textbf{22} (2010) 057104.
 \bibitem{Drivas26} T.~D. Drivas, B.~A. Khanikati, and V.~A. Khanikati, \emph{On the collapse of three point vortices on surfaces}, arXiv:2607.16490 (2026).
 \bibitem{Phuc15} N.~C. Phuc, \emph{The Navier--Stokes equations in nonendpoint borderline Lorentz spaces}, J. Math. Fluid Mech. \textbf{17} (2015) 741--760; arXiv:1407.5129.
+\bibitem{BGH26} M.~Bhatia, E.~Gwynne, and B.~Harper, \emph{Dimension lower bounds in random geometry via Lipschitz functions}, arXiv:2606.10496 (2026).
+\bibitem{BhatiaKavvadias25} M.~Bhatia and K.~Kavvadias, \emph{Strong confluence of geodesics in Liouville quantum gravity}, arXiv:2512.09219 (2025).
+\bibitem{DubedatFalconet23} J.~Dub\'edat and H.~Falconet, \emph{Metric growth dynamics in Liouville quantum gravity}, Comm. Math. Phys. \textbf{400} (2023); arXiv:2112.13933.
+\bibitem{AngFalconetSun20} M.~Ang, H.~Falconet, and X.~Sun, \emph{Volume of metric balls in Liouville quantum gravity}, Electron. J. Probab. \textbf{25} (2020); arXiv:2001.11467.
+\bibitem{GwynneSung24} E.~Gwynne and J.~Sung, \emph{The Minkowski content measure for the Liouville quantum gravity metric}, Ann. Probab. \textbf{52} (2024).
+\bibitem{GwynneMiller21} E.~Gwynne and J.~Miller, \emph{Existence and uniqueness of the Liouville quantum gravity metric for $\gamma\in(0,2)$}, Invent. Math. \textbf{223} (2021).
+\bibitem{Gwynne20} E.~Gwynne, \emph{The dimension of the boundary of a Liouville quantum gravity metric ball}, Comm. Math. Phys. \textbf{378} (2020); arXiv:1909.08588.
+\bibitem{Bhatia25} M.~Bhatia, \emph{The $d_\gamma/2$-variation of distance profiles in $\gamma$-Liouville quantum gravity}, Comm. Math. Phys. \textbf{406} (2025); arXiv:2310.13692.
+\bibitem{GRSS24} P.~Ghosal, G.~Remy, X.~Sun, and Y.~Sun, \emph{Probabilistic conformal blocks for Liouville CFT on the torus}, Duke Math. J. \textbf{173} (2024); arXiv:2003.03802.
+\bibitem{ArtemevKhromov26} A.~Artemev and D.~Khromov, \emph{WKB asymptotics for multipoint Virasoro conformal blocks and applications}, arXiv:2603.08194 (2026).
+\bibitem{MWW} J.~Miller, S.~Watson, and D.~Wilson, \emph{Extreme nesting in the conformal loop ensemble}, arXiv:1401.0217.
+\bibitem{HoldenLehmkuehler24} N.~Holden and M.~Lehmkuehler, \emph{Liouville quantum gravity weighted by conformal loop ensemble nesting statistics}, Probab. Math. Phys. \textbf{5} (2024); arXiv:2204.09905.
 \end{thebibliography}
 \end{document}
