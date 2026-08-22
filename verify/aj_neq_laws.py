@@ -14,8 +14,9 @@ Checks (fresh implementation, no reuse of the source package):
   aj4  -log L(t)/(2t) -> alpha_irr   (doubling law: matched to slope of ||A_t||)
   aj8  unicyclic: eta strictly decreasing (high precision; no violation)
   aj9  RESOLVED FALSE: an explicit near-decomposable 7-ring has gamma*L/sigma>1/2
-  aj13 OU: g_A t_* <= 1 ;  aj14 OU: g_A^2 (int L)/sigma <= 1
-  aj15 OU doubling law -log L_OU/(2t) -> alpha_H
+  aj13 RESOLVED FALSE: an explicit 5D Jordan-block OU (g_A=1) has g_A t_* > 1
+  aj14 RESOLVED FALSE: the same OU has g_A^2 (int L)/sigma > 1
+  aj15 OU doubling law -log L_OU/(2t) -> alpha_H (surviving)
   aj10 wrapped-Brownian scaling limit eta_N(t_N) -> E(A,tau)
 
 Runs in a couple of minutes.  Random search cannot prove the surviving laws;
@@ -198,7 +199,7 @@ ratio9 = gam9 * Lmax9 / sig9
 check("aj9 gamma*L/sigma exceeds 1/2 (constant refuted)", ratio9 > 0.5,
       f"gamma*Lmax/sigma = {ratio9:.4f} > 1/2")
 
-print("== aj13 (g_A t_* <= 1), aj14 (g_A^2 area/sigma <= 1): nonnormal OU")
+print("== aj13/aj14 RESOLVED FALSE (explicit nonnormal Jordan-block OU); aj15 surviving")
 def ou_L(A, D, t, C):
     d = A.shape[0]; eAt = expm(A * t)
     Sig = np.block([[C, C @ eAt.T], [eAt @ C, C]])
@@ -206,7 +207,33 @@ def ou_L(A, D, t, C):
     return max(0.5 * (np.trace(solve(SigR, Sig)) - 2 * d), 0.0)
 def Hnorm(A, t, C):
     eAt = expm(A * t); return np.linalg.norm(eAt @ C - C @ eAt.T)
-m13 = m14 = 0.0; r15 = []
+
+# Explicit counterexample to aj13 and aj14: A = -I + 2*(superdiagonal nilpotent),
+# D = I.  All eigenvalues are -1 so g_A = 1, but the strong nonnormal transient of a
+# single large Jordan block pushes the lag-KL peak past one drift-relaxation time and
+# the integrated budget past sigma/g_A^2.  The deposited random search sampled only
+# drifts with negative-definite symmetric part and so never reached this regime.
+d0 = 5
+A0 = -np.eye(d0) + 2 * np.diag(np.ones(d0 - 1), 1)
+D0 = np.eye(d0)
+C0 = solve_lyapunov(A0, -2 * D0)
+assert np.max(np.abs(A0 @ C0 + C0 @ A0.T + 2 * D0)) < 1e-9      # exact Lyapunov solution
+gA0 = -np.max(eigvals(A0).real)                                 # = 1
+Airr0 = A0 + D0 @ np.linalg.inv(C0)
+sig0 = np.trace(Airr0.T @ np.linalg.inv(D0) @ Airr0 @ C0)       # entropy production
+ts0 = np.linspace(1e-3, 8.0, 16000)
+Ls0 = np.array([ou_L(A0, D0, t, C0) for t in ts0])
+gAt0 = gA0 * ts0[np.argmax(Ls0)]
+tt0 = np.linspace(1e-4, 50.0, 80000)
+area0 = np.trapezoid([ou_L(A0, D0, t, C0) for t in tt0], tt0)
+narea0 = gA0 ** 2 * area0 / sig0
+check("aj13 RESOLVED FALSE: explicit Jordan-block OU has g_A t_* > 1",
+      gAt0 > 1.0, f"g_A t_* = {gAt0:.4f} (sigma_OU = {sig0:.1f})")
+check("aj14 RESOLVED FALSE: explicit Jordan-block OU has g_A^2 area/sigma > 1",
+      narea0 > 1.0, f"g_A^2 (int L)/sigma = {narea0:.4f}")
+
+# aj15 doubling law still surviving: sampled over nonnormal Hurwitz drifts
+r15 = []
 for _ in range(700):
     d = int(rng.integers(2, 6)); M = rng.normal(size=(d, d))
     A = M - (abs(np.max(eigvals(M).real)) + rng.uniform(0.3, 1.8)) * np.eye(d)
@@ -218,20 +245,12 @@ for _ in range(700):
     C = solve_lyapunov(A, -2 * D)
     if np.min(np.linalg.eigvalsh(C)) < 1e-9:
         continue
-    Cinv = np.linalg.inv(C); Airr = A + D @ Cinv
-    sig = np.trace(Airr.T @ np.linalg.inv(D) @ Airr @ C)
-    if sig < 1e-8:
-        continue
-    gA = -np.max(eigvals(A).real); ts = np.linspace(0.01 / gA, 22 / gA, 260)
-    Ls = np.array([ou_L(A, D, t, C) for t in ts])
-    m13 = max(m13, gA * ts[np.argmax(Ls)]); m14 = max(m14, gA ** 2 * np.trapezoid(Ls, ts) / sig)
+    gA = -np.max(eigvals(A).real)
     tt = np.linspace(5 / gA, 12 / gA, 40)
     Ls2 = np.array([ou_L(A, D, t, C) for t in tt]); Hs = np.array([Hnorm(A, t, C) for t in tt])
     mm = (Ls2 > 1e-250) & (Hs > 1e-250)
     if mm.sum() >= 10:
         r15.append(np.polyfit(tt[mm], np.log(Ls2[mm]), 1)[0] / (2 * np.polyfit(tt[mm], np.log(Hs[mm]), 1)[0]))
-check("aj13 g_A t_* <= 1", m13 <= 1.0, f"max {m13:.3f}")
-check("aj14 g_A^2 area/sigma <= 1", m14 <= 1.0, f"max {m14:.3f}")
 check("aj15 OU doubling law (exponent ratio -> 1)", abs(np.median(r15) - 1) < 0.03,
       f"median ratio {np.median(r15):.4f}")
 
