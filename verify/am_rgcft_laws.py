@@ -14,6 +14,8 @@ descendant contribution is a separate verification target).
   * am10 : DOZZ four-point curvature < 0 in the chamber (exact Upsilon_1 + block),
            positive at the excluded charge a=0.55.
   * am11 : torus global-block thermal MLR (decreasing in E).
+  * am12 : five-point coupled DOZZ/global-block proxy has negative-definite
+           finite-difference Hessian in the two internal momenta (comb channel).
 
 Run:  python verify/am_rgcft_laws.py
 """
@@ -104,6 +106,47 @@ def check_torus_mlr():
     assert bad == 0, "torus thermal MLR failed"
     return True
 
+# --- am12: five-point comb sewing-kernel modulus in two internal momenta ---
+def couple_logmod2(a, P1, P2, b=1.0):
+    # Middle DOZZ vertex C(Q/2+iP1, a, Q/2+iP2) of the comb: P-dependent part of
+    # 2 log|C| via the same Upsilon_b evaluator (re_logU(A,B)=Re log Upsilon_b(A+iB),
+    # re_logU_at_Q handles the reflected legs 2alpha=Q+2iP).  Legs:
+    #   numerator 2a1=Q+2iP1, 2a3=Q+2iP2 (P-dependent);  2a2=2a (P-independent, dropped);
+    #   denominator a+i(P1+P2), a+i(P2-P1), Q-a+i(P1+P2), a+i(P1-P2).
+    Q = b + 1/b
+    num = re_logU_at_Q(P1, b) + re_logU_at_Q(P2, b)
+    den = (re_logU(a, P1+P2, b) + re_logU(a, abs(P2-P1), b)
+           + re_logU(Q-a, P1+P2, b) + re_logU(a, abs(P1-P2), b))
+    return 2*(num - den)
+
+def five_point_logmod2(a, z1, z2, P1, P2, b=1.0):
+    # comb: end vertices C(a,a,Q/2+iP1), C(Q/2+iP2,a,a), middle coupling vertex,
+    # and one global SL(2) block per internal line.
+    Q = b + 1/b
+    return (dozz_logmod2(a, P1, b) + dozz_logmod2(a, P2, b)
+            + couple_logmod2(a, P1, P2, b)
+            + sphere_block_logmod2(P1, z1, Q) + sphere_block_logmod2(P2, z2, Q))
+
+def check_multipoint_hessian(h=2e-3):
+    # negative-definite 2x2 finite-difference Hessian of log|K_z| in (P1,P2)
+    worst = -np.inf
+    for a in [2/3, 0.8, 0.96]:              # interior chamber Q/3<=a<Q/2 at b=1
+        for z1 in [0.2, 0.4]:
+            for z2 in [0.3, 0.5]:
+                for P1 in [0.4, 0.8, 1.2]:
+                    for P2 in [0.5, 0.9, 1.3]:
+                        f = lambda p, q: five_point_logmod2(a, z1, z2, p, q)
+                        fpp = (f(P1+h, P2) - 2*f(P1, P2) + f(P1-h, P2))/h**2
+                        fqq = (f(P1, P2+h) - 2*f(P1, P2) + f(P1, P2-h))/h**2
+                        fpq = (f(P1+h, P2+h) - f(P1+h, P2-h)
+                               - f(P1-h, P2+h) + f(P1-h, P2-h))/(4*h*h)
+                        tr, det = fpp + fqq, fpp*fqq - fpq*fpq
+                        lam_max = tr/2 + np.sqrt(max((tr/2)**2 - det, 0.0))
+                        worst = max(worst, lam_max)
+                        assert fpp < 0 and det > 0, \
+                            f"Hessian not negative-definite a={a} P=({P1},{P2})"
+    return worst
+
 if __name__ == "__main__":
     check_triangle()
     print("am1-am8 anchors: scaling triangle p=1/H=1/(alpha-1), Brownian reductions, star anchors OK")
@@ -113,4 +156,7 @@ if __name__ == "__main__":
     print(f"am10: DOZZ four-point curvature < 0 in chamber; sub-chamber a=0.55 positive (max {pos:+.3f})")
     check_torus_mlr()
     print("am11: torus global-block thermal MLR strictly decreasing OK")
+    worst = check_multipoint_hessian()
+    print(f"am12: five-point coupled DOZZ/global-block Hessian negative-definite "
+          f"(largest eigenvalue {worst:+.2f} over chamber grid)")
     print("\nAll Part XXII checkable anchors/global-block reductions passed.")

@@ -6,7 +6,7 @@ These are NOT verifications of the singular laws themselves, which are blow-up,
 vanishing-viscosity, and asymptotic statements about continuum solutions and lie
 beyond any finite computation.  They independently reproduce the exact anchors and
 reduced-model reductions of Proposition (al:anchors), sharing no code with the
-source package:
+source derivation:
 
   * al14 (C14): three-vortex self-similar collapse condition (exact) and core
     contraction of the planar point-vortex ODE from a zero-angular-impulse config.
@@ -85,39 +85,65 @@ def check_neck_ode():
     return out
 
 def check_frenet_scale_invariance():
-    def total_curvature(scale):
-        t = np.linspace(0, 4*np.pi, 20000)
+    # dimensionless pair (total curvature K = int kappa ds,
+    # torsion variation Tor = int L|d_s tau|/(1+L|tau|) ds) of a modulated helix,
+    # both dilation-invariant (Prop al:anchors (iv), significance of al6).
+    def invariants(scale):
+        t = np.linspace(0, 4*np.pi, 40000); dt = t[1]-t[0]
         a, b = 1.0, 0.3
         r = np.vstack([scale*a*np.cos(t), scale*a*np.sin(t),
                        scale*(b*t + 0.1*np.sin(3*t))]).T
         dr = np.gradient(r, t, axis=0); ddr = np.gradient(dr, t, axis=0)
-        cross = np.cross(dr, ddr)
-        kappa = np.linalg.norm(cross, axis=1)/np.linalg.norm(dr, axis=1)**3
-        return np.sum(kappa*np.linalg.norm(dr, axis=1)*(t[1]-t[0]))
-    K1, K2 = total_curvature(1.0), total_curvature(2.5)
-    rel = abs(K1-K2)/K1
-    assert rel < 1e-10, f"total curvature not scale invariant: {rel}"
-    return K1, rel
+        dddr = np.gradient(ddr, t, axis=0)
+        cross = np.cross(dr, ddr); ncross = np.linalg.norm(cross, axis=1)
+        speed = np.linalg.norm(dr, axis=1)
+        kappa = ncross/speed**3
+        tau = np.einsum('ij,ij->i', cross, dddr)/ncross**2
+        ds = speed*dt
+        L = np.sum(ds)
+        dtau_ds = np.gradient(tau, t)/speed        # d tau/ds
+        K = np.sum(kappa*ds)
+        # trim endpoints where finite differences of the 3rd derivative are worst
+        sl = slice(3, -3)
+        Tor = np.sum((L*np.abs(dtau_ds)/(1+L*np.abs(tau)))[sl]*ds[sl])
+        return K, Tor
+    K1, T1 = invariants(1.0); K2, T2 = invariants(2.5)
+    relK = abs(K1-K2)/K1; relT = abs(T1-T2)/abs(T1)
+    assert relK < 1e-10, f"total curvature not scale invariant: {relK}"
+    assert relT < 1e-3, f"torsion variation not scale invariant: {relT}"
+    return K1, relK, T1, relT
+
+def _curl_spectral(u, k):
+    # u: (3, n, n, n) real field on a periodic box; k: 1D wavenumbers
+    KX, KY, KZ = np.meshgrid(k, k, k, indexing='ij')
+    uh = np.fft.fftn(u, axes=(1, 2, 3))
+    wx = np.fft.ifftn(1j*(KY*uh[2] - KZ*uh[1])).real
+    wy = np.fft.ifftn(1j*(KZ*uh[0] - KX*uh[2])).real
+    wz = np.fft.ifftn(1j*(KX*uh[1] - KY*uh[0])).real
+    return np.array([wx, wy, wz])
 
 def check_beltrami_lamb():
-    # ABC (Beltrami) vs Taylor-Green (non-Beltrami) Lamb vector on a grid
+    # ABC (Beltrami) vs Taylor-Green (non-Beltrami): compute omega = curl(u)
+    # SPECTRALLY (not u x u), confirm the ABC field is Beltrami (omega = u), and
+    # check its Lamb vector u x omega vanishes while Taylor-Green's does not.
     n = 32
     x = np.linspace(0, 2*np.pi, n, endpoint=False)
+    k = np.fft.fftfreq(n, d=1.0/n)              # integer wavenumbers on [0,2pi)
     X, Y, Z = np.meshgrid(x, x, x, indexing='ij')
     A = B = C = 1.0
     uABC = np.array([A*np.sin(Z)+C*np.cos(Y), B*np.sin(X)+A*np.cos(Z), C*np.sin(Y)+B*np.cos(X)])
-    # curl of ABC = ABC (Beltrami); Lamb = u x omega = u x u = 0
-    lamb_abc = np.cross(uABC, uABC, axis=0)
+    wABC = _curl_spectral(uABC, k)
+    beltrami_err = np.sqrt(np.mean((wABC - uABC)**2))   # should be ~0: omega = u
+    lamb_abc = np.cross(uABC, wABC, axis=0)             # u x curl(u), NOT u x u
     uTG = np.array([np.sin(X)*np.cos(Y)*np.cos(Z), -np.cos(X)*np.sin(Y)*np.cos(Z), 0*X])
-    # omega_TG (analytic curl)
-    wTG = np.array([-np.cos(X)*np.sin(Y)*np.sin(Z), -np.sin(X)*np.cos(Y)*np.sin(Z),
-                    2*np.sin(X)*np.sin(Y)*np.cos(Z)])
+    wTG = _curl_spectral(uTG, k)
     lamb_tg = np.cross(uTG, wTG, axis=0)
     rms_abc = np.sqrt(np.mean(lamb_abc**2))
     rms_tg = np.sqrt(np.mean(lamb_tg**2))
     ratio = rms_abc/max(rms_tg, 1e-300)
+    assert beltrami_err < 1e-10, f"ABC not Beltrami: curl(u)!=u, err {beltrami_err}"
     assert ratio < 1e-12, f"ABC Lamb not annihilated: {ratio}"
-    return rms_abc, rms_tg, ratio
+    return rms_abc, rms_tg, ratio, beltrami_err
 
 if __name__ == "__main__":
     cond, ratio = check_vortex_collapse()
@@ -128,8 +154,10 @@ if __name__ == "__main__":
     nk = check_neck_ode()
     print("al12: neck ODE d~(T-t)^(1/beta):",
           ", ".join(f"beta={b}: {s:.3f}~{t:.3f}" for b, (s, t) in nk.items()))
-    K1, rel = check_frenet_scale_invariance()
-    print(f"al6 : total curvature dilation-invariant to relative {rel:.1e}")
-    ra, rt, r = check_beltrami_lamb()
-    print(f"al15: ABC Lamb rms {ra:.1e} vs Taylor-Green {rt:.3f}; ratio {r:.1e}")
+    K1, relK, T1, relT = check_frenet_scale_invariance()
+    print(f"al6 : (total curvature, torsion variation) dilation-invariant to relative "
+          f"{relK:.1e} and {relT:.1e}")
+    ra, rt, r, berr = check_beltrami_lamb()
+    print(f"al15: ABC is Beltrami (curl(u)-u rms {berr:.1e}); Lamb rms {ra:.1e} vs "
+          f"Taylor-Green {rt:.3f}, ratio {r:.1e}")
     print("\nAll Part XXI anchor checks passed.")

@@ -6618,7 +6618,7 @@ Zoom in through the nested loops of a conformal loop ensemble drawn on a quantum
 
 ### Conjecture 365: Density-adaptive Lévy exclusion
 
-Let particles make long-range jumps whose heaviness — the stable index — depends on the local crowd density around the jumper. The conjecture is that this converges to a conservative gain–loss equation of *variable* fractional order, the order itself a function of the local density. A subtlety the audit exposed: the block density must be resolved finely enough ($$\log N/\sqrt{\ell_N}\to0$$) or the density-dependent exponent creates an order-one rate error, so that stability condition is part of the statement.
+Let particles make long-range jumps whose heaviness — the stable index — depends on the local crowd density around the jumper. The conjecture is that this converges to a conservative gain–loss equation of *variable* fractional order, the order itself a function of the local density. A subtlety worth noting: the block density must be resolved finely enough ($$\log N/\sqrt{\ell_N}\to0$$) or the density-dependent exponent creates an order-one rate error, so that stability condition is part of the statement.
 
 ### Conjecture 366: Refreshing heavy traps
 

@@ -93,13 +93,21 @@ def check_crowding_exponent():
     return out
 
 def check_catalyst_scaling():
+    # Prop an:reductions(iv): a codim-1 reaction surface contributes
+    #   (# surface sites) x (flip rate) x (mass per flip) = N^{d-1} * N^theta * N^{-d}.
+    # Form the three factors separately (for explicit d) and multiply; the exponent
+    # theta-1 must emerge, not be assumed.
     out = {}
-    for theta in [0.5, 1.0, 1.5]:
-        Ns = np.array([64, 128, 256, 512], float)
-        contrib = Ns**(theta-1)                     # N^{d-1} * N^theta * N^{-d}, d arbitrary
-        slope = np.polyfit(np.log(Ns), np.log(contrib), 1)[0]
-        out[theta] = (slope, theta-1)
-        assert abs(slope-(theta-1)) < 1e-9
+    for d in [2, 3]:
+        for theta in [0.5, 1.0, 1.5]:
+            Ns = np.array([64, 128, 256, 512], float)
+            surface_sites = Ns**(d-1)
+            flip_rate = Ns**theta
+            mass_per_flip = Ns**(-d)
+            contrib = surface_sites * flip_rate * mass_per_flip
+            slope = np.polyfit(np.log(Ns), np.log(contrib), 1)[0]
+            out[(d, theta)] = (slope, theta-1)
+            assert abs(slope-(theta-1)) < 1e-9, f"d={d} theta={theta}: {slope}"
     return out
 
 if __name__ == "__main__":
@@ -112,6 +120,6 @@ if __name__ == "__main__":
     print("an4 : crowding-thinned tail exponent beta(1-rho):",
           ", ".join(f"rho={r}: {s:.3f}~{t:.3f}" for r, (s, t) in cw.items()))
     ca = check_catalyst_scaling()
-    print("an7 : catalyst contribution ~ N^(theta-1):",
-          ", ".join(f"theta={th}: {s:.2f}" for th, (s, t) in ca.items()))
+    print("an7 : catalyst event-count product N^(d-1)*N^theta*N^-d ~ N^(theta-1):",
+          ", ".join(f"(d={d},th={th}): {s:.2f}" for (d, th), (s, t) in ca.items()))
     print("\nAll Part XXIII reduction checks passed.")
