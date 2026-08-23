@@ -2745,6 +2745,8 @@ For bipartite graphs $G$ and $H$, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
 For $G$ and $H$ each a tree or a connected unicyclic graph, $C_G(2,Y)=C_H(2,Y)$ implies $C_G=C_H$.
 \end{conjecture}
 
+\emph{Resolution.} False: an explicit seven-vertex unicyclic pair shares the binary specialization of $F_G$ but has distinct degree multisets, the unique violating class through nine vertices; the tree case survives exhaustively through fourteen vertices, the first decisive theorem the statement named.
+
 \begin{remark}[Resolution]
 The conjecture is false as stated: the connected unicyclic graphs on seven vertices with edge sets $\{\{0,3\},\{0,4\},\{1,2\},\{1,3\},\{1,4\},\{3,6\},\{4,5\}\}$ and $\{\{0,1\},\{0,3\},\{0,4\},\{1,2\},\{2,5\},\{2,6\},\{5,6\}\}$ share $C(2,Y)$ while their class-counting polynomials differ.  The tree case survives exhaustively through fourteen vertices and remains open.
 \end{remark}
@@ -2782,6 +2784,8 @@ For connected $G$ and every attainable rank $r$, the slice $A_{G,r}(Z)=[Y^r]\,F_
 \begin{conjecture}[Interval support at fixed rank, resolved false]\label{u15}
 For every graph $G$ and every attainable rank $r$, the set $K_r(G)=\{|S|:\rho_G(S)=r\}$ is an interval of integers.
 \end{conjecture}
+
+\emph{Resolution.} False: a connected eight-vertex graph has support sizes attaining rank five that skip size two, the unique violating order, while the transposed statement was already false; interval support still holds for all graphs through seven vertices.
 
 \begin{remark}[Resolution]
 The conjecture is false as stated: the connected eight-vertex graph with edge set $\{\{0,3\},\{0,6\},\{0,7\},\{1,4\},\{1,6\},\{1,7\},\{2,5\},\{2,6\},\{3,6\},\{3,7\},\{4,6\},\{4,7\},\{5,7\}\}$ attains rank five at support sizes $\{1,3,4,5,6\}$, skipping size two, and an exhaustive scan of all graphs on eight vertices finds exactly two such graphs, both connected, and none smaller.
@@ -2906,6 +2910,8 @@ For every finite poset $P$ and prime powers $q<q'$, the distribution of $\rank(\
 For every finite poset $P$ and prime powers $q<q'$, the normalized even-rank distribution defined by $K_{P,q'}$ dominates that defined by $K_{P,q}$ in monotone likelihood-ratio order.
 \end{conjecture}
 
+\emph{Resolution.} False: a seven-point poset has likelihood ratio from $\Fq_2$ to $\Fq_3$ already decreasing across the even ranks, refuting the monotone-likelihood-ratio strengthening; the first-order Kirillov dominance of Conjecture~\ref{v10} stands.
+
 \begin{remark}[Resolution]
 The conjecture is false as stated: the seven-point poset with cover relations $1\prec2$, $2\prec3$, $2\prec4$, $1\prec5$, $5\prec7$, $1\prec6$, $6\prec7$ has Kirillov even-rank coefficients $128,384,128,384$ over $\Fq_2$ and $2187,17496,4374,34992$ over $\Fq_3$, whose likelihood ratio decreases from rank $2$ to rank $4$, so monotone likelihood-ratio order already fails at $q=2$, $q'=3$.  The first-order dominance of Conjecture~\ref{v10} stands.
 \end{remark}
@@ -2923,6 +2929,8 @@ For every finite poset $P$ with $\dim Z(L_P)=1$ and every prime power $q$, the p
 \begin{conjecture}[Centre-one quotient shape, resolved false]\label{v14}
 For every finite poset $P$ with $\dim Z(L_P)=1$ and every prime power $q$, the coefficient sequence of $R_{P,q}(T)$ has interval support and is unimodal.
 \end{conjecture}
+
+\emph{Resolution.} False: a seven-point poset has quotient $R_{P,q}$ with a strict interior valley, so positivity does not force unimodality; the positivity and interval support of Conjecture~\ref{v13} stand.
 
 \begin{remark}[Resolution]
 The conjecture is false as stated: the seven-point poset with cover relations $1\prec2$, $2\prec3$, $2\prec4$, $3\prec6$, $4\prec5$, $5\prec6$, $6\prec7$ has a one-dimensional centre, and its incidence quotient $R_{P,2}$ has nonnegative coefficients with interval support but is not unimodal, the coefficients $206336,198656,225280$ at degrees $8,9,10$ forming a strict interior valley.  The positivity and interval support of Conjecture~\ref{v13} stand.
@@ -3061,6 +3069,8 @@ The density of $n$ for which $\phi(n)/n,\phi(n+1)/(n+1),\phi(n+2)/(n+2)$ is mono
 No five consecutive values of $\phi(n)/n$ are strictly increasing, and no five are strictly decreasing.
 \end{conjecture}
 
+\emph{Resolution.} False, by a theorem of Martin~\cite{Martin06}: strictly monotone runs of $\phi(n)/n$ of every length occur on a set of positive lower density, though none below $4\times10^9$, whereas the abundancy analogue already fails at $n=36{,}721{,}681$; retained for the contrast it draws.
+
 \begin{remark}[Resolution]
 The conjecture is false.  By a theorem of Martin~\cite{Martin06}, for every $k$ and every prescribed strict ordering of $\phi(n+1),\ldots,\phi(n+k)$ with successive ratios exceeding any fixed $C$, the realizing $n$ have positive lower density; taking $k=5$ and ratios exceeding $2$ forces strictly monotone runs of $\phi(n)/n$ of length five in either direction, on positive lower density.  The runs are astronomically rare, none below $4\times10^9$, whereas the abundancy analogue already fails at $n=36{,}721{,}681$.
 \end{remark}
@@ -3079,17 +3089,29 @@ For every even squarefree $W$ divisible by six the limit $\lim_{e\to\infty}\mu(2
 For every fixed $k\ge3$ the jump $J_{k,n}=\Omega\binom{k(n+1)}{n+1}-\Omega\binom{kn}{n}$ is unbounded below.
 \end{conjecture}
 
+\emph{Resolution.} The conjecture is true: Proposition~\ref{w:shock} forces arbitrarily deep negative jumps for every $k\ge3$ by a Chinese-remainder construction that loads the denominator forms $(k-1)n+j$ with many prime factors while a first-moment bound keeps the numerator forms typical.
+
 \begin{conjecture}[Binomial-slice positive shocks, resolved true]\label{w15}
 For every fixed $k\ge2$ the jump $J_{k,n}$ is unbounded above.
 \end{conjecture}
+
+\emph{Resolution.} The conjecture is true: Proposition~\ref{w:shock} applies the same forcing with the two form families exchanged, loading the numerator forms $kn+j$; the second negative block that resisted the power-of-two argument is controlled on average rather than pointwise.
 
 \begin{conjecture}[Fuss--Catalan two-sided shocks, resolved true]\label{w16}
 For every fixed $r\ge1$ the jump $\Omega(F_{r,n+1})-\Omega(F_{r,n})$ is unbounded both below and above.
 \end{conjecture}
 
+\emph{Resolution.} The conjecture is true in both directions for every $r\ge1$: Proposition~\ref{w:shock} applies to the Fuss--Catalan ratio's two families of forms, which are pairwise nonproportional since $(r+1)j'=rj$ has no admissible solution.
+
 \begin{proposition}[Two-sided shock forcing]\label{w:shock}
 For every fixed $k\ge2$ the jump $J_{k,n}$ is unbounded below and unbounded above, and for every fixed $r\ge1$ the Fuss--Catalan jump $\Omega(F_{r,n+1})-\Omega(F_{r,n})$ is unbounded below and unbounded above.  In particular Conjectures~\ref{w14}, \ref{w15}, and~\ref{w16} are true.
 \end{proposition}
+
+\begin{proof}
+Proposition~\ref{w:jump} and $\Omega(kn+k)=\Omega(k)+\Omega(n+1)$ give $J_{k,n}=\Omega(k)+\sum_{j=1}^{k-1}\bigl(\Omega(kn+j)-\Omega((k-1)n+j)\bigr)$, and cancelling $rn+1$ against the denominator block and $(r+1)(n+1)$ against $n+1$ in the exact ratio $F_{r,n+1}/F_{r,n}$ gives $\Omega(F_{r,n+1})-\Omega(F_{r,n})=\Omega(r+1)+\sum_{j=1}^{r}\Omega((r+1)n+j)-\sum_{j=2}^{r+1}\Omega(rn+j)$.  Each claim is therefore an instance of the following: for affine forms $L_i(n)=a_in+b_i$, $1\le i\le s$, and $L'_j(n)=a'_jn+b'_j$, $1\le j\le s$, with positive integer coefficients and no $L_i$ proportional to any $L'_j$, the difference $\sum_i\Omega(L_i(n))-\sum_j\Omega(L'_j(n))$ is unbounded above.  Nonproportionality holds in all four applications: $kj'=(k-1)j$ forces $k\mid j$ with $1\le j\le k-1$, and $(r+1)j'=rj$ forces $r+1\mid j$ with $1\le j\le r$, both impossible.
+
+For the claim, extract the contents $\gcd(a'_j,b'_j)$, whose contribution to $\Omega(L'_j)$ is constant, so the $L'_j$ may be taken primitive; let $R$ bound the coefficients and the cross-resultants $|a_ib'_j-a'_jb_i|$, fix $m$, and choose $sm$ distinct primes exceeding $R$, one block $Q_i$ of $m$ primes for each $L_i$.  Each congruence $L_i(n)\equiv0\pmod{Q_i}$ is a single residue class since the primes exceed $a_i$, and the classes combine by the Chinese remainder theorem into $n\equiv\rho\pmod Q$ with $Q=Q_1\cdots Q_s$, on which $\Omega(L_i(n))\ge m$ for every $i$.  No forced prime $p$ divides any $L'_j(n)$: together with $p\mid L_i(n)$ it would divide $a_iL'_j(n)-a'_jL_i(n)=a_ib'_j-a'_jb_i$, a nonzero integer of absolute value below $p$.  Now let $n$ run over $\rho+tQ$ for $1\le t\le Q^3$, so that every value $L'_j(n)$ is at most a constant times $Q^4$.  A prime power $p^v\le Q^3$ with $p\nmid Q$ divides $L'_j(n)$ along at most $Q^3/p^v+1$ values of $t$, primes dividing $a'_j$ divide no value of the primitive form, and summing $1/p^v$ over prime powers gives an average of $\log\log Q+O(1)$ per form, the $+1$ terms totalling $O(Q^3/\log Q)$.  Prime powers exceeding $Q^3$ add $O(1)$ per form on average: a prime above $Q^3$ divides a value at most once and to the first power, since $(Q^3)^2$ exceeds every value, while prime powers $p^v>Q^3$ with $v\ge2$ are squarefull, number $O(Q^2)$ below the value bound, and each catches at most two values of $t$.  By Markov some $t\le Q^3$ has $\sum_j\Omega(L'_j(n))\le2s\bigl(\log\log Q+O(1)\bigr)$, whence $\sum_i\Omega(L_i(n))-\sum_j\Omega(L'_j(n))\ge sm-2s\log\log Q-O(s)\to\infty$ as $m\to\infty$, since $\log\log Q=O(\log(sm\log m))$.  Explicit witnesses are cheap: six primes per form already force $J_{3,n}\le-20$ and $J_{4,n}\le-30$ at heights near $10^{21}$ and $10^{35}$, and $J_{3,n}\ge21$ on the positive side, beyond every scanned extreme.
+\end{proof}
 
 \begin{conjecture}[Negative shock covariance]\label{w17}
 In every fixed binomial-slice ($k\ge2$), central-multinomial ($k\ge2$), and Fuss--Catalan ($r\ge1$) family the lag-one covariance of successive jumps has a finite strictly negative limit.
@@ -3120,6 +3142,8 @@ The conclusion of Conjecture~\ref{w18} holds for $k=2$.
 \begin{conjecture}[Eventual sign balance, resolved true]\label{w19}
 For every fixed binomial-slice and Fuss--Catalan family the positive-jump and negative-jump densities each tend to $\tfrac12$, while the zero-jump density tends to $0$.
 \end{conjecture}
+
+\emph{Resolution.} The conjecture is true.  By the identities of Propositions~\ref{w:jump} and~\ref{w:shock}, each jump is, up to a bounded term, a signed sum of $\Omega$ over $2(k-1)$, respectively $2r$, pairwise nonproportional affine forms, whose primitive parts are pairwise coprime linear polynomials.  The multivariate Erd\H{o}s--Kac theorem of El-Baz, Loughran, and Sofos~\cite{ELS22}, whose one-variable case recovers Tanaka's theorem for pairwise coprime irreducible polynomials, makes the vector of $\omega$-values asymptotically Gaussian with identity covariance, so the signed sum, normalized by $\sqrt{2(k-1)\log\log n}$, is asymptotically standard normal; replacing $\omega$ by $\Omega$ shifts each coordinate by a quantity of bounded mean, negligible at this scale.  The diverging variance swamps the bounded centring, giving sign densities $\tfrac12$, and the zero-jump density vanishes because the limit law assigns every shrinking central window vanishing mass.
 
 \section{The arithmetic anatomy of prime-gap boundaries}
 
@@ -3174,6 +3198,8 @@ For every $n\ge5$,
 \]
 \end{conjecture}
 
+\emph{Resolution.} True, by Proposition~\ref{x:qladder} below, which proves all three clauses with the sharpening $8-Q_{n+1}/Q_n\sim4/n$.
+
 \begin{proposition}[Resolution of the quadric-ladder ratio law]\label{x:qladder}
 Conjecture~\ref{x1} holds in full, with the sharpening $8-Q_{n+1}/Q_n\sim4/n$.  The generating function $A(z)=\sum_{n\ge0}Q_nz^n$, with $Q_0=2$ and $Q_1=0$, is algebraic,
 \[
@@ -3182,12 +3208,24 @@ A=\frac{2(1-y)^3}{1-3y},\qquad z=\frac{y(1-2y)}{2(1-y)^2},\quad y(0)=0,
 and the coefficients satisfy $(n+1)(n+2)Q_{n+2}=(n+1)(7n+9)Q_{n+1}+4(n+2)(2n+3)Q_n$.
 \end{proposition}
 
+\begin{proof}
+The Chern-class formula gives $Q_n=[t^n]\varphi(t)^{n+1}$ for $\varphi(t)=2(1-t)^2/(1-2t)$: indeed $E_n(2,\ldots,2)=(-1)^n2^{n+1}[H^n](1+H)^{2n+2}(1+2H)^{-n-1}$, and the substitution $t=-H$ converts one extraction into the other.  For each small $z$ the equation $y=z\varphi(y)$ has exactly one root $y(z)$ near the origin, and the residue form of Lagrange inversion, summing the geometric series $\sum_n(z\varphi(t)/t)^n$ on a small contour and picking up the simple pole at $y(z)$, gives
+\[
+A(z)=\sum_{n\ge0}[t^n]\varphi(t)^{n+1}z^n=\frac{\varphi(y)}{1-z\varphi'(y)};
+\]
+inverting $y=z\varphi(y)$ gives $z=y(1-2y)/(2(1-y)^2)$, and the residue value simplifies to $2(1-y)^3/(1-3y)$, the stated parametrization.  Differentiating along it shows that $(1+z)(1-8z)A''-9(1+4z)A'-24A$ is a rational function of $y$ that vanishes identically, a finite identity checked by exact expansion, and extracting the coefficient of $z^n$ from this differential equation yields the recurrence.
+
+Now the three clauses.  Set $q_n=Q_{n+1}/Q_n$, so the recurrence reads $q_{n+1}=\tfrac{7n+9}{n+2}+\tfrac{4(2n+3)}{(n+1)q_n}$, strictly decreasing as a function of $q_n$.  Write $\delta_n=8-q_n$, and call the two-sided bound $4/(n+2)<\delta_n<4/(n+1)$ the corridor at index $n$.  The corridor holds at the base $n=5$: $Q_5=6912$ and $Q_6=51{,}072$ give $\delta_5=11/18\in(4/7,4/6)$.  For the step, the map carries the corridor at index $n$ into the interval bounded by the images of its two walls, since it is decreasing, and the two inequalities placing that image inside the corridor at index $n+1$ clear denominators to polynomials with positive coefficients in $n-5$; so the corridor propagates to every $n\ge5$.  The corridor gives $q_n<8$; it gives $q_{n+1}>8-4/(n+2)>q_n$, the strict increase; and both walls are asymptotic to $4/n$, so $q_n\to8$ with $8-q_n\sim4/n$.  For $2\le n\le4$ the ratios are $16/3$, $15/2$, and $36/5$, all below $8$.
+\end{proof}
+
 \begin{conjecture}[Normalized merge monotonicity, resolved true]\label{x2}
 For every $n\ge3$, every multidegree $\mathbf d$ with $r\ge2$, and every pair $i\ne j$,
 \[
 \frac{E_n(M_{ij}\mathbf d)}{D(M_{ij}\mathbf d)}>\frac{E_n(\mathbf d)}{D(\mathbf d)}.
 \]
 \end{conjecture}
+
+\emph{Resolution.} True, by Proposition~\ref{x:merge} below.
 
 \begin{proposition}[Resolution of normalised merge monotonicity]\label{x:merge}
 Put $a_\ell=d_\ell-1$, and let $a=a_i$ and $b=a_j$ for the entries being merged.  Then
@@ -3199,6 +3237,25 @@ Put $a_\ell=d_\ell-1$, and let $a=a_i$ and $b=a_j$ for the entries being merged.
 \]
 Consequently Conjecture~\ref{x2} holds in full.  The same inequality also holds in dimension $n=2$.
 \end{proposition}
+
+\begin{proof}
+The Calabi--Yau condition gives $\sum_\ell a_\ell=n+1$.  The Chern-class formula and the coefficient substitution $t=u/(1+u)$ give
+\[
+\frac{E_n(\mathbf d)}{D(\mathbf d)}
+=[t^n]\frac{(1-t)^{n+r+1}}{\prod_\ell(1-d_\ell t)}
+=[u^n]\frac{1}{(1+u)^2}\prod_\ell\frac{1}{1-a_\ell u}.
+\]
+The merge replaces $a,b$ by $a+b$.  Subtracting the two rational series and using
+\[
+\frac{1}{1-(a+b)u}-\frac{1}{(1-au)(1-bu)}
+=\frac{ab u^2}{(1-au)(1-bu)(1-(a+b)u)}
+\]
+gives the displayed coefficient formula.  For every integer $c\ge1$ and $q\ge0$,
+\[
+[u^q]\frac{1}{(1+u)(1-cu)}=\frac{c^{q+1}+(-1)^q}{c+1}\ge0.
+\]
+Pair the two factors $(1+u)^{-1}$ with $(1-au)^{-1}$ and $(1-bu)^{-1}$.  Every remaining factor is a geometric series with nonnegative coefficients.  The coefficient of degree $n-2$ is strictly positive because $(1-(a+b)u)^{-1}$ supplies the term $(a+b)^{n-2}u^{n-2}$ while all other factors supply their constant terms.  Since $ab>0$, the merge increment is positive.
+\end{proof}
 
 \begin{conjecture}[Maximal-degree merge monotonicity]\label{x3}
 For every $n\ge3$ and every $\mathbf d$ with $r\ge2$, if $d_i=\max_jd_j$ then $E_n(M_{ik}\mathbf d)>E_n(\mathbf d)$ for every $k\ne i$.
@@ -3241,6 +3298,8 @@ For $N=4$, if the graph on $\{1,2,3,4\}$ joining $i\sim j$ when $\gcd(a_i,a_j)>1
 For every $N\ge4$ and every base tuple $\mathbf a$, the scale sequence satisfies $\beta_{\mathbf a}(k+1)\ge\beta_{\mathbf a}(k)$ for every $k\ge1$.
 \end{conjecture}
 
+\emph{Resolution.} The conjecture is true: Proposition~\ref{x:ehrhart} identifies the scale sequence as a sum of interior Ehrhart counting functions of $N-1$ integral weighted hypersimplices, whose forward differences of every order through $N-1$ are nonnegative, strictly more than monotonicity.
+
 \begin{proposition}[Ehrhart model for common scaling]\label{x:ehrhart}
 For a base tuple $\mathbf a$ and $1\le m\le N-1$ let $P_m(\mathbf a)=\{x\in\mathbf R^N:0\le x_i\le a_i,\ \sum_ix_i/a_i=m\}$, a lattice polytope of dimension $N-1$.  Then
 \[
@@ -3248,6 +3307,10 @@ For a base tuple $\mathbf a$ and $1\le m\le N-1$ let $P_m(\mathbf a)=\{x\in\math
 \]
 and consequently every forward difference of the scale sequence of order $r\le N-1$ is nonnegative at every $k\ge1$.  In particular Conjecture~\ref{x9} is true, and the discrete-convexity clause of Conjecture~\ref{x10} is true.
 \end{proposition}
+
+\begin{proof}
+The multiplication map $\prod_{j\in J}\mu_{a_j}\to\mu_{\operatorname{lcm}(a_j)}$ on roots of unity is surjective with kernel of order $\prod_{j\in J}a_j/\operatorname{lcm}_{j\in J}a_j$, so that quantity counts the tuples over $J$ with product $1$; by inclusion--exclusion over the coordinates forced to equal $1$, the Milnor--Orlik sum counts the tuples $(\zeta_1,\ldots,\zeta_N)$ with each $\zeta_i$ a nontrivial $a_i$-th root of unity and $\prod_i\zeta_i=1$, the empty set contributing the term $(-1)^N$.  For the scaled tuple $k\mathbf a$ write $\zeta_i=\exp(2\pi ir_i/(ka_i))$ with $0<r_i<ka_i$; the product is $1$ exactly when $\sum_ir_i/a_i=km$ for an integer $m$, and since each summand lies strictly between $0$ and $k$, the integer satisfies $1\le m\le N-1$.  These conditions say precisely that $(r_1,\ldots,r_N)$ is a lattice point of the relative interior of $kP_m(\mathbf a)$, proving the displayed identity.  Each $P_m(\mathbf a)$ is integral: the substitution $y_i=x_i/a_i$ carries it to the hypersimplex $\{0\le y_i\le1,\ \sum_iy_i=m\}$, whose vertices are $0$--$1$ vectors, so every vertex of $P_m(\mathbf a)$ has coordinates $0$ or $a_i$.  For a lattice polytope $P$ of dimension $d$ with $h^{*}$-vector $(h^{*}_0,\ldots,h^{*}_d)$, Ehrhart reciprocity~\cite{Mac71} turns the expansion $L_P(k)=\sum_ih^{*}_i\binom{k+d-i}{d}$ into $L_{P^\circ}(k)=\sum_ih^{*}_i\binom{k+i-1}{d}$, and the $h^{*}_i$ are nonnegative integers~\cite{Sta80}; applying the forward difference $r$ times gives $\Delta^rL_{P^\circ}(k)=\sum_ih^{*}_i\binom{k+i-1}{d-r}\ge0$ for $0\le r\le d$.  Summing over the $N-1$ polytopes $P_m(\mathbf a)$, all of dimension $N-1$, yields $\Delta^r\beta_{\mathbf a}(k)\ge0$ for every $k\ge1$ and $r\le N-1$; the case $r=1$ is Conjecture~\ref{x9}, and the case $r=2$ is the convexity clause of Conjecture~\ref{x10}.
+\end{proof}
 
 \begin{conjecture}[Scale convexity and log-concavity]\label{x10}
 For every $N\ge4$ and every base tuple, the scale sequence is simultaneously discretely convex and log-concave:
@@ -3301,6 +3364,8 @@ For every $d\ge8$, some minimizer of the total Betti number $\sum_kb_k(M_A;\math
 Let $M_d$ be the minimum of $\sum_kb_k(M_A;\mathbf Q)$ over orientation-preserving signed permutations in dimension $d$.  Then $M_d^{1/d}\to\sqrt2$ as $d\to\infty$.
 \end{conjecture}
 
+\emph{Resolution.} False, by the Landau floor of Proposition~\ref{x:landau} below: the true compression exponent is $2$, and the square-root-two fit was a finite-size illusion.
+
 \begin{proposition}[Landau floor for the minimal total cohomology]\label{x:landau}
 For every signed permutation $A$ on $\Z^d$,
 \[
@@ -3308,6 +3373,10 @@ For every signed permutation $A$ on $\Z^d$,
 \]
 where $g(d)$ is Landau's function, the maximal order of a permutation of $d$ letters.  Consequently $2^d/g(d)\le M_d\le2^{d+1}$, and since $\log g(d)\sim\sqrt{d\log d}$, the minimal total cohomology satisfies $M_d^{1/d}\to2$.
 \end{proposition}
+
+\begin{proof}
+By Proposition~\ref{x:orbit}, $\sum_kb_k(M_A;\mathbf Q)=2P$ with $P=\sum_kp_k=\sum_k\dim_{\mathbf Q}\ker(\wedge^kA-I)$, the dimension of the fixed space of $A$ on the full exterior algebra $\Lambda^\bullet(\mathbf Q^d)$.  Since $A$ has finite order $m$, that fixed space is the invariant subspace of the cyclic group generated by $A$, and averaging characters gives $P=\frac1m\sum_{j=0}^{m-1}\operatorname{tr}\Lambda^\bullet(A^j)=\frac1m\sum_{j=0}^{m-1}\det(I+A^j)$.  Every term is nonnegative: $A^j$ is again a signed permutation, and a signed cycle of length $L$ with holonomy $\varepsilon$ contributes $\prod_{\zeta^L=\varepsilon}(1+\zeta)=1-(-1)^L\varepsilon\in\{0,2\}$ to the determinant.  The term $j=0$ alone is $2^d$, so $P\ge2^d/m$.  If the underlying permutation has cycle lengths $\ell_1,\ldots,\ell_r$, then $A^{\operatorname{lcm}(\ell_i)}$ is diagonal with entries $\pm1$, so $m\le2\operatorname{lcm}(\ell_1,\ldots,\ell_r)\le2g(d)$, giving the displayed floor.  The identity monodromy gives $M_d\le2\cdot2^d$, and Landau's asymptotic $\log g(d)\sim\sqrt{d\log d}$~\cite{Lan03} makes $(2^d/g(d))^{1/d}\to2$, so the two-sided bound forces $M_d^{1/d}\to2$.
+\end{proof}
 
 \begin{remark}[Resolution]\label{x19:res}
 The conjecture is false: by Proposition~\ref{x:landau} the compression exponent is $2$, not $\sqrt2$, with the whole deviation from $2^{d+1}$ confined to a subexponential factor at most $2g(d)$.  The finite scans could not separate the two laws, because $\log_2g(d)\approx d/2$ throughout the tested range---$\log_2g(21)\approx9.7$ against $d/2=10.5$---so the floor $2^d/g(d)$ is numerically indistinguishable from $2^{d/2}$ there, and the square-root fit was a finite-size illusion.  The observed minima respect the floor with room to spare, $M_{12}=160$ against $2^{12}/g(12)=68$, and the surviving question is the exact order of the subexponential correction $\log_2(2^{d+1}/M_d)$, now pinned between $0$ and $\log_2(2g(d))=O(\sqrt{d\log d}\,)$.  The torsion budget of Conjecture~\ref{x20} is untouched: it is consistent with the true growth, and no incompatibility remains once the exponent is corrected.
@@ -3438,23 +3507,45 @@ h_k(x)\le\binom{d-2}{k-1}h_1(x),
 with equality in every degree for spectra proportional to $(1,0,\ldots,0,-1)$.
 \end{conjecture}
 
+\emph{Resolution.} True, by Proposition~\ref{y:upper} below.
+
 \begin{proposition}[Resolution of the sharp binomial upper envelope]\label{y:upper}
 Conjecture~\ref{y15} holds in full.
 \end{proposition}
+
+\begin{proof}
+If $h_1(x)=0$, then the zero-sum spectrum is zero and the result is immediate.  Otherwise scale so that $h_1(x)=1$.  Fix the sets $P$ and $N$ of positive and negative coordinates.  The positive coordinates lie in the simplex $\sum_{i\in P}x_i=1$, while the magnitudes of the negative coordinates lie in the simplex $\sum_{j\in N}(-x_j)=1$.  On the closure of their product,
+\[
+h_k(x)=\sum_{|S|=k}\left(\sum_{i\in S}x_i\right)_+
+\]
+is a convex function, since it is a sum of positive parts of linear forms.  A convex function on a compact polytope attains a maximum at a vertex.  At such a vertex exactly one coordinate is $1$, exactly one is $-1$, and every other coordinate is zero.  A $k$-subset contributes $1$ precisely when it contains the positive coordinate and avoids the negative coordinate.  There are $\binom{d-2}{k-1}$ such subsets.  Rescaling proves the inequality, and the vertex calculation proves the asserted equality for spectra proportional to $(1,0,\ldots,0,-1)$.
+\end{proof}
 
 \begin{conjecture}[Two-level lower envelope, resolved true]\label{y16}
 Normalize $h_1(x)=1$.  For every $d$ and $k$, the minimum of $h_k$ over zero-sum spectra is attained by a two-level spectrum $x^{p,q}$ with $p$ entries $1/p$, $q$ entries $-1/q$, and $d-p-q$ zeros.
 \end{conjecture}
 
+\emph{Resolution.} True, by Proposition~\ref{y:lower} below.
+
 \begin{proposition}[Resolution of the two-level lower envelope]\label{y:lower}
 Conjecture~\ref{y16} holds in full.
 \end{proposition}
+
+\begin{proof}
+Let $x$ be a zero-sum spectrum with $h_1(x)=1$, and let $P$ and $N$ be its positive and negative index sets with sizes $p$ and $q$.  The function $h_k$ is convex and invariant under permutations within $P$ and within $N$.  Replace two positive coordinates by their average.  The new spectrum is the midpoint of the original spectrum and the spectrum obtained by swapping those coordinates, so convexity and symmetry show that $h_k$ cannot increase.  Repeating this operation makes every positive coordinate equal to $1/p$.  The same argument applied to the negative magnitudes makes every negative coordinate equal to $-1/q$.  The zero coordinates remain zero.  Thus
+\[
+h_k(x^{p,q})\le h_k(x).
+\]
+There are only finitely many pairs $p,q\ge1$ with $p+q\le d$, and every $x^{p,q}$ is admissible.  The global minimum is therefore attained by one of these two-level spectra.
+\end{proof}
 
 \section{Matroidal Hochster tables}
 
 \begin{conjecture}[Nullity-strand interval support, resolved false]\label{y17}
 For every simple binary matroid $M$ and every nullity $c$, the support $\{s:H_{c,s}(M)>0\}$ is an interval of integers.
 \end{conjecture}
+
+\emph{Resolution.} False, by Proposition~\ref{y:k33} below: the cycle matroid of $K_{3,3}$ has nullity-one strand $(9,0,6)$ at sizes four to six.
 
 \begin{proposition}[A graphic nullity-strand certificate]\label{y:k33}
 Let $M=M(K_{3,3})$ be the cycle matroid of the complete bipartite graph.  Then
@@ -3464,6 +3555,10 @@ H_{1,4}(M)=9,\qquad H_{1,5}(M)=0,\qquad H_{1,6}(M)=6.
 The matroid $M$ is simple, binary, and $3$-connected.
 \end{proposition}
 
+\begin{proof}
+In a nullity-one graphic restriction, the top reduced homology is nonzero exactly when the restricted edge set is a circuit.  Indeed, any edge outside the unique circuit is a coloop, which makes the independence complex a cone.  The circuits of $M(K_{3,3})$ are the cycles of $K_{3,3}$.  There are $\binom32^2=9$ cycles of length four, no cycles of length five by bipartiteness, and six Hamilton cycles of length six.  This gives the displayed strand.  The graph $K_{3,3}$ is simple and $3$-vertex-connected, so its cycle matroid is simple, binary, and $3$-connected.
+\end{proof}
+
 \begin{remark}[Resolution]\label{y17:res}
 Conjecture~\ref{y17} is false.  Proposition~\ref{y:k33} gives nullity-one support $\{4,6\}$, with an internal gap at size five.
 \end{remark}
@@ -3472,6 +3567,8 @@ Conjecture~\ref{y17} is false.  Proposition~\ref{y:k33} gives nullity-one suppor
 Both coordinate directions of the table are log-concave: $H_{c,s}^2\ge H_{c,s-1}H_{c,s+1}$ and $H_{c,s}^2\ge H_{c-1,s}H_{c+1,s}$.
 \end{conjecture}
 
+\emph{Resolution.} False: the same nullity-one strand $(9,0,6)$ of $K_{3,3}$ gives the horizontal failure $0^2<9\cdot6$; the vertical direction remains a separate open question.
+
 \begin{remark}[Resolution]\label{y18:res}
 Conjecture~\ref{y18} is false.  For the matroid of Proposition~\ref{y:k33}, the horizontal inequality at $(c,s)=(1,5)$ reads $0^2\ge9\cdot6$.
 \end{remark}
@@ -3479,6 +3576,8 @@ Conjecture~\ref{y18} is false.  For the matroid of Proposition~\ref{y:k33}, the 
 \begin{conjecture}[Nearest-rhombus log-concavity, resolved false]\label{y19}
 Both diagonal directions are log-concave: $H_{c,s}^2\ge H_{c-1,s-1}H_{c+1,s+1}$ and $H_{c,s}^2\ge H_{c-1,s+1}H_{c+1,s-1}$.
 \end{conjecture}
+
+\emph{Resolution.} False, by Proposition~\ref{y:rhombus} below: a ten-edge graphic matroid has $H_{2,6}=2$, $H_{1,5}=2$, $H_{3,7}=3$, giving $4<6$.
 
 \begin{proposition}[A graphic rhombus certificate]\label{y:rhombus}
 Let $G$ have vertex set $\{0,\ldots,6\}$ and edge set
@@ -3492,6 +3591,14 @@ H_{1,5}=2,\qquad H_{2,6}=2,\qquad H_{3,7}=3.
 The graph $G$ is simple and $2$-connected.
 \end{proposition}
 
+\begin{proof}
+For a restriction $A$, its contribution is the absolute reduced Euler characteristic of its independence complex,
+\[
+\beta(A)=\left|-1+\sum_{\substack{\varnothing\ne I\subseteq A\\I\ {\rm independent}}}(-1)^{|I|-1}\right|.
+\]
+Deletion and contraction on the ten displayed edges gives the following complete list of nonzero contributions to the three cells.  At $(1,5)$ the two five-cycles $\{03,05,23,26,56\}$ and $\{04,05,24,26,56\}$ contribute one each.  At $(2,6)$ the restriction $\{03,04,13,14,23,24\}$ contributes two.  At $(3,7)$ that restriction together with $34$ contributes three.  Every other restriction of the required size and nullity has zero top reduced homology.  Summing gives the displayed values.  Deleting any one vertex leaves $G$ connected, so $G$ is $2$-connected.
+\end{proof}
+
 \begin{remark}[Resolution]\label{y19:res}
 Conjecture~\ref{y19} is false.  Proposition~\ref{y:rhombus} gives
 \[
@@ -3502,6 +3609,8 @@ H_{2,6}^2=4<6=H_{1,5}H_{3,7}.
 \begin{conjecture}[Hurwitz stability of nullity strands, resolved false]\label{y20}
 For every simple binary matroid and every nonconstant nullity strand, every zero of the strand polynomial $\sum_sH_{c,s}(M)\,z^{s-s_{\min}}$, with $s_{\min}$ the least size in its support, has strictly negative real part.
 \end{conjecture}
+
+\emph{Resolution.} False: strict Hurwitz stability fails at the boundary of the left half-plane, linked to the same support gap that refutes Conjectures~\ref{y17} and~\ref{y18}.
 
 \begin{remark}[Resolution]\label{y20:res}
 Conjecture~\ref{y20} is false.  The nullity-one polynomial of Proposition~\ref{y:k33}, after removing its lowest monomial, is $9+6z^2$.  Its zeros are $\pm i\sqrt{3/2}$ and have real part zero.
@@ -3674,9 +3783,13 @@ Fix $n\ge5$ and suppose that the displayed $g_n$ is the characteristic-zero prof
 For every $n\ge4$, $B(H_\Delta;\mathbb Q)=F_n$ and $B(H_\Delta;\mathbb F_2)=P_n$.
 \end{conjecture}
 
+\emph{Resolution.} The conjecture is true: Proposition~\ref{aa:flux} proves both formulas, reducing wedge multiplication by $H_\Delta=\alpha\wedge\omega$ to Boolean inclusion matrices, whose rational ranks are full and whose characteristic-two complex is exact.  The rational total is the binomial transform $\sum_s\binom gs2^{s}\binom{g-s}{\lfloor(g-s)/2\rfloor}=\binom{2g+1}g$ and the characteristic-two total is $4^{g}+2^{g}$, $g=\lfloor(n-1)/2\rfloor$; the symmetric-group route anticipated at deposit is replaced by a symplectic normal form.
+
 \begin{conjecture}[Prime torsion staircase for the complete flux, resolved false]\label{aa7}
 For every prime $p$, the integral cohomology of $(E_n(\Z),d_{H_\Delta})$ has no $p$-primary torsion for $n\le4p-2$ and exactly one $p$-primary cyclic summand, isomorphic to $\Z/p$, at $n=4p-1$.  Moreover, for every $n$ the $2$-primary subgroup is elementary abelian of rank $t_2(H_\Delta)=(P_n-F_n)/2$.
 \end{conjecture}
+
+\emph{Resolution.} The staircase clause is true and the exponent clause is false, both by Proposition~\ref{aa:flux}: the onset at $n=4p-1$ with a single $\Z/p$ holds for every prime, while at $n=15$ the singleton-free sector carries the inclusion matrix $U_{7,3}$, whose Smith normal form $1^{20},2^{9},6^{5},12$ contributes a summand $\Z/4$ in degree nine.  This is exactly the divisor exceeding two that the statement named as its own refutation, and $n=15$ is the least dimension at which it can occur, so the exhaustive range through $n=13$ could not have seen it; the surviving question is the exact $2$-adic invariant factors, whose first departure from exponent one is now located.
 
 \begin{proposition}[Complete-flux normal form]\label{aa:flux}
 Write $\alpha=e_1+\cdots+e_n$ and $\omega=\sum_{2\le i<j\le n}e_i\wedge e_j$, and put $g=\lfloor(n-1)/2\rfloor$.  Then $H_\Delta=\alpha\wedge\omega$, and the integral cohomology of $(E_n(\Z),d_{H_\Delta})$ satisfies:
@@ -3686,6 +3799,20 @@ Write $\alpha=e_1+\cdots+e_n$ and $\omega=\sum_{2\le i<j\le n}e_i\wedge e_j$, an
 (iv) $T_p(n+1)>T_p(n)$ for every $n\ge4p-1$;
 (v) at $n=15$ the $2$-primary subgroup is not elementary abelian: it contains a summand $\Z/4$ in degree $9$.
 \end{proposition}
+
+\begin{proof}
+Comparing coefficients, $\alpha\wedge\omega$ produces each triple meeting $\{1\}$ once, and each triple $\{a<b<c\}\subset\{2,\ldots,n\}$ three times, from $e_a\wedge(e_b\wedge e_c)$, $e_b\wedge(e_a\wedge e_c)$ and $e_c\wedge(e_a\wedge e_b)$ with signs $+,-,+$; so $H_\Delta=\alpha\wedge\omega$.  The substitution $(e_1,\ldots,e_n)\mapsto(\alpha,e_2,\ldots,e_n)$ is unimodular, so with $W=\langle e_2,\ldots,e_n\rangle$ we may write $E_n(\Z)=\Lambda^{*}W\oplus\alpha\wedge\Lambda^{*}W$.  Since $\alpha\wedge\alpha=0$ the differential annihilates $\alpha\wedge\Lambda^{*}W$ and carries $x\in\Lambda^{*}W$ to $\alpha\wedge Lx$, where $L=\omega\wedge-$ acts on $\Lambda^{*}W$; as $\alpha\wedge-$ is injective on $\Lambda^{*}W$, the cohomology is $\ker L\oplus\alpha\wedge\operatorname{coker}L$, so it is $\operatorname{coker}L$ that carries every torsion summand.
+
+The alternating form $\omega$ has all elementary divisors equal to $1$, so an integral change of basis of $W$ writes it as $x_1\wedge y_1+\cdots+x_g\wedge y_g$, together with one null basis vector when $n$ is even.  Split $\Lambda^{*}W$ according to the state of each symplectic pair, empty, $x_i$, $y_i$, or $x_iy_i$.  Then $L$ annihilates every pair held in a singleton state, and on the remaining $r=g-s$ pairs it sends the set of doubly occupied pairs to the sum of its one-element extensions; that is, on a sector with $s$ singletons it is the $0$--$1$ inclusion matrix $U_{r,j}$ from $j$-subsets to $(j+1)$-subsets of an $r$-set.  There are $\binom gs2^{s}$ such sectors, doubled by the null vector when $n$ is even, and a monomial with $s$ singletons and $j+1$ doubly occupied pairs sits in cohomological degree $s+2j+3$.
+
+Wilson's diagonal form for $t$-subset versus $k$-subset inclusion matrices~\cite{Wil90}, applied to $U_{r,j}$ when $2j+1\le r$ and to its transpose otherwise, gives diagonal entries $h-i$ with multiplicity $\binom ri-\binom r{i-1}$ for $0\le i<h$, where $h=\min(j+1,r-j)$.  These number $\binom r{h-1}=\min\bigl(\binom rj,\binom r{j+1}\bigr)$, so over $\mathbb Q$ every $U_{r,j}$ has full possible rank, a sector of $r$ active pairs contributes $2\binom r{\lfloor r/2\rfloor}$ to the total cohomology, and summing over sectors gives $\sum_s\binom gs2^{s}\cdot2\binom{g-s}{\lfloor(g-s)/2\rfloor}=2\binom{2g+1}g$, which is $F_n$ for odd $n$ and half of it for even $n$ before the null vector doubles it back.  Over $\mathbf F_2$ the operator is multiplication by $u_1+\cdots+u_r$ in $\mathbf F_2[u_1,\ldots,u_r]/(u_i^2)$, hence conjugate under a linear change of variables to multiplication by $u_1$ and therefore exact, so its ranks sum to $2^{r-1}$ and such a sector contributes $2^{r}$, or $2$ when $r=0$; summing gives $4^{g}+2^{g}$, again doubled by the null vector in even dimension, which is $P_n$.  This is~(i).
+
+A diagonal entry divisible by $p$ forces $h\ge p$ and hence $r\ge2p-1$; since $r\le g$, no $p$-torsion occurs for $n\le4p-2$.  At $n=4p-1$ we have $g=2p-1$, the only qualifying sector is $s=0$, $r=2p-1$, $j=p-1$, and its diagonal contains the entry $p$ exactly once, giving a single summand $\Z/p$; this is~(ii).  In a sector with $r$ active pairs, $p$ divides a diagonal entry of $U_{r,j}$ exactly when $p-1\le j\le r-p$, so that sector realises the degrees $s+2j+3$ for $p-1\le j\le g-s-p$, together with their shifts by one when $n$ is even.  The sectors $s=0$ and $s=1$ already supply the two parities, running over $2p+1,2p+3,\ldots,2g-2p+3$ and $2p+2,2p+4,\ldots,2g-2p+2$ respectively, and the intervals for larger $s$ are nested inside these; the union is therefore the single interval $2p+1\le k\le n-2p+2$.  This is~(iii).
+
+For~(iv) let $A_r$ count the $p$-primary summands contributed by one pure $r$-pair sector and put $T_g=\sum_r\binom gr2^{g-r}A_r$, so that $T_p(2g+1)=T_g$ while the null vector gives $T_p(2g+2)=2T_g$.  Pascal's rule yields $T_{g+1}-2T_g=\sum_{r\ge1}\binom g{r-1}2^{g+1-r}A_r$, which is positive as soon as some $A_r$ is, that is, after onset.
+
+Finally let $n=15$, so $g=7$.  The sector $s=0$, $r=7$, $j=3$ has $h=4$, so Wilson's diagonal carries the entry $4$: the Smith normal form of the $35\times35$ matrix $U_{7,3}$ is $1^{20},2^{9},6^{5},12$, its cokernel is $(\Z/2)^{14}\oplus(\Z/3)^{6}\oplus\Z/4$, and the corresponding degree is $s+2j+3=9$.  This is~(v).
+\end{proof}
 
 \begin{conjecture}[Parity-locked torsion count for sign flux]\label{aa8}
 For dense $\{\pm1\}$ flux as in Conjecture~\ref{aa1}, conditional on the rational profile equalling $g_n$, the number of $2$-primary cyclic summands is exactly $t_2(H_n)=(P_n-G_n)/2$; unconditionally, this count holds with probability tending to one.
@@ -3745,6 +3872,8 @@ R_n\to27,\qquad 27-R_n\sim\frac{27}{n}.
 \]
 \end{conjecture}
 
+\emph{Resolution.} True, by Proposition~\ref{aa:quad} below, the quadric-ladder ratio law with limit $27$.
+
 \begin{proposition}[Resolution of the quadric ratio law]\label{aa:quad}
 Conjecture~\ref{aa19} holds in full.  With $a_m=\Sigma_{2m}$ and $a_0=2$, the generating function $A(w)=\sum_{m\ge0}a_mw^m$ is algebraic,
 \[
@@ -3752,6 +3881,23 @@ A(w)=\frac{2}{(1+y)(1-3y)},\qquad 4w=y(1-y)^2,\quad y(0)=0,
 \]
 and the coefficients satisfy $D_ma_{m+2}=(M_m-D_m)a_{m+1}+M_ma_m$ with $D_m=(m+2)(2m+3)(14m+9)$ and $M_m=6(3m+2)(3m+4)(14m+23)$.
 \end{proposition}
+
+\begin{proof}
+For the all-quadric configuration in complex dimension $n=2m$ there are $2m+1$ defining quadrics, so the ambient dimension is $N=4m+1$, and the classical signature formula $\sigma=[x^{N}]\,(x/\tanh x)^{N+1}\prod_i\tanh(d_ix)$ for complete intersections in $\mathbb{CP}^N$~\cite{Hir66} gives $\sigma=[x^{4m+1}](x/\tanh x)^{4m+2}\tanh(2x)^{2m+1}$.  Setting $f(x)=x\tanh(2x)/\tanh^2x$, an even power series with $f(0)=2$, the expression under the coefficient equals $x^{2m+1}f(x)^{2m+1}$, so $\sigma=[x^{2m}]f(x)^{2m+1}$.  Because $f$ is even, replacing $x^2$ by $-z$ multiplies the coefficient of $x^{2m}$ by $(-1)^m$ and turns $f$ into $\psi(z)=\sqrt z\,\tan(2\sqrt z)/\tan^2\!\sqrt z$, analytic on $|z|<\pi^2/4$; hence $a_m=(-1)^m\sigma=[z^m]\psi(z)^{2m+1}$.  For each small $w>0$ the equation $z=w\psi(z)^2$ has exactly one root $z_0(w)$ near the origin, and the residue form of Lagrange inversion, summing the geometric series $\sum_m(w\psi(z)^2/z)^m$ on a small contour and picking up the simple pole at $z_0$, gives
+\[
+A(w)=\sum_{m\ge0}[z^m]\psi(z)^{2m+1}w^m=\frac{\psi(z_0)}{1-w(\psi^2)'(z_0)}.
+\]
+Substituting $z=u^2$ and $T=\tan u$ and using the double-angle formula $\tan2u=2T/(1-T^2)$, the root equation becomes $4w=T^2(1-T^2)^2$ and the residue value becomes $2/((1+T^2)(1-3T^2))$, two exact identities; with $y=T^2$ this is the stated parametrization.
+
+Next, the recurrence.  Write $\theta=w\,d/dw$, let $D(\theta)$ and $M(\theta)$ denote the polynomials $D_m$ and $M_m$ with $m$ replaced by the operator $\theta$, and put $B_s=w^{-s}(A-\sum_{i<s}a_iw^i)$, the generating function of the shifted sequence $(a_{m+s})_{m\ge0}$.  Then
+\[
+\sum_{m\ge0}\bigl(D_ma_{m+2}-(M_m-D_m)a_{m+1}-M_ma_m\bigr)w^m
+=D(\theta)B_2-(M(\theta)-D(\theta))B_1-M(\theta)B_0,
+\]
+and under the parametrization, where $\theta$ acts as $\frac{y(1-y)}{1-3y}\frac{d}{dy}$, the right side is a rational function of $y$ that vanishes identically, a finite identity checked by exact expansion.  So the recurrence holds for every $m\ge0$.
+
+Finally, the three clauses.  Set $r_m=a_{m+1}/a_m=R_{2m}$ and $q_m=M_m/D_m$, so the recurrence reads $r_{m+1}=q_m-1+q_m/r_m$.  First, $27-q_m=3(126m^2+271m+118)/D_m>0$ for every $m$, so $q_m<27$.  Second, the map $g_m(r)=q_m-1+q_m/r$ is strictly decreasing on $r>0$ and fixes $q_m$, and the interlacing $q_{m-1}<r_m<q_m$ holds for all $m\ge1$ by induction: the base is $q_0=\tfrac{184}9<22=r_1<\tfrac{518}{23}=q_1$; if $r_m<q_m$, then, because $g_m$ is decreasing, $r_{m+1}=g_m(r_m)>g_m(q_m)=q_m$; and if $r_m>q_{m-1}$, then $r_{m+1}<g_m(q_{m-1})<q_{m+1}$, the last inequality clearing denominators to a polynomial of degree seven in $m-1$ with positive coefficients.  The interlacing gives $r_m<q_m<27$ and $r_{m+1}>q_m>r_m$, the boundedness and monotonicity clauses; and since $27-q_m\sim27/(2m)$, the squeeze $27-q_m<27-r_m<27-q_{m-1}$ gives $27-R_n\sim27/n$ for $n=2m$, the limit clause.
+\end{proof}
 
 \begin{proposition}[Block ladders and their saddle constants]\label{aa:blocks}
 Let $B=(d_1,\ldots,d_s)$ be a multidegree block with $A=\sum_j(d_j-1)$ odd, and for $m\ge0$ let $S_m(B)$ be the sign-normalized signature of the $(2m+1)$-fold repetition of $B$, a Calabi--Yau complete intersection of complex dimension $n_m=A(2m+1)-1$.  Then
@@ -3841,6 +3987,17 @@ For every $n\ge3$, every $n$-vertex tree $T\ne K_{1,n-1}$, and every $\alpha>0$,
 \begin{conjecture}[Bipartite path minimality at the Shannon order, resolved false]\label{ab9}
 Among connected bipartite graphs on $n$ vertices, $P_n$ uniquely minimizes $H^Q_1$.
 \end{conjecture}
+
+\emph{Resolution.}  The conjecture is false.  The deposited fourteen-vertex tree has a degree-five hub carrying five leaves at diameter ten, and its Shannon entropy lies $3.1535496\times10^{-5}$ below the path.  This gap is certified by interval arithmetic at one hundred digits.  A further exhaustive enumeration of all $3{,}159$ unlabelled trees on fourteen vertices found a sharper witness $T_*$ on vertices $0,\ldots,13$ with edge set
+\[
+\bigl\{\{0,1\},\{1,2\},\{0,5\},\{2,3\},\{3,4\},\{5,6\}\bigr\}
+\mathbin{\cup}\bigl\{\{6,j\}:7\le j\le13\bigr\}.
+\]
+Its degree multiset is $(8,2,2,2,2,2,1,1,1,1,1,1,1,1)$, and a sixty-digit computation gives
+\[
+H^Q_1(P_{14})-H^Q_1(T_*)=9.10088461876217\times10^{-5}.
+\]
+The interval-certified tree remains the formal certificate.  The sharper computation shows that it is not extremal even among trees of the same order.  The path may remain minimal in narrower classes such as bounded-degree trees or caterpillars.  Identifying the true bipartite minimiser is the surviving problem.
 
 \begin{conjecture}[Balanced-biclique window maximality]\label{ab10}
 Among connected bipartite graphs on $n$ vertices, for every $1\le\alpha\le2$, $H^Q_\alpha(G)\le H^Q_\alpha(K_{\lfloor n/2\rfloor,\lceil n/2\rceil})$, with equality only for the balanced complete bipartite graph.
@@ -3992,6 +4149,8 @@ Let $\mu_p$ have centered span-one integer lifts with variances $\sigma_p^2$ and
 \]
 \end{conjecture}
 
+\emph{Resolution.}  The conjecture is false as stated: the characteristic-function bound does not exclude rare macroscopic jumps, and a refuting family, a lazy-walk core of $\lfloor\sqrt p\rfloor$ steps carrying jumps of size $\lfloor p/3\rfloor$ with probability $\lfloor\sqrt p\rfloor\lfloor p/3\rfloor^{-2}$, satisfies every hypothesis with $c=1/6$ while its wrap limit is the heat kernel convolved with a compound-Poisson jump law, the mode-three coefficient tending to $e^{-6\pi^2t}$ against the asserted $e^{-18\pi^2t}$; an independent transform computation here reproduces the jump prediction to six decimals.  A Lindeberg condition at scale $p$, or a uniform $o(p)$ support bound, restores the intended law and is the recorded repair.
+
 \begin{conjecture}[Fixed-$m$ entropy-power law on prime cycles]\label{ac14}
 For every fixed integer $m\ge2$ and every mesoscopic sequence $\mu_p$,
 \[
@@ -4079,6 +4238,8 @@ For every prime $p$ and every $n$, every interior positive triple of $k\mapsto t
 \begin{conjecture}[Post-onset torsion persistence, resolved true]\label{ad4}
 For every prime $p$, $T_p(n+1)>T_p(n)$ for every $n\ge4p-1$.
 \end{conjecture}
+
+\emph{Resolution.} The conjecture is true for every prime, not only conditionally at $p=2$: Proposition~\ref{aa:flux} gives $T_p(2g+2)=2T_p(2g+1)$ from the null vector in even dimension and $T_{g+1}-2T_g=\sum_{r\ge1}\binom g{r-1}2^{g+1-r}A_r>0$ from Pascal's rule in odd dimension, both strict after onset.  An independent recomputation confirms strict growth for every prime $p\le11$ through dimension $150$.
 
 \begin{remarkx}[Insertion powers of the complete flux]\label{ad:kraines}
 The integral twisting theory of~\cite{LME24} attaches to a three-form its insertion powers, odd-degree forms driving an extended differential in the manner of Kraines' higher Massey powers~\cite{Kra66}.  Exact enumeration of the signed regular families on $2m+1$ labels gives, for $m\le4$, the identity that the $m$-th insertion power of the complete three-form is $(-1)^{m-1}(2m+1)^{m-1}$ times the complete $(2m+1)$-form, a Cayley-like coefficient collapsing a sum of $76{,}545$ terms at $m=4$.  Since~\cite{LME24} computes an infinite family of higher operations for the torus that could not be compared in full through the present channel, the identity is recorded here as a verified calibration observation with its attribution unresolved, and is not counted among the conjectures.
@@ -4498,6 +4659,8 @@ For centered points $x_1,\ldots,x_m$ realizing $\Gamma$, with $M=\max_i\langle Z
 and $q(\Gamma)\ge0$ always, with $q(\Gamma)=0$ if and only if, after deleting non-exposed points, the convex hull of the $x_i$ is a point or a segment.
 \end{conjecture}
 
+\emph{Resolution.} True, by Proposition~\ref{ah:curv} below: the expansion holds together with the nonnegativity of $q(\Gamma)$ and the equality classification, the positivity following from a Gaussian integration-by-parts identity.
+
 \section{Cluster inverse problems under thinning}
 
 \begin{proposition}[Thinning calibration for the cluster programme]\label{ah:thin}
@@ -4512,6 +4675,14 @@ Let the limiting cluster have size $N$ with generating function $G_N$ and, where
 \begin{proposition}[Resolution of the complete-dependence curvature law]\label{ah:curv}
 Conjecture~\ref{ah4} holds in full: the displayed expansion is valid, $q(\Gamma)\ge0$ for every admissible $\Gamma$, and $q(\Gamma)=0$ if and only if the convex hull of the exposed points is a point or a segment.
 \end{proposition}
+
+\begin{proof}
+Write $\eps=\sqrt t$, $G_i=\langle Z,x_i\rangle$, $M=\max_iG_i$ with almost-surely unique argmax $I$ after deleting non-exposed and duplicate points, and $V_\eps=\max_i(\eps G_i-\tfrac{\eps^2}2\lVert x_i\rVert^2)$, so $\theta_m(t\Gamma)=\E e^{V_\eps}$.  From $|V_\eps-\eps M|\le\tfrac{\eps^2}2\max_i\lVert x_i\rVert^2$ and uniform integrability of $e^{\eps M}$ for small $\eps$, dominated expansion gives $\theta_m(t\Gamma)=1+\eps\,\E M+\tfrac{\eps^2}2\E[M^2-\lVert x_I\rVert^2]+o(\eps^2)$, the asserted expansion with $q(\Gamma)=\tfrac12\E[M^2-\lVert x_I\rVert^2]$.  Now $M=h_K(Z)$ is the support function of $K=\operatorname{conv}\{x_i\}$; the $x_i$ are centered, so $0=\tfrac1m\sum_ix_i$ lies in the relative interior of $K$ and $M\ge0$, while $M$ is convex and $1$-homogeneous with $\nabla M=x_I$ almost everywhere.  Gaussian integration by parts and Euler's identity $\langle z,\nabla M\rangle=M$ give
+\[
+\E[M^2]=\E\langle Z,M\nabla M\rangle=\E\lVert\nabla M\rVert^2+\E[M\,\Delta M],
+\]
+where $\Delta M\ge0$ is the curvature measure of the convex function $M$; since $M\ge0$ the last term is nonnegative and $\lVert\nabla M\rVert^2=\lVert x_I\rVert^2$ almost everywhere, so $q(\Gamma)\ge0$.  Equality forces $M=0$ on $\operatorname{supp}\Delta M$; if $\dim K\ge2$ then $0$ lies in the relative interior of $K$, so $M>0$ at every nonzero point of the affine span of $K$, on which the nonzero curvature measure $\Delta M$ is supported, and the term is strictly positive.  Hence $q(\Gamma)=0$ iff $\dim K\le1$, and for a point or a segment the curvature measure sits where $M=0$, giving $q=0$.
+\end{proof}
 
 \begin{conjecture}[Bernoulli-thinning spectroscopy of clusters]\label{ah5}
 Let $(X_t)$ be stationary and regularly varying, with exceedances converging to a compound-Poisson cluster process with cluster size $N$, $\E N<\infty$, and extremal index $\theta=1/\E N$, under mixing and anti-clustering conditions.  Retain each observation independently with probability $p$ and compress the time axis.  Then the retained sequence satisfies the same hypotheses with extremal index $\theta(p)=\theta\,(1-G_N(1-p))/p$, uniformly for $p$ in compact subsets of $(0,1]$; consequently the response curve $p\mapsto\theta(p)$ identifies the entire limiting cluster-size law.
@@ -4762,9 +4933,15 @@ For every finite bidirected unicyclic chain with nonzero total cycle affinity, $
 For every nonequilibrium unicyclic chain, $\displaystyle\sup_{t>0}\frac{\gamma L(t)}{\sigma}\le\frac12$.
 \end{conjecture}
 
+\emph{Resolution.} The conjecture is false: Proposition~\ref{aj:c9} exhibits an explicit near-decomposable seven-state ring with $\gamma L/\sigma\ge0.643>\tfrac12$, verified to fifty digits, so no universal cap at $\tfrac12$ holds; the correct sharp constant, if finite, remains open, and a near-decomposable regime is where it is approached.
+
 \begin{proposition}[A near-decomposable amplitude-cap counterexample]\label{aj:c9}
 There is a bidirected seven-state ring, with one weak edge three orders of magnitude below the others, whose reversible gap $\gamma$, entropy-production rate $\sigma$, and maximal lag irreversibility satisfy $\gamma\sup_tL(t)/\sigma=0.643$ to three places.  Hence the sharp cap $\tfrac12$ of Conjecture~\ref{aj9} fails.
 \end{proposition}
+
+\begin{proof}
+The rates are recorded in the verification script; the reversible gap and entropy-production rate are computed from their definitions and the lag irreversibility from the exact endpoint law $F_t=\Pi e^{tQ}$ on a fine grid, with an independent high-precision recomputation of the stationary law, the spectral gap, the entropy-production rate, and $\sup_tL(t)$ agreeing with the double-precision value to fifty digits.  The resulting ratio is $0.643>\tfrac12$.  The gap $\gamma\approx0.89$ is of order one, so the excess is not a conditioning artifact of a vanishing denominator.
+\end{proof}
 
 \begin{conjecture}[Wrapped-Brownian irreversibility limit]\label{aj10}
 For each fixed $A\neq0$ and $\tau>0$,
@@ -4788,13 +4965,21 @@ For every fixed $c\in(0,1)$ there is a universal function $\Phi_c$ with $t_c=\tf
 If $\sigma_{\mathrm{OU}}>0$ and $t_*$ is a global maximizer of $L_{\mathrm{OU}}(t)$, then $g_At_*\le1$.
 \end{conjecture}
 
+\emph{Resolution.} The bound is false: Proposition~\ref{aj:c1314} exhibits a five-dimensional nonnormal drift, a single Jordan block with every eigenvalue $-1$ (so $g_A=1$) and isotropic diffusion, whose lag-KL peak lies at $t_*=1.069\ldots$, giving $g_At_*=1.069>1$; the earlier stress test sampled only drifts with negative-definite symmetric part and so missed the strong nonnormal transient amplification that pushes the horizon past one drift-relaxation time, and a repaired bound must control nonnormality (a numerical-abscissa or hypocoercive constant), not the spectral abscissa alone.
+
 \begin{conjecture}[OU spectral-area bound, resolved false]\label{aj14}
 For every stable nonequilibrium OU process, $\displaystyle\int_0^\infty L_{\mathrm{OU}}(t)\,dt\le\frac{\sigma_{\mathrm{OU}}}{g_A^2}$.
 \end{conjecture}
 
+\emph{Resolution.} The bound is false: for the same five-dimensional Jordan-block drift of Proposition~\ref{aj:c1314}, $g_A=1$ and $\sigma_{\mathrm{OU}}=32$ while $\int_0^\infty L_{\mathrm{OU}}\,dt=40.50\ldots$, so the normalized area is $1.266>1$; as with Conjecture~\ref{aj13}, only a nonnormality-corrected budget can hold.
+
 \begin{proposition}[A nonnormal Ornstein--Uhlenbeck counterexample to the peak-horizon and spectral-area bounds]\label{aj:c1314}
 Let $A=-I_5+2N$ with $N$ the $5\times5$ nilpotent first-superdiagonal shift and $D=I_5$, so $g_A=1$.  The stationary covariance solving $AC+CA^\top+2D=0$ has integer entries, $\sigma_{\mathrm{OU}}=32$, and the Gaussian lag KL $L_{\mathrm{OU}}$ attains its maximum at $t_*=1.0693\ldots$ with $g_At_*>1$, and $\int_0^\infty L_{\mathrm{OU}}\,dt=40.497\ldots$, so $g_A^2\!\int L_{\mathrm{OU}}\,dt/\sigma_{\mathrm{OU}}=1.2655\ldots>1$.  Hence Conjectures~\ref{aj13} and~\ref{aj14} both fail.
 \end{proposition}
+
+\begin{proof}
+The covariance $C$ is obtained by solving the Lyapunov equation; substitution confirms $AC+CA^\top+2I_5=0$ with zero residual, and $\sigma_{\mathrm{OU}}=\operatorname{tr}[(A+DC^{-1})^\top D^{-1}(A+DC^{-1})C]=32$.  Using the Jordan-polynomial matrix exponential $e^{At}$ and the trace formula of Proposition~\ref{aj:basic}, $L_{\mathrm{OU}}$ rises from $L_{\mathrm{OU}}(t)=\sigma_{\mathrm{OU}}t+O(t^2)$, is still increasing at $t=1$ ($L_{\mathrm{OU}}'(1)\approx1.60>0$), peaks at $t_*=1.0693\ldots$, and has integral $40.497\ldots$; all quantities are reproduced in the verification script, and the margins ($6.9\%$ and $26.5\%$) far exceed any conditioning artifact.
+\end{proof}
 
 \begin{conjecture}[OU antisymmetric-covariance doubling law]\label{aj15}
 For every stable OU process with $\sigma_{\mathrm{OU}}>0$,
@@ -5651,5 +5836,10 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{ReyBelletSpiliopoulos16} L.~Rey-Bellet and K.~Spiliopoulos, \emph{Improving the convergence of reversible samplers}, J. Stat. Phys. \textbf{164} (2016) 472--494.
 \bibitem{HuangMao17} L.-J. Huang and Y.-H. Mao, \emph{On some mixing times for nonreversible finite Markov chains}, J. Appl. Probab. \textbf{54} (2017) 627--637.
 \bibitem{HuaChen22} C.-W. Hua and T.-L. Chen, \emph{On multiple acceleration of reversible Markov chain}, Statist. Probab. Lett. \textbf{189} (2022) 109559.
+\bibitem{ELS22} D.~El-Baz, D.~Loughran, and E.~Sofos, Multivariate normal distribution for integral points on varieties, Trans. Amer. Math. Soc. 375 (2022), 3089--3128.
+\bibitem{Mac71} I.~G.~Macdonald, Polynomials associated with finite cell-complexes, J. London Math. Soc. (2) 4 (1971), 181--192.
+\bibitem{Sta80} R.~P.~Stanley, Decompositions of rational convex polytopes, Ann. Discrete Math. 6 (1980), 333--342.
+\bibitem{Lan03} E.~Landau, \"Uber die Maximalordnung der Permutationen gegebenen Grades, Arch. Math. Phys. (3) 5 (1903), 92--103.
+
 \end{thebibliography}
 \end{document}
