@@ -11,15 +11,16 @@ Checks (fresh implementation, no reuse of the source package):
   aj1  RESOLVED FALSE: the homogeneous 10-ring has non-monotone eta(t)
   aj2  gamma * t_*  <= 2         (t_* the L-maximizer, gamma the reversible gap)
   aj3  gamma^2 (int L)/sigma <= 2
-  aj4  -log L(t)/(2t) -> alpha_irr   (doubling law: matched to slope of ||A_t||)
+  aj4  PROVED: -log L(t)/(2t) -> alpha_irr   (doubling law; matched to ||A_t|| slope)
+  aj6  PROVED: coarse-grained mode selection -log L_f/(2t) -> alpha_irr(f)
   aj7  RESOLVED FALSE: product of two driven 3-cycles kills the liminf separation
   aj12 RESOLVED FALSE (as stated): ballistic coefficient u_c(a) depends on affinity
   aj8  RESOLVED FALSE: the same homogeneous ring refutes strict monotonicity
   aj9  RESOLVED FALSE: an explicit near-decomposable 7-ring has gamma*L/sigma>1/2
   aj13 RESOLVED FALSE: an explicit 5D Jordan-block OU (g_A=1) has g_A t_* > 1
   aj14 RESOLVED FALSE: the same OU has g_A^2 (int L)/sigma > 1
-  aj15 OU doubling law -log L_OU/(2t) -> alpha_H (surviving)
-  aj10 wrapped-Brownian scaling limit eta_N(t_N) -> E(A,tau)
+  aj15 PROVED: OU doubling law -log L_OU/(2t) -> alpha_H
+  aj10 PROVED: wrapped-Brownian scaling limit eta_N(t_N) -> E(A,tau)
 
 Runs in a couple of minutes.  Random search cannot prove the surviving laws;
 a PASS means no counterexample was found in the sampled ensembles, except for
@@ -169,6 +170,42 @@ for _ in range(60):
 check("aj4 KL exponent = 2 * antisymmetric-flux exponent", abs(np.median(rat) - 1) < 0.02,
       f"median ratio {np.median(rat):.4f}")
 
+print("== aj6 PROVED: coarse-grained mode selection -log L_f/(2t) -> alpha_irr(f)")
+# Coarse-grain a chain by a deterministic partition (merge states into blocks).
+# The block-summed endpoint law F_f has strictly positive limit entries, so the
+# same quadratic equivalence gives the coarse KL exponent = 2 * coarse-flux exponent.
+def block_map(n, blocks):
+    B = np.zeros((len(blocks), n))
+    for b, grp in enumerate(blocks):
+        for i in grp:
+            B[b, i] = 1.0
+    return B
+def Lf_and_Af(Q, pi, t, B):
+    P = expm(t * Q); F = pi[:, None] * P
+    Ff = B @ F @ B.T                       # block-summed two-time law
+    s = 0.0
+    for i in range(Ff.shape[0]):
+        for j in range(Ff.shape[0]):
+            if Ff[i, j] > 0 and Ff[j, i] > 0:
+                s += Ff[i, j] * np.log(Ff[i, j] / Ff[j, i])
+    return s, np.linalg.norm(Ff - Ff.T)
+ratf = []
+for _ in range(60):
+    n = 6
+    Q = rand_chain(n, 0.35, -1, 1.5, False); pi = stationary(Q)
+    if pi.min() < 1e-8:
+        continue
+    B = block_map(n, [[0, 1], [2, 3], [4, 5]])   # 6 states -> 3 blocks
+    g = spec_gap(Q); ts = np.linspace(6 / g, 14 / g, 40)
+    LA = [Lf_and_Af(Q, pi, t, B) for t in ts]
+    Ls = np.array([a for a, _ in LA]); As = np.array([b for _, b in LA])
+    m = (Ls > 1e-250) & (As > 1e-250)
+    if m.sum() < 10:
+        continue
+    ratf.append(np.polyfit(ts[m], np.log(Ls[m]), 1)[0] / (2 * np.polyfit(ts[m], np.log(As[m]), 1)[0]))
+check("aj6 coarse KL exponent = 2 * coarse-flux exponent", abs(np.median(ratf) - 1) < 0.03,
+      f"median ratio {np.median(ratf):.4f}")
+
 
 print("== aj7 RESOLVED FALSE: product of two driven 3-cycles kills the liminf separation")
 # aj7 asserts liminf_t -1/(2t) log[L_f/L] = alpha_irr(f) - alpha_irr > 0 when the
@@ -240,7 +277,7 @@ ratio9 = gam9 * Lmax9 / sig9
 check("aj9 gamma*L/sigma exceeds 1/2 (constant refuted)", ratio9 > 0.5,
       f"gamma*Lmax/sigma = {ratio9:.4f} > 1/2")
 
-print("== aj13/aj14 RESOLVED FALSE (explicit nonnormal Jordan-block OU); aj15 surviving")
+print("== aj13/aj14 RESOLVED FALSE (explicit nonnormal Jordan-block OU); aj15 PROVED")
 def ou_L(A, D, t, C):
     d = A.shape[0]; eAt = expm(A * t)
     Sig = np.block([[C, C @ eAt.T], [eAt @ C, C]])
@@ -339,7 +376,8 @@ check("aj12 u_{1/2}(a) varies with affinity (universal Pe crossover refuted)",
 
 n_ok = sum(PASS)
 print(f"\n{n_ok}/{len(PASS)} checks passed "
-      "(surviving laws: no counterexample in sampled ensembles; "
+      "(aj4, aj6, aj10, aj15: proved laws, checks confirm them; "
+      "aj2, aj3, aj5, aj11: no counterexample in sampled ensembles; "
       "aj1, aj7, aj8, aj9, aj12, aj13, aj14: exhibited counterexamples).")
 import sys
 sys.exit(0 if all(PASS) else 1)

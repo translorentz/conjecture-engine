@@ -4461,11 +4461,11 @@ The fifteen conjectures below study how much of the thermodynamic arrow of time 
 
 **322. Spectral integrated-budget bound (Conjecture 322).** The total area under all two-endpoint irreversibility measurements is capped at $$2\sigma/\gamma^2$$ once the mixing timescale is fixed.
 
-**323. Irreversibility-gap doubling law (Conjecture 323).** The long-time lag KL decays at exactly twice the rate of the slowest dissipative amplitude, a limit law defining an irreversibility-specific gap.
+**323. Irreversibility-gap doubling law (resolved true) (Conjecture 323).** The long-time lag KL decays at exactly twice the rate of the slowest dissipative amplitude. Now proved: lag KL is quadratically equivalent to the antisymmetric endpoint flux, whose exponential-polynomial form gives the doubling, with the refined power $$m=2r$$ (twice the Jordan-polynomial degree) and no genericity hypothesis.
 
 **324. Generic equality of spectral and irreversibility gaps (Conjecture 324).** The irreversibility gap equals the ordinary spectral gap off a measure-zero exceptional set, where the slowest state-space mode is thermodynamically invisible.
 
-**325. Coarse-grained irreversibility mode-selection (Conjecture 325).** A deterministic partition does not continuously renormalize the late-time exponent but selects the slowest irreversible mode it fails to annihilate.
+**325. Coarse-grained irreversibility mode-selection (resolved true) (Conjecture 325).** A deterministic partition selects the slowest irreversible mode it fails to annihilate rather than renormalizing the late-time exponent. Now proved by the same quadratic-equivalence argument applied to the block-summed flux, whose limiting entries stay strictly positive.
 
 **326. Hidden-mode exponential separation (resolved false) (Conjecture 326).** The proposed separation of the observed and full arrows of time at exactly the gap between the two irreversibility exponents is resolved false by a product of two driven three-cycles: the dominant slow mode is oscillatory with exact zeros, so the coarse-to-full ratio returns to one at infinitely many times and the liminf separation exponent is zero, not the exponent gap.
 
@@ -4473,7 +4473,7 @@ The fifteen conjectures below study how much of the thermodynamic arrow of time 
 
 **328. Sharp unicyclic amplitude cap (resolved false) (Conjecture 328).** The proposed universal cap $$\sup_t\gamma L(t)/\sigma\le\tfrac12$$ is resolved false: an explicit near-decomposable seven-state ring reaches $$0.643$$, so the constant $$\tfrac12$$ is not universal, the true sharp value remaining open.
 
-**329. Wrapped-Brownian irreversibility limit (Conjecture 329).** Under weak-affinity diffusive scaling the ring efficiency converges to an explicit wrapped-Gaussian relative-entropy functional.
+**329. Wrapped-Brownian irreversibility limit (resolved true) (Conjecture 329).** Under weak-affinity diffusive scaling the ring efficiency converges to an explicit wrapped-Gaussian relative-entropy functional. Now proved by a wrapped local central limit theorem for the Skellam displacement together with continuity of the divergence.
 
 **330. Ballistic winding-aliasing horizon (Conjecture 330).** At fixed edge affinity endpoint irreversibility is lost on the ballistic winding timescale $$N/|v|$$, not the diffusive mixing timescale.
 
@@ -4483,7 +4483,7 @@ The fifteen conjectures below study how much of the thermodynamic arrow of time 
 
 **333. OU integrated-budget bound (resolved false) (Conjecture 333).** The proposed cap $$\sigma_{\mathrm{OU}}/g_A^2$$ is resolved false: the same five-dimensional Jordan-block drift has $$\sigma_{\mathrm{OU}}=32$$ but integrated lag KL $$\approx40.5$$, giving normalized area $$\approx1.27>1$$.
 
-**334. OU antisymmetric-covariance doubling law (Conjecture 334).** The long-time OU lag KL decays at twice the slowest time-antisymmetric covariance mode.
+**334. OU antisymmetric-covariance doubling law (resolved true) (Conjecture 334).** The long-time OU lag KL decays at twice the slowest time-antisymmetric covariance mode. Now proved as the Gaussian analogue of the doubling law: Gaussian relative entropy is quadratic in the antisymmetric covariance difference, which is an exponential polynomial.
 
 ## Part XX: log-concavity laws for exactly solved random conformal geometry
 
@@ -4513,7 +4513,7 @@ The fifteen conjectures below are sharp, falsifiable statements about the small-
 
 **344. Weak-Lorentz projected-Lamb criterion (Conjecture 344).** If the projected Lamb vector P(u×ω) of a Navier–Stokes solution is finite in L²_t L^{3/2,∞}_x, the solution is smooth — a geometric regularity criterion reaching the unresolved weak-L³ velocity endpoint just beyond the range known to be regular[334].
 
-**345. Helicity-defect stretching law (Conjecture 345).** Among band-limited fields at fixed energy and enstrophy, the largest possible vortex stretching is suppressed by the universal factor (1−ρ²)^{3/2} in the relative helicity ρ, quantifying how near-Beltrami alignment depletes stretching.
+**345. Helicity-defect stretching law (Conjecture 345).** Among band-limited fields at fixed energy and enstrophy with an interior enstrophy-to-energy ratio (so that stretching triads persist and the zero-helicity maximum is nonzero), the largest possible vortex stretching is suppressed by the universal factor (1−ρ²)^{3/2} in the relative helicity ρ, quantifying how near-Beltrami alignment depletes stretching.
 
 **346. Diophantine small-divisor rotation law (Conjecture 346).** The error of the resonant averaging approximation for rapidly rotating Navier–Stokes is set by the sharp arithmetic exponent of the minimum nonzero inertial-wave triad detuning on the torus — arithmetic made observable in a fluid rate.
 
@@ -6448,17 +6448,17 @@ The lag irreversibility $$L(t)$$ rises from zero and returns to zero, so it peak
 
 Add up the irreversibility visible at every possible lag; the conjecture caps that total area at $$2\sigma/\gamma^2$$, the only scale built from the entropy-production rate and the reversible gap. Monotonicity alone cannot give this — a slowly decaying curve could still enclose unbounded area — so genuine spectral input is required.
 
-### Conjecture 323: Irreversibility-gap doubling law
+### Conjecture 323: Irreversibility-gap doubling law (resolved true)
 
-At long lags the two endpoints are nearly independent and $$L(t)$$ is quadratic in the small time-asymmetric part of their joint law, so an amplitude decaying at rate $$\alpha$$ doubles to $$2\alpha$$ in $$L$$. The conjecture names that rate the irreversibility gap and asserts the clean doubling survives degeneracies, complex modes, and cancellations.
+At long lags the two endpoints are nearly independent and $$L(t)$$ is quadratic in the small time-asymmetric part of their joint law, so an amplitude decaying at rate $$\alpha$$ doubles to $$2\alpha$$ in $$L$$. This is now proved. The lag KL equals a sum of pairwise terms each equivalent to a squared flux difference, so it is bounded above and below by the squared antisymmetric endpoint flux; that flux is an exponential polynomial, so its envelope decays at a definite rate and the KL decays at twice it. The precise late-time form carries a polynomial factor $$t^{2r}$$, twice the Jordan-polynomial degree of the slowest mode (so $$r=0$$, no polynomial factor, in the usual diagonalizable case), and the identity needs no genericity assumption.
 
 ### Conjecture 324: Generic equality of spectral and irreversibility gaps
 
 Usually the irreversibility gap equals the ordinary spectral gap, but the conjecture allows a measure-zero exceptional set where the slowest state-space mode contributes nothing to the time asymmetry — a slow mode that is thermodynamically invisible, so long-lag irreversibility can distinguish genuinely dissipative modes from merely slow ones.
 
-### Conjecture 325: Coarse-grained irreversibility mode-selection
+### Conjecture 325: Coarse-grained irreversibility mode-selection (resolved true)
 
-Lumping states together before measuring can erase whole modes. The conjecture says coarse-graining does not smoothly shift the late-time exponent but jumps to the slowest irreversible mode the lumping fails to annihilate, producing a discrete ladder of observable decay rates rather than a continuum.
+Lumping states together before measuring can erase whole modes. This is now proved. Lumping states is a linear map on the endpoint law whose limiting block probabilities stay strictly positive, so the same squared-flux equivalence applies to the coarse observation; its exponent is that of the slowest mode the lumping does not annihilate, giving a discrete ladder of observable rates rather than a continuum.
 
 ### Conjecture 326: Hidden-mode exponential separation (resolved false)
 
@@ -6472,9 +6472,9 @@ It was proposed that a single driven ring, carrying just one thermodynamic loop,
 
 It was proposed that $$\gamma L(t)/\sigma$$ never exceeds $$\tfrac12$$ on any driven cycle. This is false: a near-decomposable seven-state ring with one very weak edge reaches $$0.643$$, verified to fifty digits, so $$\tfrac12$$ is not universal. The correct sharp constant, if finite, remains open, and it is approached in the near-decomposable regime.
 
-### Conjecture 329: Wrapped-Brownian irreversibility limit
+### Conjecture 329: Wrapped-Brownian irreversibility limit (resolved true)
 
-Under weak driving and diffusive scaling, the ring's net motion before wrapping becomes Brownian motion on a circle with drift, and the efficiency converges to an explicit relative entropy between a wrapped Gaussian and its mirror image — an exact continuum formula for endpoint irreversibility on a driven ring.
+Under weak driving and diffusive scaling, the ring's net motion before wrapping becomes Brownian motion on a circle with drift, and the efficiency converges to an explicit relative entropy between a wrapped Gaussian and its mirror image. This is now proved: the endpoint law is a wrapped difference of two Poisson counts whose Fourier coefficients converge to those of the wrapped Gaussian, giving uniform density convergence, and the divergence passes to the limit because the wrapped Gaussian is bounded away from zero.
 
 ### Conjecture 330: Ballistic winding-aliasing horizon
 
@@ -6492,9 +6492,9 @@ It was proposed that for a stable Gaussian (Ornstein–Uhlenbeck) system the lag
 
 The Gaussian version of the area bound proposed a total lag irreversibility of at most $$\sigma_{\mathrm{OU}}/g_A^2$$. This fails for the same five-dimensional Jordan-block drift: there $$\sigma_{\mathrm{OU}}=32$$ but the integrated lag KL is $$\approx40.5$$, giving normalized area $$\approx1.27>1$$. As with the peak horizon, only a nonnormality-corrected budget can survive.
 
-### Conjecture 334: OU antisymmetric-covariance doubling law
+### Conjecture 334: OU antisymmetric-covariance doubling law (resolved true)
 
-At long times the two-time covariance approaches a symmetric limit, its asymmetry linear in a decaying matrix $$H(t)$$, and the Gaussian KL is quadratic in that asymmetry, so the lag-KL decays at twice the slowest time-antisymmetric covariance rate — the Gaussian counterpart of the chain doubling law.
+At long times the two-time covariance approaches a symmetric limit, its asymmetry linear in a decaying matrix $$H(t)$$, and the Gaussian relative entropy is quadratic in that asymmetry, so the lag KL decays at twice the slowest time-antisymmetric covariance rate. This is now proved as the Gaussian counterpart of the chain doubling law, with $$H(t)$$ an exponential polynomial supplying the rate.
 
 ### Conjecture 335: DOZZ spectral log-concavity
 
@@ -6538,7 +6538,7 @@ The Lamb vector $$u\times\omega$$ is what drives the nonlinearity; a Beltrami fl
 
 ### Conjecture 345: Helicity-defect stretching law
 
-Helicity measures the linkage/alignment of vorticity with velocity; a Beltrami field is maximally helical and stretches nothing. The conjecture gives the precise trade-off: among band-limited fields at fixed energy and enstrophy, the maximum achievable vortex stretching is the zero-helicity maximum times $$(1-\rho^2)^{3/2}$$, where $$\rho$$ is the relative helicity. A two-shell Monte Carlo confirms the suppression sign; the 3/2 exponent is beyond the test.
+Helicity measures the linkage/alignment of vorticity with velocity; a Beltrami field is maximally helical and stretches nothing. The conjecture gives the precise trade-off: among band-limited fields at fixed energy and enstrophy, the maximum achievable vortex stretching is the zero-helicity maximum times $$(1-\rho^2)^{3/2}$$, where $$\rho$$ is the relative helicity. A two-shell Monte Carlo confirms the suppression sign; the 3/2 exponent is beyond the test. The statement needs an interior enstrophy-to-energy ratio: at the minimum ratio $$E/K=1$$ every admissible field lives on the single shell $$|k|=1$$, which carries no zero-sum triad $$k+\ell+m=0$$, so the stretching functional vanishes identically and the ratio would be $$0/0$$ — the hypothesis rules that boundary out.
 
 ### Conjecture 346: Diophantine small-divisor rotation law
 
@@ -6566,7 +6566,7 @@ A Beltrami flow ($$u\parallel\omega$$) is force-free and self-depleting — a na
 
 ### Conjecture 352: Affine LQG geodesic-star spectrum
 
-A point is a $$k$$-star if $$k$$ geodesics leave it without immediately merging. In the Brownian map ($$d_\gamma=4$$) the dimension of the $$k$$-star set is $$5-k$$. The conjecture interpolates to all $$\gamma$$: the dimension is the affine function $$2+\tfrac{3-k}{2}(d_\gamma-2)$$, pinned by the two rigid anchors $$s_1=d_\gamma$$ (typical points) and $$s_3=2$$ (the proved three-star value). It turns the single unknown metric dimension into a full branching spectrum, with a largest feasible branching degree $$\approx 3+4/(d_\gamma-2)$$.
+A point is a $$k$$-star if $$k$$ geodesics leave it without immediately merging. In the Brownian map ($$d_\gamma=4$$) the dimension of the $$k$$-star set is $$5-k$$. The conjecture interpolates to all $$\gamma$$: the dimension is the affine function $$2+\tfrac{3-k}{2}(d_\gamma-2)$$, pinned by two anchors: $$s_1=d_\gamma$$ (typical points, rigorous) and $$s_3=2$$ (the three-star value, a proved lower bound $$\dim S_3\ge2$$ conjectured to be sharp). It turns the single unknown metric dimension into a full branching spectrum, with a largest feasible branching degree $$\approx 3+4/(d_\gamma-2)$$.
 
 ### Conjecture 353: Exponential scale-mixing of the radial metric residual
 
