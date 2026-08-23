@@ -9,8 +9,12 @@ closed forms by code sharing nothing with the source package:
     with two boundary controls (sub-chamber charge; full 3-charge Hessian)
     that must FAIL, confirming the chamber is necessary.
 
-  * Conjecture 336 (Brownian-annulus modular log-concavity): for every
-    boundary-length ratio x>0,  s -> log p_x(e^s)  is strictly concave.
+  * Conjecture 336 (Brownian-annulus modular log-concavity) RESOLVED FALSE:
+    the deposited claim that  s -> log p_x(e^s)  is strictly concave for every
+    boundary-length ratio x>0 fails at large x, where the logarithmic-modulus
+    curvature turns positive (+0.380 at x=e^5, tau=0.30) and tends to the
+    positive asymptote (4 pi/3) tau; the deposited scan reached only moderate
+    ratios and missed the tail.
 
 log Upsilon_b is evaluated from the Barnes integral representation via a
 real-part integrand (derived here, not the source package's complex form);
@@ -174,20 +178,32 @@ def main():
     print(f"  PASS: eigenvalues {np.round(eigs,2)}, positive one present, "
           "so joint concavity fails")
 
-    print("Conjecture 336 (Brownian-annulus modular log-concavity):")
+    print("Conjecture 336 (Brownian-annulus modular log-concavity) RESOLVED FALSE:")
+    # The deposited scan reached only moderate boundary ratios, where the
+    # logarithmic-modulus curvature is indeed negative; it missed the tail.
     ss = [np.log(v) for v in [0.02, 0.05, 0.1, 0.25, 0.5, 1, 2, 4, 8, 16, 30]]
-    worst = -1e9
     curv_by_x = {}
     for x in [0.05, 0.1, 0.25, 0.5, 1.0, 2.0, 4.0, 10.0, 20.0]:
         logx = np.log(x)
-        cs = [annulus_curv(s, logx) for s in ss]
-        curv_by_x[x] = max(cs)
-        worst = max(worst, max(cs))
-        assert max(cs) < 0, f"FAIL x={x}: max curv {max(cs):+.4f}"
-    print(f"  PASS: strictly negative for all (x,tau); worst max curvature {worst:+.4f}")
+        curv_by_x[x] = max(annulus_curv(s, logx) for s in ss)
+    moderate = max(curv_by_x.values())
+    print(f"  moderate boundary ratios x in [1/20,20]: curvature stays "
+          f"negative (worst {moderate:+.4f}), matching the deposited scan")
     sym = abs(curv_by_x[4.0] - curv_by_x[0.25])
     assert sym < 1e-2, "x<->1/x symmetry broken"
     print(f"  x<->1/x symmetry: |curv(4)-curv(1/4)| = {sym:.2e}")
+
+    # Counterexample at large boundary ratio: log X_tau = Z + G_tau with Z
+    # logistic of scale 2/3 and G_tau Gaussian; the logistic tail drives the
+    # curvature to the positive (4 pi/3) tau as x -> infinity.
+    c5 = annulus_curv(np.log(0.30), 5.0)
+    c7 = annulus_curv(np.log(0.30), 7.0)
+    assert c5 > 0, f"expected positive curvature at x=e^5, got {c5:+.4f}"
+    assert c7 > c5, "curvature should keep growing into the tail"
+    print(f"  COUNTEREXAMPLE: at x=e^5, tau=0.30 curvature = {c5:+.5f} > 0; "
+          f"at x=e^7 it grows to {c7:+.5f}")
+    print(f"  asymptote (4 pi/3) tau = {(4*np.pi/3)*0.30:+.4f} as x -> infinity, "
+          "so log-concavity fails in the tail")
 
     print("\nAll Part XX checks passed.")
     return ok

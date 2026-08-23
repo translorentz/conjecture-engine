@@ -8,11 +8,11 @@ has lag irreversibility L(t)=KL(F_t||F_t^T); with entropy-production rate sigma
 the temporal sampling efficiency is eta(t)=L(t)/(sigma t) in [0,1].
 
 Checks (fresh implementation, no reuse of the source package):
-  aj1  eta(t) non-increasing (adversarial incl. rare-state/biased chains)
+  aj1  RESOLVED FALSE: the homogeneous 10-ring has non-monotone eta(t)
   aj2  gamma * t_*  <= 2         (t_* the L-maximizer, gamma the reversible gap)
   aj3  gamma^2 (int L)/sigma <= 2
   aj4  -log L(t)/(2t) -> alpha_irr   (doubling law: matched to slope of ||A_t||)
-  aj8  unicyclic: eta strictly decreasing (high precision; no violation)
+  aj8  RESOLVED FALSE: the same homogeneous ring refutes strict monotonicity
   aj9  RESOLVED FALSE: an explicit near-decomposable 7-ring has gamma*L/sigma>1/2
   aj13 RESOLVED FALSE: an explicit 5D Jordan-block OU (g_A=1) has g_A t_* > 1
   aj14 RESOLVED FALSE: the same OU has g_A^2 (int L)/sigma > 1
@@ -20,8 +20,9 @@ Checks (fresh implementation, no reuse of the source package):
   aj10 wrapped-Brownian scaling limit eta_N(t_N) -> E(A,tau)
 
 Runs in a couple of minutes.  Random search cannot prove the surviving laws;
-a PASS means no counterexample was found in the sampled ensembles, except aj9
-which is an exhibited counterexample to the deposited constant 1/2.
+a PASS means no counterexample was found in the sampled ensembles, except for
+aj1, aj8, aj9, aj13, aj14, which are exhibited counterexamples to the deposited
+statements.
 """
 import numpy as np
 from scipy.linalg import expm, eigvals, solve_lyapunov, solve
@@ -94,21 +95,39 @@ def rand_chain(n, dense, lo, hi, biased):
     return Q
 
 
-print("== aj1: eta(t)=L/(sigma t) non-increasing (rare-state/biased chains)")
-worst = 0.0
-for _ in range(1200):
-    n = int(rng.integers(3, 9))
-    Q = rand_chain(n, rng.uniform(0, 0.6), rng.uniform(-7, -2), rng.uniform(1, 3), rng.random() < 0.5)
-    pi = stationary(Q)
-    if pi.min() < 1e-10:
-        continue
-    sig = sigma_ep(Q, pi)
-    if sig < 1e-8:
-        continue
-    g = spec_gap(Q); ts = np.linspace(0.02 / g, 25 / g, 250)
-    eta = np.array([L_of_t(Q, pi, t) / (sig * t) for t in ts])
-    worst = max(worst, np.diff(eta).max())
-check("aj1 eta non-increasing", worst < 1e-5, f"worst +increment {worst:.2e} (roundoff)")
+import mpmath as mp
+mp.mp.dps = 80
+
+
+def eta_homog_ring(N, a, u):
+    """Exact eta(t)=L(t)/(sigma t) on the homogeneous N-cycle with clockwise
+    rate p=e^{a/2}, counterclockwise q=e^{-a/2}, at reduced lag u=(p-q)t/N,
+    by 80-digit Fourier diagonalization of the circulant generator."""
+    a = mp.mpf(a)
+    p = mp.e ** (a / 2); q = mp.e ** (-a / 2); v = p - q; sigma = (p - q) * a
+    w = mp.e ** (2j * mp.pi / N)
+    lam = [p * (w ** m - 1) + q * (w ** (-m) - 1) for m in range(N)]
+    t = u * N / v
+    P = [(mp.mpf(1) / N) * sum(mp.e ** (lam[m] * t) * w ** (-m * k)
+                               for m in range(N)) for k in range(N)]
+    Lt = mp.mpf(0)
+    for k in range(N):
+        pk = P[k].real; pmk = P[(-k) % N].real
+        if pk > 0 and pmk > 0:
+            Lt += pk * mp.log(pk / pmk)
+    return Lt / (sigma * t)
+
+
+print("== aj1 RESOLVED FALSE: homogeneous 10-ring has non-monotone eta(t)")
+# The deposited conjecture asserts eta(t)=L/(sigma t) is non-increasing.  It is
+# false already on the homogeneous ring, where winding aliasing collapses eta
+# near half a winding and then revives it before diffusion mixes the cycle.
+eta54 = eta_homog_ring(10, 1, mp.mpf("0.54"))
+eta68 = eta_homog_ring(10, 1, mp.mpf("0.68"))
+check("aj1 eta revives on the homogeneous 10-ring (monotonicity refuted)",
+      eta68 > eta54 * 100,
+      f"eta(u=0.54)={mp.nstr(eta54,4)} -> eta(u=0.68)={mp.nstr(eta68,4)}, "
+      f"factor {mp.nstr(eta68/eta54,4)}")
 
 print("== aj2 (gamma t_* <= 2), aj3 (gamma^2 area/sigma <= 2)")
 m2 = m3 = 0.0
@@ -158,35 +177,17 @@ def ring(n, cw, ccw):
     return Q
 
 
-print("== aj8: unicyclic eta strictly decreasing (well-conditioned rings)")
-worst8 = 0.0
-for _ in range(1500):
-    n = int(rng.integers(3, 11))
-    cw = np.exp(rng.uniform(-2, 2, n)); ccw = np.exp(rng.uniform(-2, 2, n))
-    if rng.random() < 0.3:
-        cw *= np.exp(rng.uniform(1, 3))
-    Q = ring(n, cw, ccw); pi = stationary(Q)
-    # exclude near-decomposable / rare-state rings: there eta is monotone at high
-    # precision but double-precision KL suffers subtractive cancellation
-    if pi.min() < 1e-5:
-        continue
-    r = np.array([-Q[i, i] for i in range(n)])
-    if r.max() / r.min() > 5e2:
-        continue
-    sig = sigma_ep(Q, pi)
-    if sig < 1e-4:
-        continue
-    g = spec_gap(Q); ts = np.linspace(0.05 / g, 12 / g, 200)
-    Ls = np.array([L_of_t(Q, pi, t) for t in ts]); Lmax = Ls.max()
-    keep = Ls > 1e-9 * Lmax               # drop the deep tail where KL cancels
-    eta = (Ls / (sig * ts))[keep]
-    if len(eta) > 2:
-        worst8 = max(worst8, float(np.diff(eta).max()))
-# 5e-4 is the double-precision floor for KL of near-equal distributions; an
-# independent mpmath recomputation on near-decomposable rings shows eta is
-# monotone to 1e-5, so residual positive increments here are cancellation noise.
-check("aj8 unicyclic eta non-increasing (well-conditioned)", worst8 < 5e-4,
-      f"worst +increment {worst8:.2e}")
+print("== aj8 RESOLVED FALSE: the homogeneous ring is a strictly monotone-failing cycle")
+# The unicyclic strengthening asserts eta'(t)<0 for every driven cycle.  The
+# homogeneous 10-ring above is a driven cycle on which eta revives, so aj8 fails
+# for the same reason as aj1; the revival is genuine at 80 digits, not the
+# finite-precision cancellation once supposed.  We confirm the interior rise on
+# a fine reduced-lag grid.
+etas8 = [eta_homog_ring(10, 1, mp.mpf(u) / 100) for u in range(50, 71, 2)]
+rises8 = max(float(etas8[i + 1] - etas8[i]) for i in range(len(etas8) - 1))
+check("aj8 eta strictly-decreasing fails on the homogeneous cycle",
+      rises8 > 0,
+      f"largest interior increment on u in [0.50,0.70]: +{rises8:.3e}")
 
 print("== aj9 RESOLVED FALSE: explicit near-decomposable 7-ring with gamma L/sigma > 1/2")
 # explicit reproducible counterexample to the deposited constant 1/2
@@ -277,6 +278,7 @@ check("aj10 ring eta_N(N=128) matches wrapped-Brownian E(A,tau)", err < 5e-3, f"
 
 n_ok = sum(PASS)
 print(f"\n{n_ok}/{len(PASS)} checks passed "
-      "(surviving laws: no counterexample in sampled ensembles; aj9: exhibited counterexample).")
+      "(surviving laws: no counterexample in sampled ensembles; "
+      "aj1, aj8, aj9, aj13, aj14: exhibited counterexamples).")
 import sys
 sys.exit(0 if all(PASS) else 1)
