@@ -12,9 +12,10 @@ closed forms by code sharing nothing with the source package:
   * Conjecture 336 (Brownian-annulus modular log-concavity) RESOLVED FALSE:
     the deposited claim that  s -> log p_x(e^s)  is strictly concave for every
     boundary-length ratio x>0 fails at large x, where the logarithmic-modulus
-    curvature turns positive (+0.380 at x=e^5, tau=0.30) and tends to the
-    positive asymptote (4 pi/3) tau; the deposited scan reached only moderate
-    ratios and missed the tail.
+    curvature turns positive (+0.380 at x=e^5, tau=0.30) and tends to a
+    positive limit C_inf(tau) = (4 pi/3) tau + eta q-series (= 0.9746 at
+    tau=0.30, NOT the naive (4 pi/3) tau); the deposited scan reached only
+    moderate ratios and missed the tail.
 
 log Upsilon_b is evaluated from the Barnes integral representation via a
 real-part integrand (derived here, not the source package's complex form);
@@ -195,15 +196,31 @@ def main():
 
     # Counterexample at large boundary ratio: log X_tau = Z + G_tau with Z
     # logistic of scale 2/3 and G_tau Gaussian; the logistic tail drives the
-    # curvature to the positive (4 pi/3) tau as x -> infinity.
+    # curvature to a positive limit C_inf(tau) as x -> infinity.  This limit is
+    # (4 pi/3) tau PLUS the eta q-series, which does not vanish at finite tau:
+    #   C_inf(tau) = (4 pi/3) tau + sum_n ( x_n q_n/(1-q_n) - x_n^2 q_n/(1-q_n)^2 ),
+    #   x_n = 4 pi n tau,  q_n = exp(-x_n).
+    def C_inf(tau):
+        s = (4 * np.pi / 3) * tau
+        for n in range(1, 20000):
+            xn = 4 * np.pi * n * tau
+            qn = np.exp(-xn)
+            term = xn * qn / (1 - qn) - xn ** 2 * qn / (1 - qn) ** 2
+            s += term
+            if abs(term) < 1e-15:
+                break
+        return s
     c5 = annulus_curv(np.log(0.30), 5.0)
     c7 = annulus_curv(np.log(0.30), 7.0)
+    cinf = C_inf(0.30)
     assert c5 > 0, f"expected positive curvature at x=e^5, got {c5:+.4f}"
     assert c7 > c5, "curvature should keep growing into the tail"
+    assert abs(cinf - 0.9745749) < 1e-5, f"C_inf(0.30) mismatch: {cinf}"
     print(f"  COUNTEREXAMPLE: at x=e^5, tau=0.30 curvature = {c5:+.5f} > 0; "
           f"at x=e^7 it grows to {c7:+.5f}")
-    print(f"  asymptote (4 pi/3) tau = {(4*np.pi/3)*0.30:+.4f} as x -> infinity, "
-          "so log-concavity fails in the tail")
+    print(f"  positive limit C_inf(0.30) = {cinf:+.6f} as x -> infinity "
+          f"(NOT the naive (4 pi/3) tau = {(4*np.pi/3)*0.30:+.4f}; the eta "
+          "q-series survives differentiation), so log-concavity fails in the tail")
 
     print("\nAll Part XX checks passed.")
     return ok

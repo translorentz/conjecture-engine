@@ -4467,7 +4467,7 @@ The fifteen conjectures below study how much of the thermodynamic arrow of time 
 
 **325. Coarse-grained irreversibility mode-selection (Conjecture 325).** A deterministic partition does not continuously renormalize the late-time exponent but selects the slowest irreversible mode it fails to annihilate.
 
-**326. Hidden-mode exponential separation (Conjecture 326).** When coarse-graining hides the slowest dissipative mode, the observed and full arrows of time separate at exactly the gap between the two irreversibility exponents.
+**326. Hidden-mode exponential separation (resolved false) (Conjecture 326).** The proposed separation of the observed and full arrows of time at exactly the gap between the two irreversibility exponents is resolved false by a product of two driven three-cycles: the dominant slow mode is oscillatory with exact zeros, so the coarse-to-full ratio returns to one at infinitely many times and the liminf separation exponent is zero, not the exponent gap.
 
 **327. Unicyclic strict efficiency monotonicity (resolved false) (Conjecture 327).** The proposed strict decrease of the efficiency at every lag on every driven cycle is resolved false on the homogeneous ring itself: the same ten-state ring shows $$\eta$$ reviving over an interior lag interval, so the near-decomposable increases are genuine and not a precision artifact.
 
@@ -4477,7 +4477,7 @@ The fifteen conjectures below study how much of the thermodynamic arrow of time 
 
 **330. Ballistic winding-aliasing horizon (Conjecture 330).** At fixed edge affinity endpoint irreversibility is lost on the ballistic winding timescale $$N/|v|$$, not the diffusive mixing timescale.
 
-**331. Diffusive-to-ballistic Péclet crossover (Conjecture 331).** The half-efficiency time collapses onto a single Péclet crossover curve whose weak- and strong-drift limits are the wrapped-Brownian and ballistic laws.
+**331. Diffusive-to-ballistic Péclet crossover (resolved false) (Conjecture 331).** The proposed single universal Péclet crossover curve is resolved false as stated: its strong-drift limit cannot recover the ballistic law for every fixed affinity, because that ballistic coefficient $$u_c(a)$$ depends on the edge affinity (ranging from $$0.2929$$ as $$a\to0$$ down to $$0$$ as $$a\to\infty$$). A genuine one-variable crossover survives only in the weak-edge-bias regime $$a_N\to0$$.
 
 **332. OU one-relaxation-time peak horizon (resolved false) (Conjecture 332).** The proposed bound $$g_At_*\le1$$ is resolved false: a five-dimensional single-Jordan-block drift with $$g_A=1$$ has its lag-KL peak at $$t_*\approx1.069$$, so strong nonnormal transient amplification pushes the peak past one relaxation time; only a nonnormality-corrected bound can survive.
 
@@ -4491,7 +4491,7 @@ The two conjectures below concern the shape of two exactly solved objects in ran
 
 **335. DOZZ spectral log-concavity (Conjecture 335).** Writing $$Q=b+b^{-1}$$ and $$C_b$$ for the DOZZ structure constant of Liouville CFT, the modulus of the symmetric three-point constant $$P\mapsto|C_b(a,a,\tfrac Q2+iP)|$$ is strictly log-concave in the internal Liouville momentum $$P>0$$, for every $$b>0$$ and every real external charge in the interior chamber $$Q/3\le a<Q/2$$. The chamber is necessary at both ends: below $$Q/3$$ the curvature turns positive, and the joint log-concavity in the three charges fails even at the symmetric point.
 
-**336. Brownian-annulus modular log-concavity (resolved false) (Conjecture 336).** The proposed strict log-concavity of the modulus density $$p_x(\tau)\propto\eta(2i\tau)\rho_\tau(x)$$ in the logarithmic modulus is resolved false at large boundary ratio: writing $$\log X_\tau=Z+G_\tau$$ with $$Z$$ logistic and $$G_\tau$$ Gaussian, the logarithmic-modulus curvature tends to the positive $$(4\pi/3)\tau$$, with a finite certificate $$+0.380$$ at $$x=e^5$$, $$\tau=0.30$$.
+**336. Brownian-annulus modular log-concavity (resolved false) (Conjecture 336).** The proposed strict log-concavity of the modulus density $$p_x(\tau)\propto\eta(2i\tau)\rho_\tau(x)$$ in the logarithmic modulus is resolved false at large boundary ratio: writing $$\log X_\tau=Z+G_\tau$$ with $$Z$$ logistic and $$G_\tau$$ Gaussian, the logarithmic-modulus curvature tends to a positive limit ($$0.9746$$ at $$\tau=0.30$$), with a finite certificate $$+0.380$$ at $$x=e^5$$, $$\tau=0.30$$.
 
 ## Part XXI: bold conjectures in theoretical fluid dynamics
 
@@ -6460,9 +6460,9 @@ Usually the irreversibility gap equals the ordinary spectral gap, but the conjec
 
 Lumping states together before measuring can erase whole modes. The conjecture says coarse-graining does not smoothly shift the late-time exponent but jumps to the slowest irreversible mode the lumping fails to annihilate, producing a discrete ladder of observable decay rates rather than a continuum.
 
-### Conjecture 326: Hidden-mode exponential separation
+### Conjecture 326: Hidden-mode exponential separation (resolved false)
 
-If a coarse-graining hides the slowest dissipative mode, the observed arrow of time and the true one drift apart at exactly the gap between the two irreversibility exponents, turning the mode-selection law into a directly measurable ratio.
+It was proposed that when a coarse-graining hides the slowest dissipative mode, the observed and true arrows of time drift apart at exactly the gap between the two irreversibility exponents. This is false. Take a product of two independent driven three-cycles and observe only the fast one. A driven three-cycle's lag irreversibility oscillates like $$e^{-2\alpha t}\sin^2(\omega t)$$ and so has exact zeros; at those instants the hidden slow factor contributes nothing, the observed and full irreversibility coincide, and their ratio is exactly one. Those instants recur forever, so the long-time separation exponent (a liminf) is zero, not the gap between the exponents.
 
 ### Conjecture 327: Unicyclic strict efficiency monotonicity (resolved false)
 
@@ -6480,9 +6480,9 @@ Under weak driving and diffusive scaling, the ring's net motion before wrapping 
 
 An endpoint reveals position only modulo the ring size, so it cannot count how many times the walker circled. At fixed drift, once the typical displacement reaches the ring size the winding number becomes uncertain, and endpoint irreversibility is lost on the ballistic timescale $$N/|v|$$ rather than the slower diffusive mixing timescale.
 
-### Conjecture 331: Diffusive-to-ballistic Péclet crossover
+### Conjecture 331: Diffusive-to-ballistic Péclet crossover (resolved false)
 
-The Péclet number — drift against diffusion — is the single dimensionless knob controlling the transition between the weak-drift wrapped-Brownian regime and the strong-drift ballistic one; the half-efficiency time collapses onto one universal crossover curve joining the two limits.
+It was proposed that the Péclet number — drift against diffusion — is the single dimensionless knob controlling the transition between the weak-drift wrapped-Brownian regime and the strong-drift ballistic one, with the half-efficiency time collapsing onto one universal curve joining the two limits. As stated this is false: a single Péclet-only curve cannot reproduce the strong-drift (ballistic) regime for every affinity, because the ballistic first-crossing coefficient itself depends on the edge affinity, running from $$0.2929$$ at vanishing affinity down to $$0$$ at large affinity. The crossover picture is correct only in the weak-edge-bias regime, where the affinity shrinks with the system size and Péclet is the single surviving group.
 
 ### Conjecture 332: OU one-relaxation-time peak horizon (resolved false)
 
@@ -6502,7 +6502,7 @@ The DOZZ formula gives the exact three-point structure constant of Liouville con
 
 ### Conjecture 336: Brownian-annulus modular log-concavity (resolved false)
 
-The Brownian annulus has an exactly known law for its modulus — the single conformal number describing a random ring's shape. Written multiplicatively as $$s=\log\tau$$, it was proposed that the log-density is strictly concave, so there would be one preferred scale and no secondary shoulder. This is false at large boundary ratio. The log-modulus decomposes as $$Z+G_\tau$$ with $$Z$$ a logistic of scale $$\tfrac23$$ and $$G_\tau$$ Gaussian; the logistic tail makes the log-modulus curvature tend to the positive $$(4\pi/3)\tau$$, so the density is locally convex in the tail. A finite certificate already appears at $$x=e^5$$, $$\tau=0.30$$, where an independent Fourier inversion times the exact eta factor gives curvature $$+0.380$$; by the ratio–reciprocal symmetry the same convexity occurs in the opposite tail. The deposited scan reached only moderate boundary ratios and so missed it.
+The Brownian annulus has an exactly known law for its modulus — the single conformal number describing a random ring's shape. Written multiplicatively as $$s=\log\tau$$, it was proposed that the log-density is strictly concave, so there would be one preferred scale and no secondary shoulder. This is false at large boundary ratio. The log-modulus decomposes as $$Z+G_\tau$$ with $$Z$$ a logistic of scale $$\tfrac23$$ and $$G_\tau$$ Gaussian; the logistic tail makes the log-modulus curvature tend to a positive limit $$\mathcal C_\infty(\tau)=\tfrac{4\pi}3\tau+\sum_{n\ge1}\big(\tfrac{x_nq_n}{1-q_n}-\tfrac{x_n^2q_n}{(1-q_n)^2}\big)$$ (with $$x_n=4\pi n\tau$$, $$q_n=e^{-x_n}$$), equal to $$0.9746$$ at $$\tau=0.30$$, so the density is locally convex in the tail. A finite certificate already appears at $$x=e^5$$, $$\tau=0.30$$, where an independent Fourier inversion times the exact eta factor gives curvature $$+0.380$$; by the ratio–reciprocal symmetry the same convexity occurs in the opposite tail. The deposited scan reached only moderate boundary ratios and so missed it.
 
 ### Conjecture 337: Bulk-enstrophy spectral front
 

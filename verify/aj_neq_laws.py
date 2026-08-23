@@ -12,6 +12,8 @@ Checks (fresh implementation, no reuse of the source package):
   aj2  gamma * t_*  <= 2         (t_* the L-maximizer, gamma the reversible gap)
   aj3  gamma^2 (int L)/sigma <= 2
   aj4  -log L(t)/(2t) -> alpha_irr   (doubling law: matched to slope of ||A_t||)
+  aj7  RESOLVED FALSE: product of two driven 3-cycles kills the liminf separation
+  aj12 RESOLVED FALSE (as stated): ballistic coefficient u_c(a) depends on affinity
   aj8  RESOLVED FALSE: the same homogeneous ring refutes strict monotonicity
   aj9  RESOLVED FALSE: an explicit near-decomposable 7-ring has gamma*L/sigma>1/2
   aj13 RESOLVED FALSE: an explicit 5D Jordan-block OU (g_A=1) has g_A t_* > 1
@@ -168,6 +170,44 @@ check("aj4 KL exponent = 2 * antisymmetric-flux exponent", abs(np.median(rat) - 
       f"median ratio {np.median(rat):.4f}")
 
 
+print("== aj7 RESOLVED FALSE: product of two driven 3-cycles kills the liminf separation")
+# aj7 asserts liminf_t -1/(2t) log[L_f/L] = alpha_irr(f) - alpha_irr > 0 when the
+# observed (fast) factor is faster than the full chain.  A homogeneous driven
+# 3-cycle has antisymmetric flux ~ e^{-alpha t} sin(omega t), so its lag KL has
+# EXACT zeros at t_n = n pi/omega.  For a product, at the slow factor's zeros the
+# coarse (fast-only) and full KL coincide, so L_f/L = 1 and the exponent hits 0.
+def cyc3(p, q):
+    Q = np.zeros((3, 3))
+    for i in range(3):
+        Q[i, (i + 1) % 3] = p; Q[i, (i - 1) % 3] = q; Q[i, i] = -(p + q)
+    return Q
+def stat3(Q):
+    A = np.vstack([Q.T, np.ones(3)]); b = np.zeros(4); b[-1] = 1
+    return np.linalg.lstsq(A, b, rcond=None)[0]
+def L3(Q, pi, t):
+    F = pi[:, None] * expm(t * Q); s = 0.0
+    for i in range(3):
+        for j in range(3):
+            if F[i, j] > 0 and F[j, i] > 0:
+                s += F[i, j] * np.log(F[i, j] / F[j, i])
+    return s
+ps, qs = 1.0, 0.01
+Qs = cyc3(ps, qs); pis = stat3(Qs)
+omega_s = np.sqrt(3) / 2 * (ps - qs); alpha_s = 1.5 * (ps + qs)
+sfp = 16 / 15; dfp = 0.99 * np.sqrt(11 / 10)
+pf, qf = (sfp + dfp) / 2, (sfp - dfp) / 2
+Qf = cyc3(pf, qf); pif = stat3(Qf); alpha_f = 1.5 * (pf + qf)
+# at t_1 (a slow-factor zero) the ratio spikes to 1 and the separation exponent -> 0,
+# while just off t_1 it tracks the claimed gap alpha_f - alpha_s.
+t1 = np.pi / omega_s
+Ls1, Lf1 = L3(Qs, pis, t1), L3(Qf, pif, t1)
+ratio_at_zero = Lf1 / (Ls1 + Lf1)
+check("aj7 coarse/full ratio returns to 1 at the slow-mode zero (liminf exponent 0)",
+      alpha_f > alpha_s and ratio_at_zero > 0.999,
+      f"at t_1={t1:.3f}: L_s={Ls1:.2e}, L_f={Lf1:.2e}, L_f/L={ratio_at_zero:.4f} "
+      f"(claimed gap alpha_f-alpha_s={alpha_f-alpha_s:.3f})")
+
+
 def ring(n, cw, ccw):
     Q = np.zeros((n, n))
     for i in range(n):
@@ -276,9 +316,30 @@ for Aaff in (1.0, 2.0, 4.0):
         err = max(err, abs(eta_ring(128, Aaff, tau) - wrapped(Aaff, tau)))
 check("aj10 ring eta_N(N=128) matches wrapped-Brownian E(A,tau)", err < 5e-3, f"max abs error {err:.2e}")
 
+print("== aj12 RESOLVED FALSE (as stated): ballistic coefficient u_c(a) depends on affinity")
+# aj12 asserts a single universal Phi_c(Pe) whose strong-drift tail Phi_c(z)~u_c/|z|
+# recovers the fixed-affinity ballistic law aj11 for EVERY a.  Because Pe ~ |v|N/(p+q),
+# fixed a and N->inf drives Pe->inf, so the tail constant would have to equal the
+# aj11 coefficient u_c(a) for all a.  It does not: u_{1/2}(a) is a nonconstant curve.
+def skellam_J(p, q, s):
+    x = (s + np.sqrt(s * s + 4 * p * q)) / (2 * p); th = np.log(x)
+    return th * s - p * (np.exp(th) - 1) - q * (np.exp(-th) - 1)
+def eta_inf(u, a):
+    p, q = np.exp(a / 2), np.exp(-a / 2); v = p - q
+    return min(1.0, (u / v) * skellam_J(p, q, (1 - u) * v / u) / (a * u))
+def u_half(a):
+    from scipy.optimize import brentq
+    return brentq(lambda u: eta_inf(u, a) - 0.5, 1e-4, 0.5 - 1e-6)
+uvals = {a: u_half(a) for a in [0.2, 0.5, 1.0, 2.0, 3.0]}
+spread = max(uvals.values()) - min(uvals.values())
+check("aj12 u_{1/2}(a) varies with affinity (universal Pe crossover refuted)",
+      spread > 0.05,
+      "u_{1/2}(a) = " + ", ".join(f"{a}:{u:.4f}" for a, u in uvals.items())
+      + f" (a->0 limit {1/(2*(1+np.sqrt(0.5))):.4f}, spread {spread:.4f})")
+
 n_ok = sum(PASS)
 print(f"\n{n_ok}/{len(PASS)} checks passed "
       "(surviving laws: no counterexample in sampled ensembles; "
-      "aj1, aj8, aj9, aj13, aj14: exhibited counterexamples).")
+      "aj1, aj7, aj8, aj9, aj12, aj13, aj14: exhibited counterexamples).")
 import sys
 sys.exit(0 if all(PASS) else 1)
