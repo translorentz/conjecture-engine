@@ -14,7 +14,7 @@ for the odd/edge sectors; the flagged p=2 exception for ap1).
        statistic and the fixed-ODD-prime cokernel decouple.  Marginal input
        checked: P(0/1 matrix singular mod p) -> c_p = 1 - prod(1-p^-k)
        (Maples).  Cross check: edge vs F_p-nullity correlation small for odd p,
-       and larger/persistent for p=2 (why the flagship is stated for odd p).
+       and larger/persistent for p=2 (why the statement is given for odd p).
   ap2  random-determinant arithmetic: exact 0/1 determinant factorization gives
        omega(D_n) ~ log log D_n and largest-prime fraction near Golomb-Dickman
        0.62433.  Marginal tilt checked: c_p - 1/p = O(p^-2), summable.
@@ -104,7 +104,7 @@ for p in [2, 3, 5]:
 check("ap1 odd-prime edge/nullity correlation is small (< 0.15)",
       abs(corr[3]) < 0.15 and abs(corr[5]) < 0.15,
       f"|corr_3|={abs(corr[3]):.3f}, |corr_5|={abs(corr[5]):.3f}")
-print(f"    (p=2 correlation {corr[2]:+.4f}: the flagged exception; flagship is odd primes)")
+print(f"    (p=2 correlation {corr[2]:+.4f}: the deferred exception; the statement is for odd primes)")
 
 
 # ---------------------------------------------------------------------------
