@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred eighty-three conjectures in mathematics}
+\title{Three hundred eighty-eight conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred eighty-three conjectures in mathematics:\\ the statements}
+\title{Three hundred eighty-eight conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -5388,6 +5388,41 @@ For a simple-cycle support with $X_0\sim\pi$ and $M_t=\pi(V_t)$: for every $z\in
 \[
 \Pr_\beta(M_t\ge z)\ge\Pr_\alpha(M_t\ge z).
 \]
+\end{conjecture}
+
+
+\part{Cross-shadow universality}
+
+\medskip\noindent\emph{Added to the deposit: 24 August 2026.}\par\medskip
+
+The five conjectures below share one principle: two limiting observables read off the same discrete randomness decouple because they probe distinct resolution, frequency, or representation-theoretic sectors.  The proved layer is Proposition~\ref{ap:basic}.
+
+\begin{proposition}[Cross-shadow anchor identities]\label{ap:basic}
+{\rm(i)} For an integral matrix $A_n$ with $\det A_n\ne0$, $\Z^n/A_n\Z^n$ is finite of order $|\det A_n|$.  {\rm(ii)} For a conjugation-invariant word measure $\mu_{w,N}$ on $S_N$, $\chi^2(\mu_{w,N}\Vert U_N)=\sum_{\rho\ne\mathbf1}|\E_w\chi_\rho|^2$.  {\rm(iii)} Every $\Q_p$ root of a Littlewood polynomial is a $p$-adic unit.  {\rm(iv)} The $\mathbb F_p$ singularity probability of a balanced random matrix is $c_p=1-\prod_{j\ge1}(1-p^{-j})=1/p+O(p^{-2})$, so $c_p-1/p$ is summable.  {\rm(v)} $t^{-1/2}|\operatorname{core}_e(\lambda_t)|$ and $(4/\pi)\Gamma_e^{\mathrm{Ros}}$ differ only by the factor $\pi/4$.
+\end{proposition}
+
+\begin{proof}
+{\rm(i)} Smith normal form $A_n=U\operatorname{diag}(d_i)V$, $U,V\in\mathrm{GL}_n(\Z)$, gives $\Z^n/A_n\Z^n\cong\bigoplus\Z/d_i$ of order $\prod|d_i|=|\det A_n|$.  {\rm(ii)} With $f=N!\mu_{w,N}$, expanding $f-1$ in the orthonormal character basis gives coefficient $\E_w\chi_\rho$ at $\rho\ne\mathbf1$, and Parseval gives the identity.  {\rm(iii)} If $|x|_p<1$ the unit constant term dominates and if $|x|_p>1$ the leading term dominates, so any root has $|x|_p=1$.  {\rm(iv)} Expand the product.  {\rm(v)} Rostam's definition.
+\end{proof}
+
+\begin{conjecture}[Local spectral--Smith factorization]\label{ap1}
+For a symmetric integral Wigner matrix $A_n$ (centered entries, edge-universality moments, odd-prime anti-concentration) with rescaled real edge process $\mathcal E_n$ and $p$-primary paired cokernel $C_{n,p}$, and every fixed finite set $P$ of odd primes, $(\mathcal E_n,(C_{n,p})_{p\in P})\Rightarrow\mathcal E_{\mathrm{GOE}}\otimes\bigotimes_{p\in P}\mu_p^{\mathrm{sym}}$, and likewise with any fixed finite collection of microscopic bulk and edge windows; the $p=2$ analogue is a secondary statement.
+\end{conjecture}
+
+\begin{conjecture}[Random-integer multiplicative universality of determinants]\label{ap2}
+For $B_n$ i.i.d.\ Bernoulli-$\tfrac12$ in $\{0,1\}$ and $D_n=|\det B_n|\ge3$, $(\omega(D_n)-\log\log D_n)/\sqrt{\log\log D_n}\Rightarrow N(0,1)$ and $(\log Q_{i,n}/\log D_n)_i\Rightarrow PD(1)$ in the ranked simplex.
+\end{conjecture}
+
+\begin{conjecture}[Plancherel modular-charge/Airy factorization]\label{ap3}
+For poissonized Plancherel $\lambda_t$, fixed $e\ge2$, Rostam-normalized charge $Y_t^{(e)}$, and upper-edge process $\mathcal A_t$, $(Y_t^{(e)},\mathcal A_t)\Rightarrow G_e\otimes\mathcal A_{\mathrm{GUE}}$; consequently $(\tfrac{\pi}{4\sqrt t}|\operatorname{core}_e(\lambda_t)|,t^{-1/6}(\lambda_{t,1}-2\sqrt t))\Rightarrow\Gamma_e^{\mathrm{Ros}}\otimes F_2$.
+\end{conjecture}
+
+\begin{conjecture}[Stable-spectrum saturation of word measures]\label{ap4}
+For $w\in F_r$ with primitive abelianization but non-primitive in $F_r$, with $\beta_{\mathrm{st}}(w)=\inf_{\lambda\ne\varnothing}\liminf_N\frac{-\log|\E_w\chi_{\lambda[N]}|}{\log N}$, $\chi^2(\mu_{w,N}\Vert U_N)=N^{-2\beta_{\mathrm{st}}(w)+o(1)}$ and $D_{\mathrm{KL}}(\mu_{w,N}\Vert U_N)=N^{-2\beta_{\mathrm{st}}(w)+o(1)}$.
+\end{conjecture}
+
+\begin{conjecture}[Adelic root-process factorization]\label{ap5}
+For a random Littlewood polynomial $F_n$ with real near-unit root process $\mathcal R_n$ and $p$-adic root process $\mathcal Z_{p,n}$ on $\Z_p^\times$, and every fixed finite set $P$ of odd primes, $(\mathcal R_n,(\mathcal Z_{p,n})_{p\in P})\Rightarrow\nu_\infty\otimes\bigotimes_{p\in P}\nu_p$; the prime $2$ is excluded.
 \end{conjecture}
 
 
