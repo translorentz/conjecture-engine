@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred eighty-eight conjectures in mathematics}
+\title{Three hundred ninety-three conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred eighty-eight conjectures in mathematics:\\ the statements}
+\title{Three hundred ninety-three conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -5423,6 +5423,45 @@ For $w\in F_r$ with primitive abelianization but non-primitive in $F_r$, with $\
 
 \begin{conjecture}[Adelic root-process factorization]\label{ap5}
 For a random Littlewood polynomial $F_n$ with real near-unit root process $\mathcal R_n$ and $p$-adic root process $\mathcal Z_{p,n}$ on $\Z_p^\times$, and every fixed finite set $P$ of odd primes, $(\mathcal R_n,(\mathcal Z_{p,n})_{p\in P})\Rightarrow\nu_\infty\otimes\bigotimes_{p\in P}\nu_p$; the prime $2$ is excluded.
+\end{conjecture}
+
+
+\part{Entropy and rare-event laws for random algebraic and topological structures}
+
+\medskip\noindent\emph{Added to the deposit: 29 August 2026.}\par\medskip
+
+The five conjectures below place deep algebraic and topological invariants on canonical random ensembles and assert entropy, threshold, and rare-event laws.  The proved layer is Proposition~\ref{aq:basic}.
+
+\begin{proposition}[Anchor identities and reductions]\label{aq:basic}
+{\rm(i)} At a two-face tropical breakpoint of $P_{\beta,N}(z)=\sum_ke^{\beta a_k}z^kG_{k,N}$, after rescaling, every inactive coefficient carries a factor $e^{-\beta\Delta_k}\le e^{-\beta\delta}$, and the zeros of the dominant pencil $G_{r,N}+\zeta^mG_{s,N}$ are the $m$-th-root lift of the complex spherical ensemble.  {\rm(ii)} Matroid Kazhdan--Lusztig polynomials are multiplicative under direct sums, forests give $P\equiv1$, and the cycle $C_k$ contributes $U_{k-1,k}$.  {\rm(iii)} For a diagram with $c$ crossings on $m$ strands, $\log Z(u,v)=\log\sum_{i,j}\dim_{\mathbb F_2}Kh^{i,j}e^{ui+vj}$ is convex and bounded by $C(c+m)(1+|u|+|v|)$.  {\rm(iv)} The Weil--Petersson short-geodesic Poisson mean is $\Lambda(\varepsilon)=\varepsilon^2/4+O(\varepsilon^4)$, so $\varepsilon^{-2}\Pr(\ell_{\mathrm{ns}}\le\varepsilon)\to\tfrac14$, and $\pi\,\mathrm{cap}(\ell)/\ell\to1$.  {\rm(v)} For a rational homology sphere, $\operatorname{rank}_{\mathbb F_2}\widehat{HF}(Y)\ge|H_1(Y;\Z)|$.
+\end{proposition}
+
+\begin{proof}
+{\rm(i)} Divide by $e^{\beta\Phi(x_*)}$; $\det(G_r+\zeta^mG_s)=\det(G_s)\prod_i(\zeta^m-\lambda_i)$ with $\lambda_i\in\operatorname{spec}(-G_s^{-1}G_r)$, the (rotation-invariant) spherical ensemble.  {\rm(ii)} Multiplicativity and $P_{B_n}\equiv1$ are Elias--Proudfoot--Wakefield; a bridge is a coloop and the block decomposition is classical.  {\rm(iii)} Log-sum-exp convexity; the resolution cube has $2^c$ vertices with at most $c+m$ circles each, and gradings are $O(c+m)$.  {\rm(iv)} $\lambda(\ell)=\sum_{k\ge1}\ell^{2k-1}/(2k)!$ integrates to $\varepsilon^2/4+\varepsilon^4/96+\cdots$; Mirzakhani--Petri give the Poisson law with short geodesics simple and nonseparating.  {\rm(v)} $\widehat{HF}$ splits over $|H_1|$ $\mathrm{Spin}^c$ structures, each summand of Euler characteristic $\pm1$, hence nonzero over $\mathbb F_2$.
+\end{proof}
+
+\begin{conjecture}[Double-scaling tropical shadowing]\label{aq1}
+In the setting of Proposition~\ref{aq:basic}(i), if $\beta_N\delta/\log N\to\infty$, then on every compact annular sector within one $m$-th-root branch, after removing a boundary layer of vanishing limiting intensity, the zeros of the full matrix polynomial match the zeros of $G_{r,N}+\zeta^mG_{s,N}$ with maximal displacement $o_{\Pp}(N^{-1/2})$; hence the unfolded selected zero process has the spherical-ensemble branch-lift local limit.
+\end{conjecture}
+
+\begin{conjecture}[Kazhdan--Lusztig entropy percolation]\label{aq2}
+For $G_n\sim G(n,c/n)$ and $H_n(c)=n^{-1}\log P_{M(G_n)}(1)$, there is a deterministic $H_{\mathrm{KL}}\colon(0,\infty)\to[0,\infty)$ with $H_n(c)\to H_{\mathrm{KL}}(c)$ in probability for every fixed $c\ne1$, $H_{\mathrm{KL}}(c)=0$ for $0<c<1$, $H_{\mathrm{KL}}(c)>0$ for $c>1$, and $H_n(1)\to0$ in probability.
+\end{conjecture}
+
+\begin{conjecture}[Khovanov free energy of random braid closures]\label{aq3}
+For $m\ge3$ and a finitely supported $\mu$ on $B_m$, aperiodic on the symmetric-group quotient and with nonelementary image in $B_m/Z(B_m)$ acting on the $m$-punctured disc, let $L_n$ be the closure of $\beta_n=X_1\cdots X_n$ and $Z_n(u,v)=\sum_{i,j}\dim_{\mathbb F_2}Kh^{i,j}(L_n;\mathbb F_2)e^{ui+vj}$ in normalized oriented bigradings.  For every fixed $(u,v)$ there is a deterministic finite $F_\mu(u,v)$ with $n^{-1}\log Z_n(u,v)\to F_\mu(u,v)$ almost surely and in $L^1$, and $F_\mu$ is convex.
+\end{conjecture}
+
+\begin{conjecture}[Two-sided thin-handle Hodge rare-event equivalence]\label{aq4}
+For Weil--Petersson random $X_g$, first Jacobian minimum $m_1(J(X_g))$ in the Hodge norm, and shortest primitive nonseparating geodesic length $\ell_{\mathrm{ns}}(X_g)$: for every $\eta>0$,
+\[
+\lim_{\varepsilon\downarrow0}\lim_{g\to\infty}\Pp\!\left(\left|\frac{\pi m_1(J(X_g))^2}{\ell_{\mathrm{ns}}(X_g)}-1\right|>\eta\ \middle|\ \min\{\pi m_1(J(X_g))^2,\ell_{\mathrm{ns}}(X_g)\}\le\varepsilon\right)=0,
+\]
+and consequently $\varepsilon^{-2}\Pp(\pi m_1(J(X_g))^2\le\varepsilon)\to\tfrac14$ in the same sequential limit.
+\end{conjecture}
+
+\begin{conjecture}[Floer cancellation saturation for random Heegaard splittings]\label{aq5}
+For $g\ge2$ and finitely supported $\mu$ generating the genus-$g$ mapping class group as a semigroup, let $Y_n=H_g\cup_{\phi_n}H_g$ with $\phi_n=X_1\cdots X_n$ and $Q_n=\{b_1(Y_n)=0\}$.  Conditional on $Q_n$, the excess Floer entropy $E_n=\log\operatorname{rank}_{\mathbb F_2}\widehat{HF}(Y_n)-\log|H_1(Y_n;\Z)|\ge0$ satisfies $E_n/n\to0$ in probability; equivalently, whenever the homological torsion exponent $\alpha_\mu$ exists in probability on $Q_n$, $n^{-1}\log\operatorname{rank}_{\mathbb F_2}\widehat{HF}(Y_n)\to\alpha_\mu$.
 \end{conjecture}
 
 
