@@ -2,7 +2,7 @@
 \usepackage[margin=1.1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \usepackage{booktabs}
-\usepackage{lmodern}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
 \usepackage{microtype}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{cleveref}
@@ -37,8 +37,8 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred ninety-five conjectures in mathematics\\
-\large Twenty-seven parts across arithmetic, combinatorics, geometry, probability and topology}
+\title{Four hundred ten conjectures in mathematics\\
+\large Twenty-eight parts across arithmetic, combinatorics, geometry, probability and topology}
 \author{The Conjecture Engine\thanks{This paper was produced by an
 automated conjecture engine (LLM tools), operated as an exercise
 in disciplined conjecture-making.  All constants, counts, and
@@ -61,7 +61,7 @@ computations.  Primality claims are stratified between deterministic verificatio
 \begin{document}
 \maketitle
 
-\section*{Summary sheet: the three hundred ninety-five conjectures}
+\section*{Summary sheet: the four hundred ten conjectures}
 \addcontentsline{toc}{section}{Summary sheet}
 
 \paragraph{Part I: conjectures from the local--global random model,
@@ -696,6 +696,21 @@ Bateman--Horn constant.
 \item \textbf{Floer cancellation saturation (Conjecture~\ref{aq5}).}  For random Heegaard splittings with $b_1=0$ the excess Floer entropy $\log\operatorname{rank}\widehat{HF}-\log|H_1|$ is subexponential, so the Floer rank exponent equals the homological torsion exponent.
 \item \textbf{Quenched random Floer barcode entropy (Conjecture~\ref{ar1}).}  The exponential growth rate of long finite Floer bars along an i.i.d.\ Hamiltonian cocycle on a closed surface equals its quenched random topological entropy.
 \item \textbf{LQG metric-ball spectral tangent (Conjecture~\ref{ar2}).}  The first finitely many area-normalized Dirichlet eigenvalues of Liouville Brownian motion on a shrinking intrinsic metric ball converge to the corresponding unit-ball spectrum on the rooted quantum cone.
+\item \textbf{Quenched balanced-cut nullity universality (Conjecture~\ref{as1}).}  The empirical nullity law over all balanced cuts of one dense random graph state self-averages to the finite-field random-matrix law.
+\item \textbf{Dependence-sensitive extreme balanced-cut defect (Conjecture~\ref{as2}).}  The largest balanced-cut nullity is asymptotic to $\sqrt{n\log_q2}$ despite the quadratic overlap of the cut matrices.
+\item \textbf{Poisson law for random graph-state distance (Conjecture~\ref{as3}).}  Low-weight stabilizers form a Poisson process at the distance threshold, giving an exact extreme law beyond the known first-order constant.
+\item \textbf{Typical rigidity of labelled cut rank (Conjecture~\ref{as4}).}  A dense random graph is, with high probability, determined up to labelled local complementation by its complete bipartite entanglement function.
+\item \textbf{Positive-rank-tail log-concavity (Conjecture~\ref{as5}).}  Cut-rank multiplicities are log-concave after the necessarily excluded rank-zero boundary.
+\item \textbf{Full log-concavity for percolated forests (Conjecture~\ref{as6}).}  Edge subsets of a forest, counted by their maximum-matching number, form a log-concave sequence.
+\item \textbf{Hurwitz stability of the percolated-matching polynomial (Conjecture~\ref{as7}).}  The matching-number enumerator of all edge subsets of a forest has every zero in the open left half-plane.
+\item \textbf{Path--star stochastic extremality under bond noise (Conjecture~\ref{as8}).}  After independent edge deletion, the star and path stochastically minimize and maximize matching number among trees.
+\item \textbf{Fixed-leaf broom minimum (Conjecture~\ref{as9}).}  At a fixed number of leaves, the subdivided-star broom uniquely minimizes the percolated matching number in stochastic order.
+\item \textbf{Typical reconstruction from the entanglement enumerator (Conjecture~\ref{as10}).}  A uniform labelled tree is typically determined by $Z_T(x,y)$, despite a unique collision class at order fifteen.
+\item \textbf{Random-regular rank-width density (Conjecture~\ref{as11}).}  Every fixed-degree random regular graph has a deterministic positive rank-width density.
+\item \textbf{Cubic branch-width density and kernel transfer (Conjecture~\ref{as12}).}  Cubic branch-width has a density that transfers through sparse-kernel repairs and subdivisions to the exact barely-supercritical rank-width constant.
+\item \textbf{Off-critical grid rank-width surface tension (Conjecture~\ref{as13}).}  Bond-percolated square grids have a deterministic linear rank-width constant away from criticality.
+\item \textbf{Local-complementation orbit entropy saturation (Conjecture~\ref{as14}).}  A dense random graph-state orbit reaches the universal $3^n$ upper bound at exponential scale.
+\item \textbf{Sparse Erd\H os--R\'enyi rank-width density curve (Conjecture~\ref{as15}).}  The normalized rank-width has a deterministic curve, zero through the giant-component threshold and positive above it.
 \end{enumerate}
 
 
@@ -705,7 +720,7 @@ Bateman--Horn constant.
 
 
 \begin{abstract}
-We state three hundred ninety-five conjectures in twenty-seven parts.  The twenty-five conjectures of Part~I are each derived from the
+We state four hundred ten conjectures in twenty-eight parts.  The twenty-five conjectures of Part~I are each derived from the
 local--global random model of the primes:
 Cram\'er's model corrected by Hardy--Littlewood singular series, with
 Bateman--Horn as the organizing framework and Borel--Cantelli accounting
@@ -760,13 +775,17 @@ the area-normalized low Liouville-Brownian spectrum of shrinking intrinsic
 LQG metric balls, over the deterministic surface entropy theorem and exact
 field-shift covariance, with both finite diagnostics explicitly labelled as
 calibrations rather than tests of the asymptotic laws.
+  Part~XXVIII (Conjectures~396--410) adds fifteen cut-rank laws for graph
+states, percolated forests, random regular and sparse graphs, and
+local-complementation orbits, admitted after three independent review
+iterations with exact counterexamples and literature duplicates removed.
 \end{abstract}
 
 \tableofcontents
 
 \section{Introduction}
 
-This collection states three hundred ninety-five conjectures in twenty-seven parts.  Part~I
+This collection states four hundred ten conjectures in twenty-eight parts.  Part~I
 (Conjectures 1--25) is a single sustained experiment: the primes, beyond
 their local structure, are modelled as a random set of density
 $1/\log n$, and the model is pushed to its sharpest consequences.
@@ -783,7 +802,13 @@ Part~XXVII (Conjectures~394--395) adds a random Hamiltonian-cocycle barcode
 entropy law and an LQG metric-ball spectral-tangent law, the two survivors of
 a separately recorded ten-candidate novelty and soundness audit.
 
-One standard governs all twenty-seven parts.  A good conjecture is not merely a
+Part~XXVIII (Conjectures~396--410) adds fifteen laws for the cut-rank
+entanglement of graph states: quenched and extreme random-matrix laws,
+forest shape and stability laws, stochastic tree extremals and typical
+reconstruction, width densities for random regular, sparse, and percolated
+graphs, and rigidity and orbit-entropy laws under local complementation.
+
+One standard governs all twenty-eight parts.  A good conjecture is not merely a
 statement that has resisted counterexample: it is a determinate
 proposition about a canonical object, with a stated mechanism, and with
 enough exposed structure to be refuted in pieces.  Concretely, every
@@ -892,7 +917,7 @@ core, joined by \ref{c20} and \ref{c4}; Conjectures \ref{c9},
 One tagging convention runs through every statement below: clauses
 marked [theorem] or ``elementary'' are proved; clauses marked
 ``conditional proposition'' follow from the hypotheses stated with
-them; the remaining clauses are conjectures; and open questions are labelled as such and are not counted among the three hundred ninety-five conjectures.  A title tagged ``resolved true'' or ``resolved false'' marks a statement settled since its deposit, each carrying a \emph{Resolution} paragraph with the proof or the counterexample.
+them; the remaining clauses are conjectures; and open questions are labelled as such and are not counted among the four hundred ten conjectures.  A title tagged ``resolved true'' or ``resolved false'' marks a statement settled since its deposit, each carrying a \emph{Resolution} paragraph with the proof or the counterexample.
 
 \subsection*{Computational-check standards}
 
@@ -1017,7 +1042,7 @@ Novelty labels, from the independent literature search: \textbf{(a)} previously 
 \textbf{(b)} classical family, quantified instance apparently unstated.
 
 \medskip
-\noindent\textbf{How to read the three hundred ninety-five.}  The count is a numbering convention, not a claim of three hundred ninety-five independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several conjectures pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Part~IV is one polynomial invariant carrying three programmes, and its twenty statements stand or fall in blocks rather than singly, with two, Conjectures~\ref{u7} and~\ref{u15}, already fallen and recorded as resolved false.  Part~V is two rank enumerators of one bracket tensor, fifteen conjectures supported throughout the tested corpus, three stated in greater generality than the computations reach, and two resolved false with explicit counterexamples, recorded in place.  Part~VI is five local-structure programmes in the aesthetic of Part~I over a proved layer of jump identities and short-window exchangeability, six of its twenty stating a bias as a measured band, two extrapolating in a parameter rather than the index, one since resolved false, and four since proved.  The corresponding per-part registers for Parts~VII through~XVII, their programme counts, evidence caveats, retained controls, and resolutions, are carried once by the abstract and the summary sheet rather than repeated here.  Depth and independence therefore vary by design across the three hundred ninety-five, and the summary sheet's ordering, not the raw count, carries the priority claim.
+\noindent\textbf{How to read the four hundred ten.}  The count is a numbering convention, not a claim of four hundred ten independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several conjectures pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Part~IV is one polynomial invariant carrying three programmes, and its twenty statements stand or fall in blocks rather than singly, with two, Conjectures~\ref{u7} and~\ref{u15}, already fallen and recorded as resolved false.  Part~V is two rank enumerators of one bracket tensor, fifteen conjectures supported throughout the tested corpus, three stated in greater generality than the computations reach, and two resolved false with explicit counterexamples, recorded in place.  Part~VI is five local-structure programmes in the aesthetic of Part~I over a proved layer of jump identities and short-window exchangeability, six of its twenty stating a bias as a measured band, two extrapolating in a parameter rather than the index, one since resolved false, and four since proved.  The corresponding per-part registers for Parts~VII through~XVII, their programme counts, evidence caveats, retained controls, and resolutions, are carried once by the abstract and the summary sheet rather than repeated here.  Depth and independence therefore vary by design across the four hundred ten, and the summary sheet's ordering, not the raw count, carries the priority claim.
 
 \part{Conjectures from a local--global random model}
 
@@ -9154,6 +9179,8 @@ of the metric-measure tangent with multiple subsequential energy-form, hence
 spectral, limits.
 
 
+\input{part_xxviii}
+
 \part*{Stress tests and independent recomputation}
 \addcontentsline{toc}{part}{Stress tests and independent recomputation}\label{sec:stress}
 
@@ -9311,6 +9338,23 @@ eigenvalue by $e^{-\gamma c}$ and preserved mass times eigenvalue to relative
 error $2.9\times10^{-14}$; this checks field-shift covariance and does not
 simulate LQG.  Thus no finite computation is claimed to test either
 asymptotic law.
+
++\emph{Part XXVIII.}  Three independent review iterations were run on
+successive frozen slates.  The first rejected an unsupported generic
+completeness claim, corrected rank-width to branch-width in the cubic-kernel
+transfer, and exposed a false ultra-log-concavity strengthening.  The second
+found the first universal tree-reconstruction counterexample at order
+fifteen and identified a proposed vertex-minor law as an existing published
+conjecture; both were removed or weakened before the final review.  The final
+review accepted all fifteen statements after formalizing the repaired
+multigraph in Conjecture~\ref{as12}, excluding criticality explicitly in
+Conjecture~\ref{as13}, and specifying the non-Pauli automorphisms in
+Conjecture~\ref{as14}.  The independent verifier reproduces the matrix
+nullity calibration, labelled cut-rank/LC agreement through six vertices,
+the small-graph and forest shape checks, both negative controls, the exact
+order-fifteen $Z_T$ collision, small cubic rank-width values, and seeded
+orbit growth.  The asymptotic width laws are mechanism checks only, not
+claimed to be tested at finite size.
 
 \begin{thebibliography}{99}\small
 
@@ -10110,6 +10154,41 @@ systems}, Random Comput. Dynam. \textbf{1} (1992/93), 99--116.
 \emph{A response calculus for Liouville Brownian motion I: simple spectrum,
 joint eigenvalue densities, and Ward identities},
 arXiv:2608.02459 (2026).
+
++\bibitem{HeinEisertBriegel04} M.~Hein, J.~Eisert, and H.~J. Briegel,
+\emph{Multiparty entanglement in graph states}, Phys. Rev. A \textbf{69}
+(2004), 062311.
+
+\bibitem{Oum05} S.-i.~Oum, \emph{Rank-width and vertex-minors},
+J. Combin. Theory Ser. B \textbf{95} (2005), 79--100.
+
+\bibitem{OumSeymour06} S.-i.~Oum and P.~Seymour,
+\emph{Approximating clique-width and branch-width},
+J. Combin. Theory Ser. B \textbf{96} (2006), 514--528.
+
+\bibitem{NguyenOum20} H.~T.~Nguyen and S.-i.~Oum,
+\emph{The average cut-rank of graphs}, European J. Combin. \textbf{87}
+(2020), 103112.
+
+\bibitem{LeeLeeOum12} C.~Lee, J.~Lee, and S.-i.~Oum,
+\emph{Rank-width of random graphs}, J. Graph Theory \textbf{70}
+(2012), 339--347.
+
+\bibitem{DoErdeKang24} T.~A.~Do, J.~Erde, and M.~Kang,
+\emph{A note on the width of sparse random graphs},
+J. Graph Theory \textbf{106} (2024), 273--295.
+
+\bibitem{LiMuller17} A.~Li and T.~M\"uller,
+\emph{On the treewidth of random geometric graphs and percolated grids},
+Adv. Appl. Probab. \textbf{49} (2017), 165--183.
+
+\bibitem{BahramgiriBeigi07} M.~Bahramgiri and S.~Beigi,
+\emph{Graph states under the action of local Clifford group in non-binary case},
+arXiv:quant-ph/0610267 (2007).
+
+\bibitem{AdcockEtAl20} J.~C.~Adcock, S.~Morley-Short, A.~Dahlberg, and
+J.~W.~Silverstone, \emph{Mapping graph state orbits under local
+complementation}, Quantum \textbf{4} (2020), 305.
 
 \end{thebibliography}
 

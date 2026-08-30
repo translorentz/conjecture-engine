@@ -2,7 +2,7 @@
 \usepackage[margin=1.1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \usepackage{booktabs}
-\usepackage{lmodern}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
 \usepackage{microtype}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{cleveref}
@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred ninety-five conjectures in mathematics}
+\title{Four hundred ten conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred ninety-five conjectures in mathematics:\\ the statements}
+\title{Four hundred ten conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -5511,6 +5511,8 @@ quantum-typical point, then for each fixed $k$,
 \end{conjecture}
 
 
+\input{part_xxviii_skeleton}
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -6056,6 +6058,41 @@ systems}, Random Comput. Dynam. \textbf{1} (1992/93), 99--116.
 \emph{A response calculus for Liouville Brownian motion I: simple spectrum,
 joint eigenvalue densities, and Ward identities},
 arXiv:2608.02459 (2026).
+
++\bibitem{HeinEisertBriegel04} M.~Hein, J.~Eisert, and H.~J. Briegel,
+\emph{Multiparty entanglement in graph states}, Phys. Rev. A \textbf{69}
+(2004), 062311.
+
+\bibitem{Oum05} S.-i.~Oum, \emph{Rank-width and vertex-minors},
+J. Combin. Theory Ser. B \textbf{95} (2005), 79--100.
+
+\bibitem{OumSeymour06} S.-i.~Oum and P.~Seymour,
+\emph{Approximating clique-width and branch-width},
+J. Combin. Theory Ser. B \textbf{96} (2006), 514--528.
+
+\bibitem{NguyenOum20} H.~T.~Nguyen and S.-i.~Oum,
+\emph{The average cut-rank of graphs}, European J. Combin. \textbf{87}
+(2020), 103112.
+
+\bibitem{LeeLeeOum12} C.~Lee, J.~Lee, and S.-i.~Oum,
+\emph{Rank-width of random graphs}, J. Graph Theory \textbf{70}
+(2012), 339--347.
+
+\bibitem{DoErdeKang24} T.~A.~Do, J.~Erde, and M.~Kang,
+\emph{A note on the width of sparse random graphs},
+J. Graph Theory \textbf{106} (2024), 273--295.
+
+\bibitem{LiMuller17} A.~Li and T.~M\"uller,
+\emph{On the treewidth of random geometric graphs and percolated grids},
+Adv. Appl. Probab. \textbf{49} (2017), 165--183.
+
+\bibitem{BahramgiriBeigi07} M.~Bahramgiri and S.~Beigi,
+\emph{Graph states under the action of local Clifford group in non-binary case},
+arXiv:quant-ph/0610267 (2007).
+
+\bibitem{AdcockEtAl20} J.~C.~Adcock, S.~Morley-Short, A.~Dahlberg, and
+J.~W.~Silverstone, \emph{Mapping graph state orbits under local
+complementation}, Quantum \textbf{4} (2020), 305.
 
 \end{thebibliography}
 \end{document}
