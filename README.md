@@ -178,3 +178,10 @@ This repository contains:
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base
 Miller–Rabin); larger integers are classified by Baillie–PSW and the
 corresponding counts are labelled probable-prime counts in the paper.
+
+## Maintainer publication safety
+
+The [GitHub publication postmortem and runbook](docs/github-publication-postmortem-2026-08-30.md)
+records the failure modes encountered while publishing Conjectures 392 and
+394–409, including stacked PRs, sparse checkout, large binary blobs, remote
+tree verification, merge authorization, and final `main` synchronization.
