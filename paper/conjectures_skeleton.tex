@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Three hundred ninety-three conjectures in mathematics}
+\title{Three hundred ninety-five conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Three hundred ninety-three conjectures in mathematics:\\ the statements}
+\title{Three hundred ninety-five conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -5465,6 +5465,52 @@ For $g\ge2$ and finitely supported $\mu$ generating the genus-$g$ mapping class 
 \end{conjecture}
 
 
+\part{Random cocycle and spectral-tangent laws}
+
+\medskip\noindent\emph{Added to the deposit: 30 August 2026.}\par\medskip
+
+\begin{proposition}[Deterministic and field-shift calibrations]\label{ar:basic}
+{\rm(i)} For a point-mass driving law $\delta_\phi$ on the Hamiltonian
+diffeomorphisms of a closed symplectic surface, deterministic barcode entropy
+equals $h_{\mathrm{top}}(\phi)$.  {\rm(ii)} Under $h\mapsto h+c$,
+$\mu_{h+c}=e^{\gamma c}\mu_h$, $D_{h+c}=e^{\xi c}D_h$, and every
+Liouville-Brownian Dirichlet eigenvalue on a fixed domain is multiplied by
+$e^{-\gamma c}$; hence
+$\mu_h(B_r^h(z))\lambda_j^h(B_r^h(z))$ is invariant after the radius is
+co-scaled by $e^{\xi c}$.
+\end{proposition}
+
+\begin{conjecture}[Quenched random Floer barcode entropy]\label{ar1}
+Let $(\Sigma,\omega)$ be a closed symplectic surface, let $\mu$ be finitely
+supported on $\operatorname{Ham}(\Sigma,\omega)$, and put
+$\Phi_n=X_n\circ\cdots\circ X_1$ for i.i.d.\ $X_i\sim\mu$.  If
+$b_\varepsilon(\psi)$ counts finite bars longer than $\varepsilon$ in the
+absolute Hamiltonian Floer barcode and $h_{\mathrm{top}}^{\mathrm q}(\mu)$ is
+the quenched random topological entropy defined by the sample-path Bowen
+metric, then almost surely
+\[
+ \lim_{\varepsilon\downarrow0}\limsup_{n\to\infty}
+ \frac1n\log\max\{1,b_\varepsilon(\Phi_n)\}
+ =h_{\mathrm{top}}^{\mathrm q}(\mu).
+\]
+\end{conjecture}
+
+\begin{conjecture}[LQG metric-ball spectral tangent]\label{ar2}
+For a unit-area $\gamma$-LQG sphere rooted at $z\sim\mu_h$, let
+$\lambda_j^h(B_r)$ be the Dirichlet eigenvalues of Liouville Brownian motion
+killed outside the $D_h$-ball $B_r^h(z)$.  If
+$(\mathcal C,h_{\mathcal C},0)$ is the $\gamma$-quantum cone rooted at a
+quantum-typical point, then for each fixed $k$,
+\[
+ \bigl(\mu_h(B_r^h(z))\lambda_j^h(B_r)\bigr)_{j=1}^k
+ \Longrightarrow
+ \bigl(\mu_{h_{\mathcal C}}(B_1^{\mathcal C})
+       \lambda_j^{\mathcal C}(B_1)\bigr)_{j=1}^k
+ \quad\text{as }r\downarrow0.
+\]
+\end{conjecture}
+
+
 \begin{thebibliography}{99}\small
 
 \bibitem{HL1923} G.~H. Hardy and J.~E. Littlewood,
@@ -5987,6 +6033,29 @@ Ergodic Theory Dynam. Systems 7 (1987), no. 2, 249--261.
 \bibitem{Mac71} I.~G.~Macdonald, Polynomials associated with finite cell-complexes, J. London Math. Soc. (2) 4 (1971), 181--192.
 \bibitem{Sta80} R.~P.~Stanley, Decompositions of rational convex polytopes, Ann. Discrete Math. 6 (1980), 333--342.
 \bibitem{Lan03} E.~Landau, \"Uber die Maximalordnung der Permutationen gegebenen Grades, Arch. Math. Phys. (3) 5 (1903), 92--103.
+
+\bibitem{CGGEntropy22} E.~\c{C}ineli, V.~L. Ginzburg, and B.~Z. G\"urel,
+\emph{Topological entropy of Hamiltonian diffeomorphisms: a persistence
+homology and Floer theory perspective}, arXiv:2111.03983.
+
+\bibitem{CGGBarcode22} E.~\c{C}ineli, V.~L. Ginzburg, and B.~Z. G\"urel,
+\emph{On the growth of the Floer barcode}, arXiv:2207.03613.
+
+\bibitem{Gong26} W.~Gong,
+\emph{Persistent entropy of Floer persistence barcodes}, arXiv:2606.19071
+(2026).
+
+\bibitem{Bogenschutz93} T.~Bogensch\"utz,
+\emph{Entropy, pressure, and a variational principle for random dynamical
+systems}, Random Comput. Dynam. \textbf{1} (1992/93), 99--116.
+
+\bibitem{BerestyckiWong23} N.~Berestycki and M.~D. Wong,
+\emph{Weyl's law in Liouville quantum gravity}, arXiv:2307.05407.
+
+\bibitem{Cai26} C.~Cai,
+\emph{A response calculus for Liouville Brownian motion I: simple spectrum,
+joint eigenvalue densities, and Ward identities},
+arXiv:2608.02459 (2026).
 
 \end{thebibliography}
 \end{document}

@@ -1,8 +1,8 @@
-# Three hundred eighty-three conjectures in mathematics
+# Three hundred ninety-five conjectures in mathematics
 
 This repository contains:
 
-- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: three hundred eighty-three conjectures in twenty-four parts, each with its mechanism,
+- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: three hundred ninety-five conjectures in twenty-seven parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)
@@ -125,7 +125,15 @@ This repository contains:
   and stochastic acceleration of the finite-time range on unicyclic supports and
   of the visited stationary mass on cycles — over a proved layer of endpoint
   spectral bounds and time-reversal even-analyticity that also refutes, by an
-  explicit high-precision counterexample, whole-ray fast-edge monotonicity.
+  explicit high-precision counterexample, whole-ray fast-edge monotonicity;
+  Part XXV (384–388) adds five cross-shadow universality laws pairing real,
+  arithmetic, edge, and representation-theoretic observables read from the
+  same randomness; Part XXVI (389–393) adds entropy and rare-event laws for
+  matrix-polynomial zeros, graphic-matroid Kazhdan–Lusztig complexity,
+  Khovanov homology, Jacobian minima, and Heegaard Floer homology; and Part
+  XXVII (394–395) adds the two survivors of a separately documented
+  [ten-candidate admission audit](docs/hybrid-candidate-audit-2026-08-30.md) — a quenched random Floer-barcode entropy law
+  and an LQG metric-ball spectral-tangent law.
   Fourteen conjectures
   (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229, 328) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting
@@ -155,7 +163,7 @@ This repository contains:
   machine-readable outputs are in `results/`. The later parts have their
   own reproduction scripts in `verify/`: `u_*.py` (Part IV), `v_*.py`
   (Part V), `w_local_structure.py` (Part VI), `x_topology.py` (Part VII), `wx_shock_landau.py` and `ehrhart_cov_gamma.py` (the shock forcing, Landau-floor, Ehrhart-scaling, covariance, and coverage resolutions of Parts VI--VII and IX--X), `y_shape_laws.py` (Part VIII),
-  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), `ae_projective_laws.py` (Part XIV), `af_saw_laws.py` (Part XV), `ag_noneq_laws.py` (Part XVI), `ah_evt_laws.py` (Part XVII), `ai_tda_laws.py` (Part XVIII), `aj_neq_laws.py` (Part XIX), `ak_cft_shape_laws.py` (Part XX), `al_fluid_laws.py` (Part XXI), `am_rgcft_laws.py` (Part XXII), `an_ips_laws.py` (Part XXIII), `ao_ftcr_laws.py` (Part XXIV), and `t5_*.py` (Part III),
+  `z_spectra_filtrations.py` (Part IX), `aa_flux_indices.py` (Part X), `ab_entropy_carry.py` (Part XI), `ac_subdivision_ust_cyclic.py` (Part XII), `ad_flux_torsion.py` and `ad_mirror_merge.py` (Part XIII), `ae_projective_laws.py` (Part XIV), `af_saw_laws.py` (Part XV), `ag_noneq_laws.py` (Part XVI), `ah_evt_laws.py` (Part XVII), `ai_tda_laws.py` (Part XVIII), `aj_neq_laws.py` (Part XIX), `ak_cft_shape_laws.py` (Part XX), `al_fluid_laws.py` (Part XXI), `am_rgcft_laws.py` (Part XXII), `an_ips_laws.py` (Part XXIII), `ao_ftcr_laws.py` (Part XXIV), `ar_random_barcode_lqg.py` (Part XXVII), and `t5_*.py` (Part III),
   each implemented independently of the primary scans.
 
 Primality below 3.3×10²⁴ is decided deterministically (fixed-base
