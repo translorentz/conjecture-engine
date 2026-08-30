@@ -7,13 +7,22 @@ $\rho_G(S)=\rank_{\mathbb F_2}A_G[S,V\setminus S]$ and
 $Z_G(x,y)=\sum_{S\subseteq V}x^{|S|}y^{\rho_G(S)}$.
 
 \begin{conjecture}[Quenched balanced-cut nullity universality]\label{as1}
-For independent uniform $\mathbb F_q$ edge labels on $G_{2m+s,q}$,
+For the loopless complete graph on $2m+s$ vertices whose unordered pairs
+receive independent uniform labels in $\mathbb F_q$ (zero meaning no edge),
 $s\in\{0,1\}$, the empirical nullity law over all $m$-vertex cuts converges
 in probability in total variation to
 $\pi_{q,s}(d)=q^{-d(d+s)}P_{q,\infty}/(P_{q,d}P_{q,d+s})$.
 \end{conjecture}
 \begin{conjecture}[Dependence-sensitive extreme balanced-cut defect]\label{as2}
-$\max_{|S|=m}(m-\rho_G(S))/\sqrt{(2m+s)\log_q2}\to1$ in probability.
+With
+\[
+ D_{\max}(G)=\max_{|S|=m}\bigl(m-\rho_G(S)\bigr),
+\]
+one has
+\[
+ \frac{D_{\max}(G)}{\sqrt{(2m+s)\log_q2}}\longrightarrow1
+\]
+in probability.
 \end{conjecture}
 \begin{conjecture}[Poisson law for random graph-state distance]\label{as3}
 For $G\sim G(n,1/2)$, the count of nonempty $A$ with
@@ -43,8 +52,9 @@ $\Pr(\nu((S_n)_p)\ge k)\le\Pr(\nu(T_p)\ge k)\le
 \Pr(\nu((P_n)_p)\ge k)$, with the stated extremizers unique.
 \end{conjecture}
 \begin{conjecture}[Fixed-leaf broom minimum]\label{as9}
-Among $n$-vertex trees with $L$ leaves, the subdivided star broom $B_{n,L}$
-stochastically minimizes $\nu(T_p)$ for every $p\in(0,1)$, uniquely.
+For every fixed $p\in(0,1)$, among $n$-vertex trees with $L$ leaves, the
+subdivided star broom $B_{n,L}$ stochastically minimizes $\nu(T_p)$, and
+equality in distribution holds only for the broom.
 \end{conjecture}
 \begin{conjecture}[Typical tree reconstruction from the entanglement enumerator]\label{as10}
 A uniform labelled tree is, with probability tending to one, determined up
@@ -55,12 +65,15 @@ For fixed $d\ge3$, $\operatorname{rw}(G_{n,d})/n\to\kappa_d\in(0,1/3]$ in
 probability along $dn$ even.
 \end{conjecture}
 \begin{conjecture}[Cubic branch-width density and kernel transfer]\label{as12}
-Uniform cubic graphs satisfy $\operatorname{bw}(H_N)/N\to\beta_3>0$; after
-$o(N)$ explicit repairs, all but $o(N)$ edges are subdivided and arbitrary
-trees attached, the resulting $S_N$ satisfies
+As even $N\to\infty$, uniform simple cubic graphs satisfy
+$\operatorname{bw}(H_N)/N\to\beta_3>0$.  Conditional on a cubic
+configuration multigraph, let $H_N^*$ be any simple graph obtained by
+$o(N)$ edge insertions and deletions.  Subdivide all but $o(N)$ edges at
+least once, allow further subdivisions, and take arbitrary one-vertex sums
+with trees; uniformly over these choices, the resulting $S_N$ satisfies
 $\operatorname{rw}(S_N)=\operatorname{bw}(H_N^*)+o(N)$.  Hence in the
 weakly supercritical window
-$\operatorname{rw}(G(n,(1+\varepsilon)/n))/(\varepsilon^3n)	o4\beta_3/3$.
+$\operatorname{rw}(G(n,(1+\varepsilon)/n))/(\varepsilon^3n)\to4\beta_3/3$.
 \end{conjecture}
 \begin{conjecture}[Rank-width surface tension for off-critical percolated grids]\label{as13}
 For fixed $p\ne1/2$, $\operatorname{rw}(Q_L(p))/L\to\tau_{\rm rw}(p)$ in

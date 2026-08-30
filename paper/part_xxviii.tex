@@ -9,7 +9,8 @@ For a finite simple graph $G=(V,E)$ and $S\subseteq V$, write
 \]
 For an edge-labelled graph over $\mathbb F_q$, the same symbol denotes rank
 over $\mathbb F_q$, with the standard finite-field Pauli convention for the
-associated $q$-level stabilizer graph state.  We write $\operatorname{rw}$
+associated $q$-level stabilizer graph state; label zero means that the edge is
+absent.  We write $\operatorname{rw}$
 and $\operatorname{bw}$ for rank-width and branch-width, $\nu$ for maximum
 matching number, and $\operatorname{Odd}_G(A)$ for the vertices having an odd
 number of neighbours in $A$.
@@ -47,8 +48,10 @@ uniform $m\times(m+s)$ matrix over $\mathbb F_q$, for fixed $s\ge0$, is
 The graph-state amplitude matrix across a bipartition reduces by local
 Clifford row and column operations to $\rho_G(S)$ entangled pairs, proving
 \textup{(i)}~\cite{HeinEisertBriegel04}.  On a forest, fixing one vertex
-colour makes the map from vertex two-colourings to crossing-edge sets
-bijective.  A bipartite forest's adjacency bi-matrix has rank over
+colour in each connected component makes the map from the remaining vertex
+two-colourings to crossing-edge sets bijective; hence every crossing-edge set
+has exactly $2^{\kappa(F)}$ colouring preimages.  A bipartite forest's
+adjacency bi-matrix has rank over
 $\mathbb F_2$ equal to its term rank: a nonzero maximal minor has a unique
 perfect matching, since two perfect matchings would create a cycle.  This is
 \textup{(ii)}.  Finally, the exact rank count for finite rectangular matrices,
@@ -56,8 +59,10 @@ divided by $q^{m(m+s)}$ and then sent to infinity, gives \textup{(iii)}.
 \end{proof}
 
 \begin{conjecture}[Quenched balanced-cut nullity universality]\label{as1}
-Fix a prime power $q$ and $s\in\{0,1\}$.  Let $G_{2m+s,q}$ have independent
-uniform edge labels in $\mathbb F_q$, and set
+Fix a prime power $q$ and $s\in\{0,1\}$.  Let $G_{2m+s,q}$ be the loopless
+complete edge-labelled graph in which every unordered vertex pair receives
+an independent uniform label in $\mathbb F_q$ (with zero interpreted as no
+edge), and set
 \[
  \mu_G(d)=\binom{2m+s}{m}^{-1}
  \#\{S:|S|=m,\ m-\rho_G(S)=d\}.
@@ -67,11 +72,19 @@ $\pi_{q,s}$.
 \end{conjecture}
 
 \paragraph{Significance.}
-Every fixed cut matrix is uniform, so Proposition~\ref{as:basic}(iii) gives
-the annealed law exactly; the content is self-averaging over the exponentially
-many, heavily overlapping cuts of one state.  A proof would turn the random
-matrix nullity law into a quenched entanglement spectrum and requires a
-dependence-sensitive concentration argument, not independent sampling.
+Every fixed cut matrix is uniform.  Its exact finite nullity probability is
+\[
+ q^{-d(d+s)}
+ \frac{P_{q,m}P_{q,m+s}}
+ {P_{q,d}P_{q,d+s}P_{q,m-d}},
+\]
+which tends to Proposition~\ref{as:basic}(iii); the content is self-averaging
+over the exponentially many, heavily overlapping cuts of one state.  A proof
+would turn the random-matrix nullity law into a quenched entanglement spectrum
+and requires dependence-sensitive concentration, not independent sampling.
+The nearest results concern fixed-cut stabilizer entanglement and average cut
+rank, rather than the empirical law of all cuts of one realization
+~\cite{NguyenOum20}.
 
 \begin{conjecture}[Dependence-sensitive extreme balanced-cut defect]\label{as2}
 In the setting of Conjecture~\ref{as1}, let
@@ -84,10 +97,15 @@ in probability.
 \end{conjecture}
 
 \paragraph{Significance.}
-The one-cut tail $q^{-d^2+O(d)}$ and $2^{2m+s+o(m)}$ balanced cuts force the
-displayed first-moment location.  The lower bound is a genuine de-clustering
-problem: overlapping cuts share quadratically many entries, and complementary
-cuts are identical when $s=0$.  Binary enumeration at orders $10$--$18$ gave
+The exact rank formula gives
+$\Pr\{\operatorname{nullity}\ge d\}=q^{-d(d+s)+O_q(1)}$ uniformly for
+$d=O(\sqrt m)$, while
+$\log_q\binom{2m+s}{m}=(2m+s)\log_q2+O(\log m)$; these formulas force the
+displayed first-moment location.  The union-bound upper estimate follows.
+The lower bound is a genuine de-clustering problem: overlapping cuts share
+quadratically many entries, complementary cuts are identical when $s=0$,
+and rare defective cuts might occur in large dependency clusters.  Binary
+enumeration at orders $10$--$18$ gave
 mean normalized values $0.72$--$0.80$, increasing across that range; this
 calibrates the scale but is not treated as independence evidence.
 
@@ -110,12 +128,18 @@ $\Pr(f(G)>\ell)=e^{-\Lambda_n(\ell)}+o(1)$.
 \end{conjecture}
 
 \paragraph{Significance.}
-The minimum is the distance of the self-dual additive code represented by the
-graph state.  Known first-order estimates and the corresponding random
-linear-code extreme law do not settle the symmetric generator
-$(A,\Gamma A)$, where $A$, $B$, and $A\triangle B$ create structured
-dependencies.  A proof would give a sharp finite-blocklength law for random
-graph-state error detection.
+Here $f(G)=\delta_{\rm loc}(G)+1$, the minimum degree up to local
+complementation plus one, and equivalently the minimum nonzero Hamming weight
+of the associated self-dual additive $\mathbb F_4$ code
+~\cite{JavelleCattaneoPerdrix12,JavelleMhallaPerdrix15}.  The mean has the
+equivalent exact form
+\[
+ \Lambda_n(\ell)=2^{-n}\sum_{w=1}^{\ell}\binom nw(3^w-1),
+\]
+whose first-order threshold is already known.  The new assertion is the
+Poisson finite-length law: the sharp random-linear-code analogue does not
+cover the symmetric graph-state generator, where $A$, $B$, and
+$A\triangle B$ create structured dependencies~\cite{HaoEtAl20}.
 
 \begin{conjecture}[Typical rigidity of the labelled cut-rank function]\label{as4}
 For $G\sim G(n,1/2)$, with probability tending to one, every graph $H$ on
@@ -128,11 +152,14 @@ vertices.
 \end{conjecture}
 
 \paragraph{Significance.}
-The converse is standard, but universal completeness is false: the smallest
-known non-locally-equivalent pair with the same cut-rank function has nine
-vertices, and relabellings of the Petersen graph give a classical source of
-exceptions~\cite{Oum05}.  Exhaustive enumeration through six vertices found
-exact equality between cut-rank fibres and labelled local-complementation
+The converse is standard, but universal completeness is false.  A current
+unlabelled-orbit census finds no collision below nine vertices and respectively
+$1,3,15$ colliding LC-orbit pairs at orders $9,10,11$
+~\cite{DeJongVandreBurchardt24}; structural descriptions through minimal local
+sets give another nearby boundary~\cite{ClaudetPerdrix24}.  Those results are
+unlabelled, whereas the conjecture and the exact verifier concern one fixed
+labelled vertex set.  Exhaustive enumeration through six vertices found exact
+equality between labelled cut-rank fibres and labelled local-complementation
 orbits, including all $760$ fibres at order six.  The conjecture says that the
 alternative isotropic representations behind structured exceptions have
 vanishing density.  Since local-unitary equivalence preserves every cut rank,
@@ -149,13 +176,24 @@ $R=\max_S\rho_G(S)$.  Then
 \end{conjecture}
 
 \paragraph{Significance.}
-The positive-rank restriction is sharp: a connected $13$-vertex graph has
-full profile $(2,28,410,1896,3296,2208,352)$, which is not log-concave at
-rank one; conditioning on $|S|$ fails already at order four.  The positive
-tail passed all $1{,}252$ graphs on at most seven vertices and $8{,}500$
-random graphs of orders $8$--$15$.  A proof would expose a previously unknown
-negative-dependence or injection principle for graph-state entanglement
-multiplicities.
+The statement deliberately begins at rank two, and that starting point is
+sharp.  The connected graph on vertices $0,\ldots,12$ with edge set
+\[
+\begin{split}
+\{&(0,8),(0,10),(1,2),(1,8),(2,7),(3,7),(3,12),(4,6),\\
+  &(4,7),(4,8),(5,6),(5,8),(7,8),(7,9),(7,10),(7,11),\\
+  &(7,12),(8,9),(8,11),(8,12)\}
+\end{split}
+\]
+has exact cut-rank profile
+$(2,28,410,1896,3296,2208,352)$, so
+$c_1^2=784<820=c_0c_2$.  Thus rank-one log-concavity is false, not merely
+unproved.  Conditioning on $|S|$ fails already at order four.  The positive
+tail passed all $1{,}252$ nonempty graph-atlas
+graphs on at most seven vertices and a separate seeded stress test on $8{,}887$
+connected random graphs of orders $8$--$13$.  A proof would expose a
+previously unknown negative-dependence or injection principle for graph-state
+entanglement multiplicities.
 
 \begin{conjecture}[Full log-concavity for percolated forests]\label{as6}
 For a forest $F$, define
@@ -167,9 +205,18 @@ Then $(a_0(F),\ldots,a_{\nu(F)}(F))$ is log-concave.
 
 \paragraph{Significance.}
 By Proposition~\ref{as:basic}(ii), these coefficients are, up to a constant
-colouring fibre, the cut-entanglement law of a forest graph state.  Exact
-computation passed all $2{,}287$ trees through $13$ vertices, and independent
-review extended the check through $18$.  The boundary is real: real-rootedness
+colouring fibre, the cut-entanglement law of a forest graph state.  The rooted
+recursion
+\[
+ A_T=\prod_i(A_i+2B_i),\qquad
+ B_T=z\!\left(2^k\prod_i(A_i+B_i)-\prod_i(A_i+2B_i)\right),\qquad
+ H_T=A_T+B_T,
+\]
+with $A_{\rm leaf}=1$ and $B_{\rm leaf}=0$, computes the polynomial without
+enumerating edge sets.  A fresh independent audit used it to check exact
+log-concavity on every unlabelled tree through order $20$; the checked-in
+default verifier deliberately runs a smaller reproducible range.  The
+boundary is real: real-rootedness
 fails at seven vertices for $(1,13,30,20)$, while ultra-log-concavity fails for
 the $13$-vertex graph6 tree \texttt{LqD?I?@O??g??@} with profile
 $(1,75,432,1060,1360,912,256)$.
@@ -183,12 +230,16 @@ has strictly negative real part.
 \end{conjecture}
 
 \paragraph{Significance.}
-$H_F$ is not the classical matching polynomial: its coefficients count edge
-subsets according to the matching number they induce.  Its two-state
-rooted-tree dynamic programme gives a forest-specific recursion, distinct
-from the Hochster-strand Hurwitz conjecture in Part~VII.  Every tree through
-$18$ vertices passed exact root tests.  There can be no uniform root-modulus
-margin, since $H_{S_n}(z)=1+(2^{n-1}-1)z$ has a negative root tending to zero.
+$H_F$ is neither the classical matching polynomial nor the maximal-matching
+polynomial: its coefficients count all edge subsets according to the maximum
+matching number they induce.  The preceding two-state recursion gives a
+forest-specific mechanism, distinct from the Hochster-strand Hurwitz
+conjecture in Part~VII.  A fresh independent audit certified the Routh
+conditions exactly on every unlabelled tree through order $20$, on paths
+through order $80$, and on several large structured families; the checked-in
+default verifier uses exact coefficients with a smaller numerical root scan.
+There can be no uniform root-modulus margin, since
+$H_{S_n}(z)=1+(2^{n-1}-1)z$ has a negative root tending to zero.
 
 \begin{conjecture}[Path--star stochastic extremality under bond noise]\label{as8}
 If $T_p$ retains each edge of an $n$-vertex tree independently with
@@ -203,30 +254,33 @@ respectively, up to isomorphism.
 \end{conjecture}
 
 \paragraph{Significance.}
-This is a distributional strengthening of deterministic matching extremality
-and, by Proposition~\ref{as:basic}(ii), an extremal theorem for noisy forest
-graph-state entanglement.  Exact coefficientwise comparison through $15$
-vertices proves every tested probability $p$ simultaneously, rather than on
-a numerical grid.  A proof should couple the rooted matching recursions or
-identify a sequence of tree transformations preserving stochastic order.
+The star lower bound is elementary; the substantive assertion is the
+stochastic path upper bound and its equality rigidity.  Classical results
+make the path and star extremal for the ordinary Hosoya index
+~\cite{Csikvari10}, but no theorem located in the audit gives the all-threshold
+law for the maximum matching of an edge-percolated tree.  Independent exact
+Bernstein-basis comparison through order $17$ checked every probability $p$
+simultaneously; the default verifier runs through order $11$.  A proof should
+couple the rooted matching recursions or identify tree transformations
+preserving stochastic order.
 
 \begin{conjecture}[Fixed-leaf broom minimum]\label{as9}
 For $2\le L\le n-1$, obtain $B_{n,L}$ from $K_{1,L}$ by subdividing one
-pendant edge $n-L-1$ times.  Among all $n$-vertex trees $T$ with exactly $L$
-leaves,
+pendant edge $n-L-1$ times.  For every fixed $p\in(0,1)$, among all
+$n$-vertex trees $T$ with exactly $L$ leaves,
 \[
  \nu((B_{n,L})_p)\ \le_{\rm st}\ \nu(T_p)
 \]
-for every $p\in(0,1)$, with equality at all thresholds only for the broom up
-to isomorphism.
+and equality in distribution holds if and only if $T\cong B_{n,L}$.
 \end{conjecture}
 
 \paragraph{Significance.}
 The endpoint classes $L=2$ and $L=n-1$ are unique; the claim begins at
-$3\le L\le n-2$.  Exact coefficientwise checks through $15$ vertices found
-neither an inequality failure nor another equality case.  The result would
-give the first leaf-constrained stochastic extremal law for the matching
-number after bond percolation.
+$3\le L\le n-2$.  The same broom is already known to minimize the ordinary
+Hosoya index at fixed leaf count~\cite{PanXuYangZhou07,YuLv07}; the new content
+is stochastic domination of the maximum matching after bond percolation.
+Independent coefficientwise checks through order $17$ found neither an
+inequality failure nor another equality case.
 
 \begin{conjecture}[Typical tree reconstruction from the entanglement enumerator]\label{as10}
 Let $T_n$ be a uniform labelled tree on $[n]$.  With probability tending to
@@ -241,8 +295,15 @@ occurs at order $15$: the nonisomorphic graph6 trees
 \texttt{NpCc?D??G?\_@O???g??} have the same $Z$.  Exhaustive enumeration
 found this to be the only collision class among all $7{,}741$ unlabelled
 $15$-vertex trees, with none through order $14$.  The claim asks whether this
-exceptional sparsity persists asymptotically and would make a bipartite
-entanglement enumerator a typical complete invariant for trees.
+exceptional sparsity persists asymptotically; an independent re-audit found no
+further unrooted collision through order $18$.  The decisive obstruction is a
+Schwenk-type pair of nonisomorphic rooted limbs with identical rooted transfer
+data for $Z$~\cite{Schwenk73}: such limbs could be substituted in arbitrary
+hosts, and fringe-subtree laws would then threaten the typical
+claim~\cite{Janson16}.  The same re-audit
+found no rooted transfer collision through order $16$.  A proof must rule out
+substitutable limbs or show that their occurrence is negligible.  The
+consequence is typical identifiability, not an algorithmic inversion claim.
 
 \begin{conjecture}[Rank-width density of random regular graph states]\label{as11}
 For each fixed $d\ge3$, if $G_{n,d}$ is a uniform simple $d$-regular graph
@@ -260,21 +321,23 @@ gives the upper endpoint, but neither yields convergence.  The proposed
 mechanism is a limit for the minimum balanced cut-rank profile of the
 configuration model, plus recursive balanced decompositions losing only
 $o(n)$.  Exact dynamic programming on small cubic graphs gave mean widths
-$2.45,2.60,2.90,3.00$ at orders $8,10,12,14$; these values calibrate scale
-only.
+$2.45,2.60,2.90,3.00$ at orders $8,10,12,14$ in an exploratory scan; the
+checked-in verifier uses a smaller seeded sample and reports its own values.
+Recent average-case complexity results for random regular graph states do not
+establish a normalized rank-width limit~\cite{GhoshHangleiterHelsen25}.
 
 \begin{conjecture}[Cubic branch-width density and kernel transfer]\label{as12}
-There is a constant $\beta_3>0$ such that for a uniform simple cubic graph
-$H_N$,
+As $N\to\infty$ through even integers, there is a constant $\beta_3>0$ such
+that for a uniform simple cubic graph $H_N$,
 \[
  \frac{\operatorname{bw}(H_N)}N\longrightarrow\beta_3
 \]
-in probability.  In addition, let $M_N$ be cubic configuration multigraphs
-and obtain specified simple graphs $H_N^*$ by resolving every loop and
-parallel edge using an explicit set of $o(N)$ edge deletions and insertions.
-Replace all but $o(N)$ edges of $H_N^*$ by paths of length at least two,
-allow arbitrary further subdivisions, and attach arbitrary trees at
-vertices.  For the resulting simple graphs $S_N$,
+in probability.  In addition, let $M_N$ be a cubic configuration multigraph
+on $N$ vertices and, conditional on its realization, let $H_N^*$ be any
+simple graph obtained using $r_N=o(N)$ edge deletions and insertions.  Form
+$S_N$ by subdividing all but $b_N=o(N)$ edges of $H_N^*$ at least once,
+then applying arbitrary further subdivisions and taking arbitrary one-vertex
+sums with trees.  Uniformly over these choices,
 \[
  \operatorname{rw}(S_N)=\operatorname{bw}(H_N^*)+o(N).
 \]
@@ -289,7 +352,7 @@ in probability.
 
 \paragraph{Significance.}
 Oum's incidence-graph theorem gives rank-width within one of branch-width
-after subdividing every edge once~\cite{Oum05}; the explicit transfer clause
+after subdividing every edge once~\cite{Oum08}; the explicit transfer clause
 is the missing robustness statement for unreplaced edges, repairs, repeated
 subdivision, and pendant trees.  The factor $4/3$ is the cubic-kernel vertex
 density.  Existing weakly supercritical results determine only the
@@ -307,13 +370,16 @@ $\tau_{\rm rw}(p)>0$ for $p>1/2$, and $\tau_{\rm rw}(1)=1$.
 \end{conjecture}
 
 \paragraph{Significance.}
-Below criticality all components are logarithmic; above it, percolated-grid
-tree-width is linear~\cite{LiMuller17}, and bounded degree lets topological-
-minor inequalities transfer a linear lower bound to rank-width.  At $p=1$
-the exact grid rank-width $L-1$ fixes the normalization.  The new content is
-existence of a surface-tension constant, plausibly through almost-subadditive
-rectangle gluing followed by an $o(L)$ comparison with rank-width; the
-critical point is deliberately left open.
+Below criticality all components are logarithmic.  Above it, percolated-grid
+tree-width is linear~\cite{LiMuller17}; to deduce a positive rank-width
+coefficient one still needs an $\Omega(L)$ balanced crossing-edge bound, or a
+precise bounded-degree width comparison, after which the bounded row/column
+weight rank inequality supplies linear cut rank.  At $p=1$, Jel\'inek's exact
+formula $\operatorname{rw}(Q_L)=L-1$ fixes the normalization
+~\cite{Jelinek10}.  The new content is existence of a surface-tension
+constant, plausibly through almost-subadditive rectangle gluing; the critical
+point is deliberately left open.  No grid experiment is claimed by the
+checked-in verifier.
 
 \begin{conjecture}[Saturation of local-complementation orbit entropy]\label{as14}
 Let $\mathcal O_{\rm LC}(G)$ be the set of labelled graphs obtainable from
@@ -325,15 +391,18 @@ in probability.
 \end{conjecture}
 
 \paragraph{Significance.}
-The universal bound $|\mathcal O_{\rm LC}(G)|\le3^n$ supplies the endpoint;
-the conjecture says that distinct local-Clifford normal forms collide only
-subexponentially often~\cite{BahramgiriBeigi07}.  Seeded exact enumeration
+Bahramgiri and Beigi express the binary orbit size as
+$\varepsilon(L)/\lambda(L)$, where $\varepsilon(L)$ counts Eulerian vectors
+of the isotropic system and $\lambda(L)$ is its index, yielding the universal
+bound $|\mathcal O_{\rm LC}(G)|\le3^n$
+~\cite{BahramgiriBeigiEnumerating07}.  The conjecture therefore asserts two
+separate mechanisms: $\varepsilon(L)=3^{n-o(n)}$ and
+$\lambda(L)=2^{o(n)}$.  Seeded exact enumeration
 gave mean normalized logarithms $1.285,1.320,1.376,1.383$ at orders
 $7,8,9,10$, with sample maxima reaching $1.471$, versus
 $\log_2 3=1.585$.  Existing orbit maps reach small orders
-~\cite{AdcockEtAl20}; a proof would quantify the generic absence of extra
-non-Pauli local-Clifford automorphisms and the exponential search space for
-graph-state compilation.
+~\cite{AdcockEtAl20}; a proof would establish maximal
+labelled-representative entropy, not by itself an algorithmic lower bound.
 
 \begin{conjecture}[Rank-width density curve for sparse Erd\H os--R\'enyi graph states]\label{as15}
 For every fixed $c>0$ there is a deterministic $\kappa_{\rm ER}(c)$ such that
@@ -349,9 +418,11 @@ $\kappa_{\rm ER}(c)>0$ for $c>1$.
 The qualitative phases are known: subcritical components have bounded
 rank-width, critical components are sublinear, and every fixed supercritical
 density has linear rank-width~\cite{LeeLeeOum12,DoErdeKang24}.  The new claim
-is convergence to a deterministic extensive constant.  Its proposed
+is existence of the normalized expectation limit; standard bounded-difference
+concentration is then expected to give convergence in probability.  Its proposed
 mechanism passes to the two-core and kernel, proves a limit for balanced
 cut-rank optimization under the local weak degree law, and shows that
 attached trees do not alter the leading width.  Conjecture~\ref{as12}
 predicts the boundary asymptotic as $c\downarrow1$ but does not imply the
-fixed-$c$ limit.
+fixed-$c$ limit.  The checked-in verifier makes no direct sparse
+Erd\H os--R\'enyi width claim.

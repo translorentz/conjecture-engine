@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent finite checks for Conjectures 396--410.
+"""Independent finite checks for Conjectures 395--409.
 
 The script reproduces exact calibrations, finite shape tests, explicit
 negative controls, small rank-width computations, and seeded LC-orbit data.
@@ -11,6 +11,7 @@ from __future__ import annotations
 import itertools
 import math
 from collections import Counter, defaultdict, deque
+from fractions import Fraction
 
 import networkx as nx
 import numpy as np
@@ -123,6 +124,26 @@ def matrix_calibration() -> bool:
     formula = {r: rectangular_rank_count(q, m, n, r)
                for r in range(min(m, n) + 1)}
     return dict(exact) == formula and sum(formula.values()) == q ** (m * n)
+
+
+def distance_mean_identity_check(max_n: int = 20) -> bool:
+    """Check the two exact formulas for Lambda_n(ell) in Conjecture 397."""
+    for n in range(1, max_n + 1):
+        for ell in range(1, n + 1):
+            subset_sum = Fraction(0)
+            for a in range(1, ell + 1):
+                binomial_tail = sum(math.comb(n - a, j)
+                                    for j in range(ell - a + 1))
+                subset_sum += Fraction(math.comb(n, a) * binomial_tail,
+                                       2 ** (n - a))
+            code_sum = Fraction(
+                sum(math.comb(n, w) * (3 ** w - 1)
+                    for w in range(1, ell + 1)),
+                2 ** n,
+            )
+            if subset_sum != code_sum:
+                return False
+    return True
 
 
 def labelled_cutrank_lc_check(max_n: int = 6) -> tuple[bool, list[tuple[int, int]]]:
@@ -317,6 +338,20 @@ def positive_tail_atlas_check() -> tuple[bool, int]:
     return True, checked
 
 
+def rank_one_counterexample_check() -> tuple[bool, tuple[int, ...]]:
+    """Verify the explicit sharp boundary for positive-tail log-concavity."""
+    graph = nx.from_graph6_bytes(b"LG??XrL?[A?KCW")
+    rows = graph_rows(graph)
+    counts = Counter(cut_rank(rows, subset)
+                     for subset in range(1 << len(rows)))
+    profile = tuple(counts[r] for r in range(max(counts) + 1))
+    target = (2, 28, 410, 1896, 3296, 2208, 352)
+    passed = (nx.is_connected(graph) and graph.number_of_edges() == 20
+              and profile == target
+              and profile[1] ** 2 < profile[0] * profile[2])
+    return passed, profile
+
+
 def exact_rank_width(graph: nx.Graph) -> int:
     rows = graph_rows(graph)
     n = len(rows)
@@ -369,8 +404,10 @@ def orbit_entropy_calibration() -> tuple[bool, list[tuple[int, float, float]]]:
 
 def main() -> None:
     matrix_ok = matrix_calibration()
+    distance_mean_ok = distance_mean_identity_check()
     lc_ok, lc_rows = labelled_cutrank_lc_check()
     atlas_ok, atlas_count = positive_tail_atlas_check()
+    rank_one_ok, rank_one_profile = rank_one_counterexample_check()
     forest_ok, forest_count, max_root = forest_shape_checks()
     controls_ok, ulc_profile, root_profile = forest_negative_controls()
     extremal_ok, extremal_count = tree_extremal_checks()
@@ -378,39 +415,44 @@ def main() -> None:
     cubic_ok, cubic_rows = cubic_width_calibration()
     orbit_ok, orbit_rows = orbit_entropy_calibration()
 
-    print("Conjectures 396--398: finite-field and distance calibrations")
+    print("Conjectures 395--396: finite-field rank calibration")
     print(f"  rectangular rank count: {'PASS' if matrix_ok else 'FAIL'}")
-    print("Conjecture 399: labelled cut-rank fibres versus LC orbits")
+    print("Conjecture 397: graph-state distance mean identity")
+    print(f"  exact identity through n=20: {'PASS' if distance_mean_ok else 'FAIL'}")
+    print("Conjecture 398: labelled cut-rank fibres versus LC orbits")
     for n, orbits in lc_rows:
         print(f"  n={n}: {orbits} fibres/orbits")
     print(f"  exact partition check: {'PASS' if lc_ok else 'FAIL'}")
-    print("Conjecture 400: positive-rank-tail log-concavity")
+    print("Conjecture 399: positive-rank-tail log-concavity")
     print(f"  nonempty graph-atlas graphs checked: {atlas_count}")
     print(f"  result: {'PASS' if atlas_ok else 'FAIL'}")
-    print("Conjectures 401--402: forest shape laws")
+    print(f"  rank-one counterexample profile: {rank_one_profile}")
+    print(f"  sharp-boundary certificate: {'PASS' if rank_one_ok else 'FAIL'}")
+    print("Conjectures 400--401: forest shape laws")
     print(f"  unlabelled trees through order 12: {forest_count}")
     print(f"  largest computed root real part: {max_root:.6g}")
     print(f"  log-concavity/Hurwitz checks: {'PASS' if forest_ok else 'FAIL'}")
     print(f"  ULC counterexample profile: {ulc_profile}")
     print(f"  non-real-root control profile: {root_profile}")
     print(f"  negative controls: {'PASS' if controls_ok else 'FAIL'}")
-    print("Conjectures 403--404: coefficientwise tree extremality")
+    print("Conjectures 402--403: coefficientwise tree extremality")
     print(f"  unlabelled trees through order 11: {extremal_count}")
     print(f"  result: {'PASS' if extremal_ok else 'FAIL'}")
-    print("Conjecture 405: exact order-15 reconstruction collision")
+    print("Conjecture 404: exact order-15 reconstruction collision")
     print(f"  equal nonzero Z-terms: {z_terms}")
     print(f"  collision check: {'PASS' if collision_ok else 'FAIL'}")
-    print("Conjectures 406--408, 410: small cubic width calibration")
+    print("Conjecture 405: small cubic rank-width calibration")
     for n, mean in cubic_rows:
         print(f"  n={n}: mean exact rank-width {mean:.3f}")
     print(f"  calibration: {'PASS' if cubic_ok else 'FAIL'}")
-    print("Conjecture 409: seeded LC-orbit entropy calibration")
+    print("Conjecture 408: seeded LC-orbit entropy calibration")
     for n, mean, maximum in orbit_rows:
         print(f"  n={n}: mean={mean:.3f}, max={maximum:.3f}")
     print(f"  universal-bound calibration: {'PASS' if orbit_ok else 'FAIL'}")
     print("Scope: finite falsification checks only; no asymptotic law is proved.")
 
-    if not all((matrix_ok, lc_ok, atlas_ok, forest_ok, controls_ok,
+    if not all((matrix_ok, distance_mean_ok, lc_ok, atlas_ok, rank_one_ok,
+                forest_ok, controls_ok,
                 extremal_ok, collision_ok, cubic_ok, orbit_ok)):
         raise SystemExit(1)
 

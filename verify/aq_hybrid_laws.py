@@ -21,8 +21,8 @@ calibrations each law rests on.
        (~0.08).  A decategorified scale check only: it cannot witness the
        homological cancellation.
   aq4  Weil-Petersson constants: the Mirzakhani-Petri intensity integrates to
-       Lambda(eps) = eps^2/4 + eps^4/96 + ..., giving the tail constant 1/4,
-       and the collar normalization pi*cap(l)/l -> 1.
+       Lambda(eps) = eps^2/4 + eps^4/96 + ..., giving the all-k Poisson tail
+       constants 1/(4^k k!), and the collar normalization pi*cap(l)/l -> 1.
   aq5  homology shadow: exact integral symplectic transvection walks give a
        positive homological exponent (~0.19).  Abelian shadow only: it cannot
        witness Floer cancellation.
@@ -111,14 +111,27 @@ check("aq2 cycle entropy rate rises toward log 3",
 
 # ---------------------------------------------------------------------------
 print("== aq4 (392): Weil-Petersson constants ==")
-# Lambda(eps) = int_0^eps (e^t+e^-t-2)/(2t) dt = sum_k eps^{2k}/(2k (2k)!)
+# Lambda(eps) = int_0^eps (e^t+e^-t-2)/(2t) dt
+#             = sum_k eps^{2k}/(2k (2k)!).
 def Lambda(eps, K=12):
     return sum(eps ** (2 * k) / (2 * k * math.factorial(2 * k))
                for k in range(1, K + 1))
-tails = [(1 - math.exp(-Lambda(e))) / e ** 2 for e in (0.1, 0.05, 0.02, 0.01)]
-print("    (1-e^-Lambda)/eps^2:", [round(t, 6) for t in tails])
-check("aq4 short-geodesic tail constant 1/4",
-      all(abs(t - 0.25) < 2e-3 for t in tails) and abs(tails[-1] - 0.25) < 1e-5)
+
+def poisson_upper_tail(mean, k):
+    return 1.0 - math.exp(-mean) * sum(mean ** j / math.factorial(j)
+                                        for j in range(k))
+
+epsilons = (0.12, 0.08, 0.05)
+tail_checks = []
+for k in (1, 2, 3):
+    target = 1.0 / (4 ** k * math.factorial(k))
+    ratios = [poisson_upper_tail(Lambda(e), k) / e ** (2 * k)
+              for e in epsilons]
+    print(f"    k={k}: P(Poisson(Lambda)>=k)/eps^(2k) =",
+          [round(r, 8) for r in ratios], f"-> {target:.8f}")
+    tail_checks.append(abs(ratios[-1] / target - 1.0) < 2e-3)
+check("aq4 all-k short-geodesic tail constants through k=3",
+      all(tail_checks))
 def collar_capacity(ell):
     w = math.asinh(1.0 / math.sinh(ell / 2.0))
     return ell / (math.pi - 2.0 * math.asin(1.0 / math.cosh(w)))
