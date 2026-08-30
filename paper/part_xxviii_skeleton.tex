@@ -1,0 +1,91 @@
+\part{Cut-rank laws for graph states, forests, and random width}
+
+\medskip\noindent\emph{Added to the deposit: 30 August 2026.}\par\medskip
+
+For $G=(V,E)$ and $S\subseteq V$, put
+$\rho_G(S)=\rank_{\mathbb F_2}A_G[S,V\setminus S]$ and
+$Z_G(x,y)=\sum_{S\subseteq V}x^{|S|}y^{\rho_G(S)}$.
+
+\begin{conjecture}[Quenched balanced-cut nullity universality]\label{as1}
+For the loopless complete graph on $2m+s$ vertices whose unordered pairs
+receive independent uniform labels in $\mathbb F_q$ (zero meaning no edge),
+$s\in\{0,1\}$, the empirical nullity law over all $m$-vertex cuts converges
+in probability in total variation to
+$\pi_{q,s}(d)=q^{-d(d+s)}P_{q,\infty}/(P_{q,d}P_{q,d+s})$.
+\end{conjecture}
+\begin{conjecture}[Dependence-sensitive extreme balanced-cut defect]\label{as2}
+With
+\[
+ D_{\max}(G)=\max_{|S|=m}\bigl(m-\rho_G(S)\bigr),
+\]
+one has
+\[
+ \frac{D_{\max}(G)}{\sqrt{(2m+s)\log_q2}}\longrightarrow1
+\]
+in probability.
+\end{conjecture}
+\begin{conjecture}[Poisson law for random graph-state distance]\label{as3}
+For $G\sim G(n,1/2)$, the count of nonempty $A$ with
+$|A|+|\operatorname{Odd}_G(A)\setminus A|\le\ell$ converges in total
+variation to $\operatorname{Poisson}(\Lambda_n(\ell))$ whenever its exact
+mean $\Lambda_n(\ell)$ stays bounded away from zero and infinity.
+\end{conjecture}
+\begin{conjecture}[Typical rigidity of the labelled cut-rank function]\label{as4}
+With high probability, every graph on the same labels with the same function
+$S\mapsto\rho_G(S)$ is locally equivalent to $G$, without relabelling.
+\end{conjecture}
+\begin{conjecture}[Positive-rank-tail log-concavity]\label{as5}
+For connected $G$, if $c_r=\#\{S:\rho_G(S)=r\}$, then
+$c_r^2\ge c_{r-1}c_{r+1}$ for $2\le r<\max_S\rho_G(S)$.
+\end{conjecture}
+\begin{conjecture}[Full log-concavity for percolated forests]\label{as6}
+For every forest $F$, the sequence
+$a_j=\#\{B\subseteq E(F):\nu((V(F),B))=j\}$ is log-concave.
+\end{conjecture}
+\begin{conjecture}[Hurwitz stability of the percolated-matching polynomial]\label{as7}
+Every zero of $\sum_{B\subseteq E(F)}z^{\nu((V(F),B))}$ has negative real
+part for every forest $F$.
+\end{conjecture}
+\begin{conjecture}[Path--star stochastic extremality under bond noise]\label{as8}
+For every $n$-vertex tree $T$, $p\in(0,1)$, and $k$,
+$\Pr(\nu((S_n)_p)\ge k)\le\Pr(\nu(T_p)\ge k)\le
+\Pr(\nu((P_n)_p)\ge k)$, with the stated extremizers unique.
+\end{conjecture}
+\begin{conjecture}[Fixed-leaf broom minimum]\label{as9}
+For every fixed $p\in(0,1)$, among $n$-vertex trees with $L$ leaves, the
+subdivided star broom $B_{n,L}$ stochastically minimizes $\nu(T_p)$, and
+equality in distribution holds only for the broom.
+\end{conjecture}
+\begin{conjecture}[Typical tree reconstruction from the entanglement enumerator]\label{as10}
+A uniform labelled tree is, with probability tending to one, determined up
+to isomorphism by $Z_T(x,y)$.
+\end{conjecture}
+\begin{conjecture}[Rank-width density of random regular graph states]\label{as11}
+For fixed $d\ge3$, $\operatorname{rw}(G_{n,d})/n\to\kappa_d\in(0,1/3]$ in
+probability along $dn$ even.
+\end{conjecture}
+\begin{conjecture}[Cubic branch-width density and kernel transfer]\label{as12}
+As even $N\to\infty$, uniform simple cubic graphs satisfy
+$\operatorname{bw}(H_N)/N\to\beta_3>0$.  Conditional on a cubic
+configuration multigraph, let $H_N^*$ be any simple graph obtained by
+$o(N)$ edge insertions and deletions.  Subdivide all but $o(N)$ edges at
+least once, allow further subdivisions, and take arbitrary one-vertex sums
+with trees; uniformly over these choices, the resulting $S_N$ satisfies
+$\operatorname{rw}(S_N)=\operatorname{bw}(H_N^*)+o(N)$.  Hence in the
+weakly supercritical window
+$\operatorname{rw}(G(n,(1+\varepsilon)/n))/(\varepsilon^3n)\to4\beta_3/3$.
+\end{conjecture}
+\begin{conjecture}[Rank-width surface tension for off-critical percolated grids]\label{as13}
+For fixed $p\ne1/2$, $\operatorname{rw}(Q_L(p))/L\to\tau_{\rm rw}(p)$ in
+probability, with phase values $0$ below $1/2$, positive above $1/2$, and
+$\tau_{\rm rw}(1)=1$.
+\end{conjecture}
+\begin{conjecture}[Saturation of local-complementation orbit entropy]\label{as14}
+For $G\sim G(n,1/2)$,
+$n^{-1}\log_2|\mathcal O_{\rm LC}(G)|\to\log_2 3$ in probability.
+\end{conjecture}
+\begin{conjecture}[Rank-width density curve for sparse Erd\H os--R\'enyi graph states]\label{as15}
+For fixed $c>0$, $\operatorname{rw}(G(n,c/n))/n\to\kappa_{\rm ER}(c)$ in
+probability, with $\kappa_{\rm ER}(c)=0$ for $c\le1$ and positive for
+$c>1$.
+\end{conjecture}
