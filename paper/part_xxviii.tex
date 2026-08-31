@@ -8,9 +8,15 @@ For a finite simple graph $G=(V,E)$ and $S\subseteq V$, write
  Z_G(x,y)=\sum_{S\subseteq V}x^{|S|}y^{\rho_G(S)}.
 \]
 For an edge-labelled graph over $\mathbb F_q$, the same symbol denotes rank
-over $\mathbb F_q$, with the standard finite-field Pauli convention for the
-associated $q$-level stabilizer graph state; label zero means that the edge is
-absent.  We write $\operatorname{rw}$
+over $\mathbb F_q$; label zero means that the edge is absent.  Fixing a
+nontrivial additive character $\chi\colon\mathbb F_q\to\mathbb C^\times$, its
+associated $q$-level graph state is
+\[
+ |G\rangle=q^{-|V|/2}\sum_{z\in\mathbb F_q^V}
+ \chi\!\left(\sum_{u<v}A_{uv}z_uz_v\right)|z\rangle .
+\]
+This explicit convention applies to every prime power, including even
+characteristic.  We write $\operatorname{rw}$
 and $\operatorname{bw}$ for rank-width and branch-width, $\nu$ for maximum
 matching number, and $\operatorname{Odd}_G(A)$ for the vertices having an odd
 number of neighbours in $A$.
@@ -27,8 +33,9 @@ new claims~\cite{HeinEisertBriegel04,Oum05,OumSeymour06,LeeLeeOum12}.
 \begin{proposition}[Cut-rank calibrations]\label{as:basic}
 \textup{(i)} Across the bipartition $S\mid V\setminus S$, the graph state
 $|G\rangle$ has Schmidt rank $q^{\rho_G(S)}$ and entropy
-$\rho_G(S)\log q$.  Local complementation preserves the whole labelled
-function $S\mapsto\rho_G(S)$.  \textup{(ii)} If $F$ is a forest and a
+$\rho_G(S)\log q$.  Binary local complementation, and its weighted
+finite-field analogue, preserve the whole labelled function
+$S\mapsto\rho_G(S)$.  \textup{(ii)} If $F$ is a forest and a
 uniform random bipartition is chosen, its crossing-edge set is a uniform
 subset $B\subseteq E(F)$, every $B$ has the same colouring-fibre size, and
 \[
@@ -45,9 +52,32 @@ uniform $m\times(m+s)$ matrix over $\mathbb F_q$, for fixed $s\ge0$, is
 \end{proposition}
 
 \begin{proof}
-The graph-state amplitude matrix across a bipartition reduces by local
-Clifford row and column operations to $\rho_G(S)$ entangled pairs, proving
-\textup{(i)}~\cite{HeinEisertBriegel04}.  On a forest, fixing one vertex
+For \textup{(i)}, put $M=A_G[S,V\setminus S]$.  Diagonal unitaries remove the
+phases contributed by edges internal to either side, leaving the coefficient
+matrix
+\[
+ q^{-|V|/2}\bigl(\chi(u^{\mathsf T}Mv)\bigr)_
+ {u\in\mathbb F_q^S,\ v\in\mathbb F_q^{V\setminus S}}.
+\]
+Its rows are additive characters indexed by the image of $M^{\mathsf T}$:
+there are exactly $q^{\rank M}$ distinct rows, they are mutually orthogonal,
+and they occur with equal multiplicity.  Hence the nonzero Schmidt
+coefficients are equal and number $q^{\rank M}$, which gives the asserted
+rank and entropy.  For $q=2$ this is the standard graph-state identity
+~\cite{HeinEisertBriegel04}.  Define weighted local complementation at $v$
+with parameter $a\in\mathbb F_q$ by
+$A'_{jk}=A_{jk}+aA_{jv}A_{vk}$ for $j\ne k$, with zero diagonal, and define
+vertex scaling at $v$ by multiplying all incident labels by
+$b\in\mathbb F_q^\times$.  These are the finite-field graph operations of
+Bahramgiri--Beigi for arbitrary prime-power $q$
+~\cite{BahramgiriBeigiEnumerating07}; in their odd-prime graph-state setting
+they describe the local Clifford action
+~\cite{BahramgiriBeigiNonbinary06}.  Across a fixed cut, weighted local
+complementation adds multiples of the $v$-row to the other crossing rows
+when $v\in S$, or of the $v$-column to the other crossing columns when
+$v\notin S$; vertex scaling multiplies one crossing row or column by a
+nonzero scalar.  This direct argument works over every finite field, so every
+cut rank is preserved over $\mathbb F_q$.  On a forest, fixing one vertex
 colour in each connected component makes the map from the remaining vertex
 two-colourings to crossing-edge sets bijective; hence every crossing-edge set
 has exactly $2^{\kappa(F)}$ colouring preimages.  A bipartite forest's
@@ -131,7 +161,7 @@ $\Pr(f(G)>\ell)=e^{-\Lambda_n(\ell)}+o(1)$.
 Here $f(G)=\delta_{\rm loc}(G)+1$, the minimum degree up to local
 complementation plus one, and equivalently the minimum nonzero Hamming weight
 of the associated self-dual additive $\mathbb F_4$ code
-~\cite{JavelleCattaneoPerdrix12,JavelleMhallaPerdrix15}.  The mean has the
+~\cite{JavelleMhallaPerdrix12,CattaneoPerdrix15}.  The mean has the
 equivalent exact form
 \[
  \Lambda_n(\ell)=2^{-n}\sum_{w=1}^{\ell}\binom nw(3^w-1),
@@ -139,7 +169,7 @@ equivalent exact form
 whose first-order threshold is already known.  The new assertion is the
 Poisson finite-length law: the sharp random-linear-code analogue does not
 cover the symmetric graph-state generator, where $A$, $B$, and
-$A\triangle B$ create structured dependencies~\cite{HaoEtAl20}.
+$A\triangle B$ create structured dependencies~\cite{HaoEtAl22}.
 
 \begin{conjecture}[Typical rigidity of the labelled cut-rank function]\label{as4}
 For $G\sim G(n,1/2)$, with probability tending to one, every graph $H$ on
@@ -155,8 +185,8 @@ vertices.
 The converse is standard, but universal completeness is false.  A current
 unlabelled-orbit census finds no collision below nine vertices and respectively
 $1,3,15$ colliding LC-orbit pairs at orders $9,10,11$
-~\cite{DeJongVandreBurchardt24}; structural descriptions through minimal local
-sets give another nearby boundary~\cite{ClaudetPerdrix24}.  Those results are
+~\cite{BurchardtDeJongVandre24}; structural descriptions through minimal local
+sets give another nearby boundary~\cite{ClaudetPerdrix25}.  Those results are
 unlabelled, whereas the conjecture and the exact verifier concern one fixed
 labelled vertex set.  Exhaustive enumeration through six vertices found exact
 equality between labelled cut-rank fibres and labelled local-complementation
@@ -257,7 +287,7 @@ respectively, up to isomorphism.
 The star lower bound is elementary; the substantive assertion is the
 stochastic path upper bound and its equality rigidity.  Classical results
 make the path and star extremal for the ordinary Hosoya index
-~\cite{Csikvari10}, but no theorem located in the audit gives the all-threshold
+~\cite{HuangShiXu18}, but no theorem located in the audit gives the all-threshold
 law for the maximum matching of an edge-percolated tree.  Independent exact
 Bernstein-basis comparison through order $17$ checked every probability $p$
 simultaneously; the default verifier runs through order $11$.  A proof should

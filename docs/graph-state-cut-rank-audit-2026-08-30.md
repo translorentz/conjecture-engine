@@ -125,9 +125,10 @@ and standard fringe-subtree laws would then make collisions typical.
 - Javelle–Mhalla–Perdrix and Cattanéo–Perdrix establish the minimum-degree-up-
   to-local-complementation/code-distance boundary, but not Conjecture 397's
   Poisson law.
-- Csikvári and the classical Hosoya literature settle ordinary path/star
-  extremality; Pan–Xu–Yang–Zhou and Yu–Lv cover the fixed-leaf minimum. The
-  new content of 402–403 is stochastic domination after percolation.
+- Huang–Shi–Xu, summarizing the classical Gutman theorem, settle ordinary
+  path/star Hosoya extremality; Pan–Xu–Yang–Zhou and Yu–Lv cover the
+  fixed-leaf minimum. The new content of 402–403 is stochastic domination
+  after percolation.
 - Ghosh–Hangleiter–Helsen prove average-case complexity results for random
   regular graph states, not a normalized rank-width limit.
 - Oum relates branch-width to rank-width of incidence graphs up to an

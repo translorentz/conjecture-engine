@@ -5218,33 +5218,34 @@ One methodological conclusion is worth recording. The mathematical failure modes
 
 362. M. Mirzakhani and B. Petri, *Lengths of closed geodesics on random surfaces of large genus*, Comment. Math. Helv. 94 (2019), 869–889.
 363. B. Muetzel, *On the second successive minimum of the Jacobian of a Riemann surface*, Geom. Dedicata 161 (2012), 85–107.
-364. E. Çineli, V. L. Ginzburg, and B. Z. Gürel, *Topological entropy of Hamiltonian diffeomorphisms: a persistence homology and Floer theory perspective*, arXiv:2111.03983.
-365. E. Çineli, V. L. Ginzburg, and B. Z. Gürel, *On the growth of the Floer barcode*, arXiv:2207.03613.
-366. E. Çineli, V. L. Ginzburg, B. Z. Gürel, and M. Mazzucchelli, *Topics in symplectic dynamics: barcode entropy*, arXiv:2605.25965 (2026).
-367. W. Gong, *Persistent entropy of Floer persistence barcodes*, arXiv:2606.19071 (2026).
-368. T. Bogenschütz, *Entropy, pressure, and a variational principle for random dynamical systems*, Random Comput. Dynam. 1 (1992/93), 99–116.
-369. M. Hein, J. Eisert, and H. J. Briegel, *Multiparty entanglement in graph states*, Phys. Rev. A 69 (2004), 062311.
-370. S.-i. Oum, *Rank-width and vertex-minors*, J. Combin. Theory Ser. B 95 (2005), 79–100.
-371. S.-i. Oum and P. Seymour, *Approximating clique-width and branch-width*, J. Combin. Theory Ser. B 96 (2006), 514–528.
-372. H. T. Nguyen and S.-i. Oum, *The average cut-rank of graphs*, European J. Combin. 87 (2020), 103112.
-373. C. Lee, J. Lee, and S.-i. Oum, *Rank-width of random graphs*, J. Graph Theory 70 (2012), 339–347.
-374. T. A. Do, J. Erde, and M. Kang, *A note on the width of sparse random graphs*, J. Graph Theory 106 (2024), 273–295.
-375. A. Li and T. Müller, *On the treewidth of random geometric graphs and percolated grids*, Adv. Appl. Probab. 49 (2017), 165–183.
-376. J. Javelle, M. Mhalla, and S. Perdrix, *On the minimum degree up to local complementation: bounds and complexity*, arXiv:1204.4564 (2012).
-377. D. Cattanéo and S. Perdrix, *Minimum degree up to local complementation: bounds, parameterized complexity, and exact algorithms*, arXiv:1503.04702 (2015).
-378. J. Hao, H. Huang, G. V. Livshyts, and K. E. Tikhomirov, *Distribution of the minimal distance of random linear codes*, arXiv:1912.12833.
-379. A. Burchardt, J. de Jong, and L. Vandré, *Algorithm to verify local equivalence of stabilizer states*, arXiv:2410.03961 (2024).
-380. N. Claudet and S. Perdrix, *Covering a graph with minimal local sets*, in *Graph-Theoretic Concepts in Computer Science*, Lecture Notes in Comput. Sci. 14760 (2024), 128–142; arXiv:2402.10678.
-381. P. Csikvári, *On a poset of trees*, Combinatorica 30 (2010), 125–137.
-382. X.-F. Pan, J.-M. Xu, C. Yang, and M.-J. Zhou, *Some graphs with minimum Hosoya index and maximum Merrifield–Simmons index*, MATCH Commun. Math. Comput. Chem. 57 (2007), 235–242.
-383. A. Yu and X. Lv, *The Merrifield–Simmons indices and Hosoya indices of trees with \(k\) pendant vertices*, J. Math. Chem. 41 (2007), 33–43.
+364. E. Çineli, V. L. Ginzburg, and B. Z. Gürel, *Topological entropy of Hamiltonian diffeomorphisms: a persistence homology and Floer theory perspective*, Math. Z. 308 (2024), article 73; arXiv:2111.03983. DOI: [10.1007/s00209-024-03627-0](https://doi.org/10.1007/s00209-024-03627-0).
+365. E. Çineli, V. L. Ginzburg, and B. Z. Gürel, *On the growth of the Floer barcode*, J. Mod. Dyn. 20 (2024), 275–298; arXiv:2207.03613. DOI: [10.3934/jmd.2024007](https://doi.org/10.3934/jmd.2024007).
+366. E. Çineli, V. L. Ginzburg, B. Z. Gürel, and M. Mazzucchelli, *Topics in symplectic dynamics: barcode entropy*, arXiv:2605.25965 (2026). DOI: [10.48550/arXiv.2605.25965](https://doi.org/10.48550/arXiv.2605.25965).
+367. W. Gong, *Persistent entropy of Floer persistence barcodes*, arXiv:2606.19071 (2026). DOI: [10.48550/arXiv.2606.19071](https://doi.org/10.48550/arXiv.2606.19071).
+368. T. Bogenschütz, *Entropy, pressure, and a variational principle for random dynamical systems*, Random Comput. Dynam. 1 (1992/93), no. 1, 99–116.
+369. M. Hein, J. Eisert, and H. J. Briegel, *Multiparty entanglement in graph states*, Phys. Rev. A 69 (2004), no. 6, 062311. DOI: [10.1103/PhysRevA.69.062311](https://doi.org/10.1103/PhysRevA.69.062311).
+370. S.-i. Oum, *Rank-width and vertex-minors*, J. Combin. Theory Ser. B 95 (2005), no. 1, 79–100. DOI: [10.1016/j.jctb.2005.03.003](https://doi.org/10.1016/j.jctb.2005.03.003).
+371. S.-i. Oum and P. Seymour, *Approximating clique-width and branch-width*, J. Combin. Theory Ser. B 96 (2006), no. 4, 514–528. DOI: [10.1016/j.jctb.2005.10.006](https://doi.org/10.1016/j.jctb.2005.10.006).
+372. H.-T. Nguyen and S.-i. Oum, *The average cut-rank of graphs*, European J. Combin. 90 (2020), 103183. DOI: [10.1016/j.ejc.2020.103183](https://doi.org/10.1016/j.ejc.2020.103183).
+373. C. Lee, J. Lee, and S.-i. Oum, *Rank-width of random graphs*, J. Graph Theory 70 (2012), no. 3, 339–347. DOI: [10.1002/jgt.20620](https://doi.org/10.1002/jgt.20620).
+374. T. A. Do, J. Erde, and M. Kang, *A note on the width of sparse random graphs*, J. Graph Theory 106 (2024), no. 2, 273–295. DOI: [10.1002/jgt.23081](https://doi.org/10.1002/jgt.23081).
+375. A. Li and T. Müller, *On the treewidth of random geometric graphs and percolated grids*, Adv. Appl. Probab. 49 (2017), no. 1, 49–60. DOI: [10.1017/apr.2016.78](https://doi.org/10.1017/apr.2016.78).
+376. J. Javelle, M. Mhalla, and S. Perdrix, *On the minimum degree up to local complementation: bounds and complexity*, in *Graph-Theoretic Concepts in Computer Science*, Lecture Notes in Comput. Sci. 7551 (2012), 138–147; arXiv:1204.4564. DOI: [10.1007/978-3-642-34611-8_16](https://doi.org/10.1007/978-3-642-34611-8_16).
+377. D. Cattanéo and S. Perdrix, *Minimum degree up to local complementation: bounds, parameterized complexity, and exact algorithms*, in *Algorithms and Computation*, Lecture Notes in Comput. Sci. 9472 (2015), 259–270; arXiv:1503.04702. DOI: [10.1007/978-3-662-48971-0_23](https://doi.org/10.1007/978-3-662-48971-0_23).
+378. J. Hao, H. Huang, G. V. Livshyts, and K. Tikhomirov, *Distribution of the minimum distance of random linear codes*, IEEE Trans. Inform. Theory 68 (2022), no. 10, 6388–6401; arXiv:1912.12833. DOI: [10.1109/TIT.2022.3170341](https://doi.org/10.1109/TIT.2022.3170341).
+379. A. Burchardt, J. de Jong, and L. Vandré, *Algorithm to verify local equivalence of stabilizer states*, arXiv:2410.03961 (2024). DOI: [10.48550/arXiv.2410.03961](https://doi.org/10.48550/arXiv.2410.03961).
+380. N. Claudet and S. Perdrix, *Covering a graph with minimal local sets*, in *Graph-Theoretic Concepts in Computer Science*, Lecture Notes in Comput. Sci. 14760 (2025), 136–150; arXiv:2402.10678. DOI: [10.1007/978-3-031-75409-8_10](https://doi.org/10.1007/978-3-031-75409-8_10).
+381. Y. Huang, L. Shi, and X. Xu, *The Hosoya index and the Merrifield–Simmons index*, J. Math. Chem. 56 (2018), no. 10, 3136–3146. DOI: [10.1007/s10910-018-0937-y](https://doi.org/10.1007/s10910-018-0937-y).
+382. X.-F. Pan, J.-M. Xu, C. Yang, and M.-J. Zhou, *Some graphs with minimum Hosoya index and maximum Merrifield–Simmons index*, MATCH Commun. Math. Comput. Chem. 57 (2007), no. 1, 235–242.
+383. A. Yu and X. Lv, *The Merrifield–Simmons indices and Hosoya indices of trees with \(k\) pendant vertices*, J. Math. Chem. 41 (2007), no. 1, 33–43. DOI: [10.1007/s10910-006-9088-7](https://doi.org/10.1007/s10910-006-9088-7).
 384. A. J. Schwenk, *Almost all trees are cospectral*, in F. Harary (ed.), *New Directions in the Theory of Graphs*, Academic Press, New York (1973), 275–307.
-385. S. Janson, *Asymptotic normality of fringe subtrees and additive functionals in conditioned Galton–Watson trees*, Random Structures Algorithms 48 (2016), 57–101.
-386. S. Ghosh, D. Hangleiter, and J. Helsen, *Random regular graph states are complex at almost any depth*, PRX Quantum 6 (2025), 040344; arXiv:2412.07058.
-387. S.-i. Oum, *Rank-width is less than or equal to branch-width*, J. Graph Theory 57 (2008), 239–244.
-388. V. Jelínek, *The rank-width of the square grid*, Discrete Appl. Math. 158 (2010), 841–850.
-389. M. Bahramgiri and S. Beigi, *Enumerating the classes of local equivalency in graphs*, arXiv:math/0702267 (2007).
-390. J. C. Adcock, S. Morley-Short, A. Dahlberg, and J. W. Silverstone, *Mapping graph state orbits under local complementation*, Quantum 4 (2020), 305.
+385. S. Janson, *Asymptotic normality of fringe subtrees and additive functionals in conditioned Galton–Watson trees*, Random Structures Algorithms 48 (2016), no. 1, 57–101. DOI: [10.1002/rsa.20568](https://doi.org/10.1002/rsa.20568).
+386. S. Ghosh, D. Hangleiter, and J. Helsen, *Random regular graph states are complex at almost any depth*, PRX Quantum 6 (2025), no. 4, 040344; arXiv:2412.07058. DOI: [10.1103/52xz-3hpc](https://doi.org/10.1103/52xz-3hpc).
+387. S.-i. Oum, *Rank-width is less than or equal to branch-width*, J. Graph Theory 57 (2008), no. 3, 239–244. DOI: [10.1002/jgt.20280](https://doi.org/10.1002/jgt.20280).
+388. V. Jelínek, *The rank-width of the square grid*, Discrete Appl. Math. 158 (2010), no. 7, 841–850. DOI: [10.1016/j.dam.2009.02.007](https://doi.org/10.1016/j.dam.2009.02.007).
+389. M. Bahramgiri and S. Beigi, *Enumerating the classes of local equivalency in graphs*, arXiv:math/0702267 (2007). DOI: [10.48550/arXiv.math/0702267](https://doi.org/10.48550/arXiv.math/0702267).
+390. J. C. Adcock, S. Morley-Short, A. Dahlberg, and J. W. Silverstone, *Mapping graph state orbits under local complementation*, Quantum 4 (2020), 305. DOI: [10.22331/q-2020-08-07-305](https://doi.org/10.22331/q-2020-08-07-305).
+391. M. Bahramgiri and S. Beigi, *Graph states under the action of local Clifford group in non-binary case*, arXiv:quant-ph/0610267 (2006; rev. 2007). DOI: [10.48550/arXiv.quant-ph/0610267](https://doi.org/10.48550/arXiv.quant-ph/0610267).
 
 ## Explanations
 
