@@ -159,8 +159,22 @@ $\Pr(f(G)>\ell)=e^{-\Lambda_n(\ell)}+o(1)$.
 
 \paragraph{Significance.}
 Here $f(G)=\delta_{\rm loc}(G)+1$, the minimum degree up to local
-complementation plus one, and equivalently the minimum nonzero Hamming weight
-of the associated self-dual additive $\mathbb F_4$ code
+complementation plus one.  To make the code equivalence explicit, choose
+$\omega\in\mathbb F_4\setminus\mathbb F_2$ and set
+\[
+ C_G=\{x(A_G+\omega I):x\in\mathbb F_2^V\}\subseteq\mathbb F_4^V.
+\]
+Symmetry of $A_G$ makes the rows trace-Hermitian orthogonal, and their
+$\omega$-diagonal entries make them independent over $\mathbb F_2$, so
+$C_G$ is self-dual.  The word indexed by $A=\operatorname{supp}x$ has
+support $A\cup\operatorname{Odd}_G(A)$.  Consequently its minimum nonzero
+Hamming weight is
+\[
+ \min_{\varnothing\ne A\subseteq V}|A\cup\operatorname{Odd}_G(A)|
+ =\delta_{\rm loc}(G)+1=f(G),
+\]
+where the equality to $\delta_{\rm loc}(G)+1$ is the standard
+local-minimum-degree characterization
 ~\cite{JavelleMhallaPerdrix12,CattaneoPerdrix15}.  The mean has the
 equivalent exact form
 \[
