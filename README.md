@@ -131,18 +131,14 @@ This repository contains:
   same randomness; Part XXVI (389–393) adds entropy and rare-event laws for
   matrix-polynomial zeros, graphic-matroid Kazhdan–Lusztig complexity,
   Khovanov homology, Jacobian minima, and Heegaard Floer homology; and Part
-  XXVII (394) adds the quenched random Floer-barcode entropy law surviving a
-  separately documented
-  [ten-candidate admission audit](docs/hybrid-candidate-audit-2026-08-30.md);
-  that audit also strengthens Conjecture 392 to every fixed successive
-  minimum and excludes the proposed LQG spectral tangent. Part XXVIII
-  (395–409) adds fifteen graph-state cut-rank laws admitted after iterative
-  [novelty and soundness audit](docs/graph-state-cut-rank-audit-2026-08-30.md):
-  quenched and extreme cut laws, forest matching shape and extremal laws,
-  typical reconstruction, random width densities, and local-complementation
-  rigidity and orbit entropy. The exact accounting of both source survivors
-  and the fifteen new statements is in the
-  [combined admission record](docs/conjectures-392-409-admission-audit-2026-08-30.md).
+  XXVII (394) adds the quenched random Floer-barcode entropy law and
+  strengthens Conjecture 392 to every fixed successive minimum. Part XXVIII
+  (395–409) adds fifteen graph-state cut-rank laws: quenched and extreme cut
+  laws, forest matching shape and extremal laws, typical reconstruction,
+  random width densities, and local-complementation rigidity and orbit
+  entropy. Part XXIX (410–424) adds fifteen laws on prime continuants,
+  continued-fraction dimensions, Legendre-symbol and random games, and plane
+  quartics with their Hessians and duals.
   Fourteen conjectures
   (63, 71, 87, 90, 107, 135, 153, 154, 155, 156, 183, 205, 229, 328) have since been refuted and are recorded in
   place as resolved false, with their counterexamples or the refuting

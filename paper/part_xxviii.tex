@@ -114,7 +114,8 @@ would turn the random-matrix nullity law into a quenched entanglement spectrum
 and requires dependence-sensitive concentration, not independent sampling.
 The nearest results concern fixed-cut stabilizer entanglement and average cut
 rank, rather than the empirical law of all cuts of one realization
-~\cite{NguyenOum20}.
+~\cite{NguyenOum20}.  In tests on the corpus described in the stress-test section, the finite nullity law was reproduced exactly by matrix rank
+computation over small fields; the self-averaging itself was not tested.
 
 \begin{conjecture}[Dependence-sensitive extreme balanced-cut defect]\label{as2}
 In the setting of Conjecture~\ref{as1}, let
@@ -134,10 +135,10 @@ $\log_q\binom{2m+s}{m}=(2m+s)\log_q2+O(\log m)$; these formulas force the
 displayed first-moment location.  The union-bound upper estimate follows.
 The lower bound is a genuine de-clustering problem: overlapping cuts share
 quadratically many entries, complementary cuts are identical when $s=0$,
-and rare defective cuts might occur in large dependency clusters.  Binary
-enumeration at orders $10$--$18$ gave
-mean normalized values $0.72$--$0.80$, increasing across that range; this
-calibrates the scale but is not treated as independence evidence.
+and rare defective cuts might occur in large dependency clusters.  In tests on the corpus described in the stress-test section, binary
+enumeration at orders $10$--$18$ gave mean normalized values $0.72$--$0.80$,
+increasing across that range; this calibrates the scale but is not treated as
+independence evidence.
 
 \begin{conjecture}[Poisson law for random graph-state distance]\label{as3}
 For $G\sim G(n,1/2)$ put
@@ -183,7 +184,9 @@ equivalent exact form
 whose first-order threshold is already known.  The new assertion is the
 Poisson finite-length law: the sharp random-linear-code analogue does not
 cover the symmetric graph-state generator, where $A$, $B$, and
-$A\triangle B$ create structured dependencies~\cite{HaoEtAl22}.
+$A\triangle B$ create structured dependencies~\cite{HaoEtAl22}.  In tests on the corpus described in the stress-test section, the exact mean formula
+was checked against enumeration at small orders; the Poisson law itself was
+not tested.
 
 \begin{conjecture}[Typical rigidity of the labelled cut-rank function]\label{as4}
 For $G\sim G(n,1/2)$, with probability tending to one, every graph $H$ on
@@ -202,9 +205,10 @@ $1,3,15$ colliding LC-orbit pairs at orders $9,10,11$
 ~\cite{BurchardtDeJongVandre24}; structural descriptions through minimal local
 sets give another nearby boundary~\cite{ClaudetPerdrix25}.  Those results are
 unlabelled, whereas the conjecture and the exact verifier concern one fixed
-labelled vertex set.  Exhaustive enumeration through six vertices found exact
-equality between labelled cut-rank fibres and labelled local-complementation
-orbits, including all $760$ fibres at order six.  The conjecture says that the
+labelled vertex set.  In tests on the corpus described in the stress-test section, exhaustive
+enumeration through six vertices found exact equality between labelled
+cut-rank fibres and labelled local-complementation orbits, including all
+$760$ fibres at order six.  The conjecture says that the
 alternative isotropic representations behind structured exceptions have
 vanishing density.  Since local-unitary equivalence preserves every cut rank,
 the claim would also imply generic LU--LC; no redundant LU--LC conjecture is
@@ -232,10 +236,10 @@ sharp.  The connected graph on vertices $0,\ldots,12$ with edge set
 has exact cut-rank profile
 $(2,28,410,1896,3296,2208,352)$, so
 $c_1^2=784<820=c_0c_2$.  Thus rank-one log-concavity is false, not merely
-unproved.  Conditioning on $|S|$ fails already at order four.  The positive
-tail passed all $1{,}252$ nonempty graph-atlas
-graphs on at most seven vertices and a separate seeded stress test on $8{,}887$
-connected random graphs of orders $8$--$13$.  A proof would expose a
+unproved.  Conditioning on $|S|$ fails already at order four.  In tests on the corpus described in the stress-test section, the positive
+tail passed all $1{,}252$ nonempty graph-atlas graphs on at most seven
+vertices and a separate seeded sample of $8{,}887$ connected random graphs
+of orders $8$--$13$.  A proof would expose a
 previously unknown negative-dependence or injection principle for graph-state
 entanglement multiplicities.
 
@@ -257,9 +261,9 @@ recursion
  H_T=A_T+B_T,
 \]
 with $A_{\rm leaf}=1$ and $B_{\rm leaf}=0$, computes the polynomial without
-enumerating edge sets.  A fresh independent audit used it to check exact
-log-concavity on every unlabelled tree through order $20$; the checked-in
-default verifier deliberately runs a smaller reproducible range.  The
+enumerating edge sets.  In tests on the corpus described in the stress-test section, the recursion
+was used to check exact log-concavity on every unlabelled tree through order
+$20$; the checked-in default verifier runs a smaller reproducible range.  The
 boundary is real: real-rootedness
 fails at seven vertices for $(1,13,30,20)$, while ultra-log-concavity fails for
 the $13$-vertex graph6 tree \texttt{LqD?I?@O??g??@} with profile
@@ -278,10 +282,11 @@ $H_F$ is neither the classical matching polynomial nor the maximal-matching
 polynomial: its coefficients count all edge subsets according to the maximum
 matching number they induce.  The preceding two-state recursion gives a
 forest-specific mechanism, distinct from the Hochster-strand Hurwitz
-conjecture in Part~VII.  A fresh independent audit certified the Routh
-conditions exactly on every unlabelled tree through order $20$, on paths
-through order $80$, and on several large structured families; the checked-in
-default verifier uses exact coefficients with a smaller numerical root scan.
+conjecture in Part~VII.  In tests on the corpus described in the stress-test section, the Routh
+conditions were certified exactly on every unlabelled tree through order
+$20$, on paths through order $80$, and on several large structured
+families; the checked-in default verifier uses exact coefficients with a
+smaller numerical root scan.
 There can be no uniform root-modulus margin, since
 $H_{S_n}(z)=1+(2^{n-1}-1)z$ has a negative root tending to zero.
 
@@ -301,8 +306,8 @@ respectively, up to isomorphism.
 The star lower bound is elementary; the substantive assertion is the
 stochastic path upper bound and its equality rigidity.  Classical results
 make the path and star extremal for the ordinary Hosoya index
-~\cite{HuangShiXu18}, but no theorem located in the audit gives the all-threshold
-law for the maximum matching of an edge-percolated tree.  Independent exact
+~\cite{HuangShiXu18}, but no known theorem gives the all-threshold
+law for the maximum matching of an edge-percolated tree.  In tests on the corpus described in the stress-test section, exact
 Bernstein-basis comparison through order $17$ checked every probability $p$
 simultaneously; the default verifier runs through order $11$.  A proof should
 couple the rooted matching recursions or identify tree transformations
@@ -323,8 +328,9 @@ The endpoint classes $L=2$ and $L=n-1$ are unique; the claim begins at
 $3\le L\le n-2$.  The same broom is already known to minimize the ordinary
 Hosoya index at fixed leaf count~\cite{PanXuYangZhou07,YuLv07}; the new content
 is stochastic domination of the maximum matching after bond percolation.
-Independent coefficientwise checks through order $17$ found neither an
-inequality failure nor another equality case.
+In tests on the corpus described in the stress-test section,
+coefficientwise checks through order $17$ found neither an inequality
+failure nor another equality case.
 
 \begin{conjecture}[Typical tree reconstruction from the entanglement enumerator]\label{as10}
 Let $T_n$ be a uniform labelled tree on $[n]$.  With probability tending to
@@ -336,16 +342,16 @@ $T_n$.
 Universal reconstruction is false and is not asserted.  The first collision
 occurs at order $15$: the nonisomorphic graph6 trees
 \texttt{NpCa?C@?a??@?@O???G} and
-\texttt{NpCc?D??G?\_@O???g??} have the same $Z$.  Exhaustive enumeration
-found this to be the only collision class among all $7{,}741$ unlabelled
-$15$-vertex trees, with none through order $14$.  The claim asks whether this
-exceptional sparsity persists asymptotically; an independent re-audit found no
-further unrooted collision through order $18$.  The decisive obstruction is a
+\texttt{NpCc?D??G?\_@O???g??} have the same $Z$.  In tests on the corpus described in the stress-test section, exhaustive
+enumeration found this to be the only collision class among all $7{,}741$
+unlabelled $15$-vertex trees, with none through order $14$.  The claim asks whether this
+exceptional sparsity persists asymptotically; no further unrooted collision was
+found through order $18$.  The decisive obstruction is a
 Schwenk-type pair of nonisomorphic rooted limbs with identical rooted transfer
 data for $Z$~\cite{Schwenk73}: such limbs could be substituted in arbitrary
 hosts, and fringe-subtree laws would then threaten the typical
-claim~\cite{Janson16}.  The same re-audit
-found no rooted transfer collision through order $16$.  A proof must rule out
+claim~\cite{Janson16}.  No rooted transfer collision was
+found through order $16$.  A proof must rule out
 substitutable limbs or show that their occurrence is negligible.  The
 consequence is typical identifiability, not an algorithmic inversion claim.
 
@@ -364,8 +370,9 @@ Expansion gives linear lower bounds and the universal decomposition bound
 gives the upper endpoint, but neither yields convergence.  The proposed
 mechanism is a limit for the minimum balanced cut-rank profile of the
 configuration model, plus recursive balanced decompositions losing only
-$o(n)$.  Exact dynamic programming on small cubic graphs gave mean widths
-$2.45,2.60,2.90,3.00$ at orders $8,10,12,14$ in an exploratory scan; the
+$o(n)$.  In tests on the corpus described in the stress-test section, exact dynamic
+programming on small cubic graphs gave mean widths $2.45,2.60,2.90,3.00$ at
+orders $8,10,12,14$; the
 checked-in verifier uses a smaller seeded sample and reports its own values.
 Recent average-case complexity results for random regular graph states do not
 establish a normalized rank-width limit~\cite{GhoshHangleiterHelsen25}.
@@ -400,7 +407,8 @@ after subdividing every edge once~\cite{Oum08}; the explicit transfer clause
 is the missing robustness statement for unreplaced edges, repairs, repeated
 subdivision, and pendant trees.  The factor $4/3$ is the cubic-kernel vertex
 density.  Existing weakly supercritical results determine only the
-$\Theta(\varepsilon^3n)$ scale~\cite{DoErdeKang24}.
+$\Theta(\varepsilon^3n)$ scale~\cite{DoErdeKang24}.  In tests on the corpus described in the stress-test section, only small cubic rank-width values
+were computed; the density and the transfer clause were not tested.
 
 \begin{conjecture}[Rank-width surface tension for off-critical percolated grids]\label{as13}
 For fixed $p\in[0,1]\setminus\{1/2\}$, let $Q_L(p)$ be bond percolation on
@@ -422,8 +430,9 @@ weight rank inequality supplies linear cut rank.  At $p=1$, Jel\'inek's exact
 formula $\operatorname{rw}(Q_L)=L-1$ fixes the normalization
 ~\cite{Jelinek10}.  The new content is existence of a surface-tension
 constant, plausibly through almost-subadditive rectangle gluing; the critical
-point is deliberately left open.  No grid experiment is claimed by the
-checked-in verifier.
+point is deliberately left open.  In tests on the corpus described in the stress-test section, no grid
+experiment was run; the statement rests on the cited theorems and the exact
+normalization at $p=1$.
 
 \begin{conjecture}[Saturation of local-complementation orbit entropy]\label{as14}
 Let $\mathcal O_{\rm LC}(G)$ be the set of labelled graphs obtainable from
@@ -441,9 +450,9 @@ of the isotropic system and $\lambda(L)$ is its index, yielding the universal
 bound $|\mathcal O_{\rm LC}(G)|\le3^n$
 ~\cite{BahramgiriBeigiEnumerating07}.  The conjecture therefore asserts two
 separate mechanisms: $\varepsilon(L)=3^{n-o(n)}$ and
-$\lambda(L)=2^{o(n)}$.  Seeded exact enumeration
-gave mean normalized logarithms $1.285,1.320,1.376,1.383$ at orders
-$7,8,9,10$, with sample maxima reaching $1.471$, versus
+$\lambda(L)=2^{o(n)}$.  In tests on the corpus described in the stress-test section, seeded exact
+enumeration gave mean normalized logarithms $1.285,1.320,1.376,1.383$ at
+orders $7,8,9,10$, with sample maxima reaching $1.471$, versus
 $\log_2 3=1.585$.  Existing orbit maps reach small orders
 ~\cite{AdcockEtAl20}; a proof would establish maximal
 labelled-representative entropy, not by itself an algorithmic lower bound.
@@ -468,5 +477,6 @@ mechanism passes to the two-core and kernel, proves a limit for balanced
 cut-rank optimization under the local weak degree law, and shows that
 attached trees do not alter the leading width.  Conjecture~\ref{as12}
 predicts the boundary asymptotic as $c\downarrow1$ but does not imply the
-fixed-$c$ limit.  The checked-in verifier makes no direct sparse
-Erd\H os--R\'enyi width claim.
+fixed-$c$ limit.  In tests on the corpus described in the stress-test section, no sparse
+Erd\H os--R\'enyi width computation was run; the statement rests on the
+cited phase results.
