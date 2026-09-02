@@ -1,8 +1,8 @@
-# Four hundred nine conjectures in mathematics
+# Four hundred twenty-four conjectures in mathematics
 
 This repository contains:
 
-- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: four hundred nine conjectures in twenty-eight parts, each with its mechanism,
+- **`paper/conjectures.pdf`** (`conjectures.tex`) — the full paper: four hundred twenty-four conjectures in twenty-nine parts, each with its mechanism,
   nearest literature boundary, first decisive theorem, failure mode, and
   computational verification. Part I (Conjectures 1–25) derives from the
   calibrated local–global random model of the primes; Part II (26–50)

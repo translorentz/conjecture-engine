@@ -37,8 +37,8 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Four hundred nine conjectures in mathematics\\
-\large Twenty-eight parts across arithmetic, combinatorics, geometry, probability and topology}
+\title{Four hundred twenty-four conjectures in mathematics\\
+\large Twenty-nine parts across arithmetic, combinatorics, geometry, probability and topology}
 \author{The Conjecture Engine\thanks{This paper was produced by an
 automated conjecture engine (LLM tools), operated as an exercise
 in disciplined conjecture-making.  All constants, counts, and
@@ -61,7 +61,7 @@ computations.  Primality claims are stratified between deterministic verificatio
 \begin{document}
 \maketitle
 
-\section*{Summary sheet: the four hundred nine conjectures}
+\section*{Summary sheet: the four hundred twenty-four conjectures}
 \addcontentsline{toc}{section}{Summary sheet}
 
 \paragraph{Part I: conjectures from the local--global random model,
@@ -710,6 +710,21 @@ Bateman--Horn constant.
 \item \textbf{Off-critical grid rank-width surface tension (Conjecture~\ref{as13}).}  Bond-percolated square grids have a deterministic linear rank-width constant away from criticality.
 \item \textbf{Local-complementation orbit entropy saturation (Conjecture~\ref{as14}).}  A dense random graph-state orbit reaches the universal $3^n$ upper bound at exponential scale.
 \item \textbf{Sparse Erd\H os--R\'enyi rank-width density curve (Conjecture~\ref{as15}).}  The normalized rank-width has a deterministic curve, zero through the giant-component threshold and positive above it.
+\item \textbf{Prime continuant law (Conjecture~\ref{at1}).}  For almost every real number the number of prime convergent denominators among the first $N$ is $(2\log2+o(1))\log N$, with a Poisson limit at logarithmic scale; the constant is $\zeta(2)$ times the reciprocal L\'evy constant.
+\item \textbf{Prime-pair correlations along the convergents (Conjecture~\ref{at2}).}  Primality at consecutive indices, and of numerator and denominator, is negatively correlated by exactly $6/\pi^2$; the lag-two factor is a Gauss--Kuzmin product; a typical number has finitely many doubly prime convergents.
+\item \textbf{Squarefree and totient densities of continuants (Conjecture~\ref{at3}).}  Along a typical orbit the squarefree density and the mean of $\varphi(q_n)/q_n$ both equal $\prod_p(1-1/(p(p+1)))=0.7044\ldots$, the projective-line analogue of $6/\pi^2$.
+\item \textbf{Erd\H os--Kac law along the convergents (Conjecture~\ref{at4}).}  The number of prime divisors of $q_n(x)$ is Gaussian with mean and variance $\log n$ for almost every $x$.
+\item \textbf{Dimension of the prime-continuant sets (Conjecture~\ref{at5}).}  Numbers all of whose continuants are prime form a set of Hausdorff dimension one half; numbers with no prime continuant form a set of full dimension.
+\item \textbf{Digit sets in arithmetic progressions (Conjecture~\ref{at6}).}  The dimension of the set with all partial quotients in $a+m\mathbb N_0$ is $\tfrac12+\tfrac1{2m}-\tfrac{\log m}{2m^2}-\tfrac{\psi_\Gamma(a/m)}{2m^2}+O(m^{-3}\log^2m)$, with a digamma term separating residue classes of equal density.
+\item \textbf{Continuant avoidance dimension (Conjecture~\ref{at7}).}  The set of numbers none of whose continuants is divisible by $p$ has dimension $1-(6\log2/\pi^2)/p+O(p^{-2})$.
+\item \textbf{Unit law for the Legendre half-box games (Conjecture~\ref{at8}).}  The indifference systems of the Legendre Hankel and Toeplitz half boxes have values $\mp y/x$ for a unit $x+y\sqrt p$ of norm $-1$; whenever the unit strategy is a probability vector it is optimal, so the game value is a fundamental-unit ratio, proved exactly for forty-one prime instances.
+\item \textbf{Least odd residue law in the complementary classes (Conjecture~\ref{at9}).}  In the two residue classes where the unit strategy fails, $\sqrt p$ times the value is governed by the least odd prime quadratic residue and does not converge.
+\item \textbf{Brownian shift games (Conjecture~\ref{at10}).}  Random Toeplitz and Hankel games, which share their value, have values of order $m^{-1/2}$ with a universal Brownian limit, one order above full random games.
+\item \textbf{Hessian big monodromy over finite fields (Conjecture~\ref{at11}).}  The point counts of a random quartic and of its Hessian sextic are asymptotically independent symplectic traces, jointly independent of the flex count.
+\item \textbf{Sato--Tate independence of a curve and its Hessian (Conjecture~\ref{at12}).}  For a generic quartic over $\Q$ the Frobenius traces of the curve and of its Hessian are jointly Sato--Tate equidistributed.
+\item \textbf{Tangency law and dual-curve point counts (Conjecture~\ref{at13}).}  Rational bitangents have rational or conjugate tangency points with independent fair coins, so $\#C^\vee(\Fq_q)-\#C(\Fq_q)$ has an explicit symmetric limit law of variance one.
+\item \textbf{Positivity of the quarter-box Legendre games (Conjecture~\ref{at14}).}  For $p\equiv3\pmod4$ the quarter-box Hankel Legendre game always favours the row player, a class-number bias at scale $m^{-1/2}$.
+\item \textbf{Vanishing law for the half box in the class $3$ modulo $4$ (Conjecture~\ref{at15}).}  For $p\equiv3\pmod4$ the half-box value is nonpositive beyond $p=43$ and of order $p^{-3/2}$ when $2$ is a residue.
 \end{enumerate}
 
 
@@ -719,7 +734,7 @@ Bateman--Horn constant.
 
 
 \begin{abstract}
-We state four hundred nine conjectures in twenty-eight parts.  The twenty-five conjectures of Part~I are each derived from the
+We state four hundred twenty-four conjectures in twenty-nine parts.  The twenty-five conjectures of Part~I are each derived from the
 local--global random model of the primes:
 Cram\'er's model corrected by Hardy--Littlewood singular series, with
 Bateman--Horn as the organizing framework and Borel--Cantelli accounting
@@ -777,13 +792,24 @@ local-coupling corollary.
 states, percolated forests, random regular and sparse graphs, and
 local-complementation orbits, admitted after three independent review
 iterations with exact counterexamples and literature duplicates removed.
+  Part~XXIX (Conjectures~410--424) adds fifteen statements at the meeting
+  points of number theory, measure theory, game theory and algebraic
+  geometry: prime and squarefree laws for the continuants of a typical real
+  number with the constants $2\log2$, $6/\pi^2$ and
+  $\prod_p(1-1/(p(p+1)))$, Hausdorff-dimension expansions for digit sets in
+  progressions and for continuant residue avoidance, an exact identification
+  of the values of Legendre-symbol half-box games with coordinate ratios of
+  fundamental units of real quadratic fields together with the least-residue,
+  quarter-box and vanishing laws that accompany it, a Brownian limit for
+  random Toeplitz and Hankel games, and monodromy, Sato--Tate and dual-curve
+  laws for plane quartics and their Hessians.
 \end{abstract}
 
 \tableofcontents
 
 \section{Introduction}
 
-This collection states four hundred nine conjectures in twenty-eight parts.  Part~I
+This collection states four hundred twenty-four conjectures in twenty-nine parts.  Part~I
 (Conjectures 1--25) is a single sustained experiment: the primes, beyond
 their local structure, are modelled as a random set of density
 $1/\log n$, and the model is pushed to its sharpest consequences.
@@ -806,8 +832,19 @@ entanglement of graph states: quenched and extreme random-matrix laws,
 forest shape and stability laws, stochastic tree extremals and typical
 reconstruction, width densities for random regular, sparse, and percolated
 graphs, and rigidity and orbit-entropy laws under local complementation.
+  Part~XXIX (Conjectures~410--424) adds fifteen statements at the meeting
+  points of number theory, measure theory, game theory and algebraic
+  geometry: prime and squarefree laws for the continuants of a typical real
+  number with the constants $2\log2$, $6/\pi^2$ and
+  $\prod_p(1-1/(p(p+1)))$, Hausdorff-dimension expansions for digit sets in
+  progressions and for continuant residue avoidance, an exact identification
+  of the values of Legendre-symbol half-box games with coordinate ratios of
+  fundamental units of real quadratic fields together with the least-residue,
+  quarter-box and vanishing laws that accompany it, a Brownian limit for
+  random Toeplitz and Hankel games, and monodromy, Sato--Tate and dual-curve
+  laws for plane quartics and their Hessians.
 
-One standard governs all twenty-eight parts.  A good conjecture is not merely a
+One standard governs all twenty-nine parts.  A good conjecture is not merely a
 statement that has resisted counterexample: it is a determinate
 proposition about a canonical object, with a stated mechanism, and with
 enough exposed structure to be refuted in pieces.  Concretely, every
@@ -916,7 +953,7 @@ core, joined by \ref{c20} and \ref{c4}; Conjectures \ref{c9},
 One tagging convention runs through every statement below: clauses
 marked [theorem] or ``elementary'' are proved; clauses marked
 ``conditional proposition'' follow from the hypotheses stated with
-them; the remaining clauses are conjectures; and open questions are labelled as such and are not counted among the four hundred nine conjectures.  A title tagged ``resolved true'' or ``resolved false'' marks a statement settled since its deposit, each carrying a \emph{Resolution} paragraph with the proof or the counterexample.
+them; the remaining clauses are conjectures; and open questions are labelled as such and are not counted among the four hundred twenty-four conjectures.  A title tagged ``resolved true'' or ``resolved false'' marks a statement settled since its deposit, each carrying a \emph{Resolution} paragraph with the proof or the counterexample.
 
 \subsection*{Computational-check standards}
 
@@ -1041,7 +1078,7 @@ Novelty labels, from the independent literature search: \textbf{(a)} previously 
 \textbf{(b)} classical family, quantified instance apparently unstated.
 
 \medskip
-\noindent\textbf{How to read the four hundred nine.}  The count is a numbering convention, not a claim of four hundred nine independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several conjectures pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Part~IV is one polynomial invariant carrying three programmes, and its twenty statements stand or fall in blocks rather than singly, with two, Conjectures~\ref{u7} and~\ref{u15}, already fallen and recorded as resolved false.  Part~V is two rank enumerators of one bracket tensor, fifteen conjectures supported throughout the tested corpus, three stated in greater generality than the computations reach, and two resolved false with explicit counterexamples, recorded in place.  Part~VI is five local-structure programmes in the aesthetic of Part~I over a proved layer of jump identities and short-window exchangeability, six of its twenty stating a bias as a measured band, two extrapolating in a parameter rather than the index, one since resolved false, and four since proved.  The corresponding per-part registers for Parts~VII through~XVII, their programme counts, evidence caveats, retained controls, and resolutions, are carried once by the abstract and the summary sheet rather than repeated here.  Depth and independence therefore vary by design across the four hundred nine, and the summary sheet's ordering, not the raw count, carries the priority claim.
+\noindent\textbf{How to read the four hundred twenty-four.}  The count is a numbering convention, not a claim of four hundred twenty-four independent mechanisms.  The contamination calculus is one operator, stated with the twin races and projected onto the Goldbach, Stern, triplet, and sexy-pair patterns, together with one provably null pattern as its control, and those six statements stand or fall largely together.  Several conjectures pair a proved classification with a Bateman--Horn lane that is standard once stated, and several keep attributed benchmarks inside them as calibration; the tagging convention above separates these layers, and the novelty labels mark what is claimed as new.  Part~II is five programmes, each contributing one central object and its laws.  Part~IV is one polynomial invariant carrying three programmes, and its twenty statements stand or fall in blocks rather than singly, with two, Conjectures~\ref{u7} and~\ref{u15}, already fallen and recorded as resolved false.  Part~V is two rank enumerators of one bracket tensor, fifteen conjectures supported throughout the tested corpus, three stated in greater generality than the computations reach, and two resolved false with explicit counterexamples, recorded in place.  Part~VI is five local-structure programmes in the aesthetic of Part~I over a proved layer of jump identities and short-window exchangeability, six of its twenty stating a bias as a measured band, two extrapolating in a parameter rather than the index, one since resolved false, and four since proved.  The corresponding per-part registers for Parts~VII through~XVII, their programme counts, evidence caveats, retained controls, and resolutions, are carried once by the abstract and the summary sheet rather than repeated here.  Depth and independence therefore vary by design across the four hundred twenty-four, and the summary sheet's ordering, not the raw count, carries the priority claim.
 
 \part{Conjectures from a local--global random model}
 
@@ -9202,6 +9239,760 @@ random closing mechanism even when the path itself has positive entropy.
 
 \input{part_xxviii}
 
+\part{Arithmetic games, prime continuants and Hessian shadows}
+
+\medskip\noindent\emph{Added to the deposit: 2 September 2026.}\par\medskip
+
+This part states fifteen conjectures in four groups.  The first four
+concern the arithmetic of the continuants of a Lebesgue-typical real number:
+how often a convergent denominator is prime, how prime denominators at
+neighbouring indices repel or attract, which squarefree and totient
+densities the denominators obey, and how their prime divisor counts
+fluctuate.  Three concern Hausdorff dimensions of continued-fraction sets
+cut out by a primality condition on the continuants, by digit progressions,
+and by a residue condition on the continuants.
+Five concern zero-sum games whose payoff matrices are Legendre-symbol
+Hankel and Toeplitz boxes or random Hankel and Toeplitz matrices; for the
+Legendre half boxes the game value is, for many primes, exactly a ratio of
+coordinates of the fundamental unit of a real quadratic field.  Three
+concern point counts of plane quartics, their Hessian curves and their dual
+curves over finite fields.  The proved layer is Proposition~\ref{at:basic}.
+Throughout, $x\in(0,1)$ is irrational with continued fraction
+$x=[0;a_1,a_2,\dots]$, convergents $p_n/q_n$, and $\mu$ is Lebesgue
+measure; for a prime $p$, $\chi_p$ is the Legendre symbol, and for
+$p\equiv1\pmod 4$ we write $m=(p-1)/2$,
+\[
+ H_p=\bigl(\chi_p(i+j)\bigr)_{1\le i,j\le m},\qquad
+ T_p=\bigl(\chi_p(i-j)\bigr)_{1\le i,j\le m},
+\]
+and $v(A)$ for the value of the zero-sum game with payoff matrix $A$ to the
+row player, both players using mixed strategies.  For $p\equiv1\pmod4$,
+$\eps_p>1$ denotes the fundamental unit of $\Q(\sqrt p)$; it has norm $-1$.
+The Dedekind function is $\Psi(k)=k\prod_{\ell\mid k}(1+1/\ell)$ and the
+L\'evy constant is $L=\pi^2/(12\log 2)$, so that $\log q_n(x)\sim nL$ for
+$\mu$-almost every $x$~\cite{Levy36}.
+
+\begin{proposition}[Local laws, symmetric games, exact Legendre values and quartic identities]\label{at:basic}
+{\rm(i)} For every integer $k\ge2$ and $\mu$-almost every $x$, the set
+$\{n:k\mid q_n(x)\}$ has density $1/\Psi(k)$.  For every prime $p$ and
+almost every $x$, the set $\{n: p\nmid q_n(x)q_{n+1}(x)\}$ has density
+$(p-1)/(p+1)$, and the set $\{n:p\mid q_n(x),\ p\mid q_{n+2}(x)\}$ has
+density $g_p/(p+1)$, where
+$g_p=\sum_{j\ge1}\log_2\bigl(1+1/(jp(jp+2))\bigr)$ is the Gauss measure of
+$\{x:p\mid a_1(x)\}$.
+{\rm(ii)} If $A$ is a circulant matrix, then $v(A)$ equals the mean of the
+entries of $A$; if $A$ is antisymmetric, then $v(A)=0$; and for any
+sequence $(\xi_k)$ the Toeplitz matrix $(\xi_{i-j})_{1\le i,j\le m}$ and the
+Hankel matrix $(\xi_{i+j-m-1})_{1\le i,j\le m}$ have the same value.
+{\rm(iii)} For
+$p\in\{17,41,73,89,97,113,137,193,233,241,281,313,337,409,433,449,457,521,569,601,617\}$
+one has $v(H_p)=-y/x$, where $\eps_p=x+y\sqrt p$; for $p\in\{5,13\}$ one
+has $v(H_p)=-y/x$ with $\eps_p=(x+y\sqrt p)/2$, namely $v(H_5)=-1$ and
+$v(H_{13})=-1/3$; for $p=401$ the unit is $\eps_p^5$ and for $p=577$ it is
+$\eps_p^7$.  For
+$p\in\{5,13,29,37,61,101,109,157,181,277,349,373,421,541,613\}$ one has
+$v(T_p)=+y/x$, where $\eps_p^3=x+y\sqrt p$; for $p=229$ the unit is
+$\eps_p^9$.  In every listed case $x+y\sqrt p$ has norm $-1$, and an optimal strategy
+common to both players has full support $\{1,\dots,m\}$ for $T_p$ and
+support $\{1,\dots,m-1\}$ for $H_p$.
+{\rm(iv)} Let $q$ be an odd prime power and $F\in\Fq_q[X,Y,Z]$ a quartic
+form defining a smooth curve.  Then
+\[
+ \sum_{P\in\mathbb P^2(\Fq_q)}\chi_q\bigl(F(P)\bigr)=q\,t(F),
+\]
+where $\chi_q$ is the quadratic character of $\Fq_q$ and $t(F)$ is the trace
+of the Frobenius on the $E_7$ root lattice of the degree-two del Pezzo
+surface $w^2=F$; in particular $t(F)\in\Z$ and $|t(F)|\le7$.
+{\rm(v)} Let $C$ be a smooth plane quartic over $\Fq_q$, $q$ a power of a
+prime larger than three so that the Gauss map is separable and $C$ is
+reflexive, all of whose flexes are ordinary and whose $28$ bitangents are
+ordinary (no hyperflex).  Write $b_{\rm s}$ for the
+number of $\Fq_q$-rational bitangents whose two points of tangency are
+$\Fq_q$-rational and $b_{\rm c}$ for the number whose two points of tangency
+are swapped by the Frobenius.  Then the dual curve satisfies
+$\#C^\vee(\Fq_q)=\#C(\Fq_q)-b_{\rm s}+b_{\rm c}$.
+\end{proposition}
+
+\begin{proof}
+{\rm(i)} Write $r_n=q_n/q_{n-1}\in\mathbb P^1(\Fq_p)$ for the projective
+class of the column $(q_{n-1},q_n)$ modulo $p$; since consecutive continuants
+are coprime, $r_n$ is well defined, and the recursion
+$q_{n+1}=a_{n+1}q_n+q_{n-1}$ gives $r_{n+1}=a_{n+1}+1/r_n$.  Each map
+$r\mapsto a+1/r$ is a bijection of $\mathbb P^1(\Fq_p)$, so the product of the
+Gauss measure with the uniform measure on $\mathbb P^1(\Fq_p)$ is invariant
+under the skew product $(x,r)\mapsto(Gx,a_1(x)+1/r)$, $G$ the Gauss map;
+this skew product is ergodic, which is the content of the equidistribution
+theorems of Moeckel~\cite{Moeckel82} and Jager and
+Liardet~\cite{JagerLiardet88} for $(q_{n-1},q_n)$ modulo $p$.  The event
+$p\mid q_n$ is $r_n=0$, of stationary probability $1/(p+1)$, and for a
+general modulus $k$ the same argument on $\mathbb P^1(\Z/k)$, which has
+$\Psi(k)$ points, gives $1/\Psi(k)$; the ergodicity of the skew product
+for composite $k$ is part of the cited theorems.  Since $r_n=0$ forces
+$r_{n+1}=\infty$, the events $p\mid q_n$ and $p\mid q_{n+1}$ are disjoint,
+whence the density $1-2/(p+1)$.  Finally $r_n=0$ forces $r_{n+2}=a_{n+2}$,
+so $p\mid q_n$ and $p\mid q_{n+2}$ together mean $r_n=0$ and
+$p\mid a_1(G^{n+1}x)$; the integrand $\mathbf 1_{r=0}\,\mathbf 1_{p\mid a_2(x)}$
+has product-measure integral $g_p/(p+1)$, and the ergodic theorem for the
+skew product gives the density.
+{\rm(ii)} Every row and every column of a circulant matrix is a permutation of the
+first, so the uniform strategy of either player makes every pure reply of
+the other player yield the mean entry; both guarantees coincide.  Since $v(-A^{\mathsf T})=-v(A)$ for every
+$A$, if $A^{\mathsf T}=-A$ then $v(A)=v(-A^{\mathsf T})=-v(A)$, so $v(A)=0$.  Reversing the order of the columns
+turns $(\xi_{i-j})$ into $(\xi_{i+j-m-1})$ and does not change the value.
+{\rm(iii)} Each matrix is symmetric.  For the listed $p$, the linear system
+$\sum_i x_iA_{ij}=v$ for $j$ in the stated support, $\sum_ix_i=1$, $x_i=0$
+off the support, has a unique rational solution, which is nonnegative and
+satisfies $\sum_ix_iA_{ij}=v$ for every column $j$, including the column
+$m$ omitted from the support of $H_p$.  Thus $x$ guarantees $v$ to the row
+player, and by symmetry of $A$ the same vector guarantees $v$ to the column
+player, so $v(A)=v$.  The rational numbers $v$ so obtained are the stated unit
+coordinate ratios; the exact rational arithmetic is reproduced in the
+stress-test section.
+{\rm(iv)} Let $X$ be the surface $w^2=F(X,Y,Z)$ in the weighted projective
+space $\mathbb P(1,1,1,2)$.  Since $F$ is smooth, $X$ is a smooth del Pezzo
+surface of degree two, the double cover of the plane branched along
+$C=\{F=0\}$, and $\#X(\Fq_q)=\sum_P\bigl(1+\chi_q(F(P))\bigr)$ because
+$F(\lambda P)=\lambda^4F(P)$.  For a smooth rational surface Weil's formula
+gives $\#X(\Fq_q)=q^2+q\operatorname{tr}\bigl(\mathrm{Frob}\mid
+\operatorname{Pic}\overline X\bigr)+1$~\cite{Manin86}.  The Picard lattice
+has rank eight and splits orthogonally as $\Z K_X\oplus K_X^\perp$ with
+$K_X^\perp\cong E_7(-1)$, the Frobenius fixing $K_X$ and acting on
+$K_X^\perp$ through the Weyl group $W(E_7)$~\cite{Dolgachev12}.  Hence
+$\operatorname{tr}=1+t(F)$ and the character sum equals
+$\#X(\Fq_q)-(q^2+q+1)=q\,t(F)$; an orthogonal transformation of a rank-seven
+lattice has trace at most seven in absolute value.
+{\rm(v)} The Gauss map $C\to C^\vee$, $P\mapsto T_PC$, is the normalisation
+of $C^\vee$ and is defined over $\Fq_q$.  Under the ordinariness hypotheses
+the singular points of $C^\vee$ are the $24$ cusps, images of the flexes,
+each with one branch, and the $28$ nodes, images of the bitangents, each
+with two branches through the two points of tangency.  Away from the nodes
+the Gauss map is a bijection between $\Fq_q$-points, and a rational point of
+$C$ maps to a rational point of $C^\vee$.  A rational node whose branches
+are rational receives two rational points of $C$, a rational node with
+conjugate branches receives none, and a non-rational node receives no
+rational point since its branches are not rational.  Counting gives the
+identity.
+\end{proof}
+
+\begin{conjecture}[Prime continuant law]\label{at1}
+{\rm(i)} For $\mu$-almost every $x$,
+\[
+ \#\{n\le N: q_n(x)\text{ prime}\}=(2\log 2+o(1))\log N,
+\]
+and the same holds for the numerators $p_n(x)$.
+{\rm(ii)} $\mu\{x:q_N(x)\text{ prime}\}=(2\log2+o(1))/N$ as $N\to\infty$.
+{\rm(iii)} For $x$ uniformly distributed, the point process
+$\sum_{n:\,q_n(x)\text{ prime}}\delta_{\log n-T}$ converges in law, as
+$T\to\infty$, to the Poisson process on $\R$ of intensity $2\log2$.
+{\rm(iv)} The count in {\rm(i)}, for $x$ uniformly distributed, has
+Gaussian fluctuations of variance $(2\log2+o(1))\log N$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The constant is forced by two exact inputs and one heuristic.  By
+Proposition~\ref{at:basic}(i) the local probability that $p$ does not
+divide $q_n$ is $p/(p+1)$ rather than $1-1/p$, so the Hardy--Littlewood
+correction to the probability $1/\log q_n$ of primality is
+$\prod_p\frac{p/(p+1)}{1-1/p}=\prod_p\frac{p^2}{p^2-1}=\zeta(2)$; by
+L\'evy's theorem $\log q_n\sim n\pi^2/(12\log2)$; and the product
+$\zeta(2)\cdot12\log2/\pi^2=2\log2$ cancels every $\pi$, which is the
+signature of the mechanism.  The Poisson clause records that the
+$O(1/n)$-scale repulsion between neighbouring indices
+(Conjecture~\ref{at2}) is invisible at the logarithmic scale.  The nearest
+results are the theorem of Erd\H os and Mahler that some irrationals have
+every $q_n$ prime~\cite{ErdosMahler39}, the equidistribution of continuants
+modulo a fixed integer~\cite{Moeckel82,JagerLiardet88}, and the theorem of
+L\'evy on the growth of $q_n$~\cite{Levy36}; no prior treatment of the
+count of prime continuants is known of a typical real number, whose expected value
+$2\log2\cdot\log N$ is below two for $N\le4$ and reaches ten only near
+$N=1400$; the Erd\H os--Mahler construction itself follows from Dirichlet's
+theorem applied to the progression $aq_{n-1}+q_{n-2}$.  A first decisive theorem would be the lower bound
+$\mu\{x:q_N(x)\text{ prime}\}\gg1/N$, which requires primes in the values of
+the continuant polynomials with the correct order of magnitude.  In tests
+on the corpus described in the stress-test section, the empirical
+probability that $q_n$ is prime, multiplied by $n$, was within one percent
+of $2\log2$ for $100\le n\le200$ over $1.38\times10^5$ uniformly random
+$x$, and the counts for $p_n$ agreed to within two percent.  A
+counterexample would be a constant other than $2\log2$, which would
+signal a failure of the independence of primality from the digit
+dynamics, or a non-Poisson limit, which would reveal long-range
+correlations among prime continuants.
+
+\begin{conjecture}[Prime-pair correlations along the convergents]\label{at2}
+{\rm(i)} $\mu\{x:q_n(x),q_{n+1}(x)\text{ both prime}\}
+ =\bigl(24\log^22/\pi^2+o(1)\bigr)/n^2$, that is, primality at consecutive
+indices is negatively correlated by the exact factor $6/\pi^2$ relative to
+the product of the two marginal probabilities of Conjecture~\ref{at1}.
+{\rm(ii)} The same asymptotic holds for
+$\mu\{x:p_n(x),q_n(x)\text{ both prime}\}$.
+{\rm(iii)} At lag two the correlation factor is
+\[
+ C_2=\prod_p\Bigl(1-\frac1{p^2}+\frac{g_p(p+1)}{p^2}\Bigr)=0.91957\ldots,
+\]
+with $g_p$ as in Proposition~\ref{at:basic}(i), so that
+$\mu\{x:q_n,q_{n+2}\text{ both prime}\}\sim C_2(2\log2)^2/n^2$.
+{\rm(iv)} For almost every $x$ and every fixed lag $h\ge1$, only finitely
+many $n$ have $q_n(x)$ and $q_{n+h}(x)$ both prime, and only finitely many
+$n$ have $p_n(x)$ and $q_n(x)$ both prime.
+\end{conjecture}
+
+\paragraph{Significance.}
+The factor $6/\pi^2$ is exact in the model: consecutive continuants are
+coprime, so the local event that $p$ divides neither has probability
+$(p-1)/(p+1)$ by Proposition~\ref{at:basic}(i), and
+$\prod_p\frac{(p-1)/(p+1)}{(p/(p+1))^2}=\prod_p(1-p^{-2})$.  At lag two the
+return to the residue class zero passes through the digit $a_{n+2}$, so the
+Gauss--Kuzmin law enters through $g_p$ and the constant $C_2$ is
+transcendental-looking rather than a zeta value; the two constants are
+different in kind and both are testable.  Clause {\rm(iv)} is
+Borel--Cantelli applied to {\rm(i)}--{\rm(iii)}, and it says that a typical
+real number has only finitely many convergents whose numerator and
+denominator are both prime, a statement of a different flavour from the
+Erd\H os--Mahler construction~\cite{ErdosMahler39}.  The nearest results
+are the pair equidistribution of~\cite{JagerLiardet88} and the twin-prime
+heuristics of Hardy and Littlewood for polynomial pairs; no prior treatment of correlations of primality
+is known along the convergents of a typical
+number.  A first decisive theorem would be the upper bound
+$\mu\{x:q_n,q_{n+1}\text{ both prime}\}\ll n^{-2}$ by a sieve on the
+continuant recursion, which already gives {\rm(iv)}.  In tests on the corpus
+described in the stress-test section, the lag-one pair counts over
+$1.38\times10^5$ random $x$ for $60\le n\le200$ showed the predicted deficit
+of thirty-nine percent relative to independence, with a sampling error of
+about two percent that is of the same size as the residual deviation, the
+numerator--denominator pairs behaved likewise, and the lag-two counts
+agreed with $C_2$ to within five percent.  A
+counterexample would be a lag-one factor different from $6/\pi^2$, which
+would mean that primality of $q_n$ and of $q_{n+1}$ is correlated beyond
+the local obstruction of coprimality.
+
+\begin{conjecture}[Squarefree and totient densities of continuants]\label{at3}
+For $\mu$-almost every $x$,
+\[
+ \lim_{N\to\infty}\frac1N\#\{n\le N:q_n(x)\text{ squarefree}\}
+ =\lim_{N\to\infty}\frac1N\sum_{n\le N}\frac{\varphi(q_n(x))}{q_n(x)}
+ =\prod_p\Bigl(1-\frac1{p(p+1)}\Bigr)=0.70445\ldots,
+\]
+and more generally, for every multiplicative $f$ with $f(p^k)=1+O(p^{-k})$,
+$N^{-1}\sum_{n\le N}f(q_n(x))$ converges to
+$\prod_p\bigl(1+\sum_{k\ge1}(f(p^k)-f(p^{k-1}))/\Psi(p^k)\bigr)$.
+\end{conjecture}
+
+\paragraph{Significance.}
+For integers the squarefree density and the mean of $\varphi(n)/n$ coincide
+at $6/\pi^2$; along the continuants of a typical number both are governed by
+the projective-line local law $1/\Psi(p^k)$ of Proposition~\ref{at:basic}(i)
+and coincide again, at a constant that is not a zeta value.  The general
+clause is the Delange-type mean value theorem transported to the orbit of a
+skew product.  What is proved is each finite-modulus density; what is
+conjectured is the uniformity in the modulus that allows the sieve over all
+primes to be closed, which is the same gap that separates
+Proposition~\ref{at:basic}(i) from Conjecture~\ref{at1}.  The nearest results
+are the mean value theorems of Delange and Wirsing for multiplicative
+functions and the continuant equidistribution of~\cite{JagerLiardet88};
+no antecedent was found for arithmetic mean values along the convergents
+of a typical real number.  A first decisive theorem would be a large sieve
+inequality for the sequence $(q_n(x))_{n\le N}$ uniform in moduli up to
+$N^{\delta}$.  In tests on the corpus described in the stress-test section,
+the density of $n\le200$ with $q_n(x)$ free of squares of primes below
+$10^4$ was $0.70425$ over $1.38\times10^5$ random $x$, against the truncated
+product $0.70445$, while $6/\pi^2=0.60793$ is excluded.  A counterexample
+would be a density other than the product, which would show that the
+large prime squares dividing continuants do not follow the local law.
+
+\begin{conjecture}[Erd\H os--Kac law along the convergents]\label{at4}
+For $\mu$-almost every $x$ and every real $t$,
+\[
+ \lim_{N\to\infty}\frac1N\#\Bigl\{n\le N:
+ \frac{\omega(q_n(x))-\log n}{\sqrt{\log n}}\le t\Bigr\}
+ =\frac1{\sqrt{2\pi}}\int_{-\infty}^t e^{-u^2/2}\,du,
+\]
+where $\omega$ counts distinct prime divisors; the centring $\log n$ may be
+replaced by $\sum_{p\le q_n}1/(p+1)$, which differs from
+$\log\log q_n$ by a bounded amount.
+\end{conjecture}
+
+\paragraph{Significance.}
+Along the integers the Erd\H os--Kac theorem~\cite{ErdosKac40} rests on the
+Tur\'an--Kubilius inequality, which needs the divisibility densities
+uniformly in primes up to a power of the size of the integer.  Along the
+convergents of a fixed typical $x$ the densities are known prime by prime
+(Proposition~\ref{at:basic}(i)) but not uniformly, and the local law
+$1/(p+1)$ shifts the mean by the convergent constant
+$\sum_p(1/p-1/(p+1))$ without changing the variance, so the Gaussian shape is
+the same while the centring is subtly different.  The nearest results are
+the classical theorem and its versions along polynomial values and along
+shifted primes; no antecedent was found along continued-fraction
+denominators of a typical real number.  A first decisive theorem would be a
+second-moment bound $\sum_{n\le N}(\omega(q_n)-\log n)^2\ll N\log N$ for
+almost every $x$.  In tests on the corpus described in the stress-test
+section, only the finite-modulus local laws of Proposition~\ref{at:basic}(i)
+were checked, so the Gaussian law itself remains unverified numerically.  A counterexample would
+be a non-Gaussian limit or a variance other than $\log n$, which would
+mean that the prime factors of successive continuants are correlated
+across many primes at once.
+
+\begin{conjecture}[Dimension of the prime-continuant sets]\label{at5}
+{\rm(i)} The set $\{x\in(0,1):q_n(x)\text{ is prime for every }n\ge1\}$ has
+Hausdorff dimension exactly $1/2$.
+{\rm(ii)} The set $\{x\in(0,1):q_n(x)\text{ is composite for every }n\ge1\}$
+has Hausdorff dimension $1$.
+\end{conjecture}
+
+\paragraph{Significance.}
+Erd\H os and Mahler proved that the set in {\rm(i)} is nonempty and, by the
+same construction, uncountable~\cite{ErdosMahler39}.  The set is not the
+set of numbers whose partial quotients are prime, whose dimension was
+determined exactly by Das and Simmons~\cite{DasSimmons25}; a prime
+condition on the denominators $q_n$ couples every digit to the whole past.  Its dimension is
+governed by a non-stationary digit restriction: given the past, the
+admissible next digits $a$ are those with $aq_{n-1}+q_{n-2}$ prime, a set
+of relative density about $1/(\log a+\log q_{n-1})$, which is a sparse
+but infinite digit set whose Dirichlet series has abscissa $1/2$ at every
+stage and whose density decays as $q_{n-1}$ grows, so the local dimension
+tends to $1/2$ from above.  In {\rm(ii)} the constraint at level $n$
+removes a set of measure about $(2\log2)/n$, and the surviving measure
+decays polynomially, which is the regime in which full dimension is
+expected.  The nearest results are Good's theorem that
+$\{x:a_n(x)\ge N\ \forall n\}$ has dimension tending to $1/2$~\cite{Good41}
+and the dimension theory of infinite iterated function
+systems~\cite{MauldinUrbanski96}; no antecedent was found for the
+dimension of either prime-constrained set.  Both clauses are expected to
+be provable with these tools: the upper bound in {\rm(i)} from the
+Brun--Titchmarsh inequality applied level by level, the lower bound from
+Good's construction with digit ranges growing so fast that only the prime
+number theorem in a fixed progression is needed, and {\rm(ii)} from a
+non-autonomous iterated function system with finitely many digits; the
+statements are recorded because no such proof is published and because
+the rate at which truncated versions of the set in {\rm(i)} approach
+dimension one half is open.  A first decisive theorem would be either
+bound in {\rm(i)}.  In tests on the corpus described in the
+stress-test section, no numerical estimate of these dimensions was
+attempted; the only checked inputs are the prime densities of
+Conjecture~\ref{at1}.  A counterexample would be a dimension strictly
+between $1/2$ and $1$ in {\rm(i)}, which would show that the
+prime-progression constraint retains a positive entropy at every scale.
+
+\begin{conjecture}[Digit sets in arithmetic progressions]\label{at6}
+For integers $1\le a\le m$ let $E_{a,m}$ be the set of $x\in(0,1)$ all of
+whose partial quotients lie in $a+m\mathbb N_0=\{a,a+m,a+2m,\dots\}$.  Then,
+uniformly for $a/m$ in any compact subinterval of $(0,1]$,
+\[
+ \dim_{\mathrm H}E_{a,m}
+ =\frac12+\frac1{2m}-\frac{\log m}{2m^2}-\frac{\psi_\Gamma(a/m)}{2m^2}
+ +O\Bigl(\frac{\log^2m}{m^3}\Bigr),
+\]
+where $\psi_\Gamma$ is the digamma function; in particular
+$\dim_{\mathrm H}E_{m,m}=\tfrac12+\tfrac1{2m}-\tfrac{\log m}{2m^2}+\tfrac{\gamma}{2m^2}+O(m^{-3}\log^2m)$
+with Euler's constant $\gamma$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The pressure of the digit set $a+m\mathbb N_0$ at $s=\tfrac12+\delta$ is
+governed by the Hurwitz zeta value $m^{-1-2\delta}\zeta(1+2\delta,a/m)$,
+whose Laurent expansion $1/(2\delta)-\psi_\Gamma(a/m)+O(\delta)$ produces
+the logarithm and the digamma term when the pressure equation is inverted;
+the operator corrections beyond the leading rank-one part enter only at the
+next order.  The statement is therefore a precise asymptotic law with all
+three constants explicit, and the digamma term distinguishes residue
+classes of the same density; the digits are restricted to one residue
+class throughout, which is unrelated to the occurrence of arithmetic
+progressions inside a digit sequence.  The nearest results are Hensley's expansion
+$1-6/(\pi^2N)-72\log N/(\pi^4N^2)+O(N^{-2})$ for digits at most
+$N$~\cite{Hensley92}, Good's law $\dim\to1/2$ for digits at least
+$N$~\cite{Good41}, and the rigorous computations of Jenkinson and
+Pollicott for finite digit sets~\cite{JenkinsonPollicott01}; no antecedent
+was found for progressions.  A first decisive theorem would be the
+two-term law $\tfrac12+\tfrac1{2m}+O(m^{-2}\log m)$ by the
+Mauldin--Urba\'nski pressure formalism~\cite{MauldinUrbanski96}.  In tests
+on the corpus described in the stress-test section, Chebyshev collocation
+of the transfer operator gave dimensions for $m\le384$ and
+$a/m\in\{1,\tfrac12,\tfrac14\}$ whose residuals against the four-term
+expansion were below $0.18/m^2$ throughout and below $0.02/m^2$ for
+$a/m=\tfrac14$, while omitting the digamma term leaves residuals of size
+$0.98/m^2$ at $a/m=\tfrac12$.  A counterexample would be a residue class
+whose dimension violates the digamma term, which would mean the pressure
+is not controlled by the Hurwitz zeta function of the progression.
+
+\begin{conjecture}[Continuant avoidance dimension]\label{at7}
+For a prime $p$ let $A_p=\{x\in(0,1):p\nmid q_n(x)\text{ for every }n\ge1\}$.
+Then
+\[
+ \dim_{\mathrm H}A_p=1-\frac{6\log2}{\pi^2}\cdot\frac1p+O\Bigl(\frac1{p^2}\Bigr),
+\]
+and $\mu\{x:p\nmid q_n(x)\text{ for all }n\le N\}=\exp(-(\rho_p+o(1))N)$
+with $\rho_p=(p+1)^{-1}(1+O(1/p))$.
+\end{conjecture}
+
+\paragraph{Significance.}
+Forbidding one of the $p+1$ states of the projective-line chain of
+Proposition~\ref{at:basic}(i) lowers the pressure at $s=1$ by the stationary
+mass $1/(p+1)$ of that state to first order, and dividing by the Lyapunov
+exponent $\pi^2/(6\log2)$ of the Gauss map converts the pressure drop into
+the dimension drop; the coefficient $6\log2/\pi^2$ is the reciprocal of the
+entropy of the Gauss measure, which equals the Lyapunov exponent by
+Rokhlin's formula.  The set $A_p$ is the set of real numbers all
+of whose convergents have denominator prime to $p$, a natural object in
+$p$-adic approximation.  The nearest results are the equidistribution of
+continuants modulo $p$~\cite{JagerLiardet88,Moeckel82} and the thermodynamic
+formalism of the Gauss map~\cite{MauldinUrbanski96}; no antecedent was found
+for the dimension of $A_p$.  For each fixed $p$ the escape rate $\rho_p$ and the dimension
+drop are governed by the spectral perturbation theory of transfer operators
+with small holes on $[0,1]\times\mathbb P^1(\Fq_p)$, so the open content is
+the uniformity in $p$ that produces the constant $6\log2/\pi^2$ and the
+size of the $O(p^{-2})$ term; a first decisive theorem would be
+$\rho_p(p+1)\to1$.  In tests on the corpus
+described in the stress-test section, collocation gave
+$(1-\dim A_p)(p+1)=0.581,0.532,0.499,0.482,0.469$ for $p=7,11,17,23,31$,
+decreasing towards $6\log2/\pi^2=0.4214$ with a correction of size
+$3.3/p$, and direct simulation gave escape rates
+$\rho_p(p+1)=1.10,1.07,1.04,1.03$ for $p=41,61,97,197$.  A counterexample
+would be a limit constant other than $6\log2/\pi^2$, which would mean that
+the forbidden state is entered in clusters at a rate not captured by its
+stationary mass.
+
+\begin{conjecture}[Unit law for the Legendre half-box games]\label{at8}
+Let $p\equiv1\pmod4$ be prime.
+{\rm(i)} The linear system $\sum_{i=1}^{m-1}x_i\chi_p(i+j)=v$
+$(1\le j\le m-1)$, $\sum_{i<m}x_i=1$, is nonsingular and its value is
+$v=-y/x$ for a unit $x+y\sqrt p$ of norm $-1$ in $\Z[\sqrt p]$ (a solution of
+$x^2-py^2=-1$) or, when $p\equiv5\pmod8$, possibly a unit
+$(x+y\sqrt p)/2$ of norm $-1$ in the maximal order; the unit is an odd power
+$\eps_p^{e}$ of the fundamental unit, and $e\ne1$ only if $p$ is of the
+form $k^2+1$ or $k^2+4$.
+{\rm(ii)} The full linear system $\sum_{i=1}^{m}x_i\chi_p(i-j)=v$
+$(1\le j\le m)$, $\sum_ix_i=1$, has value $v=+y/x$ with $x+y\sqrt p=\eps_p^{3e}$
+when $p\equiv5\pmod8$, and $v=-y/x$ with the same unit as in {\rm(i)}
+when $p\equiv1\pmod8$, in which case the solution always has a negative
+coordinate.
+{\rm(iii)} Whenever the solution in {\rm(i)} (respectively {\rm(ii)}) is
+nonnegative it is the unique optimal strategy of both players and
+$v(H_p)$ (respectively $v(T_p)$) equals the unit ratio exactly; this
+happens for a set of primes $p\equiv1\pmod8$ of positive relative density in
+case {\rm(i)} and for a set of primes $p\equiv5\pmod8$ of positive relative
+density in case {\rm(ii)}.
+{\rm(iv)} $\sqrt p\,v(H_p)\to-1$ as $p\to\infty$ through primes
+$p\equiv1\pmod8$, and $\sqrt p\,v(T_p)\to+1$ as $p\to\infty$ through
+primes $p\equiv5\pmod8$; in the unit regime of {\rm(iii)} this is
+automatic, since $py^2/x^2=1+1/x^2$ or $1+4/x^2$.
+\end{conjecture}
+
+\paragraph{Significance.}
+A zero-sum game with payoffs $\pm1$ has a rational value, and the
+conjecture says that for the half-box Legendre matrices this rational
+number is a coordinate ratio $y/x$ of a unit of $\Q(\sqrt p)$, so that
+$v^2p-1=1/x^2$ or $4/x^2$ is a reciprocal square.  The mechanism is the
+Pell-type structure of the Legendre Hankel and Toeplitz half matrices: their
+determinants were conjectured by Chapman and proved by Vsemirnov to be
+expressible through the fundamental unit~\cite{Chapman04,Vsemirnov12,Vsemirnov13}.
+For a symmetric nonsingular block $A$ the indifference value is
+$v=1/(\mathbf 1^{\mathsf T}A^{-1}\mathbf 1)$, the ratio of $\det A$ to the
+determinant of $A$ bordered by a row and a column of ones, so clauses
+{\rm(i)} and {\rm(ii)} are equivalent to an evaluation of the bordered
+Legendre determinants, which the known evaluations do not cover.  The
+game-theoretic content is clause {\rm(iii)}: when the unit strategy is a
+probability vector, minimax selects it, so the value of an
+arithmetically defined game is a unit ratio, and the values converge to
+$\mp1/\sqrt p$ at the rate $1/(2x^2\sqrt p)$ dictated by the regulator.  The
+nearest results are the evaluations of Legendre determinants
+in~\cite{Chapman04,Vsemirnov12,Vsemirnov13}; no antecedent was found
+connecting matrix games to units of quadratic fields.  A first decisive
+theorem would be clause {\rm(i)} for one infinite family, which is a
+statement about the inverse of a Legendre Hankel matrix.  In tests on the
+corpus described in the stress-test section, exact rational solution of
+both systems for every prime $p\equiv1\pmod4$ below $1000$ produced a unit
+of norm $-1$ in every case, the fundamental unit or its cube except at
+$p\in\{229,257,401,577\}$ where higher odd powers occur; the unit strategy
+of {\rm(i)} was nonnegative for twenty-one of the twenty-four primes
+$p\equiv1\pmod8$ below $600$, the exceptions being $257$, $353$ and $593$,
+and that of {\rm(ii)} for sixteen of the twenty-eight primes
+$p\equiv5\pmod8$ below $620$, giving the exact values of
+Proposition~\ref{at:basic}(iii), and linear programming with primal and
+dual certificates gave
+$|\sqrt p\,v(H_p)+1|<0.01$ for every $p\equiv1\pmod8$ below $700$ and
+$|\sqrt p\,v(T_p)-1|<0.06$ for every $p\equiv5\pmod8$ below $600$.  A
+counterexample would be a prime for which the linear system value is not
+a unit ratio, which would separate the game from the Pell structure of the
+determinants.
+
+\begin{conjecture}[Least odd residue law in the complementary classes]\label{at9}
+Let $\ell(p)$ denote the least odd prime that is a quadratic residue modulo
+$p$.
+{\rm(i)} As $p\to\infty$ through primes $p\equiv5\pmod8$ with
+$\ell(p)\in\{3,5\}$, $\sqrt p\,v(H_p)\to-1$; as $p\to\infty$ through primes
+$p\equiv1\pmod8$ with $\ell(p)\in\{3,5\}$, $\sqrt p\,v(T_p)\to+1$.
+{\rm(ii)} For every prime $\ell\ge7$, along primes $p\equiv5\pmod8$ with
+$\ell(p)=\ell$ one has $\limsup\sqrt p\,v(H_p)<0$ and
+$\liminf\sqrt p\,v(H_p)>-1$, and along primes $p\equiv1\pmod8$ with
+$\ell(p)=\ell$ one has $\liminf\sqrt p\,v(T_p)>0$ and
+$\limsup\sqrt p\,v(T_p)<1$; consequently neither $\sqrt p\,v(H_p)$ over
+$p\equiv5\pmod8$ nor $\sqrt p\,v(T_p)$ over $p\equiv1\pmod8$ converges.
+\end{conjecture}
+
+\paragraph{Significance.}
+In the two classes complementary to those of Conjecture~\ref{at8}(iv), namely
+the Hankel game for $p\equiv5\pmod8$ and the Toeplitz game for
+$p\equiv1\pmod8$, the unit strategy has negative coordinates and the optimal strategies must
+exploit a different structure: multiplication by a small quadratic residue
+$\ell$ preserves the Legendre symbol and maps the box $[1,m/\ell]$ into
+$[1,m]$, giving the players a dilation symmetry whose reach is measured by
+$\ell(p)$.  The conjecture records that the value is then governed by the
+least odd residue, an invariant of the prime that is classically tied to the
+least quadratic non-residue and to Linnik's problem.  The nearest results
+are the bounds on the least quadratic residue and non-residue of Vinogradov
+and Burgess as presented in~\cite{Davenport00}; no antecedent was found for
+a game value governed by this invariant.  A first decisive theorem would be
+{\rm(i)} for $\ell(p)=3$, which requires an explicit near-optimal strategy
+built from the dilation by three.  In tests on the corpus described in the
+stress-test section, values with primal and dual certificates for all
+$p\equiv5\pmod8$ below $1400$
+gave $\sqrt p\,v(H_p)$ between $-1.02$ and $-0.995$ when $\ell(p)=3$,
+between $-1.11$ and $-0.80$ when $\ell(p)=5$, between $-0.81$ and $-0.68$
+when $\ell(p)=7$, and between $-0.55$ and $-0.44$ when
+$\ell(p)\in\{11,13,17\}$; the Toeplitz values for $p\equiv1\pmod8$ below
+$700$ lay in $[0.82,0.97]$ for $\ell(p)=3$, in $[0.80,0.95]$ for
+$\ell(p)=5$, in $[0.67,0.79]$ for $\ell(p)=7$ and in $[0.34,0.42]$ for
+$\ell(p)\ge11$; the class $\ell(p)=5$ is the least settled, with the
+widest spread around the conjectured limit.  A counterexample
+would be convergence of $\sqrt p\,v(H_p)$ to $-1$ along primes with
+$\ell(p)\ge7$, which would mean that the least residue is only a
+finite-size effect.
+
+\begin{conjecture}[Brownian shift games]\label{at10}
+Let $(\xi_k)_{k\in\Z}$ be independent random variables with mean zero,
+variance one and finite fourth moment, and let
+$K^{(m)}=(\xi_{i+j})_{1\le i,j\le m}$; by Proposition~\ref{at:basic}(ii) the
+Toeplitz game $(\xi_{i-j})_{1\le i,j\le m}$ has the same value as the Hankel
+game of the shifted sequence, so it suffices to treat $K^{(m)}$.  Then
+$\sqrt m\,v(K^{(m)})$ converges in law to a nondegenerate symmetric limit
+$V$ that does not depend on the law of $\xi$, and $V$ is the value of the
+continuum game
+\[
+ V=\sup_{f}\ \inf_{y\in[0,1]}\int_0^1f(x)\,dW(x+y),
+\]
+where $W$ is a standard Brownian motion on $[0,2]$, the supremum runs
+over probability densities $f\in L^2[0,1]$, and the assertion includes that
+this supremum of infima is almost surely finite and nondegenerate.  In contrast, for independent
+$\xi$ arranged in a circulant matrix $\sqrt m\,v$ converges to a standard
+Gaussian, and for a full matrix of independent entries $m\,v$ is tight.
+\end{conjecture}
+
+\paragraph{Significance.}
+A Toeplitz or Hankel game has only $2m-1$ random bits, its rows are shifts
+of a single random walk, and the payoff of a mixed row strategy against a
+pure column is a Riemann--Stieltjes sum of the strategy against that walk;
+Donsker's theorem then suggests a continuum limit at the scale $m^{-1/2}$,
+one order larger than the $1/m$ scale of full random games proved by
+Cosson and Massouli\'e~\cite{CossonMassoulie26} after the experiments of
+Faris and Maier~\cite{FarisMaier87} and the bound of
+Jonasson~\cite{Jonasson04}.  The circulant contrast is
+Proposition~\ref{at:basic}(ii).  The nearest results are those three papers
+on full random games and the spectral theory of random Toeplitz matrices;
+no antecedent was found for structured random games.  A first decisive
+theorem would be tightness of $\sqrt m\,v(K^{(m)})$ together with a lower
+bound $\E|v(K^{(m)})|\gg m^{-1/2}$.  In tests on the corpus described in the
+stress-test section, linear programming with primal and dual certificates
+for two hundred games per size gave
+standard deviations of $\sqrt m\,v(K^{(m)})$ equal to $0.83,0.76,0.87,0.86,0.92$
+for $m=25,50,100,200,400$ with $\pm1$ entries and $0.81,0.80,0.95$ for
+$m=100,200,400$ with Gaussian entries, against a flat $1.4$ to $1.7$ for
+$m\,v$ in the full $\pm1$ ensemble; a symmetric Toeplitz variant gave
+$1.15$ to $1.19$.  A counterexample would be a dependence of the limit on
+the entry law, or a scale other than $m^{-1/2}$, which would place
+structured games outside the Donsker regime.
+
+\begin{conjecture}[Hessian big monodromy over finite fields]\label{at11}
+For a smooth plane quartic $C$ over $\Fq_q$ let $H_C$ be its Hessian sextic
+and write $a_C=(q+1-\#C(\Fq_q))/\sqrt q$, $a_H=(q+1-\#H_C(\Fq_q))/\sqrt q$.
+As $q\to\infty$ through prime powers with characteristic at least five,
+for $C$ uniformly random among smooth quartics with smooth Hessian, the pair
+$(a_C,a_H)$ converges in law to $(\operatorname{tr}U_6,\operatorname{tr}U_{20})$
+with $U_6\in\mathrm{USp}(6)$ and $U_{20}\in\mathrm{USp}(20)$ independent and
+Haar distributed; the number of $\Fq_q$-rational flexes converges to the
+fixed-point count of a uniform element of the symmetric group $S_{24}$,
+independently of the pair.  The same holds for smooth curves of every
+degree $d\ge4$ in characteristic larger than $d$, with the Hessian of degree
+$3(d-2)$, genus $(3d-7)(3d-8)/2$, and the flexes numbering $3d(d-2)$.
+\end{conjecture}
+
+\paragraph{Significance.}
+The Hessian of a random quartic is a random sextic drawn from a
+fourteen-dimensional subfamily of the twenty-seven-dimensional space of
+sextics, so the Katz--Sarnak equidistribution for the full family of
+sextics~\cite{KatzSarnak99} does not apply; the conjecture asserts that
+this special family nevertheless has the full symplectic monodromy, and
+that the monodromy of the pair $(C,H_C)$ is the product $\mathrm{Sp}(6)\times\mathrm{Sp}(20)$,
+even though the two curves share the $24$ flexes; for cubics the
+Hessian construction does create a correspondence, the Hesse pencil, so
+the restriction to $d\ge4$ is essential.  The joint statement
+with the flexes is the more accessible part, because the monodromy of the
+flexes is the full symmetric group by Harris~\cite{Harris79} and a
+connected group cannot map onto a finite one.  The nearest results are
+Katz--Sarnak for families of plane curves~\cite{KatzSarnak99} and Harris on
+the Galois groups of flexes and bitangents~\cite{Harris79}; the monodromy of the Hessian family appears
+not to have been studied.  A first decisive theorem
+would be the irreducibility of the geometric monodromy of the Hessian
+family, which is a degeneration argument in the space of quartics.  In
+tests on the corpus described in the stress-test section, point counts of
+$150$ random quartics and their Hessians over $\Fq_{41}$ gave
+$\E a_H^2=1.06$, $\E a_C a_H=0.06$, $\E a_C^2a_H^2=0.85$ and $\E a_H^4=2.60$,
+against $1,0,1,3$ for the independent symplectic law, all within one
+standard error of the sample, while rational singular points of the Hessian
+appeared in a fraction $0.04\approx1/q$ of the curves.  A counterexample
+would be a nonzero limiting correlation between $a_C$ and $a_H$, which
+would exhibit a hidden algebraic relation between a curve and its Hessian
+beyond the flexes.
+
+\begin{conjecture}[Sato--Tate independence of a curve and its Hessian]\label{at12}
+Let $C$ be a smooth plane quartic over $\Q$ whose Hessian $H_C$ is smooth
+and such that the Mumford--Tate groups of the Jacobians of $C$ and of $H_C$
+are $\mathrm{GSp}(6)$ and $\mathrm{GSp}(20)$, with no nonzero homomorphism
+between the two Jacobians over $\overline{\Q}$.  Write
+$a_p(C)=p+1-\#C(\Fq_p)$.  Then, as $p\to\infty$ through primes of good
+reduction, the pairs $\bigl(a_p(C)/\sqrt p,\ a_p(H_C)/\sqrt p\bigr)$ are
+equidistributed with respect
+to the product of the trace laws of $\mathrm{USp}(6)$ and $\mathrm{USp}(20)$.
+\end{conjecture}
+
+\paragraph{Significance.}
+This is the arithmetic counterpart of Conjecture~\ref{at11}: for a single
+curve over $\Q$ the Sato--Tate conjecture in the sense of Serre~\cite{Serre12}
+predicts equidistribution of each normalised trace, and the joint statement
+adds that the Hessian construction introduces no correlation between the
+Frobenius classes of a genus-three and a genus-ten curve that share their
+$24$ flexes.  Under the hypotheses the Sato--Tate group of the product
+abelian variety is expected to be $\mathrm{USp}(6)\times\mathrm{USp}(20)$, so
+the conjecture follows from the generalised Sato--Tate conjecture for the
+product; the content is the identification of that group for the Hessian
+pair, which no known result provides.  The nearest results are the proved
+Sato--Tate law for genus one and the classification of Sato--Tate groups
+in low genus~\cite{Serre12}; no antecedent was found for the Hessian
+pair.  A first decisive theorem would be the absence of a nontrivial
+$\overline{\Q}$-homomorphism between the two Jacobians for one explicit
+quartic.  In tests on the corpus described in the stress-test section, two
+random integral quartics with $200$ primes of good reduction below $1300$
+gave $\E a_H^2=1.12,0.97$, $\E a_Ca_H=0.08,0.08$ and
+$\E a_C^2a_H^2=0.89,0.82$, consistent with the product law within the
+sampling error of $0.1$.  A counterexample would be a positive limiting
+correlation, which would force a common isogeny factor between the two
+Jacobians for a generic quartic.
+
+\begin{conjecture}[Tangency law and dual-curve point counts]\label{at13}
+As $q\to\infty$ with characteristic at least five, for a random smooth
+plane quartic over $\Fq_q$ the triple
+$(r,b_{\rm s},b_{\rm c})$, where $r$ is the number of $\Fq_q$-rational
+bitangents and $b_{\rm s},b_{\rm c}$ are as in
+Proposition~\ref{at:basic}(v), converges in law to $(F,B,F-B)$, where $F$ is
+the number of fixed points of a Haar-random element of $\mathrm{Sp}(6,\Fq_2)$
+on the $28$ odd theta characteristics and, conditionally on $F$, $B$ is
+binomial with parameters $F$ and $\tfrac12$.  Consequently
+$\#C^\vee(\Fq_q)-\#C(\Fq_q)$ converges in law to $F-2B$, a symmetric
+integer law with variance one.  Jointly, the number of rational bitangents
+whose two lines on the del Pezzo double cover are rational converges to the
+count of fixed weights of a Haar-random element of $W(E_7)$ in its
+minuscule $56$-point action, with $t(F)$ of Proposition~\ref{at:basic}(iv)
+converging to the reflection-representation trace of the same element.
+\end{conjecture}
+
+\paragraph{Significance.}
+The bitangents of a quartic have monodromy $\mathrm{Sp}(6,\Fq_2)$ by
+Harris~\cite{Harris79}, which fixes the law of $r$; the new content is the
+refinement by the two points of tangency, whose monodromy is claimed to be
+the full extension by $(\Z/2)^{28}$, so that a rational bitangent has
+rational or conjugate tangency points with independent fair probabilities.
+The mechanism is the hyperflex divisor in the space of quartics: a small
+loop around it exchanges the two tangency points of one bitangent while
+fixing everything else, so the kernel of the monodromy on tangency points
+contains one transposition and, by transitivity, all of them.  The
+consequence for the dual curve is a clean limiting law for
+$\#C^\vee(\Fq_q)-\#C(\Fq_q)$ through Proposition~\ref{at:basic}(v), and the
+line statistic separates the $W(E_7)$ action on lines of the double cover
+from the tangency action.  The nearest results are Harris's monodromy
+theorems~\cite{Harris79} and the classical geometry of bitangents and
+degree-two del Pezzo surfaces~\cite{Dolgachev12}; no antecedent was found
+for the tangency-point law or for point counts of dual quartics.  The
+hyperflex-loop argument together with Deligne's equidistribution theorem
+is expected to prove the statement once it is checked that no classical
+relation among the tangency discriminants cuts the kernel to a proper
+subgroup; the statement is recorded because that monodromy computation is
+not in the literature.  In tests on the corpus described in the
+stress-test section, $150$ random quartics over $\Fq_{41}$ gave
+$\E r=1.03$, $\E(b_{\rm s}-b_{\rm c})^2=1.08$ and, among curves with a
+rational bitangent, a proportion $0.39\pm0.05$ with all tangency pairs rational
+against $0.39$ predicted from the empirical law of $r$, while the
+character sum of Proposition~\ref{at:basic}(iv) was divisible by $q$ for
+every curve and had $\E(t^2)=0.97$ against $1$.  A counterexample would be
+an excess of rational tangency pairs, which would mean that the tangency
+monodromy is a proper subgroup of the wreath extension.
+
+\begin{conjecture}[Positivity of the quarter-box Legendre games]\label{at14}
+For a prime $p\equiv3\pmod4$ let $m=\lfloor p/4\rfloor$ and
+$Q_p=(\chi_p(i+j))_{1\le i,j\le m}$.  Then $v(Q_p)>0$ for every prime
+$p\equiv3\pmod4$ with $p\ge7$, and there are constants
+$0<c_1<c_2<\infty$ with $c_1\le\sqrt m\,v(Q_p)\le c_2$ for all such $p$,
+while $\sqrt m\,v(Q_p)$ does not converge.  For $p\equiv1\pmod4$ the sign
+of $v(Q_p)$ is positive and negative for infinitely many $p$ each.
+\end{conjecture}
+
+\paragraph{Significance.}
+For $p\equiv3\pmod4$ the Legendre sums over initial intervals are positive
+by Dirichlet's class number formula, $\sum_{n<p/2}\chi_p(n)=(2-\chi_p(2))h(-p)$,
+and the quarter-interval sums are class-number multiples as
+well~\cite{Davenport00,Berndt76}; the row player of the quarter-box game can
+therefore start from strategies whose payoffs are interval sums of
+$\chi_p$, and the conjecture asserts that the optimal value inherits the
+sign of the class number at the scale $\sqrt p/m\asymp m^{-1/2}$.  The
+class number explains the sign but not the size: over the tested primes
+the normalised value varies by a factor below three while $h(-p)/\sqrt p$
+varies by a factor fifteen, and the two are negatively correlated, with
+correlation about $-0.46$, so the absence of a limit must come from the
+finer structure of the character sums.  For $p\equiv1\pmod4$ there is no
+sign bias and both signs occur.  The
+nearest results are the classical positivity theorems for character sums
+collected by Berndt~\cite{Berndt76}; no antecedent was found for their
+game-theoretic consequence.  A first decisive theorem would be
+$v(Q_p)\ge0$ from an explicit row strategy with all interval payoffs
+nonnegative.  In tests on the corpus described in the stress-test section,
+values with primal and dual certificates for all $87$ primes $p\equiv3\pmod4$ between $100$ and
+$1200$ were positive, with $\sqrt m\,v(Q_p)$ between $0.45$ and $1.29$ and
+mean $0.89$, while for the $84$ primes $p\equiv1\pmod4$ in the same range
+$39$ values were negative.  A counterexample would be a prime
+$p\equiv3\pmod4$ with $v(Q_p)\le0$, which would show that the column player
+can neutralise the class-number bias.
+
+\begin{conjecture}[Vanishing law for the half box in the class $3$ modulo $4$]\label{at15}
+For primes $p\equiv3\pmod4$ one has $\sqrt p\,v(H_p)\to0$; more precisely
+$v(H_p)=O(p^{-3/2})$ along $p\equiv7\pmod8$, while $p^{3/2}v(H_p)$ is not
+bounded along $p\equiv3\pmod8$.  Moreover $v(H_p)\le0$ for every
+$p\equiv3\pmod4$ with $p>43$.
+\end{conjecture}
+
+\paragraph{Significance.}
+When $\chi_p(-1)=-1$ the Toeplitz half box $T_p$ is antisymmetric and has
+value zero by Proposition~\ref{at:basic}(ii), and the Hankel half box is an
+arithmetic perturbation of it: reversing the columns of $H_p$ produces the
+Toeplitz matrix $(\chi_p(2)\chi_p(2(i-j)+1))$, whose symbol differs from the
+antisymmetric one by a shift.  The conjecture says the perturbation is
+felt only at the order $p^{-3/2}$, a full power of $p$ below the unit scale
+of Conjecture~\ref{at8}, and that the sign of $\chi_p(2)$ decides whether
+the perturbation is bounded at that order; why a sign in the symbol should
+change the magnitude by a power of $p$ is not explained by the reversal
+identity alone, and the unboundedness clause rests on a spread of one
+order of magnitude over eighteen primes.  The nearest results are the
+antisymmetry observation and the Legendre determinant evaluations for
+$p\equiv3\pmod4$ of Vsemirnov~\cite{Vsemirnov12}; no antecedent was found
+for the value of this game.  A first decisive theorem would be the upper
+bound $|v(H_p)|\ll p^{-1}$ from an explicit strategy.  In tests on the
+corpus described in the stress-test section, values with primal and dual
+certificates for all $37$ primes $p\equiv3\pmod4$ between $100$ and $500$ were negative, with
+$p^{3/2}|v(H_p)|$ at most $1.8$ for $p\equiv7\pmod8$ and between $0.03$ and
+$10.7$ for $p\equiv3\pmod8$, and the half-box values at $p\approx600$
+were below $10^{-2}/\sqrt p$ in absolute value; below $100$ the value
+vanishes at $p\in\{7,11,19,23,47,71\}$ and is positive only at $p=43$,
+where it equals $1/159$.  A counterexample would be
+a prime $p\equiv7\pmod8$ with $|v(H_p)|>p^{-1}$, or a large prime with
+positive value, which would mean the perturbation of antisymmetry acts at
+the leading order.
+
 \part*{Stress tests and independent recomputation}
 \addcontentsline{toc}{part}{Stress tests and independent recomputation}\label{sec:stress}
 
@@ -9368,6 +10159,8 @@ order-fifteen $Z_T$ collision, small cubic rank-width values, and seeded
 orbit growth.  A separate extended review used exact rooted recurrences and
 Routh tests through order twenty.  Neither layer is presented as evidence
 for the asymptotic random-width limits.
+
+\emph{Part XXIX.}  The Part XXIX statements mix exact identities with asymptotic laws, and the verification programme separates the two.  The exact layer was recomputed from scratch: the local divisibility laws of Proposition~\ref{at:basic}(i) by simulation of $1.4\times10^5$ random numbers to index $200$, the Legendre game values of Proposition~\ref{at:basic}(iii) by exact rational solution of the indifference systems with certification that the solution is a nonnegative vector making every column indifferent, the character-sum identity of Proposition~\ref{at:basic}(iv) on random smooth quartics over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$, and the dual-curve identity of Proposition~\ref{at:basic}(v) by counting rational tangent lines.  The asymptotic layer was calibrated as follows.  Prime continuants were tested by Miller--Rabin primality of $q_n$ and $p_n$ for $n\le200$ along $1.38\times10^5$ uniformly random numbers, giving the constant $2\log2$ to one percent and the lag-one and lag-two pair constants to two and five percent.  Dimensions were computed by Chebyshev collocation of the transfer operator, on $[0,1/a]$ for the progression digit sets with $m\le384$ and on $[0,1]\times\mathbb P^1(\Fq_p)$ for continuant avoidance with $p\le31$, cross-checked by the escape rates of direct simulation for $p\le197$.  Game values were computed by linear programming with primal and dual certificates, for all primes below $1400$ in the Legendre half and quarter boxes and for two hundred random matrices per size in the Toeplitz, Hankel and full ensembles; the unit identification of Conjecture~\ref{at8}(i)--(ii) was checked in exact arithmetic for every prime $p\equiv1\pmod4$ below $1000$.  Quartic point counts, Hessian point counts, flexes, bitangents and tangency types were enumerated over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$ for several hundred random smooth quartics, and over primes up to $1300$ for fixed integral quartics.  These computations calibrate the finite anchors and exclude gross finite-size obstructions; they do not test the limits themselves.
 
 \begin{thebibliography}{99}\small
 
@@ -10147,6 +10940,29 @@ Duke Math. J. 168 (2019), no. 11, 1977--2027.
 \bibitem{AFW3MG} M.~Aschenbrenner, S.~Friedl, and H.~Wilton, \emph{3-Manifold Groups}, EMS Series of Lectures in Mathematics (2015), open-question section.
 \input{additional_bibliography.tex}
 
+\bibitem{Levy36} P.~L\'evy, Sur le d\'eveloppement en fraction continue d'un nombre choisi au hasard, Compositio Math.\ 3 (1936), 286--303.
+\bibitem{Moeckel82} R.~Moeckel, Geodesics on modular surfaces and continued fractions, Ergodic Theory Dynam.\ Systems 2 (1982), 69--83.
+\bibitem{JagerLiardet88} H.~Jager and P.~Liardet, Distributions arithm\'etiques des d\'enominateurs de convergents de fractions continues, Indag.\ Math.\ 50 (1988), 181--197.
+\bibitem{ErdosMahler39} P.~Erd\H os and K.~Mahler, Some arithmetical properties of the convergents of a continued fraction, J.~London Math.\ Soc.\ 14 (1939), 12--18.
+\bibitem{ErdosKac40} P.~Erd\H os and M.~Kac, The Gaussian law of errors in the theory of additive number theoretic functions, Amer.\ J.~Math.\ 62 (1940), 738--742.
+\bibitem{Good41} I.~J. Good, The fractional dimensional theory of continued fractions, Proc.\ Cambridge Philos.\ Soc.\ 37 (1941), 199--228.
+\bibitem{DasSimmons25} T.~Das and D.~Simmons, Exact dimensions of the prime continued fraction Cantor set, Ergodic Theory Dynam.\ Systems (2025), to appear; arXiv:2305.11829.
+\bibitem{Hensley92} D.~Hensley, Continued fraction Cantor sets, Hausdorff dimension, and functional analysis, J.~Number Theory 40 (1992), 336--358.
+\bibitem{MauldinUrbanski96} R.~D. Mauldin and M.~Urba\'nski, Dimensions and measures in infinite iterated function systems, Proc.\ London Math.\ Soc.\ 73 (1996), 105--154.
+\bibitem{JenkinsonPollicott01} O.~Jenkinson and M.~Pollicott, Computing the dimension of dynamically defined sets: $E_2$ and bounded continued fractions, Ergodic Theory Dynam.\ Systems 21 (2001), 1429--1445.
+\bibitem{Chapman04} R.~Chapman, Determinants of Legendre symbol matrices, Acta Arith.\ 115 (2004), 231--244.
+\bibitem{Vsemirnov12} M.~Vsemirnov, On the evaluation of R.~Chapman's ``evil determinant'', Linear Algebra Appl.\ 436 (2012), 4101--4106.
+\bibitem{Vsemirnov13} M.~Vsemirnov, On R.~Chapman's ``evil determinant'': case $p\equiv1\pmod 4$, Acta Arith.\ 159 (2013), 331--344.
+\bibitem{Davenport00} H.~Davenport, Multiplicative Number Theory, third edition, Graduate Texts in Mathematics 74, Springer, New York, 2000.
+\bibitem{Berndt76} B.~C. Berndt, Classical theorems on quadratic residues, Enseign.\ Math.\ 22 (1976), 261--304.
+\bibitem{FarisMaier87} W.~G. Faris and R.~S. Maier, The value of a random game: the advantage of rationality, Complex Systems 1 (1987), 235--244.
+\bibitem{Jonasson04} J.~Jonasson, On the optimal strategy in a random game, Electron.\ Comm.\ Probab.\ 9 (2004), 132--139.
+\bibitem{CossonMassoulie26} R.~Cosson and L.~Massouli\'e, The value of random zero-sum games, preprint, arXiv:2601.07759 (2026).
+\bibitem{Harris79} J.~Harris, Galois groups of enumerative problems, Duke Math.\ J.\ 46 (1979), 685--724.
+\bibitem{KatzSarnak99} N.~M. Katz and P.~Sarnak, Random Matrices, Frobenius Eigenvalues, and Monodromy, American Mathematical Society Colloquium Publications 45, Providence, 1999.
+\bibitem{Manin86} Yu.~I. Manin, Cubic Forms: Algebra, Geometry, Arithmetic, second edition, North-Holland, Amsterdam, 1986.
+\bibitem{Dolgachev12} I.~V. Dolgachev, Classical Algebraic Geometry: A Modern View, Cambridge University Press, Cambridge, 2012.
+\bibitem{Serre12} J.-P. Serre, Lectures on $N_X(p)$, Research Notes in Mathematics 11, CRC Press, Boca Raton, 2012.
 \end{thebibliography}
 
 \end{document}
