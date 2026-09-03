@@ -307,7 +307,7 @@ The star lower bound is elementary; the substantive assertion is the
 stochastic path upper bound and its equality rigidity.  Classical results
 make the path and star extremal for the ordinary Hosoya index
 ~\cite{HuangShiXu18}, but no known theorem gives the all-threshold
-law for the maximum matching of an edge-percolated tree.  The coefficientwise form, $N_{S_n,k,r}\le N_{T,k,r}\le N_{P_n,k,r}$ for the numbers $N_{T,k,r}$ of $r$-edge subsets with matching number at least $k$, implies the stochastic order for every $p$ at once and holds on every tree through twelve vertices in independent recomputation; it is the natural proof target.  In tests on the corpus described in the stress-test section, exact
+law for the maximum matching of an edge-percolated tree.  The coefficientwise form, $N_{S_n,k,r}\le N_{T,k,r}\le N_{P_n,k,r}$ for the numbers $N_{T,k,r}$ of $r$-edge subsets with matching number at least $k$, implies the stochastic order for every $p$ at once and holds on every tree through twelve vertices in independent recomputation; it is the natural proof target.  The star half is immediate: every tree on $n$ vertices retains at least one edge with the same probability $1-(1-p)^{n-1}$, and the star has matching number at most one, so the content is the path half and the two uniqueness clauses.  In tests on the corpus described in the stress-test section, exact
 Bernstein-basis comparison through order $17$ checked every probability $p$
 simultaneously; the default verifier runs through order $11$.  A proof should
 couple the rooted matching recursions or identify tree transformations
@@ -422,11 +422,7 @@ $\tau_{\rm rw}(p)>0$ for $p>1/2$, and $\tau_{\rm rw}(1)=1$.
 \end{conjecture}
 
 \paragraph{Significance.}
-Below criticality all components are logarithmic.  Above it, percolated-grid
-tree-width is linear~\cite{LiMuller17}; to deduce a positive rank-width
-coefficient one still needs an $\Omega(L)$ balanced crossing-edge bound, or a
-precise bounded-degree width comparison, after which the bounded row/column
-weight rank inequality supplies linear cut rank.  At $p=1$, Jel\'inek's exact
+Below criticality all components are logarithmic.  Above it, percolated-grid tree-width is linear~\cite{LiMuller17}, and since the percolated grid is planar the theorem of Fomin, Oum and Thilikos that a planar graph of rank-width $k$ has tree-width at most $72k-2$~\cite{FominOumThilikos10} makes its rank-width linear as well; so the sign of $\tau_{\rm rw}(p)$ on both sides of $1/2$ is a consequence of the two cited theorems, and the content is the existence of the limit and its value.  At $p=1$, Jel\'inek's exact
 formula $\operatorname{rw}(Q_L)=L-1$ fixes the normalization
 ~\cite{Jelinek10}.  The new content is existence of a surface-tension
 constant, plausibly through almost-subadditive rectangle gluing; the critical

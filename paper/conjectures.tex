@@ -9448,21 +9448,16 @@ nondecreasing in $R$ and bounded, hence convergent.
 \end{proof}
 
 \begin{conjecture}[Prime continuant law]\label{at1}
-{\rm(i)} For $\mu$-almost every $x$,
-\[
- \#\{n\le N: q_n(x)\text{ prime}\}=(2\log 2+o(1))\log N,
-\]
-and the same holds for the numerators $p_n(x)$.
-{\rm(ii)} $\mu\{x:q_N(x)\text{ prime}\}=(2\log2+o(1))/N$ as $N\to\infty$.
-{\rm(iii)} For $x$ uniformly distributed, the point process
+{\rm(i)} $\mu\{x:q_N(x)\text{ prime}\}=(2\log2+o(1))/N$ as $N\to\infty$.
+{\rm(ii)} For $x$ uniformly distributed, the point process
 $\sum_{n:\,q_n(x)\text{ prime}}\delta_{\log n-T}$ converges in law, as
 $T\to\infty$, to the Poisson process on $\R$ of intensity $2\log2$.
-{\rm(iv)} The count in {\rm(i)}, for $x$ uniformly distributed, has
-Gaussian fluctuations of variance $(2\log2+o(1))\log N$.
+{\rm(iii)} The count $\#\{n\le N:q_n(x)\text{ prime}\}$, for $x$ uniformly
+distributed, has Gaussian fluctuations of variance $(2\log2+o(1))\log N$.
 \end{conjecture}
 
 \paragraph{Significance.}
-The constant is forced by two exact inputs and one heuristic.  By
+The almost-sure count, $\#\{n\le N:q_n(x)\text{ prime}\}=(2\log2+o(1))\log N$ for $\mu$-almost every $x$, which was clause {\rm(i)} of the statement as first deposited, is a theorem of Bykovskii~\cite{Bykovskii08}, who proved that the number of prime denominators $q_n\le X$ is $(\log4+o(1))\log\log X$ for almost every $x$; by L\'evy's theorem $\log\log q_N=\log N+O(1)$, which is the same statement, and the numerators $p_n(x)=q_{n-1}(Gx)$ follow through the Gauss shift $G$, which preserves null sets.  The conjecture retains the marginal, Poisson and Gaussian clauses, which refine that theorem.  The constant is forced by two exact inputs and one heuristic.  By
 Proposition~\ref{at:basic}(i) the local probability that $p$ does not
 divide $q_n$ is $p/(p+1)$ rather than $1-1/p$, so the Hardy--Littlewood
 correction to the probability $1/\log q_n$ of primality is
@@ -9475,10 +9470,10 @@ $O(1/n)$-scale repulsion between neighbouring indices
 results are the theorem of Erd\H os and Mahler that some irrationals have
 every $q_n$ prime~\cite{ErdosMahler39}, the equidistribution of continuants
 modulo a fixed integer~\cite{Moeckel82,JagerLiardet88}, and the theorem of
-L\'evy on the growth of $q_n$~\cite{Levy36}; no prior treatment of the
-count of prime continuants is known of a typical real number, whose expected value
-$2\log2\cdot\log N$ is below two for $N\le4$ and reaches ten only near
-$N=1400$; the Erd\H os--Mahler construction itself follows from Dirichlet's
+L\'evy on the growth of $q_n$~\cite{Levy36}, and the almost-sure count of
+Bykovskii~\cite{Bykovskii08}, whose expected value $2\log2\cdot\log N$ is
+below two for $N\le4$ and reaches ten only near $N=1400$; no antecedent
+was found for the marginal, Poisson and Gaussian clauses; the Erd\H os--Mahler construction itself follows from Dirichlet's
 theorem applied to the progression $aq_{n-1}+q_{n-2}$.  A first decisive theorem would be the lower bound
 $\mu\{x:q_N(x)\text{ prime}\}\gg1/N$, which requires primes in the values of
 the continuant polynomials with the correct order of magnitude.  In tests
@@ -10314,8 +10309,11 @@ subspaces force infinitely many independent coordinates, hence infinite
 rank.  The nearest results are the one-based theorem just cited and
 the pregeometry reduction, whose author records that stability of forking
 over a base is open even for finite-rank supersimple theories; the statement
-is that recognised open case, recorded here because the refutation makes it
-the sharp remaining form of the original conjecture.  A first decisive theorem would be the rank-two case without countable
+is that recognised open case, raised again as an open question by Freitag
+and Mutchnik in the paper that refutes the general
+conjecture~\cite{FreitagMutchnik26}, and recorded here as an inherited
+problem rather than a new one, because the refutation makes it the sharp
+remaining form of the original conjecture.  A first decisive theorem would be the rank-two case without countable
 categoricity, the countably categorical case for elements of rank two
 being a theorem of Peretz~\cite{Peretz06}.  In tests on the corpus described in the stress-test
 section, no computation bears on this statement.  A counterexample would be
@@ -10368,7 +10366,7 @@ infinitely many of these.  Countable categoricity bounds the number of
 types and, in the simple case, is expected to force finite rank on
 homogeneous structures~\cite{BaldwinFreitagMutchnik24}; the conjecture
 asserts that it also removes the room in which forking escapes stable
-witnesses.  The statement is a surviving special case of the original programme rather than a consequence of the counterexample, and it is recorded as such.  The nearest results are the theorem of Koponen that binary simple
+witnesses.  The statement is a surviving special case of the original programme rather than a consequence of the counterexample; it is among the questions Freitag and Mutchnik leave open~\cite{FreitagMutchnik26}, and it is recorded here as an inherited problem.  The nearest results are the theorem of Koponen that binary simple
 homogeneous structures are supersimple of finite rank~\cite{Koponen18}
 and its extension to all simple theories with quantifier elimination in a
 finite relational language, which are of finite rank and
@@ -11089,10 +11087,13 @@ to~\ref{as9} and no extra equality class in Conjectures~\ref{as8}
 and~\ref{as9}; a second recomputation on all $986$ trees through twelve
 vertices confirmed the coefficientwise Bernstein forms of
 Conjectures~\ref{as8} and~\ref{as9}, which are stronger than the stated
-stochastic inequalities.  Neither layer is presented as evidence
+stochastic inequalities, and a third recomputation reproduced the
+positive-tail log-concavity of Conjecture~\ref{as5} on all $996$ connected
+graphs through seven vertices and the forest checks through twelve
+vertices.  Neither layer is presented as evidence
 for the asymptotic random-width limits.
 
-\emph{Part XXIX.}  The Part XXIX statements mix exact identities with asymptotic laws, and the verification programme separates the two.  The exact layer was recomputed from scratch: the local divisibility laws of Proposition~\ref{at:basic}(i) by simulation of $1.4\times10^5$ random numbers to index $200$, the Legendre game values of Proposition~\ref{at:basic}(iii) by exact rational solution of the indifference systems with certification that the solution is a nonnegative vector making every column indifferent, the character-sum identity of Proposition~\ref{at:basic}(iv) on random smooth quartics over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$, and the dual-curve identity of Proposition~\ref{at:basic}(v) by counting rational tangent lines.  The asymptotic layer was calibrated as follows.  Prime continuants were tested by Miller--Rabin primality of $q_n$ and $p_n$ for $n\le200$ along $1.38\times10^5$ uniformly random numbers, giving the constant $2\log2$ to one percent and the lag-one and lag-two pair constants to two and five percent.  Dimensions were computed by Chebyshev collocation of the transfer operator, on $[0,1/a]$ for the progression digit sets with $m\le384$ and on $[0,1]\times\mathbb P^1(\Fq_p)$ for continuant avoidance with $p\le31$, cross-checked by the escape rates of direct simulation for $p\le197$.  Game values were computed by linear programming with primal and dual certificates, for all primes below $1400$ in the Legendre half and quarter boxes and for two hundred random matrices per size in the Toeplitz, Hankel and full ensembles; the unit identification of Conjecture~\ref{at8}(i)--(ii) was checked in exact arithmetic for every prime $p\equiv1\pmod4$ below $1000$.  Quartic point counts, Hessian point counts, flexes, bitangents and tangency types were enumerated over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$ for several hundred random smooth quartics, and over primes up to $1300$ for fixed integral quartics.  These computations calibrate the finite anchors and exclude gross finite-size obstructions; they do not test the limits themselves.  The sign clause of Conjecture~\ref{at15} as first deposited was refuted by an exact certificate at $p=547$, obtained by locating the optimal supports with linear programming and then solving the indifference systems over the rationals; the certificate is checked in exact arithmetic by the verification script, whose four-prime sign block is a calibration only, and the sign scan was extended to all primes $p\equiv3\pmod4$ below $1000$.  A second independent recomputation solved the quarter and half boxes for the sixteen primes $p\equiv3\pmod4$ between $1000$ and $1260$: every quarter-box value was positive with $\sqrt m\,v(Q_p)$ between $0.53$ and $1.29$, and every half-box value was negative, with $p^{3/2}v(H_p)$ reaching $-16.1$ at $p=1091$ in the class $3\pmod8$.
+\emph{Part XXIX.}  The Part XXIX statements mix exact identities with asymptotic laws, and the verification programme separates the two.  The exact layer was recomputed from scratch: the local divisibility laws of Proposition~\ref{at:basic}(i) by simulation of $1.4\times10^5$ random numbers to index $200$, the Legendre game values of Proposition~\ref{at:basic}(iii) by exact rational solution of the indifference systems with certification that the solution is a nonnegative vector making every column indifferent, the character-sum identity of Proposition~\ref{at:basic}(iv) on random smooth quartics over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$, and the dual-curve identity of Proposition~\ref{at:basic}(v) by counting rational tangent lines.  The asymptotic layer was calibrated as follows.  Prime continuants were tested by Miller--Rabin primality of $q_n$ and $p_n$ for $n\le200$ along $1.38\times10^5$ uniformly random numbers, giving the constant $2\log2$ to one percent and the lag-one and lag-two pair constants to two and five percent.  Dimensions were computed by Chebyshev collocation of the transfer operator, on $[0,1/a]$ for the progression digit sets with $m\le384$ and on $[0,1]\times\mathbb P^1(\Fq_p)$ for continuant avoidance with $p\le31$, cross-checked by the escape rates of direct simulation for $p\le197$.  Game values were computed by linear programming with primal and dual certificates, for all primes below $1400$ in the Legendre half and quarter boxes and for two hundred random matrices per size in the Toeplitz, Hankel and full ensembles; the unit identification of Conjecture~\ref{at8}(i)--(ii) was checked in exact arithmetic for every prime $p\equiv1\pmod4$ below $1000$.  Quartic point counts, Hessian point counts, flexes, bitangents and tangency types were enumerated over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$ for several hundred random smooth quartics, and over primes up to $1300$ for fixed integral quartics.  These computations calibrate the finite anchors and exclude gross finite-size obstructions; they do not test the limits themselves.  The sign clause of Conjecture~\ref{at15} as first deposited was refuted by an exact certificate at $p=547$, obtained by locating the optimal supports with linear programming and then solving the indifference systems over the rationals; the certificate is checked in exact arithmetic by the verification script, whose four-prime sign block is a calibration only, and the sign scan was extended to all primes $p\equiv3\pmod4$ below $1000$.  A second independent recomputation solved the quarter and half boxes for the sixteen primes $p\equiv3\pmod4$ between $1000$ and $1260$: every quarter-box value was positive with $\sqrt m\,v(Q_p)$ between $0.53$ and $1.29$, and every half-box value was negative, with $p^{3/2}v(H_p)$ reaching $-16.1$ at $p=1091$ in the class $3\pmod8$; a third recomputation below $500$ reproduced the quarter-box positivity and the half-box signs by class modulo $8$.
 
 \emph{Part XXX.}  The Part XXX statements are model-theoretic and their asymptotic content is not accessible to computation; the verification programme covers the proved algebraic layer of Proposition~\ref{au:basic} only.  Exact rewriting to the Poincar\'e--Birkhoff--Witt normal form was implemented for the quantum algebra of a graph and checked to be associative on random triples in the algebras of random graphs with up to eight vertices, the defining relations and the commutation rule $x_vx^a=(-1)^{\sum_{uEv}a_u}x^ax_v$ were verified on random monomials, the centrality criterion was verified against the kernel of the adjacency form modulo two, the singularity of that form in odd order and its nonsingularity with positive frequency in even order were confirmed, the extension witness behind the trivial centre of the random graph was observed with frequency increasing to $0.995$ on random graphs with forty vertices, odd powers of adjacent generators were seen to anticommute and even powers to be central, span formulas with fixed scalars were seen, as a sanity check of the mechanism and not as evidence of stability, to admit no half-graph of length three on random configurations in a finite module, and the two computations behind Proposition~\ref{au:basic}(v) were repeated by exact enumeration in the algebras of random graphs: the relation $x_ax_c=-x_vx_{v'}$ holds for some pair $(v,v')$ exactly when $a$ and $c$ are adjacent, the relation $\pm x_sx_{t'}=x_{s'}x_t$ forces $\{s,t'\}=\{s',t\}$, and the explicit exponent vectors giving an order pattern of length three for the formula with exponents two and one were confirmed.  Nothing in this programme tests the conjectures about forking, stability, decidability or countable models.
 
@@ -11877,6 +11878,7 @@ Duke Math. J. 168 (2019), no. 11, 1977--2027.
 \bibitem{Levy36} P.~L\'evy, Sur le d\'eveloppement en fraction continue d'un nombre choisi au hasard, Compositio Math.\ 3 (1936), 286--303.
 \bibitem{Moeckel82} R.~Moeckel, Geodesics on modular surfaces and continued fractions, Ergodic Theory Dynam.\ Systems 2 (1982), 69--83.
 \bibitem{JagerLiardet88} H.~Jager and P.~Liardet, Distributions arithm\'etiques des d\'enominateurs de convergents de fractions continues, Indag.\ Math.\ 50 (1988), 181--197.
+\bibitem{Bykovskii08} V.~A. Bykovskii, On the distribution of prime denominators of the approximants for almost all real numbers, Izv.\ Math.\ 72 (2008), 265--287.
 \bibitem{ErdosMahler39} P.~Erd\H os and K.~Mahler, Some arithmetical properties of the convergents of a continued fraction, J.~London Math.\ Soc.\ 14 (1939), 12--18.
 \bibitem{ErdosKac40} P.~Erd\H os and M.~Kac, The Gaussian law of errors in the theory of additive number theoretic functions, Amer.\ J.~Math.\ 62 (1940), 738--742.
 \bibitem{Good41} I.~J. Good, The fractional dimensional theory of continued fractions, Proc.\ Cambridge Philos.\ Soc.\ 37 (1941), 199--228.
