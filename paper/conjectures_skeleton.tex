@@ -5406,7 +5406,7 @@ The five conjectures below share one principle: two limiting observables read of
 \end{proof}
 
 \begin{conjecture}[Local spectral--Smith factorization]\label{ap1}
-For a symmetric integral Wigner matrix $A_n$ (centered entries, edge-universality moments, odd-prime anti-concentration) with rescaled real edge process $\mathcal E_n$ and $p$-primary paired cokernel $C_{n,p}$, and every fixed finite set $P$ of odd primes, $(\mathcal E_n,(C_{n,p})_{p\in P})\Rightarrow\mathcal E_{\mathrm{GOE}}\otimes\bigotimes_{p\in P}\mu_p^{\mathrm{sym}}$, and likewise with any fixed finite collection of microscopic bulk and edge windows; the $p=2$ analogue is a secondary statement.
+For a symmetric integral Wigner matrix $A_n$ (centered entries, edge-universality moments, odd-prime anti-concentration) with rescaled real edge process $\mathcal E_n$ and $p$-primary paired cokernel $C_{n,p}$ (a cemetery state when $\det A_n=0$), and every fixed finite set $P$ of odd primes, $(\mathcal E_n,(C_{n,p})_{p\in P})\Rightarrow\mathcal E_{\mathrm{GOE}}\otimes\bigotimes_{p\in P}\mu_p^{\mathrm{sym}}$, and likewise with any fixed finite collection of microscopic bulk and edge windows; the $p=2$ analogue is a secondary statement.
 \end{conjecture}
 
 \begin{conjecture}[Random-integer multiplicative universality of determinants]\label{ap2}
@@ -5418,7 +5418,7 @@ For poissonized Plancherel $\lambda_t$, fixed $e\ge2$, Rostam-normalized charge 
 \end{conjecture}
 
 \begin{conjecture}[Stable-spectrum saturation of word measures]\label{ap4}
-For $w\in F_r$ with primitive abelianization but non-primitive in $F_r$, with $\beta_{\mathrm{st}}(w)=\inf_{\lambda\ne\varnothing}\liminf_N\frac{-\log|\E_w\chi_{\lambda[N]}|}{\log N}$, $\chi^2(\mu_{w,N}\Vert U_N)=N^{-2\beta_{\mathrm{st}}(w)+o(1)}$ and $D_{\mathrm{KL}}(\mu_{w,N}\Vert U_N)=N^{-2\beta_{\mathrm{st}}(w)+o(1)}$.
+For $w\in F_r$ with primitive abelianization but non-primitive in $F_r$, with $\beta_{\mathrm{st}}(w)=\inf_{\lambda\ne\varnothing}\liminf_N\frac{-\log|\E_w\chi_{\lambda[N]}|}{\log N}$ and $N^{-\infty+o(1)}$ read as smaller than every power of $N$, $\chi^2(\mu_{w,N}\Vert U_N)=N^{-2\beta_{\mathrm{st}}(w)+o(1)}$ and $D_{\mathrm{KL}}(\mu_{w,N}\Vert U_N)=N^{-2\beta_{\mathrm{st}}(w)+o(1)}$.
 \end{conjecture}
 
 \begin{conjecture}[Adelic root-process factorization]\label{ap5}
@@ -5567,6 +5567,17 @@ number of $\Fq_q$-rational bitangents whose two points of tangency are
 $\Fq_q$-rational and $b_{\rm c}$ for the number whose two points of tangency
 are swapped by the Frobenius.  Then the dual curve satisfies
 $\#C^\vee(\Fq_q)=\#C(\Fq_q)-b_{\rm s}+b_{\rm c}$.
+{\rm(vi)} Let $W$ be a standard Brownian motion on $[0,2]$ and, for a step
+function $f\ge0$ on $[0,1]$ with $\int_0^1f=1$, let
+$I_f(y)=\int_0^1f(x)\,dW(x+y)$ for $y\in[0,1]$, a continuous function of
+$y$.  For $R\ge1$ let $V_R$ be the supremum of $\inf_{y\in[0,1]}I_f(y)$
+over such $f$ with $\|f\|_2\le R$.  Then $V_R$ is a random variable,
+nondecreasing in $R$, and almost surely
+\[
+ \inf_{y\in[0,1]}\bigl(W(y+1)-W(y)\bigr)\le V_R\le
+ \sup_{x\in[0,1]}\bigl(W(x+1)-W(x)\bigr),
+\]
+so that $V=\lim_{R\to\infty}V_R$ exists and is almost surely finite.
 \end{proposition}
 
 \begin{proof}
@@ -5658,9 +5669,11 @@ $\mu\{x:p_n(x),q_n(x)\text{ both prime}\}$.
 \]
 with $g_p$ as in Proposition~\ref{at:basic}(i), so that
 $\mu\{x:q_n,q_{n+2}\text{ both prime}\}\sim C_2(2\log2)^2/n^2$.
-{\rm(iv)} For almost every $x$ and every fixed lag $h\ge1$, only finitely
-many $n$ have $q_n(x)$ and $q_{n+h}(x)$ both prime, and only finitely many
-$n$ have $p_n(x)$ and $q_n(x)$ both prime.
+{\rm(iv)} For every fixed lag $h\ge1$,
+$\mu\{x:q_n(x),q_{n+h}(x)\text{ both prime}\}\ll_hn^{-2}$; consequently,
+for almost every $x$ and every fixed $h\ge1$, only finitely many $n$ have
+$q_n(x)$ and $q_{n+h}(x)$ both prime, and only finitely many $n$ have
+$p_n(x)$ and $q_n(x)$ both prime.
 \end{conjecture}
 
 
@@ -5671,7 +5684,10 @@ For $\mu$-almost every $x$,
  =\lim_{N\to\infty}\frac1N\sum_{n\le N}\frac{\varphi(q_n(x))}{q_n(x)}
  =\prod_p\Bigl(1-\frac1{p(p+1)}\Bigr)=0.70445\ldots,
 \]
-and more generally, for every multiplicative $f$ with $f(p^k)=1+O(p^{-k})$,
+and more generally, for every multiplicative $f$ that is bounded on
+prime powers and satisfies
+$\sum_p\sum_{k\ge1}|f(p^k)-f(p^{k-1})|/\Psi(p^k)<\infty$, a class
+containing the squarefree indicator and $\varphi(n)/n$,
 $N^{-1}\sum_{n\le N}f(q_n(x))$ converges to
 $\prod_p\bigl(1+\sum_{k\ge1}(f(p^k)-f(p^{k-1}))/\Psi(p^k)\bigr)$.
 \end{conjecture}
@@ -5777,10 +5793,11 @@ $V$ that does not depend on the law of $\xi$, and $V$ is the value of the contin
 \[
  V=\lim_{R\to\infty}\ \sup_{f}\ \inf_{y\in[0,1]}\int_0^1f(x)\,dW(x+y),
 \]
-where $W$ is a standard Brownian motion on $[0,2]$, the supremum runs over
-probability densities $f\in L^2[0,1]$ with $\|f\|_2\le R$, and the assertion
-includes that each capped supremum of infima is almost surely finite and
-that the caps increase to an almost surely finite nondegenerate limit.  In contrast, for independent
+where $W$ is a standard Brownian motion on $[0,2]$ and the supremum runs
+over step-function probability densities $f$ on $[0,1]$ with
+$\|f\|_2\le R$, as in Proposition~\ref{at:basic}(vi), which proves that the
+capped values increase to an almost surely finite limit $V$; the assertion
+includes that $V$ is nondegenerate and symmetric.  In contrast, for independent
 $\xi$ arranged in a circulant matrix $\sqrt m\,v$ converges to a standard
 Gaussian, and for a full matrix of independent entries $m\,v$ is tight.
 \end{conjecture}
@@ -6195,11 +6212,11 @@ $x_v$ and the generators at $\bar c$ are the only scalars.
 
 
 \begin{conjecture}[Nonforking extensions do not restore stable witnesses]\label{au13}
-{\rm(i)} A simple theory $T$ has stable forking if and only if for every
-$A\subseteq B$ and every $p\in S(B)$ forking over $A$ there are
-$C\supseteq B$ and a nonforking extension $r\in S(C)$ of $p$
-containing a formula $\varphi(x,c)$ with $\varphi(x;y)$ stable that forks
-over $A$.
+{\rm(i)} Let $T$ be simple.  If for every $A\subseteq B$ and every
+$p\in S(B)$ forking over $A$ there are $C\supseteq B$ and a nonforking
+extension $r\in S(C)$ of $p$ containing a formula $\varphi(x,c)$ with
+$\varphi(x;y)$ stable that forks over $A$, then $T$ has stable forking;
+the converse holds trivially.
 {\rm(ii)} In $T_q(\Gamma_{\rm bip})$, with $M$, $b$, $m$, $y$, $y'$ and
 $w=x_yx_{y'}b+m$ as in Conjecture~\ref{au9}(i), no nonforking extension of
 the type of $w$ over $Mb$ contains a stable formula that forks over $M$.

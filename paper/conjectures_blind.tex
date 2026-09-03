@@ -8982,7 +8982,10 @@ an exact Parseval identity over the nontrivial irreducibles.  {\rm(iii)} Every r
 \end{proof}
 
 \begin{conjecture}[Local spectral--Smith factorization]\label{ap1}
-Let $A_n$ be a symmetric integral Wigner matrix with independent upper-triangular entries: off-diagonal entries have a fixed integer law $\xi$ with $\E\xi=0$, $\E\xi^2=\sigma^2>0$, enough moments for edge universality, and a fixed anti-concentration bound modulo every odd prime; diagonal entries are centered with the remaining Wigner hypotheses.  Let $\mathcal E_n$ be the rescaled real upper-edge process of $A_n/(\sigma\sqrt n)$ and, for an odd prime $p$, let $C_{n,p}=(\operatorname{coker} A_n[p^\infty],\delta_{n,p})$ be the $p$-primary cokernel with its symmetric discriminant pairing.  Then for every fixed finite set $P$ of odd primes,
+Let $A_n$ be a symmetric integral Wigner matrix with independent upper-triangular entries: off-diagonal entries have a fixed integer law $\xi$ with $\E\xi=0$, $\E\xi^2=\sigma^2>0$, enough moments for edge universality, and a fixed anti-concentration bound modulo every odd prime; diagonal entries are centered with the remaining Wigner hypotheses.  Let $\mathcal E_n$ be the rescaled real upper-edge process of $A_n/(\sigma\sqrt n)$ and, for an odd prime $p$, let $C_{n,p}=(\operatorname{coker} A_n[p^\infty],\delta_{n,p})$ be the
+$p$-primary cokernel with its symmetric discriminant pairing when
+$\det A_n\ne0$, and a cemetery state otherwise, an event of probability
+tending to zero.  Then for every fixed finite set $P$ of odd primes,
 \[
 \bigl(\mathcal E_n,(C_{n,p})_{p\in P}\bigr)\Longrightarrow \mathcal E_{\mathrm{GOE}}\otimes\bigotimes_{p\in P}\mu_p^{\mathrm{sym}},
 \]
@@ -9012,7 +9015,8 @@ Let $\lambda_t$ have poissonized Plancherel measure with parameter $t$, fix $e\g
 \[
 \bigl(Y_t^{(e)},\mathcal A_t\bigr)\Longrightarrow G_e\otimes\mathcal A_{\mathrm{GUE}},
 \]
-with $G_e$ Rostam's Gaussian charge limit and $\mathcal A_{\mathrm{GUE}}$ the Airy$_2$ edge; consequently, with $\Gamma_e^{\mathrm{Ros}}$ Rostam's Gamma-sum law,
+with $G_e$ Rostam's Gaussian charge limit, a centred Gaussian vector on
+the root-lattice hyperplane with Rostam's covariance, and $\mathcal A_{\mathrm{GUE}}$ the Airy$_2$ edge; consequently, with $\Gamma_e^{\mathrm{Ros}}$ Rostam's Gamma-sum law,
 \[
 \left(\frac{\pi}{4\sqrt t}\,|\operatorname{core}_e(\lambda_t)|,\;t^{-1/6}(\lambda_{t,1}-2\sqrt t)\right)\Longrightarrow\Gamma_e^{\mathrm{Ros}}\otimes F_2 ,
 \]
@@ -9025,8 +9029,10 @@ The Plancherel partition is a discrete-Bessel determinantal process, and the two
 \begin{conjecture}[Stable-spectrum saturation of word measures]\label{ap4}
 Let $w\in F_r$ have primitive abelianization in $\Z^r$ but be non-primitive in $F_r$, and let $\mu_{w,N}$ be the word measure it induces on $S_N$ by evaluating $w$ at $r$ independent uniform permutations.  With $\lambda[N]=(N-|\lambda|,\lambda_1,\dots)$ and $\chi_{\lambda[N]}$ the stable irreducible character, set
 \[
-\beta_{\mathrm{st}}(w)=\inf_{\lambda\ne\varnothing}\liminf_{N\to\infty}\frac{-\log|\E_w\chi_{\lambda[N]}|}{\log N},\qquad -\log0=+\infty .
+\beta_{\mathrm{st}}(w)=\inf_{\lambda\ne\varnothing}\liminf_{N\to\infty}\frac{-\log|\E_w\chi_{\lambda[N]}|}{\log N},\qquad
+-\log0=+\infty ,
 \]
+with $N^{-\infty+o(1)}$ read as smaller than every power of $N$.
 Then
 \[
 \chi^2(\mu_{w,N}\Vert U_N)=N^{-2\beta_{\mathrm{st}}(w)+o(1)}\quad\text{and}\quad
@@ -9073,14 +9079,14 @@ In the setting of Proposition~\ref{aq:basic}(i), suppose $\beta_N\delta/\log N\t
 \end{conjecture}
 
 \paragraph{Significance.}
-At fixed $N$ the limit $\beta\to\infty$ is a perturbative reduction to the two-face pencil, but in the joint regime the exponentially small inactive coefficients compete with the $N^{-1/2}$ microscopic spacing and the nonnormal condition numbers of the pencil, and the conjecture asserts that the tropical combinatorics still selects the local law; the matching formulation is primary, and pointwise convergence of correlation densities is a consequence only under additional uniform-integrability and density hypotheses.  The nearest results are the tropical localization of matrix-polynomial eigenvalues of Noferini, Sharify, and Tisseur~\cite{NoferiniST15} and Akian, Gaubert, and Sharify~\cite{AkianGS17}, which bound moduli but carry no microscopic law, and the spherical-ensemble limit of Krishnapur~\cite{Krishnapur09}.  The obstruction to the uniform matching is that the minimal spacing and the largest eigenvalue condition number of the random pencil are extreme statistics over $N$ roots, and a nonnormal generalised eigenvalue can move much farther than the perturbation norm, so the threshold may need a condition-number exponent; a safer first statement matches all but $o(N)$ well-conditioned zeros.  A first decisive theorem would be the two-coefficient case $d=1$ at a single breakpoint, or any joint regime $\beta_N=c\log N$ with $c$ large.  In tests on the corpus described in the stress-test section, at profile $(-2,0,-1,0)$ the $\sqrt N$-scaled optimal matching displacement fell from $0.095$ to $0.009$ across $N=4$ to $20$ at $\beta=2\log N$ and stalled near $0.4$ at $\beta=0.75\log N$, locating the double-scaling threshold.  A counterexample would be a breakpoint and regime with $\beta_N\delta/\log N\to\infty$ whose matching displacement fails to be $o(N^{-1/2})$, and the crossover $\beta_N\delta\asymp c\log N$ with its possible critical kernels is the sharper open boundary.
+At fixed $N$ the limit $\beta\to\infty$ is a perturbative reduction to the two-face pencil, but in the joint regime the exponentially small inactive coefficients compete with the $N^{-1/2}$ microscopic spacing and the nonnormal condition numbers of the pencil, and the conjecture asserts that the tropical combinatorics still selects the local law; the matching formulation is primary, and pointwise convergence of correlation densities is a consequence only under additional uniform-integrability and density hypotheses.  The nearest results are the tropical localization of matrix-polynomial eigenvalues of Noferini, Sharify, and Tisseur~\cite{NoferiniST15} and Akian, Gaubert, and Sharify~\cite{AkianGS17}, which bound moduli but carry no microscopic law, and the spherical-ensemble limit of Krishnapur~\cite{Krishnapur09}.  The obstruction to the uniform matching is that the minimal spacing and the largest eigenvalue condition number of the random pencil are extreme statistics over $N$ roots, and a nonnormal generalised eigenvalue can move much farther than the perturbation norm, so the threshold may need a condition-number exponent; a safer first statement matches all but $o(N)$ well-conditioned zeros.  A first decisive theorem would be the case $d=2$ with one exponentially suppressed coefficient at a single breakpoint, the smallest case in which the matching is not tautological, or any joint regime $\beta_N=c\log N$ with $c$ large.  In tests on the corpus described in the stress-test section, at profile $(-2,0,-1,0)$ the $\sqrt N$-scaled optimal matching displacement fell from $0.095$ to $0.009$ across $N=4$ to $20$ at $\beta=2\log N$ and stalled near $0.4$ at $\beta=0.75\log N$, locating the double-scaling threshold.  A counterexample would be a breakpoint and regime with $\beta_N\delta/\log N\to\infty$ whose matching displacement fails to be $o(N^{-1/2})$, and the crossover $\beta_N\delta\asymp c\log N$ with its possible critical kernels is the sharper open boundary.
 
 \begin{conjecture}[Kazhdan--Lusztig entropy percolation]\label{aq2}
 Let $G_n\sim G(n,c/n)$, let $M(G_n)$ be its cycle matroid, $P_{M(G_n)}(t)$ its matroid Kazhdan--Lusztig polynomial, and $H_n(c)=n^{-1}\log P_{M(G_n)}(1)$.  There is a deterministic $H_{\mathrm{KL}}\colon(0,\infty)\to[0,\infty)$ such that $H_n(c)\to H_{\mathrm{KL}}(c)$ in probability for every fixed $c\ne1$, with $H_{\mathrm{KL}}(c)=0$ for $0<c<1$ and $H_{\mathrm{KL}}(c)>0$ for $c>1$; and at criticality $H_n(1)\to0$ in probability.
 \end{conjecture}
 
 \paragraph{Significance.}
-The Erd\H os--R\'enyi giant-cycle transition at $c=1$ is asserted to be simultaneously the transition from subextensive to extensive intersection-cohomology complexity of the random graphic matroid: by Proposition~\ref{aq:basic}(ii) forests contribute nothing and the carrier of entropy is the cycle-connected material, with the cycle calibration $k^{-1}\log P_{U_{k-1,k}}(1)\to\log3$ showing that sparse degree-two cyclic blocks already carry positive entropy density.  A proof of the critical clause requires a quantitative upper bound on $\log P_M(1)$ in terms of the size of the critical cyclic core, and a supercritical lower bound should use genuine direct-sum blocks or a proved comparison inequality rather than monotonicity under arbitrary minors, which is not available.  The nearest results are the matroid Kazhdan--Lusztig theory of Elias, Proudfoot, and Wakefield~\cite{EPW16}, the uniform-matroid formulas of Gedeon, Proudfoot, and Young~\cite{GedeonPY17}, and the deletion inequality of Braden and Vysogorets~\cite{BradenVysogorets20}.  A first decisive theorem would be the subcritical clause, where only bounded unicyclic complexity survives, or a lower bound for the giant cycle-connected core.  In tests on the corpus described in the stress-test section, an independent implementation of the defining recursion reproduced the closed cycle formula exactly through $k=25$ and the entropy sequence rising toward $\log3$.  A counterexample would be a supercritical density with subextensive Kazhdan--Lusztig complexity, or extensive complexity below the threshold.
+The Erd\H os--R\'enyi giant-cycle transition at $c=1$ is asserted to be simultaneously the transition from subextensive to extensive intersection-cohomology complexity of the random graphic matroid: by Proposition~\ref{aq:basic}(ii) forests contribute nothing and the carrier of entropy is the cycle-connected material, with the cycle calibration $k^{-1}\log P_{U_{k-1,k}}(1)\to\log3$ showing that sparse degree-two cyclic blocks already carry positive entropy density.  A proof of the critical clause requires a quantitative upper bound on $\log P_M(1)$ in terms of the size of the critical cyclic core, and a supercritical lower bound should use genuine direct-sum blocks or a proved comparison inequality rather than monotonicity under arbitrary minors, which is not available.  The subcritical clause is close to a theorem: by Proposition~\ref{aq:basic}(ii) the polynomial factors over the unicyclic components, whose total size is tight for $c<1$, so the clause reduces to an exponential bound $P_{U_{k-1,k}}(1)\le C^k$, which the explicit coefficients of the uniform matroids supply; the content is the critical clause and the supercritical limit and positivity.  The nearest results are the matroid Kazhdan--Lusztig theory of Elias, Proudfoot, and Wakefield~\cite{EPW16}, the uniform-matroid formulas of Gedeon, Proudfoot, and Young~\cite{GedeonPY17}, and the deletion inequality of Braden and Vysogorets~\cite{BradenVysogorets20}.  A first decisive theorem would be the subcritical clause, where only bounded unicyclic complexity survives, or a lower bound for the giant cycle-connected core.  In tests on the corpus described in the stress-test section, an independent implementation of the defining recursion reproduced the closed cycle formula exactly through $k=25$ and the entropy sequence rising toward $\log3$.  A counterexample would be a supercritical density with subextensive Kazhdan--Lusztig complexity, or extensive complexity below the threshold.
 
 \begin{conjecture}[Khovanov free energy of random braid closures]\label{aq3}
 Fix $m\ge3$ and a finitely supported probability measure $\mu$ on the braid group $B_m$ whose induced walk is aperiodic on the symmetric-group quotient and whose support generates a subgroup whose image in $B_m/Z(B_m)$, acting on the $m$-punctured disc, is a nonelementary subgroup of its mapping class group.  Let $\beta_n=X_1\cdots X_n$ with $X_i$ i.i.d.\ $\mu$, let $L_n=\widehat{\beta_n}$ be the oriented closure, and with normalized oriented Khovanov bigradings over $\mathbb F_2$ set $Z_n(u,v)=\sum_{i,j}\dim_{\mathbb F_2}Kh^{i,j}(L_n;\mathbb F_2)\,e^{ui+vj}$.  For every fixed $(u,v)\in\R^2$ there is a deterministic finite $F_\mu(u,v)$ with $n^{-1}\log Z_n(u,v)\to F_\mu(u,v)$ almost surely and in $L^1$, and $F_\mu$ is convex; in particular $n^{-1}\log\operatorname{rank}_{\mathbb F_2}Kh(L_n;\mathbb F_2)\to F_\mu(0,0)$.
@@ -9330,6 +9336,17 @@ number of $\Fq_q$-rational bitangents whose two points of tangency are
 $\Fq_q$-rational and $b_{\rm c}$ for the number whose two points of tangency
 are swapped by the Frobenius.  Then the dual curve satisfies
 $\#C^\vee(\Fq_q)=\#C(\Fq_q)-b_{\rm s}+b_{\rm c}$.
+{\rm(vi)} Let $W$ be a standard Brownian motion on $[0,2]$ and, for a step
+function $f\ge0$ on $[0,1]$ with $\int_0^1f=1$, let
+$I_f(y)=\int_0^1f(x)\,dW(x+y)$ for $y\in[0,1]$, a continuous function of
+$y$.  For $R\ge1$ let $V_R$ be the supremum of $\inf_{y\in[0,1]}I_f(y)$
+over such $f$ with $\|f\|_2\le R$.  Then $V_R$ is a random variable,
+nondecreasing in $R$, and almost surely
+\[
+ \inf_{y\in[0,1]}\bigl(W(y+1)-W(y)\bigr)\le V_R\le
+ \sup_{x\in[0,1]}\bigl(W(x+1)-W(x)\bigr),
+\]
+so that $V=\lim_{R\to\infty}V_R$ exists and is almost surely finite.
 \end{proposition}
 
 \begin{proof}
@@ -9389,8 +9406,24 @@ the Gauss map is a bijection between $\Fq_q$-points, and a rational point of
 $C$ maps to a rational point of $C^\vee$.  A rational node whose branches
 are rational receives two rational points of $C$, a rational node with
 conjugate branches receives none, and a non-rational node receives no
-rational point since its branches are not rational.  Counting gives the
+rational point since its branches are not rational.    Counting gives the
 identity.
+{\rm(vi)} For $f=\sum_if_i\mathbf 1_{[x_i,x_{i+1})}$ one has
+$I_f(y)=\sum_if_i\bigl(W(x_{i+1}+y)-W(x_i+y)\bigr)$, continuous in $y$, and
+\[
+ \int_0^1I_f(y)\,dy=\sum_if_i\Bigl(\int_{x_i+1}^{x_{i+1}+1}W-\int_{x_i}^{x_{i+1}}W\Bigr)
+ =\int_0^1f(x)\bigl(W(x+1)-W(x)\bigr)\,dx
+ \le\sup_{x\in[0,1]}\bigl(W(x+1)-W(x)\bigr),
+\]
+since $f\ge0$ integrates to one.  The infimum of $I_f$ over $y$ is at most
+its average, which gives the upper bound uniformly in $f$ and $R$.  The
+density $f\equiv1$ is admissible for every $R\ge1$ and gives
+$I_f(y)=W(y+1)-W(y)$, which gives the lower bound.  Since $I_f(y)$
+depends continuously on the breakpoints and values of $f$, uniformly in
+$y$, and a density of norm exactly $R$ is a limit of densities of smaller
+norm, the supremum is unchanged when restricted to step functions with
+rational breakpoints and values, so $V_R$ is measurable; it is
+nondecreasing in $R$ and bounded, hence convergent.
 \end{proof}
 
 \begin{conjecture}[Prime continuant law]\label{at1}
@@ -9450,9 +9483,11 @@ $\mu\{x:p_n(x),q_n(x)\text{ both prime}\}$.
 \]
 with $g_p$ as in Proposition~\ref{at:basic}(i), so that
 $\mu\{x:q_n,q_{n+2}\text{ both prime}\}\sim C_2(2\log2)^2/n^2$.
-{\rm(iv)} For almost every $x$ and every fixed lag $h\ge1$, only finitely
-many $n$ have $q_n(x)$ and $q_{n+h}(x)$ both prime, and only finitely many
-$n$ have $p_n(x)$ and $q_n(x)$ both prime.
+{\rm(iv)} For every fixed lag $h\ge1$,
+$\mu\{x:q_n(x),q_{n+h}(x)\text{ both prime}\}\ll_hn^{-2}$; consequently,
+for almost every $x$ and every fixed $h\ge1$, only finitely many $n$ have
+$q_n(x)$ and $q_{n+h}(x)$ both prime, and only finitely many $n$ have
+$p_n(x)$ and $q_n(x)$ both prime.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -9463,8 +9498,7 @@ $\prod_p\frac{(p-1)/(p+1)}{(p/(p+1))^2}=\prod_p(1-p^{-2})$.  At lag two the
 return to the residue class zero passes through the digit $a_{n+2}$, so the
 Gauss--Kuzmin law enters through $g_p$ and the constant $C_2$ is
 transcendental-looking rather than a zeta value; the two constants are
-different in kind and both are testable.  Clause {\rm(iv)} is
-Borel--Cantelli applied to {\rm(i)}--{\rm(iii)}, and it says that a typical
+different in kind and both are testable.  Clause {\rm(iv)} is Borel--Cantelli applied to its own pair bound, of which {\rm(i)}--{\rm(iii)} are the cases $h=1,2$ and the numerator-denominator pair; the bound for $h\ge3$ follows the same local mechanism with the lag-$h$ transition of the projective state, and it says that a typical
 real number has only finitely many convergents whose numerator and
 denominator are both prime, a statement of a different flavour from the
 Erd\H os--Mahler construction~\cite{ErdosMahler39}.  The nearest results
@@ -9491,7 +9525,10 @@ For $\mu$-almost every $x$,
  =\lim_{N\to\infty}\frac1N\sum_{n\le N}\frac{\varphi(q_n(x))}{q_n(x)}
  =\prod_p\Bigl(1-\frac1{p(p+1)}\Bigr)=0.70445\ldots,
 \]
-and more generally, for every multiplicative $f$ with $f(p^k)=1+O(p^{-k})$,
+and more generally, for every multiplicative $f$ that is bounded on
+prime powers and satisfies
+$\sum_p\sum_{k\ge1}|f(p^k)-f(p^{k-1})|/\Psi(p^k)<\infty$, a class
+containing the squarefree indicator and $\varphi(n)/n$,
 $N^{-1}\sum_{n\le N}f(q_n(x))$ converges to
 $\prod_p\bigl(1+\sum_{k\ge1}(f(p^k)-f(p^{k-1}))/\Psi(p^k)\bigr)$.
 \end{conjecture}
@@ -9783,10 +9820,11 @@ $V$ that does not depend on the law of $\xi$, and $V$ is the value of the contin
 \[
  V=\lim_{R\to\infty}\ \sup_{f}\ \inf_{y\in[0,1]}\int_0^1f(x)\,dW(x+y),
 \]
-where $W$ is a standard Brownian motion on $[0,2]$, the supremum runs over
-probability densities $f\in L^2[0,1]$ with $\|f\|_2\le R$, and the assertion
-includes that each capped supremum of infima is almost surely finite and
-that the caps increase to an almost surely finite nondegenerate limit.  In contrast, for independent
+where $W$ is a standard Brownian motion on $[0,2]$ and the supremum runs
+over step-function probability densities $f$ on $[0,1]$ with
+$\|f\|_2\le R$, as in Proposition~\ref{at:basic}(vi), which proves that the
+capped values increase to an almost surely finite limit $V$; the assertion
+includes that $V$ is nondegenerate and symmetric.  In contrast, for independent
 $\xi$ arranged in a circulant matrix $\sqrt m\,v$ converges to a standard
 Gaussian, and for a full matrix of independent entries $m\,v$ is tight.
 \end{conjecture}
@@ -9802,7 +9840,7 @@ Faris and Maier~\cite{FarisMaier87} and the bound of
 Jonasson~\cite{Jonasson04}.  The circulant contrast is
 Proposition~\ref{at:basic}(ii).  The nearest results are those three papers
 on full random games and the spectral theory of random Toeplitz matrices;
-no antecedent was found for structured random games.  The cap is needed to make the continuum game well posed: the probability densities in $L^2$ are not a compact class, and Donsker's theorem for a fixed $f$ does not justify exchanging the random-matrix limit with an optimisation over all densities, so the game is defined through the capped values, with the convergence of the caps part of the assertion.  A first decisive theorem would be tightness of $\sqrt m\,v(K^{(m)})$ together with a lower bound $\E|v(K^{(m)})|\gg m^{-1/2}$.  In tests on the corpus described in the
+no antecedent was found for structured random games.  The cap is needed to make the continuum game well posed: the probability densities in $L^2$ are not a compact class, and Donsker's theorem for a fixed $f$ does not justify exchanging the random-matrix limit with an optimisation over all densities, so the game is defined through the capped values, whose convergence to a finite limit is Proposition~\ref{at:basic}(vi); the conjectural content is the identification of the discrete limit with $V$, its universality, nondegeneracy and symmetry.  A first decisive theorem would be tightness of $\sqrt m\,v(K^{(m)})$ together with a lower bound $\E|v(K^{(m)})|\gg m^{-1/2}$.  In tests on the corpus described in the
 stress-test section, linear programming with primal and dual certificates
 for two hundred games per size gave
 standard deviations of $\sqrt m\,v(K^{(m)})$ equal to $0.83,0.76,0.87,0.86,0.92$
@@ -10309,7 +10347,7 @@ infinitely many of these.  Countable categoricity bounds the number of
 types and, in the simple case, is expected to force finite rank on
 homogeneous structures~\cite{BaldwinFreitagMutchnik24}; the conjecture
 asserts that it also removes the room in which forking escapes stable
-witnesses.  The nearest results are the theorem of Koponen that binary simple
+witnesses.  The statement is a surviving special case of the original programme rather than a consequence of the counterexample, and it is recorded as such.  The nearest results are the theorem of Koponen that binary simple
 homogeneous structures are supersimple of finite rank~\cite{Koponen18}
 and its extension to all simple theories with quantifier elimination in a
 finite relational language, which are of finite rank and
@@ -10591,7 +10629,7 @@ evaluates $\neg(aEc)$ on the vectors $x_ab$, $x_c^{-1}b$.  Formulas with
 fewer hidden vertices are satisfied by vectors independent from $b$ over
 $M$.  The conjecture
 records that this argument is insensitive to the base being a model, and
-its NSOP$_1$ clause extends it along Conjecture~\ref{au5}(ii).  The nearest
+its NSOP$_1$ clause extends it along Conjecture~\ref{au5}(ii).  Clause {\rm(ii)}, even for $\Gamma_{\rm bip}$ alone, would refute the published conjecture that every NSOP$_1$ theory has stable Kim-forking over models, so it requires a proof that classifies every stable formula in the type rather than an extension of clause {\rm(i)} along Conjecture~\ref{au5}(ii).  The nearest
 results are the counterexample~\cite{FreitagMutchnik26}, the weak stable
 Kim-forking property~\cite{Bossut25}, and the theory of Kim-forking over
 models~\cite{KaplanRamsey20}; no antecedent was found on the base-dependence
@@ -10752,11 +10790,11 @@ show that the stable part of the module is larger than its one-vertex
 fragment.
 
 \begin{conjecture}[Nonforking extensions do not restore stable witnesses]\label{au13}
-{\rm(i)} A simple theory $T$ has stable forking if and only if for every
-$A\subseteq B$ and every $p\in S(B)$ forking over $A$ there are
-$C\supseteq B$ and a nonforking extension $r\in S(C)$ of $p$
-containing a formula $\varphi(x,c)$ with $\varphi(x;y)$ stable that forks
-over $A$.
+{\rm(i)} Let $T$ be simple.  If for every $A\subseteq B$ and every
+$p\in S(B)$ forking over $A$ there are $C\supseteq B$ and a nonforking
+extension $r\in S(C)$ of $p$ containing a formula $\varphi(x,c)$ with
+$\varphi(x;y)$ stable that forks over $A$, then $T$ has stable forking;
+the converse holds trivially.
 {\rm(ii)} In $T_q(\Gamma_{\rm bip})$, with $M$, $b$, $m$, $y$, $y'$ and
 $w=x_yx_{y'}b+m$ as in Conjecture~\ref{au9}(i), no nonforking extension of
 the type of $w$ over $Mb$ contains a stable formula that forks over $M$.
@@ -10809,7 +10847,7 @@ definable sets by closures, which are vector spaces with vertex labels, and
 the expectation that a definable set of scalars of unbounded degree would
 interpret arithmetic in the length of products, against
 Conjecture~\ref{au10}.
-The nearest results are the description of groups definable in modules and
+Conjecture~\ref{au8} would not imply this even if proved, since CM-triviality does not by itself bound interpretable groups; a group-configuration analysis in the closure geometry is required.  The nearest results are the description of groups definable in modules and
 in one-based theories~\cite{HrushovskiPillay87} and the absence of
 definable groups in the random graph; no antecedent was found for groups
 in the counterexample.  A first decisive theorem would be that every
@@ -11022,10 +11060,13 @@ exact Routh--Hurwitz determinants on all $5{,}446$ trees through fourteen
 vertices, and exact cut ranks over $\Fq_2$ on all $996$ connected graphs
 through seven vertices found no failure of Conjectures~\ref{as5}
 to~\ref{as9} and no extra equality class in Conjectures~\ref{as8}
-and~\ref{as9}.  Neither layer is presented as evidence
+and~\ref{as9}; a second recomputation on all $986$ trees through twelve
+vertices confirmed the coefficientwise Bernstein forms of
+Conjectures~\ref{as8} and~\ref{as9}, which are stronger than the stated
+stochastic inequalities.  Neither layer is presented as evidence
 for the asymptotic random-width limits.
 
-\emph{Part XXIX.}  The Part XXIX statements mix exact identities with asymptotic laws, and the verification programme separates the two.  The exact layer was recomputed from scratch: the local divisibility laws of Proposition~\ref{at:basic}(i) by simulation of $1.4\times10^5$ random numbers to index $200$, the Legendre game values of Proposition~\ref{at:basic}(iii) by exact rational solution of the indifference systems with certification that the solution is a nonnegative vector making every column indifferent, the character-sum identity of Proposition~\ref{at:basic}(iv) on random smooth quartics over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$, and the dual-curve identity of Proposition~\ref{at:basic}(v) by counting rational tangent lines.  The asymptotic layer was calibrated as follows.  Prime continuants were tested by Miller--Rabin primality of $q_n$ and $p_n$ for $n\le200$ along $1.38\times10^5$ uniformly random numbers, giving the constant $2\log2$ to one percent and the lag-one and lag-two pair constants to two and five percent.  Dimensions were computed by Chebyshev collocation of the transfer operator, on $[0,1/a]$ for the progression digit sets with $m\le384$ and on $[0,1]\times\mathbb P^1(\Fq_p)$ for continuant avoidance with $p\le31$, cross-checked by the escape rates of direct simulation for $p\le197$.  Game values were computed by linear programming with primal and dual certificates, for all primes below $1400$ in the Legendre half and quarter boxes and for two hundred random matrices per size in the Toeplitz, Hankel and full ensembles; the unit identification of Conjecture~\ref{at8}(i)--(ii) was checked in exact arithmetic for every prime $p\equiv1\pmod4$ below $1000$.  Quartic point counts, Hessian point counts, flexes, bitangents and tangency types were enumerated over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$ for several hundred random smooth quartics, and over primes up to $1300$ for fixed integral quartics.  These computations calibrate the finite anchors and exclude gross finite-size obstructions; they do not test the limits themselves.  The sign clause of Conjecture~\ref{at15} as first deposited was refuted by an exact certificate at $p=547$, obtained by locating the optimal supports with linear programming and then solving the indifference systems over the rationals; the certificate is checked in exact arithmetic by the verification script, whose four-prime sign block is a calibration only, and the sign scan was extended to all primes $p\equiv3\pmod4$ below $1000$.
+\emph{Part XXIX.}  The Part XXIX statements mix exact identities with asymptotic laws, and the verification programme separates the two.  The exact layer was recomputed from scratch: the local divisibility laws of Proposition~\ref{at:basic}(i) by simulation of $1.4\times10^5$ random numbers to index $200$, the Legendre game values of Proposition~\ref{at:basic}(iii) by exact rational solution of the indifference systems with certification that the solution is a nonnegative vector making every column indifferent, the character-sum identity of Proposition~\ref{at:basic}(iv) on random smooth quartics over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$, and the dual-curve identity of Proposition~\ref{at:basic}(v) by counting rational tangent lines.  The asymptotic layer was calibrated as follows.  Prime continuants were tested by Miller--Rabin primality of $q_n$ and $p_n$ for $n\le200$ along $1.38\times10^5$ uniformly random numbers, giving the constant $2\log2$ to one percent and the lag-one and lag-two pair constants to two and five percent.  Dimensions were computed by Chebyshev collocation of the transfer operator, on $[0,1/a]$ for the progression digit sets with $m\le384$ and on $[0,1]\times\mathbb P^1(\Fq_p)$ for continuant avoidance with $p\le31$, cross-checked by the escape rates of direct simulation for $p\le197$.  Game values were computed by linear programming with primal and dual certificates, for all primes below $1400$ in the Legendre half and quarter boxes and for two hundred random matrices per size in the Toeplitz, Hankel and full ensembles; the unit identification of Conjecture~\ref{at8}(i)--(ii) was checked in exact arithmetic for every prime $p\equiv1\pmod4$ below $1000$.  Quartic point counts, Hessian point counts, flexes, bitangents and tangency types were enumerated over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$ for several hundred random smooth quartics, and over primes up to $1300$ for fixed integral quartics.  These computations calibrate the finite anchors and exclude gross finite-size obstructions; they do not test the limits themselves.  The sign clause of Conjecture~\ref{at15} as first deposited was refuted by an exact certificate at $p=547$, obtained by locating the optimal supports with linear programming and then solving the indifference systems over the rationals; the certificate is checked in exact arithmetic by the verification script, whose four-prime sign block is a calibration only, and the sign scan was extended to all primes $p\equiv3\pmod4$ below $1000$.  A second independent recomputation solved the quarter and half boxes for the sixteen primes $p\equiv3\pmod4$ between $1000$ and $1260$: every quarter-box value was positive with $\sqrt m\,v(Q_p)$ between $0.53$ and $1.29$, and every half-box value was negative, with $p^{3/2}v(H_p)$ reaching $-16.1$ at $p=1091$ in the class $3\pmod8$.
 
 \emph{Part XXX.}  The Part XXX statements are model-theoretic and their asymptotic content is not accessible to computation; the verification programme covers the proved algebraic layer of Proposition~\ref{au:basic} only.  Exact rewriting to the Poincar\'e--Birkhoff--Witt normal form was implemented for the quantum algebra of a graph and checked to be associative on random triples in the algebras of random graphs with up to eight vertices, the defining relations and the commutation rule $x_vx^a=(-1)^{\sum_{uEv}a_u}x^ax_v$ were verified on random monomials, the centrality criterion was verified against the kernel of the adjacency form modulo two, the singularity of that form in odd order and its nonsingularity with positive frequency in even order were confirmed, the extension witness behind the trivial centre of the random graph was observed with frequency increasing to $0.995$ on random graphs with forty vertices, odd powers of adjacent generators were seen to anticommute and even powers to be central, span formulas with fixed scalars were seen, as a sanity check of the mechanism and not as evidence of stability, to admit no half-graph of length three on random configurations in a finite module, and the two computations behind Proposition~\ref{au:basic}(v) were repeated by exact enumeration in the algebras of random graphs: the relation $x_ax_c=-x_vx_{v'}$ holds for some pair $(v,v')$ exactly when $a$ and $c$ are adjacent, the relation $\pm x_sx_{t'}=x_{s'}x_t$ forces $\{s,t'\}=\{s',t\}$, and the explicit exponent vectors giving an order pattern of length three for the formula with exponents two and one were confirmed.  Nothing in this programme tests the conjectures about forking, stability, decidability or countable models.
 
