@@ -5515,8 +5515,8 @@ entropy defined by the sample-path Bowen metric, then almost surely
 This part states fifteen conjectures on prime continuants of typical real numbers, Hausdorff dimensions of continued-fraction sets, Legendre-symbol and random Toeplitz and Hankel games, and plane quartics with their Hessians and duals over finite fields.  The proved layer is Proposition~\ref{at:basic}.
 Throughout, $x\in(0,1)$ is irrational with continued fraction
 $x=[0;a_1,a_2,\dots]$, convergents $p_n/q_n$, and $\mu$ is Lebesgue
-measure; for a prime $p$, $\chi_p$ is the Legendre symbol, and for
-$p\equiv1\pmod 4$ we write $m=(p-1)/2$,
+measure; for an odd prime $p$, $\chi_p$ is the Legendre symbol and we write
+$m=(p-1)/2$,
 \[
  H_p=\bigl(\chi_p(i+j)\bigr)_{1\le i,j\le m},\qquad
  T_p=\bigl(\chi_p(i-j)\bigr)_{1\le i,j\le m},
@@ -5773,14 +5773,14 @@ $K^{(m)}=(\xi_{i+j})_{1\le i,j\le m}$; by Proposition~\ref{at:basic}(ii) the
 Toeplitz game $(\xi_{i-j})_{1\le i,j\le m}$ has the same value as the Hankel
 game of the shifted sequence, so it suffices to treat $K^{(m)}$.  Then
 $\sqrt m\,v(K^{(m)})$ converges in law to a nondegenerate symmetric limit
-$V$ that does not depend on the law of $\xi$, and $V$ is the value of the
-continuum game
+$V$ that does not depend on the law of $\xi$, and $V$ is the value of the continuum game
 \[
- V=\sup_{f}\ \inf_{y\in[0,1]}\int_0^1f(x)\,dW(x+y),
+ V=\lim_{R\to\infty}\ \sup_{f}\ \inf_{y\in[0,1]}\int_0^1f(x)\,dW(x+y),
 \]
-where $W$ is a standard Brownian motion on $[0,2]$, the supremum runs
-over probability densities $f\in L^2[0,1]$, and the assertion includes that
-this supremum of infima is almost surely finite and nondegenerate.  In contrast, for independent
+where $W$ is a standard Brownian motion on $[0,2]$, the supremum runs over
+probability densities $f\in L^2[0,1]$ with $\|f\|_2\le R$, and the assertion
+includes that each capped supremum of infima is almost surely finite and
+that the caps increase to an almost surely finite nondegenerate limit.  In contrast, for independent
 $\xi$ arranged in a circulant matrix $\sqrt m\,v$ converges to a standard
 Gaussian, and for a full matrix of independent entries $m\,v$ is tight.
 \end{conjecture}
@@ -5845,7 +5845,8 @@ of $v(Q_p)$ is positive and negative for infinitely many $p$ each.
 For primes $p\equiv3\pmod4$ one has $\sqrt p\,v(H_p)\to0$; more precisely
 $v(H_p)=O(p^{-3/2})$ along $p\equiv7\pmod8$, while $p^{3/2}v(H_p)$ is not
 bounded along $p\equiv3\pmod8$.  Moreover $v(H_p)\le0$ for every
-$p\equiv3\pmod4$ with $p>43$.
+$p\equiv7\pmod8$, while along $p\equiv3\pmod8$ the value is positive for
+infinitely many $p$ and negative for infinitely many $p$.
 \end{conjecture}
 
 \part{Forking without stable witnesses: quantum modules over graphs}

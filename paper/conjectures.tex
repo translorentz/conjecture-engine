@@ -724,7 +724,7 @@ Bateman--Horn constant.
 \item \textbf{Sato--Tate independence of a curve and its Hessian (Conjecture~\ref{at12}).}  For a generic quartic over $\Q$ the Frobenius traces of the curve and of its Hessian are jointly Sato--Tate equidistributed.
 \item \textbf{Tangency law and dual-curve point counts (Conjecture~\ref{at13}).}  Rational bitangents have rational or conjugate tangency points with independent fair coins, so $\#C^\vee(\Fq_q)-\#C(\Fq_q)$ has an explicit symmetric limit law of variance one.
 \item \textbf{Positivity of the quarter-box Legendre games (Conjecture~\ref{at14}).}  For $p\equiv3\pmod4$ the quarter-box Hankel Legendre game always favours the row player, a class-number bias at scale $m^{-1/2}$.
-\item \textbf{Vanishing law for the half box in the class $3$ modulo $4$ (Conjecture~\ref{at15}).}  For $p\equiv3\pmod4$ the half-box value is nonpositive beyond $p=43$ and of order $p^{-3/2}$ when $2$ is a residue.
+\item \textbf{Vanishing law for the half box in the class $3$ modulo $4$ (Conjecture~\ref{at15}).}  For $p\equiv3\pmod4$ the half-box value is of order $p^{-3/2}$ and nonpositive when $2$ is a residue, while its sign oscillates when $2$ is a non-residue.
 \item \textbf{Finite-rank stable forking (Conjecture~\ref{au1}).}  Every supersimple theory of finite $SU$-rank has stable forking; the counterexample has infinite rank.
 \item \textbf{Rank-one stable forking (Conjecture~\ref{au2}).}  In a simple theory every forking type of $SU$-rank one contains a stable forking formula, and rank one is sharp.
 \item \textbf{Stable forking for countably categorical simple theories (Conjecture~\ref{au3}).}  Countable categoricity restores stable witnesses for forking.
@@ -9057,7 +9057,7 @@ so the aggregate contribution of all unstable irreducible representations cannot
 \end{conjecture}
 
 \paragraph{Significance.}
-The exact Parseval identity of Proposition~\ref{ap:basic}(ii) makes the chi-square the squared $\ell^2$ norm of the full nontrivial Fourier spectrum, so the conjecture is a genuine global saturation principle rather than a statement about finitely many stable observables: an exponentially large unstable spectrum does not collectively beat the best stable mode.  The nearest results are the word-measure and stable-invariant theory of Hanany--Puder and Puder--Shomroni~\cite{HananyPuder20,PuderShomroni26a,PuderShomroni26b}, which control fixed stable characters through primitivity-type invariants; no treatment of the KL or chi-square divergence of an $S_N$ word measure from uniform, or of the complete Fourier tail against the stable sector, was found.  A first decisive theorem would be, for $w=[x,y]x$, the matching bound $\chi^2,\ D_{\mathrm{KL}}=N^{-2+o(1)}$.  In tests on the corpus described in the stress-test section, exact enumeration of $S_N^2$ for $w=[x,y]x$ through $N=6$ keeps $N^2\chi^2$ and $N^2D_{\mathrm{KL}}$ of order one, consistent with the exponent $2$, with the Parseval identity confirmed exactly.  A counterexample would be a family of unstable irreducibles collectively contributing more chi-square mass than every stable character, or KL and chi-square with different exponents through rare density-ratio spikes, either defining a new asymptotic invariant of words.  If the emerging stable theory identifies $\beta_{\mathrm{st}}(w)$ with the stable primitivity rank, the exponent becomes $2s\pi(w)$; that identification is deliberately kept separate.
+The exact Parseval identity of Proposition~\ref{ap:basic}(ii) makes the chi-square the squared $\ell^2$ norm of the full nontrivial Fourier spectrum, so the conjecture is a genuine global saturation principle rather than a statement about finitely many stable observables: an exponentially large unstable spectrum does not collectively beat the best stable mode.  The nearest results are the word-measure and stable-invariant theory of Hanany--Puder and Puder--Shomroni~\cite{HananyPuder20,PuderShomroni26a,PuderShomroni26b}, which control fixed stable characters through primitivity-type invariants; no treatment of the KL or chi-square divergence of an $S_N$ word measure from uniform, or of the complete Fourier tail against the stable sector, was found.  Two implications are bundled that stable-character asymptotics alone do not deliver: the equality of the chi-square and Kullback--Leibler exponents requires a tail bound on the likelihood ratio, since rare large values of the ratio can separate the two, and the exclusion of the unstable representations requires a bound on their aggregate Plancherel mass, since exponentially many individually negligible modes could dominate a global divergence; a proof would establish both.  A first decisive theorem would be, for $w=[x,y]x$, the chi-square bound $N^{-2+o(1)}$ under an explicit bound on the aggregate unstable mass, followed by the Kullback--Leibler bound from a likelihood-ratio tail estimate.  In tests on the corpus described in the stress-test section, exact enumeration of $S_N^2$ for $w=[x,y]x$ through $N=6$ keeps $N^2\chi^2$ and $N^2D_{\mathrm{KL}}$ of order one, consistent with the exponent $2$, with the Parseval identity confirmed exactly.  A counterexample would be a family of unstable irreducibles collectively contributing more chi-square mass than every stable character, or KL and chi-square with different exponents through rare density-ratio spikes, either defining a new asymptotic invariant of words.  If the emerging stable theory identifies $\beta_{\mathrm{st}}(w)$ with the stable primitivity rank, the exponent becomes $2s\pi(w)$; that identification is deliberately kept separate.
 
 \begin{conjecture}[Adelic root-process factorization]\label{ap5}
 Let $F_n(X)=\sum_{j=0}^n\varepsilon_jX^j$ with independent signs $\varepsilon_j=\pm1$.  Let $\mathcal R_n=\sum_{r:\,F_n(r)=0}\delta_{n(|r|-1)}$ be the real-root process near the unit circle, and for an odd prime $p$ let $\mathcal Z_{p,n}=\sum_{\alpha\in\Q_p:\,F_n(\alpha)=0}m_\alpha\,\delta_\alpha$ be the $p$-adic root process on $\Z_p^\times$ (every $\Q_p$ root is a unit by Proposition~\ref{ap:basic}(iii)).  Then for every fixed finite set $P$ of odd primes,
@@ -9094,7 +9094,7 @@ In the setting of Proposition~\ref{aq:basic}(i), suppose $\beta_N\delta/\log N\t
 \end{conjecture}
 
 \paragraph{Significance.}
-At fixed $N$ the limit $\beta\to\infty$ is a perturbative reduction to the two-face pencil, but in the joint regime the exponentially small inactive coefficients compete with the $N^{-1/2}$ microscopic spacing and the nonnormal condition numbers of the pencil, and the conjecture asserts that the tropical combinatorics still selects the local law; the matching formulation is primary, and pointwise convergence of correlation densities is a consequence only under additional uniform-integrability and density hypotheses.  The nearest results are the tropical localization of matrix-polynomial eigenvalues of Noferini, Sharify, and Tisseur~\cite{NoferiniST15} and Akian, Gaubert, and Sharify~\cite{AkianGS17}, which bound moduli but carry no microscopic law, and the spherical-ensemble limit of Krishnapur~\cite{Krishnapur09}.  A first decisive theorem would be the two-coefficient case $d=1$ at a single breakpoint, or any joint regime $\beta_N=c\log N$ with $c$ large.  In tests on the corpus described in the stress-test section, at profile $(-2,0,-1,0)$ the $\sqrt N$-scaled optimal matching displacement fell from $0.095$ to $0.009$ across $N=4$ to $20$ at $\beta=2\log N$ and stalled near $0.4$ at $\beta=0.75\log N$, locating the double-scaling threshold.  A counterexample would be a breakpoint and regime with $\beta_N\delta/\log N\to\infty$ whose matching displacement fails to be $o(N^{-1/2})$, and the crossover $\beta_N\delta\asymp c\log N$ with its possible critical kernels is the sharper open boundary.
+At fixed $N$ the limit $\beta\to\infty$ is a perturbative reduction to the two-face pencil, but in the joint regime the exponentially small inactive coefficients compete with the $N^{-1/2}$ microscopic spacing and the nonnormal condition numbers of the pencil, and the conjecture asserts that the tropical combinatorics still selects the local law; the matching formulation is primary, and pointwise convergence of correlation densities is a consequence only under additional uniform-integrability and density hypotheses.  The nearest results are the tropical localization of matrix-polynomial eigenvalues of Noferini, Sharify, and Tisseur~\cite{NoferiniST15} and Akian, Gaubert, and Sharify~\cite{AkianGS17}, which bound moduli but carry no microscopic law, and the spherical-ensemble limit of Krishnapur~\cite{Krishnapur09}.  The obstruction to the uniform matching is that the minimal spacing and the largest eigenvalue condition number of the random pencil are extreme statistics over $N$ roots, and a nonnormal generalised eigenvalue can move much farther than the perturbation norm, so the threshold may need a condition-number exponent; a safer first statement matches all but $o(N)$ well-conditioned zeros.  A first decisive theorem would be the two-coefficient case $d=1$ at a single breakpoint, or any joint regime $\beta_N=c\log N$ with $c$ large.  In tests on the corpus described in the stress-test section, at profile $(-2,0,-1,0)$ the $\sqrt N$-scaled optimal matching displacement fell from $0.095$ to $0.009$ across $N=4$ to $20$ at $\beta=2\log N$ and stalled near $0.4$ at $\beta=0.75\log N$, locating the double-scaling threshold.  A counterexample would be a breakpoint and regime with $\beta_N\delta/\log N\to\infty$ whose matching displacement fails to be $o(N^{-1/2})$, and the crossover $\beta_N\delta\asymp c\log N$ with its possible critical kernels is the sharper open boundary.
 
 \begin{conjecture}[Kazhdan--Lusztig entropy percolation]\label{aq2}
 Let $G_n\sim G(n,c/n)$, let $M(G_n)$ be its cycle matroid, $P_{M(G_n)}(t)$ its matroid Kazhdan--Lusztig polynomial, and $H_n(c)=n^{-1}\log P_{M(G_n)}(1)$.  There is a deterministic $H_{\mathrm{KL}}\colon(0,\infty)\to[0,\infty)$ such that $H_n(c)\to H_{\mathrm{KL}}(c)$ in probability for every fixed $c\ne1$, with $H_{\mathrm{KL}}(c)=0$ for $0<c<1$ and $H_{\mathrm{KL}}(c)>0$ for $c>1$; and at criticality $H_n(1)\to0$ in probability.
@@ -9108,7 +9108,7 @@ Fix $m\ge3$ and a finitely supported probability measure $\mu$ on the braid grou
 \end{conjecture}
 
 \paragraph{Significance.}
-Finite-length convexity and linear boundedness are Proposition~\ref{aq:basic}(iii); the conjectural content is the deterministic limit itself, since closure and passage to homology destroy the subadditivity available at the chain level, so no Kingman-type argument applies directly, and differentiability of $F_\mu$, a large-deviation principle for the bigrading, and a variational characterization are separate later questions rather than hypotheses.  The nearest results are the categorified Jones polynomial of Khovanov~\cite{Khovanov00}, the Lyapunov theory of Alexander polynomials of random positive braids of Dunfield and Tiozzo~\cite{DunfieldTiozzo25}, and the polynomial-time algorithm for Khovanov homology of three-braid closures of Kelomaki and Sch\"utz~\cite{KelomakiSchutz26}, which makes direct testing at $m=3$ feasible.  A first decisive theorem would be the existence of the limit at $(u,v)=(0,0)$ for one nondegenerate walk on $B_3$.  In tests on the corpus described in the stress-test section, the decategorified reduced-Burau proxy at $t=-1$ gave a stable positive determinant exponent near $0.08$ on three-strand walks, a scale check that does not test the homological cancellation itself, the recorded gap.  A counterexample would be almost-sure oscillation of $n^{-1}\log\operatorname{rank}Kh$ between distinct limit points for a nondegenerate walk.
+Finite-length convexity and linear boundedness are Proposition~\ref{aq:basic}(iii); the conjectural content is the deterministic limit itself, since closure and passage to homology destroy the subadditivity available at the chain level, so no Kingman-type argument applies directly, and differentiability of $F_\mu$, a large-deviation principle for the bigrading, and a variational characterization are separate later questions rather than hypotheses.  The nearest results are the categorified Jones polynomial of Khovanov~\cite{Khovanov00}, the Lyapunov theory of Alexander polynomials of random positive braids of Dunfield and Tiozzo~\cite{DunfieldTiozzo25}, and the polynomial-time algorithm for Khovanov homology of three-braid closures of Kelomaki and Sch\"utz~\cite{KelomakiSchutz26}, which makes direct testing at $m=3$ feasible.  The existence of the limit is not a consequence of Kingman's theorem, since the Khovanov homology of a closure has no evident submultiplicativity under multiplication of braids; the missing ingredient is a quasi-multiplicative inequality for a tangle-level norm, compared afterwards with the closed-braid partition function.  A first decisive theorem would be that inequality, giving the existence of the limit at $(u,v)=(0,0)$ for one nondegenerate walk on $B_3$.  In tests on the corpus described in the stress-test section, the decategorified reduced-Burau proxy at $t=-1$ gave a stable positive determinant exponent near $0.08$ on three-strand walks, a scale check that does not test the homological cancellation itself, the recorded gap.  A counterexample would be almost-sure oscillation of $n^{-1}\log\operatorname{rank}Kh$ between distinct limit points for a nondegenerate walk.
 
 \begin{conjecture}[Two-sided thin-handle Hodge successive-minima equivalence]\label{aq4}
 Let $X_g$ be a closed genus-$g$ hyperbolic surface sampled from normalized
@@ -9272,7 +9272,10 @@ on the corpus described in the stress-test section, only that calibration
 was checked, exhaustively through word length sixteen; no Floer barcode was
 computed.  A
 counterexample could arise from endpoint cancellation or the absence of a
-random closing mechanism even when the path itself has positive entropy.
+random closing mechanism even when the path itself has positive entropy;
+the decisive stress test is a measure whose support contains nearly
+cancelling diffeomorphisms, which the commuting and lazy calibrations do
+not probe.
 
 \input{part_xxviii}
 
@@ -9296,8 +9299,8 @@ concern point counts of plane quartics, their Hessian curves and their dual
 curves over finite fields.  The proved layer is Proposition~\ref{at:basic}.
 Throughout, $x\in(0,1)$ is irrational with continued fraction
 $x=[0;a_1,a_2,\dots]$, convergents $p_n/q_n$, and $\mu$ is Lebesgue
-measure; for a prime $p$, $\chi_p$ is the Legendre symbol, and for
-$p\equiv1\pmod 4$ we write $m=(p-1)/2$,
+measure; for an odd prime $p$, $\chi_p$ is the Legendre symbol and we write
+$m=(p-1)/2$,
 \[
  H_p=\bigl(\chi_p(i+j)\bigr)_{1\le i,j\le m},\qquad
  T_p=\bigl(\chi_p(i-j)\bigr)_{1\le i,j\le m},
@@ -9636,9 +9639,7 @@ class throughout, which is unrelated to the occurrence of arithmetic
 progressions inside a digit sequence.  The nearest results are Hensley's expansion
 $1-6/(\pi^2N)-72\log N/(\pi^4N^2)+O(N^{-2})$ for digits at most
 $N$~\cite{Hensley92}, Good's law $\dim\to1/2$ for digits at least
-$N$~\cite{Good41}, and the rigorous computations of Jenkinson and
-Pollicott for finite digit sets~\cite{JenkinsonPollicott01}; no antecedent
-was found for progressions.  A first decisive theorem would be the
+$N$~\cite{Good41}, and the rigorous computations of Jenkinson and Pollicott for finite digit sets~\cite{JenkinsonPollicott01}; the work of Nakajima, Takahasi and Wang on numbers whose partial quotients contain arbitrarily long arithmetic progressions~\cite{NakajimaTakahasiWang26} concerns a different digit constraint, and no antecedent was found for a fixed progression.  A first decisive theorem would be the
 two-term law $\tfrac12+\tfrac1{2m}+O(m^{-2}\log m)$ by the
 Mauldin--Urba\'nski pressure formalism~\cite{MauldinUrbanski96}.  In tests
 on the corpus described in the stress-test section, Chebyshev collocation
@@ -9745,9 +9746,7 @@ and that of {\rm(ii)} for sixteen of the twenty-eight primes
 $p\equiv5\pmod8$ below $620$, giving the exact values of
 Proposition~\ref{at:basic}(iii), and linear programming with primal and
 dual certificates gave
-$|\sqrt p\,v(H_p)+1|<0.01$ for every $p\equiv1\pmod8$ below $700$ and
-$|\sqrt p\,v(T_p)-1|<0.06$ for every $p\equiv5\pmod8$ below $600$.  A
-counterexample would be a prime for which the linear system value is not
+$|\sqrt p\,v(H_p)+1|<0.01$ for every $p\equiv1\pmod8$ below $700$ and $|\sqrt p\,v(T_p)-1|<0.06$ for every $p\equiv5\pmod8$ below $600$; these certificates bear on clauses {\rm(i)} to {\rm(iii)} at the tested primes only, and the density clause of {\rm(iii)} and the limits of {\rm(iv)} are supported by nothing beyond the quoted ranges.  A counterexample would be a prime for which the linear system value is not
 a unit ratio, which would separate the game from the Pell structure of the
 determinants.
 
@@ -9801,14 +9800,14 @@ $K^{(m)}=(\xi_{i+j})_{1\le i,j\le m}$; by Proposition~\ref{at:basic}(ii) the
 Toeplitz game $(\xi_{i-j})_{1\le i,j\le m}$ has the same value as the Hankel
 game of the shifted sequence, so it suffices to treat $K^{(m)}$.  Then
 $\sqrt m\,v(K^{(m)})$ converges in law to a nondegenerate symmetric limit
-$V$ that does not depend on the law of $\xi$, and $V$ is the value of the
-continuum game
+$V$ that does not depend on the law of $\xi$, and $V$ is the value of the continuum game
 \[
- V=\sup_{f}\ \inf_{y\in[0,1]}\int_0^1f(x)\,dW(x+y),
+ V=\lim_{R\to\infty}\ \sup_{f}\ \inf_{y\in[0,1]}\int_0^1f(x)\,dW(x+y),
 \]
-where $W$ is a standard Brownian motion on $[0,2]$, the supremum runs
-over probability densities $f\in L^2[0,1]$, and the assertion includes that
-this supremum of infima is almost surely finite and nondegenerate.  In contrast, for independent
+where $W$ is a standard Brownian motion on $[0,2]$, the supremum runs over
+probability densities $f\in L^2[0,1]$ with $\|f\|_2\le R$, and the assertion
+includes that each capped supremum of infima is almost surely finite and
+that the caps increase to an almost surely finite nondegenerate limit.  In contrast, for independent
 $\xi$ arranged in a circulant matrix $\sqrt m\,v$ converges to a standard
 Gaussian, and for a full matrix of independent entries $m\,v$ is tight.
 \end{conjecture}
@@ -9824,9 +9823,7 @@ Faris and Maier~\cite{FarisMaier87} and the bound of
 Jonasson~\cite{Jonasson04}.  The circulant contrast is
 Proposition~\ref{at:basic}(ii).  The nearest results are those three papers
 on full random games and the spectral theory of random Toeplitz matrices;
-no antecedent was found for structured random games.  A first decisive
-theorem would be tightness of $\sqrt m\,v(K^{(m)})$ together with a lower
-bound $\E|v(K^{(m)})|\gg m^{-1/2}$.  In tests on the corpus described in the
+no antecedent was found for structured random games.  The cap is needed to make the continuum game well posed: the probability densities in $L^2$ are not a compact class, and Donsker's theorem for a fixed $f$ does not justify exchanging the random-matrix limit with an optimisation over all densities, so the game is defined through the capped values, with the convergence of the caps part of the assertion.  A first decisive theorem would be tightness of $\sqrt m\,v(K^{(m)})$ together with a lower bound $\E|v(K^{(m)})|\gg m^{-1/2}$.  In tests on the corpus described in the
 stress-test section, linear programming with primal and dual certificates
 for two hundred games per size gave
 standard deviations of $\sqrt m\,v(K^{(m)})$ equal to $0.83,0.76,0.87,0.86,0.92$
@@ -9900,7 +9897,15 @@ $24$ flexes.  Under the hypotheses the Sato--Tate group of the product
 abelian variety is expected to be $\mathrm{USp}(6)\times\mathrm{USp}(20)$, so
 the conjecture follows from the generalised Sato--Tate conjecture for the
 product; the content is the identification of that group for the Hessian
-pair, which no known result provides.  The nearest results are the proved
+pair, which no known result provides.  This places the statement inside
+the product theory: the Mumford--Tate conjecture is stable under
+products~\cite{Commelin19} and implies the algebraic Sato--Tate conjecture
+of Banaszak and Kedlaya~\cite{BanaszakKedlaya15,CantoralFarfanCommelin22},
+and the lemma that full individual Mumford--Tate groups with no
+homomorphism between the Jacobians force the product group is the step
+the hypotheses are designed to supply; the conjecture is thus a concrete
+instance of that theory rather than a new independence principle, and
+its content is the verification of the hypotheses for the Hessian pair.  The nearest results are the proved
 Sato--Tate law for genus one and the classification of Sato--Tate groups
 in low genus~\cite{Serre12}; no antecedent was found for the Hessian
 pair.  A first decisive theorem would be the absence of a nontrivial
@@ -10000,7 +10005,8 @@ can neutralise the class-number bias.
 For primes $p\equiv3\pmod4$ one has $\sqrt p\,v(H_p)\to0$; more precisely
 $v(H_p)=O(p^{-3/2})$ along $p\equiv7\pmod8$, while $p^{3/2}v(H_p)$ is not
 bounded along $p\equiv3\pmod8$.  Moreover $v(H_p)\le0$ for every
-$p\equiv3\pmod4$ with $p>43$.
+$p\equiv7\pmod8$, while along $p\equiv3\pmod8$ the value is positive for
+infinitely many $p$ and negative for infinitely many $p$.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -10018,17 +10024,23 @@ order of magnitude over eighteen primes.  The nearest results are the
 antisymmetry observation and the Legendre determinant evaluations for
 $p\equiv3\pmod4$ of Vsemirnov~\cite{Vsemirnov12}; no antecedent was found
 for the value of this game.  A first decisive theorem would be the upper
-bound $|v(H_p)|\ll p^{-1}$ from an explicit strategy.  In tests on the
-corpus described in the stress-test section, values with primal and dual
-certificates for all $37$ primes $p\equiv3\pmod4$ between $100$ and $500$ were negative, with
-$p^{3/2}|v(H_p)|$ at most $1.8$ for $p\equiv7\pmod8$ and between $0.03$ and
-$10.7$ for $p\equiv3\pmod8$, and the half-box values at $p\approx600$
-were below $10^{-2}/\sqrt p$ in absolute value; below $100$ the value
-vanishes at $p\in\{7,11,19,23,47,71\}$ and is positive only at $p=43$,
-where it equals $1/159$.  A counterexample would be
-a prime $p\equiv7\pmod8$ with $|v(H_p)|>p^{-1}$, or a large prime with
-positive value, which would mean the perturbation of antisymmetry acts at
-the leading order.
+bound $|v(H_p)|\ll p^{-1}$ from an explicit strategy.  The statement as
+first deposited asserted $v(H_p)\le0$ for every $p\equiv3\pmod4$ with
+$p>43$; this was refuted at $p=547$, where the value is positive, with an
+exact rational primal and dual certificate on supports of size $156$,
+$v(H_{547})=1.0289\times10^{-4}$ and $p^{3/2}v(H_p)=1.32$, and the
+corrected sign clause is retained.  In tests on the corpus described in
+the stress-test section, linear programming with primal and dual
+certificates for all $86$ primes $p\equiv3\pmod4$ below $1000$ gave
+nonpositive values throughout the class $7\pmod8$, with $p^{3/2}|v(H_p)|$
+at most $3.6$, attained at $p=631$, and value zero at
+$p\in\{7,23,47,71\}$; in the class $3\pmod8$ the value is positive exactly
+at $p\in\{43,547,691,907\}$, with $p^{3/2}v(H_p)$ between $1.3$ and $2.0$
+there, vanishes at $p\in\{11,19\}$, and is negative otherwise, with
+$p^{3/2}v(H_p)$ as low as $-10.7$ at $p=251$; the value at $p=547$ is
+certified in exact arithmetic.  A counterexample would be a prime
+$p\equiv7\pmod8$ with $|v(H_p)|>p^{-1}$ or with positive value, which
+would mean the perturbation of antisymmetry acts at the leading order.
 
 \part{Forking without stable witnesses: quantum modules over graphs}
 
@@ -10509,8 +10521,10 @@ vector $x_yb$ lies in $\langle b\rangle$ but not in $\operatorname{cl}(b)_V$;
 the span governs forking and the local closure, a countable substructure,
 governs types.  The nearest results
 are the cited theorem and the classical characterisation of forking in
-modules over a fixed ring by positive primitive formulas~\cite{Prest88}; no
-antecedent was found for general graphs.  A first decisive theorem would be
+modules over a fixed ring by positive primitive formulas~\cite{Prest88}; the
+random bipartite instance is their theorem, the statement is proposed as
+its extension to arbitrary simple graphs, and no antecedent was found for
+general graphs.  A first decisive theorem would be
 the case of a finite graph, where the algebra is Noetherian and the
 independence theorem is vacuous.  In tests on the corpus described in the stress-test section, only the
 rewriting checks described under Conjecture~\ref{au5} were run, and no
@@ -10749,10 +10763,11 @@ Proposition~\ref{au:basic}(v) carried out with fixed auxiliary vertices
 non-adjacent to the half graph.  In tests on the corpus described in the
 stress-test section, the sign computation behind {\rm(ii)} and the
 length-three pattern for exponents two and one were verified by exact
-enumeration, and the stability of span formulas with fixed scalars, which
-is the quantifier-free case of {\rm(i)}, was checked by exact dimension
-counting in finite modules over quantum algebras of small graphs; nothing
-in the programme tests {\rm(i)} with a vertex quantifier or {\rm(iii)}.  A counterexample to {\rm(iii)} would be a
+enumeration, and span formulas with fixed scalars, the quantifier-free case of
+{\rm(i)}, were seen to admit no half-graph of length three in finite
+modules over quantum algebras of small graphs, a sanity check of the
+mechanism and not evidence of stability; nothing in the programme tests
+{\rm(i)} with a vertex quantifier or {\rm(iii)}.  A counterexample to {\rm(iii)} would be a
 stable formula with two hidden vertices not reducible to one, which would
 show that the stable part of the module is larger than its one-vertex
 fragment.
@@ -11027,12 +11042,18 @@ cut-rank/LC agreement through six vertices, the connected 13-vertex
 rank-one counterexample, exact small-tree shape and extremal checks, the
 order-fifteen $Z_T$ collision, small cubic rank-width values, and seeded
 orbit growth.  Exact rooted recurrences and Routh tests were run through
-order twenty.  Neither layer is presented as evidence
+order twenty.  An independent recomputation with integer Bernstein
+coefficient comparisons on every unlabelled tree through eleven vertices,
+exact Routh--Hurwitz determinants on all $5{,}446$ trees through fourteen
+vertices, and exact cut ranks over $\Fq_2$ on all $996$ connected graphs
+through seven vertices found no failure of Conjectures~\ref{as5}
+to~\ref{as9} and no extra equality class in Conjectures~\ref{as8}
+and~\ref{as9}.  Neither layer is presented as evidence
 for the asymptotic random-width limits.
 
-\emph{Part XXIX.}  The Part XXIX statements mix exact identities with asymptotic laws, and the verification programme separates the two.  The exact layer was recomputed from scratch: the local divisibility laws of Proposition~\ref{at:basic}(i) by simulation of $1.4\times10^5$ random numbers to index $200$, the Legendre game values of Proposition~\ref{at:basic}(iii) by exact rational solution of the indifference systems with certification that the solution is a nonnegative vector making every column indifferent, the character-sum identity of Proposition~\ref{at:basic}(iv) on random smooth quartics over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$, and the dual-curve identity of Proposition~\ref{at:basic}(v) by counting rational tangent lines.  The asymptotic layer was calibrated as follows.  Prime continuants were tested by Miller--Rabin primality of $q_n$ and $p_n$ for $n\le200$ along $1.38\times10^5$ uniformly random numbers, giving the constant $2\log2$ to one percent and the lag-one and lag-two pair constants to two and five percent.  Dimensions were computed by Chebyshev collocation of the transfer operator, on $[0,1/a]$ for the progression digit sets with $m\le384$ and on $[0,1]\times\mathbb P^1(\Fq_p)$ for continuant avoidance with $p\le31$, cross-checked by the escape rates of direct simulation for $p\le197$.  Game values were computed by linear programming with primal and dual certificates, for all primes below $1400$ in the Legendre half and quarter boxes and for two hundred random matrices per size in the Toeplitz, Hankel and full ensembles; the unit identification of Conjecture~\ref{at8}(i)--(ii) was checked in exact arithmetic for every prime $p\equiv1\pmod4$ below $1000$.  Quartic point counts, Hessian point counts, flexes, bitangents and tangency types were enumerated over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$ for several hundred random smooth quartics, and over primes up to $1300$ for fixed integral quartics.  These computations calibrate the finite anchors and exclude gross finite-size obstructions; they do not test the limits themselves.
+\emph{Part XXIX.}  The Part XXIX statements mix exact identities with asymptotic laws, and the verification programme separates the two.  The exact layer was recomputed from scratch: the local divisibility laws of Proposition~\ref{at:basic}(i) by simulation of $1.4\times10^5$ random numbers to index $200$, the Legendre game values of Proposition~\ref{at:basic}(iii) by exact rational solution of the indifference systems with certification that the solution is a nonnegative vector making every column indifferent, the character-sum identity of Proposition~\ref{at:basic}(iv) on random smooth quartics over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$, and the dual-curve identity of Proposition~\ref{at:basic}(v) by counting rational tangent lines.  The asymptotic layer was calibrated as follows.  Prime continuants were tested by Miller--Rabin primality of $q_n$ and $p_n$ for $n\le200$ along $1.38\times10^5$ uniformly random numbers, giving the constant $2\log2$ to one percent and the lag-one and lag-two pair constants to two and five percent.  Dimensions were computed by Chebyshev collocation of the transfer operator, on $[0,1/a]$ for the progression digit sets with $m\le384$ and on $[0,1]\times\mathbb P^1(\Fq_p)$ for continuant avoidance with $p\le31$, cross-checked by the escape rates of direct simulation for $p\le197$.  Game values were computed by linear programming with primal and dual certificates, for all primes below $1400$ in the Legendre half and quarter boxes and for two hundred random matrices per size in the Toeplitz, Hankel and full ensembles; the unit identification of Conjecture~\ref{at8}(i)--(ii) was checked in exact arithmetic for every prime $p\equiv1\pmod4$ below $1000$.  Quartic point counts, Hessian point counts, flexes, bitangents and tangency types were enumerated over $\Fq_{13}$, $\Fq_{23}$ and $\Fq_{41}$ for several hundred random smooth quartics, and over primes up to $1300$ for fixed integral quartics.  These computations calibrate the finite anchors and exclude gross finite-size obstructions; they do not test the limits themselves.  The sign clause of Conjecture~\ref{at15} as first deposited was refuted by an exact certificate at $p=547$, obtained by locating the optimal supports with linear programming and then solving the indifference systems over the rationals; the certificate is checked in exact arithmetic by the verification script, whose four-prime sign block is a calibration only, and the sign scan was extended to all primes $p\equiv3\pmod4$ below $1000$.
 
-\emph{Part XXX.}  The Part XXX statements are model-theoretic and their asymptotic content is not accessible to computation; the verification programme covers the proved algebraic layer of Proposition~\ref{au:basic} only.  Exact rewriting to the Poincar\'e--Birkhoff--Witt normal form was implemented for the quantum algebra of a graph and checked to be associative on random triples in the algebras of random graphs with up to eight vertices, the defining relations and the commutation rule $x_vx^a=(-1)^{\sum_{uEv}a_u}x^ax_v$ were verified on random monomials, the centrality criterion was verified against the kernel of the adjacency form modulo two, the singularity of that form in odd order and its nonsingularity with positive frequency in even order were confirmed, the extension witness behind the trivial centre of the random graph was observed with frequency increasing to $0.995$ on random graphs with forty vertices, odd powers of adjacent generators were seen to anticommute and even powers to be central, the stability of fixed-scalar span formulas was checked by exact rank computation over the rationals on random configurations in a finite module, where no half-graph of length three occurs, and the two computations behind Proposition~\ref{au:basic}(v) were repeated by exact enumeration in the algebras of random graphs: the relation $x_ax_c=-x_vx_{v'}$ holds for some pair $(v,v')$ exactly when $a$ and $c$ are adjacent, the relation $\pm x_sx_{t'}=x_{s'}x_t$ forces $\{s,t'\}=\{s',t\}$, and the explicit exponent vectors giving an order pattern of length three for the formula with exponents two and one were confirmed.  Nothing in this programme tests the conjectures about forking, stability, decidability or countable models.
+\emph{Part XXX.}  The Part XXX statements are model-theoretic and their asymptotic content is not accessible to computation; the verification programme covers the proved algebraic layer of Proposition~\ref{au:basic} only.  Exact rewriting to the Poincar\'e--Birkhoff--Witt normal form was implemented for the quantum algebra of a graph and checked to be associative on random triples in the algebras of random graphs with up to eight vertices, the defining relations and the commutation rule $x_vx^a=(-1)^{\sum_{uEv}a_u}x^ax_v$ were verified on random monomials, the centrality criterion was verified against the kernel of the adjacency form modulo two, the singularity of that form in odd order and its nonsingularity with positive frequency in even order were confirmed, the extension witness behind the trivial centre of the random graph was observed with frequency increasing to $0.995$ on random graphs with forty vertices, odd powers of adjacent generators were seen to anticommute and even powers to be central, span formulas with fixed scalars were seen, as a sanity check of the mechanism and not as evidence of stability, to admit no half-graph of length three on random configurations in a finite module, and the two computations behind Proposition~\ref{au:basic}(v) were repeated by exact enumeration in the algebras of random graphs: the relation $x_ax_c=-x_vx_{v'}$ holds for some pair $(v,v')$ exactly when $a$ and $c$ are adjacent, the relation $\pm x_sx_{t'}=x_{s'}x_t$ forces $\{s,t'\}=\{s',t\}$, and the explicit exponent vectors giving an order pattern of length three for the formula with exponents two and one were confirmed.  Nothing in this programme tests the conjectures about forking, stability, decidability or countable models.
 
 \begin{thebibliography}{99}\small
 
@@ -11823,6 +11844,10 @@ Duke Math. J. 168 (2019), no. 11, 1977--2027.
 \bibitem{MauldinUrbanski96} R.~D. Mauldin and M.~Urba\'nski, Dimensions and measures in infinite iterated function systems, Proc.\ London Math.\ Soc.\ 73 (1996), 105--154.
 \bibitem{JenkinsonPollicott01} O.~Jenkinson and M.~Pollicott, Computing the dimension of dynamically defined sets: $E_2$ and bounded continued fractions, Ergodic Theory Dynam.\ Systems 21 (2001), 1429--1445.
 \bibitem{Chapman04} R.~Chapman, Determinants of Legendre symbol matrices, Acta Arith.\ 115 (2004), 231--244.
+\bibitem{Commelin19} J.~Commelin, The Mumford--Tate conjecture for products of abelian varieties, Algebr.\ Geom.\ 6 (2019), 650--677.
+\bibitem{CantoralFarfanCommelin22} V.~Cantoral-Farf\'an and J.~Commelin, The Mumford--Tate conjecture implies the algebraic Sato--Tate conjecture of Banaszak and Kedlaya, Indiana Univ.\ Math.\ J.\ 71 (2022), 2595--2603.
+\bibitem{BanaszakKedlaya15} G.~Banaszak and K.~S. Kedlaya, An algebraic Sato--Tate group and Sato--Tate conjecture, Indiana Univ.\ Math.\ J.\ 64 (2015), 245--274.
+\bibitem{NakajimaTakahasiWang26} Y.~Nakajima, H.~Takahasi and B.~Wang, Hausdorff dimension of sets of numbers whose continued fractions contain arbitrarily long arithmetic progressions, preprint, arXiv:2601.12737 (2026).
 \bibitem{Vsemirnov12} M.~Vsemirnov, On the evaluation of R.~Chapman's ``evil determinant'', Linear Algebra Appl.\ 436 (2012), 4101--4106.
 \bibitem{Vsemirnov13} M.~Vsemirnov, On R.~Chapman's ``evil determinant'': case $p\equiv1\pmod 4$, Acta Arith.\ 159 (2013), 331--344.
 \bibitem{Davenport00} H.~Davenport, Multiplicative Number Theory, third edition, Graduate Texts in Mathematics 74, Springer, New York, 2000.

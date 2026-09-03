@@ -13,9 +13,9 @@ Exact checks (no floating point):
      element of S, approaching one as n grows (the mechanism of the trivial centre
      of the random graph).
   4. Odd powers of adjacent generators never commute, even powers are central.
-  5. Fixed-scalar span formulas are stable: no half-graph pattern of length three for
-     'w in span(b1, b2)' in finite modules over the quantum algebra of a small graph,
-     by exact rank computation over the rationals.
+  5. Sanity check of the mechanism only, not evidence of stability: no half-graph pattern
+     of length three for 'w in span(b1, b2)' in finite modules over the quantum algebra
+     of a small graph, by exact rank computation over the rationals.
   6. Squares of generators are central for q = -1.
   7. The two-vertex mechanism of Proposition au:basic(v): for distinct vertices a, c the
      equation x_a x_c = -x_v x_{v'} has a solution (v, v') iff a and c are adjacent (and then

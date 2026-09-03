@@ -16,7 +16,13 @@ and the character-sum identity; simulations are seeded.
   8. Character-sum divisibility q | sum chi(F(P)) and |t| <= 7 for smooth quartics.
   9. Dual-curve identity #C^vee = #C - b_split + b_conj by counting tangent lines.
  10. Scale separation: Hankel sign games have sqrt(m) v of order one, full games do not.
- 11. Quarter-box positivity for p = 3 mod 4 and half-box smallness.
+ 11. Quarter-box positivity for p = 3 mod 4 and half-box smallness; the half-box sign is
+     asserted only in the class 7 mod 8 (calibration on four primes, not a sign theorem).
+ 12. Exact rational minimax certificate for the half box at p = 547 (class 3 mod 8): the
+     value is positive, refuting the sign clause of Conjecture at15 as first deposited.
+     The certificate (verify/data/at15_p547_certificate.json) is checked without any
+     optimizer: the Legendre matrix is rebuilt and every primal and dual inequality is
+     verified in exact arithmetic.
 
 Run:  python3 verify/at_arithmetic_games.py
 """
@@ -268,7 +274,24 @@ for p in (103, 107, 127, 131):
     chi = legendre_table(p); mq = p // 4; i = np.arange(1, mq + 1)
     Q = np.array(chi, dtype=float)[(i[:, None] + i[None, :]) % p]; vq = value(Q)
     mh = (p - 1) // 2; j = np.arange(1, mh + 1); Hm = np.array(chi, dtype=float)[(j[:, None] + j[None, :]) % p]; vh = value(Hm)
-    check(f"p={p}: quarter box positive and half box negative with |v|<1/p", vq > 0 and vh < 0 and abs(vh) < 1 / p, f"quarter {vq:.5f} half {vh:.2e}")
+    if p % 8 == 7:
+        check(f"p={p} (7 mod 8): quarter box positive, half box nonpositive with |v|<1/p", vq > 0 and vh < 1e-12 and abs(vh) < 1 / p, f"quarter {vq:.5f} half {vh:.2e}")
+    else:
+        check(f"p={p} (3 mod 8): quarter box positive, half box |v|<1/p (sign not asserted)", vq > 0 and abs(vh) < 1 / p, f"quarter {vq:.5f} half {vh:.2e}")
+
+# ---------------------------------------------------------------- 12: exact certificate at p = 547
+import json, os
+cert_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "at15_p547_certificate.json")
+obj = json.load(open(cert_path)); p = int(obj["p"]); m = (p - 1) // 2; v = Fraction(obj["value"])
+x = [Fraction(0)] * m; y = [Fraction(0)] * m
+for it in obj["row_strategy"]: x[int(it["index_1based"]) - 1] = Fraction(it["weight"])
+for it in obj["column_strategy"]: y[int(it["index_1based"]) - 1] = Fraction(it["weight"])
+chi = legendre_table(p)
+ok = p == 547 and p % 8 == 3 and sum(x) == 1 and sum(y) == 1 and min(x) >= 0 and min(y) >= 0 and v > 0
+col = [sum(x[i] * chi[(i + j + 2) % p] for i in range(m)) for j in range(m)]   # entry (i+1)+(j+1)
+row = [sum(y[j] * chi[(i + j + 2) % p] for j in range(m)) for i in range(m)]
+ok = ok and min(col) >= v and max(row) <= v
+check("p=547: exact rational certificate, row guarantee >= v and column guarantee <= v with v > 0 (half box positive)", ok, f"v={float(v):.6e}, p^1.5 v={float(v)*p**1.5:.3f}, supports {sum(t>0 for t in x)}/{sum(t>0 for t in y)}")
 
 print(f"\n{sum(PASS)}/{len(PASS)} checks passed")
 sys.exit(0 if all(PASS) else 1)
