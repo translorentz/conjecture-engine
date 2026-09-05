@@ -745,21 +745,21 @@ Bateman--Horn constant.
 \item \textbf{Finite clusters are largest at criticality (Conjecture~\ref{av3}).}  The uniform finite-volume error is the one-arm probability, and below six dimensions a finite cluster reaches distance $n$ most often exactly at $p_c$.
 \item \textbf{Finite-size critical points and the pivotal exponent (Conjecture~\ref{av4}).}  The one-arm thresholds approach $p_c$ at the correlation-length scale and the expected number of pivotal edges grows like $n^{1/\nu-\rho}$ in every dimension.
 \item \textbf{Slab critical points (Conjecture~\ref{av5}).}  The critical point of a slab of width $k$ exceeds that of $\Z^d$ by a constant times $k^{-1/\nu_d}$.
-\item \textbf{Lipschitz dichotomy for the percolation probability at criticality (Conjecture~\ref{av6}).}  $\theta$ is Lipschitz at $p_c$ exactly in dimensions seven and above.
+\item \textbf{Lipschitz dichotomy for the percolation probability at criticality (Conjecture~\ref{av6}).}  $\theta$ is Lipschitz at $p_c$, and the triangle diagram is finite, exactly in dimensions seven and above.
 \item \textbf{No divergence of the specific heat (Conjecture~\ref{av7}).}  The cluster density is twice continuously differentiable in every dimension and singular only in its third derivative.
-\item \textbf{Hyperscaling as a two-arm factorisation (Conjecture~\ref{av8}).}  Below six dimensions the critical two-point function is the square of the one-arm probability up to constants; above, a factor $|x|^{6-d}$ separates them.
+\item \textbf{Hyperscaling as a two-arm factorisation (Conjecture~\ref{av8}).}  Below six dimensions the critical two-point function is the square of the one-arm probability up to constants; at six a logarithm and above a factor $|x|^{6-d}$ separate them.
 \item \textbf{Sign of the anomalous dimension (Conjecture~\ref{av9}).}  The critical two-point function decays faster than the Green function in the plane, slower in dimensions three to five, and like it from seven on.
 \item \textbf{Exceptional times of dynamical critical percolation (Conjecture~\ref{av10}).}  Exceptional times exist in dimensions two to five, with exceptional set of dimension $1-\beta_d$, and not from seven on.
 \item \textbf{Temporal correlations of the one-arm event (Conjecture~\ref{av11}).}  The one-arm event decorrelates at time $n^{-1/\nu_d}$ and its temporal correlation decays with exponent $\beta_d$.
 \item \textbf{Logarithmic corrections in six dimensions (Conjecture~\ref{av12}).}  On $\Z^6$ the mean-field laws carry the logarithmic powers $2/7$, $2/7$ and $5/42$.
 \item \textbf{Site percolation dies at criticality (Conjecture~\ref{av13}).}  Site percolation on $\Z^d$ has no infinite cluster at its critical point, with the exponents of the bond model.
-\item \textbf{Dying percolation on graphs of polynomial growth (Conjecture~\ref{av14}).}  Every quasi-transitive graph of polynomial growth dies at criticality, and the property is invariant under quasi-isometry.
-\item \textbf{The incipient infinite cluster in every dimension (Conjecture~\ref{av15}).}  The two constructions of the incipient infinite cluster converge and agree in every dimension, with the fractal volume exponent and spectral dimension at most $4/3$.
-\item \textbf{Largest critical clusters in boxes and tori (Conjecture~\ref{av16}).}  Boundary conditions do not change the size of the largest critical cluster below six dimensions and change it above.
-\item \textbf{Critical connectivity in the large-dimension limit (Conjecture~\ref{av17}).}  At fixed intrinsic scale the critical connectivity of $\Z^d$ converges, as $d\to\infty$, to the survival probability of the critical Poisson branching process.
-\item \textbf{Site--bond universality of critical amplitudes (Conjecture~\ref{av18}).}  The ratio of the critical one-arm probabilities of site and bond percolation converges.
+\item \textbf{Dying percolation on graphs of polynomial growth (Conjecture~\ref{av14}).}  Every quasi-transitive graph of polynomial growth dies at criticality, the lattices quasi-isometric to $\Z^d$ first and the nilpotent groups after.
+\item \textbf{The incipient infinite cluster in every dimension (Conjecture~\ref{av15}).}  The two constructions of the incipient infinite cluster converge and agree in every dimension, with the fractal volume exponent and spectral dimension at most $4/3$, strictly below it in the plane and in space.
+\item \textbf{Largest critical clusters in boxes and tori (Conjecture~\ref{av16}).}  Boundary conditions do not change the size of the largest critical cluster in dimensions two to five and change it above six.
+\item \textbf{Quasi-multiplicativity and box crossings in three dimensions (Conjecture~\ref{av17}).}  Critical arms in three dimensions extend with positive conditional probability, boxes are crossed with probability bounded away from zero and one, and crossing probabilities have rotation-invariant limits.
+\item \textbf{The upper critical dimension is exactly six (Conjecture~\ref{av18}).}  The triangle diagram is finite exactly from seven dimensions on, so the mean-field theory holds in dimensions seven to ten.
 \item \textbf{Half-space one-arm exponents (Conjecture~\ref{av19}).}  The half-space exponent exists, exceeds the full-space one, and its excess grows from $11/48$ in the plane to one in high dimensions.
-\item \textbf{Critical crossing probability of the box (Conjecture~\ref{av20}).}  The critical crossing probability converges to a limit strictly between zero and one below six dimensions and to one above.
+\item \textbf{Critical crossing probability of the box (Conjecture~\ref{av20}).}  The critical crossing probability converges to a limit strictly between zero and one in dimensions three to five and to one from six on.
 \end{enumerate}
 
 
@@ -861,11 +861,14 @@ stronger forms fail.
   dynamical percolation with the dimension formula $1-\beta_d$, temporal
   correlations of the one-arm event, the six-dimensional logarithms, site
   percolation and graphs of polynomial growth, the incipient infinite
-  cluster, largest clusters in boxes and tori, the large-dimension limit,
-  site--bond amplitudes, half-space exponents, and the critical crossing
-  probability, over a proved layer that makes the vanishing theorem
-  equivalent to uniform convergence of the finite-volume probabilities and
-  bounds the critical one-arm probability below by $n^{-(d-1)/2}$.
+  cluster, largest clusters in boxes and tori, quasi-multiplicativity and
+  box crossings in three dimensions, the exact upper critical dimension,
+  half-space exponents, and the critical crossing probability, over a
+  proved layer that makes the vanishing theorem equivalent to uniform
+  convergence of the finite-volume probabilities, bounds the critical
+  one-arm probability below by $n^{-(d-1)/2}$, and identifies the
+  large-dimension limit of the critical connectivity at fixed scale with
+  the survival probability of the critical Poisson branching process.
 \end{abstract}
 
 \tableofcontents
@@ -11066,6 +11069,10 @@ tending to infinity with $D_jp_c(G_j)\to1$.  Then for every fixed $n$,
 $\Pp_{p_c(G_j)}(0\leftrightarrow\partial B_n)\to s_n$, the survival
 probability to generation $n$ of the critical Galton--Watson process with
 Poisson offspring of mean one.
+{\rm(vii)} For every fixed $n\ge1$,
+$\Pp_{p_c(\Z^d)}(0\leftrightarrow\partial B_n)=s_n+O_n(1/d)$ as $d\to\infty$,
+with $s_n$ as in {\rm(vi)}; in particular the limit is $s_n$, and
+$s_n\sim2/n$.
 \end{proposition}
 
 \begin{proof}
@@ -11131,7 +11138,40 @@ branching process with offspring law $\mathrm{Bin}(D_j,p)$ at the root and
 $\mathrm{Bin}(D_j-1,p)$ afterwards, a fixed finite composition of the
 generating functions.  At $p=p_c(G_j)$ these laws converge to Poisson of
 mean one as $D_jp_c(G_j)\to1$, and the finite composition converges to
-$s_n$.
+$s_n$; for fixed degree and girth tending to infinity the corresponding
+statement, with the critical point tending to $1/(D-1)$, is the theorem
+of Benjamini, Nachmias and Peres~\cite{BenjaminiNachmiasPeres11}.
+{\rm(vii)} Explore the cluster of the origin in $\Z^d$ generation by
+generation: the root examines its $2d$ edges, every later vertex the
+$2d-1$ edges other than the one through which it was reached, and a
+vertex reached through an open edge is added to the set $S$ of seen
+vertices unless it is already there.  Couple this with the branching
+process of {\rm(vi)} (offspring $\mathrm{Bin}(2d,p)$ at the root and
+$\mathrm{Bin}(2d-1,p)$ afterwards) by using the same edge variables, and
+stop both at generation $n$.  The two differ only on the event $E_1$ that
+some examined open edge leads to a vertex already in $S$, or on the
+event $E_2$ that some vertex of generation $k\le n$ lies at graph
+distance less than $k$ from the origin; on $E_1^c\cap E_2^c$ the first $n$
+generations of the cluster form the branching tree with every vertex of
+generation $k$ on $\partial B_k$, and then $\{0\leftrightarrow\partial B_n\}$
+is exactly survival to generation $n$, since any open path to $\partial B_n$
+has a vertex of generation at least $n$ whose ancestor at generation $n$
+lies on $\partial B_n$.  A vertex $w$ examined from $v$ lies in $S$ only if
+$w$ is a common neighbour of $v$ and of another vertex $u\in S$, and two
+distinct vertices of $\Z^d$ have at most two common neighbours, so
+$\Pp(E_1)\le2p\,\E|S|^2$; a vertex of generation $k$ is at distance less
+than $k$ only if its path from the origin contains two opposite steps,
+which for a given path of length $k$ has probability at most
+$k^2/(2d)$ under the uniform choice of the $2d-1$ directions, so
+$\Pp(E_2)\le\E[N]\,n^2/(2d)$ with $N$ the number of vertices of the tree
+up to generation $n$.  Here $|S|\le N$, and $N$ is the total progeny to
+generation $n$ of a branching process with offspring $\mathrm{Bin}(2d,p_c)$,
+whose mean $2dp_c$ is bounded in $d$ by Kesten's
+asymptotics~\cite{Kesten90}; its second moment is bounded uniformly in
+$d$ for fixed $n$.  Hence the two probabilities differ by $O_n(1/d)$, and
+the survival probability of the branching process differs from $s_n$ by
+$O_n(1/d)$ because $2dp_c=1+O(1/d)$~\cite{HaraSlade95} and the
+binomial laws are within $O(1/d)$ of Poisson in total variation.
 \end{proof}
 
 \begin{conjecture}[Polynomial decay of the critical one-arm probability in every dimension]\label{av1}
@@ -11212,8 +11252,10 @@ dimension, the expansion $2dp_c=1+(2d)^{-1}+\tfrac72(2d)^{-2}+\dots$ of
 Hara and Slade~\cite{HaraSlade95}, and the numerical
 exponents~\cite{XuWangLvDeng14,Gracey15}; no antecedent was found for
 monotonicity of the finite-scale critical connectivity in the
-dimension.  A first decisive theorem would be clause {\rm(i)} for $n=2$,
-which involves only the critical points and finitely many paths.  In
+dimension.  A first decisive theorem would be clause {\rm(i)} for all $n$ in all
+sufficiently high dimensions, by a comparison of the lace-expansion
+amplitudes of $\pi_d(n)\asymp A_dn^{-2}$; the case $n=2$ is a finite
+computation with the critical points.  In
 tests on the corpus described in the stress-test section, $\pi_d(n)$ was
 estimated for $d\in\{2,3,4,5\}$ and $n\le4$ at the numerical critical
 points, and the ordering of clause {\rm(i)} held in every case with
@@ -11349,9 +11391,11 @@ $k$, which is $p-p_c\gtrsim k^{-1/\nu_d}$; the limit $a_d$ is a
 finite-size scaling amplitude of the crossover.  In two dimensions the
 statement is vacuous, since $\Z\times\{0,\dots,k\}$ has $p_c=1$, which is
 why $d\ge3$ is required.  The nearest results are the two cited
-theorems and the finite-size scaling of critical points on
+theorems, the quantitative but non-polynomial bounds on the correlation
+length of Duminil-Copin, Kozma and Tassion~\cite{DuminilCopinKozmaTassion21},
+and the finite-size scaling of critical points on
 tori~\cite{HeydenreichVanDerHofstad07}; no antecedent was found for the
-rate of convergence of slab critical points.  A first decisive theorem
+power-law rate of convergence of slab critical points.  A first decisive theorem
 would be the upper bound $p_c(S_k)-p_c(\Z^d)\le k^{-c}$ for some $c>0$,
 that is, a polynomial rate in the Grimmett--Marstrand theorem.  In tests
 on the corpus described in the stress-test section, $p_c(S_k)$ was
@@ -11369,7 +11413,9 @@ for $d\ge7$ the ratio converges to a finite positive limit.
 Equivalently, the mean-field bound $\theta(p)\ge c(p-p_c)$ is strict in
 exponent for $d\le5$, strict by a divergent factor at $d=6$, and sharp
 up to a constant for $d\ge7$: $\theta$ is Lipschitz at $p_c$ exactly
-when $d\ge7$.
+when $d\ge7$.  Equivalently, the triangle diagram
+$\nabla(p_c)=\sum_{x,y}\tau_{p_c}(0,x)\tau_{p_c}(x,y)\tau_{p_c}(y,0)$ is
+finite exactly when $d\ge7$.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -11433,13 +11479,14 @@ $\kappa''$, which would mean $d\nu_d\le2$ and a violation of the
 hyperscaling inequality in that dimension.
 
 \begin{conjecture}[Hyperscaling as a two-arm factorisation]\label{av8}
-For $2\le d\le6$ there are constants $0<c_d\le C_d<\infty$ with
+For $2\le d\le5$ there are constants $0<c_d\le C_d<\infty$ with
 \[
  c_d\,\pi_d(|x|_\infty)^2\le\tau_{p_c}(0,x)\le C_d\,\pi_d(|x|_\infty)^2
  \qquad(x\ne0),
 \]
-so that $d-2+\eta_d=2\rho_d$, while for $d\ge7$,
-$\tau_{p_c}(0,x)/\pi_d(|x|_\infty)^2\asymp|x|^{6-d}$.
+so that $d-2+\eta_d=2\rho_d$; for $d=6$ the ratio
+$\tau_{p_c}(0,x)/\pi_6(|x|_\infty)^2$ tends to zero like $1/\log|x|$; and
+for $d\ge7$, $\tau_{p_c}(0,x)/\pi_d(|x|_\infty)^2\asymp|x|^{6-d}$.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -11447,15 +11494,20 @@ Proposition~\ref{av:basic}(iii) proves the upper bound with
 $\pi_d(|x|/2)^2$ in place of $\pi_d(|x|)^2$ in every dimension; the
 conjecture says that below the upper critical dimension the bound is
 sharp, so that two points at distance $n$ are connected exactly when,
-up to constants, each reaches distance $n$, and that above six
-dimensions a polynomial factor separates the two.  The relation
+up to constants, each reaches distance $n$, that at the critical
+dimension a logarithm separates the two, and that above it a polynomial
+factor does.  The relation
 $2\beta_d/\nu_d=d-2+\eta_d$ is the hyperscaling relation for the
 two-point function, and the conjecture is its pointwise form: the
 mechanism is that at criticality below six dimensions there are
 boundedly many clusters at each scale, so that two arms of length $n$
 meet with probability bounded below, whereas above six dimensions the
 number of clusters of diameter $n$ meeting a box of side $n$ grows like
-$n^{d-6}$ and the two arms typically belong to different clusters.  In
+$n^{d-6}$ and the two arms typically belong to different clusters; at
+$d=6$ the logarithmic corrections of Conjecture~\ref{av12} give
+$\tau_{p_c}(0,x)\approx|x|^{-4}(\log|x|)^{1/21}$ against
+$\pi_6(|x|)^2\approx|x|^{-4}(\log|x|)^{22/21}$, so the number of such
+clusters grows like $\log n$ and the ratio decays like $1/\log|x|$.  In
 the plane the statement follows from quasi-multiplicativity and the
 arm-separation theory of Kesten~\cite{Kesten87}; in high dimensions the
 two sides are $|x|^{-(d-2)}$~\cite{Hara08} and
@@ -11463,13 +11515,15 @@ $|x|^{-4}$~\cite{KozmaNachmias11}, whose ratio is $|x|^{6-d}$.  The nearest resu
 analysis of the number of spanning clusters at criticality, which
 predicts boundedness below six dimensions and growth $n^{d-6}$
 above~\cite{Aizenman97}; no antecedent was found for the factorisation
-in $3\le d\le6$.  A first decisive theorem would be the lower bound
-$\tau_{p_c}(0,x)\ge c\,\pi_3(|x|)^2$ in three dimensions.  In tests on the
+in $3\le d\le5$.  A first decisive theorem would be the lower bound
+$\tau_{p_c}(0,x)\ge c\,\pi_3(|x|)^2$ in three dimensions, for which
+the quasi-multiplicativity of Conjecture~\ref{av17} is the natural
+first step.  In tests on the
 corpus described in the stress-test section, the ratio
 $\tau_{1/2}(0,x)/\pi_2(|x|)^2$ on $\Z^2$ was estimated for axis points
 at distances $8$, $16$, $32$ and $64$ and took the values $0.83$, $0.78$,
 $0.79$ and $0.72$, as the planar theory predicts.  A counterexample would be a
-dimension below six in which the ratio tends to zero, which would mean
+dimension at most five in which the ratio tends to zero, which would mean
 that two critical arms of the same length typically belong to
 different clusters, against the picture of finitely many clusters per
 scale.
@@ -11504,8 +11558,9 @@ expansion $\eta=-\varepsilon/21+O(\varepsilon^2)$ in $d=6-\varepsilon$,
 which is negative near the upper critical
 dimension~\cite{Gracey15}; no antecedent was found for the sign
 statement as a rigorous conjecture.  A first decisive theorem would be
-$|x|\,\tau_{p_c}(0,x)\to\infty$ in three dimensions, which says that the
-critical two-point function dominates the Green function there.  In
+$\tau_{p_c}(0,x)\ge c|x|^{-1}$ in three dimensions, the Green-function
+domination $\eta_3\le0$, which has structural content where the strict
+inequality is a numerically small effect.  In
 tests on the corpus described in the stress-test section, no computation
 bears on this statement beyond the planar exponent, which is a theorem.
 A counterexample would be $\eta_3\ge0$, which would place the
@@ -11604,8 +11659,9 @@ On $\Z^6$, as $p\to p_c$,
  \xi(p)=(p_c-p)^{-1/2}|\log(p_c-p)|^{5/42+o(1)},
 \]
 and $\pi_6(n)=n^{-2}(\log n)^{11/21+o(1)}$, the exponent $11/21=5/21+2/7$
-being forced by the scaling relation $\pi_6(n)\approx\theta(p)$ at
-$\xi(p)=n$; in particular
+being what the one-parameter scaling relation $\pi_6(n)\approx\theta(p)$
+at $\xi(p)=n$ gives, and the least secure of the four since logarithmic
+corrections to hyperscaling at the critical dimension may modify it; in particular
 $\theta(p)/(p-p_c)\to\infty$ and $|x|^4\tau_{p_c}(0,x)\to\infty$ on $\Z^6$.
 \end{conjecture}
 
@@ -11630,8 +11686,10 @@ self-avoiding walk by Bauerschmidt, Brydges and
 Slade~\cite{BauerschmidtBrydgesSlade15}, whose renormalisation-group
 method is the natural route; no antecedent was found for a rigorous
 statement of the six-dimensional corrections.  A first decisive
-theorem would be $\theta(p)/(p-p_c)\to\infty$ on $\Z^6$, the failure of
-the mean-field asymptotic at the critical dimension.  In tests on the
+theorem would be $\chi(p)(p_c-p)\to\infty$ on $\Z^6$, the failure of the
+mean-field asymptotic of the susceptibility at the critical dimension,
+which the differential inequalities of the triangle condition can
+approach.  In tests on the
 corpus described in the stress-test section, no computation bears on
 this statement.  A counterexample would be a bounded ratio
 $\theta(p)/(p-p_c)$ on $\Z^6$, which would place the upper critical
@@ -11674,12 +11732,11 @@ dichotomy would come with a critical finite-cluster tail heavier than
 any stretched exponential.
 
 \begin{conjecture}[Dying percolation on graphs of polynomial growth]\label{av14}
-{\rm(i)} $\theta(p_c)=0$ for every connected quasi-transitive graph of
+$\theta(p_c)=0$ for every connected quasi-transitive graph of
 polynomial growth; in particular for the face-centred and body-centred
 cubic lattices, for every Bravais lattice in $d\ge3$, and for the Cayley
-graphs of finitely generated virtually nilpotent groups.
-{\rm(ii)} Among connected quasi-transitive graphs, the property
-$\theta(p_c)=0$ is invariant under quasi-isometry.
+graphs of finitely generated virtually nilpotent groups, the discrete
+Heisenberg group first among them.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -11691,27 +11748,27 @@ graphs~\cite{BenjaminiLyonsPeresSchramm99}, and the vanishing theorem
 now settles the lattices $\Z^d$.  What remains is the subexponential
 world, of which polynomial growth is the structured part: by the theorem
 of Trofimov these graphs are quasi-isometric to Cayley graphs of
-virtually nilpotent groups~\cite{Trofimov85}.  Clause {\rm(i)} is the
+virtually nilpotent groups~\cite{Trofimov85}.  The statement is the
 polynomial-growth case of the Benjamini--Schramm conjecture, recorded as
-an inherited problem; clause {\rm(ii)} is a new structural claim: the
+an inherited problem, and the increment it proposes is a route: the
 proof of the vanishing theorem should depend only on the coarse
-geometry, so that the property passes between quasi-isometric graphs
-although the critical point does not.  The mechanism for {\rm(ii)} is
-that the arguments for $\Z^d$ use only the polynomial volume growth
-and isoperimetry of boxes, which are quasi-isometry invariants, and not
-the group structure.  The nearest results are the cited theorems, the
+geometry, on the polynomial volume growth and the isoperimetry of
+balls, which are quasi-isometry invariants, and not on the group
+structure of $\Z^d$, so that it should transfer first to the lattices
+quasi-isometric to $\Z^d$ and then to the nilpotent groups, where the
+balls are no longer boxes.  The nearest results are the cited theorems, the
 slab theorem of Duminil-Copin, Sidoravicius and
 Tassion~\cite{DuminilCopinSidoraviciusTassion16}, and the existence of
 the phase transition on all quasi-transitive graphs of superlinear
-growth~\cite{DuminilCopinGoswamiRaoufiSeveroYadin20}; no antecedent was
-found for quasi-isometry invariance of the vanishing at criticality.  A
-first decisive theorem would be clause {\rm(i)} for the face-centred
-cubic lattice, or clause {\rm(ii)} for graphs quasi-isometric to
-$\Z^3$.  In tests on the corpus described in the stress-test section, no
-computation bears on this statement.  A counterexample to {\rm(ii)} would
-be two quasi-isometric quasi-transitive graphs, one dying at
-criticality and one not, which would make the vanishing at criticality a
-fine property of the lattice rather than of its geometry.
+growth~\cite{DuminilCopinGoswamiRaoufiSeveroYadin20}; the statement itself is an
+open case of a known conjecture, and the route through quasi-isometry
+invariance is the increment.  A first decisive theorem would be the
+face-centred cubic lattice, and the first genuinely new case the
+Heisenberg group.  In tests on the corpus described in the stress-test section, no
+computation bears on this statement.  A counterexample would be a
+quasi-transitive graph of polynomial growth with an infinite critical
+cluster, which would refute the Benjamini--Schramm conjecture in its
+most structured case.
 
 \begin{conjecture}[The incipient infinite cluster in every dimension]\label{av15}
 For every $d\ge2$: {\rm(i)} the limits
@@ -11722,8 +11779,8 @@ measure $\Pp_{\rm IIC}$; {\rm(ii)} under $\Pp_{\rm IIC}$ the cluster of
 the origin is almost surely infinite, is the unique infinite cluster,
 and satisfies $|C\cap\Lambda_n|=n^{d_f+o(1)}$ with $d_f=d-\rho_d$ for
 $2\le d\le6$ and $d_f=4$ for $d\ge6$; {\rm(iii)} simple
-random walk on it has spectral dimension $d_s(d)$ with $d_s(d)\le4/3$,
-with equality exactly when $d\ge6$.
+random walk on it has spectral dimension $d_s(d)\le4/3$, with equality
+for $d\ge6$ and strict inequality at least for $d\in\{2,3\}$.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -11740,7 +11797,9 @@ dimensions and to four above, where the incipient cluster has the
 dimension of the integrated super-Brownian excursion~\cite{vdHofstadJarai04}, and the spectral dimension of the Alexander--Orbach
 conjecture~\cite{AlexanderOrbach82}, proved by Kozma and Nachmias in
 high dimensions~\cite{KozmaNachmias09}, which is expected to fail below
-six dimensions.  The mechanism for {\rm(i)} is quasi-multiplicativity of
+six dimensions, though in four and five dimensions the numerical
+difference from $4/3$ is of the order of one percent, which is why the
+strict inequality is asserted only for $d\le3$.  The mechanism for {\rm(i)} is quasi-multiplicativity of
 the one-arm event, which makes the conditioned measures consistent
 across scales; for {\rm(iii)} it is the relation $d_s=2d_f/d_w$ with a
 walk dimension $d_w$ that exceeds $\tfrac32d_f$ below six dimensions.
@@ -11758,11 +11817,13 @@ clusters.
 \begin{conjecture}[Largest critical clusters in boxes and tori]\label{av16}
 Let $C_{\max}(\Lambda_n)$ and $C_{\max}(\mathbb T_n^d)$ be the largest open
 clusters at $p_c(\Z^d)$ in the box $\Lambda_n$ and in the torus
-$(\Z/n\Z)^d$.  For $2\le d\le6$,
+$(\Z/n\Z)^d$.  For $2\le d\le5$,
 $|C_{\max}(\Lambda_n)|=n^{d-\rho_d+o(1)}$ and
 $|C_{\max}(\mathbb T_n^d)|=n^{d-\rho_d+o(1)}$, with
 $|C_{\max}(\mathbb T_n^d)|/|C_{\max}(\Lambda_n)|$ tight and bounded away
-from zero; for $d\ge7$, $|C_{\max}(\Lambda_n)|=n^{4+o(1)}$ while
+from zero; the case $d=6$, where the two exponents coincide but
+logarithmic factors may separate the two sizes, is left open; for
+$d\ge7$, $|C_{\max}(\Lambda_n)|=n^{4+o(1)}$ while
 $|C_{\max}(\mathbb T_n^d)|=n^{2d/3+o(1)}$.
 \end{conjecture}
 
@@ -11777,104 +11838,108 @@ high-dimensional picture of Aizenman~\cite{Aizenman97}, in which a
 critical cluster in a box has the dimension four of the integrated
 super-Brownian excursion while the torus, being a finite graph of
 volume $n^d$, behaves like the Erd\H os--R\'enyi graph with its
-$V^{2/3}$ law.  Below six dimensions the two coincide because the
-largest cluster has the fractal dimension $d-\rho_d$ of a single
+$V^{2/3}$ law.  Below six dimensions the two coincide because
+the largest cluster has the fractal dimension $d-\rho_d$ of a single
 critical cluster, which is attained in a box as well as on a torus;
-the mechanism is that in $d\le6$ there are boundedly many large
+the mechanism is that in $d\le5$ there are boundedly many large
 clusters per scale and the torus cannot host more of them than the
-box.  The nearest results are the cited high-dimensional theorems, and the general finite-size scaling of Borgs, Chayes, Kesten and
+box, while at $d=6$ the number of clusters per scale grows
+logarithmically by the count of Conjecture~\ref{av8}.  The nearest results are the cited high-dimensional theorems, and the general finite-size scaling of Borgs, Chayes, Kesten and
 Spencer, which proves the box law in $d\le6$ under scaling
 hypotheses~\cite{BorgsChayesKestenSpencer01}; no antecedent was found
-for the comparison of torus and box below six dimensions as an
+for the comparison of torus and box in $3\le d\le5$ as an
 unconditional statement.  A first decisive theorem would be the
 tightness of the ratio in three dimensions.  In tests on the corpus
 described in the stress-test section, no computation bears on this
-statement.  A counterexample would be a dimension below six in which
+statement.  A counterexample would be a dimension at most five in which
 the torus carries a larger cluster than the box by a growing factor,
 which would mean that wrapping around the torus creates clusters that
 the box cannot, against the picture of a bounded number of large
 clusters per scale.
 
-\begin{conjecture}[Critical connectivity in the large-dimension limit]\label{av17}
-For every fixed $n\ge1$,
-\[
- \lim_{d\to\infty}\Pp_{p_c(\Z^d)}\bigl(0\leftrightarrow\partial B_n\bigr)=s_n,
-\]
-where $s_n$ is the probability that the critical Galton--Watson process
-with Poisson offspring of mean one survives to generation $n$, so
-that $s_n\sim2/n$; moreover the convergence is at rate $O_n(1/d)$.
+\begin{conjecture}[Quasi-multiplicativity and box crossings in three dimensions]\label{av17}
+On $\Z^3$ at $p_c$: {\rm(i)} there is $c>0$ with
+$\Pp_{p_c}(0\leftrightarrow\partial\Lambda_{2n}\mid0\leftrightarrow\partial\Lambda_n)\ge c$
+for all $n$, so that $\pi_3(2n)\ge c\,\pi_3(n)$; {\rm(ii)} for every
+$\lambda\ge1$ there is $c_\lambda>0$ such that the probability that the box
+$[0,\lambda n]\times[0,n]^2$ is crossed in its long direction lies in
+$[c_\lambda,1-c_\lambda]$ for all $n$; {\rm(iii)} for a smooth bounded
+domain $D\subset\R^3$ with two disjoint boundary patches $A$ and $B$, the
+probability that $A\cap nD$ is connected to $B\cap nD$ inside $nD$
+converges as $n\to\infty$ to a limit in $(0,1)$ that is invariant under
+Euclidean rotations and dilations of $(D,A,B)$.
 \end{conjecture}
 
 \paragraph{Significance.}
-Proposition~\ref{av:basic}(iv) proves the case $n=1$ from Kesten's
-asymptotics $2dp_c\to1$~\cite{Kesten90}, and
-Proposition~\ref{av:basic}(vi) proves the same limit at every $n$ for
-transitive graphs of large girth, where the ball is a tree; the conjecture says that at
-every fixed intrinsic scale the critical percolation cluster of $\Z^d$
-converges to the critical Poisson branching process as the dimension
-grows, which is the tree that the lattice looks like locally when
-$d\to\infty$.  The mechanism is that a self-avoiding walk of fixed
-length in $\Z^d$ has a probability of order $1/d$ of revisiting a
-neighbourhood of its own past, so that the cluster of the origin up to
-distance $n$ is a Galton--Watson tree up to $O_n(1/d)$, and the offspring
-law $\mathrm{Bin}(2d-1,p_c)$ converges to Poisson of mean $2dp_c\to1$;
-the rate follows from the expansion of Hara and
-Slade~\cite{HaraSlade95}.  The statement is stronger than the mean-field
-exponents, which concern $n\to\infty$ at fixed $d$, and complementary
-to them, since it fixes $n$ and sends $d\to\infty$; the two limits do
-not commute, $2/n$ against $n^{-2}$.  The nearest results are Kesten's
-asymptotics, the $1/d$ expansion, the mean-field theorems in high
-dimensions~\cite{HaraSlade90,FitznerVanDerHofstad17}, and the theorem of
-Benjamini, Nachmias and Peres that for transitive graphs of fixed degree
-$D$ and girth tending to infinity the critical point tends to
-$1/(D-1)$~\cite{BenjaminiNachmiasPeres11}, the fixed-degree form of
-Proposition~\ref{av:basic}(vi); no antecedent was found for the
-large-dimension limit of the critical connectivity of $\Z^d$ at fixed
-scale, where the loops of the lattice have to be shown negligible.  A first decisive theorem would be the case $n=2$, which
-needs the second-order term of $p_c(\Z^d)$.  In tests on the corpus
-described in the stress-test section, the $n=1$ values were computed
-from the numerical critical points for $d\le13$ and found to decrease
-towards $1-\e^{-1}$, the value at $d=13$ being within $0.03$ of the
-limit.  A counterexample would be a limit different from $s_n$ at some
-$n\ge2$, which would mean that the loops of $\Z^d$ leave a trace at
-fixed scale in infinite dimension.
+These are the three-dimensional forms of the Russo--Seymour--Welsh
+theory, the tool that makes planar critical percolation
+tractable~\cite{Russo78,SeymourWelsh78,Kesten82}: quasi-multiplicativity
+of arm events, crossing probabilities bounded away from zero and one,
+and a scaling limit of crossing probabilities with the symmetries of
+the continuum.  In the plane the first two are theorems and the third
+is Smirnov's theorem for the triangular lattice~\cite{Smirnov01}; in
+three dimensions none is known, and their absence is what stops the
+quantitative study of the critical point where the vanishing theorem
+now applies.  The mechanism is the one that underlies
+Conjectures~\ref{av1}, \ref{av8}, \ref{av15} and~\ref{av20}: boundedly
+many critical clusters at each scale, so that an arm extends with
+positive conditional probability and a box is crossed with probability
+bounded away from both ends; the invariance in {\rm(iii)} expresses the
+isotropy of the scaling limit without the conformal invariance that is
+special to the plane.  The statement is a recorded expectation of the
+field, made precise here with the three clauses in the order in which
+they would be proved, and it is the technical heart of this part.  The
+nearest results are the planar theory, the sharpness theorems that
+control the subcritical and supercritical crossings in every
+dimension~\cite{Menshikov86,AizenmanBarsky87,DuminilCopinTassion16,GrimmettMarstrand90},
+and the high-dimensional theory where crossing probabilities tend to
+one~\cite{Aizenman97}; no antecedent was found for a three-dimensional
+crossing theorem at criticality.  A first decisive theorem would be
+clause {\rm(i)}, quasi-multiplicativity of the one-arm event in three
+dimensions.  In tests on the corpus described in the stress-test
+section, no computation bears on this statement.  A counterexample
+would be crossing probabilities of a fixed aspect ratio tending to zero
+or one along a subsequence, which would mean that the critical point in
+three dimensions has no nondegenerate scaling limit for crossings.
 
-\begin{conjecture}[Site--bond universality of critical amplitudes]\label{av18}
-For every $d\ge2$ the critical one-arm probabilities of site and bond
-percolation on $\Z^d$ satisfy
-$\pi_d^{\rm site}(n)/\pi_d(n)\to A_d\in(0,\infty)$, and the two-point
-functions satisfy $\tau^{\rm site}_{p_c}(0,x)/\tau_{p_c}(0,x)\to A_d^2$ for
-$2\le d\le6$, granted that $\tau_{p_c}(0,x)/\pi_d(|x|_\infty)^2$ converges
-to the same limit in both models, and to a limit $A_d'\in(0,\infty)$ for
-$d\ge7$.
+\begin{conjecture}[The upper critical dimension is exactly six]\label{av18}
+For nearest-neighbour bond percolation on $\Z^d$ the triangle diagram
+$\nabla(p_c)=\sum_{x,y}\tau_{p_c}(0,x)\tau_{p_c}(x,y)\tau_{p_c}(y,0)$ is
+finite if and only if $d\ge7$.  Consequently, for $7\le d\le10$ the
+mean-field asymptotics hold: $\pi_d(n)\asymp n^{-2}$,
+$\theta(p)\asymp p-p_c$, $\chi(p)\asymp(p_c-p)^{-1}$,
+$\tau_{p_c}(0,x)\asymp|x|^{-(d-2)}$, and the incipient infinite cluster
+exists with the properties of~\cite{vdHofstadJarai04}; while for
+$d\le6$, $\nabla(p_c)=\infty$.
 \end{conjecture}
 
 \paragraph{Significance.}
-Universality asserts that site and bond percolation on the same lattice
-share their exponents; the conjecture asserts more, that the ratio of
-the critical one-arm probabilities converges, so that the two models
-differ at criticality by a single amplitude at each scale, and that
-for the two-point function this amplitude is the square of the one-arm
-amplitude below six dimensions, by the factorisation of
-Conjecture~\ref{av8}.  The mechanism is that the two models have the
-same scaling limit and differ only in the lattice-dependent scale
-factors of the arm probabilities, which appear as amplitudes; the
-convergence of the ratio, rather than only of the exponents, is the
-statement that the corrections to scaling are of the same relative
-order in both models.  The nearest results are the equality of the
-planar exponents for site percolation on the triangular lattice and,
-conjecturally, for every planar lattice~\cite{SmirnovWerner01}, the
-identification of the high-dimensional amplitudes by the lace
-expansion~\cite{HaraSlade90,Hara08}, and the numerical universality of
-the three-dimensional exponents~\cite{XuWangLvDeng14}; no antecedent was
-found for the convergence of the amplitude ratio.  A first decisive
-theorem would be the convergence in high dimensions from the lace
-expansion for both models.  In tests on the corpus described in the
-stress-test section, no computation bears on this statement.  A
-counterexample would be a ratio that oscillates without converging,
-which would indicate corrections to scaling of different orders in the
-two models, or a ratio tending to zero or infinity, which would
-contradict universality of the exponents.
+The lace expansion proves the triangle condition, and with it the whole
+mean-field theory, for $d\ge11$~\cite{HaraSlade90,FitznerVanDerHofstad17},
+and the physics of the cubic field theory places the upper critical
+dimension at six; the dimensions seven to ten are the gap between the
+two, in which every mean-field statement is expected and none is
+proved, and the dimensions two to six are where the triangle condition
+must fail.  The conjecture records the exact location of the boundary,
+and its two halves are of different kinds: the finiteness for
+$7\le d\le10$ is a quantitative problem for the lace expansion, whose
+convergence for nearest-neighbour models depends on numerical bounds
+on the two-point function that become delicate as $d$ decreases; the
+divergence for $d\le6$ is a consequence of hyperscaling, since the
+triangle diagram diverges exactly when the critical two-point function
+decays no faster than $|x|^{-2d/3}$, which by Conjecture~\ref{av8} is
+the case whenever $\eta_d\le(6-d)/3$, and by Conjecture~\ref{av9} this
+holds up to six dimensions.  The nearest results are the cited theorems,
+the triangle condition of Aizenman and Newman as the criterion for
+mean-field behaviour~\cite{AizenmanNewman84}, and the planar exponents,
+which give $\nabla=\infty$ in the plane; the statement is a recorded
+expectation, and no antecedent was found that states the boundary as
+an equivalence with the divergence half.  A first decisive theorem would
+be the triangle condition in $d=10$.  In tests on the corpus described
+in the stress-test section, no computation bears on this statement.  A
+counterexample would be a finite triangle diagram in some $d\le6$, which
+would make that dimension mean-field, or an infinite one in some
+$d\ge7$, which would move the upper critical dimension.
 
 \begin{conjecture}[Half-space one-arm exponents]\label{av19}
 For every $d\ge2$ let $H=\Z^{d-1}\times\Z_{\ge0}$, whose critical point
@@ -11914,9 +11979,10 @@ does not feel a hyperplane, or a surface excess decreasing in $d$.
 Let $R_d(n)=\Pp_{p_c}(\Lambda_n\text{ is crossed from left to right})$, the
 box carrying free boundary conditions.
 Then $R_d(n)$ converges as $n\to\infty$ to a limit $R_d$, with
-$R_2=1/2$, $R_d\in(0,1)$ for $3\le d\le6$, and $R_d=1$ for $d\ge7$;
+$R_2=1/2$, $R_d\in(0,1)$ for $3\le d\le5$, and $R_d=1$ for $d\ge6$;
 moreover the number of distinct crossing clusters is tight for
-$2\le d\le6$ and grows like $n^{d-6+o(1)}$ for $d\ge7$.
+$2\le d\le5$, grows like $\log n$ for $d=6$, and like $n^{d-6+o(1)}$ for
+$d\ge7$.
 \end{conjecture}
 
 \paragraph{Significance.}
@@ -11929,22 +11995,24 @@ numerically to converge to a value strictly between zero and one, of order $0.3$
 for free boundary conditions~\cite{LorenzZiff98b}, and Aizenman argued that above six
 dimensions the number of spanning clusters grows like $n^{d-6}$, so that
 the box is crossed with probability tending to one~\cite{Aizenman97}.
-The conjecture collects these into a dimension-dependent law: a
+The
+conjecture collects these into a dimension-dependent law: a
 nontrivial universal crossing probability below the upper critical
-dimension, and certain crossing above it.  The mechanism is the count
-of clusters per scale, boundedly many below six dimensions so that
-crossing is a nondegenerate event, and polynomially many above, where
-the mean-field cluster of dimension four cannot fill a $d$-dimensional
-box but many of them together cross it.  The nearest results are
+dimension, and certain crossing from the critical dimension on.  The
+mechanism is the count of clusters per scale, boundedly many below six
+dimensions so that crossing is a nondegenerate event, logarithmically
+many at six by the count of Conjecture~\ref{av8}, and polynomially many
+above, where the mean-field cluster of dimension four cannot fill a
+$d$-dimensional box but many of them together cross it.  The nearest results are
 Cardy's formula, Aizenman's bounds on spanning clusters, and the
 three-dimensional numerical crossing probabilities; no antecedent was
-found for the existence of the limit in $3\le d\le6$ as a stated
-conjecture with the dimension threshold at seven.  A first decisive
+found for the existence of the limit in $3\le d\le5$ as a stated
+conjecture with the dimension threshold at six.  A first decisive
 theorem would be $\liminf R_3(n)>0$ and $\limsup R_3(n)<1$, that is,
 nondegeneracy of critical crossing in three dimensions.  In tests on
 the corpus described in the stress-test section, no computation bears
 on this statement.  A counterexample would be $R_d(n)\to1$ in some
-$d\le6$, which would mean that critical clusters proliferate below the
+$d\le5$, which would mean that critical clusters proliferate below the
 upper critical dimension, or a nonconvergent sequence, which would
 mean that the critical box has no scaling limit for the crossing
 event.
@@ -13009,6 +13077,9 @@ Duke Math. J. 168 (2019), no. 11, 1977--2027.
 \bibitem{BauerschmidtBrydgesSlade15} R.~Bauerschmidt, D.~C. Brydges and G.~Slade, Logarithmic correction for the susceptibility of the 4-dimensional weakly self-avoiding walk: a renormalisation group analysis, Comm.\ Math.\ Phys.\ 337 (2015), 817--877.
 \bibitem{ChatterjeeHanson20} S.~Chatterjee and J.~Hanson, Restricted percolation critical exponents in high dimensions, Comm.\ Pure Appl.\ Math.\ 73 (2020), 2370--2429.
 \bibitem{Russo81} L.~Russo, On the critical percolation probabilities, Z.~Wahrsch.\ Verw.\ Gebiete 56 (1981), 229--237.
+\bibitem{Russo78} L.~Russo, A note on percolation, Z.~Wahrsch.\ Verw.\ Gebiete 43 (1978), 39--48.
+\bibitem{SeymourWelsh78} P.~D. Seymour and D.~J.~A. Welsh, Percolation probabilities on the square lattice, Ann.\ Discrete Math.\ 3 (1978), 227--245.
+\bibitem{DuminilCopinKozmaTassion21} H.~Duminil-Copin, G.~Kozma and V.~Tassion, Upper bounds on the percolation correlation length, in In and out of equilibrium 3: celebrating Vladas Sidoravicius, Progr.\ Probab.\ 77, Birkh\"auser, 2021, 347--369.
 \bibitem{Kesten82} H.~Kesten, Percolation theory for mathematicians, Progr.\ Probab.\ Statist.\ 2, Birkh\"auser, Boston, 1982.
 \bibitem{GeorgakopoulosPanagiotis20} A.~Georgakopoulos and C.~Panagiotis, Analyticity results in Bernoulli percolation, Mem.\ Amer.\ Math.\ Soc., to appear; arXiv:1811.07404.
 \bibitem{XuWangLvDeng14} X.~Xu, J.~Wang, J.-P. Lv and Y.~Deng, Simultaneous analysis of three-dimensional percolation models, Front.\ Phys.\ 9 (2014), 113--119.

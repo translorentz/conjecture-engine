@@ -6306,6 +6306,10 @@ tending to infinity with $D_jp_c(G_j)\to1$.  Then for every fixed $n$,
 $\Pp_{p_c(G_j)}(0\leftrightarrow\partial B_n)\to s_n$, the survival
 probability to generation $n$ of the critical Galton--Watson process with
 Poisson offspring of mean one.
+{\rm(vii)} For every fixed $n\ge1$,
+$\Pp_{p_c(\Z^d)}(0\leftrightarrow\partial B_n)=s_n+O_n(1/d)$ as $d\to\infty$,
+with $s_n$ as in {\rm(vi)}; in particular the limit is $s_n$, and
+$s_n\sim2/n$.
 \end{proposition}
 
 \begin{proof}
@@ -6371,7 +6375,40 @@ branching process with offspring law $\mathrm{Bin}(D_j,p)$ at the root and
 $\mathrm{Bin}(D_j-1,p)$ afterwards, a fixed finite composition of the
 generating functions.  At $p=p_c(G_j)$ these laws converge to Poisson of
 mean one as $D_jp_c(G_j)\to1$, and the finite composition converges to
-$s_n$.
+$s_n$; for fixed degree and girth tending to infinity the corresponding
+statement, with the critical point tending to $1/(D-1)$, is the theorem
+of Benjamini, Nachmias and Peres.
+{\rm(vii)} Explore the cluster of the origin in $\Z^d$ generation by
+generation: the root examines its $2d$ edges, every later vertex the
+$2d-1$ edges other than the one through which it was reached, and a
+vertex reached through an open edge is added to the set $S$ of seen
+vertices unless it is already there.  Couple this with the branching
+process of {\rm(vi)} (offspring $\mathrm{Bin}(2d,p)$ at the root and
+$\mathrm{Bin}(2d-1,p)$ afterwards) by using the same edge variables, and
+stop both at generation $n$.  The two differ only on the event $E_1$ that
+some examined open edge leads to a vertex already in $S$, or on the
+event $E_2$ that some vertex of generation $k\le n$ lies at graph
+distance less than $k$ from the origin; on $E_1^c\cap E_2^c$ the first $n$
+generations of the cluster form the branching tree with every vertex of
+generation $k$ on $\partial B_k$, and then $\{0\leftrightarrow\partial B_n\}$
+is exactly survival to generation $n$, since any open path to $\partial B_n$
+has a vertex of generation at least $n$ whose ancestor at generation $n$
+lies on $\partial B_n$.  A vertex $w$ examined from $v$ lies in $S$ only if
+$w$ is a common neighbour of $v$ and of another vertex $u\in S$, and two
+distinct vertices of $\Z^d$ have at most two common neighbours, so
+$\Pp(E_1)\le2p\,\E|S|^2$; a vertex of generation $k$ is at distance less
+than $k$ only if its path from the origin contains two opposite steps,
+which for a given path of length $k$ has probability at most
+$k^2/(2d)$ under the uniform choice of the $2d-1$ directions, so
+$\Pp(E_2)\le\E[N]\,n^2/(2d)$ with $N$ the number of vertices of the tree
+up to generation $n$.  Here $|S|\le N$, and $N$ is the total progeny to
+generation $n$ of a branching process with offspring $\mathrm{Bin}(2d,p_c)$,
+whose mean $2dp_c$ is bounded in $d$ by Kesten's
+asymptotics; its second moment is bounded uniformly in
+$d$ for fixed $n$.  Hence the two probabilities differ by $O_n(1/d)$, and
+the survival probability of the branching process differs from $s_n$ by
+$O_n(1/d)$ because $2dp_c=1+O(1/d)$ and the
+binomial laws are within $O(1/d)$ of Poisson in total variation.
 \end{proof}
 
 \begin{conjecture}[Polynomial decay of the critical one-arm probability in every dimension]\label{av1}
@@ -6437,7 +6474,9 @@ for $d\ge7$ the ratio converges to a finite positive limit.
 Equivalently, the mean-field bound $\theta(p)\ge c(p-p_c)$ is strict in
 exponent for $d\le5$, strict by a divergent factor at $d=6$, and sharp
 up to a constant for $d\ge7$: $\theta$ is Lipschitz at $p_c$ exactly
-when $d\ge7$.
+when $d\ge7$.  Equivalently, the triangle diagram
+$\nabla(p_c)=\sum_{x,y}\tau_{p_c}(0,x)\tau_{p_c}(x,y)\tau_{p_c}(y,0)$ is
+finite exactly when $d\ge7$.
 \end{conjecture}
 
 
@@ -6452,13 +6491,14 @@ discontinuity at $p_c$ for $d\ge7$; the case $d=6$ is left open.
 
 
 \begin{conjecture}[Hyperscaling as a two-arm factorisation]\label{av8}
-For $2\le d\le6$ there are constants $0<c_d\le C_d<\infty$ with
+For $2\le d\le5$ there are constants $0<c_d\le C_d<\infty$ with
 \[
  c_d\,\pi_d(|x|_\infty)^2\le\tau_{p_c}(0,x)\le C_d\,\pi_d(|x|_\infty)^2
  \qquad(x\ne0),
 \]
-so that $d-2+\eta_d=2\rho_d$, while for $d\ge7$,
-$\tau_{p_c}(0,x)/\pi_d(|x|_\infty)^2\asymp|x|^{6-d}$.
+so that $d-2+\eta_d=2\rho_d$; for $d=6$ the ratio
+$\tau_{p_c}(0,x)/\pi_6(|x|_\infty)^2$ tends to zero like $1/\log|x|$; and
+for $d\ge7$, $\tau_{p_c}(0,x)/\pi_d(|x|_\infty)^2\asymp|x|^{6-d}$.
 \end{conjecture}
 
 
@@ -6503,8 +6543,9 @@ On $\Z^6$, as $p\to p_c$,
  \xi(p)=(p_c-p)^{-1/2}|\log(p_c-p)|^{5/42+o(1)},
 \]
 and $\pi_6(n)=n^{-2}(\log n)^{11/21+o(1)}$, the exponent $11/21=5/21+2/7$
-being forced by the scaling relation $\pi_6(n)\approx\theta(p)$ at
-$\xi(p)=n$; in particular
+being what the one-parameter scaling relation $\pi_6(n)\approx\theta(p)$
+at $\xi(p)=n$ gives, and the least secure of the four since logarithmic
+corrections to hyperscaling at the critical dimension may modify it; in particular
 $\theta(p)/(p-p_c)\to\infty$ and $|x|^4\tau_{p_c}(0,x)\to\infty$ on $\Z^6$.
 \end{conjecture}
 
@@ -6517,12 +6558,11 @@ exponents, $\rho_d^{\rm site}=\rho_d$ and $\beta_d^{\rm site}=\beta_d$.
 
 
 \begin{conjecture}[Dying percolation on graphs of polynomial growth]\label{av14}
-{\rm(i)} $\theta(p_c)=0$ for every connected quasi-transitive graph of
+$\theta(p_c)=0$ for every connected quasi-transitive graph of
 polynomial growth; in particular for the face-centred and body-centred
 cubic lattices, for every Bravais lattice in $d\ge3$, and for the Cayley
-graphs of finitely generated virtually nilpotent groups.
-{\rm(ii)} Among connected quasi-transitive graphs, the property
-$\theta(p_c)=0$ is invariant under quasi-isometry.
+graphs of finitely generated virtually nilpotent groups, the discrete
+Heisenberg group first among them.
 \end{conjecture}
 
 
@@ -6535,42 +6575,48 @@ measure $\Pp_{\rm IIC}$; {\rm(ii)} under $\Pp_{\rm IIC}$ the cluster of
 the origin is almost surely infinite, is the unique infinite cluster,
 and satisfies $|C\cap\Lambda_n|=n^{d_f+o(1)}$ with $d_f=d-\rho_d$ for
 $2\le d\le6$ and $d_f=4$ for $d\ge6$; {\rm(iii)} simple
-random walk on it has spectral dimension $d_s(d)$ with $d_s(d)\le4/3$,
-with equality exactly when $d\ge6$.
+random walk on it has spectral dimension $d_s(d)\le4/3$, with equality
+for $d\ge6$ and strict inequality at least for $d\in\{2,3\}$.
 \end{conjecture}
 
 
 \begin{conjecture}[Largest critical clusters in boxes and tori]\label{av16}
 Let $C_{\max}(\Lambda_n)$ and $C_{\max}(\mathbb T_n^d)$ be the largest open
 clusters at $p_c(\Z^d)$ in the box $\Lambda_n$ and in the torus
-$(\Z/n\Z)^d$.  For $2\le d\le6$,
+$(\Z/n\Z)^d$.  For $2\le d\le5$,
 $|C_{\max}(\Lambda_n)|=n^{d-\rho_d+o(1)}$ and
 $|C_{\max}(\mathbb T_n^d)|=n^{d-\rho_d+o(1)}$, with
 $|C_{\max}(\mathbb T_n^d)|/|C_{\max}(\Lambda_n)|$ tight and bounded away
-from zero; for $d\ge7$, $|C_{\max}(\Lambda_n)|=n^{4+o(1)}$ while
+from zero; the case $d=6$, where the two exponents coincide but
+logarithmic factors may separate the two sizes, is left open; for
+$d\ge7$, $|C_{\max}(\Lambda_n)|=n^{4+o(1)}$ while
 $|C_{\max}(\mathbb T_n^d)|=n^{2d/3+o(1)}$.
 \end{conjecture}
 
 
-\begin{conjecture}[Critical connectivity in the large-dimension limit]\label{av17}
-For every fixed $n\ge1$,
-\[
- \lim_{d\to\infty}\Pp_{p_c(\Z^d)}\bigl(0\leftrightarrow\partial B_n\bigr)=s_n,
-\]
-where $s_n$ is the probability that the critical Galton--Watson process
-with Poisson offspring of mean one survives to generation $n$, so
-that $s_n\sim2/n$; moreover the convergence is at rate $O_n(1/d)$.
+\begin{conjecture}[Quasi-multiplicativity and box crossings in three dimensions]\label{av17}
+On $\Z^3$ at $p_c$: {\rm(i)} there is $c>0$ with
+$\Pp_{p_c}(0\leftrightarrow\partial\Lambda_{2n}\mid0\leftrightarrow\partial\Lambda_n)\ge c$
+for all $n$, so that $\pi_3(2n)\ge c\,\pi_3(n)$; {\rm(ii)} for every
+$\lambda\ge1$ there is $c_\lambda>0$ such that the probability that the box
+$[0,\lambda n]\times[0,n]^2$ is crossed in its long direction lies in
+$[c_\lambda,1-c_\lambda]$ for all $n$; {\rm(iii)} for a smooth bounded
+domain $D\subset\R^3$ with two disjoint boundary patches $A$ and $B$, the
+probability that $A\cap nD$ is connected to $B\cap nD$ inside $nD$
+converges as $n\to\infty$ to a limit in $(0,1)$ that is invariant under
+Euclidean rotations and dilations of $(D,A,B)$.
 \end{conjecture}
 
 
-\begin{conjecture}[Site--bond universality of critical amplitudes]\label{av18}
-For every $d\ge2$ the critical one-arm probabilities of site and bond
-percolation on $\Z^d$ satisfy
-$\pi_d^{\rm site}(n)/\pi_d(n)\to A_d\in(0,\infty)$, and the two-point
-functions satisfy $\tau^{\rm site}_{p_c}(0,x)/\tau_{p_c}(0,x)\to A_d^2$ for
-$2\le d\le6$, granted that $\tau_{p_c}(0,x)/\pi_d(|x|_\infty)^2$ converges
-to the same limit in both models, and to a limit $A_d'\in(0,\infty)$ for
-$d\ge7$.
+\begin{conjecture}[The upper critical dimension is exactly six]\label{av18}
+For nearest-neighbour bond percolation on $\Z^d$ the triangle diagram
+$\nabla(p_c)=\sum_{x,y}\tau_{p_c}(0,x)\tau_{p_c}(x,y)\tau_{p_c}(y,0)$ is
+finite if and only if $d\ge7$.  Consequently, for $7\le d\le10$ the
+mean-field asymptotics hold: $\pi_d(n)\asymp n^{-2}$,
+$\theta(p)\asymp p-p_c$, $\chi(p)\asymp(p_c-p)^{-1}$,
+$\tau_{p_c}(0,x)\asymp|x|^{-(d-2)}$, and the incipient infinite cluster
+exists with the properties of; while for
+$d\le6$, $\nabla(p_c)=\infty$.
 \end{conjecture}
 
 
@@ -6591,9 +6637,10 @@ dimensions.
 Let $R_d(n)=\Pp_{p_c}(\Lambda_n\text{ is crossed from left to right})$, the
 box carrying free boundary conditions.
 Then $R_d(n)$ converges as $n\to\infty$ to a limit $R_d$, with
-$R_2=1/2$, $R_d\in(0,1)$ for $3\le d\le6$, and $R_d=1$ for $d\ge7$;
+$R_2=1/2$, $R_d\in(0,1)$ for $3\le d\le5$, and $R_d=1$ for $d\ge6$;
 moreover the number of distinct crossing clusters is tight for
-$2\le d\le6$ and grows like $n^{d-6+o(1)}$ for $d\ge7$.
+$2\le d\le5$, grows like $\log n$ for $d=6$, and like $n^{d-6+o(1)}$ for
+$d\ge7$.
 \end{conjecture}
 
 \begin{thebibliography}{99}\small
