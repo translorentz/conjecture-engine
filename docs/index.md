@@ -4719,7 +4719,7 @@ The stable forking conjecture asserted that in a simple theory every instance of
 
 **427. Stable forking for countably categorical simple theories (Conjecture 427).** Every $$\aleph_0$$-categorical simple theory has stable forking; an inherited open problem, among the questions Freitag and Mutchnik leave open.
 
-**428. The counterexample is two-dependent (Conjecture 428).** $$T_q(\Gamma)$$ is $$k$$-dependent exactly when the theory of $$\Gamma$$ is, so the quantum modules over the random and random bipartite graphs are $$2$$-dependent and the stable forking conjecture fails in a $$2$$-dependent supersimple theory.
+**428. The quantum module of the random bipartite graph is two-dependent (Conjecture 428).** $$T_q(\Gamma)$$ is $$k$$-dependent exactly when the theory of $$\Gamma$$ is, so the quantum modules over the random and random bipartite graphs are $$2$$-dependent and the stable forking conjecture fails in a $$2$$-dependent supersimple theory.
 
 **429. Transfer of dividing lines from graphs to quantum modules (Conjecture 429).** $$T_q(\Gamma)$$ is simple, supersimple, NSOP$$_1$$, or stable exactly when the theory of $$\Gamma$$ is, and for an infinite graph of $$SU$$-rank one the module has $$SU$$-rank exactly $$\omega$$.
 
@@ -4727,7 +4727,7 @@ The stable forking conjecture asserted that in a simple theory every instance of
 
 **431. Global linear disjointness is forking in every quantum module (Conjecture 431).** For a graph with simple theory, forking independence in $$T_q(\Gamma)$$ is linear disjointness of the spans over the division ring of the monster model combined with forking independence in the graph of the vertex parts of the algebraic closures, and the theory has quantifier elimination up to closure.
 
-**432. Where one-basedness fails in the counterexample (Conjecture 432).** $$T_q(\Gamma_{\rm bip})$$ is not one-based, but the canonical base of the type of a tuple of vectors is bounded over the tuple together with finitely many vertices of its algebraic closure, and the theory is CM-trivial.
+**432. Where one-basedness fails in the quantum module of the random bipartite graph (Conjecture 432).** $$T_q(\Gamma_{\rm bip})$$ is not one-based, but the canonical base of the type of a tuple of vectors is bounded over the tuple together with finitely many vertices of its algebraic closure, and the theory is CM-trivial.
 
 **433. Failure of stable forking over models (Conjecture 433).** In $$T_q(\Gamma_{\rm bip})$$ the type of $$x_yx_{y'}b+m$$ over a model $$M$$ and a vector $$b$$, with $$m\in M$$ and $$y,y'$$ hidden vertices, forks over $$M$$ without any stable forking formula, and $$T_q(\Gamma)$$ fails the weak stable Kim-forking property for every unstable NSOP$$_1$$ graph $$\Gamma$$.
 
@@ -4737,11 +4737,11 @@ The stable forking conjecture asserted that in a simple theory every instance of
 
 **436. Stable formulas and hidden vertices (Conjecture 436).** With vertex parameters named as constants: every formula in vector variables with at most one vertex quantifier is stable; the formulas $$w=x_{v_1}^{a_1}\cdots x_{v_n}^{a_n}u$$ with hidden distinct vertices and at least two odd exponents have the order property whenever the graph has half graphs; and for an unstable graph the stable formulas are exactly the Boolean combinations of one-vertex formulas.
 
-**437. Nonforking extensions do not restore stable witnesses (Conjecture 437).** A simple theory has stable forking as soon as every forking type has a nonforking extension containing a stable forking formula, the converse being trivial; in the counterexample the type of $$x_yx_{y'}b+m$$ has no such extension.
+**437. Nonforking extensions do not restore stable witnesses (Conjecture 437).** A simple theory has stable forking as soon as every forking type has a nonforking extension containing a stable forking formula, the converse being trivial; in the module over the quantum algebra of the random bipartite graph the type of $$x_yx_{y'}b+m$$ has no such extension.
 
 **438. Definable groups in quantum modules (Conjecture 438).** Every group interpretable in $$T_q(\Gamma_{\rm bip})$$ or $$T_q(\Gamma_{\rm rand})$$ is abelian-by-finite and definably isogenous to a subquotient of a power of the vector sort.
 
-**439. Countable models of the counterexample (Conjecture 439).** Over the rationals, the structures with the random bipartite graph and a vector sort of dimension $$1\le n\le\omega$$ are elementarily equivalent and exhaust the countable models of $$T_q(\Gamma_{\rm bip})$$ up to isomorphism, so the theory has exactly $$\aleph_0$$ countable models although its vertex sort is countably categorical.
+**439. Countable models of the quantum module of the random bipartite graph (Conjecture 439).** Over the rationals, the structures with the random bipartite graph and a vector sort of dimension $$1\le n\le\omega$$ are elementarily equivalent and exhaust the countable models of $$T_q(\Gamma_{\rm bip})$$ up to isomorphism, so the theory has exactly $$\aleph_0$$ countable models although its vertex sort is countably categorical.
 
 ## Part XXXI: percolation at the critical point in every dimension
 
@@ -7025,7 +7025,7 @@ The type-local form of the stable forking conjecture cannot hold in every finite
 
 The counterexample records a noncommutative rational scalar in the type of a pair of vectors, so it has infinitely many types and is far from countably categorical. The conjecture says that countable categoricity leaves no room for forking to escape stable witnesses.
 
-### Conjecture 428: The counterexample is two-dependent
+### Conjecture 428: The quantum module of the random bipartite graph is two-dependent
 
 In a simple theory a formula is stable exactly when it is NIP, so the refuted conjecture concerns the first level of Shelah's k-dependence hierarchy. The conjecture places the counterexample at the second level: the action of the generators is bilinear in the sense relevant to k-dependence, bilinear forms are 2-dependent, and the graph is 2-dependent, so the module should be too. The statement is at the level of theories, since k-dependence of a single formula can be trivialised by coding its parameters into one imaginary.
 
@@ -7041,7 +7041,7 @@ In quantum modules stable forking and stability should coincide. The proved laye
 
 The forking calculus behind the two previous statements, proved by Freitag and Mutchnik for the random bipartite graph: independence is linear disjointness of spans over the division ring of the monster model, together with independence in the graph of the vertex parts of the algebraic closures, and types over closed sets are determined by the isomorphism type of closures. The vertex clause is needed, since a vertex is definable from a vector and its image under the corresponding generator.
 
-### Conjecture 432: Where one-basedness fails in the counterexample
+### Conjecture 432: Where one-basedness fails in the quantum module of the random bipartite graph
 
 One-based simple theories that eliminate hyperimaginaries have stable forking (Kim), and supersimple theories eliminate hyperimaginaries, so the counterexample is not one-based although a vector space and the random bipartite graph both are. The conjecture locates the failure: it is due entirely to the hidden vertices, since naming finitely many vertices makes the canonical base bounded over the realisation, and it is of the mildest kind, the theory being CM-trivial.
 
@@ -7069,7 +7069,7 @@ A tempting repair of the refuted conjecture is to allow the stable witness to ap
 
 The random graph interprets no infinite group and a module interprets only abelian groups up to finite index; the conjecture says the quantum scalars create no new groups, in particular no definable trace of the noncommutative multiplicative group of the scalars.
 
-### Conjecture 439: Countable models of the counterexample
+### Conjecture 439: Countable models of the quantum module of the random bipartite graph
 
 Infinite dimensionality over the division ring is a property of the structure and not of its theory; the proved layer shows that the module reducts of all dimensions are elementarily equivalent, and the conjecture extends this to the two-sorted structures. A countable model computes its closures with scalars from its own vertex sort by elementarity, and the countable random bipartite graph is unique, so the countable models should be classified by dimension, giving exactly countably many.
 
