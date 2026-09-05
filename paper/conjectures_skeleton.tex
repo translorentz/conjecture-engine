@@ -37,7 +37,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\,d}
 
-\title{Four hundred thirty-nine conjectures in mathematics}
+\title{Four hundred fifty-nine conjectures in mathematics}
 \author{}
 \date{27 July 2026}
 
@@ -54,7 +54,7 @@
 
 \begin{document}
 
-\title{Four hundred thirty-nine conjectures in mathematics:\\ the statements}
+\title{Four hundred fifty-nine conjectures in mathematics:\\ the statements}
 \author{}\date{}
 \maketitle
 \section{Notation}
@@ -6235,6 +6235,365 @@ isomorphic to one of them.  In particular $T_q(\Gamma_{\rm bip})$ has
 exactly $\aleph_0$ countable models, the prime model is
 $M^{(1)}_q(\Gamma_{\rm bip})$, and the theory is not $\aleph_0$-categorical
 although its vertex sort is.
+\end{conjecture}
+
+\part{Percolation at the critical point in every dimension}
+
+\medskip\noindent\emph{Added to the deposit: 5 September 2026.}\par\medskip
+
+This part states twenty conjectures on critical percolation on $\Z^d$ once the critical point is known to carry no infinite cluster.  The proved layer is Proposition~\ref{av:basic}.
+
+Throughout, $d\ge2$, $\Pp_p$ is nearest-neighbour bond percolation on
+$\Z^d$ with parameter $p$, $p_c=p_c(\Z^d)$, $\Lambda_n=[-n,n]^d\cap\Z^d$
+with boundary $\partial\Lambda_n=\Lambda_n\setminus\Lambda_{n-1}$, and
+$B_n$ is the ball of radius $n$ in the graph distance, with
+$\partial B_n=B_n\setminus B_{n-1}$; we put $\pi_d(0)=1$.  We write
+$C$ for the open cluster of the origin,
+$\theta(p)=\Pp_p(|C|=\infty)$, $\theta_n(p)=\Pp_p(0\leftrightarrow\partial\Lambda_n)$,
+$\pi_d(n)=\theta_n(p_c)$ for the critical one-arm probability,
+$\tau_p(0,x)=\Pp_p(0\leftrightarrow x)$ for the two-point function,
+$\chi(p)=\E_p|C|$ and $\kappa(p)=\E_p(1/|C|)$ for the mean cluster size
+and the number of clusters per site.  The critical exponents are
+defined, when the limits exist, by
+$\theta(p)=(p-p_c)^{\beta_d+o(1)}$ as $p\downarrow p_c$,
+$\chi(p)=(p_c-p)^{-\gamma_d+o(1)}$ and $\xi(p)=(p_c-p)^{-\nu_d+o(1)}$
+as $p\uparrow p_c$, where $\xi(p)$ is the correlation length given by
+the exponential decay rate of $\tau_p(0,x)$, $\pi_d(n)=n^{-\rho_d+o(1)}$,
+$\tau_{p_c}(0,x)=|x|^{-(d-2+\eta_d)+o(1)}$, and
+$\Pp_{p_c}(|C|\ge n)=n^{-1/\delta_d+o(1)}$; when both exist,
+$\rho_d=\beta_d/\nu_d$.  The values established for site percolation on
+the triangular lattice, $\beta=5/36$, $\nu=4/3$, $\rho=5/48$,
+$\eta=5/24$, are expected
+for every planar lattice but are not proved for $\Z^2$; the numerical
+values used below, $\beta_3\approx0.42$, $\nu_3\approx0.88$,
+$\eta_3\approx-0.05$, $\beta_4\approx0.66$, $\nu_4\approx0.69$,
+$\beta_5\approx0.83$, $\nu_5\approx0.57$, and the mean-field values
+$\beta=1$, $\nu=1/2$, $\eta=0$, $\rho=2$, $\delta=2$ for $d\ge7$, with
+$d=6$ the upper critical dimension, are taken
+from; the mean-field
+values are theorems for $d\ge11$.
+Where a planar exponent is called a theorem below, the theorem is for
+site percolation on the triangular lattice.  The scaling function of the
+one-arm event, when it exists, is the function $\Phi_d$ with
+$\theta_n(p_c+tn^{-1/\nu_d})=\pi_d(n)\Phi_d(t)(1+o(1))$ for fixed $t$.
+Dynamical percolation refreshes every edge independently at rate one,
+keeping the marginal $\Pp_{p_c}$; an exceptional time is a time at which
+an infinite open cluster exists.
+
+\begin{proposition}[Uniform finite-volume approximation and the critical one-arm bound]\label{av:basic}
+{\rm(i)} For every $d\ge2$ the following are equivalent: $\theta(p_c)=0$;
+$\theta$ is continuous on $[0,1]$; $\theta_n\to\theta$ uniformly on
+$[0,1]$.  In particular, given the vanishing theorem,
+$\sup_{p\in[0,1]}(\theta_n(p)-\theta(p))\to0$.
+{\rm(ii)} For $\eps\in(0,1)$ let $p_n(\eps)$ be the unique $p$ with
+$\theta_n(p)=\eps$ and $p_\eps=\inf\{p:\theta(p)\ge\eps\}$.  Then
+$p_n(\eps)$ is nondecreasing in $n$ and $p_n(\eps)\uparrow p_\eps$;
+given the vanishing theorem, $p_n(\eps)>p_c$ for all large $n$.
+{\rm(iii)} For all $x\ne0$, $\tau_{p_c}(0,x)\le\pi_d(\lfloor|x|_\infty/2\rfloor)^2$,
+and for all $n\ge1$,
+\[
+ \sum_{x\in\partial\Lambda_n}\tau_{p_c}(0,x)\ge\frac1{2dp_c},\qquad
+ \pi_d(\lfloor n/2\rfloor)\ge\bigl(2dp_c|\partial\Lambda_n|\bigr)^{-1/2}\ge c_dn^{-(d-1)/2}.
+\]
+Consequently, whenever $\rho_d$ exists, $\rho_d\le(d-1)/2$.
+{\rm(iv)} $\lim_{d\to\infty}\Pp_{p_c(\Z^d)}(0\leftrightarrow\partial B_1)=1-\e^{-1}$,
+the survival probability to the first generation of the critical
+Galton--Watson process with Poisson offspring of mean one.
+{\rm(v)} In the plane, for $n=1$ and every $p\ne1/2$,
+$\Pp_p(0\leftrightarrow\partial\Lambda_1,\ |C|<\infty)<\Pp_{1/2}(0\leftrightarrow\partial\Lambda_1)$.
+{\rm(vi)} Let $G_j$ be transitive graphs of degree $D_j\to\infty$ and girth
+tending to infinity with $D_jp_c(G_j)\to1$.  Then for every fixed $n$,
+$\Pp_{p_c(G_j)}(0\leftrightarrow\partial B_n)\to s_n$, the survival
+probability to generation $n$ of the critical Galton--Watson process with
+Poisson offspring of mean one.
+\end{proposition}
+
+\begin{proof}
+{\rm(i)} By van den Berg and Keane (see also
+Grimmett), $\theta$ is right-continuous on
+$[0,1]$ and left-continuous on $(p_c,1]$, and it vanishes on $[0,p_c)$;
+hence $\theta$ is continuous on $[0,1]$ if and only if it is
+left-continuous at $p_c$, that is, if and only if $\theta(p_c)=0$.  Each
+$\theta_n$ is a polynomial in $p$, the sequence $\theta_n$ is
+nonincreasing in $n$, and $\theta_n\to\theta$ pointwise since
+$\{0\leftrightarrow\partial\Lambda_n\}$ decreases to $\{|C|=\infty\}$.  If
+$\theta$ is continuous, Dini's theorem on the compact interval $[0,1]$
+gives uniform convergence; conversely a uniform limit of continuous
+functions is continuous.
+{\rm(ii)} $\theta_n$ is a polynomial, strictly increasing on $(0,1)$ since
+$\{0\leftrightarrow\partial\Lambda_n\}$ is increasing with probability
+strictly between $0$ and $1$, so $p_n(\eps)$ is well defined.  Since
+$\theta_{n+1}\le\theta_n$, $p_{n+1}(\eps)\ge p_n(\eps)$, and since
+$\theta_n\ge\theta$ and $\theta(p_\eps)\ge\eps$ by right-continuity,
+$p_n(\eps)\le p_\eps$.  For $p<p_\eps$ one has $\theta(p)<\eps$, so
+$\theta_n(p)<\eps$ for large $n$ and $p_n(\eps)>p$; hence
+$p_n(\eps)\uparrow p_\eps$.  If $\theta(p_c)=0$ then $\theta_n(p_c)\to0$,
+so $\theta_n(p_c)<\eps$ and $p_n(\eps)>p_c$ for large $n$.
+{\rm(iii)} Let $m=\lfloor|x|_\infty/2\rfloor$.  An open path from $0$ to
+$x$ leaves $\Lambda_m$ at a first point and continues to $x$, and
+every point of $\partial\Lambda_m$ is at $\ell^\infty$-distance at least
+$|x|_\infty-m\ge m$ from $x$, so
+$\{0\leftrightarrow x\}\subseteq\{0\leftrightarrow\partial\Lambda_m\}\circ\{x\leftrightarrow x+\partial\Lambda_m\}$
+(the two path segments are edge-disjoint: every edge of the first has an
+endpoint in $\Lambda_{m-1}$, while $|x|_\infty\ge2m$ gives
+$(x+\Lambda_m)\cap\Lambda_{m-1}=\emptyset$, so no edge of the second does;
+for $|x|_\infty=1$ the bound is trivial with $\pi_d(0)=1$),
+and the van den Berg--Kesten inequality with
+translation invariance gives the first bound.  For the second, Duminil-Copin
+and Tassion proved that if
+$\varphi_p(S)=p\sum_{x\in S,\ y\notin S,\ x\sim y}\Pp_p(0\leftrightarrow x\text{ in }S)<1$
+for some finite $S\ni0$ then $\theta_n(p)$ decays exponentially and
+$p<p_c$; since $\varphi_p(S)$ is continuous in $p$ and $\theta(p)>0$ for
+$p>p_c$, $\varphi_{p_c}(S)\ge1$ for every finite $S\ni0$.  With
+$S=\Lambda_n$, every boundary vertex has at most $2d$ neighbours outside
+$S$ and $\Pp(0\leftrightarrow x\text{ in }S)\le\tau_{p_c}(0,x)$, which
+gives the sum bound.  Each term is at most
+$\pi_d(\lfloor n/2\rfloor)^2$ by the first bound, and
+$|\partial\Lambda_n|\le2d(2n+1)^{d-1}$, which gives the rest.
+{\rm(iv)} $\Pp_{p_c}(0\leftrightarrow\partial B_1)=1-(1-p_c)^{2d}$, and
+$2dp_c(\Z^d)\to1$ by Kesten's asymptotics, so the limit is
+$1-\e^{-1}$, which is the probability that a Poisson variable of mean one
+is positive.
+{\rm(v)} Write $f(p)=\Pp_p(0\leftrightarrow\partial\Lambda_1,|C|<\infty)=1-(1-p)^4-\theta(p)$.
+For $p<1/2$, $f(p)=1-(1-p)^4<1-2^{-4}=f(1/2)$.  For $p>1/2$, with
+$u=p-1/2$, the mean-field lower bound in the explicit form of
+Duminil-Copin and Tassion,
+$\theta(p)\ge(p-p_c)/(p(1-p_c))$, with $p_c=1/2$ by Kesten's
+theorem and $\theta(1/2)=0$ by Harris,
+gives $\theta(p)\ge2u/p\ge2u$, while
+$(1-p)^4\ge(1/2)^4-4u(1/2)^3=2^{-4}-u/2$; hence
+$f(p)\le1-2^{-4}+u/2-2u<f(1/2)$.
+{\rm(vi)} If the girth exceeds $2n+1$, the ball $B_n$ of $G_j$ is a tree in
+which every vertex other than the root has $D_j-1$ children, and the event
+$\{0\leftrightarrow\partial B_n\}$ depends only on the edges of $B_n$; its
+probability is the survival probability to generation $n$ of the
+branching process with offspring law $\mathrm{Bin}(D_j,p)$ at the root and
+$\mathrm{Bin}(D_j-1,p)$ afterwards, a fixed finite composition of the
+generating functions.  At $p=p_c(G_j)$ these laws converge to Poisson of
+mean one as $D_jp_c(G_j)\to1$, and the finite composition converges to
+$s_n$.
+\end{proof}
+
+\begin{conjecture}[Polynomial decay of the critical one-arm probability in every dimension]\label{av1}
+For every $d\ge2$ the exponent $\rho_d$ exists: $\pi_d(n)=n^{-\rho_d+o(1)}$,
+and $\pi_d$ is regularly varying, $\pi_d(2n)/\pi_d(n)\to2^{-\rho_d}$.
+Moreover $\pi_d(n)\ge c_dn^{-2}$ for all $n$ and $d$, so that
+$\rho_d\le2$, with $\rho_d<2$ for $2\le d\le5$ and $\rho_d=2$ for
+$d\ge6$; and $\Pp_{p_c}(|C|\ge n)=n^{-1/\delta_d+o(1)}$ with
+$\delta_d>2$ for $2\le d\le5$ and $\delta_d=2$ for $d\ge6$.
+\end{conjecture}
+
+
+\begin{conjecture}[Dimensional monotonicity of critical connectivity]\label{av2}
+{\rm(i)} For every $n\ge1$ the critical one-arm probabilities decrease
+strictly in the dimension: $\pi_{d+1}(n)<\pi_d(n)$ for all $d\ge2$, where
+each $\pi_d$ is taken at its own critical point $p_c(\Z^d)$.
+{\rm(ii)} The exponents are strictly increasing in the dimension below
+the upper critical dimension: $\rho_2<\rho_3<\rho_4<\rho_5<\rho_6=2$, and
+likewise $\beta_2<\dots<\beta_6=1$ and $\nu_2>\nu_3>\dots>\nu_6=1/2$.
+\end{conjecture}
+
+
+\begin{conjecture}[Finite clusters are largest at criticality]\label{av3}
+{\rm(i)} For every $d\ge2$, $\sup_{p\in[0,1]}(\theta_n(p)-\theta(p))\asymp\pi_d(n)$,
+and the supremum is attained at a point $p_n^*$ with
+$n^{1/\nu_d}(p_n^*-p_c)$ bounded.
+{\rm(ii)} For $2\le d\le5$ the supremum is $\pi_d(n)$ itself and is
+attained only at $p_c$ (the case $d=6$ is left open): for every $n\ge1$ and every $p\ne p_c$,
+\[
+ \Pp_p\bigl(0\leftrightarrow\partial\Lambda_n,\ |C|<\infty\bigr)<\Pp_{p_c}\bigl(0\leftrightarrow\partial\Lambda_n\bigr).
+\]
+{\rm(iii)} For $d\ge7$ the ratio $\sup_p(\theta_n(p)-\theta(p))/\pi_d(n)$
+converges to a constant $c_d\ge1$.
+\end{conjecture}
+
+
+\begin{conjecture}[Finite-size critical points and the pivotal exponent]\label{av4}
+For every $d\ge2$ the correlation-length exponent $\nu_d$ exists, and:
+{\rm(i)} the scaling function $\Phi_d$ exists, is continuous and
+strictly increasing, and for every $\eps\in(0,1)$,
+$n^{1/\nu_d}\bigl(p_n(\eps\,\pi_d(n))-p_c\bigr)\to\Phi_d^{-1}(\eps)$,
+where $p_n$ is the finite-size threshold of Proposition~\ref{av:basic}(ii);
+{\rm(ii)} the number of pivotal edges for the one-arm event satisfies
+$\E_{p_c}\bigl[\#\mathrm{Piv}(0\leftrightarrow\partial\Lambda_n)\bigr]
+=\theta_n'(p_c)=n^{1/\nu_d-\rho_d+o(1)}$;
+{\rm(iii)} the width of the window in which $\theta_n$ rises from
+$\eps\pi_d(n)$ to $\eps^{-1}\pi_d(n)$ is $n^{-1/\nu_d+o(1)}$, with the
+same $\nu_d$ as the correlation length below $p_c$.
+\end{conjecture}
+
+
+\begin{conjecture}[Slab critical points]\label{av5}
+For $d\ge3$ and $k\ge0$ let $S_k=\Z^{d-1}\times\{0,\dots,k\}$ and
+$p_c(S_k)$ its critical point.  Then
+$p_c(S_k)-p_c(\Z^d)\asymp k^{-1/\nu_d}$; more precisely
+$k^{1/\nu_d}\bigl(p_c(S_k)-p_c(\Z^d)\bigr)\to a_d\in(0,\infty)$.
+\end{conjecture}
+
+
+\begin{conjecture}[Lipschitz dichotomy for the percolation probability at criticality]\label{av6}
+As $p\downarrow p_c$, $\theta(p)/(p-p_c)\to\infty$ for $2\le d\le6$, while
+for $d\ge7$ the ratio converges to a finite positive limit.
+Equivalently, the mean-field bound $\theta(p)\ge c(p-p_c)$ is strict in
+exponent for $d\le5$, strict by a divergent factor at $d=6$, and sharp
+up to a constant for $d\ge7$: $\theta$ is Lipschitz at $p_c$ exactly
+when $d\ge7$.
+\end{conjecture}
+
+
+\begin{conjecture}[No divergence of the specific heat]\label{av7}
+For every $d\ge2$ the number of clusters per site $\kappa$ is twice
+continuously differentiable on $[0,1]$, $\kappa''$ is H\"older
+continuous at $p_c$, and $\kappa$ is not three times differentiable at
+$p_c$: $\kappa'''$ diverges at $p_c$ like $|p-p_c|^{-1-\alpha_d}$ with
+$\alpha_d=2-d\nu_d\in(-1,0)$ for $2\le d\le5$, and has a jump
+discontinuity at $p_c$ for $d\ge7$; the case $d=6$ is left open.
+\end{conjecture}
+
+
+\begin{conjecture}[Hyperscaling as a two-arm factorisation]\label{av8}
+For $2\le d\le6$ there are constants $0<c_d\le C_d<\infty$ with
+\[
+ c_d\,\pi_d(|x|_\infty)^2\le\tau_{p_c}(0,x)\le C_d\,\pi_d(|x|_\infty)^2
+ \qquad(x\ne0),
+\]
+so that $d-2+\eta_d=2\rho_d$, while for $d\ge7$,
+$\tau_{p_c}(0,x)/\pi_d(|x|_\infty)^2\asymp|x|^{6-d}$.
+\end{conjecture}
+
+
+\begin{conjecture}[Sign of the anomalous dimension]\label{av9}
+The exponent $\eta_d$ exists for every $d\ge2$, and
+$|x|^{d-2}\tau_{p_c}(0,x)$ tends to zero for $d=2$, to infinity for
+$3\le d\le6$, and to a finite positive limit for $d\ge7$: the anomalous
+dimension is positive in the plane, negative in dimensions three to
+five, and zero from six on, with a logarithmic divergence at $d=6$.
+\end{conjecture}
+
+
+\begin{conjecture}[Exceptional times of dynamical critical percolation]\label{av10}
+Dynamical percolation on $\Z^d$ at $p_c$ has exceptional times for
+$2\le d\le5$ and has almost surely none for $d\ge7$.  For $2\le d\le5$
+the set of exceptional times has Hausdorff dimension $1-\beta_d$ almost
+surely.  The case $d=6$ is left open.
+\end{conjecture}
+
+
+\begin{conjecture}[Temporal correlations of the one-arm event]\label{av11}
+Let $A_n=\{0\leftrightarrow\partial\Lambda_n\}$ and let $\omega_t$ be
+dynamical percolation at $p_c$ on $\Z^d$.  For every $d\ge2$,
+\[
+ \Pp(\omega_0\in A_n,\ \omega_t\in A_n)\asymp
+ \begin{cases}\pi_d(n),& t\le n^{-1/\nu_d},\\[2pt]
+ \pi_d(n)^2\,t^{-\beta_d},& n^{-1/\nu_d}\le t\le1,\end{cases}
+\]
+uniformly in $n$ and $t$.  In the resampling formulation, if each edge
+is resampled independently with probability $\eps$, the joint probability
+of $A_n$ before and after the resampling is $\asymp\pi_d(n)$ when
+$\eps\le n^{-1/\nu_d}$ and $\asymp\pi_d(n)^2\eps^{-\beta_d}$ when
+$n^{-1/\nu_d}\le\eps\le1$.
+\end{conjecture}
+
+
+\begin{conjecture}[Logarithmic corrections in six dimensions]\label{av12}
+On $\Z^6$, as $p\to p_c$,
+\[
+ \theta(p)=(p-p_c)\,|\log(p-p_c)|^{2/7+o(1)},\quad
+ \chi(p)=(p_c-p)^{-1}|\log(p_c-p)|^{2/7+o(1)},\quad
+ \xi(p)=(p_c-p)^{-1/2}|\log(p_c-p)|^{5/42+o(1)},
+\]
+and $\pi_6(n)=n^{-2}(\log n)^{11/21+o(1)}$, the exponent $11/21=5/21+2/7$
+being forced by the scaling relation $\pi_6(n)\approx\theta(p)$ at
+$\xi(p)=n$; in particular
+$\theta(p)/(p-p_c)\to\infty$ and $|x|^4\tau_{p_c}(0,x)\to\infty$ on $\Z^6$.
+\end{conjecture}
+
+
+\begin{conjecture}[Site percolation dies at criticality]\label{av13}
+For nearest-neighbour site percolation on $\Z^d$, $\theta^{\rm site}(p_c^{\rm site})=0$
+for every $d\ge3$; moreover the site and bond models have the same
+exponents, $\rho_d^{\rm site}=\rho_d$ and $\beta_d^{\rm site}=\beta_d$.
+\end{conjecture}
+
+
+\begin{conjecture}[Dying percolation on graphs of polynomial growth]\label{av14}
+{\rm(i)} $\theta(p_c)=0$ for every connected quasi-transitive graph of
+polynomial growth; in particular for the face-centred and body-centred
+cubic lattices, for every Bravais lattice in $d\ge3$, and for the Cayley
+graphs of finitely generated virtually nilpotent groups.
+{\rm(ii)} Among connected quasi-transitive graphs, the property
+$\theta(p_c)=0$ is invariant under quasi-isometry.
+\end{conjecture}
+
+
+\begin{conjecture}[The incipient infinite cluster in every dimension]\label{av15}
+For every $d\ge2$: {\rm(i)} the limits
+$\Pp_{p_c}(\,\cdot\mid0\leftrightarrow\partial\Lambda_n)$ as $n\to\infty$ and
+$\Pp_p(\,\cdot\mid0\leftrightarrow\infty)$ as $p\downarrow p_c$ exist on
+cylinder events and coincide, defining the incipient infinite cluster
+measure $\Pp_{\rm IIC}$; {\rm(ii)} under $\Pp_{\rm IIC}$ the cluster of
+the origin is almost surely infinite, is the unique infinite cluster,
+and satisfies $|C\cap\Lambda_n|=n^{d_f+o(1)}$ with $d_f=d-\rho_d$ for
+$2\le d\le6$ and $d_f=4$ for $d\ge6$; {\rm(iii)} simple
+random walk on it has spectral dimension $d_s(d)$ with $d_s(d)\le4/3$,
+with equality exactly when $d\ge6$.
+\end{conjecture}
+
+
+\begin{conjecture}[Largest critical clusters in boxes and tori]\label{av16}
+Let $C_{\max}(\Lambda_n)$ and $C_{\max}(\mathbb T_n^d)$ be the largest open
+clusters at $p_c(\Z^d)$ in the box $\Lambda_n$ and in the torus
+$(\Z/n\Z)^d$.  For $2\le d\le6$,
+$|C_{\max}(\Lambda_n)|=n^{d-\rho_d+o(1)}$ and
+$|C_{\max}(\mathbb T_n^d)|=n^{d-\rho_d+o(1)}$, with
+$|C_{\max}(\mathbb T_n^d)|/|C_{\max}(\Lambda_n)|$ tight and bounded away
+from zero; for $d\ge7$, $|C_{\max}(\Lambda_n)|=n^{4+o(1)}$ while
+$|C_{\max}(\mathbb T_n^d)|=n^{2d/3+o(1)}$.
+\end{conjecture}
+
+
+\begin{conjecture}[Critical connectivity in the large-dimension limit]\label{av17}
+For every fixed $n\ge1$,
+\[
+ \lim_{d\to\infty}\Pp_{p_c(\Z^d)}\bigl(0\leftrightarrow\partial B_n\bigr)=s_n,
+\]
+where $s_n$ is the probability that the critical Galton--Watson process
+with Poisson offspring of mean one survives to generation $n$, so
+that $s_n\sim2/n$; moreover the convergence is at rate $O_n(1/d)$.
+\end{conjecture}
+
+
+\begin{conjecture}[Site--bond universality of critical amplitudes]\label{av18}
+For every $d\ge2$ the critical one-arm probabilities of site and bond
+percolation on $\Z^d$ satisfy
+$\pi_d^{\rm site}(n)/\pi_d(n)\to A_d\in(0,\infty)$, and the two-point
+functions satisfy $\tau^{\rm site}_{p_c}(0,x)/\tau_{p_c}(0,x)\to A_d^2$ for
+$2\le d\le6$, granted that $\tau_{p_c}(0,x)/\pi_d(|x|_\infty)^2$ converges
+to the same limit in both models, and to a limit $A_d'\in(0,\infty)$ for
+$d\ge7$.
+\end{conjecture}
+
+
+\begin{conjecture}[Half-space one-arm exponents]\label{av19}
+For every $d\ge2$ let $H=\Z^{d-1}\times\Z_{\ge0}$, whose critical point
+equals $p_c(\Z^d)$, and let
+$\pi_d^+(n)=\Pp_{p_c}(0\leftrightarrow\partial\Lambda_n\cap H\text{ by an open path in }H)$
+be the half-space one-arm probability from the origin on the boundary
+hyperplane.  Then $\pi_d^+(n)$ has an exponent $\rho_d^+$, with $\rho_d^+>\rho_d$, $\rho_d^+$
+nondecreasing in $d$, $\rho_2^+=1/3$ for the triangular lattice, and
+$\rho_d^+=3$ for $d\ge7$; the surface excess $\rho_d^+-\rho_d$ is
+nondecreasing in $d$, from $11/48$ in the plane to $1$ in high
+dimensions.
+\end{conjecture}
+
+
+\begin{conjecture}[Critical crossing probability of the box]\label{av20}
+Let $R_d(n)=\Pp_{p_c}(\Lambda_n\text{ is crossed from left to right})$, the
+box carrying free boundary conditions.
+Then $R_d(n)$ converges as $n\to\infty$ to a limit $R_d$, with
+$R_2=1/2$, $R_d\in(0,1)$ for $3\le d\le6$, and $R_d=1$ for $d\ge7$;
+moreover the number of distinct crossing clusters is tight for
+$2\le d\le6$ and grows like $n^{d-6+o(1)}$ for $d\ge7$.
 \end{conjecture}
 
 \begin{thebibliography}{99}\small
